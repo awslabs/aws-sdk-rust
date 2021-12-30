@@ -358,7 +358,7 @@ pub mod fluent_builders {
     /// Calling <code>ProvisionPermissionSet</code> applies the corresponding IAM policy updates to
     /// all assigned accounts.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachManagedPolicyToPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -474,7 +474,7 @@ pub mod fluent_builders {
     /// <a>ProvisionPermissionSet</a>
     /// </code> to make these updates.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccountAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -609,7 +609,7 @@ pub mod fluent_builders {
     /// <p>Enables the attributes-based access control (ABAC) feature for the specified Amazon Web Services SSO
     /// instance. You can also specify new attributes to add to your ABAC configuration during the
     /// enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstanceAccessControlAttributeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -707,7 +707,7 @@ pub mod fluent_builders {
     /// <a>CreateAccountAssignment</a>
     /// </code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -844,7 +844,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a principal's access from a specified Amazon Web Services account using a specified permission
     /// set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccountAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -975,7 +975,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInlinePolicyFromPermissionSet`.
     ///
     /// <p>Deletes the inline policy from a specified permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInlinePolicyFromPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1065,7 +1065,7 @@ pub mod fluent_builders {
     /// instance and deletes all of the attribute mappings that have been configured. Once deleted,
     /// any attributes that are received from an identity source and any custom attributes you have
     /// previously configured will not be passed. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstanceAccessControlAttributeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1128,7 +1128,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePermissionSet`.
     ///
     /// <p>Deletes the specified permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1213,7 +1213,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAccountAssignmentCreationStatus`.
     ///
     /// <p>Describes the status of the assignment creation request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAssignmentCreationStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1305,7 +1305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAccountAssignmentDeletionStatus`.
     ///
     /// <p>Describes the status of the assignment deletion request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAssignmentDeletionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1400,7 +1400,7 @@ pub mod fluent_builders {
     /// work with attributes-based access control (ABAC) for the specified Amazon Web Services SSO instance. This
     /// will not return attributes configured and sent by an external identity provider.
     /// For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceAccessControlAttributeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1464,7 +1464,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePermissionSet`.
     ///
     /// <p>Gets the details of the permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1549,7 +1549,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePermissionSetProvisioningStatus`.
     ///
     /// <p>Describes the status for the given permission set provisioning request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePermissionSetProvisioningStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1643,7 +1643,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachManagedPolicyFromPermissionSet`.
     ///
     /// <p>Detaches the attached IAM managed policy ARN from the specified permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachManagedPolicyFromPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1745,7 +1745,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInlinePolicyForPermissionSet`.
     ///
     /// <p>Obtains the inline policy assigned to the permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInlinePolicyForPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1831,7 +1831,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the status of the Amazon Web Services account assignment creation requests for a specified SSO
     /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountAssignmentCreationStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1939,7 +1939,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the status of the Amazon Web Services account assignment deletion requests for a specified SSO
     /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountAssignmentDeletionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2047,7 +2047,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the assignee of the specified Amazon Web Services account with the specified permission
     /// set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountAssignments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2162,7 +2162,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccountsForProvisionedPermissionSet`.
     ///
     /// <p>Lists all the Amazon Web Services accounts where the specified permission set is provisioned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountsForProvisionedPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2284,7 +2284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstances`.
     ///
     /// <p>Lists the SSO instances that the caller has access to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2364,7 +2364,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListManagedPoliciesInPermissionSet`.
     ///
     /// <p>Lists the IAM managed policy that is attached to a specified permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedPoliciesInPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2474,7 +2474,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the status of the permission set provisioning requests for a specified SSO
     /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissionSetProvisioningStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2581,7 +2581,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPermissionSets`.
     ///
     /// <p>Lists the <a>PermissionSet</a>s in an SSO instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissionSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2673,7 +2673,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPermissionSetsProvisionedToAccount`.
     ///
     /// <p>Lists all the permission sets that are provisioned to a specified Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissionSetsProvisionedToAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2790,7 +2790,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags that are attached to a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2883,7 +2883,7 @@ pub mod fluent_builders {
     ///
     /// <p>The process by which a specified permission set is provisioned to the specified
     /// target.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2998,7 +2998,7 @@ pub mod fluent_builders {
     /// </code> after this action to
     /// apply the corresponding IAM policy updates to all assigned accounts.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInlinePolicyToPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3096,7 +3096,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Associates a set of tags with a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3195,7 +3195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Disassociates a set of tags from a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3299,7 +3299,7 @@ pub mod fluent_builders {
     /// configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of
     /// these attributes, Amazon Web Services SSO replaces the attribute value with the value from the Amazon Web Services SSO
     /// identity store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceAccessControlAttributeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3382,7 +3382,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePermissionSet`.
     ///
     /// <p>Updates an existing permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

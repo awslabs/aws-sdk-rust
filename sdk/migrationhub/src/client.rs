@@ -245,7 +245,7 @@ pub mod fluent_builders {
     /// or DMS endpoint, etc.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateCreatedArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -363,7 +363,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a discovered resource ID from Application Discovery Service with a migration
     /// task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDiscoveredResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -482,7 +482,7 @@ pub mod fluent_builders {
     /// It must uniquely identify the migration tool as it is used for all updates made by the
     /// tool; however, it does not need to be unique for each AWS account because it is scoped to
     /// the AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProgressUpdateStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -604,7 +604,7 @@ pub mod fluent_builders {
     /// resources associated with the old stream).</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProgressUpdateStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -696,7 +696,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplicationState`.
     ///
     /// <p>Gets the migration status of an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -771,7 +771,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMigrationTask`.
     ///
     /// <p>Retrieves a list of all attributes associated with a specific migration task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMigrationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -877,7 +877,7 @@ pub mod fluent_builders {
     /// or RDS instance, etc.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateCreatedArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -995,7 +995,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disassociate an Application Discovery Service discovered resource from a migration
     /// task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDiscoveredResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1115,7 +1115,7 @@ pub mod fluent_builders {
     /// to AWS by a migration tool.</p>
     /// <p>This API is a prerequisite to calling the <code>NotifyMigrationTaskState</code> API as
     /// the migration tool must first register the migration task with Migration Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportMigrationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1219,7 +1219,7 @@ pub mod fluent_builders {
     /// <p>Lists all the migration statuses for your applications. If you use the optional
     /// <code>ApplicationIds</code> parameter, only the migration statuses for those
     /// applications will be returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationStates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1336,7 +1336,7 @@ pub mod fluent_builders {
     /// <p>Lists created artifacts in a paginated interface. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCreatedArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1450,7 +1450,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDiscoveredResources`.
     ///
     /// <p>Lists discovered resources associated with the given <code>MigrationTask</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDiscoveredResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1577,7 +1577,7 @@ pub mod fluent_builders {
     /// <p>Lists migration tasks in a paginated interface.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMigrationTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1674,7 +1674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProgressUpdateStreams`.
     ///
     /// <p>Lists progress update streams associated with the user account making this call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProgressUpdateStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1761,7 +1761,7 @@ pub mod fluent_builders {
     /// value passed to <code>ApplicationId</code>, its status is set or updated by passing one of
     /// three values to <code>Status</code>: <code>NOT_STARTED | IN_PROGRESS |
     /// COMPLETED</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyApplicationState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1891,7 +1891,7 @@ pub mod fluent_builders {
     /// namespace for each migration tool.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyMigrationTaskState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2055,7 +2055,7 @@ pub mod fluent_builders {
     /// association occurs or not. To confirm if an association was found based on the provided
     /// details, call <code>ListDiscoveredResources</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourceAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

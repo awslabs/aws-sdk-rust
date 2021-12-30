@@ -147,7 +147,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a specified AWS account with Amazon Macie Classic as a member
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateMemberAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -226,7 +226,7 @@ pub mod fluent_builders {
     /// resources with Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified,
     /// the action associates specified S3 resources with Macie Classic for the specified member
     /// account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateS3Resources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -320,7 +320,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMemberAccount`.
     ///
     /// <p>Removes the specified member account from Amazon Macie Classic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMemberAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -398,7 +398,7 @@ pub mod fluent_builders {
     /// memberAccountId isn't specified, the action removes specified S3 resources from Macie Classic
     /// for the current Macie Classic administrator account. If memberAccountId is specified, the action removes specified
     /// S3 resources from Macie Classic for the specified member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateS3Resources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -492,7 +492,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMemberAccounts`.
     ///
     /// <p>Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMemberAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -583,7 +583,7 @@ pub mod fluent_builders {
     /// isn't specified, the action lists the S3 resources associated with Macie Classic for
     /// the current Macie Classic administrator account. If memberAccountId is specified, the action lists the S3 resources
     /// associated with Macie Classic for the specified member account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListS3Resources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -688,7 +688,7 @@ pub mod fluent_builders {
     /// with Amazon Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified, the
     /// action updates the classification types of the S3 resources associated with Macie
     /// Classic for the specified member account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateS3Resources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

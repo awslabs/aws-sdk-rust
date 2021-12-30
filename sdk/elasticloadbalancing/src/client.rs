@@ -344,7 +344,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -440,7 +440,7 @@ pub mod fluent_builders {
     /// <p>Associates one or more security groups with your load balancer in a virtual private cloud (VPC). The specified security groups override the previously associated security groups.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security Groups for Load Balancers in a VPC</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplySecurityGroupsToLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -533,7 +533,7 @@ pub mod fluent_builders {
     /// <p>The load balancer evenly distributes requests across all registered subnets.
     /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add or Remove Subnets for Your Load Balancer in a VPC</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachLoadBalancerToSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -625,7 +625,7 @@ pub mod fluent_builders {
     /// <p>Specifies the health check settings to use when evaluating the health state of your EC2 instances.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure Health Checks for Your Load Balancer</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfigureHealthCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -719,7 +719,7 @@ pub mod fluent_builders {
     /// <p>If the application cookie is explicitly removed or expires, the session stops being sticky until a new application cookie is issued.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled Session Stickiness</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppCookieStickinessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -818,7 +818,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based Session Stickiness</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLBCookieStickinessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -924,7 +924,7 @@ pub mod fluent_builders {
     /// You can request an increase for the number of load balancers for your account.
     /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic Load Balancer</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1120,7 +1120,7 @@ pub mod fluent_builders {
     /// <p>Creates one or more listeners for the specified load balancer. If a listener with the specified port does not already exist, it is created; otherwise, the properties of the new listener must match the properties of the existing listener.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancerListeners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1211,7 +1211,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a policy with the specified attributes for the specified load balancer.</p>
     /// <p>Policies are settings that are saved for your load balancer and that can be applied to the listener or the application server, depending on the policy type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancerPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1329,7 +1329,7 @@ pub mod fluent_builders {
     /// <p>If you are attempting to recreate a load balancer, you must reconfigure all settings. The DNS name associated with a deleted load balancer are no longer usable. The name and associated DNS record of the deleted load balancer no longer exist and traffic sent to any of its IP addresses is no longer delivered to your instances.</p>
     /// <p>If the load balancer does not exist or has already been deleted, the call to
     /// <code>DeleteLoadBalancer</code> still succeeds.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1402,7 +1402,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLoadBalancerListeners`.
     ///
     /// <p>Deletes the specified listeners from the specified load balancer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancerListeners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1492,7 +1492,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLoadBalancerPolicy`.
     ///
     /// <p>Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancerPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1580,7 +1580,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register or De-Register EC2 Instances</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterInstancesFromLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1674,7 +1674,7 @@ pub mod fluent_builders {
     /// <p>Describes the current Elastic Load Balancing resource limits for your AWS account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic Load Balancer</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1754,7 +1754,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInstanceHealth`.
     ///
     /// <p>Describes the state of the specified instances with respect to the specified load balancer. If no instances are specified, the call describes the state of all instances that are currently registered with the load balancer. If instances are specified, their state is returned even if they are no longer registered with the load balancer. The state of terminated instances is not returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1844,7 +1844,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoadBalancerAttributes`.
     ///
     /// <p>Describes the attributes for the specified load balancer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1921,7 +1921,7 @@ pub mod fluent_builders {
     /// If you specify a policy name associated with your load balancer, the action returns the description of that policy.
     /// If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions of all sample policies.
     /// The names of the sample policies have the <code>ELBSample-</code> prefix.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2018,7 +2018,7 @@ pub mod fluent_builders {
     /// <p>You can use <a>CreateLoadBalancerPolicy</a> to create a policy configuration for any of these policy types.
     /// Then, depending on the policy type, use either <a>SetLoadBalancerPoliciesOfListener</a> or
     /// <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerPolicyTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2095,7 +2095,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoadBalancers`.
     ///
     /// <p>Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2192,7 +2192,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
     /// <p>Describes the tags associated with the specified load balancers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2272,7 +2272,7 @@ pub mod fluent_builders {
     /// <p>After a subnet is removed, all EC2 instances registered with the load balancer  
     /// in the removed subnet go into the <code>OutOfService</code> state. Then,
     /// the load balancer balances the traffic among the remaining routable subnets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachLoadBalancerFromSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2370,7 +2370,7 @@ pub mod fluent_builders {
     /// the traffic among its remaining Availability Zones.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove Availability Zones</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableAvailabilityZonesForLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2467,7 +2467,7 @@ pub mod fluent_builders {
     /// <p>The load balancer evenly distributes requests across all its registered Availability Zones
     /// that contain instances. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove Availability Zones</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAvailabilityZonesForLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2585,7 +2585,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyLoadBalancerAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2692,7 +2692,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register or De-Register EC2 Instances</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterInstancesWithLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2782,7 +2782,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
     /// <p>Removes one or more tags from the specified load balancer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2880,7 +2880,7 @@ pub mod fluent_builders {
     /// <p>For more information about updating your SSL certificate, see
     /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace the SSL Certificate for Your Load Balancer</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetLoadBalancerListenerSSLCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2988,7 +2988,7 @@ pub mod fluent_builders {
     /// in the <i>Classic Load Balancers Guide</i>. For more information about Proxy Protocol, see
     /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure Proxy Protocol Support</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetLoadBalancerPoliciesForBackendServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3096,7 +3096,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based Session Stickiness</a>, and
     /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled Session Stickiness</a>
     /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetLoadBalancerPoliciesOfListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

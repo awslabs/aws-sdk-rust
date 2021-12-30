@@ -259,7 +259,7 @@ pub mod fluent_builders {
     /// applications created inside the environment, regardless of the account that creates the
     /// application. Refactor Spaces provisions the Amazon API Gateway and Network Load Balancer for
     /// the application proxy inside your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -419,7 +419,7 @@ pub mod fluent_builders {
     /// cross-account visibility and control of Refactor Spaces resources that are added to the environment
     /// by other accounts that the environment is shared with. When creating an environment, Refactor Spaces
     /// provisions a transit gateway in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -582,7 +582,7 @@ pub mod fluent_builders {
     /// health URL, if used. All other settings use the default values, as described in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health checks
     /// for your target groups</a>. The health check is considered successful if at least one
     /// target within the target group transitions to a healthy state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -759,7 +759,7 @@ pub mod fluent_builders {
     /// <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more
     /// cross-account constraints, apply your own security group.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -950,7 +950,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces application. Before you can delete an application, you must first
     /// delete any services or routes within the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1037,7 +1037,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces environment. Before you can delete an environment, you must first
     /// delete any applications and services within the environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1110,7 +1110,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
     /// <p>Deletes the resource policy set for the environment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1180,7 +1180,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoute`.
     ///
     /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1279,7 +1279,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteService`.
     ///
     /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces service. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1388,7 +1388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplication`.
     ///
     /// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1474,7 +1474,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironment`.
     ///
     /// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1547,7 +1547,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourcePolicy`.
     ///
     /// <p>Gets the resource-based permission policy that is set for the given environment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1617,7 +1617,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRoute`.
     ///
     /// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1716,7 +1716,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetService`.
     ///
     /// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces service. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1815,7 +1815,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplications`.
     ///
     /// <p>Lists all the Amazon Web Services Migration Hub Refactor Spaces applications within an environment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1911,7 +1911,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists Amazon Web Services Migration Hub Refactor Spaces environments owned by a caller account or shared with the caller
     /// account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1993,7 +1993,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentVpcs`.
     ///
     /// <p>Lists all the virtual private clouds (VPCs) that are part of an Amazon Web Services Migration Hub Refactor Spaces environment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentVpcs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2088,7 +2088,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRoutes`.
     ///
     /// <p>Lists all the Amazon Web Services Migration Hub Refactor Spaces routes within an application. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2196,7 +2196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServices`.
     ///
     /// <p>Lists all the Amazon Web Services Migration Hub Refactor Spaces services within an application. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2305,7 +2305,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the tags of a resource. The caller account must be the same as the resource’s
     /// <code>OwnerAccountId</code>. Listing tags in other accounts is not supported. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2378,7 +2378,7 @@ pub mod fluent_builders {
     /// must contain the same actions and condition statements as the
     /// <code>arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRefactorSpacesEnvironment</code>
     /// permission in Resource Access Manager. The policy must not contain new lines or blank lines. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2466,7 +2466,7 @@ pub mod fluent_builders {
     /// <p>Amazon Web Services Migration Hub Refactor Spaces does not propagate tags to orchestrated resources, such as an
     /// environment’s transit gateway.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2561,7 +2561,7 @@ pub mod fluent_builders {
     /// <p>Adds to or modifies the tags of the given resource. Tags are metadata which can be used to
     /// manage a resource. To untag a resource, the caller account must be the same as the resource’s
     /// <code>OwnerAccountId</code>. Untagging resources across accounts is not supported. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

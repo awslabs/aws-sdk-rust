@@ -228,7 +228,7 @@ pub mod fluent_builders {
     /// of 100 connector profiles per Amazon Web Services account. If you need more connector profiles than this quota
     /// allows, you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support
     /// channel. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnectorProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -368,7 +368,7 @@ pub mod fluent_builders {
     /// connector profile before calling this API. Please note that the Request Syntax below shows
     /// syntax for multiple destinations, however, you can only transfer data to one item in this list
     /// at a time. Amazon AppFlow does not currently support flows to multiple destinations at once. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -558,7 +558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnectorProfile`.
     ///
     /// <p> Enables you to delete an existing connector profile. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnectorProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -647,7 +647,7 @@ pub mod fluent_builders {
     /// <p> Enables your application to delete an existing flow. Before deleting the flow, Amazon
     /// AppFlow validates the request by checking the flow configuration and status. You can delete
     /// flows one at a time. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -732,7 +732,7 @@ pub mod fluent_builders {
     ///
     /// <p> Provides details regarding the entity used with the connector, with a description of the
     /// data model for each entity. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectorEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -837,7 +837,7 @@ pub mod fluent_builders {
     /// optional, and you can use them to filter the result. </p>
     /// <p>If no names or <code>connector-types</code> are provided, returns all connector profiles
     /// in a paginated form. If there is no match, this operation returns an empty list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectorProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -955,7 +955,7 @@ pub mod fluent_builders {
     /// AppFlow. If there are more connectors than can be returned in one page, the response contains
     /// a <code>nextToken</code> object, which can be be passed in to the next call to the
     /// <code>DescribeConnectors</code> API operation to retrieve the next page. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1042,7 +1042,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFlow`.
     ///
     /// <p> Provides a description of the specified flow. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1114,7 +1114,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFlowExecutionRecords`.
     ///
     /// <p> Fetches the execution history of the flow. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFlowExecutionRecords<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1211,7 +1211,7 @@ pub mod fluent_builders {
     /// example, you can query Salesforce for <i>Account</i> and
     /// <i>Opportunity</i> entities, or query ServiceNow for the
     /// <i>Incident</i> entity. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnectorEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1322,7 +1322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFlows`.
     ///
     /// <p> Lists all of the flows associated with your account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFlows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1402,7 +1402,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p> Retrieves the tags that are associated with a specified flow. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1473,7 +1473,7 @@ pub mod fluent_builders {
     ///
     /// <p> Activates an existing flow. For on-demand flows, this operation runs the flow
     /// immediately. For schedule and event-triggered flows, this operation activates the flow. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1547,7 +1547,7 @@ pub mod fluent_builders {
     /// <p> Deactivates the existing flow. For on-demand flows, this operation returns an
     /// <code>unsupportedOperationException</code> error message. For schedule and event-triggered
     /// flows, this operation deactivates the flow. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1619,7 +1619,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p> Applies a tag to the specified flow. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1712,7 +1712,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p> Removes a tag from the specified flow. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1799,7 +1799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnectorProfile`.
     ///
     /// <p> Updates a given connector profile associated with your account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnectorProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1903,7 +1903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFlow`.
     ///
     /// <p> Updates an existing flow. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

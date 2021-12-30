@@ -104,7 +104,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRealtimeContactAnalysisSegments`.
     ///
     /// <p>Provides a list of analysis segments for a real-time analysis session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRealtimeContactAnalysisSegments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

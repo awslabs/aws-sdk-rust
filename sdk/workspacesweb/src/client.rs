@@ -413,7 +413,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateBrowserSettings`.
     ///
     /// <p>Associates a browser settings resource with a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -496,7 +496,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateNetworkSettings`.
     ///
     /// <p>Associates a network settings resource with a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -579,7 +579,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateTrustStore`.
     ///
     /// <p>Associates a trust store with a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -662,7 +662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateUserSettings`.
     ///
     /// <p>Associates a user settings resource with a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -747,7 +747,7 @@ pub mod fluent_builders {
     /// <p>Creates a browser settings resource that can be associated with a web portal. Once
     /// associated with a web portal, browser settings control how the browser will behave once a
     /// user starts a streaming session for the web portal. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -893,7 +893,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIdentityProvider`.
     ///
     /// <p>Creates an identity provider resource that is then associated with a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1341,7 +1341,7 @@ pub mod fluent_builders {
     /// <p>Creates a network settings resource that can be associated with a web portal. Once
     /// associated with a web portal, network settings define how streaming instances will connect
     /// with your specified VPC. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1482,7 +1482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePortal`.
     ///
     /// <p>Creates a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1629,7 +1629,7 @@ pub mod fluent_builders {
     /// a streaming session will recognize certificates that have been issued using any of the CAs
     /// in the trust store. If your organization has internal websites that use certificates issued
     /// by private CAs, you should add the private CA certificate to the trust store. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1745,7 +1745,7 @@ pub mod fluent_builders {
     /// <p>Creates a user settings resource that can be associated with a web portal. Once
     /// associated with a web portal, user settings control how users can transfer data between a
     /// streaming session and the their local devices. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1915,7 +1915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBrowserSettings`.
     ///
     /// <p>Deletes browser settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1988,7 +1988,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIdentityProvider`.
     ///
     /// <p>Deletes the identity provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2061,7 +2061,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkSettings`.
     ///
     /// <p>Deletes network settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2134,7 +2134,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePortal`.
     ///
     /// <p>Deletes a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2204,7 +2204,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTrustStore`.
     ///
     /// <p>Deletes the trust store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2277,7 +2277,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserSettings`.
     ///
     /// <p>Deletes user settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2350,7 +2350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateBrowserSettings`.
     ///
     /// <p>Disassociates browser settings from a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2420,7 +2420,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateNetworkSettings`.
     ///
     /// <p>Disassociates network settings from a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2490,7 +2490,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateTrustStore`.
     ///
     /// <p>Disassociates a trust store from a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2560,7 +2560,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateUserSettings`.
     ///
     /// <p>Disassociates user settings from a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2630,7 +2630,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBrowserSettings`.
     ///
     /// <p>Gets browser settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2703,7 +2703,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIdentityProvider`.
     ///
     /// <p>Gets the identity provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2776,7 +2776,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkSettings`.
     ///
     /// <p>Gets the network settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2849,7 +2849,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPortal`.
     ///
     /// <p>Gets the web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2919,7 +2919,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPortalServiceProviderMetadata`.
     ///
     /// <p>Gets the service provider metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPortalServiceProviderMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2989,7 +2989,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTrustStore`.
     ///
     /// <p>Gets the trust store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3062,7 +3062,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTrustStoreCertificate`.
     ///
     /// <p>Gets the trust store certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrustStoreCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3145,7 +3145,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUserSettings`.
     ///
     /// <p>Gets user settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3218,7 +3218,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBrowserSettings`.
     ///
     /// <p>Retrieves a list of browser settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3298,7 +3298,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIdentityProviders`.
     ///
     /// <p>Retrieves a list of identity providers for a specific web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentityProviders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3388,7 +3388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNetworkSettings`.
     ///
     /// <p>Retrieves a list of network settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3468,7 +3468,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPortals`.
     ///
     /// <p>Retrieves a list or web portals.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPortals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3548,7 +3548,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves a list of tags for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3618,7 +3618,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTrustStoreCertificates`.
     ///
     /// <p>Retrieves a list of trust store certificates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrustStoreCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3711,7 +3711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTrustStores`.
     ///
     /// <p>Retrieves a list of trust stores.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrustStores<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3791,7 +3791,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUserSettings`.
     ///
     /// <p>Retrieves a list of user settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3871,7 +3871,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites one or more tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3978,7 +3978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4065,7 +4065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBrowserSettings`.
     ///
     /// <p>Updates browser settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4173,7 +4173,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIdentityProvider`.
     ///
     /// <p>Updates the identity provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4318,7 +4318,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNetworkSettings`.
     ///
     /// <p>Updates network settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4455,7 +4455,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePortal`.
     ///
     /// <p>Updates a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4535,7 +4535,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTrustStore`.
     ///
     /// <p>Updates the trust store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4662,7 +4662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserSettings`.
     ///
     /// <p>Updates the user settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

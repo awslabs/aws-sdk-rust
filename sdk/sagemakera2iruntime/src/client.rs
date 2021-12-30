@@ -132,7 +132,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified human loop for a flow definition.</p>
     /// <p>If the human loop was deleted, this operation will return a
     /// <code>ResourceNotFoundException</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHumanLoop<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -206,7 +206,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the specified human loop. If the human loop was deleted, this
     /// operation will return a <code>ResourceNotFoundException</code> error. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHumanLoop<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -279,7 +279,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHumanLoops`.
     ///
     /// <p>Returns information about human loops, given the specified parameters. If a human loop was deleted, it will not be included.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHumanLoops<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -417,7 +417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartHumanLoop`.
     ///
     /// <p>Starts a human loop, provided that at least one activation condition is met.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartHumanLoop<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -533,7 +533,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopHumanLoop`.
     ///
     /// <p>Stops the specified human loop.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopHumanLoop<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -154,7 +154,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -299,7 +299,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -387,7 +387,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -463,7 +463,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -536,7 +536,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -609,7 +609,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -705,7 +705,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -795,7 +795,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

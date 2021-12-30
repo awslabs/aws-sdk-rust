@@ -291,7 +291,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelJob`.
     ///
     /// <p>This operation cancels a job. Jobs can be cancelled only when they are in the WAITING state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -361,7 +361,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataSet`.
     ///
     /// <p>This operation creates a data set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -477,7 +477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEventAction`.
     ///
     /// <p>This operation creates an event action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -557,7 +557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateJob`.
     ///
     /// <p>This operation creates a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -640,7 +640,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRevision`.
     ///
     /// <p>This operation creates a revision for a data set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -743,7 +743,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAsset`.
     ///
     /// <p>This operation deletes an asset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -833,7 +833,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataSet`.
     ///
     /// <p>This operation deletes a data set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -903,7 +903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEventAction`.
     ///
     /// <p>This operation deletes the event action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -976,7 +976,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRevision`.
     ///
     /// <p>This operation deletes a revision.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1056,7 +1056,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAsset`.
     ///
     /// <p>This operation returns information about an asset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1146,7 +1146,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataSet`.
     ///
     /// <p>This operation returns information about a data set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1216,7 +1216,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEventAction`.
     ///
     /// <p>This operation retrieves information about an event action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1289,7 +1289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJob`.
     ///
     /// <p>This operation returns information about a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1359,7 +1359,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRevision`.
     ///
     /// <p>This operation returns information about a revision.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1439,7 +1439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataSetRevisions`.
     ///
     /// <p>This operation lists a data set's revisions sorted by CreatedAt in descending order.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSetRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1529,7 +1529,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataSets`.
     ///
     /// <p>This operation lists your data sets. When listing by origin OWNED, results are sorted by CreatedAt in descending order. When listing by origin ENTITLED, there is no order and the maxResults parameter is ignored.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1619,7 +1619,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEventActions`.
     ///
     /// <p>This operation lists your event actions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1712,7 +1712,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p>This operation lists your jobs sorted by CreatedAt in descending order.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1812,7 +1812,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRevisionAssets`.
     ///
     /// <p>This operation lists a revision's assets sorted alphabetically in descending order.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRevisionAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1912,7 +1912,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>This operation lists the tags on the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1982,7 +1982,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendApiAsset`.
     ///
     /// <p>This operation invokes an API Gateway API asset. The request is proxied to the provider’s API Gateway API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendApiAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2148,7 +2148,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartJob`.
     ///
     /// <p>This operation starts a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2218,7 +2218,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>This operation tags a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2311,7 +2311,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>This operation removes one or more tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2398,7 +2398,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAsset`.
     ///
     /// <p>This operation updates an asset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2498,7 +2498,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataSet`.
     ///
     /// <p>This operation updates a data set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2588,7 +2588,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEventAction`.
     ///
     /// <p>This operation updates the event action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEventAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2671,7 +2671,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRevision`.
     ///
     /// <p>This operation updates a revision.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

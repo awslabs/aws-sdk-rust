@@ -173,7 +173,7 @@ pub mod fluent_builders {
     ///
     /// <p>Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code> state
     /// after you acknowledge them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAcknowledgeAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -254,7 +254,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after
     /// you disable them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisableAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -335,7 +335,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after you
     /// enable them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchEnableAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -419,7 +419,7 @@ pub mod fluent_builders {
     /// that input. If multiple messages are sent, the order in which the messages are processed isn't
     /// guaranteed. To guarantee ordering, you must send messages one at a time and wait for a
     /// successful response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -501,7 +501,7 @@ pub mod fluent_builders {
     ///
     /// <p>Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after you
     /// reset them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchResetAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -582,7 +582,7 @@ pub mod fluent_builders {
     ///
     /// <p>Changes one or more alarms to the snooze mode. The alarms change to the
     /// <code>SNOOZE_DISABLED</code> state after you set them to the snooze mode.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchSnoozeAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -663,7 +663,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the state, variable values, and timer settings of one or more detectors
     /// (instances) of a specified detector model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -740,7 +740,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAlarm`.
     ///
     /// <p>Retrieves information about an alarm.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -825,7 +825,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDetector`.
     ///
     /// <p>Returns information about the specified detector (instance).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -913,7 +913,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists one or more alarms. The operation returns only the metadata associated with each
     /// alarm.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlarms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1006,7 +1006,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDetectors`.
     ///
     /// <p>Lists detectors (the instances of a detector model).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

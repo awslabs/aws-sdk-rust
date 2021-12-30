@@ -278,7 +278,7 @@ pub mod fluent_builders {
     /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact with
     /// local IoT devices</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateClientDeviceWithCoreDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -377,7 +377,7 @@ pub mod fluent_builders {
     /// <p>Disassociate a list of client devices from a core device. After you disassociate a client
     /// device from a core device, the client device won't be able to use cloud discovery to retrieve
     /// the core device's connectivity information and certificates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateClientDeviceFromCoreDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -476,7 +476,7 @@ pub mod fluent_builders {
     /// <p>Cancels a deployment. This operation cancels the deployment for devices that haven't yet
     /// received it. If a device already received the deployment, this operation doesn't change
     /// anything for that device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -605,7 +605,7 @@ pub mod fluent_builders {
     /// </note>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponentVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -755,7 +755,7 @@ pub mod fluent_builders {
     /// This operation returns the revision number of the new deployment when you create it.</p>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the
     /// <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -950,7 +950,7 @@ pub mod fluent_builders {
     /// component version, you can remove the component from the deployment or update the deployment
     /// to use a valid version.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1023,7 +1023,7 @@ pub mod fluent_builders {
     /// device from the list of core devices. This operation doesn't delete the IoT thing. For more
     /// information about how to delete the IoT thing, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a> in the
     /// <i>IoT API Reference</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCoreDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1096,7 +1096,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeComponent`.
     ///
     /// <p>Retrieves metadata for a version of a component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1167,7 +1167,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the recipe for a version of a component. Core devices can call this operation to
     /// identify the artifacts and requirements to install a component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1251,7 +1251,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the pre-signed URL to download a public component artifact. Core devices call this
     /// operation to identify the URL that they can use to download an artifact to install.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponentVersionArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1344,7 +1344,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCoreDevice`.
     ///
     /// <p>Retrieves metadata for a Greengrass core device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCoreDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1417,7 +1417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeployment`.
     ///
     /// <p>Gets a deployment. Deployments define the components that run on Greengrass core devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1491,7 +1491,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a paginated list of client devices that are associated with a core
     /// device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClientDevicesAssociatedWithCoreDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1587,7 +1587,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a paginated list of component summaries. This list includes components that you
     /// have permission to view.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1684,7 +1684,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListComponentVersions`.
     ///
     /// <p>Retrieves a paginated list of all versions for a component. Greater versions are listed first.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponentVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1774,7 +1774,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCoreDevices`.
     ///
     /// <p>Retrieves a paginated list of Greengrass core devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCoreDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1906,7 +1906,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeployments`.
     ///
     /// <p>Retrieves a paginated list of deployments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2036,7 +2036,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a paginated list of deployment jobs that IoT Greengrass sends to Greengrass core
     /// devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEffectiveDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2129,7 +2129,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstalledComponents`.
     ///
     /// <p>Retrieves a paginated list of the components that a Greengrass core device runs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstalledComponents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2222,7 +2222,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves the list of tags for an IoT Greengrass resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2306,7 +2306,7 @@ pub mod fluent_builders {
     /// <p>To use this operation, you must use the data plane API endpoint and authenticate with an
     /// IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">IoT Greengrass endpoints and quotas</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResolveComponentCandidates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2397,7 +2397,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds tags to an IoT Greengrass resource. If a tag already exists for the resource, this operation
     /// updates the tag's value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2494,7 +2494,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from an IoT Greengrass resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

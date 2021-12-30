@@ -139,7 +139,7 @@ pub mod fluent_builders {
     /// <p>Seals and completes the snapshot after all of the required blocks of data have been
     /// written to it. Completing the snapshot changes the status to <code>completed</code>. You
     /// cannot write new blocks to a snapshot after it has been completed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CompleteSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -272,7 +272,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSnapshotBlock`.
     ///
     /// <p>Returns the data in a block in an Amazon Elastic Block Store snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSnapshotBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -379,7 +379,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the blocks that are different between two
     /// Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChangedBlocks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -515,7 +515,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSnapshotBlocks`.
     ///
     /// <p>Returns information about the blocks in an Amazon Elastic Block Store snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSnapshotBlocks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -797,7 +797,7 @@ pub mod fluent_builders {
     /// after the request completes. </p>
     /// <p>After creating the snapshot, use <a href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to
     /// write blocks of data to the snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

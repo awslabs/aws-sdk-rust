@@ -224,7 +224,7 @@ pub mod fluent_builders {
     /// Tag key names must be unique for a trail; you cannot have two keys with the same name but different values.
     /// If you specify a key without a value, the tag will be created with the specified key and a value of null.
     /// You can tag a trail that applies to all Amazon Web Services Regions only from the Region in which the trail was created (also known as its home region).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -318,7 +318,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -629,7 +629,7 @@ pub mod fluent_builders {
     /// <p>Deletes a trail. This operation must be called from the region in which the trail was
     /// created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails
     /// in other regions) of a trail that is enabled in all regions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -705,7 +705,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTrails`.
     ///
     /// <p>Retrieves settings for one or more trails associated with the current region for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -846,7 +846,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging Data and Management Events for Trails
     /// </a> in the <i>CloudTrail User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventSelectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -968,7 +968,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging CloudTrail Insights Events for Trails
     /// </a> in the <i>CloudTrail User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightSelectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1084,7 +1084,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTrail`.
     ///
     /// <p>Returns settings information for a specified trail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1154,7 +1154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTrailStatus`.
     ///
     /// <p>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns trail status from a single region. To return trail status from all regions, you must call the operation on each region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrailStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1237,7 +1237,7 @@ pub mod fluent_builders {
     /// unique to its region. When you validate a digest file from a specific region, you must look in the same region for its
     /// corresponding public key.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPublicKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1337,7 +1337,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTags`.
     ///
     /// <p>Lists the tags for the trail in the current region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1432,7 +1432,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTrails`.
     ///
     /// <p>Lists trails that are in the current account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1555,7 +1555,7 @@ pub mod fluent_builders {
     /// <p>The rate of lookup requests is limited to two per second, per account, per region. If this
     /// limit is exceeded, a throttling error occurs.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LookupEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1739,7 +1739,7 @@ pub mod fluent_builders {
     /// advanced event selectors, see
     /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
     /// data events for trails</a> in the <i>CloudTrail User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEventSelectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1915,7 +1915,7 @@ pub mod fluent_builders {
     /// selectors that you want to enable on an existing trail. You also use
     /// <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an empty list of insight types.
     /// The valid Insights event type in this release is <code>ApiCallRateInsight</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInsightSelectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2002,7 +2002,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
     /// <p>Removes the specified tags from a trail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2095,7 +2095,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartLogging`.
     ///
     /// <p>Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartLogging<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2179,7 +2179,7 @@ pub mod fluent_builders {
     /// was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
     /// cannot be called on the shadow trails (replicated trails in other regions) of a trail
     /// enabled in all regions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopLogging<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2262,7 +2262,7 @@ pub mod fluent_builders {
     /// an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the
     /// region in which the trail was created; otherwise, an
     /// <code>InvalidHomeRegionException</code> is thrown.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

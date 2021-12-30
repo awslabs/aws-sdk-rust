@@ -648,7 +648,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDevicePool`.
     ///
     /// <p>Creates a device pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDevicePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -776,7 +776,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a profile that can be applied to one or more private fleet device
     /// instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -906,7 +906,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateNetworkProfile`.
     ///
     /// <p>Creates a network profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1105,7 +1105,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProject`.
     ///
     /// <p>Creates a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1187,7 +1187,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRemoteAccessSession`.
     ///
     /// <p>Specifies and starts a remote access session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1451,7 +1451,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a Selenium testing project. Projects are used to track <a>TestGridSession</a>
     /// instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTestGridProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1545,7 +1545,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code>
     /// constructor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTestGridUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1627,7 +1627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUpload`.
     ///
     /// <p>Uploads an app or test scripts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1936,7 +1936,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud
     /// (VPC) endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVPCEConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2059,7 +2059,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools
     /// owned by the system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDevicePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2129,7 +2129,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInstanceProfile`.
     ///
     /// <p>Deletes a profile that can be applied to one or more private device instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2201,7 +2201,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkProfile`.
     ///
     /// <p>Deletes a network profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2272,7 +2272,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an AWS Device Farm project, given the project ARN.</p>
     /// <p> Deleting this resource does not stop an in-progress run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2342,7 +2342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRemoteAccessSession`.
     ///
     /// <p>Deletes a completed remote access session and its results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2415,7 +2415,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the run, given the run ARN.</p>
     /// <p> Deleting this resource does not stop an in-progress run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2491,7 +2491,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You cannot delete a project if it has active sessions.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTestGridProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2561,7 +2561,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUpload`.
     ///
     /// <p>Deletes an upload given the upload ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2631,7 +2631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVPCEConfiguration`.
     ///
     /// <p>Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVPCEConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2704,7 +2704,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the number of unmetered iOS or unmetered Android devices that have been purchased by the
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2764,7 +2764,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevice`.
     ///
     /// <p>Gets information about a unique device type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2834,7 +2834,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceInstance`.
     ///
     /// <p>Returns information about a device instance that belongs to a private device fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2906,7 +2906,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevicePool`.
     ///
     /// <p>Gets information about a device pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevicePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2976,7 +2976,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevicePoolCompatibility`.
     ///
     /// <p>Gets information about compatibility with a device pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevicePoolCompatibility<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3211,7 +3211,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInstanceProfile`.
     ///
     /// <p>Returns information about the specified instance profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3281,7 +3281,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJob`.
     ///
     /// <p>Gets information about a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3351,7 +3351,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkProfile`.
     ///
     /// <p>Returns information about a network profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3424,7 +3424,7 @@ pub mod fluent_builders {
     /// indicates how many offerings are currently available and the offerings that will be available in the next
     /// period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the
     /// operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOfferingStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3496,7 +3496,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProject`.
     ///
     /// <p>Gets information about a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3566,7 +3566,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRemoteAccessSession`.
     ///
     /// <p>Returns a link to a currently running remote access session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3638,7 +3638,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRun`.
     ///
     /// <p>Gets information about a run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3708,7 +3708,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSuite`.
     ///
     /// <p>Gets information about a suite.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSuite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3778,7 +3778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTest`.
     ///
     /// <p>Gets information about a test.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3848,7 +3848,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTestGridProject`.
     ///
     /// <p>Retrieves information about a Selenium testing project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTestGridProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3927,7 +3927,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTestGridSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4017,7 +4017,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUpload`.
     ///
     /// <p>Gets information about an upload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4088,7 +4088,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the configuration settings for your Amazon Virtual Private
     /// Cloud (VPC) endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVPCEConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4162,7 +4162,7 @@ pub mod fluent_builders {
     /// <p>Installs an application to the device in a remote access session. For Android
     /// applications, the file must be in .apk format. For iOS applications, the file must be in
     /// .ipa format.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InstallToRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4250,7 +4250,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListArtifacts`.
     ///
     /// <p>Gets information about artifacts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4370,7 +4370,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the private device instances associated with one or more AWS
     /// accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4452,7 +4452,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevicePools`.
     ///
     /// <p>Gets information about device pools.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevicePools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4569,7 +4569,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevices`.
     ///
     /// <p>Gets information about unique device types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4848,7 +4848,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstanceProfiles`.
     ///
     /// <p>Returns information about all the instance profiles in an AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4930,7 +4930,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p>Gets information about jobs for a given test run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5012,7 +5012,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNetworkProfiles`.
     ///
     /// <p>Returns the list of available network profiles.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNetworkProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5111,7 +5111,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of offering promotions. Each offering promotion record contains the ID and description
     /// of the promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke
     /// the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you must be able to invoke this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferingPromotions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5186,7 +5186,7 @@ pub mod fluent_builders {
     /// indicates the recurring price per unit and the frequency for that offering. The API returns a
     /// <code>NotEligible</code> error if the user is not permitted to invoke the operation.  If you must be
     /// able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5261,7 +5261,7 @@ pub mod fluent_builders {
     /// account. The list is paginated and ordered by a descending timestamp (most recent transactions are first).
     /// The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If
     /// you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferingTransactions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5333,7 +5333,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Gets information about projects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5419,7 +5419,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRemoteAccessSessions`.
     ///
     /// <p>Returns a list of all currently running remote access sessions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRemoteAccessSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5503,7 +5503,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRuns`.
     ///
     /// <p>Gets information about runs, given an AWS Device Farm project ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5587,7 +5587,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSamples`.
     ///
     /// <p>Gets information about samples, given an AWS Device Farm job ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSamples<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5669,7 +5669,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSuites`.
     ///
     /// <p>Gets information about test suites for a given job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSuites<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5751,7 +5751,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for an AWS Device Farm resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5829,7 +5829,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTestGridProjects`.
     ///
     /// <p>Gets a list of all Selenium testing projects in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestGridProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5909,7 +5909,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTestGridSessionActions`.
     ///
     /// <p>Returns a list of the actions taken in a <a>TestGridSession</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestGridSessionActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5999,7 +5999,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTestGridSessionArtifacts`.
     ///
     /// <p>Retrieves a list of artifacts created during the session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestGridSessionArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6102,7 +6102,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTestGridSessions`.
     ///
     /// <p>Retrieves a list of sessions for a <a>TestGridProject</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestGridSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6257,7 +6257,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTests`.
     ///
     /// <p>Gets information about tests in a given test suite.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6343,7 +6343,7 @@ pub mod fluent_builders {
     /// if a call in your application consistently raises an exception (<code>OutOfBoundsException in
     /// MyActivity.java:386</code>), <code>ListUniqueProblems</code> returns a single entry instead of many
     /// individual entries for that exception.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUniqueProblems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6425,7 +6425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUploads`.
     ///
     /// <p>Gets information about uploads, given an AWS Device Farm project ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUploads<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6718,7 +6718,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about all Amazon Virtual Private Cloud (VPC) endpoint
     /// configurations in the AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVPCEConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6803,7 +6803,7 @@ pub mod fluent_builders {
     /// quantity for an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code>
     /// error if the user is not permitted to invoke the operation. If you must be able to invoke this operation,
     /// contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6898,7 +6898,7 @@ pub mod fluent_builders {
     /// <p>Explicitly sets the quantity of devices to renew for an offering, starting from the
     /// <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code> error if the
     /// user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RenewOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6978,7 +6978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ScheduleRun`.
     ///
     /// <p>Schedules a run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ScheduleRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7160,7 +7160,7 @@ pub mod fluent_builders {
     /// where tests have not started. You are not billed for this device. On the device where tests have started,
     /// setup suite and teardown suite tests run to completion on the device. You are billed for setup, teardown,
     /// and any tests that were in progress or already completed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7230,7 +7230,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopRemoteAccessSession`.
     ///
     /// <p>Ends a specified remote access session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7303,7 +7303,7 @@ pub mod fluent_builders {
     /// where tests have not started. You are not billed for these devices. On devices where tests have started
     /// executing, setup suite and teardown suite tests run to completion on those devices. You are billed for
     /// setup, teardown, and any tests that were in progress or already completed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7375,7 +7375,7 @@ pub mod fluent_builders {
     /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags
     /// on a resource are not specified in the request parameters, they are not changed. When a resource is deleted,
     /// the tags associated with that resource are also deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7472,7 +7472,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes the specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7567,7 +7567,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeviceInstance`.
     ///
     /// <p>Updates information about a private device instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeviceInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7666,7 +7666,7 @@ pub mod fluent_builders {
     /// <p>Modifies the name, description, and rules in a device pool given the attributes and
     /// the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a
     /// whole (or not at all).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevicePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7819,7 +7819,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInstanceProfile`.
     ///
     /// <p>Updates information about an existing private device instance profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7959,7 +7959,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNetworkProfile`.
     ///
     /// <p>Updates the network profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8163,7 +8163,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies the specified project name, given the project ARN and a new
     /// name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8253,7 +8253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTestGridProject`.
     ///
     /// <p>Change details of a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTestGridProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8356,7 +8356,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUpload`.
     ///
     /// <p>Updates an uploaded test spec.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8458,7 +8458,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVPCEConfiguration`.
     ///
     /// <p>Updates information about an Amazon Virtual Private Cloud (VPC) endpoint configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVPCEConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

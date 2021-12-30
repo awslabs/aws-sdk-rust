@@ -128,7 +128,7 @@ pub mod fluent_builders {
     /// not contain the account ID, but Amazon SageMaker determines the account ID from the
     /// authentication token that is supplied by the caller.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InvokeEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -363,7 +363,7 @@ pub mod fluent_builders {
     /// <p>Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services Signature
     /// Version 4. For information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API
     /// Reference</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InvokeEndpointAsync<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

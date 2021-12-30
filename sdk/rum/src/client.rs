@@ -173,7 +173,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How do I find a code snippet
     /// that I've already generated?</a>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -336,7 +336,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppMonitor`.
     ///
     /// <p>Deletes an existing app monitor. This immediately stops the collection of data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -406,7 +406,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppMonitor`.
     ///
     /// <p>Retrieves the complete configuration information for one app monitor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -477,7 +477,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the raw performance events that RUM has collected from your web application,
     /// so that you can do your own processing or analysis of this data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppMonitorData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -599,7 +599,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppMonitors`.
     ///
     /// <p>Returns a list of the Amazon CloudWatch RUM app monitors in the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppMonitors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -679,7 +679,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Displays the tags associated with a CloudWatch RUM resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -752,7 +752,7 @@ pub mod fluent_builders {
     /// snippet that RUM generates for you to add to your application includes <code>PutRumEvents</code> operations to
     /// send this data to RUM.</p>
     /// <p>Each <code>PutRumEvents</code> operation can send a batch of events from one user session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRumEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -888,7 +888,7 @@ pub mod fluent_builders {
     /// the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -981,7 +981,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1078,7 +1078,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How do I find a code snippet
     /// that I've already generated?</a>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

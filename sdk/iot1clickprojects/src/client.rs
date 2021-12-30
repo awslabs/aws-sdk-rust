@@ -211,7 +211,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateDeviceWithPlacement`.
     ///
     /// <p>Associates a physical device with a placement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDeviceWithPlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -321,7 +321,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePlacement`.
     ///
     /// <p>Creates an empty placement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -430,7 +430,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an empty project with a placement template. A project contains zero or more
     /// placements that adhere to the placement template defined in the project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -560,7 +560,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>When you delete a placement, all associated data becomes irretrievable.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -647,7 +647,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>When you delete a project, all associated data becomes irretrievable.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -717,7 +717,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePlacement`.
     ///
     /// <p>Describes a placement in a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -800,7 +800,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
     /// <p>Returns an object describing a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -870,7 +870,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateDeviceFromPlacement`.
     ///
     /// <p>Removes a physical device from a placement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDeviceFromPlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -966,7 +966,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevicesInPlacement`.
     ///
     /// <p>Returns an object enumerating the devices in a placement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevicesInPlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1049,7 +1049,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPlacements`.
     ///
     /// <p>Lists the placement(s) of a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlacements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1141,7 +1141,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Lists the AWS IoT 1-Click project(s) associated with your AWS account and region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1223,7 +1223,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags (metadata key/value pairs) which you have assigned to the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1295,7 +1295,7 @@ pub mod fluent_builders {
     /// <p>Creates or modifies tags for a resource. Tags are key/value pairs (metadata) that can be
     /// used to manage a resource. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
     /// Strategies</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1390,7 +1390,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags (metadata key/value pairs) from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1478,7 +1478,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a placement with the given attributes. To clear an attribute, pass an empty value
     /// (i.e., "").</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1589,7 +1589,7 @@ pub mod fluent_builders {
     /// device template names, you can pass just the values that need to be updated because the update
     /// request will change only the values that are provided. To clear a value, pass the empty string
     /// (i.e., <code>""</code>).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

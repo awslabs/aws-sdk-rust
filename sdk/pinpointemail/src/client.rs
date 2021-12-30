@@ -437,7 +437,7 @@ pub mod fluent_builders {
     /// set to an email by including a reference to the configuration set in the headers of the
     /// email. When you apply a configuration set to an email, all of the rules in that
     /// configuration set are applied to the email. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -595,7 +595,7 @@ pub mod fluent_builders {
     /// receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term
     /// storage.</p>
     /// <p>A single configuration set can include more than one event destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -702,7 +702,7 @@ pub mod fluent_builders {
     /// IP addresses that are associated with your Amazon Pinpoint account. You can associate a pool with
     /// a configuration set. When you send an email that uses that configuration set, Amazon Pinpoint
     /// sends it using only the IP addresses in the associated pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDedicatedIpPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -797,7 +797,7 @@ pub mod fluent_builders {
     /// providers. After about 24 hours, the test is complete, and you can use the
     /// <code>GetDeliverabilityTestReport</code> operation to view the results of the
     /// test.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeliverabilityTestReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -927,7 +927,7 @@ pub mod fluent_builders {
     /// domain. Your domain is verified when Amazon Pinpoint detects these records in the DNS
     /// configuration for your domain. It usually takes around 72 hours to complete the domain
     /// verification process.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1024,7 +1024,7 @@ pub mod fluent_builders {
     /// reference to the configuration set in the headers of the email. When you apply a
     /// configuration set to an email, all of the rules in that configuration set are applied to
     /// the email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1102,7 +1102,7 @@ pub mod fluent_builders {
     /// you can send information about these events to. For example, you can send event data to
     /// Amazon SNS to receive notifications when you receive bounces or complaints, or you can use
     /// Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1192,7 +1192,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDedicatedIpPool`.
     ///
     /// <p>Delete a dedicated IP pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDedicatedIpPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1263,7 +1263,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an email identity that you previously verified for use with Amazon Pinpoint. An identity
     /// can be either an email address or a domain name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1339,7 +1339,7 @@ pub mod fluent_builders {
     ///
     /// <p>Obtain information about the email-sending status and capabilities of your Amazon Pinpoint
     /// account in the current AWS Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1399,7 +1399,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBlacklistReports`.
     ///
     /// <p>Retrieve a list of the blacklists that your dedicated IP addresses appear on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlacklistReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1487,7 +1487,7 @@ pub mod fluent_builders {
     /// reference to the configuration set in the headers of the email. When you apply a
     /// configuration set to an email, all of the rules in that configuration set are applied to
     /// the email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1568,7 +1568,7 @@ pub mod fluent_builders {
     /// you can send information about these events to. For example, you can send event data to
     /// Amazon SNS to receive notifications when you receive bounces or complaints, or you can use
     /// Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationSetEventDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1645,7 +1645,7 @@ pub mod fluent_builders {
     /// <p>Get information about a dedicated IP address, including the name of the dedicated IP
     /// pool that it's associated with, as well information about the automatic warm-up process
     /// for the address.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDedicatedIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1718,7 +1718,7 @@ pub mod fluent_builders {
     ///
     /// <p>List the dedicated IP addresses that are associated with your Amazon Pinpoint
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDedicatedIps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1822,7 +1822,7 @@ pub mod fluent_builders {
     /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
     /// to any other fees that you accrue by using Amazon Pinpoint. For more information about the
     /// features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeliverabilityDashboardOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1882,7 +1882,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeliverabilityTestReport`.
     ///
     /// <p>Retrieve the results of a predictive inbox placement test.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeliverabilityTestReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1955,7 +1955,7 @@ pub mod fluent_builders {
     /// for a campaign only if the campaign sent email by using a domain that the
     /// Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code>
     /// operation).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainDeliverabilityCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2032,7 +2032,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieve inbox placement and engagement rates for the domains that you use to send
     /// email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainStatisticsReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2136,7 +2136,7 @@ pub mod fluent_builders {
     /// <p>Provides information about a specific identity associated with your Amazon Pinpoint account,
     /// including the identity's verification status, its DKIM authentication status, and its
     /// custom Mail-From settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2215,7 +2215,7 @@ pub mod fluent_builders {
     /// reference to the configuration set in the headers of the email. When you apply a
     /// configuration set to an email, all of the rules in that configuration set are applied to
     /// the email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2304,7 +2304,7 @@ pub mod fluent_builders {
     ///
     /// <p>List all of the dedicated IP pools that exist in your Amazon Pinpoint account in the current
     /// AWS Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDedicatedIpPools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2394,7 +2394,7 @@ pub mod fluent_builders {
     /// <p>Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For
     /// predictive inbox placement tests that are complete, you can use the <code>GetDeliverabilityTestReport</code>
     /// operation to view the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeliverabilityTestReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2489,7 +2489,7 @@ pub mod fluent_builders {
     /// email during a specified time range. This data is available for a domain only if you
     /// enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code> operation)
     /// for the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainDeliverabilityCampaigns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2628,7 +2628,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of all of the email identities that are associated with your Amazon Pinpoint
     /// account. An identity can be either an email address or a domain. This operation returns
     /// identities that are verified as well as those that aren't.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEmailIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2723,7 +2723,7 @@ pub mod fluent_builders {
     /// key</i> and an optional associated <i>tag value</i>. A tag key
     /// is a general label that acts as a category for more specific tag values. A tag value
     /// acts as a descriptor within a tag key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2795,7 +2795,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountDedicatedIpWarmupAttributes`.
     ///
     /// <p>Enable or disable the automatic warm-up feature for dedicated IP addresses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountDedicatedIpWarmupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2873,7 +2873,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountSendingAttributes`.
     ///
     /// <p>Enable or disable the ability of your account to send email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountSendingAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2954,7 +2954,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools
     /// to create groups of dedicated IP addresses for sending specific types of email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetDeliveryOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3066,7 +3066,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enable or disable collection of reputation metrics for emails that you send using a
     /// particular configuration set in a specific AWS Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetReputationOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3158,7 +3158,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enable or disable email sending for messages that use a particular configuration set
     /// in a specific AWS Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetSendingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3246,7 +3246,7 @@ pub mod fluent_builders {
     ///
     /// <p>Specify a custom domain to use for open and click tracking elements in email that you
     /// send using Amazon Pinpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetTrackingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3345,7 +3345,7 @@ pub mod fluent_builders {
     /// using the <code>CreateDedicatedIpPool</code> operation.</p>
     ///
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDedicatedIpInPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3432,7 +3432,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutDedicatedIpWarmupAttributes`.
     ///
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDedicatedIpWarmupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3520,7 +3520,7 @@ pub mod fluent_builders {
     /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
     /// to any other fees that you accrue by using Amazon Pinpoint. For more information about the
     /// features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDeliverabilityDashboardOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3616,7 +3616,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEmailIdentityDkimAttributes`.
     ///
     /// <p>Used to enable or disable DKIM authentication for an email identity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityDkimAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3715,7 +3715,7 @@ pub mod fluent_builders {
     /// tracking bounces and complaints. If you haven't set up another mechanism for receiving
     /// bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events
     /// occur (even if this setting is disabled).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityFeedbackAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3819,7 +3819,7 @@ pub mod fluent_builders {
     ///
     /// <p>Used to enable or disable the custom Mail-From domain configuration for an email
     /// identity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityMailFromAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3982,7 +3982,7 @@ pub mod fluent_builders {
     /// valid MIME message.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4166,7 +4166,7 @@ pub mod fluent_builders {
     /// associated <i>tag value</i>, both of which you define. A tag key is a
     /// general label that acts as a category for more specific tag values. A tag value acts as
     /// a descriptor within a tag key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4261,7 +4261,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove one or more tags (keys and values) from a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4367,7 +4367,7 @@ pub mod fluent_builders {
     /// you can send information about these events to. For example, you can send event data to
     /// Amazon SNS to receive notifications when you receive bounces or complaints, or you can use
     /// Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

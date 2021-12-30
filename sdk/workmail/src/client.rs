@@ -582,7 +582,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateDelegateToResource`.
     ///
     /// <p>Adds a member (user or group) to the resource's set of delegates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDelegateToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -675,7 +675,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateMemberToGroup`.
     ///
     /// <p>Adds a member (user or group) to the group's set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateMemberToGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -772,7 +772,7 @@ pub mod fluent_builders {
     /// <p>If the mailbox export job is near completion, it might not be possible to cancel
     /// it.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelMailboxExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -865,7 +865,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAlias`.
     ///
     /// <p>Adds an alias to the set of a given member (user or group) of Amazon WorkMail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -958,7 +958,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
     /// <p>Creates a group that can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1041,7 +1041,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMobileDeviceAccessRule`.
     ///
     /// <p>Creates a new mobile device access rule for the specified Amazon WorkMail organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMobileDeviceAccessRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1300,7 +1300,7 @@ pub mod fluent_builders {
     /// <p>Optionally, you can use a customer managed master key from AWS Key Management Service
     /// (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a
     /// default AWS managed master key for you.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1429,7 +1429,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResource`.
     ///
     /// <p>Creates a new Amazon WorkMail resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1526,7 +1526,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUser`.
     ///
     /// <p>Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1632,7 +1632,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccessControlRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1716,7 +1716,7 @@ pub mod fluent_builders {
     ///
     /// <p>Remove one or more specified aliases from a set of aliases for a given
     /// user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1813,7 +1813,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGroup`.
     ///
     /// <p>Deletes a group from Amazon WorkMail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1896,7 +1896,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMailboxPermissions`.
     ///
     /// <p>Deletes permissions granted to a member (user or group).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMailboxPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1996,7 +1996,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Deleting already deleted and non-existing overrides does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMobileDeviceAccessOverride<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2120,7 +2120,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMobileDeviceAccessRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2209,7 +2209,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOrganization`.
     ///
     /// <p>Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of the organization. You can choose whether to delete the associated directory. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2302,7 +2302,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResource`.
     ///
     /// <p>Deletes the specified resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2387,7 +2387,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRetentionPolicy`.
     ///
     /// <p>Deletes the specified retention policy from the specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRetentionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2474,7 +2474,7 @@ pub mod fluent_builders {
     /// action to confirm the user state.</p>
     /// <p>Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for
     /// 30 days before they are permanently removed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2560,7 +2560,7 @@ pub mod fluent_builders {
     /// disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days
     /// before they are permanently removed. The functionality in the console is
     /// <i>Disable</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterFromWorkMail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2644,7 +2644,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first
     /// remove any email address used by WorkMail entities before you remove the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterMailDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2727,7 +2727,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeGroup`.
     ///
     /// <p>Returns the data available for the group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2810,7 +2810,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInboundDmarcSettings`.
     ///
     /// <p>Lists the settings in a DMARC policy for a specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInboundDmarcSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2883,7 +2883,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMailboxExportJob`.
     ///
     /// <p>Describes the current status of a mailbox export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMailboxExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2967,7 +2967,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides more information regarding a given organization based on its
     /// identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3040,7 +3040,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeResource`.
     ///
     /// <p>Returns the data available for the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3125,7 +3125,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUser`.
     ///
     /// <p>Provides information regarding the user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3208,7 +3208,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateDelegateFromResource`.
     ///
     /// <p>Removes a member from the resource's set of delegates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDelegateFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3305,7 +3305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMemberFromGroup`.
     ///
     /// <p>Removes a member from a group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMemberFromGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3399,7 +3399,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the effects of an organization's access control rules as they apply to a
     /// specified IPv4 address, access protocol action, or user ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccessControlEffect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3506,7 +3506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDefaultRetentionPolicy`.
     ///
     /// <p>Gets the default retention policy details for the specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDefaultRetentionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3579,7 +3579,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMailboxDetails`.
     ///
     /// <p>Requests a user's mailbox details for a specified organization and user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMailboxDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3664,7 +3664,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMailDomain`.
     ///
     /// <p>Gets details for a mail domain, including domain records required to configure your domain with recommended security.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMailDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3748,7 +3748,7 @@ pub mod fluent_builders {
     ///
     /// <p>Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access
     /// rules for the Amazon WorkMail organization for a particular user's attributes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMobileDeviceAccessEffect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3870,7 +3870,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMobileDeviceAccessOverride`.
     ///
     /// <p>Gets the mobile device access override for the given WorkMail organization, user, and device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMobileDeviceAccessOverride<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3991,7 +3991,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccessControlRules`.
     ///
     /// <p>Lists the access control rules for the specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccessControlRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4065,7 +4065,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a paginated call to list the aliases associated with a given
     /// entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4171,7 +4171,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns an overview of the members of a group. Users and groups can be members of a
     /// group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroupMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4278,7 +4278,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroups`.
     ///
     /// <p>Returns summaries of the organization's groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4374,7 +4374,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the mailbox export jobs started for the specified organization within the last
     /// seven days.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMailboxExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4468,7 +4468,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the mailbox permissions associated with a user, group, or resource
     /// mailbox.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMailboxPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4577,7 +4577,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMailDomains`.
     ///
     /// <p>Lists the mail domains in a given Amazon WorkMail organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMailDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4670,7 +4670,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMobileDeviceAccessOverrides`.
     ///
     /// <p>Lists all the mobile device access overrides for any given combination of WorkMail organization, user, or device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMobileDeviceAccessOverrides<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4811,7 +4811,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMobileDeviceAccessRules`.
     ///
     /// <p>Lists the mobile device access rules for the specified Amazon WorkMail organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMobileDeviceAccessRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4884,7 +4884,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOrganizations`.
     ///
     /// <p>Returns summaries of the customer's organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4967,7 +4967,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the delegates associated with a resource. Users and groups can be resource
     /// delegates and answer requests on behalf of the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceDelegates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5074,7 +5074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResources`.
     ///
     /// <p>Returns summaries of the organization's resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5169,7 +5169,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags applied to an Amazon WorkMail organization resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5239,7 +5239,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUsers`.
     ///
     /// <p>Returns summaries of the organization's users.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5337,7 +5337,7 @@ pub mod fluent_builders {
     /// denies access to the organization for the specified IPv4 addresses, access protocol
     /// actions, and user IDs. Adding a new rule with the same name as an existing rule replaces
     /// the older rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccessControlRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5553,7 +5553,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutInboundDmarcSettings`.
     ///
     /// <p>Enables or disables a DMARC policy for a given organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInboundDmarcSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5637,7 +5637,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sets permissions for a user, group, or resource. This replaces any pre-existing
     /// permissions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMailboxPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5763,7 +5763,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutMobileDeviceAccessOverride`.
     ///
     /// <p>Creates or updates a mobile device access override for the given WorkMail organization, user, and device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMobileDeviceAccessOverride<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5907,7 +5907,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutRetentionPolicy`.
     ///
     /// <p>Puts a retention policy to the specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRetentionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6028,7 +6028,7 @@ pub mod fluent_builders {
     ///
     /// <p>Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has
     /// permanent permission to use the specified domain for sending your users' emails.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterMailDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6127,7 +6127,7 @@ pub mod fluent_builders {
     /// functionality for this operation is <i>Enable</i>. </p>
     /// <p>Users can either be created by calling the <a>CreateUser</a> API operation
     /// or they can be synchronized from your directory. For more information, see <a>DeregisterFromWorkMail</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterToWorkMail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6222,7 +6222,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetPassword`.
     ///
     /// <p>Allows the administrator to reset the password for a user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetPassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6320,7 +6320,7 @@ pub mod fluent_builders {
     /// from the specified mailbox to the specified Amazon Simple Storage Service (Amazon S3)
     /// bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
     /// the <i>Amazon WorkMail Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMailboxExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6471,7 +6471,7 @@ pub mod fluent_builders {
     ///
     /// <p>Applies the specified tags to the specified Amazon WorkMail organization
     /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6559,7 +6559,7 @@ pub mod fluent_builders {
     ///
     /// <p>Untags the specified tags from the specified Amazon WorkMail organization
     /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6646,7 +6646,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDefaultMailDomain`.
     ///
     /// <p>Updates the default mail domain for an organization. The default mail domain is used by the WorkMail AWS Console to suggest an email address when enabling a mail user. You can only have one default domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDefaultMailDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6730,7 +6730,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a user's current mailbox quota for a specified organization and
     /// user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMailboxQuota<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6825,7 +6825,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMobileDeviceAccessRule`.
     ///
     /// <p>Updates a mobile device access rule for the specified Amazon WorkMail organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMobileDeviceAccessRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7088,7 +7088,7 @@ pub mod fluent_builders {
     /// <p>Updates the primary email for a user, group, or resource. The current email is moved
     /// into the list of aliases (or swapped between an existing alias and the current primary
     /// email), and the email provided in the input is promoted as the primary.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePrimaryEmailAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7183,7 +7183,7 @@ pub mod fluent_builders {
     /// <p>Updates data for the resource. To have the latest information, it must be preceded by
     /// a <a>DescribeResource</a> call. The dataset in the request should be the one
     /// expected when performing another <code>DescribeResource</code> call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

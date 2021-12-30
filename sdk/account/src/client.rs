@@ -118,7 +118,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified alternate contact from an Amazon Web Services account.</p>
     /// <p>For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or
     /// updating the alternate contacts</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlternateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -240,7 +240,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the specified alternate contact attached to an Amazon Web Services account.</p>
     /// <p>For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or
     /// updating the alternate contacts</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAlternateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -362,7 +362,7 @@ pub mod fluent_builders {
     /// <p>Modifies the specified alternate contact attached to an Amazon Web Services account.</p>
     /// <p>For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or
     /// updating the alternate contacts</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAlternateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

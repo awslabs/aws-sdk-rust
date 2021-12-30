@@ -354,7 +354,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApp`.
     ///
     /// <p> Creates a new Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -674,7 +674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackendEnvironment`.
     ///
     /// <p> Creates a new backend environment for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackendEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -780,7 +780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBranch`.
     ///
     /// <p> Creates a new branch for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1066,7 +1066,7 @@ pub mod fluent_builders {
     ///
     /// <p> Creates a deployment for a manually deployed Amplify app. Manually deployed apps are
     /// not connected to a repository. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1176,7 +1176,7 @@ pub mod fluent_builders {
     ///
     /// <p> Creates a new domain association for an Amplify app. This action associates a custom
     /// domain with the Amplify app </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomainAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1321,7 +1321,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWebhook`.
     ///
     /// <p> Creates a new webhook on an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1411,7 +1411,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApp`.
     ///
     /// <p> Deletes an existing Amplify app specified by an app ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1481,7 +1481,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackendEnvironment`.
     ///
     /// <p> Deletes a backend environment for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackendEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1564,7 +1564,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBranch`.
     ///
     /// <p> Deletes a branch for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1644,7 +1644,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDomainAssociation`.
     ///
     /// <p> Deletes a domain association for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomainAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1724,7 +1724,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
     /// <p> Deletes a job for a branch of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1814,7 +1814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWebhook`.
     ///
     /// <p> Deletes a webhook. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1885,7 +1885,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns the website access logs for a specific time range using a presigned URL.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateAccessLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1995,7 +1995,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApp`.
     ///
     /// <p> Returns an existing Amplify app by appID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2065,7 +2065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetArtifactUrl`.
     ///
     /// <p> Returns the artifact info that corresponds to an artifact id. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetArtifactUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2135,7 +2135,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendEnvironment`.
     ///
     /// <p> Returns a backend environment for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2218,7 +2218,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBranch`.
     ///
     /// <p> Returns a branch for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2298,7 +2298,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomainAssociation`.
     ///
     /// <p> Returns the domain information for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2378,7 +2378,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJob`.
     ///
     /// <p> Returns a job for a branch of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2468,7 +2468,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWebhook`.
     ///
     /// <p> Returns the webhook information that corresponds to a specified webhook ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2538,7 +2538,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApps`.
     ///
     /// <p> Returns a list of the existing Amplify apps. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2620,7 +2620,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListArtifacts`.
     ///
     /// <p> Returns a list of artifacts for a specified app, branch, and job. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2734,7 +2734,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBackendEnvironments`.
     ///
     /// <p> Lists the backend environments for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackendEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2841,7 +2841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBranches`.
     ///
     /// <p> Lists the branches of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBranches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2935,7 +2935,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomainAssociations`.
     ///
     /// <p> Returns the domain associations for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3029,7 +3029,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p> Lists the jobs for a branch of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3133,7 +3133,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p> Returns a list of tags for a specified Amazon Resource Name (ARN). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3203,7 +3203,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWebhooks`.
     ///
     /// <p> Returns a list of webhooks for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebhooks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3298,7 +3298,7 @@ pub mod fluent_builders {
     ///
     /// <p> Starts a deployment for a manually deployed app. Manually deployed apps are not
     /// connected to a repository. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3402,7 +3402,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartJob`.
     ///
     /// <p> Starts a new job for a branch of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3558,7 +3558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopJob`.
     ///
     /// <p> Stops a job that is in progress for a branch of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3648,7 +3648,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p> Tags the resource with a tag key and value. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3741,7 +3741,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p> Untags a resource with a specified Amazon Resource Name (ARN). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3828,7 +3828,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApp`.
     ///
     /// <p> Updates an existing Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4133,7 +4133,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBranch`.
     ///
     /// <p> Updates a branch for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4395,7 +4395,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomainAssociation`.
     ///
     /// <p> Creates a new domain association for an Amplify app.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4540,7 +4540,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWebhook`.
     ///
     /// <p> Updates a webhook. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

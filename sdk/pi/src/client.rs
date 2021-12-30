@@ -121,7 +121,7 @@ pub mod fluent_builders {
     /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements,
     /// only the first 500 bytes are returned.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDimensionKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -474,7 +474,7 @@ pub mod fluent_builders {
     /// SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension <code>db.sql.statement</code>
     /// associated with this ID. This operation is useful because <code>GetResourceMetrics</code> and
     /// <code>DescribeDimensionKeys</code> don't support retrieval of large SQL statement text.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDimensionKeyDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -617,7 +617,7 @@ pub mod fluent_builders {
     /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements,
     /// only the first 500 bytes are returned.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

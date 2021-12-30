@@ -432,7 +432,7 @@ pub mod fluent_builders {
     /// <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To
     /// associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL ID
     /// to the Amazon Resource Name (ARN) of the web ACL. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -563,7 +563,7 @@ pub mod fluent_builders {
     /// Rule group capacity is fixed at creation, which helps users plan their  
     /// web ACL WCU usage when they use a rule group.
     /// The WCU limit for web ACLs is 1,500.  </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckCapacity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -673,7 +673,7 @@ pub mod fluent_builders {
     /// originate from specific IP addresses or ranges of IP addresses. For example, if you're
     /// receiving a lot of requests from a ranges of IP addresses, you can configure WAF to
     /// block them using an IPSet that lists those IP addresses. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -863,7 +863,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>, to have WAF inspect a web request
     /// component for the specified patterns.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRegexPatternSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1006,7 +1006,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a <a>RuleGroup</a> per the specifications provided. </p>
     /// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1231,7 +1231,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a <a>WebACL</a> per the specifications provided.</p>
     /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.  </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1451,7 +1451,7 @@ pub mod fluent_builders {
     /// <p>Deletes all rule groups that are managed by Firewall Manager for the specified web ACL. </p>
     /// <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified
     /// <a>WebACL</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFirewallManagerRuleGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1534,7 +1534,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIPSet`.
     ///
     /// <p>Deletes the specified <a>IPSet</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1652,7 +1652,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLoggingConfiguration`.
     ///
     /// <p>Deletes the <a>LoggingConfiguration</a> from the specified web ACL.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1725,7 +1725,7 @@ pub mod fluent_builders {
     ///
     /// <p>Permanently deletes an IAM policy from the specified rule group.</p>
     /// <p>You must be the owner of the rule group to perform this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePermissionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1799,7 +1799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRegexPatternSet`.
     ///
     /// <p>Deletes the specified <a>RegexPatternSet</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRegexPatternSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1917,7 +1917,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRuleGroup`.
     ///
     /// <p>Deletes the specified <a>RuleGroup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2037,7 +2037,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified <a>WebACL</a>.</p>
     /// <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified
     /// <a>WebACL</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2156,7 +2156,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides high-level information for a managed rule group, including descriptions of the
     /// rules. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeManagedRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2281,7 +2281,7 @@ pub mod fluent_builders {
     /// <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To
     /// disassociate a web ACL, provide an empty web ACL ID in the CloudFront call
     /// <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2389,7 +2389,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIPSet`.
     ///
     /// <p>Retrieves the specified <a>IPSet</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2497,7 +2497,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLoggingConfiguration`.
     ///
     /// <p>Returns the <a>LoggingConfiguration</a> for the specified web ACL.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2573,7 +2573,7 @@ pub mod fluent_builders {
     /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
     /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetManagedRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2684,7 +2684,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the IAM policy that is attached to the specified rule group.</p>
     /// <p>You must be the owner of the rule group to perform this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPermissionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2758,7 +2758,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the keys that are currently blocked by a rate-based rule instance. The maximum number of managed keys that can be blocked for a single rate-based rule instance is 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest rates are blocked.</p>
     /// <p>For a rate-based rule that you've defined inside a rule group, provide the name of the rule group reference statement in your request, in addition to the rate-based rule name and the web ACL name. </p>
     /// <p>WAF monitors web requests and manages keys independently for each unique combination of web ACL, optional rule group, and rate-based rule. For example, if you define a rate-based rule inside a rule group, and then use the rule group in a web ACL, WAF monitors web requests and manages keys for that web ACL, rule group reference statement, and rate-based rule instance. If you use the same rule group in a second web ACL, WAF monitors web requests and manages keys for this second usage completely independent of your first.  </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRateBasedStatementManagedKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2891,7 +2891,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRegexPatternSet`.
     ///
     /// <p>Retrieves the specified <a>RegexPatternSet</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRegexPatternSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2999,7 +2999,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRuleGroup`.
     ///
     /// <p>Retrieves the specified <a>RuleGroup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3126,7 +3126,7 @@ pub mod fluent_builders {
     /// requests before the specified time range elapsed, <code>GetSampledRequests</code> returns
     /// an updated time range. This new time range indicates the actual period during which WAF
     /// selected the requests in the sample.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSampledRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3280,7 +3280,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWebACL`.
     ///
     /// <p>Retrieves the specified <a>WebACL</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3388,7 +3388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWebACLForResource`.
     ///
     /// <p>Retrieves the <a>WebACL</a> for the specified resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWebACLForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3460,7 +3460,7 @@ pub mod fluent_builders {
     /// <p>Retrieves an array of managed rule groups that are available for you to use. This list
     /// includes all Amazon Web Services Managed Rules rule groups and all of the Amazon Web Services Marketplace managed rule groups that you're
     /// subscribed to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAvailableManagedRuleGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3576,7 +3576,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAvailableManagedRuleGroupVersions`.
     ///
     /// <p>Returns a list of the available versions for the specified managed rule group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAvailableManagedRuleGroupVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3715,7 +3715,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you
     /// manage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIPSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3831,7 +3831,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLoggingConfigurations`.
     ///
     /// <p>Retrieves an array of your <a>LoggingConfiguration</a> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLoggingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3951,7 +3951,7 @@ pub mod fluent_builders {
     /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
     /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedRuleSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4068,7 +4068,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex
     /// pattern sets that you manage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRegexPatternSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4186,7 +4186,7 @@ pub mod fluent_builders {
     /// <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that
     /// are associated with the specified web ACL. If you want the list of Amazon CloudFront resources, use
     /// the CloudFront call <code>ListDistributionsByWebACLId</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourcesForWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4272,7 +4272,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups
     /// that you manage. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRuleGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4395,7 +4395,7 @@ pub mod fluent_builders {
     /// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule
     /// groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF
     /// console. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4494,7 +4494,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you
     /// manage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebACLs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4632,7 +4632,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation completely replaces the mutable specifications that you already have for the logging configuration with the ones that you provide to this call. To modify the logging configuration, retrieve it by calling <a>GetLoggingConfiguration</a>, update the settings as needed, and then provide the complete logging configuration specification to this call.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4719,7 +4719,7 @@ pub mod fluent_builders {
     /// specification for each version. For each managed rule set, you must specify a version that
     /// you recommend using. </p>
     /// <p>To initiate the expiration of a managed rule group version, use <a>UpdateManagedRuleSetVersionExpiryDate</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutManagedRuleSetVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4895,7 +4895,7 @@ pub mod fluent_builders {
     /// <p>The user making the request must be the owner of the rule group.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPermissionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5028,7 +5028,7 @@ pub mod fluent_builders {
     /// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule
     /// groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF
     /// console. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5118,7 +5118,7 @@ pub mod fluent_builders {
     /// associate with Amazon Web Services resources. For example, the tag key might be "customer" and the tag
     /// value might be "companyA." You can specify one or more tags to add to each container. You
     /// can add up to 50 tags to each Amazon Web Services resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5208,7 +5208,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation completely replaces the mutable specifications that you already have for the IP set with the ones that you provide to this call. To modify the IP set, retrieve it by calling <a>GetIPSet</a>, update the settings as needed, and then provide the complete IP set specification to this call.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5393,7 +5393,7 @@ pub mod fluent_builders {
     /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
     /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateManagedRuleSetVersionExpiryDate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5548,7 +5548,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation completely replaces the mutable specifications that you already have for the regex pattern set with the ones that you provide to this call. To modify the regex pattern set, retrieve it by calling <a>GetRegexPatternSet</a>, update the settings as needed, and then provide the complete regex pattern set specification to this call.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRegexPatternSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5697,7 +5697,7 @@ pub mod fluent_builders {
     /// <p>This operation completely replaces the mutable specifications that you already have for the rule group with the ones that you provide to this call. To modify the rule group, retrieve it by calling <a>GetRuleGroup</a>, update the settings as needed, and then provide the complete rule group specification to this call.</p>
     /// </note>
     /// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5896,7 +5896,7 @@ pub mod fluent_builders {
     /// <p>This operation completely replaces the mutable specifications that you already have for the web ACL with the ones that you provide to this call. To modify the web ACL, retrieve it by calling <a>GetWebACL</a>, update the settings as needed, and then provide the complete web ACL specification to this call.</p>
     /// </note>
     /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.  </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

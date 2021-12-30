@@ -352,7 +352,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html">HTTPS
     /// listeners</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS
     /// listeners</a> in the <i>Network Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddListenerCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -447,7 +447,7 @@ pub mod fluent_builders {
     /// listeners, and rules.</p>
     /// <p>Each tag consists of a key and an optional value. If a resource already has a tag with the
     /// same key, <code>AddTags</code> updates its value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -568,7 +568,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation is idempotent, which means that it completes at most one time. If you
     /// attempt to create multiple listeners with the same settings, each call succeeds.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -849,7 +849,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation is idempotent, which means that it completes at most one time. If you
     /// attempt to create multiple load balancers with the same settings, each call succeeds.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1123,7 +1123,7 @@ pub mod fluent_builders {
     /// are evaluated in priority order, from the lowest value to the highest value. When the
     /// conditions for a rule are met, its actions are performed. If the conditions for no rules are
     /// met, the actions for the default rule are performed. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener rules</a> in the <i>Application Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1281,7 +1281,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation is idempotent, which means that it completes at most one time. If you
     /// attempt to create multiple target groups with the same settings, each call succeeds.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTargetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1679,7 +1679,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified listener.</p>
     /// <p>Alternatively, your listener is deleted when you delete the load balancer to which it is
     /// attached.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1755,7 +1755,7 @@ pub mod fluent_builders {
     /// <p>Deleting a load balancer does not affect its registered targets. For example, your EC2
     /// instances continue to run and are still registered to their target groups. If you no longer
     /// need these EC2 instances, you can stop or terminate them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1829,7 +1829,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified rule.</p>
     /// <p>You can't delete the default rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1903,7 +1903,7 @@ pub mod fluent_builders {
     /// group also deletes any associated health checks. Deleting a target group does not affect its
     /// registered targets. For example, any EC2 instances continue to run until you stop or terminate
     /// them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTargetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1977,7 +1977,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deregisters the specified targets from the specified target group. After the targets are
     /// deregistered, they no longer receive traffic from the load balancer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2091,7 +2091,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2180,7 +2180,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL certificates</a> in the <i>Application Load Balancers Guide</i> or
     /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#tls-listener-certificate">Server certificates</a> in the <i>Network Load Balancers
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeListenerCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2274,7 +2274,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified listeners or the listeners for the specified Application Load
     /// Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either a load
     /// balancer or one or more listeners.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeListeners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2409,7 +2409,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2482,7 +2482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoadBalancers`.
     ///
     /// <p>Describes the specified load balancers or all of your load balancers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2601,7 +2601,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the specified rules or the rules for the specified listener. You must specify
     /// either a listener or one or more rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2712,7 +2712,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified policies or all policies used for SSL negotiation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or
     /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSSLPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2828,7 +2828,7 @@ pub mod fluent_builders {
     /// <p>Describes the tags for the specified Elastic Load Balancing resources. You can describe
     /// the tags for one or more Application Load Balancers, Network Load Balancers, Gateway Load
     /// Balancers, target groups, listeners, or rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2928,7 +2928,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTargetGroupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3004,7 +3004,7 @@ pub mod fluent_builders {
     /// groups are described. Alternatively, you can specify one of the following to filter the
     /// results: the ARN of the load balancer, the names of one or more target groups, or the ARNs of
     /// one or more target groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3133,7 +3133,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTargetHealth`.
     ///
     /// <p>Describes the health of the specified targets or all of your targets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTargetHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3230,7 +3230,7 @@ pub mod fluent_builders {
     /// <p>To add an item to a list, remove an item from a list, or update an item in a list, you
     /// must provide the entire list. For example, to add an action, specify a list with the current
     /// actions plus the new action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3465,7 +3465,7 @@ pub mod fluent_builders {
     /// Balancer, or Gateway Load Balancer.</p>
     /// <p>If any of the specified attributes can't be modified as requested, the call fails. Any
     /// existing attributes that you do not modify retain their current values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyLoadBalancerAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3559,7 +3559,7 @@ pub mod fluent_builders {
     /// <p>To add an item to a list, remove an item from a list, or update an item in a list, you
     /// must provide the entire list. For example, to add an action, specify a list with the current
     /// actions plus the new action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3664,7 +3664,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies the health checks used when evaluating the health state of the targets in the
     /// specified target group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTargetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3875,7 +3875,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyTargetGroupAttributes`.
     ///
     /// <p>Modifies the specified attributes of the specified target group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTargetGroupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3977,7 +3977,7 @@ pub mod fluent_builders {
     /// <p>With a Network Load Balancer, you cannot register instances by instance ID if they have
     /// the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3,
     /// and T1. You can register instances of these types by IP address.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4068,7 +4068,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the specified certificate from the certificate list for the specified HTTPS or TLS
     /// listener.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveListenerCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4161,7 +4161,7 @@ pub mod fluent_builders {
     /// <p>Removes the specified tags from the specified Elastic Load Balancing resources. You can
     /// remove the tags for one or more Application Load Balancers, Network Load Balancers, Gateway
     /// Load Balancers, target groups, listeners, or rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4256,7 +4256,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sets the type of IP addresses used by the subnets of the specified Application Load
     /// Balancer or Network Load Balancer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIpAddressType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4350,7 +4350,7 @@ pub mod fluent_builders {
     /// <p>Sets the priorities of the specified rules.</p>
     /// <p>You can reorder the rules as long as there are no priority conflicts in the new order. Any
     /// existing rules that you do not specify retain their current priority.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetRulePriorities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4430,7 +4430,7 @@ pub mod fluent_builders {
     /// specified security groups override the previously associated security groups.</p>
     /// <p>You can't specify a security group for a Network Load Balancer or Gateway Load
     /// Balancer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4525,7 +4525,7 @@ pub mod fluent_builders {
     /// <p>When you specify subnets for a Network Load Balancer, you must include all subnets that
     /// were enabled previously, with their existing configurations, plus any additional
     /// subnets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

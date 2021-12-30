@@ -422,7 +422,7 @@ pub mod fluent_builders {
     /// that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a> EC2 API and filter by
     /// <code>transit-gateway-id</code>.</p>
     /// <p>You cannot associate a customer gateway with more than one device and link. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateCustomerGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -528,7 +528,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateLink`.
     ///
     /// <p>Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -625,7 +625,7 @@ pub mod fluent_builders {
     /// <p>You can only associate transit gateway Connect peers that have been created on a
     /// transit gateway that's registered in your global network.</p>
     /// <p>You cannot associate a transit gateway Connect peer with more than one device and link. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTransitGatewayConnectPeer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -738,7 +738,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConnection`.
     ///
     /// <p>Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an on-premises network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -887,7 +887,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new device in a global network. If you specify both a site ID and a
     /// location, the location of the site is used for visualization in the Network Manager console.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1071,7 +1071,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGlobalNetwork`.
     ///
     /// <p>Creates a new, empty global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGlobalNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1160,7 +1160,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLink`.
     ///
     /// <p>Creates a new link for a specified site.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1309,7 +1309,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSite`.
     ///
     /// <p>Creates a new site in a global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1449,7 +1449,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnection`.
     ///
     /// <p>Deletes the specified connection in your global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1536,7 +1536,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an existing device. You must first disassociate the device from any links and
     /// customer gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1620,7 +1620,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an existing global network. You must first delete all global network objects
     /// (devices, links, and sites) and deregister all transit gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGlobalNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1694,7 +1694,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an existing link. You must first disassociate the link from any devices and
     /// customer gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1777,7 +1777,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSite`.
     ///
     /// <p>Deletes an existing site. The site cannot be associated with any device or link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1861,7 +1861,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deregisters a transit gateway from your global network. This action does not delete
     /// your transit gateway, or modify any of its attachments. This action removes any customer gateway associations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1950,7 +1950,7 @@ pub mod fluent_builders {
     /// described. To describe the objects in your global network, you must use the appropriate
     /// <code>Get*</code> action. For example, to list the transit gateways in your global
     /// network, use <a>GetTransitGatewayRegistrations</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGlobalNetworks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2047,7 +2047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateCustomerGateway`.
     ///
     /// <p>Disassociates a customer gateway from a device and a link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateCustomerGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2134,7 +2134,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disassociates an existing device from a link. You must first disassociate any customer
     /// gateways that are associated with the link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2227,7 +2227,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateTransitGatewayConnectPeer`.
     ///
     /// <p>Disassociates a transit gateway Connect peer from a device and link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTransitGatewayConnectPeer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2320,7 +2320,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnections`.
     ///
     /// <p>Gets information about one or more of your connections in a global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2441,7 +2441,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the association information for customer gateways that are associated with
     /// devices and links in your global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCustomerGatewayAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2551,7 +2551,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevices`.
     ///
     /// <p>Gets information about one or more of your devices in a global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2672,7 +2672,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the link associations for a device or a link. Either the device ID or the link ID
     /// must be specified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLinkAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2786,7 +2786,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about one or more links in a specified global network.</p>
     /// <p>If you specify the site ID, you cannot specify the type or provider in the same request. You can specify the type and provider in the same request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLinks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2926,7 +2926,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkResourceCounts`.
     ///
     /// <p>Gets the count of network resources, by resource type, for the specified global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkResourceCounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3184,7 +3184,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkResourceRelationships`.
     ///
     /// <p>Gets the network resource relationships for the specified global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkResourceRelationships<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3486,7 +3486,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the network resources for the specified global network.</p>
     /// <p>The results include information from the corresponding Describe call for the resource, minus any sensitive information such as pre-shared keys.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3787,7 +3787,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkRoutes`.
     ///
     /// <p>Gets the network routes of the specified global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4018,7 +4018,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkTelemetry`.
     ///
     /// <p>Gets the network telemetry of the specified global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkTelemetry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4319,7 +4319,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRouteAnalysis`.
     ///
     /// <p>Gets information about the specified route analysis.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRouteAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4405,7 +4405,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSites`.
     ///
     /// <p>Gets information about one or more of your sites in a global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSites<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4515,7 +4515,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTransitGatewayConnectPeerAssociations`.
     ///
     /// <p>Gets information about one or more of your transit gateway Connect peer associations in a global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTransitGatewayConnectPeerAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4631,7 +4631,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about the transit gateway registrations in a specified
     /// global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTransitGatewayRegistrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4743,7 +4743,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4815,7 +4815,7 @@ pub mod fluent_builders {
     /// <p>Registers a transit gateway in your global network. The transit gateway can be in any
     /// Amazon Web Services Region, but it must be owned by the same Amazon Web Services account that owns
     /// the global network. You cannot register a transit gateway in more than one global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4902,7 +4902,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts analyzing the routing path between the specified source and destination. For more information,
     /// see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRouteAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5029,7 +5029,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tags a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5116,7 +5116,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5204,7 +5204,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the information for an existing connection. To remove information for any of the parameters,
     /// specify an empty string.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5326,7 +5326,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the details for an existing device. To remove information for any of the
     /// parameters, specify an empty string.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5504,7 +5504,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an existing global network. To remove information for any of the parameters,
     /// specify an empty string.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGlobalNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5590,7 +5590,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the details for an existing link. To remove information for any of the
     /// parameters, specify an empty string.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5722,7 +5722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNetworkResourceMetadata`.
     ///
     /// <p>Updates the resource metadata for the specified global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNetworkResourceMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5829,7 +5829,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the information for an existing site. To remove information for any of the
     /// parameters, specify an empty string.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

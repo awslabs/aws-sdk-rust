@@ -278,7 +278,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelContact`.
     ///
     /// <p>Cancels a contact with a specified contact ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -349,7 +349,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a <code>Config</code> with the specified <code>configData</code> parameters.</p>
     /// <p>Only one type of <code>configData</code> can be specified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -459,7 +459,7 @@ pub mod fluent_builders {
     /// to specify which endpoints to use during a contact.</p>
     /// <p>When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code>
     /// must match a <code>DataflowEndpoint</code> in the same group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataflowEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -562,7 +562,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings
     /// has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMissionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -732,7 +732,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfig`.
     ///
     /// <p>Deletes a <code>Config</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -815,7 +815,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataflowEndpointGroup`.
     ///
     /// <p>Deletes a dataflow endpoint group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataflowEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -891,7 +891,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMissionProfile`.
     ///
     /// <p>Deletes a mission profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMissionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -964,7 +964,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeContact`.
     ///
     /// <p>Describes an existing contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1035,7 +1035,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns <code>Config</code> information.</p>
     /// <p>Only one <code>Config</code> response can be returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1118,7 +1118,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataflowEndpointGroup`.
     ///
     /// <p>Returns the dataflow endpoint group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataflowEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1194,7 +1194,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMinuteUsage`.
     ///
     /// <p>Returns the number of minutes used by account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMinuteUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1274,7 +1274,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMissionProfile`.
     ///
     /// <p>Returns a mission profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMissionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1347,7 +1347,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSatellite`.
     ///
     /// <p>Returns a satellite.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSatellite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1417,7 +1417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConfigs`.
     ///
     /// <p>Returns a list of <code>Config</code> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1500,7 +1500,7 @@ pub mod fluent_builders {
     /// <p>If <code>statusList</code> contains AVAILABLE, the request must include
     /// <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1662,7 +1662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataflowEndpointGroups`.
     ///
     /// <p>Returns a list of <code>DataflowEndpoint</code> groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataflowEndpointGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1742,7 +1742,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroundStations`.
     ///
     /// <p>Returns a list of ground stations. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroundStations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1832,7 +1832,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMissionProfiles`.
     ///
     /// <p>Returns a list of mission profiles.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMissionProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1912,7 +1912,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSatellites`.
     ///
     /// <p>Returns a list of satellites.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSatellites<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1992,7 +1992,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags for a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2062,7 +2062,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReserveContact`.
     ///
     /// <p>Reserves a contact using specified parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReserveContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2210,7 +2210,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Assigns a tag to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2303,7 +2303,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deassigns a resource tag.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2392,7 +2392,7 @@ pub mod fluent_builders {
     /// <p>Updates the <code>Config</code> used when scheduling contacts.</p>
     /// <p>Updating a <code>Config</code> will not update the execution parameters
     /// for existing future contacts scheduled with this <code>Config</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2500,7 +2500,7 @@ pub mod fluent_builders {
     /// <p>Updates a mission profile.</p>
     /// <p>Updating a mission profile will not update the execution parameters
     /// for existing future contacts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMissionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

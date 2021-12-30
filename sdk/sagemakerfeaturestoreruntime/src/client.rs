@@ -123,7 +123,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetRecord`.
     ///
     /// <p>Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -204,7 +204,7 @@ pub mod fluent_builders {
     /// <p>Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record will show
     /// up in the <code>OfflineStore</code> when the <code>DeleteRecord</code> API is called. This
     /// record will have a value of <code>True</code> in the <code>is_deleted</code> column.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -311,7 +311,7 @@ pub mod fluent_builders {
     /// <p>Use for <code>OnlineStore</code> serving from a <code>FeatureStore</code>. Only the
     /// latest records stored in the <code>OnlineStore</code> can be retrieved. If no Record with
     /// <code>RecordIdentifierValue</code> is found, then an empty result is returned. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -427,7 +427,7 @@ pub mod fluent_builders {
     /// record is the latest record for the <code>recordIdentifier</code>, the record is written to
     /// both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is a
     /// historic record, it is written only to the <code>OfflineStore</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

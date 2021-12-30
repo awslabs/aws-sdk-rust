@@ -295,7 +295,7 @@ pub mod fluent_builders {
     /// <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key
     /// and an optional value. If you add a tag using a key that is already associated with the ML object,
     /// <code>AddTags</code> updates the tag's value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -406,7 +406,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>You can poll for status updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter of the result. After the <code>COMPLETED</code> status appears,
     /// the results are available in the location specified by the <code>OutputUri</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBatchPrediction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -543,7 +543,7 @@ pub mod fluent_builders {
     /// <p>
     /// If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute of the <code>GetDataSource</code> operation response.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSourceFromRDS<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -800,7 +800,7 @@ pub mod fluent_builders {
     /// <code>GetDataSource</code> for an existing datasource and copy the values to a
     /// <code>CreateDataSource</code> call. Change the settings that you want to change and
     /// make sure that all required fields have the appropriate values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSourceFromRedshift<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1053,7 +1053,7 @@ pub mod fluent_builders {
     /// the variable be included or excluded from training? Will the variable be manipulated;
     /// for example, will it be combined with another variable or will it be split apart into
     /// word combinations? The recipe provides answers to these questions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSourceFromS3<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1211,7 +1211,7 @@ pub mod fluent_builders {
     /// Amazon ML sets the status to <code>COMPLETED</code>.
     /// </p>
     /// <p>You can use the <code>GetEvaluation</code> operation to check progress of the evaluation during the creation operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1346,7 +1346,7 @@ pub mod fluent_builders {
     /// <code>CreateDataSourceFromRDS</code>, <code>CreateDataSourceFromS3</code>, or
     /// <code>CreateDataSourceFromRedshift</code> operations.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMLModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1615,7 +1615,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRealtimeEndpoint`.
     ///
     /// <p>Creates a real-time endpoint for the <code>MLModel</code>. The endpoint contains the URI of the <code>MLModel</code>; that is, the location to send real-time prediction requests for the specified <code>MLModel</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRealtimeEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1690,7 +1690,7 @@ pub mod fluent_builders {
     ///
     /// <p>
     /// <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is irreversible.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBatchPrediction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1766,7 +1766,7 @@ pub mod fluent_builders {
     /// <p>After using the <code>DeleteDataSource</code> operation, you can use the <a>GetDataSource</a> operation to verify that the status of the <code>DataSource</code> changed to DELETED.</p>
     /// <p>
     /// <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1844,7 +1844,7 @@ pub mod fluent_builders {
     /// <code>GetEvaluation</code> operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
     /// <p>
     /// <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1922,7 +1922,7 @@ pub mod fluent_builders {
     ///
     /// <p>
     /// <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMLModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1992,7 +1992,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRealtimeEndpoint`.
     ///
     /// <p>Deletes a real time endpoint of an <code>MLModel</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRealtimeEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2063,7 +2063,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified tags associated with an ML object. After this operation is complete, you can't recover deleted tags.</p>
     /// <p>If you specify a tag that doesn't exist, Amazon ML ignores it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2163,7 +2163,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBatchPredictions`.
     ///
     /// <p>Returns a list of <code>BatchPrediction</code> operations that match the search criteria in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBatchPredictions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2470,7 +2470,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataSources`.
     ///
     /// <p>Returns a list of <code>DataSource</code> that match the search criteria in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2759,7 +2759,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEvaluations`.
     ///
     /// <p>Returns a list of <code>DescribeEvaluations</code> that match the search criteria in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvaluations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3066,7 +3066,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMLModels`.
     ///
     /// <p>Returns a list of <code>MLModel</code> that match the search criteria in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMLModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3386,7 +3386,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
     /// <p>Describes one or more of the tags for your Amazon ML object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3470,7 +3470,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a <code>BatchPrediction</code> that includes detailed metadata, status, and data file information for a
     /// <code>Batch Prediction</code> request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBatchPrediction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3546,7 +3546,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>GetDataSource</code> provides results in normal or verbose format. The verbose format
     /// adds the schema description and the list of files pointed to by the DataSource to the normal format.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3633,7 +3633,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEvaluation`.
     ///
     /// <p>Returns an <code>Evaluation</code> that includes metadata as well as the current status of the <code>Evaluation</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3708,7 +3708,7 @@ pub mod fluent_builders {
     /// <p>Returns an <code>MLModel</code> that includes detailed metadata, data source information, and the current status of the <code>MLModel</code>.</p>
     /// <p>
     /// <code>GetMLModel</code> provides results in normal or verbose format. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3795,7 +3795,7 @@ pub mod fluent_builders {
     /// <p>
     /// <b>Note:</b> Not all response parameters will be populated. Whether a
     /// response parameter is populated depends on the type of model requested.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Predict<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3902,7 +3902,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the <code>BatchPredictionName</code> of a <code>BatchPrediction</code>.</p>
     /// <p>You can use the <code>GetBatchPrediction</code> operation to view the contents of the updated data element.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBatchPrediction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3989,7 +3989,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the <code>DataSourceName</code> of a <code>DataSource</code>.</p>
     /// <p>You can use the <code>GetDataSource</code> operation to view the contents of the updated data element.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4076,7 +4076,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p>
     /// <p>You can use the <code>GetEvaluation</code> operation to view the contents of the updated data element.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4163,7 +4163,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of an <code>MLModel</code>.</p>
     /// <p>You can use the <code>GetMLModel</code> operation to view the contents of the updated data element.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMLModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

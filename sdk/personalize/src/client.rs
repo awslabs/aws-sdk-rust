@@ -491,7 +491,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a batch inference job. The operation can handle up to 50 million records and the
     /// input file must be in JSON format. For more information, see <a>recommendations-batch</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBatchInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -657,7 +657,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a batch segment job. The operation can handle up to 50 million records and the
     /// input file must be in JSON format. For more information, see <a>recommendations-batch</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBatchSegmentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -872,7 +872,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1030,7 +1030,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1180,7 +1180,7 @@ pub mod fluent_builders {
     /// complete when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
     /// includes a <code>failureReason</code> key, which describes why the job failed.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1382,7 +1382,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1531,7 +1531,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1679,7 +1679,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventTracker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1762,7 +1762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFilter`.
     ///
     /// <p>Creates a recommendation filter. For more information, see <a>filter</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1911,7 +1911,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecommender<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2047,7 +2047,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2211,7 +2211,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSolution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2454,7 +2454,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSolutionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2568,7 +2568,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
     /// request.
     /// For more information on campaigns, see <a>CreateCampaign</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2640,7 +2640,7 @@ pub mod fluent_builders {
     /// <p>Deletes a dataset. You can't delete a dataset if an associated
     /// <code>DatasetImportJob</code> or <code>SolutionVersion</code> is in the CREATE PENDING or IN
     /// PROGRESS state. For more information on datasets, see <a>CreateDataset</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2722,7 +2722,7 @@ pub mod fluent_builders {
     /// <p>All datasets in the dataset group.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2797,7 +2797,7 @@ pub mod fluent_builders {
     /// <p>Deletes the event tracker. Does not delete the event-interactions dataset from
     /// the associated dataset group. For more
     /// information on event trackers, see <a>CreateEventTracker</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventTracker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2870,7 +2870,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFilter`.
     ///
     /// <p>Deletes a filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2941,7 +2941,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deactivates and removes a recommender. A deleted recommender can no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
     /// request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecommender<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3016,7 +3016,7 @@ pub mod fluent_builders {
     /// <p>Deletes a schema. Before deleting a schema, you must delete all
     /// datasets referencing the schema. For more information on schemas, see
     /// <a>CreateSchema</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3092,7 +3092,7 @@ pub mod fluent_builders {
     /// You can't delete a solution if an associated <code>SolutionVersion</code> is in the
     /// CREATE PENDING or IN PROGRESS state.
     /// For more information on solutions, see <a>CreateSolution</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSolution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3162,7 +3162,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAlgorithm`.
     ///
     /// <p>Describes the given algorithm.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlgorithm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3237,7 +3237,7 @@ pub mod fluent_builders {
     /// <p>Gets the properties of a batch inference job including name, Amazon Resource Name (ARN),
     /// status, input and output configurations, and the ARN of the solution version used to generate
     /// the recommendations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBatchInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3315,7 +3315,7 @@ pub mod fluent_builders {
     /// <p>Gets the properties of a batch segment job including name, Amazon Resource Name (ARN),
     /// status, input and output configurations, and the ARN of the solution version used to generate
     /// segments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBatchSegmentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3400,7 +3400,7 @@ pub mod fluent_builders {
     /// <p>When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the
     /// <code>failureReason</code> key, which describes why.</p>
     /// <p>For more information on campaigns, see <a>CreateCampaign</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3470,7 +3470,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
     /// <p>Describes the given dataset. For more information on datasets, see <a>CreateDataset</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3541,7 +3541,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the dataset export job created by <a>CreateDatasetExportJob</a>,
     /// including the export job status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3614,7 +3614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDatasetGroup`.
     ///
     /// <p>Describes the given dataset group. For more information on dataset groups, see <a>CreateDatasetGroup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3688,7 +3688,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the dataset import job created by <a>CreateDatasetImportJob</a>,
     /// including the import job status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3763,7 +3763,7 @@ pub mod fluent_builders {
     /// <p>Describes an event tracker. The response includes the <code>trackingId</code> and
     /// <code>status</code> of the event tracker.
     /// For more information on event trackers, see <a>CreateEventTracker</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventTracker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3836,7 +3836,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFeatureTransformation`.
     ///
     /// <p>Describes the given feature transformation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFeatureTransformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3912,7 +3912,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFilter`.
     ///
     /// <p>Describes a filter's properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4000,7 +4000,7 @@ pub mod fluent_builders {
     /// in the specified recipe and a training dataset. The solution, when deployed as a campaign,
     /// can provide recommendations using the
     /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4082,7 +4082,7 @@ pub mod fluent_builders {
     /// <p>When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the
     /// <code>failureReason</code> key, which describes why.</p>
     /// <p>For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecommender<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4156,7 +4156,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes a schema. For more information on schemas, see
     /// <a>CreateSchema</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4227,7 +4227,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes a solution.
     /// For more information on solutions, see <a>CreateSolution</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSolution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4297,7 +4297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSolutionVersion`.
     ///
     /// <p>Describes a specific version of a solution. For more information on solutions, see <a>CreateSolution</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSolutionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4370,7 +4370,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSolutionMetrics`.
     ///
     /// <p>Gets the metrics for the specified solution version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSolutionMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4444,7 +4444,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a list of the batch inference jobs that have been performed off of a solution
     /// version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBatchInferenceJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4542,7 +4542,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a list of the batch segment jobs that have been performed off of a solution
     /// version that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBatchSegmentJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4640,7 +4640,7 @@ pub mod fluent_builders {
     /// When a solution is not specified, all the campaigns associated with the account are listed.
     /// The response provides the properties for each campaign, including the Amazon Resource Name (ARN).
     /// For more information on campaigns, see <a>CreateCampaign</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCampaigns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4738,7 +4738,7 @@ pub mod fluent_builders {
     /// provides the properties for each dataset export job, including the Amazon Resource Name (ARN).
     /// For more information on dataset export jobs, see <a>CreateDatasetExportJob</a>. For
     /// more information on datasets, see <a>CreateDataset</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4832,7 +4832,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of dataset groups. The response provides the properties for each dataset
     /// group, including the Amazon Resource Name (ARN). For more information on dataset groups, see
     /// <a>CreateDatasetGroup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4918,7 +4918,7 @@ pub mod fluent_builders {
     /// provides the properties for each dataset import job, including the Amazon Resource Name (ARN).
     /// For more information on dataset import jobs, see <a>CreateDatasetImportJob</a>. For
     /// more information on datasets, see <a>CreateDataset</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5012,7 +5012,7 @@ pub mod fluent_builders {
     /// <p>Returns the list of datasets contained in the given dataset group. The response provides
     /// the properties for each dataset, including the Amazon Resource Name (ARN). For more
     /// information on datasets, see <a>CreateDataset</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5112,7 +5112,7 @@ pub mod fluent_builders {
     /// The response provides the properties for each event tracker, including the Amazon Resource
     /// Name (ARN) and tracking ID. For more
     /// information on event trackers, see <a>CreateEventTracker</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventTrackers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5207,7 +5207,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFilters`.
     ///
     /// <p>Lists all filters that belong to a given dataset group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5303,7 +5303,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of available recipes. The response provides the properties
     /// for each recipe, including the recipe's Amazon Resource Name (ARN).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecipes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5417,7 +5417,7 @@ pub mod fluent_builders {
     /// When a Domain dataset group is not specified, all the recommenders associated with the account are listed.
     /// The response provides the properties for each recommender, including the Amazon Resource Name (ARN).
     /// For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecommenders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5516,7 +5516,7 @@ pub mod fluent_builders {
     /// <p>Returns the list of schemas associated with the account. The response provides the
     /// properties for each schema, including the Amazon Resource Name (ARN).
     /// For more information on schemas, see <a>CreateSchema</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5601,7 +5601,7 @@ pub mod fluent_builders {
     /// When a dataset group is not specified, all the solutions associated with the account are listed.
     /// The response provides the properties for each solution, including the Amazon Resource Name (ARN).
     /// For more information on solutions, see <a>CreateSolution</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSolutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5699,7 +5699,7 @@ pub mod fluent_builders {
     /// specified, all the solution versions associated with the account are listed. The response
     /// provides the properties for each solution version, including the Amazon Resource Name (ARN).
     /// For more information on solutions, see <a>CreateSolution</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSolutionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5804,7 +5804,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>You are billed for all of the training completed up
     /// until you stop the solution version creation. You cannot resume creating a solution version once it has been stopped.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopSolutionVersionCreation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5885,7 +5885,7 @@ pub mod fluent_builders {
     /// updated campaign is <code>ACTIVE</code> before asking the campaign for recommendations.</p>
     /// </note>
     /// <p>For more information on campaigns, see <a>CreateCampaign</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5993,7 +5993,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRecommender`.
     ///
     /// <p>Updates the recommender to modify the recommender configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecommender<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

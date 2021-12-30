@@ -653,7 +653,7 @@ pub mod fluent_builders {
     /// <p>For information about setting up rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
     /// Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CloneReceiptRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -767,7 +767,7 @@ pub mod fluent_builders {
     /// using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -849,7 +849,7 @@ pub mod fluent_builders {
     /// sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -945,7 +945,7 @@ pub mod fluent_builders {
     /// <p>By default, images and links used for tracking open and click events are hosted on
     /// domains operated by Amazon SES. You can configure a subdomain of your own to handle these
     /// events. For information about using custom domains, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon SES Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSetTrackingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1046,7 +1046,7 @@ pub mod fluent_builders {
     /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1204,7 +1204,7 @@ pub mod fluent_builders {
     /// <p>Creates a new IP address filter.</p>
     /// <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReceiptFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1282,7 +1282,7 @@ pub mod fluent_builders {
     /// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReceiptRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1384,7 +1384,7 @@ pub mod fluent_builders {
     /// <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
     /// Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReceiptRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1484,7 +1484,7 @@ pub mod fluent_builders {
     /// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1558,7 +1558,7 @@ pub mod fluent_builders {
     /// <p>Deletes a configuration set. Configuration sets enable you to publish email sending
     /// events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1634,7 +1634,7 @@ pub mod fluent_builders {
     /// are associated with configuration sets, which enable you to publish email sending
     /// events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1731,7 +1731,7 @@ pub mod fluent_builders {
     /// configuration set to capture open and click events using the standard,
     /// Amazon SES-operated domains.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSetTrackingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1811,7 +1811,7 @@ pub mod fluent_builders {
     /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1888,7 +1888,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified identity (an email address or a domain) from the list of
     /// verified identities.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1969,7 +1969,7 @@ pub mod fluent_builders {
     /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIdentityPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2060,7 +2060,7 @@ pub mod fluent_builders {
     /// <p>For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon SES
     /// Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReceiptFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2133,7 +2133,7 @@ pub mod fluent_builders {
     /// <p>For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon SES
     /// Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReceiptRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2222,7 +2222,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReceiptRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2296,7 +2296,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an email template.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2370,7 +2370,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deprecated. Use the <code>DeleteIdentity</code> operation to delete email addresses
     /// and domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVerifiedEmailAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2447,7 +2447,7 @@ pub mod fluent_builders {
     /// <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
     /// Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeActiveReceiptRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2510,7 +2510,7 @@ pub mod fluent_builders {
     /// configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2606,7 +2606,7 @@ pub mod fluent_builders {
     /// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReceiptRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2691,7 +2691,7 @@ pub mod fluent_builders {
     /// <p>Returns the details of the specified receipt rule set.</p>
     /// <p>For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReceiptRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2765,7 +2765,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the email sending status of the Amazon SES account for the current region.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountSendingEnabled<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2829,7 +2829,7 @@ pub mod fluent_builders {
     /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2926,7 +2926,7 @@ pub mod fluent_builders {
     /// <p>This operation is throttled at one request per second and can only get DKIM attributes
     /// for up to 100 identities at a time.</p>
     /// <p>For more information about creating DNS records using DKIM tokens, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityDkimAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3006,7 +3006,7 @@ pub mod fluent_builders {
     /// domains).</p>
     /// <p>This operation is throttled at one request per second and can only get custom MAIL
     /// FROM attributes for up to 100 identities at a time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityMailFromDomainAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3090,7 +3090,7 @@ pub mod fluent_builders {
     /// attributes for up to 100 identities at a time.</p>
     /// <p>For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES
     /// Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityNotificationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3184,7 +3184,7 @@ pub mod fluent_builders {
     /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3298,7 +3298,7 @@ pub mod fluent_builders {
     /// process from the beginning.</p>
     /// <p>This operation is throttled at one request per second and can only get verification
     /// attributes for up to 100 identities at a time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityVerificationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3376,7 +3376,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides the sending limits for the Amazon SES account. </p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSendQuota<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3439,7 +3439,7 @@ pub mod fluent_builders {
     /// points, representing the last two weeks of sending activity. Each data point in the list
     /// contains statistics for a 15-minute period of time.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSendStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3501,7 +3501,7 @@ pub mod fluent_builders {
     /// <p>Displays the template object (which includes the Subject line, HTML part and text
     /// part) for the template you specify.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3583,7 +3583,7 @@ pub mod fluent_builders {
     /// You can then execute the <code>ListConfigurationSets</code> operation again, passing the
     /// <code>NextToken</code> parameter and the value of the NextToken element to retrieve
     /// additional results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3669,7 +3669,7 @@ pub mod fluent_builders {
     /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomVerificationEmailTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3761,7 +3761,7 @@ pub mod fluent_builders {
     /// <p>Returns a list containing all of the identities (email addresses and domains) for your
     /// AWS account in the current AWS Region, regardless of verification status.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3869,7 +3869,7 @@ pub mod fluent_builders {
     /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentityPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3951,7 +3951,7 @@ pub mod fluent_builders {
     /// <p>For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon SES
     /// Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReceiptFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4016,7 +4016,7 @@ pub mod fluent_builders {
     /// <code>ListReceiptRuleSets</code> to retrieve the additional entries.</p>
     /// <p>For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReceiptRuleSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4090,7 +4090,7 @@ pub mod fluent_builders {
     /// <p>Lists the email templates present in your Amazon SES account in the current AWS
     /// Region.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4177,7 +4177,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deprecated. Use the <code>ListIdentities</code> operation to list the email addresses
     /// and domains associated with your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVerifiedEmailAddresses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4237,7 +4237,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutConfigurationSetDeliveryOptions`.
     ///
     /// <p>Adds or updates the delivery options for a configuration set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetDeliveryOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4339,7 +4339,7 @@ pub mod fluent_builders {
     /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutIdentityPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4452,7 +4452,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReorderReceiptRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4552,7 +4552,7 @@ pub mod fluent_builders {
     /// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES
     /// Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendBounce<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4752,7 +4752,7 @@ pub mod fluent_builders {
     /// limited by your account's maximum sending rate.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendBulkTemplatedEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5068,7 +5068,7 @@ pub mod fluent_builders {
     /// Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendCustomVerificationEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5213,7 +5213,7 @@ pub mod fluent_builders {
     /// Sending Limits</a> in the <i>Amazon SES Developer Guide.</i>
     /// </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5590,7 +5590,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendRawEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5994,7 +5994,7 @@ pub mod fluent_builders {
     /// Personalized Email Using the Amazon SES API</a> in the <i>Amazon Simple Email Service
     /// Developer Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendTemplatedEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6298,7 +6298,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetActiveReceiptRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6385,7 +6385,7 @@ pub mod fluent_builders {
     /// verification process for the identity, even if the verification process isn't complete. </p>
     /// <p>You can execute this operation no more than once per second.</p>
     /// <p>For more information about Easy DKIM signing, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIdentityDkimEnabled<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6477,7 +6477,7 @@ pub mod fluent_builders {
     /// <p>You can execute this operation no more than once per second.</p>
     /// <p>For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES
     /// Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIdentityFeedbackForwardingEnabled<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6578,7 +6578,7 @@ pub mod fluent_builders {
     /// <p>You can execute this operation no more than once per second.</p>
     /// <p>For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES
     /// Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIdentityHeadersInNotificationsEnabled<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6694,7 +6694,7 @@ pub mod fluent_builders {
     /// Guide</a>.</p>
     /// </important>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIdentityMailFromDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6827,7 +6827,7 @@ pub mod fluent_builders {
     /// <p>You can execute this operation no more than once per second.</p>
     /// <p>For more information about feedback notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
     /// Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIdentityNotificationTopic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6943,7 +6943,7 @@ pub mod fluent_builders {
     /// <p>For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon SES
     /// Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetReceiptRulePosition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7038,7 +7038,7 @@ pub mod fluent_builders {
     /// <p>Creates a preview of the MIME content of an email when provided with a template and a
     /// set of replacement data.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestRenderTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7133,7 +7133,7 @@ pub mod fluent_builders {
     /// reputation metrics (such as your bounce or complaint rates) reach certain
     /// thresholds.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccountSendingEnabled<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7216,7 +7216,7 @@ pub mod fluent_builders {
     /// (Amazon SNS).</p>
     /// </note>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7312,7 +7312,7 @@ pub mod fluent_builders {
     /// and complaint rates. These metrics are published to Amazon CloudWatch. By using CloudWatch, you can
     /// create alarms when bounce or complaint rates exceed certain thresholds.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationSetReputationMetricsEnabled<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7395,7 +7395,7 @@ pub mod fluent_builders {
     /// for that configuration set (such as your bounce on complaint rate) exceed certain
     /// thresholds.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationSetSendingEnabled<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7486,7 +7486,7 @@ pub mod fluent_builders {
     /// <p>By default, images and links used for tracking open and click events are hosted on
     /// domains operated by Amazon SES. You can configure a subdomain of your own to handle these
     /// events. For information about using custom domains, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon SES Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationSetTrackingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7587,7 +7587,7 @@ pub mod fluent_builders {
     /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7746,7 +7746,7 @@ pub mod fluent_builders {
     /// <p>For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon SES
     /// Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReceiptRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7832,7 +7832,7 @@ pub mod fluent_builders {
     /// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7942,7 +7942,7 @@ pub mod fluent_builders {
     /// <i>example.com</i> with your domain. Repeat this process for each
     /// token that's generated by this operation.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifyDomainDkim<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8018,7 +8018,7 @@ pub mod fluent_builders {
     /// Guide.</i>
     /// </p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifyDomainIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8089,7 +8089,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deprecated. Use the <code>VerifyEmailIdentity</code> operation to verify a new email
     /// address.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifyEmailAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8165,7 +8165,7 @@ pub mod fluent_builders {
     /// AWS region and attempts to verify it. As a result of executing this operation, a
     /// verification email is sent to the specified address.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifyEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

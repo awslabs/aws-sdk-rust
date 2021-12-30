@@ -577,7 +577,7 @@ pub mod fluent_builders {
     ///
     /// <p> Associates an evidence folder to an assessment report in a Audit Manager
     /// assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAssessmentReportEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -666,7 +666,7 @@ pub mod fluent_builders {
     ///
     /// <p> Associates a list of evidence to an assessment report in an Audit Manager
     /// assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateAssessmentReportEvidence<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -771,7 +771,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchCreateDelegationByAssessment`.
     ///
     /// <p> Creates a batch of delegations for an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateDelegationByAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -864,7 +864,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteDelegationByAssessment`.
     ///
     /// <p> Deletes a batch of delegations for an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteDelegationByAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -955,7 +955,7 @@ pub mod fluent_builders {
     ///
     /// <p> Disassociates a list of evidence from an assessment report in Audit Manager.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateAssessmentReportEvidence<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1061,7 +1061,7 @@ pub mod fluent_builders {
     ///
     /// <p> Uploads one or more pieces of evidence to a control in an Audit Manager
     /// assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchImportEvidenceToAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1176,7 +1176,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAssessment`.
     ///
     /// <p> Creates an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1334,7 +1334,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAssessmentFramework`.
     ///
     /// <p> Creates a custom framework in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1474,7 +1474,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAssessmentReport`.
     ///
     /// <p> Creates an assessment report for the specified assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssessmentReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1567,7 +1567,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateControl`.
     ///
     /// <p> Creates a new custom control in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1732,7 +1732,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssessment`.
     ///
     /// <p> Deletes an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1805,7 +1805,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssessmentFramework`.
     ///
     /// <p> Deletes a custom framework in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1877,7 +1877,7 @@ pub mod fluent_builders {
     /// <p>
     /// Deletes a share request for a custom framework in Audit Manager.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentFrameworkShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1960,7 +1960,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssessmentReport`.
     ///
     /// <p> Deletes an assessment report from an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2046,7 +2046,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteControl`.
     ///
     /// <p> Deletes a custom control in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2116,7 +2116,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterAccount`.
     ///
     /// <p> Deregisters an account in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2184,7 +2184,7 @@ pub mod fluent_builders {
     /// Audit Manager. However, Audit Manager will stop collecting and attaching
     /// evidence to that delegated administrator account moving forward.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2259,7 +2259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateAssessmentReportEvidenceFolder`.
     ///
     /// <p> Disassociates an evidence folder from the specified assessment report in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateAssessmentReportEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2347,7 +2347,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAccountStatus`.
     ///
     /// <p> Returns the registration status of an account in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2407,7 +2407,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssessment`.
     ///
     /// <p>Returns an assessment from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2480,7 +2480,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssessmentFramework`.
     ///
     /// <p>Returns a framework from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2550,7 +2550,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssessmentReportUrl`.
     ///
     /// <p> Returns the URL of an assessment report in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssessmentReportUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2636,7 +2636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChangeLogs`.
     ///
     /// <p> Returns a list of changelogs from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChangeLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2752,7 +2752,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetControl`.
     ///
     /// <p> Returns a control from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2822,7 +2822,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDelegations`.
     ///
     /// <p> Returns a list of delegations from an audit owner to a delegate. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDelegations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2902,7 +2902,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEvidence`.
     ///
     /// <p> Returns evidence from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidence<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3011,7 +3011,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEvidenceByEvidenceFolder`.
     ///
     /// <p> Returns all evidence from a specified evidence folder in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceByEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3131,7 +3131,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns an evidence folder from the specified assessment in Audit Manager.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3231,7 +3231,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns the evidence folders from a specified assessment in Audit Manager.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceFoldersByAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3325,7 +3325,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns a list of evidence folders that are associated with a specified control of an
     /// assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceFoldersByAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3443,7 +3443,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInsights`.
     ///
     /// <p>Gets the latest analytics data for all your current active assessments. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3503,7 +3503,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInsightsByAssessment`.
     ///
     /// <p>Gets the latest analytics data for a specific active assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightsByAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3577,7 +3577,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns the name of the delegated Amazon Web Services administrator account for the
     /// organization. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3638,7 +3638,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns a list of the in-scope Amazon Web Services services for the specified
     /// assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServicesInScope<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3698,7 +3698,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSettings`.
     ///
     /// <p> Returns the settings for the specified Amazon Web Services account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3778,7 +3778,7 @@ pub mod fluent_builders {
     /// <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If neither
     /// of these conditions are met, no data is listed for that control. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentControlInsightsByControlDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3887,7 +3887,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns a list of the frameworks that are available in the Audit Manager
     /// framework library. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentFrameworks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3980,7 +3980,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssessmentFrameworkShareRequests`.
     ///
     /// <p> Returns a list of sent or received share requests for custom frameworks in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentFrameworkShareRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4075,7 +4075,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssessmentReports`.
     ///
     /// <p> Returns a list of assessment reports created in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4155,7 +4155,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssessments`.
     ///
     /// <p> Returns a list of current and past assessments from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4254,7 +4254,7 @@ pub mod fluent_builders {
     /// evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If
     /// this condition isn’t met, no data is listed for that control domain.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControlDomainInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4339,7 +4339,7 @@ pub mod fluent_builders {
     /// evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If
     /// this condition isn’t met, no data is listed for that domain.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControlDomainInsightsByAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4441,7 +4441,7 @@ pub mod fluent_builders {
     /// <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data
     /// is listed for that control. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControlInsightsByControlDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4536,7 +4536,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListControls`.
     ///
     /// <p> Returns a list of controls from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControls<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4629,7 +4629,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListKeywordsForDataSource`.
     ///
     /// <p> Returns a list of keywords that are pre-mapped to the specified control data source. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListKeywordsForDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4719,7 +4719,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNotifications`.
     ///
     /// <p> Returns a list of all Audit Manager notifications. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4799,7 +4799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p> Returns a list of tags for the specified resource in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4869,7 +4869,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterAccount`.
     ///
     /// <p> Enables Audit Manager for the specified Amazon Web Services account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4956,7 +4956,7 @@ pub mod fluent_builders {
     ///
     /// <p> Enables an Amazon Web Services account within the organization as the delegated
     /// administrator for Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5039,7 +5039,7 @@ pub mod fluent_builders {
     /// standard frameworks are eligible for sharing, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework sharing eligibility</a> in the <i>Audit Manager User
     /// Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAssessmentFrameworkShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5145,7 +5145,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p> Tags the specified resource in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5238,7 +5238,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p> Removes a tag from a resource in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5325,7 +5325,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessment`.
     ///
     /// <p> Edits an Audit Manager assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5469,7 +5469,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessmentControl`.
     ///
     /// <p> Updates a control within an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5588,7 +5588,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessmentControlSetStatus`.
     ///
     /// <p> Updates the status of a control set in an Audit Manager assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentControlSetStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5697,7 +5697,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessmentFramework`.
     ///
     /// <p> Updates a custom framework in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5824,7 +5824,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessmentFrameworkShare`.
     ///
     /// <p> Updates a share request for a custom framework in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentFrameworkShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5920,7 +5920,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessmentStatus`.
     ///
     /// <p> Updates the status of an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6006,7 +6006,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateControl`.
     ///
     /// <p> Updates a custom control in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6158,7 +6158,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSettings`.
     ///
     /// <p> Updates Audit Manager settings for the current user account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6273,7 +6273,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ValidateAssessmentReportIntegrity`.
     ///
     /// <p> Validates the integrity of an assessment report in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidateAssessmentReportIntegrity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

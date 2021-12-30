@@ -365,7 +365,7 @@ pub mod fluent_builders {
     ///
     /// <p>Assigns attributes (key and value pairs) to the findings that are specified by the
     /// ARNs of the findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddAttributesToFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -466,7 +466,7 @@ pub mod fluent_builders {
     /// perform security assessments. You can create up to 50 assessment targets per AWS account.
     /// You can run up to 500 concurrent agents per AWS account. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
     /// Amazon Inspector Assessment Targets</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssessmentTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -561,7 +561,7 @@ pub mod fluent_builders {
     /// of the assessment target. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked role</a> isn’t already registered, this action also creates and
     /// registers a service-linked role to grant Amazon Inspector access to AWS Services needed to
     /// perform security assessments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssessmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -712,7 +712,7 @@ pub mod fluent_builders {
     /// <p>Starts the generation of an exclusions preview for the specified assessment template.
     /// The exclusions preview lists the potential exclusions (ExclusionPreview) that Inspector can
     /// detect before it runs the assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExclusionsPreview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -793,7 +793,7 @@ pub mod fluent_builders {
     /// are used to select the EC2 instances to be included in an Amazon Inspector assessment
     /// target. The created resource group is then used to create an Amazon Inspector assessment
     /// target. For more information, see <a>CreateAssessmentTarget</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -875,7 +875,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the assessment run that is specified by the ARN of the assessment
     /// run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -949,7 +949,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the assessment target that is specified by the ARN of the assessment
     /// target.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1023,7 +1023,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the assessment template that is specified by the ARN of the assessment
     /// template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1100,7 +1100,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the assessment runs that are specified by the ARNs of the assessment
     /// runs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssessmentRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1178,7 +1178,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the assessment targets that are specified by the ARNs of the assessment
     /// targets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssessmentTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1256,7 +1256,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the assessment templates that are specified by the ARNs of the assessment
     /// templates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssessmentTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1334,7 +1334,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the IAM role that enables Amazon Inspector to access your AWS
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCrossAccountAccessRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1394,7 +1394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExclusions`.
     ///
     /// <p>Describes the exclusions that are specified by the exclusions' ARNs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExclusions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1483,7 +1483,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFindings`.
     ///
     /// <p>Describes the findings that are specified by the ARNs of the findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1573,7 +1573,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the resource groups that are specified by the ARNs of the resource
     /// groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResourceGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1651,7 +1651,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the rules packages that are specified by the ARNs of the rules
     /// packages.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRulesPackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1739,7 +1739,7 @@ pub mod fluent_builders {
     ///
     /// <p>Produces an assessment report that includes detailed and comprehensive results of a
     /// specified assessment run. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssessmentReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1848,7 +1848,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by
     /// the preview token. You can obtain the preview token by running the CreateExclusionsPreview
     /// API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExclusionsPreview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1980,7 +1980,7 @@ pub mod fluent_builders {
     ///
     /// <p>Information about the data that is collected for the specified assessment
     /// run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTelemetryMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2056,7 +2056,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the agents of the assessment runs that are specified by the ARNs of the
     /// assessment runs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentRunAgents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2178,7 +2178,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the assessment runs that correspond to the assessment templates that are
     /// specified by the ARNs of the assessment templates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2310,7 +2310,7 @@ pub mod fluent_builders {
     /// <p>Lists the ARNs of the assessment targets within this AWS account. For more
     /// information about assessment targets, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon Inspector Assessment
     /// Targets</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2422,7 +2422,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the assessment templates that correspond to the assessment targets that are
     /// specified by the ARNs of the assessment targets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2553,7 +2553,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all the event subscriptions for the assessment template that is specified by
     /// the ARN of the assessment template. For more information, see <a>SubscribeToEvent</a> and <a>UnsubscribeFromEvent</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2655,7 +2655,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListExclusions`.
     ///
     /// <p>List exclusions that are generated by the assessment run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExclusions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2759,7 +2759,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists findings that are generated by the assessment runs that are specified by the
     /// ARNs of the assessment runs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2889,7 +2889,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRulesPackages`.
     ///
     /// <p>Lists all available Amazon Inspector rules packages.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRulesPackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2979,7 +2979,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags associated with an assessment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3050,7 +3050,7 @@ pub mod fluent_builders {
     ///
     /// <p>Previews the agents installed on the EC2 instances that are part of the specified
     /// assessment target.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PreviewAgents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3154,7 +3154,7 @@ pub mod fluent_builders {
     ///
     /// <p>Registers the IAM role that grants Amazon Inspector access to AWS Services needed to
     /// perform security assessments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterCrossAccountAccessRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3227,7 +3227,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes entire attributes (key and value pairs) from the findings that are specified
     /// by the ARNs of the findings where an attribute with the specified key exists.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAttributesFromFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3324,7 +3324,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sets tags (key and value pairs) to the assessment template that is specified by the
     /// ARN of the assessment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3415,7 +3415,7 @@ pub mod fluent_builders {
     /// <p>Starts the assessment run specified by the ARN of the assessment template. For this
     /// API to function properly, you must not exceed the limit of running up to 500 concurrent
     /// agents per AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3509,7 +3509,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops the assessment run that is specified by the ARN of the assessment
     /// run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3602,7 +3602,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables the process of sending Amazon Simple Notification Service (SNS) notifications
     /// about a specified event to a specified SNS topic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubscribeToEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3698,7 +3698,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables the process of sending Amazon Simple Notification Service (SNS)
     /// notifications about a specified event to a specified SNS topic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnsubscribeFromEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3796,7 +3796,7 @@ pub mod fluent_builders {
     /// target.</p>
     /// <p>If resourceGroupArn is not specified, all EC2 instances in the current AWS account
     /// and region are included in the assessment target.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

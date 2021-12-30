@@ -256,7 +256,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
     /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecommendationPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -384,7 +384,7 @@ pub mod fluent_builders {
     /// <p>Use the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions to request an export of your
     /// recommendations. Then use the <a>DescribeRecommendationExportJobs</a> action
     /// to view your export jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecommendationExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -515,7 +515,7 @@ pub mod fluent_builders {
     /// Recommendations</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
     /// <p>You can have only one Auto Scaling group export job in progress per Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportAutoScalingGroupRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -755,7 +755,7 @@ pub mod fluent_builders {
     /// Recommendations</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
     /// <p>You can have only one Amazon EBS volume export job in progress per Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportEBSVolumeRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -970,7 +970,7 @@ pub mod fluent_builders {
     /// Recommendations</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
     /// <p>You can have only one Amazon EC2 instance export job in progress per Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportEC2InstanceRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1203,7 +1203,7 @@ pub mod fluent_builders {
     /// Recommendations</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
     /// <p>You can have only one Lambda function export job in progress per Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportLambdaFunctionRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1424,7 +1424,7 @@ pub mod fluent_builders {
     /// meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
     /// resources and requirements</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAutoScalingGroupRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1599,7 +1599,7 @@ pub mod fluent_builders {
     /// meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
     /// resources and requirements</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEBSVolumeRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1750,7 +1750,7 @@ pub mod fluent_builders {
     /// information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
     /// requirements</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEC2InstanceRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1922,7 +1922,7 @@ pub mod fluent_builders {
     /// <code>Memory</code> metric is returned only for resources that have the unified
     /// CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEC2RecommendationProjectedMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2068,7 +2068,7 @@ pub mod fluent_builders {
     /// <p>When you create a recommendation preference, you can set its status to
     /// <code>Active</code> or <code>Inactive</code>. Use this action to view the
     /// recommendation preferences that are in effect, or <code>Active</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEffectiveRecommendationPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2148,7 +2148,7 @@ pub mod fluent_builders {
     /// <p>If the account is the management account of an organization, this action also confirms
     /// the enrollment status of member accounts of the organization. Use the <a>GetEnrollmentStatusesForOrganization</a> action to get detailed information
     /// about the enrollment status of member accounts of an organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnrollmentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2210,7 +2210,7 @@ pub mod fluent_builders {
     /// <p>Returns the Compute Optimizer enrollment (opt-in) status of organization member
     /// accounts, if your account is an organization management account.</p>
     /// <p>To get the enrollment status of standalone accounts, use the <a>GetEnrollmentStatus</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnrollmentStatusesForOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2321,7 +2321,7 @@ pub mod fluent_builders {
     /// of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
     /// requirements</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLambdaFunctionRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2491,7 +2491,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
     /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommendationPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2638,7 +2638,7 @@ pub mod fluent_builders {
     /// or <code>Optimized</code>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommendationSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2751,7 +2751,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
     /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRecommendationPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2897,7 +2897,7 @@ pub mod fluent_builders {
     /// <p>When you opt in, Compute Optimizer automatically creates a service-linked role in your
     /// account to access its data. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
     /// Service-Linked Roles for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnrollmentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

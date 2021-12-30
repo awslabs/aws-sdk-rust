@@ -602,7 +602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptDirectConnectGatewayAssociationProposal`.
     ///
     /// <p>Accepts a proposal request to attach a virtual private gateway or transit gateway to a Direct Connect gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptDirectConnectGatewayAssociationProposal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -730,7 +730,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Intended for use by Direct Connect Partners only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllocateConnectionOnInterconnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -860,7 +860,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Intended for use by Direct Connect Partners only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllocateHostedConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -998,7 +998,7 @@ pub mod fluent_builders {
     /// <p>Provisions a private virtual interface to be owned by the specified Amazon Web Services account.</p>
     /// <p>Virtual interfaces created using this action must be confirmed by the owner using <a>ConfirmPrivateVirtualInterface</a>.
     /// Until then, the virtual interface is in the <code>Confirming</code> state and is not available to handle traffic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllocatePrivateVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1109,7 +1109,7 @@ pub mod fluent_builders {
     /// Until this step has been completed, the virtual interface is in the <code>confirming</code> state and is not available to handle traffic.</p>
     /// <p>When creating an IPv6 public virtual interface, omit the Amazon address and customer address. IPv6 addresses are automatically assigned from
     /// the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllocatePublicVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1217,7 +1217,7 @@ pub mod fluent_builders {
     /// <p>Provisions a transit virtual interface to be owned by the specified Amazon Web Services account. Use this type of interface to connect a transit gateway to your Direct Connect gateway.</p>
     /// <p>The owner of a connection provisions a transit virtual interface to be owned by the specified Amazon Web Services account.</p>
     /// <p>After you create a transit virtual interface, it must be confirmed by the owner using <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the transit virtual interface is in the <code>requested</code> state and is not available to handle traffic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllocateTransitVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1336,7 +1336,7 @@ pub mod fluent_builders {
     /// <p>For interconnects, any hosted connections are automatically re-associated with the
     /// LAG. If the interconnect was originally associated with a different LAG, the hosted
     /// connections remain associated with the original LAG.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateConnectionWithLag<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1426,7 +1426,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Intended for use by Direct Connect Partners only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateHostedConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1514,7 +1514,7 @@ pub mod fluent_builders {
     /// <p>Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association Key (CAK) pair with an Direct Connect dedicated connection.</p>
     /// <p>You must supply either the <code>secretARN,</code> or the CKN/CAK (<code>ckn</code> and <code>cak</code>) pair in the request.</p>
     /// <p>For information about MAC Security (MACsec) key considerations, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-key-consideration">MACsec pre-shared CKN/CAK key considerations </a> in the <i>Direct Connect User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateMacSecKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1644,7 +1644,7 @@ pub mod fluent_builders {
     /// must own either the virtual interface itself or the connection to which the virtual
     /// interface is currently associated. Additionally, the requester must own the connection
     /// or LAG for the association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1732,7 +1732,7 @@ pub mod fluent_builders {
     /// <p>Confirms the creation of the specified hosted connection on an interconnect.</p>
     /// <p>Upon creation, the hosted connection is initially in the <code>Ordering</code> state, and
     /// remains in this state until the owner confirms creation of the hosted connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1807,7 +1807,7 @@ pub mod fluent_builders {
     /// <p>
     /// The confirmation of the terms of agreement when creating the connection/link aggregation group (LAG).
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmCustomerAgreement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1891,7 +1891,7 @@ pub mod fluent_builders {
     /// <p>After the virtual interface owner makes this call, the virtual interface is
     /// created and attached to the specified virtual private gateway or Direct Connect gateway, and is
     /// made available to handle traffic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmPrivateVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1995,7 +1995,7 @@ pub mod fluent_builders {
     /// <p>Accepts ownership of a public virtual interface created by another Amazon Web Services account.</p>
     /// <p>After the virtual interface owner makes this call, the specified virtual interface is
     /// created and made available to handle traffic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmPublicVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2070,7 +2070,7 @@ pub mod fluent_builders {
     /// <p>Accepts ownership of a transit virtual interface created by another Amazon Web Services account.</p>
     ///
     /// <p> After the owner of the transit virtual interface makes this call, the specified transit virtual interface is created and made available to handle traffic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmTransitVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2165,7 +2165,7 @@ pub mod fluent_builders {
     /// <p>When creating a IPv6 BGP peer, omit the Amazon address and customer address. IPv6 addresses are automatically assigned from
     /// the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.</p>
     /// <p>For a public virtual interface, the Autonomous System Number (ASN) must be private or already on the allow list for the virtual interface.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBGPPeer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2259,7 +2259,7 @@ pub mod fluent_builders {
     /// specifying a LAG ID in the request. This ensures that the new connection is allocated on the
     /// same Direct Connect endpoint that hosts the specified LAG. If there are no available ports on the endpoint,
     /// the request fails and no connection is created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2409,7 +2409,7 @@ pub mod fluent_builders {
     /// are connected through a Direct Connect gateway can be in different Amazon Web Services Regions. This enables you to
     /// connect to a VPC in any Region, regardless of the Region in which the virtual interfaces
     /// are located, and pass traffic between them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDirectConnectGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2500,7 +2500,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an association between a Direct Connect gateway and a virtual private gateway. The virtual
     /// private gateway must be attached to a VPC and must not be associated with another Direct Connect gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDirectConnectGatewayAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2630,7 +2630,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified Direct Connect gateway.</p>
     /// <p>You can associate a Direct Connect gateway and virtual private gateway or transit gateway that is owned by any Amazon Web Services account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDirectConnectGatewayAssociationProposal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2790,7 +2790,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Intended for use by Direct Connect Partners only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInterconnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2940,7 +2940,7 @@ pub mod fluent_builders {
     /// <p>If the Amazon Web Services account used to create a LAG is a registered Direct Connect Partner, the LAG is
     /// automatically enabled to host sub-connections. For a LAG owned by a partner, any associated virtual
     /// interfaces cannot be directly configured.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLag<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3133,7 +3133,7 @@ pub mod fluent_builders {
     /// the connection for up to 30 seconds. To check whether your connection supports jumbo
     /// frames, call <a>DescribeConnections</a>. To check whether your virtual
     /// interface supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePrivateVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3225,7 +3225,7 @@ pub mod fluent_builders {
     /// A public virtual interface supports sending traffic to public services of Amazon Web Services such as Amazon S3.</p>
     /// <p>When creating an IPv6 public virtual interface (<code>addressFamily</code> is <code>ipv6</code>), leave the <code>customer</code>
     /// and <code>amazon</code> address fields blank to use auto-assigned IPv6 space. Custom IPv6 addresses are not supported.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePublicVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3323,7 +3323,7 @@ pub mod fluent_builders {
     /// the connection for up to 30 seconds. To check whether your connection supports jumbo
     /// frames, call <a>DescribeConnections</a>. To check whether your virtual
     /// interface supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransitVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3413,7 +3413,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified BGP peer on the specified virtual interface with the specified customer address and ASN.</p>
     /// <p>You cannot delete the last BGP peer from a virtual interface.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBGPPeer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3522,7 +3522,7 @@ pub mod fluent_builders {
     /// <p>Deleting a connection only stops the Direct Connect port hour and data transfer charges.
     /// If you are partnering with any third parties to connect with the Direct Connect location,
     /// you must cancel your service with them separately.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3597,7 +3597,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified Direct Connect gateway. You must first delete all virtual interfaces that are
     /// attached to the Direct Connect gateway and disassociate all virtual private gateways associated
     /// with the Direct Connect gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDirectConnectGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3674,7 +3674,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the association between the specified Direct Connect gateway and virtual private gateway.</p>
     /// <p>We recommend that you specify the <code>associationID</code> to delete the association. Alternatively, if you own virtual gateway and a Direct Connect gateway association, you can specify the <code>virtualGatewayId</code> and <code>directConnectGatewayId</code> to delete an association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDirectConnectGatewayAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3778,7 +3778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDirectConnectGatewayAssociationProposal`.
     ///
     /// <p>Deletes the association proposal request between the specified Direct Connect gateway and virtual private gateway or transit gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDirectConnectGatewayAssociationProposal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3845,7 +3845,7 @@ pub mod fluent_builders {
     /// <p>Intended for use
     /// by Direct Connect Partners only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInterconnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3919,7 +3919,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified link aggregation group (LAG). You cannot delete a LAG if it has active
     /// virtual interfaces or hosted connections.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLag<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3989,7 +3989,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVirtualInterface`.
     ///
     /// <p>Deletes a virtual interface.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVirtualInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4067,7 +4067,7 @@ pub mod fluent_builders {
     /// service provider uses when establishing your cross connect to Amazon Web Services at the colocation facility. For more information,
     /// see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects
     /// at Direct Connect Locations</a> in the <i>Direct Connect User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectionLoa<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4168,7 +4168,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConnections`.
     ///
     /// <p>Displays the specified connection or all connections in this Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4245,7 +4245,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Intended for use by Direct Connect Partners only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectionsOnInterconnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4318,7 +4318,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomerMetadata`.
     ///
     /// <p>Get and view a list of customer agreements, along with their signed status and whether the customer is an NNIPartner, NNIPartnerV2, or a nonPartner. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomerMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4378,7 +4378,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDirectConnectGatewayAssociationProposals`.
     ///
     /// <p>Describes one or more association proposals for connection between a virtual private gateway or transit gateway and a Direct Connect gateway. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDirectConnectGatewayAssociationProposals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4518,7 +4518,7 @@ pub mod fluent_builders {
     /// <p>The response contains the association between the Direct Connect gateway and transit gateway.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDirectConnectGatewayAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4665,7 +4665,7 @@ pub mod fluent_builders {
     /// all virtual interfaces attached to the Direct Connect gateway. If you specify a virtual interface, the
     /// response contains all Direct Connect gateways attached to the virtual interface. If you specify both,
     /// the response contains the attachment between the Direct Connect gateway and the virtual interface.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDirectConnectGatewayAttachments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4782,7 +4782,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDirectConnectGateways`.
     ///
     /// <p>Lists all your Direct Connect gateways or only the specified Direct Connect gateway. Deleted Direct Connect gateways are not returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDirectConnectGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4888,7 +4888,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Intended for use by Direct Connect Partners only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHostedConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4965,7 +4965,7 @@ pub mod fluent_builders {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when establishing your cross connect to Amazon Web Services at the colocation facility.
     /// For more information, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at Direct Connect Locations</a>
     /// in the <i>Direct Connect User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInterconnectLoa<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5064,7 +5064,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInterconnects`.
     ///
     /// <p>Lists the interconnects owned by the Amazon Web Services account or only the specified interconnect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInterconnects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5137,7 +5137,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLags`.
     ///
     /// <p>Describes all your link aggregation groups (LAG) or the specified LAG.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5210,7 +5210,7 @@ pub mod fluent_builders {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when establishing
     /// your cross connect to Amazon Web Services at the colocation facility. For more information, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at Direct Connect Locations</a>
     /// in the <i>Direct Connect User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoa<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5312,7 +5312,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the Direct Connect locations in the current Amazon Web Services Region. These are the locations that can be selected when calling
     /// <a>CreateConnection</a> or <a>CreateInterconnect</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5374,7 +5374,7 @@ pub mod fluent_builders {
     /// <p>
     /// Details about the router.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRouterConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5460,7 +5460,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
     /// <p>Describes the tags associated with the specified Direct Connect resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5538,7 +5538,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the virtual private gateways owned by the Amazon Web Services account.</p>
     /// <p>You can create one or more Direct Connect private virtual interfaces linked to a virtual private gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVirtualGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5602,7 +5602,7 @@ pub mod fluent_builders {
     /// connection ID, only the virtual interfaces associated with the connection are returned.
     /// If you specify a virtual interface ID, then only a single virtual interface is returned.</p>
     /// <p>A virtual interface (VLAN) transmits the traffic between the Direct Connect location and the customer network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVirtualInterfaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5697,7 +5697,7 @@ pub mod fluent_builders {
     /// minimum number of operational connections, the request fails, except when it's the last
     /// member of the LAG. If all connections are disassociated, the LAG continues to exist as
     /// an empty LAG with no physical connections. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateConnectionFromLag<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5780,7 +5780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMacSecKey`.
     ///
     /// <p>Removes the association between a MAC Security (MACsec) security key and an Direct Connect dedicated connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMacSecKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5867,7 +5867,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVirtualInterfaceTestHistory`.
     ///
     /// <p>Lists the virtual interface failover test history.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVirtualInterfaceTestHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6006,7 +6006,7 @@ pub mod fluent_builders {
     /// <p>You can run the test on public, private, transit, and hosted virtual interfaces.</p>
     /// <p>You can use <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html">ListVirtualInterfaceTestHistory</a> to view the virtual interface test history.</p>
     /// <p>If you need to stop the test before the test interval completes, use <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBgpFailoverTest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6110,7 +6110,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopBgpFailoverTest`.
     ///
     /// <p>Stops the virtual interface failover test.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopBgpFailoverTest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6184,7 +6184,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds the specified tags to the specified Direct Connect resource. Each resource can have a maximum of 50 tags.</p>
     /// <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the resource, this action updates its value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6271,7 +6271,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified Direct Connect resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6367,7 +6367,7 @@ pub mod fluent_builders {
     /// <p>The connection's MAC Security (MACsec) encryption mode.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6470,7 +6470,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDirectConnectGateway`.
     ///
     /// <p>Updates the name of a current Direct Connect gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDirectConnectGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6563,7 +6563,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified attributes of the Direct Connect gateway association.</p>
     /// <p>Add or remove prefixes from the association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDirectConnectGatewayAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6708,7 +6708,7 @@ pub mod fluent_builders {
     /// that the new value does not cause the LAG to fall below the threshold and become
     /// non-operational.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLag<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6819,7 +6819,7 @@ pub mod fluent_builders {
     /// the connection for up to 30 seconds. To check whether your connection supports jumbo
     /// frames, call <a>DescribeConnections</a>. To check whether your virtual q
     /// interface supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVirtualInterfaceAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

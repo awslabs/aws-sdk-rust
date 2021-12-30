@@ -178,7 +178,7 @@ pub mod fluent_builders {
     /// <p>Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana Enterprise
     /// incurs additional fees. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade a workspace to
     /// Grafana Enterprise</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateLicense<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -265,7 +265,7 @@ pub mod fluent_builders {
     /// build, package, or deploy any hardware to run the Grafana server.</p>
     /// <p>Don't use <code>CreateWorkspace</code> to modify an existing workspace. Instead,
     /// use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -563,7 +563,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkspace`.
     ///
     /// <p>Deletes an Amazon Managed Grafana workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -633,7 +633,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkspace`.
     ///
     /// <p>Displays information about one Amazon Managed Grafana workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -703,7 +703,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkspaceAuthentication`.
     ///
     /// <p>Displays information about the authentication methods used in one Amazon Managed Grafana workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceAuthentication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -773,7 +773,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateLicense`.
     ///
     /// <p>Removes the Grafana Enterprise license from a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLicense<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -862,7 +862,7 @@ pub mod fluent_builders {
     /// and groups. If you specify a <code>userId</code> or a <code>groupId</code>, only the roles
     /// for that user or group are returned. If you do this, you can specify only one <code>userId</code> or
     /// one <code>groupId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -989,7 +989,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of Amazon Managed Grafana workspaces in the account, with some information
     /// about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1071,7 +1071,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePermissions`.
     ///
     /// <p>Updates which users in a workspace have the Grafana <code>Admin</code> or <code>Editor</code> roles.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1163,7 +1163,7 @@ pub mod fluent_builders {
     /// use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.</p>
     /// <p>To modify which users in the workspace have the <code>Admin</code> and <code>Editor</code> Grafana roles,
     /// use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1436,7 +1436,7 @@ pub mod fluent_builders {
     /// authenticates users from, using SAML. You can also map SAML assertion attributes to
     /// workspace user information and define which groups in the assertion attribute are to have
     /// the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspaceAuthentication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

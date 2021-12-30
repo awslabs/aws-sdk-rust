@@ -454,7 +454,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddTagsToOnPremisesInstances`.
     ///
     /// <p>Adds tags to on-premises instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToOnPremisesInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -553,7 +553,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about one or more application revisions. The maximum number of
     /// application revisions that can be returned is 25.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetApplicationRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -650,7 +650,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about one or more applications. The maximum number of applications
     /// that can be returned is 100.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -729,7 +729,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetDeploymentGroups`.
     ///
     /// <p>Gets information about one or more deployment groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDeploymentGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -828,7 +828,7 @@ pub mod fluent_builders {
     /// works with EC2/On-premises and AWS Lambda compute platforms. The newer
     /// <code>BatchGetDeploymentTargets</code> works with all compute platforms. The maximum
     /// number of instances that can be returned is 25.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDeploymentInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -921,7 +921,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about one or more deployments. The maximum number of deployments that
     /// can be returned is 25.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1027,7 +1027,7 @@ pub mod fluent_builders {
     /// blue/green deployments initiated by a CloudFormation stack update.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDeploymentTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1168,7 +1168,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about one or more on-premises instances. The maximum number of
     /// on-premises instances that can be returned is 25.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetOnPremisesInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1251,7 +1251,7 @@ pub mod fluent_builders {
     /// a specified wait time to elapse. (Traffic rerouting, which is achieved by registering
     /// instances in the replacement environment with the load balancer, can start as soon as
     /// all instances have a status of Ready.) </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ContinueDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1345,7 +1345,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
     /// <p>Creates an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1456,7 +1456,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
     /// <p>Deploys an application revision through the specified deployment group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1744,7 +1744,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeploymentConfig`.
     ///
     /// <p> Creates a deployment configuration. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeploymentConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1900,7 +1900,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeploymentGroup`.
     ///
     /// <p>Creates a deployment group to which application revisions are deployed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeploymentGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2301,7 +2301,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
     /// <p>Deletes an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2380,7 +2380,7 @@ pub mod fluent_builders {
     /// <p>A deployment configuration cannot be deleted if it is currently in use. Predefined
     /// configurations cannot be deleted.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeploymentConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2455,7 +2455,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeploymentGroup`.
     ///
     /// <p>Deletes a deployment group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeploymentGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2543,7 +2543,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGitHubAccountToken`.
     ///
     /// <p>Deletes a GitHub account connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGitHubAccountToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2613,7 +2613,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcesByExternalId`.
     ///
     /// <p>Deletes resources linked to an external ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcesByExternalId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2685,7 +2685,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterOnPremisesInstance`.
     ///
     /// <p>Deregisters an on-premises instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterOnPremisesInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2758,7 +2758,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplication`.
     ///
     /// <p>Gets information about an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2833,7 +2833,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplicationRevision`.
     ///
     /// <p>Gets information about an application revision.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplicationRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2925,7 +2925,7 @@ pub mod fluent_builders {
     /// the <code>sha256</code> property of the returned <code>appSpecContent</code> object
     /// to get the content of the deployment’s AppSpec file. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2998,7 +2998,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentConfig`.
     ///
     /// <p>Gets information about a deployment configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3073,7 +3073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentGroup`.
     ///
     /// <p>Gets information about a deployment group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3161,7 +3161,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentInstance`.
     ///
     /// <p>Gets information about an instance as part of a deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3244,7 +3244,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentTarget`.
     ///
     /// <p> Returns information about a deployment target. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3327,7 +3327,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOnPremisesInstance`.
     ///
     /// <p> Gets information about an on-premises instance. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOnPremisesInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3400,7 +3400,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplicationRevisions`.
     ///
     /// <p>Lists information about revisions for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3649,7 +3649,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplications`.
     ///
     /// <p>Lists the applications registered with the IAM user or AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3721,7 +3721,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeploymentConfigs`.
     ///
     /// <p>Lists the deployment configurations with the IAM user or AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3794,7 +3794,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the deployment groups for an application registered with the IAM user or AWS
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3887,7 +3887,7 @@ pub mod fluent_builders {
     /// Lambda. </p>
     /// </note>
     /// <p> Lists the instance for a deployment associated with the IAM user or AWS account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4069,7 +4069,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the deployments in a deployment group for an application registered with the IAM
     /// user or AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4291,7 +4291,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeploymentTargets`.
     ///
     /// <p> Returns an array of target IDs that are associated a deployment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4430,7 +4430,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGitHubAccountTokenNames`.
     ///
     /// <p>Lists the names of stored connections to GitHub accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGitHubAccountTokenNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4505,7 +4505,7 @@ pub mod fluent_builders {
     /// <p>Unless otherwise specified, both registered and deregistered on-premises instance
     /// names are listed. To list only registered or deregistered on-premises instance names,
     /// use the registration status parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOnPremisesInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4634,7 +4634,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns a list of tags for the resource identified by a specified Amazon Resource
     /// Name (ARN). Tags are used to organize and categorize your CodeDeploy resources. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4728,7 +4728,7 @@ pub mod fluent_builders {
     /// <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda
     /// validation functions return <code>Succeeded</code> or <code>Failed</code>. For more
     /// information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec 'hooks' Section for an AWS Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec 'hooks' Section for an Amazon ECS Deployment</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLifecycleEventHookExecutionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4842,7 +4842,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterApplicationRevision`.
     ///
     /// <p>Registers with AWS CodeDeploy a revision for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterApplicationRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4946,7 +4946,7 @@ pub mod fluent_builders {
     /// <p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request.
     /// You cannot use both.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterOnPremisesInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5042,7 +5042,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTagsFromOnPremisesInstances`.
     ///
     /// <p>Removes one or more tags from one or more on-premises instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromOnPremisesInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5137,7 +5137,7 @@ pub mod fluent_builders {
     ///
     /// <p>In a blue/green deployment, overrides any specified wait time and starts terminating
     /// instances immediately after the traffic routing is complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SkipWaitTimeForInstanceTermination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5214,7 +5214,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopDeployment`.
     ///
     /// <p>Attempts to stop an ongoing deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5300,7 +5300,7 @@ pub mod fluent_builders {
     ///
     /// <p> Associates the list of tags in the input <code>Tags</code> parameter with the
     /// resource identified by the <code>ResourceArn</code> input parameter. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5391,7 +5391,7 @@ pub mod fluent_builders {
     /// <p> Disassociates a resource from a list of tags. The resource is identified by the
     /// <code>ResourceArn</code> input parameter. The tags are identified by the list of
     /// keys in the <code>TagKeys</code> input parameter. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5484,7 +5484,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
     /// <p>Changes the name of an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5570,7 +5570,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeploymentGroup`.
     ///
     /// <p>Changes information about a deployment group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeploymentGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

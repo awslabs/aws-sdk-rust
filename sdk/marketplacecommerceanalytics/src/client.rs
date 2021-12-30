@@ -116,7 +116,7 @@ pub mod fluent_builders {
     /// be overwritten by the new file.
     /// Requires a Role with an attached permissions policy providing Allow permissions for the following actions:
     /// s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -519,7 +519,7 @@ pub mod fluent_builders {
     /// be overwritten by the new file.
     /// Requires a Role with an attached permissions policy providing Allow permissions for the following actions:
     /// s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSupportDataExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

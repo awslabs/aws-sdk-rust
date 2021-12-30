@@ -276,7 +276,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ActivateAnomalyDetector`.
     ///
     /// <p>Activates an anomaly detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -349,7 +349,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BackTestAnomalyDetector`.
     ///
     /// <p>Runs a backtest for anomaly detection for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BackTestAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -422,7 +422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAlert`.
     ///
     /// <p>Creates an alert for an anomaly detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlert<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -561,7 +561,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAnomalyDetector`.
     ///
     /// <p>Creates an anomaly detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -699,7 +699,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMetricSet`.
     ///
     /// <p>Creates a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMetricSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -914,7 +914,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAlert`.
     ///
     /// <p>Deletes an alert.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlert<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -985,7 +985,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a detector. Deleting an anomaly detector will delete all of its corresponding resources including any
     /// configured datasets and alerts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1060,7 +1060,7 @@ pub mod fluent_builders {
     /// <p>Describes an alert.</p>
     /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
     /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlert<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1130,7 +1130,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAnomalyDetectionExecutions`.
     ///
     /// <p>Returns information about the status of the specified anomaly detection jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnomalyDetectionExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1237,7 +1237,7 @@ pub mod fluent_builders {
     /// <p>Describes a detector.</p>
     /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
     /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1312,7 +1312,7 @@ pub mod fluent_builders {
     /// <p>Describes a dataset.</p>
     /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
     /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMetricSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1385,7 +1385,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAnomalyGroup`.
     ///
     /// <p>Returns details about a group of anomalous metrics.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnomalyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1471,7 +1471,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFeedback`.
     ///
     /// <p>Get feedback for an anomaly group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1580,7 +1580,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSampleData`.
     ///
     /// <p>Returns a selection of sample records from an Amazon S3 datasource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSampleData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1658,7 +1658,7 @@ pub mod fluent_builders {
     /// <p>Lists the alerts attached to a detector.</p>
     /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
     /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlerts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1755,7 +1755,7 @@ pub mod fluent_builders {
     /// <p>Lists the detectors in the current AWS Region.</p>
     /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
     /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnomalyDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1837,7 +1837,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAnomalyGroupSummaries`.
     ///
     /// <p>Returns a list of anomaly groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnomalyGroupSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1940,7 +1940,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAnomalyGroupTimeSeries`.
     ///
     /// <p>Gets a list of anomalous metrics for a measure in an anomaly group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnomalyGroupTimeSeries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2058,7 +2058,7 @@ pub mod fluent_builders {
     /// <p>Lists the datasets in the current AWS Region.</p>
     /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
     /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMetricSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2155,7 +2155,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Gets a list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> for a detector, dataset, or alert.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2225,7 +2225,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutFeedback`.
     ///
     /// <p>Add feedback for an anomalous metric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2314,7 +2314,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to a detector, dataset, or alert.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2411,7 +2411,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> from a detector, dataset, or alert.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2498,7 +2498,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAnomalyDetector`.
     ///
     /// <p>Updates a detector. After activation, you can only change a detector's ingestion delay and description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2613,7 +2613,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMetricSet`.
     ///
     /// <p>Updates a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMetricSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

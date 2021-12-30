@@ -1021,7 +1021,7 @@ pub mod fluent_builders {
     /// <p>Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the
     /// configuration (term, payment type, or number of nodes) and no additional costs.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptReservedNodeExchange<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1120,7 +1120,7 @@ pub mod fluent_builders {
     /// <p>Adds a partner integration to a cluster.
     /// This operation authorizes a partner to push status updates for the specified database.
     /// To complete the integration, you also set up the integration on the partner website.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddPartner<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1228,7 +1228,7 @@ pub mod fluent_builders {
     /// <p>From a datashare consumer account, associates a datashare with the
     /// account (AssociateEntireAccount) or the specified namespace (ConsumerArn). If you make this association, the consumer
     /// can consume the datashare.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDataShareConsumer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1338,7 +1338,7 @@ pub mod fluent_builders {
     /// on these IP addresses or the EC2 instance are authorized to connect to the cluster. For
     /// information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working with Security
     /// Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeClusterSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1468,7 +1468,7 @@ pub mod fluent_builders {
     /// <p>From a data producer account, authorizes the sharing of a datashare with one or more
     /// consumer accounts. To authorize a datashare for a data consumer, the producer account
     /// must have the correct access privileges.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeDataShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1556,7 +1556,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AuthorizeEndpointAccess`.
     ///
     /// <p>Grants access to a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeEndpointAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1661,7 +1661,7 @@ pub mod fluent_builders {
     /// For more information about working with snapshots, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeSnapshotAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1774,7 +1774,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteClusterSnapshots`.
     ///
     /// <p>Deletes a set of cluster snapshots.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteClusterSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1851,7 +1851,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchModifyClusterSnapshots`.
     ///
     /// <p>Modifies the settings for a set of cluster snapshots.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchModifyClusterSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1963,7 +1963,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelResize`.
     ///
     /// <p>Cancels a resize operation for a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelResize<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2049,7 +2049,7 @@ pub mod fluent_builders {
     /// For more information about working with snapshots, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyClusterSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2244,7 +2244,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAuthenticationProfile`.
     ///
     /// <p>Creates an authentication profile with the specified parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAuthenticationProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2344,7 +2344,7 @@ pub mod fluent_builders {
     /// For more information about managing clusters, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3263,7 +3263,7 @@ pub mod fluent_builders {
     /// For more information about parameters and parameter groups, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClusterParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3429,7 +3429,7 @@ pub mod fluent_builders {
     /// For information about managing security groups, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the
     /// <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClusterSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3567,7 +3567,7 @@ pub mod fluent_builders {
     /// For more information about working with snapshots, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClusterSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3735,7 +3735,7 @@ pub mod fluent_builders {
     /// For information about subnet groups, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift Cluster Subnet Groups</a> in the
     /// <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClusterSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3887,7 +3887,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEndpointAccess`.
     ///
     /// <p>Creates a Redshift-managed VPC endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpointAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4040,7 +4040,7 @@ pub mod fluent_builders {
     /// identifier, you will receive notice of the events for the objects of that type in your
     /// Amazon Web Services account. If you do not specify either the SourceType nor the SourceIdentifier, you
     /// will be notified of events generated from all Amazon Redshift sources belonging to your Amazon Web Services account. You must specify a source type if you specify a source ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4278,7 +4278,7 @@ pub mod fluent_builders {
     /// provides a cluster the information needed to store and use encryption keys in the HSM.
     /// For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM">Hardware Security Modules</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHsmClientCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4381,7 +4381,7 @@ pub mod fluent_builders {
     /// <p>In addition to creating an HSM configuration, you must also create an HSM client
     /// certificate. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware Security Modules</a>
     /// in the Amazon Redshift Cluster Management Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHsmConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4545,7 +4545,7 @@ pub mod fluent_builders {
     /// <p>Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action.
     /// For example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateScheduledAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4728,7 +4728,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshotCopyGrant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4871,7 +4871,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSnapshotSchedule`.
     ///
     /// <p>Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshotSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5019,7 +5019,7 @@ pub mod fluent_builders {
     /// resource, you will receive an error and the attempt will fail.</p>
     /// <p>If you specify a key that already exists for the resource, the value for that key
     /// will be updated with the new value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5122,7 +5122,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a usage limit for a specified Amazon Redshift feature on a cluster.
     /// The usage limit is identified by the returned usage limit identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUsageLimit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5288,7 +5288,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeauthorizeDataShare`.
     ///
     /// <p>From the producer account, removes authorization from the specified datashare. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeauthorizeDataShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5376,7 +5376,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAuthenticationProfile`.
     ///
     /// <p>Deletes an authentication profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAuthenticationProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5467,7 +5467,7 @@ pub mod fluent_builders {
     /// For more information about managing clusters, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5673,7 +5673,7 @@ pub mod fluent_builders {
     /// <p>You cannot delete a parameter group if it is associated with a
     /// cluster.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteClusterParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5772,7 +5772,7 @@ pub mod fluent_builders {
     /// For information about managing security groups, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the
     /// <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteClusterSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5854,7 +5854,7 @@ pub mod fluent_builders {
     /// snapshot explicitly to avoid getting charged. If other accounts are authorized to access
     /// the snapshot, you must revoke all of the authorizations before you can delete the
     /// snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteClusterSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5955,7 +5955,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteClusterSubnetGroup`.
     ///
     /// <p>Deletes the specified cluster subnet group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteClusterSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6031,7 +6031,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEndpointAccess`.
     ///
     /// <p>Deletes a Redshift-managed VPC endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpointAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6104,7 +6104,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEventSubscription`.
     ///
     /// <p>Deletes an Amazon Redshift event notification subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6177,7 +6177,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteHsmClientCertificate`.
     ///
     /// <p>Deletes the specified HSM client certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHsmClientCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6255,7 +6255,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteHsmConfiguration`.
     ///
     /// <p>Deletes the specified Amazon Redshift HSM configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHsmConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6331,7 +6331,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePartner`.
     ///
     /// <p>Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted at the partner's website.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePartner<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6438,7 +6438,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a scheduled action.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteScheduledAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6511,7 +6511,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSnapshotCopyGrant`.
     ///
     /// <p>Deletes the specified snapshot copy grant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSnapshotCopyGrant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6587,7 +6587,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSnapshotSchedule`.
     ///
     /// <p>Deletes a snapshot schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSnapshotSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6661,7 +6661,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes tags from a resource. You must provide the ARN of the resource
     /// from which you want to delete the tag or tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6753,7 +6753,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUsageLimit`.
     ///
     /// <p>Deletes a usage limit from a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUsageLimit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6826,7 +6826,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAccountAttributes`.
     ///
     /// <p>Returns a list of attributes attached to an account</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6903,7 +6903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAuthenticationProfiles`.
     ///
     /// <p>Describes an authentication profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAuthenticationProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6979,7 +6979,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClusterDbRevisions`.
     ///
     /// <p>Returns an array of <code>ClusterDbRevision</code> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusterDbRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7118,7 +7118,7 @@ pub mod fluent_builders {
     /// <p>If both tag keys and values are omitted from the request, parameter groups are
     /// returned regardless of whether they have tag keys or values associated with
     /// them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusterParameterGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7302,7 +7302,7 @@ pub mod fluent_builders {
     /// For more information about parameters and parameter groups, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusterParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7449,7 +7449,7 @@ pub mod fluent_builders {
     /// combination of those values are returned.</p>
     /// <p>If both tag keys and values are omitted from the request, clusters are returned
     /// regardless of whether they have tag keys or values associated with them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7636,7 +7636,7 @@ pub mod fluent_builders {
     /// <p>If both tag keys and values are omitted from the request, security groups are
     /// returned regardless of whether they have tag keys or values associated with
     /// them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusterSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7828,7 +7828,7 @@ pub mod fluent_builders {
     /// parameters.</p>
     /// <p>If both tag keys and values are omitted from the request, snapshots are returned
     /// regardless of whether they have tag keys or values associated with them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusterSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8181,7 +8181,7 @@ pub mod fluent_builders {
     /// <p>If both tag keys and values are omitted from the request, subnet groups are
     /// returned regardless of whether they have tag keys or values associated with
     /// them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusterSubnetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8353,7 +8353,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClusterTracks`.
     ///
     /// <p>Returns a list of all the available maintenance tracks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusterTracks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8461,7 +8461,7 @@ pub mod fluent_builders {
     /// For more information about managing clusters, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusterVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8623,7 +8623,7 @@ pub mod fluent_builders {
     ///
     /// <p>Shows the status of any inbound or outbound datashares available in the specified
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8722,7 +8722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataSharesForConsumer`.
     ///
     /// <p>Returns a list of datashares where the account identifier being called is a consumer account identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSharesForConsumer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8843,7 +8843,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataSharesForProducer`.
     ///
     /// <p>Returns a list of datashares when the account identifier being called is a producer account identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSharesForProducer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8969,7 +8969,7 @@ pub mod fluent_builders {
     /// For more information about parameters and parameter groups, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDefaultClusterParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9084,7 +9084,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEndpointAccess`.
     ///
     /// <p>Describes a Redshift-managed VPC endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpointAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9223,7 +9223,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEndpointAuthorization`.
     ///
     /// <p>Describes an endpoint authorization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpointAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9354,7 +9354,7 @@ pub mod fluent_builders {
     /// <p>Displays a list of event categories for all event source types, or for a specified
     /// source type. For a list of the event categories and source types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon Redshift Event
     /// Notifications</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventCategories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9431,7 +9431,7 @@ pub mod fluent_builders {
     /// groups for the past 14 days. Events specific to a particular cluster, security group,
     /// snapshot or parameter group can be obtained by providing the name as a parameter. By
     /// default, the past hour of events are returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9723,7 +9723,7 @@ pub mod fluent_builders {
     /// <p>If both tag keys and values are omitted from the request, subscriptions are
     /// returned regardless of whether they have tag keys or values associated with
     /// them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9903,7 +9903,7 @@ pub mod fluent_builders {
     /// <p>If both tag keys and values are omitted from the request, HSM client certificates
     /// are returned regardless of whether they have tag keys or values associated with
     /// them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHsmClientCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10091,7 +10091,7 @@ pub mod fluent_builders {
     /// <p>If both tag keys and values are omitted from the request, HSM connections are
     /// returned regardless of whether they have tag keys or values associated with
     /// them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHsmConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10268,7 +10268,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes whether information, such as queries and connection attempts, is being
     /// logged for the specified Amazon Redshift cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoggingStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10346,7 +10346,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns properties of possible node configurations such as node type, number of nodes, and
     /// disk usage for the specified action type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNodeConfigurationOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10537,7 +10537,7 @@ pub mod fluent_builders {
     /// For more information about managing clusters, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrderableClusterOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10670,7 +10670,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePartners`.
     ///
     /// <p>Returns information about the partner integrations defined for a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePartners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10777,7 +10777,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns exchange status details and associated metadata for a reserved-node
     /// exchange. Statuses include such values as in progress and requested.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedNodeExchangeStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10913,7 +10913,7 @@ pub mod fluent_builders {
     /// For more information about reserved node offerings, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved Nodes</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedNodeOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11031,7 +11031,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservedNodes`.
     ///
     /// <p>Returns the descriptions of the reserved nodes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedNodes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11151,7 +11151,7 @@ pub mod fluent_builders {
     /// status of the resize remains as <code>SUCCEEDED</code> until the next resize. </p>
     /// <p>A resize operation can be requested using <a>ModifyCluster</a> and
     /// specifying a different number or type of nodes for the cluster. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResize<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11231,7 +11231,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes properties of scheduled actions.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScheduledActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11427,7 +11427,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshotCopyGrants<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11597,7 +11597,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSnapshotSchedules`.
     ///
     /// <p>Returns a list of snapshot schedules. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshotSchedules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11755,7 +11755,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStorage`.
     ///
     /// <p>Returns account level backups storage size and provisional storage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11820,7 +11820,7 @@ pub mod fluent_builders {
     /// requests ordered by the date and time of the request in ascending order. Otherwise
     /// <code>DescribeTableRestoreStatus</code> returns the status of the table specified by
     /// <code>TableRestoreRequestId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTableRestoreStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11969,7 +11969,7 @@ pub mod fluent_builders {
     /// combination of those values are returned.</p>
     /// <p>If both tag keys and values are omitted from the request, resources are returned
     /// regardless of whether they have tag keys or values associated with them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12232,7 +12232,7 @@ pub mod fluent_builders {
     /// then all usage limit objects for the combination of cluster and feature are returned.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUsageLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12428,7 +12428,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops logging information, such as queries and connection attempts, for the
     /// specified Amazon Redshift cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableLogging<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12509,7 +12509,7 @@ pub mod fluent_builders {
     /// <p>If your cluster and its snapshots are encrypted using a customer master key (CMK)
     /// from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that
     /// grants Amazon Redshift permission to the CMK in the destination region. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableSnapshotCopy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12589,7 +12589,7 @@ pub mod fluent_builders {
     ///
     /// <p>From a consumer account, remove association for the specified datashare.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDataShareConsumer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12687,7 +12687,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts logging information, such as queries and connection attempts, for the
     /// specified Amazon Redshift cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableLogging<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12860,7 +12860,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables the automatic copy of snapshots from one region to another region for a
     /// specified cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableSnapshotCopy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13029,7 +13029,7 @@ pub mod fluent_builders {
     /// privilege.</p>
     /// <p>If the <code>DbName</code> parameter is specified, the IAM policy must allow access
     /// to the resource <code>dbname</code> for the specified database name. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetClusterCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13319,7 +13319,7 @@ pub mod fluent_builders {
     /// <p>Gets the configuration options for the reserved-node exchange. These options
     /// include information about the source reserved node and target reserved node offering.
     /// Details include the node type, the price, the node count, and the offering type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReservedNodeExchangeConfigurationOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13458,7 +13458,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term,
     /// and usage price of the given DC1 reserved node.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReservedNodeExchangeOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13557,7 +13557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyAquaConfiguration`.
     ///
     /// <p>Modifies whether a cluster can use AQUA (Advanced Query Accelerator). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyAquaConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13668,7 +13668,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyAuthenticationProfile`.
     ///
     /// <p>Modifies an authentication profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyAuthenticationProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13770,7 +13770,7 @@ pub mod fluent_builders {
     /// For more information about managing clusters, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14452,7 +14452,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies the database revision of a cluster. The database revision is a unique
     /// revision of the database running in a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClusterDbRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14546,7 +14546,7 @@ pub mod fluent_builders {
     /// <p>Modifies the list of Identity and Access Management (IAM) roles that can be
     /// used by the cluster to access other Amazon Web Services services.</p>
     /// <p>A cluster can have up to 10 IAM roles associated at any time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClusterIamRoles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14674,7 +14674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyClusterMaintenance`.
     ///
     /// <p>Modifies the maintenance settings of a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClusterMaintenance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14820,7 +14820,7 @@ pub mod fluent_builders {
     /// For more information about parameters and parameter groups, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClusterParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14921,7 +14921,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies the settings for a snapshot.</p>
     /// <p>This exanmple modifies the manual retention period setting for a cluster snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClusterSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15027,7 +15027,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyClusterSnapshotSchedule`.
     ///
     /// <p>Modifies a snapshot schedule for a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClusterSnapshotSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15130,7 +15130,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies a cluster subnet group to include the specified list of VPC subnets. The
     /// operation replaces the existing list of subnets with the new list of subnets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClusterSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15235,7 +15235,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyEndpointAccess`.
     ///
     /// <p>Modifies a Redshift-managed VPC endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyEndpointAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15325,7 +15325,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyEventSubscription`.
     ///
     /// <p>Modifies an existing Amazon Redshift event notification subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15508,7 +15508,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies a scheduled action.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyScheduledAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15682,7 +15682,7 @@ pub mod fluent_builders {
     /// set the manual option to change only the retention periods of copied manual snapshots.
     /// If you set this option, only newly copied manual snapshots have the new retention
     /// period. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifySnapshotCopyRetentionPeriod<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15810,7 +15810,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies a snapshot schedule. Any schedule associated with a cluster is modified
     /// asynchronously.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifySnapshotSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15903,7 +15903,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies a usage limit in a cluster.
     /// You can't modify the feature type or period of a usage limit.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyUsageLimit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16003,7 +16003,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PauseCluster`.
     ///
     /// <p>Pauses a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PauseCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16084,7 +16084,7 @@ pub mod fluent_builders {
     /// For more information about reserved node offerings, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved Nodes</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseReservedNodeOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16181,7 +16181,7 @@ pub mod fluent_builders {
     /// For more information about managing clusters, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16254,7 +16254,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectDataShare`.
     ///
     /// <p>From the consumer account, rejects the specified datashare.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectDataShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16330,7 +16330,7 @@ pub mod fluent_builders {
     /// values and sets the source values of the parameters to "engine-default". To reset the
     /// entire parameter group specify the <i>ResetAllParameters</i> parameter.
     /// For parameter changes to take effect you must reboot any associated clusters. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetClusterParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16484,7 +16484,7 @@ pub mod fluent_builders {
     /// cluster.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResizeCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16643,7 +16643,7 @@ pub mod fluent_builders {
     /// For more information about working with snapshots, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreFromClusterSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17356,7 +17356,7 @@ pub mod fluent_builders {
     /// <code>NewTableName</code> parameter value in the call to
     /// <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original
     /// table with the table created from the snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreTableFromClusterSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17545,7 +17545,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResumeCluster`.
     ///
     /// <p>Resumes a paused cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17622,7 +17622,7 @@ pub mod fluent_builders {
     /// For information about managing security groups, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the
     /// <i>Amazon Redshift Cluster Management Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeClusterSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17762,7 +17762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeEndpointAccess`.
     ///
     /// <p>Revokes access to a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeEndpointAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17880,7 +17880,7 @@ pub mod fluent_builders {
     /// For more information about working with snapshots, go to
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeSnapshotAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17991,7 +17991,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RotateEncryptionKey`.
     ///
     /// <p>Rotates the encryption keys for a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RotateEncryptionKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18070,7 +18070,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePartnerStatus`.
     ///
     /// <p>Updates the status of a partner integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePartnerStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

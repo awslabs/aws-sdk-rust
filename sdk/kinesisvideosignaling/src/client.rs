@@ -122,7 +122,7 @@ pub mod fluent_builders {
     /// is unable to establish a direct peer-to-peer connection over a signaling channel. You
     /// must specify either a signaling channel ARN or the client ID in order to invoke this
     /// API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIceServerConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -231,7 +231,7 @@ pub mod fluent_builders {
     /// channel. This API returns the SDP answer from the connected master. If the master is not
     /// connected to the signaling channel, redelivery requests are made until the message
     /// expires.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendAlexaOfferToMaster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

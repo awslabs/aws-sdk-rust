@@ -109,7 +109,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRawMessageContent`.
     ///
     /// <p>Retrieves the raw content of an in-transit email message, in MIME format.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRawMessageContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -192,7 +192,7 @@ pub mod fluent_builders {
     /// message.
     /// </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRawMessageContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

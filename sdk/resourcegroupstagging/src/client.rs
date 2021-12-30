@@ -153,7 +153,7 @@ pub mod fluent_builders {
     /// <p>Describes the status of the <code>StartReportCreation</code> operation. </p>
     /// <p>You can call this operation only from the organization's
     /// management account and from the us-east-1 Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReportCreation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -225,7 +225,7 @@ pub mod fluent_builders {
     /// <code>PaginationToken</code> response parameter value as an input to the next request until you
     /// recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
     /// there are no more results waiting to be returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -492,7 +492,7 @@ pub mod fluent_builders {
     /// <code>PaginationToken</code> response parameter value as an input to the next request until you
     /// recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
     /// there are no more results waiting to be returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -873,7 +873,7 @@ pub mod fluent_builders {
     /// <code>PaginationToken</code> response parameter value as an input to the next request until you
     /// recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
     /// there are no more results waiting to be returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTagKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -957,7 +957,7 @@ pub mod fluent_builders {
     /// <code>PaginationToken</code> response parameter value as an input to the next request until you
     /// recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that
     /// there are no more results waiting to be returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTagValues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1054,7 +1054,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>You can call this operation only from the organization's
     /// management account and from the us-east-1 Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReportCreation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1183,7 +1183,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1329,7 +1329,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

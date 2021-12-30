@@ -600,7 +600,7 @@ pub mod fluent_builders {
     /// <p>Determines the dominant language of the input text for a batch of documents. For a list
     /// of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectDominantLanguage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -683,7 +683,7 @@ pub mod fluent_builders {
     /// <p>Inspects the text of a batch of documents for named entities and returns information
     /// about them. For more information about named entities, see <a>how-entities</a>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -779,7 +779,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDetectKeyPhrases`.
     ///
     /// <p>Detects the key noun phrases found in a batch of documents.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectKeyPhrases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -877,7 +877,7 @@ pub mod fluent_builders {
     /// <p>Inspects a batch of documents and returns an inference of the prevailing sentiment,
     /// <code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>,
     /// in each one.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectSentiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -974,7 +974,7 @@ pub mod fluent_builders {
     ///
     /// <p>Inspects the text of a batch of documents for the syntax and part of speech of the words
     /// in the document and returns information about them. For more information, see <a>how-syntax</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDetectSyntax<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1073,7 +1073,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new document classification request to analyze a single document in real-time,
     /// using a previously created and trained custom model and an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ClassifyDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1155,7 +1155,7 @@ pub mod fluent_builders {
     /// <p>Analyzes input text for the presence of personally identifiable information (PII) and
     /// returns the labels of identified PII entity types such as name, address, bank account number,
     /// or phone number.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ContainsPiiEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1243,7 +1243,7 @@ pub mod fluent_builders {
     /// classifier, you provide a set of training documents that labeled with the categories that you
     /// want to use. After the classifier is trained you can use it to categorize a set of labeled
     /// documents into the categories. For more information, see <a>how-document-classification</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDocumentClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1553,7 +1553,7 @@ pub mod fluent_builders {
     /// <p>Creates a model-specific endpoint for synchronous inference for a previously trained
     /// custom model
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1711,7 +1711,7 @@ pub mod fluent_builders {
     /// <p>Creates an entity recognizer using submitted files. After your
     /// <code>CreateEntityRecognizer</code> request is submitted, you can check job status using the
     /// API. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEntityRecognizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1991,7 +1991,7 @@ pub mod fluent_builders {
     /// <p>This is an asynchronous action that puts the classifier into a DELETING state, and it is
     /// then removed by a background job. Once removed, the classifier disappears from your account
     /// and is no longer available for use. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDocumentClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2068,7 +2068,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a model-specific endpoint for a previously-trained custom model. All endpoints
     /// must be deleted in order for the model to be deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2144,7 +2144,7 @@ pub mod fluent_builders {
     /// <p>This is an asynchronous action that puts the recognizer into a DELETING state, and it is
     /// then removed by a background job. Once removed, the recognizer disappears from your account
     /// and is no longer available for use. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEntityRecognizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2218,7 +2218,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with a document classification job. Use this operation to
     /// get the status of a classification job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDocumentClassificationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2290,7 +2290,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDocumentClassifier`.
     ///
     /// <p>Gets the properties associated with a document classifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDocumentClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2369,7 +2369,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with a dominant language detection job. Use this operation
     /// to get the status of a detection job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDominantLanguageDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2444,7 +2444,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with a specific endpoint. Use this operation to get the
     /// status of an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2515,7 +2515,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with an entities detection job. Use this operation to get
     /// the status of a detection job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEntitiesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2588,7 +2588,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides details about an entity recognizer including status, S3 buckets containing
     /// training data, recognizer metadata, metrics, and so on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEntityRecognizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2661,7 +2661,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEventsDetectionJob`.
     ///
     /// <p>Gets the status and details of an events detection job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventsDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2732,7 +2732,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with a key phrases detection job. Use this operation to get
     /// the status of a detection job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeKeyPhrasesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2805,7 +2805,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with a PII entities detection job. For example, you can use
     /// this operation to get the job status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePiiEntitiesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2878,7 +2878,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with a sentiment detection job. Use this operation to get
     /// the status of a detection job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSentimentDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2951,7 +2951,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with a topic detection job. Use this operation to get
     /// the status of a detection job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTopicsDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3022,7 +3022,7 @@ pub mod fluent_builders {
     ///
     /// <p>Determines the dominant language of the input text. For a list of languages that Amazon
     /// Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectDominantLanguage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3095,7 +3095,7 @@ pub mod fluent_builders {
     ///
     /// <p>Inspects text for named entities, and returns information about them. For more
     /// information, about named entities, see <a>how-entities</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3206,7 +3206,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetectKeyPhrases`.
     ///
     /// <p>Detects the key noun phrases found in the text. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectKeyPhrases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3294,7 +3294,7 @@ pub mod fluent_builders {
     ///
     /// <p>Inspects the input text for entities that contain personally identifiable information
     /// (PII) and returns information about them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectPiiEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3380,7 +3380,7 @@ pub mod fluent_builders {
     ///
     /// <p>Inspects text and returns an inference of the prevailing sentiment
     /// (<code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectSentiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3468,7 +3468,7 @@ pub mod fluent_builders {
     ///
     /// <p>Inspects text for syntax and the part of speech of words in the document. For more
     /// information, <a>how-syntax</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectSyntax<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3557,7 +3557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDocumentClassificationJobs`.
     ///
     /// <p>Gets a list of the documentation classification jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDocumentClassificationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3652,7 +3652,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDocumentClassifiers`.
     ///
     /// <p>Gets a list of the document classifiers that you have created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDocumentClassifiers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3747,7 +3747,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDocumentClassifierSummaries`.
     ///
     /// <p>Gets a list of summaries of the document classifiers that you have created</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDocumentClassifierSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3827,7 +3827,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDominantLanguageDetectionJobs`.
     ///
     /// <p>Gets a list of the dominant language detection jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDominantLanguageDetectionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3925,7 +3925,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEndpoints`.
     ///
     /// <p>Gets a list of all existing endpoints that you've created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4022,7 +4022,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEntitiesDetectionJobs`.
     ///
     /// <p>Gets a list of the entity detection jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntitiesDetectionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4122,7 +4122,7 @@ pub mod fluent_builders {
     /// the list, with a default number of 100 recognizers in the list.</p>
     /// <p>The results of this list are not in any particular order. Please get the list and sort
     /// locally if needed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntityRecognizers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4219,7 +4219,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEntityRecognizerSummaries`.
     ///
     /// <p>Gets a list of summaries for the entity recognizers that you have created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntityRecognizerSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4299,7 +4299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEventsDetectionJobs`.
     ///
     /// <p>Gets a list of the events detection jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventsDetectionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4394,7 +4394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListKeyPhrasesDetectionJobs`.
     ///
     /// <p>Get a list of key phrase detection jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListKeyPhrasesDetectionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4489,7 +4489,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPiiEntitiesDetectionJobs`.
     ///
     /// <p>Gets a list of the PII entity detection jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPiiEntitiesDetectionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4584,7 +4584,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSentimentDetectionJobs`.
     ///
     /// <p>Gets a list of sentiment detection jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSentimentDetectionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4679,7 +4679,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags associated with a given Amazon Comprehend resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4751,7 +4751,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTopicsDetectionJobs`.
     ///
     /// <p>Gets a list of the topic detection jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTopicsDetectionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4847,7 +4847,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts an asynchronous document classification job. Use the  operation to track the progress of the
     /// job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDocumentClassificationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5072,7 +5072,7 @@ pub mod fluent_builders {
     /// <p>Starts an asynchronous dominant language detection job for a collection of documents. Use
     /// the  operation to track the status
     /// of a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDominantLanguageDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5279,7 +5279,7 @@ pub mod fluent_builders {
     /// order to be used for custom entity recognition, the optional <code>EntityRecognizerArn</code>
     /// must be used in order to provide access to the recognizer being used to detect the custom
     /// entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartEntitiesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5518,7 +5518,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartEventsDetectionJob`.
     ///
     /// <p>Starts an asynchronous event detection job for a collection of documents.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartEventsDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5697,7 +5697,7 @@ pub mod fluent_builders {
     /// <p>Starts an asynchronous key phrase detection job for a collection of documents. Use the
     /// operation to track the status of a
     /// job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartKeyPhrasesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5917,7 +5917,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartPiiEntitiesDetectionJob`.
     ///
     /// <p>Starts an asynchronous PII entity detection job for a collection of documents.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartPiiEntitiesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6113,7 +6113,7 @@ pub mod fluent_builders {
     /// <p>Starts an asynchronous sentiment detection job for a collection of documents. use the
     /// operation to track the status of a
     /// job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSentimentDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6332,7 +6332,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts an asynchronous topic detection job. Use the
     /// <code>DescribeTopicDetectionJob</code> operation to track the status of a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTopicsDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6558,7 +6558,7 @@ pub mod fluent_builders {
     /// Internal Request Exception. </p>
     /// <p>When a job is stopped, any documents already processed are written to the output
     /// location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDominantLanguageDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6637,7 +6637,7 @@ pub mod fluent_builders {
     /// Internal Request Exception. </p>
     /// <p>When a job is stopped, any documents already processed are written to the output
     /// location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopEntitiesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6707,7 +6707,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopEventsDetectionJob`.
     ///
     /// <p>Stops an events detection job in progress.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopEventsDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6786,7 +6786,7 @@ pub mod fluent_builders {
     /// Internal Request Exception. </p>
     /// <p>When a job is stopped, any documents already processed are written to the output
     /// location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopKeyPhrasesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6856,7 +6856,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopPiiEntitiesDetectionJob`.
     ///
     /// <p>Stops a PII entities detection job in progress.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopPiiEntitiesDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6935,7 +6935,7 @@ pub mod fluent_builders {
     /// Internal Request Exception. </p>
     /// <p>When a job is stopped, any documents already processed are written to the output
     /// location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopSentimentDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7010,7 +7010,7 @@ pub mod fluent_builders {
     /// stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and
     /// put into the <code>STOPPED</code> state and the service sends back an HTTP 200 response with
     /// an empty HTTP body. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTrainingDocumentClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7093,7 +7093,7 @@ pub mod fluent_builders {
     /// stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and
     /// putted into the <code>STOPPED</code> state and the service sends back an HTTP 200 response
     /// with an empty HTTP body.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTrainingEntityRecognizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7171,7 +7171,7 @@ pub mod fluent_builders {
     /// that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
     /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7262,7 +7262,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a specific tag associated with an Amazon Comprehend resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7357,7 +7357,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEndpoint`.
     ///
     /// <p>Updates information about the specified endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

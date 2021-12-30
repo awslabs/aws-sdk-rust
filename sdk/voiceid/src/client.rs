@@ -256,7 +256,7 @@ pub mod fluent_builders {
     /// <p>Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer
     /// audio, and voiceprints.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -387,7 +387,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
     /// <p>Deletes the specified domain from the Amazon Connect Voice ID system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -457,7 +457,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFraudster`.
     ///
     /// <p>Deletes the specified fraudster from the Amazon Connect Voice ID system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFraudster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -537,7 +537,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSpeaker`.
     ///
     /// <p>Deletes the specified speaker from the Amazon Connect Voice ID system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSpeaker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -617,7 +617,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDomain`.
     ///
     /// <p>Describes the specified domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -687,7 +687,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFraudster`.
     ///
     /// <p>Describes the specified fraudster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFraudster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -767,7 +767,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFraudsterRegistrationJob`.
     ///
     /// <p>Describes the specified fraudster registration job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFraudsterRegistrationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -847,7 +847,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSpeaker`.
     ///
     /// <p>Describes the specified speaker.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSpeaker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -927,7 +927,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSpeakerEnrollmentJob`.
     ///
     /// <p>Describes the specified speaker enrollment job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSpeakerEnrollmentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1008,7 +1008,7 @@ pub mod fluent_builders {
     ///
     /// <p>Evaluates a specified session based on audio data accumulated during a streaming Amazon Connect Voice
     /// ID call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EvaluateSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1094,7 +1094,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all the domains in the Amazon Web Services account.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1187,7 +1187,7 @@ pub mod fluent_builders {
     /// If <code>JobStatus</code> is not provided, this lists all fraudster registration jobs in the given
     /// domain.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFraudsterRegistrationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1305,7 +1305,7 @@ pub mod fluent_builders {
     /// <p>Lists all the speaker enrollment jobs in the domain with the specified <code>JobStatus</code>. If
     /// <code>JobStatus</code> is not provided, this lists all jobs with all possible speaker enrollment job
     /// statuses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSpeakerEnrollmentJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1418,7 +1418,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSpeakers`.
     ///
     /// <p>Lists all speakers in a specified domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSpeakers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1518,7 +1518,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags associated with a specified Voice ID resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1592,7 +1592,7 @@ pub mod fluent_builders {
     /// If they already exist, their existing status is overridden and they are opted out. Enrollment and
     /// evaluation authentication requests are rejected for opted out speakers, and opted out speakers have
     /// no voice embeddings stored in the system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OptOutSpeaker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1672,7 +1672,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFraudsterRegistrationJob`.
     ///
     /// <p>Starts a new batch fraudster registration job using provided details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFraudsterRegistrationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1830,7 +1830,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartSpeakerEnrollmentJob`.
     ///
     /// <p>Starts a new batch speaker enrollment job using specified details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSpeakerEnrollmentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1988,7 +1988,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tags an Amazon Connect Voice ID resource with the provided list of tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2075,7 +2075,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes specified tags from a specified Amazon Connect Voice ID resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2163,7 +2163,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified domain. This API has clobber behavior, and clears and replaces all attributes.
     /// If an optional field, such as 'Description' is not provided, it is removed from the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

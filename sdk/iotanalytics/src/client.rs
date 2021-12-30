@@ -337,7 +337,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchPutMessage`.
     ///
     /// <p>Sends messages to a channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -478,7 +478,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelPipelineReprocessing`.
     ///
     /// <p>Cancels the reprocessing of data through the pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelPipelineReprocessing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -567,7 +567,7 @@ pub mod fluent_builders {
     ///
     /// <p>Used to create a channel. A channel collects data from an MQTT topic and archives the raw,
     /// unprocessed messages before publishing the data to a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -692,7 +692,7 @@ pub mod fluent_builders {
     /// containerized application). This operation creates the skeleton of a dataset. The dataset can
     /// be populated manually by calling <code>CreateDatasetContent</code> or automatically according
     /// to a trigger you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -904,7 +904,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query) or a
     /// <code>containerAction</code> (executing a containerized application).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -986,7 +986,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDatastore`.
     ///
     /// <p>Creates a data store, which is a repository for messages.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1143,7 +1143,7 @@ pub mod fluent_builders {
     /// the messages before storing them in a data store. You must specify both a <code>channel</code>
     /// and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in
     /// the <code>pipelineActivities</code> array.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1270,7 +1270,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
     /// <p>Deletes the specified channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1342,7 +1342,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified dataset.</p>
     /// <p>You do not have to delete the content of the dataset before you perform this
     /// operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1412,7 +1412,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDatasetContent`.
     ///
     /// <p>Deletes the content of the specified dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatasetContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1496,7 +1496,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDatastore`.
     ///
     /// <p>Deletes the specified data store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1569,7 +1569,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePipeline`.
     ///
     /// <p>Deletes the specified pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1642,7 +1642,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeChannel`.
     ///
     /// <p>Retrieves information about a channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1724,7 +1724,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
     /// <p>Retrieves information about a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1794,7 +1794,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDatastore`.
     ///
     /// <p>Retrieves information about a data store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1881,7 +1881,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoggingOptions`.
     ///
     /// <p>Retrieves the current settings of the IoT Analytics logging options.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1941,7 +1941,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePipeline`.
     ///
     /// <p>Retrieves information about a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2014,7 +2014,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDatasetContent`.
     ///
     /// <p>Retrieves the contents of a dataset as presigned URIs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDatasetContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2098,7 +2098,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChannels`.
     ///
     /// <p>Retrieves a list of channels.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2180,7 +2180,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatasetContents`.
     ///
     /// <p>Lists information about dataset contents that have been created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetContents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2304,7 +2304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
     /// <p>Retrieves information about datasets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2386,7 +2386,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatastores`.
     ///
     /// <p>Retrieves a list of data stores.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatastores<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2468,7 +2468,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPipelines`.
     ///
     /// <p>Retrieves a list of pipelines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2550,7 +2550,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags (metadata) that you have assigned to the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2624,7 +2624,7 @@ pub mod fluent_builders {
     /// minute for the change to take effect. Also, if you change the policy attached to the role you
     /// specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it
     /// takes up to five minutes for that change to take effect. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2697,7 +2697,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RunPipelineActivity`.
     ///
     /// <p>Simulates the results of running a pipeline activity on a message payload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RunPipelineActivity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2796,7 +2796,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a sample of messages from the specified channel ingested during the specified
     /// timeframe. Up to 10 messages can be retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SampleChannelData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2904,7 +2904,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartPipelineReprocessing`.
     ///
     /// <p>Starts the reprocessing of raw message data through the pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartPipelineReprocessing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3029,7 +3029,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to
     /// manage a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3116,7 +3116,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the given tags (metadata) from the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3203,7 +3203,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
     /// <p>Used to update the settings of a channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3307,7 +3307,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataset`.
     ///
     /// <p>Updates the settings of a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3489,7 +3489,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDatastore`.
     ///
     /// <p>Used to update the settings of a data store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3612,7 +3612,7 @@ pub mod fluent_builders {
     /// <p>Updates the settings of a pipeline. You must specify both a <code>channel</code> and a
     /// <code>datastore</code> activity and, optionally, as many as 23 additional activities in the
     /// <code>pipelineActivities</code> array.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

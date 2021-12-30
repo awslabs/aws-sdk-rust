@@ -1551,7 +1551,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociatePhoneNumbersWithVoiceConnector`.
     ///
     /// <p>Associates phone numbers with the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePhoneNumbersWithVoiceConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1653,7 +1653,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociatePhoneNumbersWithVoiceConnectorGroup`.
     ///
     /// <p>Associates phone numbers with the specified Amazon Chime Voice Connector group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePhoneNumbersWithVoiceConnectorGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1758,7 +1758,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociatePhoneNumberWithUser`.
     ///
     /// <p>Associates a phone number with the specified Amazon Chime user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePhoneNumberWithUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1851,7 +1851,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateSigninDelegateGroupsWithAccount`.
     ///
     /// <p>Associates the specified sign-in delegate groups with the specified Amazon Chime account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSigninDelegateGroupsWithAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1945,7 +1945,7 @@ pub mod fluent_builders {
     /// in the
     /// <i>Amazon Chime Developer Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateAttendee<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2032,7 +2032,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchCreateChannelMembership`.
     ///
     /// <p>Adds a specified number of users to a channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2150,7 +2150,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchCreateRoomMembership`.
     ///
     /// <p>Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The member role designates whether the member is a chat room administrator or a general chat room member.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateRoomMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2255,7 +2255,7 @@ pub mod fluent_builders {
     /// Phone numbers remain in the
     /// <b>Deletion queue</b> for 7 days before they are deleted permanently.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeletePhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2348,7 +2348,7 @@ pub mod fluent_builders {
     /// <a>LogoutUser</a>
     /// action.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchSuspendUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2447,7 +2447,7 @@ pub mod fluent_builders {
     /// <code>Registered</code>
     /// status. Users who are not previously suspended are ignored.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUnsuspendUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2536,7 +2536,7 @@ pub mod fluent_builders {
     /// <p>Updates phone number product types or calling names. You can update one attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type or the calling name.</p>
     /// <p>For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.</p>
     /// <p>Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names must be complete before you can request another update.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdatePhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2616,7 +2616,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchUpdateUser`.
     ///
     /// <p>Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20 users for the specified Amazon Chime account. Currently, only <code>LicenseType</code> updates are supported for this action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2708,7 +2708,7 @@ pub mod fluent_builders {
     /// <p>Creates an Amazon Chime account under the administrator's AWS account. Only <code>Team</code>
     /// account types are currently supported for this action. For more information about different account types, see
     /// <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2779,7 +2779,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers use this API.
     /// <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2903,7 +2903,7 @@ pub mod fluent_builders {
     /// </ul>
     ///
     /// <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2990,7 +2990,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a unique <code>appInstanceUserId</code> and
     /// <code>Name</code> for that user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3131,7 +3131,7 @@ pub mod fluent_builders {
     /// in the
     /// <i>Amazon Chime Developer Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAttendee<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3231,7 +3231,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBot`.
     ///
     /// <p>Creates a bot for an Amazon Chime Enterprise account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3331,7 +3331,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3506,7 +3506,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelBan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3633,7 +3633,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3768,7 +3768,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelModerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3861,7 +3861,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMediaCapturePipeline`.
     ///
     /// <p>Creates a media capture pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMediaCapturePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4008,7 +4008,7 @@ pub mod fluent_builders {
     /// <i>Amazon Chime Developer Guide</i>
     /// .
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMeeting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4238,7 +4238,7 @@ pub mod fluent_builders {
     ///
     /// <p>To play welcome audio or implement an interactive voice response (IVR), use the
     /// <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMeetingDialOut<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4354,7 +4354,7 @@ pub mod fluent_builders {
     /// <i>Amazon Chime Developer Guide</i>
     /// .
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMeetingWithAttendees<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4604,7 +4604,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot use the Amazon Chime Business Calling product type.
     /// For numbers outside the U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePhoneNumberOrder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4694,7 +4694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProxySession`.
     ///
     /// <p>Creates a proxy session on the specified Amazon Chime Voice Connector for the specified participant phone numbers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProxySession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4863,7 +4863,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRoom`.
     ///
     /// <p>Creates a chat room for the specified Amazon Chime Enterprise account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4956,7 +4956,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRoomMembership`.
     ///
     /// <p>Adds a member to a chat room in an Amazon Chime Enterprise account. A member can be either a user or a bot. The member role designates whether the member is a chat room administrator or a general chat room member.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoomMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5059,7 +5059,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSipMediaApplication`.
     ///
     /// <p>Creates a SIP media application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSipMediaApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5157,7 +5157,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the endpoint of the specified
     /// <code>sipMediaApplicationId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSipMediaApplicationCall<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5282,7 +5282,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSipRule`.
     ///
     /// <p>Creates a SIP rule which can be used to run a SIP media application as a target for a specific trigger type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSipRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5418,7 +5418,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUser`.
     ///
     /// <p>Creates a user under the specified Amazon Chime account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5524,7 +5524,7 @@ pub mod fluent_builders {
     /// <a>CreateVoiceConnectorRequest$RequireEncryption</a>
     /// configures your Amazon Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted outbound calls are blocked.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVoiceConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5629,7 +5629,7 @@ pub mod fluent_builders {
     /// including <code>VoiceConnectorItems</code> in the request.</p>
     /// <p>You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This
     /// creates a fault tolerant mechanism for fallback in case of availability events.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVoiceConnectorGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5729,7 +5729,7 @@ pub mod fluent_builders {
     ///
     /// <p>After 90 days, deleted accounts are permanently removed from your
     /// <code>Disabled</code> accounts list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5799,7 +5799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppInstance`.
     ///
     /// <p>Deletes an <code>AppInstance</code> and all associated data asynchronously.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5872,7 +5872,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppInstanceAdmin`.
     ///
     /// <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5958,7 +5958,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppInstanceStreamingConfigurations`.
     ///
     /// <p>Deletes the streaming configurations of an <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstanceStreamingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6033,7 +6033,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppInstanceUser`.
     ///
     /// <p>Deletes an <code>AppInstanceUser</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6109,7 +6109,7 @@ pub mod fluent_builders {
     /// <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see
     /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
     /// in the <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAttendee<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6196,7 +6196,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6282,7 +6282,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelBan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6378,7 +6378,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6476,7 +6476,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6572,7 +6572,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelModerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6665,7 +6665,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEventsConfiguration`.
     ///
     /// <p>Deletes the events configuration that allows a bot to receive outgoing events.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6745,7 +6745,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMediaCapturePipeline`.
     ///
     /// <p>Deletes the media capture pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMediaCapturePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6821,7 +6821,7 @@ pub mod fluent_builders {
     /// joining the meeting. For more information about the Amazon Chime SDK, see
     /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
     /// <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMeeting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6897,7 +6897,7 @@ pub mod fluent_builders {
     /// <p>Deleted phone numbers remain in the
     /// <b>Deletion queue</b>
     /// for 7 days before they are deleted permanently.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6970,7 +6970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProxySession`.
     ///
     /// <p>Deletes the specified proxy session from the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProxySession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7056,7 +7056,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoom`.
     ///
     /// <p>Deletes a chat room in an Amazon Chime Enterprise account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7136,7 +7136,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoomMembership`.
     ///
     /// <p>Removes a member from a chat room in an Amazon Chime Enterprise account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoomMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7226,7 +7226,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSipMediaApplication`.
     ///
     /// <p>Deletes a SIP media application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSipMediaApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7302,7 +7302,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSipRule`.
     ///
     /// <p>Deletes a SIP rule. You must disable a SIP rule before you can delete it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSipRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7374,7 +7374,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with the
     /// Amazon Chime Voice Connector must be disassociated from it before it can be
     /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7447,7 +7447,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVoiceConnectorEmergencyCallingConfiguration`.
     ///
     /// <p>Deletes the emergency calling configuration details from the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceConnectorEmergencyCallingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7515,7 +7515,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified Amazon Chime Voice Connector group. Any
     /// <code>VoiceConnectorItems</code>
     /// and phone numbers associated with the group must be removed before it can be deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceConnectorGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7595,7 +7595,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the origination settings.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceConnectorOrigination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7668,7 +7668,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVoiceConnectorProxy`.
     ///
     /// <p>Deletes the proxy configuration from the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceConnectorProxy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7741,7 +7741,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVoiceConnectorStreamingConfiguration`.
     ///
     /// <p>Deletes the streaming configuration for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceConnectorStreamingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7820,7 +7820,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the termination settings.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceConnectorTermination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7893,7 +7893,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVoiceConnectorTerminationCredentials`.
     ///
     /// <p>Deletes the specified SIP credentials used by your equipment to authenticate during call termination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceConnectorTerminationCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7985,7 +7985,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstance`.
     ///
     /// <p>Returns the full details of an <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8058,7 +8058,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstanceAdmin`.
     ///
     /// <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8144,7 +8144,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstanceUser`.
     ///
     /// <p>Returns the full details of an <code>AppInstanceUser</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8225,7 +8225,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8312,7 +8312,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelBan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8407,7 +8407,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8504,7 +8504,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelMembershipForAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8606,7 +8606,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelModeratedByAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8706,7 +8706,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelModerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8799,7 +8799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociatePhoneNumberFromUser`.
     ///
     /// <p>Disassociates the primary provisioned phone number from the specified Amazon Chime user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePhoneNumberFromUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8879,7 +8879,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociatePhoneNumbersFromVoiceConnector`.
     ///
     /// <p>Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePhoneNumbersFromVoiceConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8971,7 +8971,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociatePhoneNumbersFromVoiceConnectorGroup`.
     ///
     /// <p>Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePhoneNumbersFromVoiceConnectorGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9057,7 +9057,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateSigninDelegateGroupsFromAccount`.
     ///
     /// <p>Disassociates the specified sign-in delegate groups from the specified Amazon Chime account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSigninDelegateGroupsFromAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9147,7 +9147,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves details for the specified Amazon Chime account, such as account type and supported
     /// licenses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9220,7 +9220,7 @@ pub mod fluent_builders {
     /// and dialout settings. For more information about these settings, see
     /// <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9290,7 +9290,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppInstanceRetentionSettings`.
     ///
     /// <p>Gets the retention settings for an <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppInstanceRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9363,7 +9363,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppInstanceStreamingConfigurations`.
     ///
     /// <p>Gets the streaming settings for an <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppInstanceStreamingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9444,7 +9444,7 @@ pub mod fluent_builders {
     /// <i>Amazon Chime Developer Guide</i>
     /// .
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAttendee<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9524,7 +9524,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBot`.
     ///
     /// <p>Retrieves details for the specified bot, such as bot email address, bot type, status, and display name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9610,7 +9610,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9700,7 +9700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEventsConfiguration`.
     ///
     /// <p>Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint or Lambda function ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9781,7 +9781,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves global settings for the administrator's AWS account, such as Amazon Chime Business
     /// Calling and Amazon Chime Voice Connector settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGlobalSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9841,7 +9841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMediaCapturePipeline`.
     ///
     /// <p>Gets an existing media capture pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMediaCapturePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9920,7 +9920,7 @@ pub mod fluent_builders {
     /// <i>Amazon Chime Developer Guide</i>
     /// .
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMeeting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9990,7 +9990,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMessagingSessionEndpoint`.
     ///
     /// <p>The details of the endpoint for the messaging session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMessagingSessionEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10050,7 +10050,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPhoneNumber`.
     ///
     /// <p>Retrieves details for the specified phone number ID, such as associations, capabilities, and product type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10124,7 +10124,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves details for the specified phone number order, such as the order creation timestamp, phone
     /// numbers in E.164 format, product type, and order status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPhoneNumberOrder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10197,7 +10197,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPhoneNumberSettings`.
     ///
     /// <p>Retrieves the phone number settings for the administrator's AWS account, such as the default outbound calling name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPhoneNumberSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10257,7 +10257,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProxySession`.
     ///
     /// <p>Gets the specified proxy session details for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProxySession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10346,7 +10346,7 @@ pub mod fluent_builders {
     /// Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about retention settings, see
     /// <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10416,7 +10416,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRoom`.
     ///
     /// <p>Retrieves room details, such as the room name, for a room in an Amazon Chime Enterprise account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10496,7 +10496,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSipMediaApplication`.
     ///
     /// <p>Retrieves the information for a SIP media application, including name, AWS Region, and endpoints.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSipMediaApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10572,7 +10572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSipMediaApplicationLoggingConfiguration`.
     ///
     /// <p>Returns the logging configuration for the specified SIP media application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSipMediaApplicationLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10650,7 +10650,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSipRule`.
     ///
     /// <p>Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and target endpoints.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSipRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10725,7 +10725,7 @@ pub mod fluent_builders {
     /// To retrieve user details with an email address instead of a user ID, use the
     /// <a>ListUsers</a> action, and then filter by email address.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10805,7 +10805,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUserSettings`.
     ///
     /// <p>Retrieves settings for the specified user ID, such as any associated phone number settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10885,7 +10885,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVoiceConnector`.
     ///
     /// <p>Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps,name, outbound host, and encryption requirements.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10958,7 +10958,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVoiceConnectorEmergencyCallingConfiguration`.
     ///
     /// <p>Gets the emergency calling configuration details for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorEmergencyCallingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11025,7 +11025,7 @@ pub mod fluent_builders {
     ///
     /// <p>
     /// Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated <code>VoiceConnectorItems</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11101,7 +11101,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVoiceConnectorLoggingConfiguration`.
     ///
     /// <p>Retrieves the logging configuration details for the specified Amazon Chime Voice Connector. Shows whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11176,7 +11176,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVoiceConnectorOrigination`.
     ///
     /// <p>Retrieves origination setting details for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorOrigination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11249,7 +11249,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVoiceConnectorProxy`.
     ///
     /// <p>Gets the proxy configuration details for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorProxy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11324,7 +11324,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the streaming configuration details for the specified Amazon Chime Voice Connector.
     /// Shows whether media streaming is enabled for sending to Amazon Kinesis. It also shows
     /// the retention period, in hours, for the Amazon Kinesis data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorStreamingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11399,7 +11399,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVoiceConnectorTermination`.
     ///
     /// <p>Retrieves termination setting details for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorTermination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11473,7 +11473,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information about the last time a SIP <code>OPTIONS</code> ping was received from
     /// your SIP infrastructure for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorTerminationHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11550,7 +11550,7 @@ pub mod fluent_builders {
     /// <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime
     /// <code>Team</code> account. Only <code>Team</code> account types are currently
     /// supported for this action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InviteUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11649,7 +11649,7 @@ pub mod fluent_builders {
     /// <p>Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts
     /// by account name prefix. To find out which Amazon Chime account a user belongs to, you can
     /// filter by the user's email address, which returns one account result.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11749,7 +11749,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppInstanceAdmins`.
     ///
     /// <p>Returns a list of the administrators in the <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstanceAdmins<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11842,7 +11842,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppInstances`.
     ///
     /// <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11924,7 +11924,7 @@ pub mod fluent_builders {
     /// <p>List all <code>AppInstanceUsers</code>
     /// created under a single <code>AppInstance</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstanceUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12021,7 +12021,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
     /// in the <i>Amazon Chime Developer Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAttendees<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12111,7 +12111,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAttendeeTags`.
     ///
     /// <p>Lists the tags applied to an Amazon Chime SDK attendee resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAttendeeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12191,7 +12191,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBots`.
     ///
     /// <p>Lists the bots associated with the administrator's Amazon Chime Enterprise account ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12288,7 +12288,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelBans<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12395,7 +12395,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMemberships<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12523,7 +12523,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMembershipsForAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12638,7 +12638,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12784,7 +12784,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelModerators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12907,7 +12907,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13033,7 +13033,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelsModeratedByAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13140,7 +13140,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMediaCapturePipelines`.
     ///
     /// <p>Returns a list of media capture pipelines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMediaCapturePipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13223,7 +13223,7 @@ pub mod fluent_builders {
     /// Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see
     /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
     /// in the <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMeetings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13303,7 +13303,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMeetingTags`.
     ///
     /// <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMeetingTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13373,7 +13373,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPhoneNumberOrders`.
     ///
     /// <p>Lists the phone number orders for the administrator's Amazon Chime account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPhoneNumberOrders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13453,7 +13453,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPhoneNumbers`.
     ///
     /// <p>Lists the phone numbers for the specified Amazon Chime account, Amazon Chime user, Amazon Chime Voice Connector, or Amazon Chime Voice Connector group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPhoneNumbers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13582,7 +13582,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProxySessions`.
     ///
     /// <p>Lists the proxy sessions for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProxySessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13689,7 +13689,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the membership details for the specified room in an Amazon Chime Enterprise account,
     /// such as the members' IDs, email addresses, and names.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoomMemberships<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13789,7 +13789,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRooms`.
     ///
     /// <p>Lists the room details for the specified Amazon Chime Enterprise account. Optionally, filter the results by a member ID (user ID or bot ID) to see a list of rooms that the member belongs to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRooms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13889,7 +13889,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSipMediaApplications`.
     ///
     /// <p>Lists the SIP media applications under the administrator's AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSipMediaApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13969,7 +13969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSipRules`.
     ///
     /// <p>Lists the SIP rules under the administrator's AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSipRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14065,7 +14065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSupportedPhoneNumberCountries`.
     ///
     /// <p>Lists supported phone number countries.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSupportedPhoneNumberCountries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14138,7 +14138,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14209,7 +14209,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the users that belong to the specified Amazon Chime account. You can specify an email
     /// address to list only the user that the email address belongs to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14319,7 +14319,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVoiceConnectorGroups`.
     ///
     /// <p>Lists the Amazon Chime Voice Connector groups for the administrator's AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVoiceConnectorGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14399,7 +14399,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVoiceConnectors`.
     ///
     /// <p>Lists the Amazon Chime Voice Connectors for the administrator's AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVoiceConnectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14479,7 +14479,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVoiceConnectorTerminationCredentials`.
     ///
     /// <p>Lists the SIP credentials for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVoiceConnectorTerminationCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14554,7 +14554,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `LogoutUser`.
     ///
     /// <p>Logs out the specified user from all of the devices they are currently logged into.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LogoutUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14634,7 +14634,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAppInstanceRetentionSettings`.
     ///
     /// <p>Sets the amount of time in days that a given <code>AppInstance</code> retains data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAppInstanceRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14723,7 +14723,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAppInstanceStreamingConfigurations`.
     ///
     /// <p>The data streaming configurations of an <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAppInstanceStreamingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14822,7 +14822,7 @@ pub mod fluent_builders {
     /// <p>Creates an events configuration that allows a bot to receive outgoing events sent by Amazon
     /// Chime. Choose either an HTTPS endpoint or a Lambda function ARN. For more information,
     /// see <a>Bot</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEventsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14943,7 +14943,7 @@ pub mod fluent_builders {
     /// object. For more information about retention settings, see
     /// <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a>
     /// in the <i>Amazon Chime Administration Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15026,7 +15026,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutSipMediaApplicationLoggingConfiguration`.
     ///
     /// <p>Updates the logging configuration for the specified SIP media application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSipMediaApplicationLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15125,7 +15125,7 @@ pub mod fluent_builders {
     ///
     /// <p>Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency phone numbers and calling countries. Origination and termination settings must be enabled for
     /// the Amazon Chime Voice Connector before emergency calling can be configured.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutVoiceConnectorEmergencyCallingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15207,7 +15207,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutVoiceConnectorLoggingConfiguration`.
     ///
     /// <p>Adds a logging configuration for the specified Amazon Chime Voice Connector. The logging configuration specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutVoiceConnectorLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15302,7 +15302,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off origination settings.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutVoiceConnectorOrigination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15388,7 +15388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutVoiceConnectorProxy`.
     ///
     /// <p>Puts the specified proxy configuration to the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutVoiceConnectorProxy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15519,7 +15519,7 @@ pub mod fluent_builders {
     /// <p>Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming
     /// configuration specifies whether media streaming is enabled for sending to Indonesians.
     /// It also sets the retention period, in hours, for the Amazon Kinesis data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutVoiceConnectorStreamingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15614,7 +15614,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off termination settings.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutVoiceConnectorTermination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15700,7 +15700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutVoiceConnectorTerminationCredentials`.
     ///
     /// <p>Adds termination SIP credentials for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutVoiceConnectorTerminationCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15799,7 +15799,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RedactChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15889,7 +15889,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RedactConversationMessage`.
     ///
     /// <p>Redacts the specified message from the specified Amazon Chime conversation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RedactConversationMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15982,7 +15982,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RedactRoomMessage`.
     ///
     /// <p>Redacts the specified message from the specified Amazon Chime channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RedactRoomMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16072,7 +16072,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegenerateSecurityToken`.
     ///
     /// <p>Regenerates the security token for a bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegenerateSecurityToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16153,7 +16153,7 @@ pub mod fluent_builders {
     ///
     /// <p>Resets the personal meeting PIN for the specified user on an Amazon Chime account. Returns
     /// the <a>User</a> object with the updated personal meeting PIN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetPersonalPIN<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16234,7 +16234,7 @@ pub mod fluent_builders {
     ///
     /// <p>Moves a phone number from the <b>Deletion queue</b> back into the
     /// phone number <b>Inventory</b>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestorePhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16311,7 +16311,7 @@ pub mod fluent_builders {
     /// <code>State</code>, or <code>TollFreePrefix</code>. If you provide
     /// <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only
     /// support the <code>PhoneNumberType</code> filter, which you must use.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchAvailablePhoneNumbers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16466,7 +16466,7 @@ pub mod fluent_builders {
     /// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
     /// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16608,7 +16608,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartMeetingTranscription`.
     ///
     /// <p>Starts transcription for the specified <code>meetingId</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMeetingTranscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16694,7 +16694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopMeetingTranscription`.
     ///
     /// <p>Stops transcription for the specified <code>meetingId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopMeetingTranscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16764,7 +16764,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagAttendee`.
     ///
     /// <p>Applies the specified tags to the specified Amazon Chime SDK attendee.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagAttendee<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16861,7 +16861,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagMeeting`.
     ///
     /// <p>Applies the specified tags to the specified Amazon Chime SDK meeting.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagMeeting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16948,7 +16948,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies the specified tags to the specified Amazon Chime SDK meeting resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17035,7 +17035,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagAttendee`.
     ///
     /// <p>Untags the specified tags from the specified Amazon Chime SDK attendee.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagAttendee<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17132,7 +17132,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagMeeting`.
     ///
     /// <p>Untags the specified tags from the specified Amazon Chime SDK meeting.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagMeeting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17219,7 +17219,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Untags the specified tags from the specified Amazon Chime SDK meeting resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17306,7 +17306,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAccount`.
     ///
     /// <p>Updates account details for the specified Amazon Chime account. Currently, only account name and default license updates are supported for this action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17403,7 +17403,7 @@ pub mod fluent_builders {
     /// these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use
     /// the Policies Page</a> in the <i>Amazon Chime Administration
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17486,7 +17486,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAppInstance`.
     ///
     /// <p>Updates <code>AppInstance</code> metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17579,7 +17579,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAppInstanceUser`.
     ///
     /// <p>Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17672,7 +17672,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBot`.
     ///
     /// <p>Updates the status of the specified bot, such as starting or stopping the bot from running in your Amazon Chime Enterprise account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17769,7 +17769,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17885,7 +17885,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18001,7 +18001,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelReadMarker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18081,7 +18081,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGlobalSettings`.
     ///
     /// <p>Updates global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon Chime Voice Connector settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGlobalSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18172,7 +18172,7 @@ pub mod fluent_builders {
     /// <p>Updates phone number details, such as product type or calling name, for the specified phone number ID. You can update one phone number detail at a time. For example, you can update either the product type or the calling name in one action.</p>
     /// <p>For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.</p>
     /// <p>Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must be complete before you can request another update.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18270,7 +18270,7 @@ pub mod fluent_builders {
     /// <p>Updates the phone number settings for the administrator's AWS account, such as the default
     /// outbound calling name. You can update the default outbound calling name once every seven
     /// days. Outbound calling names can take up to 72 hours to update.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePhoneNumberSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18340,7 +18340,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProxySession`.
     ///
     /// <p>Updates the specified proxy session details, such as voice or SMS capabilities.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProxySession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18453,7 +18453,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRoom`.
     ///
     /// <p>Updates room details, such as the room name, for a room in an Amazon Chime Enterprise account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18546,7 +18546,7 @@ pub mod fluent_builders {
     /// Enterprise account. The member role designates whether the member is a chat room
     /// administrator or a general chat room member. The member role can be updated only for
     /// user IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoomMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18649,7 +18649,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSipMediaApplication`.
     ///
     /// <p>Updates the details of the specified SIP media application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSipMediaApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18752,7 +18752,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSipMediaApplicationCall`.
     ///
     /// <p>Allows you to trigger a Lambda function at any time while a call is active, and replace the current actions with new actions returned by the invocation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSipMediaApplicationCall<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18864,7 +18864,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSipRule`.
     ///
     /// <p>Updates the details of the specified SIP rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSipRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18974,7 +18974,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUser`.
     ///
     /// <p>Updates user details for a specified user ID. Currently, only <code>LicenseType</code> updates are supported for this action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19095,7 +19095,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserSettings`.
     ///
     /// <p>Updates the settings for the specified user, such as phone number settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19188,7 +19188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVoiceConnector`.
     ///
     /// <p>Updates details for the specified Amazon Chime Voice Connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVoiceConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19282,7 +19282,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates details of the specified Amazon Chime Voice Connector group, such as the name and
     /// Amazon Chime Voice Connector priority ranking.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVoiceConnectorGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -257,7 +257,7 @@ pub mod fluent_builders {
     /// created in your organization, the quota increase requests in the template are automatically
     /// applied to the account. You can add a quota increase request for any adjustable quota to your
     /// template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateServiceQuotaTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -318,7 +318,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the quota increase request for the specified quota from your quota request
     /// template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceQuotaIncreaseRequestFromTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -403,7 +403,7 @@ pub mod fluent_builders {
     /// <p>Disables your quota request template. After a template is disabled, the quota increase
     /// requests in the template are not applied to new accounts in your organization. Disabling a
     /// quota request template does not apply its quota increase requests.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateServiceQuotaTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -463,7 +463,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssociationForServiceQuotaTemplate`.
     ///
     /// <p>Retrieves the status of the association for the quota request template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssociationForServiceQuotaTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -526,7 +526,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the default value for the specified quota. The default value does not reflect
     /// any quota increases.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAWSDefaultServiceQuota<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -606,7 +606,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRequestedServiceQuotaChange`.
     ///
     /// <p>Retrieves information about the specified quota increase request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRequestedServiceQuotaChange<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -678,7 +678,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the applied quota value for the specified quota. For some quotas, only the
     /// default values are available. If the applied quota value is not available for a quota, the
     /// quota is not retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceQuota<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -759,7 +759,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information about the specified quota increase request in your quota request
     /// template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceQuotaIncreaseRequestFromTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -852,7 +852,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the default values for the quotas for the specified AWS service. A default value
     /// does not reflect any quota increases.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAWSDefaultServiceQuotas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -944,7 +944,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRequestedServiceQuotaChangeHistory`.
     ///
     /// <p>Retrieves the quota increase requests for the specified service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRequestedServiceQuotaChangeHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1051,7 +1051,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRequestedServiceQuotaChangeHistoryByQuota`.
     ///
     /// <p>Retrieves the quota increase requests for the specified quota.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRequestedServiceQuotaChangeHistoryByQuota<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1159,7 +1159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceQuotaIncreaseRequestsInTemplate`.
     ///
     /// <p>Lists the quota increase requests in the specified quota request template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceQuotaIncreaseRequestsInTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1265,7 +1265,7 @@ pub mod fluent_builders {
     /// <p>Lists the applied quota values for the specified AWS service. For some quotas, only the
     /// default values are available. If the applied quota value is not available for a quota, the
     /// quota is not retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceQuotas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1357,7 +1357,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServices`.
     ///
     /// <p>Lists the names and codes for the services integrated with Service Quotas.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1439,7 +1439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of the tags assigned to the specified applied quota.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1513,7 +1513,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutServiceQuotaIncreaseRequestIntoTemplate`.
     ///
     /// <p>Adds a quota increase request to your quota request template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutServiceQuotaIncreaseRequestIntoTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1615,7 +1615,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RequestServiceQuotaIncrease`.
     ///
     /// <p>Submits a quota increase request for the specified quota.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestServiceQuotaIncrease<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1706,7 +1706,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds tags to the specified applied quota. You can include one or more tags to add to the
     /// quota.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1796,7 +1796,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes tags from the specified applied quota. You can specify one or more tags to
     /// remove.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

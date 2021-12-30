@@ -314,7 +314,7 @@ pub mod fluent_builders {
     /// collection of inspection rule groups and other settings. Each firewall requires one
     /// firewall policy association, and you can use the same firewall policy for multiple
     /// firewalls. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateFirewallPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -433,7 +433,7 @@ pub mod fluent_builders {
     /// enable the firewall's protections, you must also modify the VPC's route tables for each
     /// subnet's Availability Zone, to redirect the traffic that's coming into and going out of the
     /// zone through the firewall endpoint. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -557,7 +557,7 @@ pub mod fluent_builders {
     /// themselves, for example <a>UpdateLoggingConfiguration</a>, <a>AssociateSubnets</a>, and <a>UpdateFirewallDeleteProtection</a>. </p>
     /// <p>To manage a firewall's tags, use the standard AWS resource tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.</p>
     /// <p>To retrieve information about firewalls, use <a>ListFirewalls</a> and <a>DescribeFirewall</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewall<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -753,7 +753,7 @@ pub mod fluent_builders {
     /// <p>An AWS Network Firewall firewall policy defines the behavior of a firewall, in a collection of
     /// stateless and stateful rule groups and other settings. You can use one firewall policy for
     /// multiple firewalls. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewallPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -889,7 +889,7 @@ pub mod fluent_builders {
     /// network traffic inspection, a capacity setting, and tags. </p>
     /// <p>You provide your rule group specification in your request using either
     /// <code>RuleGroup</code> or <code>Rules</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1162,7 +1162,7 @@ pub mod fluent_builders {
     /// you can remove the firewall safely.</p>
     /// <p>To delete a firewall, remove the delete protection if you need to using <a>UpdateFirewallDeleteProtection</a>,
     /// then delete the firewall by calling <a>DeleteFirewall</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFirewall<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1249,7 +1249,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFirewallPolicy`.
     ///
     /// <p>Deletes the specified <a>FirewallPolicy</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFirewallPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1339,7 +1339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
     /// <p>Deletes a resource policy that you created in a <a>PutResourcePolicy</a> request. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1409,7 +1409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRuleGroup`.
     ///
     /// <p>Deletes the specified <a>RuleGroup</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1517,7 +1517,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFirewall`.
     ///
     /// <p>Returns the data objects for the specified firewall. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFirewall<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1604,7 +1604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFirewallPolicy`.
     ///
     /// <p>Returns the data objects for the specified firewall policy. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFirewallPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1694,7 +1694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoggingConfiguration`.
     ///
     /// <p>Returns the logging configuration for the specified firewall. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1781,7 +1781,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeResourcePolicy`.
     ///
     /// <p>Retrieves a resource policy that you created in a <a>PutResourcePolicy</a> request. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1851,7 +1851,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRuleGroup`.
     ///
     /// <p>Returns the data objects for the specified rule group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1962,7 +1962,7 @@ pub mod fluent_builders {
     /// firewall endpoints from the subnets and removes any network filtering protections that the endpoints
     /// were providing.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2082,7 +2082,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the metadata for the firewall policies that you have defined. Depending on
     /// your setting for max results and the number of firewall policies, a single call might not
     /// return the full list. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2173,7 +2173,7 @@ pub mod fluent_builders {
     /// identifiers in your request, this returns only the firewalls for those VPCs.</p>
     /// <p>Depending on your setting for max results and the number of firewalls, a single call
     /// might not return the full list. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewalls<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2282,7 +2282,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the metadata for the rule groups that you have defined. Depending on your
     /// setting for max results and the number of rule groups, a single call might not return the
     /// full list. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRuleGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2376,7 +2376,7 @@ pub mod fluent_builders {
     /// resource.</p>
     /// <p>You can tag the AWS resources that you manage through AWS Network Firewall: firewalls, firewall
     /// policies, and rule groups. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2488,7 +2488,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">AWS Resource Access Manager User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2631,7 +2631,7 @@ pub mod fluent_builders {
     /// specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
     /// <p>You can tag the AWS resources that you manage through AWS Network Firewall: firewalls, firewall
     /// policies, and rule groups. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2724,7 +2724,7 @@ pub mod fluent_builders {
     /// resource.</p>
     /// <p>You can manage tags for the AWS resources that you manage through AWS Network Firewall:
     /// firewalls, firewall policies, and rule groups. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2814,7 +2814,7 @@ pub mod fluent_builders {
     /// to delete the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
     /// against deletion. This setting helps protect against accidentally deleting a firewall
     /// that's in use. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallDeleteProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2930,7 +2930,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies the description for the specified firewall. Use the description to help you
     /// identify the firewall when you're working with it. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallDescription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3043,7 +3043,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFirewallPolicy`.
     ///
     /// <p>Updates the properties of the specified firewall policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3188,7 +3188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFirewallPolicyChangeProtection`.
     ///
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallPolicyChangeProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3333,7 +3333,7 @@ pub mod fluent_builders {
     /// <code>LogDestinationConfig</code>. To change these settings, delete the existing
     /// <code>LogDestinationConfig</code> object and create a new one, using two separate calls
     /// to this update operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3443,7 +3443,7 @@ pub mod fluent_builders {
     /// <p>To update a rule group, first call <a>DescribeRuleGroup</a> to retrieve the
     /// current <a>RuleGroup</a> object, update the object as needed, and then provide
     /// the updated object to this call. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3634,7 +3634,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSubnetChangeProtection`.
     ///
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSubnetChangeProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

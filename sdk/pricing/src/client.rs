@@ -122,7 +122,7 @@ pub mod fluent_builders {
     /// names available for that service. For example, some of the attribute names available for EC2 are
     /// <code>volumeType</code>, <code>maxIopsVolume</code>, <code>operation</code>,
     /// <code>locationType</code>, and <code>instanceCapacity10xlarge</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -238,7 +238,7 @@ pub mod fluent_builders {
     /// in a Price List API offer file. For a list of available attributes, see
     /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer File Definitions</a>
     /// in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon Web Services Billing and Cost Management User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAttributeValues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -343,7 +343,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProducts`.
     ///
     /// <p>Returns a list of all products that match the filter criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProducts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

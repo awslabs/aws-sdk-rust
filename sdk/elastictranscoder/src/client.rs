@@ -221,7 +221,7 @@ pub mod fluent_builders {
     /// pipeline from starting to process a job while you're getting the job identifier, use
     /// <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -299,7 +299,7 @@ pub mod fluent_builders {
     /// <p>If you have specified more than one output for your jobs (for example, one output for the
     /// Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to
     /// list the jobs (as opposed to the AWS Console).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -511,7 +511,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePipeline`.
     ///
     /// <p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1197,7 +1197,7 @@ pub mod fluent_builders {
     /// <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International
     /// Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding
     /// for generic audiovisual services</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePreset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1337,7 +1337,7 @@ pub mod fluent_builders {
     /// <p> You can only delete a pipeline that has never been used or that is not currently in use
     /// (doesn't contain any active jobs). If the pipeline is currently in use,
     /// <code>DeletePipeline</code> returns an error. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1410,7 +1410,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You can't delete the default presets that are included with Elastic Transcoder.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePreset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1482,7 +1482,7 @@ pub mod fluent_builders {
     /// <p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p>
     /// <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains
     /// one element for each job that satisfies the search criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobsByPipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1579,7 +1579,7 @@ pub mod fluent_builders {
     ///
     /// <p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response
     /// body contains one element for each job that satisfies the search criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobsByStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1681,7 +1681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPipelines`.
     ///
     /// <p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1768,7 +1768,7 @@ pub mod fluent_builders {
     ///
     /// <p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that
     /// you've added in an AWS region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPresets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1854,7 +1854,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReadJob`.
     ///
     /// <p>The ReadJob operation returns detailed information about a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReadJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1924,7 +1924,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReadPipeline`.
     ///
     /// <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReadPipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1994,7 +1994,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReadPreset`.
     ///
     /// <p>The ReadPreset operation gets detailed information about a preset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReadPreset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2069,7 +2069,7 @@ pub mod fluent_builders {
     /// process. The action attempts to assume the specified IAM role, checks read access to the
     /// input and output buckets, and tries to send a test notification to Amazon SNS topics
     /// that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2184,7 +2184,7 @@ pub mod fluent_builders {
     /// Jobs that you have already submitted and that Elastic Transcoder has not started to process are
     /// affected in addition to jobs that you submit after you change settings. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2789,7 +2789,7 @@ pub mod fluent_builders {
     ///
     /// <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p>
     /// <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipelineNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2935,7 +2935,7 @@ pub mod fluent_builders {
     /// cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which
     /// you submitted the jobs, you have more time to get the job IDs for the jobs that you want
     /// to cancel, and to send a <a>CancelJob</a> request. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipelineStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

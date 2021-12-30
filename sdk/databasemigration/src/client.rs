@@ -533,7 +533,7 @@ pub mod fluent_builders {
     /// an IAM policy for DMS. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
     /// <code>Tag</code>
     /// </a> data type description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -622,7 +622,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ApplyPendingMaintenanceAction`.
     ///
     /// <p>Applies a pending maintenance action to a resource (for example, to a replication instance).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplyPendingMaintenanceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -763,7 +763,7 @@ pub mod fluent_builders {
     /// <p>This operation prevents any individual assessments from running if they haven't started
     /// running. It also attempts to cancel any individual assessments that are currently
     /// running.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelReplicationTaskAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -850,7 +850,7 @@ pub mod fluent_builders {
     /// task tables to this single database. For MySQL endpoints, you specify the database only when
     /// you specify the schema in the table-mapping rules of the DMS task.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1574,7 +1574,7 @@ pub mod fluent_builders {
     /// Notifications</a> in the <i>Database Migration Service User
     /// Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1766,7 +1766,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.APIRole">Creating the IAM Roles to Use With the CLI and DMS API</a>. For
     /// information on the required permissions, see
     /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM Permissions Needed to Use DMS</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2152,7 +2152,7 @@ pub mod fluent_builders {
     /// <p>Creates a replication subnet group given a list of the subnet IDs in a VPC.</p>
     /// <p>The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region, otherwise the
     /// service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2292,7 +2292,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateReplicationTask`.
     ///
     /// <p>Creates a replication task using the specified parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2629,7 +2629,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCertificate`.
     ///
     /// <p>Deletes the specified certificate. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2702,7 +2702,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnection`.
     ///
     /// <p>Deletes the connection between a replication instance and an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2793,7 +2793,7 @@ pub mod fluent_builders {
     /// endpoint.</p>
     /// </note>
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2863,7 +2863,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEventSubscription`.
     ///
     /// <p> Deletes an DMS event subscription. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2941,7 +2941,7 @@ pub mod fluent_builders {
     /// before you can delete it.</p>
     /// </note>
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3017,7 +3017,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReplicationSubnetGroup`.
     ///
     /// <p>Deletes a subnet group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3095,7 +3095,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReplicationTask`.
     ///
     /// <p>Deletes the specified replication task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3171,7 +3171,7 @@ pub mod fluent_builders {
     /// <p>This operation removes all metadata that DMS maintains about this assessment run.
     /// However, the operation leaves untouched all information about this assessment run that is
     /// stored in your Amazon S3 bucket.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationTaskAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3257,7 +3257,7 @@ pub mod fluent_builders {
     /// name, current usage toward that quota, and the quota's maximum value. DMS uses the unique
     /// account identifier to name each artifact used by DMS in the given region.</p>
     /// <p>This command does not take any parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3331,7 +3331,7 @@ pub mod fluent_builders {
     /// The only parameter that you can specify alone is for an existing migration task. The specified task
     /// definition then determines the default list of individual assessments that you can specify in an
     /// assessment run for the task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicableIndividualAssessments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3493,7 +3493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCertificates`.
     ///
     /// <p>Provides a description of the certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3603,7 +3603,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the status of the connections that have been made between the replication
     /// instance and an endpoint. Connections are created when you test an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3714,7 +3714,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEndpoints`.
     ///
     /// <p>Returns information about the endpoints for your account in the current region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3826,7 +3826,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the possible endpoint settings available
     /// when you create an endpoint for a specific database engine.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpointSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3922,7 +3922,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEndpointTypes`.
     ///
     /// <p>Returns information about the type of endpoints available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpointTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4037,7 +4037,7 @@ pub mod fluent_builders {
     /// and Notifications</a> in the <i>Database Migration Service User
     /// Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventCategories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4130,7 +4130,7 @@ pub mod fluent_builders {
     /// Notifications</a> in the <i>Database Migration Service User
     /// Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4325,7 +4325,7 @@ pub mod fluent_builders {
     /// <code>CreationTime</code>, and <code>Status</code>. </p>
     /// <p>If you specify <code>SubscriptionName</code>, this action lists the description for that
     /// subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4450,7 +4450,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the replication instance types that can be created in the
     /// specified region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrderableReplicationInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4544,7 +4544,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePendingMaintenanceActions`.
     ///
     /// <p>For internal use only</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePendingMaintenanceActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4669,7 +4669,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRefreshSchemasStatus`.
     ///
     /// <p>Returns the status of the RefreshSchemas operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRefreshSchemasStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4740,7 +4740,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about replication instances for your account in the current
     /// region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4853,7 +4853,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReplicationInstanceTaskLogs`.
     ///
     /// <p>Returns information about the task logs for the specified task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationInstanceTaskLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4963,7 +4963,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReplicationSubnetGroups`.
     ///
     /// <p>Returns information about the replication subnet groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationSubnetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5079,7 +5079,7 @@ pub mod fluent_builders {
     /// <p>For more information about DMS task assessments, see  
     /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment report</a>
     /// in the <i>Database Migration Service User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationTaskAssessmentResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5198,7 +5198,7 @@ pub mod fluent_builders {
     /// information, see the <code>DescribeReplicationTaskIndividualAssessments</code>
     /// operation. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationTaskAssessmentRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5313,7 +5313,7 @@ pub mod fluent_builders {
     /// <p>Returns a paginated list of individual assessments based on filter settings.</p>
     /// <p>These filter settings can specify a combination of premigration assessment runs,
     /// migration tasks, and assessment status values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationTaskIndividualAssessments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5429,7 +5429,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about replication tasks for your account in the current
     /// region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5558,7 +5558,7 @@ pub mod fluent_builders {
     /// <p>Returns information about the schema for the specified endpoint.</p>
     ///
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5664,7 +5664,7 @@ pub mod fluent_builders {
     /// <p>Note that the "last updated" column the DMS console only indicates the time that DMS
     /// last updated the table statistics record for a table. It does not indicate the time of the
     /// last update to the table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTableStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5792,7 +5792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportCertificate`.
     ///
     /// <p>Uploads the specified certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5922,7 +5922,7 @@ pub mod fluent_builders {
     /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
     /// <code>Tag</code>
     /// </a> data type description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6026,7 +6026,7 @@ pub mod fluent_builders {
     /// task tables to this single database. For MySQL endpoints, you specify the database only when
     /// you specify the schema in the table-mapping rules of the DMS task.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6721,7 +6721,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyEventSubscription`.
     ///
     /// <p>Modifies an existing DMS event notification subscription. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6856,7 +6856,7 @@ pub mod fluent_builders {
     /// <p>Some settings are applied during the maintenance window.</p>
     ///
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7140,7 +7140,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyReplicationSubnetGroup`.
     ///
     /// <p>Modifies the settings for the specified replication subnet group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReplicationSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7256,7 +7256,7 @@ pub mod fluent_builders {
     /// <p>You can't modify the task endpoints. The task must be stopped before you can modify it. </p>
     /// <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks</a> in the
     /// <i>Database Migration Service User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7519,7 +7519,7 @@ pub mod fluent_builders {
     /// replication instance using the specified parameters. The target replication instance must
     /// be created with the same or later DMS version as the current replication
     /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MoveReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7609,7 +7609,7 @@ pub mod fluent_builders {
     ///
     /// <p>Reboots a replication instance. Rebooting results in a momentary outage, until the
     /// replication instance becomes available again.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootReplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7717,7 +7717,7 @@ pub mod fluent_builders {
     /// <p>Populates the schema for the specified endpoint. This is an asynchronous operation and
     /// can take several minutes. You can check the status of this operation by calling the
     /// DescribeRefreshSchemasStatus operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RefreshSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7805,7 +7805,7 @@ pub mod fluent_builders {
     /// <p>Reloads the target database table with the source data. </p>
     /// <p>You can only use this operation with a task in the <code>RUNNING</code> state, otherwise the service
     /// will throw an <code>InvalidResourceStateFault</code> exception.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReloadTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7921,7 +7921,7 @@ pub mod fluent_builders {
     /// <code>Tag</code>
     /// </a>
     /// data type description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8011,7 +8011,7 @@ pub mod fluent_builders {
     /// <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks </a> in the
     /// <i>Database Migration Service User Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8205,7 +8205,7 @@ pub mod fluent_builders {
     /// <p>For information about DMS task assessments, see
     /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment report</a>
     /// in the <i>Database Migration Service User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReplicationTaskAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8284,7 +8284,7 @@ pub mod fluent_builders {
     /// must already be created. After you run this operation, you can review the status of each
     /// individual assessment. You can also run the migration task manually after the assessment
     /// run and its individual assessments complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReplicationTaskAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8554,7 +8554,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopReplicationTask`.
     ///
     /// <p>Stops the replication task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8627,7 +8627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestConnection`.
     ///
     /// <p>Tests the connection between the replication instance and the endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

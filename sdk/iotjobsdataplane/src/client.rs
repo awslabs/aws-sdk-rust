@@ -125,7 +125,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobExecution`.
     ///
     /// <p>Gets details of a job execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -227,7 +227,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPendingJobExecutions`.
     ///
     /// <p>Gets the list of all jobs for a thing that are not in a terminal status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPendingJobExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -297,7 +297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartNextPendingJobExecution`.
     ///
     /// <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for a thing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartNextPendingJobExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -414,7 +414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateJobExecution`.
     ///
     /// <p>Updates the status of a job execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateJobExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

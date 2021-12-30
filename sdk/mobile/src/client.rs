@@ -160,7 +160,7 @@ pub mod fluent_builders {
     /// <p>
     /// Creates an AWS Mobile Hub project.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -284,7 +284,7 @@ pub mod fluent_builders {
     /// <p>
     /// Delets a project in AWS Mobile Hub.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -360,7 +360,7 @@ pub mod fluent_builders {
     /// <p>
     /// Get the bundle details for the requested bundle id.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBundle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -436,7 +436,7 @@ pub mod fluent_builders {
     /// <p>
     /// Gets details about a project in AWS Mobile Hub.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -527,7 +527,7 @@ pub mod fluent_builders {
     /// Generates customized software development kit (SDK) and or tool packages
     /// used to integrate mobile web or mobile app clients with backend AWS resources.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportBundle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -633,7 +633,7 @@ pub mod fluent_builders {
     /// Note that mobile app push credentials are encrypted in exported projects, so they
     /// can only be shared successfully within the same AWS account.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -709,7 +709,7 @@ pub mod fluent_builders {
     /// <p>
     /// List all available bundles.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBundles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -803,7 +803,7 @@ pub mod fluent_builders {
     /// <p>
     /// Lists projects in AWS Mobile Hub.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -897,7 +897,7 @@ pub mod fluent_builders {
     /// <p>
     /// Update an existing project.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

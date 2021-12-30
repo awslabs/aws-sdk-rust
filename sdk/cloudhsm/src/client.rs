@@ -247,7 +247,7 @@ pub mod fluent_builders {
     /// <p>Adds or overwrites one or more tags for the specified AWS CloudHSM resource.</p>
     /// <p>Each tag consists of a key and a value. Tag keys must be unique to each
     /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -345,7 +345,7 @@ pub mod fluent_builders {
     /// Reference</a>.</p>
     /// <p>Creates a high-availability partition group. A high-availability partition group is a
     /// group of partitions that spans multiple physical HSMs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHapg<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -434,7 +434,7 @@ pub mod fluent_builders {
     /// status of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be
     /// initialized when the status changes to <code>RUNNING</code>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHsm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -621,7 +621,7 @@ pub mod fluent_builders {
     /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
     /// Reference</a>.</p>
     /// <p>Creates an HSM client.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLunaClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -713,7 +713,7 @@ pub mod fluent_builders {
     /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
     /// Reference</a>.</p>
     /// <p>Deletes a high-availability partition group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHapg<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -794,7 +794,7 @@ pub mod fluent_builders {
     /// Reference</a>.</p>
     /// <p>Deletes an HSM. After completion, this operation cannot be undone and your key material
     /// cannot be recovered.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHsm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -874,7 +874,7 @@ pub mod fluent_builders {
     /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
     /// Reference</a>.</p>
     /// <p>Deletes a client.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLunaClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -954,7 +954,7 @@ pub mod fluent_builders {
     /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
     /// Reference</a>.</p>
     /// <p>Retrieves information about a high-availability partition group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHapg<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1035,7 +1035,7 @@ pub mod fluent_builders {
     /// Reference</a>.</p>
     /// <p>Retrieves information about an HSM. You can identify the HSM by its ARN or its serial
     /// number.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHsm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1132,7 +1132,7 @@ pub mod fluent_builders {
     /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
     /// Reference</a>.</p>
     /// <p>Retrieves information about an HSM client.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLunaClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1229,7 +1229,7 @@ pub mod fluent_builders {
     /// Reference</a>.</p>
     /// <p>Gets the configuration files necessary to connect to all high availability partition
     /// groups the client is associated with.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1341,7 +1341,7 @@ pub mod fluent_builders {
     /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
     /// Reference</a>.</p>
     /// <p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAvailableZones<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1415,7 +1415,7 @@ pub mod fluent_builders {
     /// If more results are available, the <code>NextToken</code> member of the response contains a
     /// token that you pass in the next call to <code>ListHapgs</code> to retrieve the next set of
     /// items.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHapgs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1502,7 +1502,7 @@ pub mod fluent_builders {
     /// If more results are available, the <code>NextToken</code> member of the response contains a
     /// token that you pass in the next call to <code>ListHsms</code> to retrieve the next set of
     /// items.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHsms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1588,7 +1588,7 @@ pub mod fluent_builders {
     /// If more results are available, the <code>NextToken</code> member of the response contains a
     /// token that you pass in the next call to <code>ListLunaClients</code> to retrieve the next set
     /// of items.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLunaClients<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1670,7 +1670,7 @@ pub mod fluent_builders {
     /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
     /// Reference</a>.</p>
     /// <p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1750,7 +1750,7 @@ pub mod fluent_builders {
     /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
     /// Reference</a>.</p>
     /// <p>Modifies an existing high-availability partition group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyHapg<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1865,7 +1865,7 @@ pub mod fluent_builders {
     /// that your AWS CloudHSM service is configured for high availability, and consider executing this
     /// operation during a maintenance window.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyHsm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2007,7 +2007,7 @@ pub mod fluent_builders {
     /// <p>Modifies the certificate used by the client.</p>
     /// <p>This action can potentially start a workflow to install the new certificate on the
     /// client's HSMs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyLunaClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2099,7 +2099,7 @@ pub mod fluent_builders {
     /// <p>Removes one or more tags from the specified AWS CloudHSM resource.</p>
     /// <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the
     /// value for an existing tag, use <a>AddTagsToResource</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -282,7 +282,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateConfigurationItemsToApplication`.
     ///
     /// <p>Associates one or more configuration items with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateConfigurationItemsToApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -384,7 +384,7 @@ pub mod fluent_builders {
     /// for the already-existing discovered server is updated. When you delete an import task that
     /// contains records that were used to match, the information in those matched records that comes
     /// from the deleted records will also be deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteImportData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -461,7 +461,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
     /// <p>Creates an application with the given name and description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -542,7 +542,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates one or more tags for configuration items. Tags are metadata that help you
     /// categorize IT assets. This API accepts a list of multiple configuration items.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -647,7 +647,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a list of applications and their associations with configuration
     /// items.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -725,7 +725,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the association between configuration items and one or more tags. This API
     /// accepts a list of multiple configuration items.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -831,7 +831,7 @@ pub mod fluent_builders {
     /// <p>Lists agents or connectors as specified by ID or other filters. All agents/connectors
     /// associated with your user account can be listed if you call <code>DescribeAgents</code> as is
     /// without passing any parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAgents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -990,7 +990,7 @@ pub mod fluent_builders {
     /// <p>For a complete list of outputs for each asset type, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using the DescribeConfigurations Action</a> in the <i>AWS Application
     /// Discovery Service User Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1069,7 +1069,7 @@ pub mod fluent_builders {
     /// <p>Lists exports as specified by ID. All continuous exports associated with your user
     /// account can be listed if you call <code>DescribeContinuousExports</code> as is without passing
     /// any parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContinuousExports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1169,7 +1169,7 @@ pub mod fluent_builders {
     ///
     /// <p>
     /// <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeImportTasks</a>, instead.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExportConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1269,7 +1269,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieve status of one or more export tasks. You can retrieve the status of up to 100
     /// export tasks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExportTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1412,7 +1412,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns an array of import tasks for your account, including status information, times,
     /// IDs, the Amazon S3 Object URL for the import file, and more.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImportTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1528,7 +1528,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>Also, all configuration items associated with your user account that have tags can be
     /// listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1631,7 +1631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateConfigurationItemsFromApplication`.
     ///
     /// <p>Disassociates one or more configuration items from an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateConfigurationItemsFromApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1722,7 +1722,7 @@ pub mod fluent_builders {
     /// connections, servers, and system performance. This API returns an export ID that you can query
     /// using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of
     /// two configuration exports in six hours.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1784,7 +1784,7 @@ pub mod fluent_builders {
     /// <p>Retrieves a short summary of discovered assets.</p>
     /// <p>This API operation takes no request parameters and is called as is at the command
     /// prompt as shown in the example.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDiscoverySummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1846,7 +1846,7 @@ pub mod fluent_builders {
     /// <p>Retrieves a list of configuration items as specified by the value passed to the
     /// required parameter <code>configurationType</code>. Optional filtering may be applied to refine
     /// search results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2001,7 +2001,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of servers that are one network hop away from a specified
     /// server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServerNeighbors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2129,7 +2129,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartContinuousExport`.
     ///
     /// <p>Start the continuous flow of agent's discovered data into Amazon Athena.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContinuousExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2189,7 +2189,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartDataCollectionByAgentIds`.
     ///
     /// <p>Instructs the specified agents or connectors to start collecting data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDataCollectionByAgentIds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2286,7 +2286,7 @@ pub mod fluent_builders {
     /// <p> If you do not include an <code>agentIds</code> filter, summary data is exported that
     /// includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery
     /// Agents. Export of summary data is limited to two exports per day. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2469,7 +2469,7 @@ pub mod fluent_builders {
     /// Discovery Service Limits</a> in the <i>AWS Application Discovery Service User
     /// Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2590,7 +2590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopContinuousExport`.
     ///
     /// <p>Stop the continuous flow of agent's discovered data into Amazon Athena.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopContinuousExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2660,7 +2660,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopDataCollectionByAgentIds`.
     ///
     /// <p>Instructs the specified agents or connectors to stop collecting data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDataCollectionByAgentIds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2737,7 +2737,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
     /// <p>Updates metadata about an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -438,7 +438,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptEulas`.
     ///
     /// <p>Accept EULAs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptEulas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -539,7 +539,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLaunchProfile`.
     ///
     /// <p>Create a launch profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLaunchProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -744,7 +744,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStreamingImage`.
     ///
     /// <p>Creates a streaming image resource in a studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -885,7 +885,7 @@ pub mod fluent_builders {
     /// <p>Creates a streaming session in a studio.</p>
     /// <p>After invoking this operation, you must poll GetStreamingSession until the streaming
     /// session is in state READY.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1045,7 +1045,7 @@ pub mod fluent_builders {
     /// <p>Creates a streaming session stream for a streaming session.</p>
     /// <p>After invoking this API, invoke GetStreamingSessionStream with the returned streamId
     /// to poll the resource until it is in state READY.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingSessionStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1168,7 +1168,7 @@ pub mod fluent_builders {
     /// <p>If you delete this grant, the studio will no longer be accessible to your portal
     /// users.</p>
     /// <p>If you delete the studio KMS key, your studio will no longer be accessible.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1335,7 +1335,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStudioComponent`.
     ///
     /// <p>Creates a studio component resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStudioComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1562,7 +1562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLaunchProfile`.
     ///
     /// <p>Permanently delete a launch profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLaunchProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1659,7 +1659,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLaunchProfileMember`.
     ///
     /// <p>Delete a user from launch profile membership.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLaunchProfileMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1766,7 +1766,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStreamingImage`.
     ///
     /// <p>Delete streaming image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStreamingImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1867,7 +1867,7 @@ pub mod fluent_builders {
     /// transitions to a DELETED state.</p>
     /// <p>A streaming session will count against your streaming session quota until it is marked
     /// DELETED.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStreamingSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1961,7 +1961,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStudio`.
     ///
     /// <p>Delete a studio resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2045,7 +2045,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStudioComponent`.
     ///
     /// <p>Deletes a studio component resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStudioComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2142,7 +2142,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStudioMember`.
     ///
     /// <p>Delete a user from studio membership.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStudioMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2236,7 +2236,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEula`.
     ///
     /// <p>Get Eula.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEula<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2306,7 +2306,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLaunchProfile`.
     ///
     /// <p>Get a launch profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunchProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2392,7 +2392,7 @@ pub mod fluent_builders {
     /// resources that are used by, or available to, the launch profile. This includes the name
     /// and description of all studio components used by the launch profiles, and the name and
     /// description of streaming images that can be used with this launch profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunchProfileDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2475,7 +2475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLaunchProfileInitialization`.
     ///
     /// <p>Get a launch profile initialization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunchProfileInitialization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2601,7 +2601,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLaunchProfileMember`.
     ///
     /// <p>Get a user persona in launch profile membership.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunchProfileMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2694,7 +2694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStreamingImage`.
     ///
     /// <p>Get streaming image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamingImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2779,7 +2779,7 @@ pub mod fluent_builders {
     /// <p>Gets StreamingSession resource.</p>
     /// <p>anvoke this operation to poll for a streaming session state while creating or deleting
     /// a session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamingSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2863,7 +2863,7 @@ pub mod fluent_builders {
     /// CreateStreamingSessionStream.</p>
     /// <p>After the StreamingSessionStream changes to the state READY, the url property will
     /// contain a stream to be used with the DCV streaming client.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamingSessionStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2953,7 +2953,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStudio`.
     ///
     /// <p>Get a Studio resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3023,7 +3023,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStudioComponent`.
     ///
     /// <p>Gets a studio component resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStudioComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3106,7 +3106,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStudioMember`.
     ///
     /// <p>Get a user's membership in a studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStudioMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3186,7 +3186,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEulaAcceptances`.
     ///
     /// <p>List Eula Acceptances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEulaAcceptances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3283,7 +3283,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEulas`.
     ///
     /// <p>List Eulas.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEulas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3370,7 +3370,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLaunchProfileMembers`.
     ///
     /// <p>Get all users in a given launch profile membership.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLaunchProfileMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3473,7 +3473,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLaunchProfiles`.
     ///
     /// <p>List all the launch profiles a studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLaunchProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3592,7 +3592,7 @@ pub mod fluent_builders {
     /// <p>List the streaming image resources available to this studio.</p>
     /// <p>This list will contain both images provided by Amazon Web Services, as well as
     /// streaming images that you have created in your studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamingImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3682,7 +3682,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStreamingSessions`.
     ///
     /// <p>Lists the streaming image resources in a studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamingSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3792,7 +3792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStudioComponents`.
     ///
     /// <p>Lists the StudioComponents in a studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStudioComponents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3916,7 +3916,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStudioMembers`.
     ///
     /// <p>Get all users in a given studio membership.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStudioMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4007,7 +4007,7 @@ pub mod fluent_builders {
     ///
     /// <p>List studios in your Amazon Web Services account in the requested Amazon Web Services
     /// Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStudios<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4081,7 +4081,7 @@ pub mod fluent_builders {
     /// tags, including studio, studio component, launch profile, streaming image, and streaming
     /// session. All resources that can be tagged will contain an ARN property, so you do not
     /// have to create this ARN yourself.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4151,7 +4151,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLaunchProfileMembers`.
     ///
     /// <p>Add/update users with given persona to launch profile membership.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLaunchProfileMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4278,7 +4278,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutStudioMembers`.
     ///
     /// <p>Add/update users with given persona to studio membership.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutStudioMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4394,7 +4394,7 @@ pub mod fluent_builders {
     /// <p> Transitions sessions from the STOPPED state into the READY state. The
     /// START_IN_PROGRESS state is the intermediate state between the STOPPED and READY
     /// states.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartStreamingSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4494,7 +4494,7 @@ pub mod fluent_builders {
     /// associated with it, then a new Amazon Web Services SSO application is created for the studio
     /// and the studio is changed to the READY state.</p>
     /// <p>After the Amazon Web Services SSO application is repaired, you must use the Amazon Nimble Studio console to add administrators and users to your studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartStudioSSOConfigurationRepair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4579,7 +4579,7 @@ pub mod fluent_builders {
     ///
     /// <p>Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS
     /// state is the intermediate state between the READY and STOPPED states.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopStreamingSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4673,7 +4673,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Creates tags for a resource, given its ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4768,7 +4768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes the tags for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4855,7 +4855,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLaunchProfile`.
     ///
     /// <p>Update a launch profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLaunchProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5029,7 +5029,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLaunchProfileMember`.
     ///
     /// <p>Update a user persona in launch profile membership.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLaunchProfileMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5149,7 +5149,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStreamingImage`.
     ///
     /// <p>Update streaming image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStreamingImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5268,7 +5268,7 @@ pub mod fluent_builders {
     /// <p>Update a Studio resource.</p>
     /// <p>Currently, this operation only supports updating the displayName of your
     /// studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5392,7 +5392,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStudioComponent`.
     ///
     /// <p>Updates a studio component resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStudioComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

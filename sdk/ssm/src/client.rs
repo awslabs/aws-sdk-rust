@@ -1172,7 +1172,7 @@ pub mod fluent_builders {
     /// to and are interpreted strictly as a string of characters. </p>
     /// <p>For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2
     /// resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1348,7 +1348,7 @@ pub mod fluent_builders {
     /// <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an
     /// Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are capabilities of
     /// Amazon Web Services Systems Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateOpsItemRelatedItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1469,7 +1469,7 @@ pub mod fluent_builders {
     ///
     /// <p>Attempts to cancel the command specified by the Command ID. There is no guarantee that the
     /// command will be terminated and the underlying process stopped.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelCommand<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1560,7 +1560,7 @@ pub mod fluent_builders {
     /// <p>Stops a maintenance window execution that is already in progress and cancels any tasks in
     /// the window that haven't already starting running. Tasks already in progress will continue to
     /// completion.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelMaintenanceWindowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1642,7 +1642,7 @@ pub mod fluent_builders {
     /// <p>Amazon Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises servers and VMs that are configured for Systems Manager are all called <i>managed
     /// nodes</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateActivation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1882,7 +1882,7 @@ pub mod fluent_builders {
     /// association for anti-virus software might run once a day. If the software isn't installed, then
     /// State Manager installs it. If the software is installed, but the service isn't running, then the
     /// association might instruct State Manager to start the service. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2314,7 +2314,7 @@ pub mod fluent_builders {
     /// node as specified.</p>
     /// <p>If you associate a document with a managed node that already has an associated document, the
     /// system returns the AssociationAlreadyExists exception.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssociationBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2396,7 +2396,7 @@ pub mod fluent_builders {
     /// on your managed nodes. For more information about SSM documents, including information about
     /// supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon Web Services Systems Manager Documents</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2743,7 +2743,7 @@ pub mod fluent_builders {
     /// value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start
     /// after 5 PM.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3028,7 +3028,7 @@ pub mod fluent_builders {
     /// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
     /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems Manager OpsCenter</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOpsItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3368,7 +3368,7 @@ pub mod fluent_builders {
     ///
     /// <p>If you create a new application in Application Manager, Amazon Web Services Systems Manager calls this API operation to specify
     /// information about the new application, including the application type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3514,7 +3514,7 @@ pub mod fluent_builders {
     /// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported
     /// operating system type, see <a>PatchFilter</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3879,7 +3879,7 @@ pub mod fluent_builders {
     /// enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you
     /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceDataSync<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4004,7 +4004,7 @@ pub mod fluent_builders {
     /// <p>Deletes an activation. You aren't required to delete an activation. If you delete an
     /// activation, you can no longer use it to register additional managed nodes. Deleting an activation
     /// doesn't de-register managed nodes. You must manually de-register managed nodes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteActivation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4083,7 +4083,7 @@ pub mod fluent_builders {
     /// the node. To change the configuration state of a managed node after you disassociate a document,
     /// you must create a new document with the desired configuration and associate it with the
     /// node.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4200,7 +4200,7 @@ pub mod fluent_builders {
     /// <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and all managed node associations to the
     /// document.</p>
     /// <p>Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all managed nodes that are associated with the document.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4314,7 +4314,7 @@ pub mod fluent_builders {
     ///
     /// <p>Delete a custom inventory type or the data associated with a custom Inventory type. Deleting
     /// a custom inventory type is also referred to as deleting a custom inventory schema.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInventory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4442,7 +4442,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMaintenanceWindow`.
     ///
     /// <p>Deletes a maintenance window.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4512,7 +4512,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOpsMetadata`.
     ///
     /// <p>Delete OpsMetadata related to an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4586,7 +4586,7 @@ pub mod fluent_builders {
     ///
     /// <p>Delete a parameter from the system. After deleting a parameter, wait for at least 30 seconds
     /// to create a parameter with the same name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteParameter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4657,7 +4657,7 @@ pub mod fluent_builders {
     ///
     /// <p>Delete a list of parameters. After deleting a parameter, wait for at least 30 seconds to
     /// create a parameter with the same name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4736,7 +4736,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePatchBaseline`.
     ///
     /// <p>Deletes a patch baseline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4808,7 +4808,7 @@ pub mod fluent_builders {
     /// <p>Deletes a resource data sync configuration. After the configuration is deleted, changes to
     /// data on managed nodes are no longer synced to or from the target. Deleting a sync configuration
     /// doesn't delete data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceDataSync<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4890,7 +4890,7 @@ pub mod fluent_builders {
     /// <p>Removes the server or virtual machine from the list of registered servers. You can
     /// reregister the node again at any time. If you don't plan to use Run Command on the server, we
     /// suggest uninstalling SSM Agent first.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterManagedInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4962,7 +4962,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterPatchBaselineForPatchGroup`.
     ///
     /// <p>Removes a patch group from a patch baseline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterPatchBaselineForPatchGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5044,7 +5044,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterTargetFromMaintenanceWindow`.
     ///
     /// <p>Removes a target from a maintenance window.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTargetFromMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5143,7 +5143,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterTaskFromMaintenanceWindow`.
     ///
     /// <p>Removes a task from a maintenance window.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTaskFromMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5231,7 +5231,7 @@ pub mod fluent_builders {
     /// created, its expiration date, the Identity and Access Management (IAM) role assigned to
     /// the managed nodes in the activation, and the number of nodes registered by using this
     /// activation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeActivations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5332,7 +5332,7 @@ pub mod fluent_builders {
     /// <p>Describes the association for the specified target or managed node. If you created the
     /// association by using the <code>Targets</code> parameter, then you must retrieve the association
     /// by using the association ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5444,7 +5444,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAssociationExecutions`.
     ///
     /// <p>Views all executions for a specific association ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssociationExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5562,7 +5562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAssociationExecutionTargets`.
     ///
     /// <p>Views information about a specific execution of a specific association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssociationExecutionTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5694,7 +5694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAutomationExecutions`.
     ///
     /// <p>Provides details about all active and terminated Automation executions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutomationExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5796,7 +5796,7 @@ pub mod fluent_builders {
     ///
     /// <p>Information about all active and terminated step executions in an Automation
     /// workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutomationStepExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5925,7 +5925,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAvailablePatches`.
     ///
     /// <p>Lists all patches eligible to be included in a patch baseline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAvailablePatches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6388,7 +6388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDocument`.
     ///
     /// <p>Describes the specified Amazon Web Services Systems Manager document (SSM document).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6489,7 +6489,7 @@ pub mod fluent_builders {
     /// <p>Describes the permissions for a Amazon Web Services Systems Manager document (SSM document). If you created the
     /// document, you are the owner. If a document is shared, it can either be shared privately (by
     /// specifying a user's Amazon Web Services account ID) or publicly (<i>All</i>). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDocumentPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6598,7 +6598,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEffectiveInstanceAssociations`.
     ///
     /// <p>All associations for the managed node(s).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEffectiveInstanceAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6695,7 +6695,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the current effective patches (the patch and the approval state) for the specified
     /// patch baseline. Applies to patch baselines for Windows only.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEffectivePatchesForPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6789,7 +6789,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInstanceAssociationsStatus`.
     ///
     /// <p>The status of the associations for the managed node(s).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceAssociationsStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6895,7 +6895,7 @@ pub mod fluent_builders {
     /// (IAM) role assigned to on-premises managed nodes. This call doesn't return the
     /// IAM role for EC2 instances.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7035,7 +7035,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information about the patches on the specified managed node and their state relative
     /// to the patch baseline being used for the node.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstancePatches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7224,7 +7224,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInstancePatchStates`.
     ///
     /// <p>Retrieves the high-level patch state of one or more managed nodes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstancePatchStates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7323,7 +7323,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInstancePatchStatesForPatchGroup`.
     ///
     /// <p>Retrieves the high-level patch state for the managed nodes in the specified patch group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstancePatchStatesForPatchGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7458,7 +7458,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInventoryDeletions`.
     ///
     /// <p>Describes a specific delete inventory operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInventoryDeletions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7554,7 +7554,7 @@ pub mod fluent_builders {
     /// <p>Lists the executions of a maintenance window. This includes information about when the
     /// maintenance window was scheduled to be active, and information about tasks registered and run
     /// with the maintenance window.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7690,7 +7690,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the individual task executions (one per target) for a particular task run as part
     /// of a maintenance window execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowExecutionTaskInvocations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7813,7 +7813,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMaintenanceWindowExecutionTasks`.
     ///
     /// <p>For a given maintenance window execution, lists the tasks that were run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowExecutionTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7935,7 +7935,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMaintenanceWindows`.
     ///
     /// <p>Retrieves the maintenance windows in an Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8040,7 +8040,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMaintenanceWindowSchedule`.
     ///
     /// <p>Retrieves information about upcoming executions of a maintenance window.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8189,7 +8189,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information about the maintenance window targets or tasks that a managed node is
     /// associated with.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowsForTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8310,7 +8310,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMaintenanceWindowTargets`.
     ///
     /// <p>Lists the targets registered with the maintenance window.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8431,7 +8431,7 @@ pub mod fluent_builders {
     /// placeholder value of <code>1</code>, which may be reported in the response to this command.
     /// These values don't affect the running of your task and can be ignored.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8551,7 +8551,7 @@ pub mod fluent_builders {
     /// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
     /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOpsItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8780,7 +8780,7 @@ pub mod fluent_builders {
     /// <code>DescribeParameters</code> retrieves whatever the original key alias was
     /// referencing.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8898,7 +8898,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePatchBaselines`.
     ///
     /// <p>Lists the patch baselines in your Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePatchBaselines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9057,7 +9057,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePatchGroups`.
     ///
     /// <p>Lists all patch groups that have been registered with patch baselines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePatchGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9196,7 +9196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePatchGroupState`.
     ///
     /// <p>Returns high-level aggregated patch compliance state information for a patch group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePatchGroupState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9329,7 +9329,7 @@ pub mod fluent_builders {
     /// </p>
     /// </dd>
     /// </dl>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePatchProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9452,7 +9452,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of all active sessions (both connected and disconnected) or terminated
     /// sessions from the past 30 days.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9565,7 +9565,7 @@ pub mod fluent_builders {
     /// <p>Deletes the association between an OpsItem and a related item. For example, this API
     /// operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of
     /// Amazon Web Services Systems Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateOpsItemRelatedItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9652,7 +9652,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAutomationExecution`.
     ///
     /// <p>Get detailed information about a particular Automation execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAutomationExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9740,7 +9740,7 @@ pub mod fluent_builders {
     /// <code>OPEN</code> only if all calendars in the request are open. If one or more calendars in the
     /// request are closed, the status returned is <code>CLOSED</code>.</p>
     /// <p>For more information about Change Calendar, a capability of Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCalendarState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9835,7 +9835,7 @@ pub mod fluent_builders {
     /// <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document.
     /// To get the command execution status on a specific managed node, use <a>ListCommandInvocations</a>. To get the command execution status across managed nodes,
     /// use <a>ListCommands</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCommandInvocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9946,7 +9946,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the Session Manager connection status for a managed node to determine whether it is running and
     /// ready to receive Session Manager connections.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnectionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10019,7 +10019,7 @@ pub mod fluent_builders {
     /// baselines. For example, you can create a default patch baseline for each operating system.</p>
     /// <p>If you don't specify an operating system value, the default patch baseline for Windows is
     /// returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDefaultPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10100,7 +10100,7 @@ pub mod fluent_builders {
     /// For example, run the command using the <code>AWS-RunShellScript</code> document or the
     /// <code>AWS-RunPowerShellScript</code> document.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeployablePatchSnapshotForInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10195,7 +10195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDocument`.
     ///
     /// <p>Gets the contents of the specified Amazon Web Services Systems Manager document (SSM document).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10308,7 +10308,7 @@ pub mod fluent_builders {
     ///
     /// <p>Query inventory information. This includes managed node status, such as <code>Stopped</code> or
     /// <code>Terminated</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInventory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10450,7 +10450,7 @@ pub mod fluent_builders {
     ///
     /// <p>Return a list of inventory type names for the account, or return a list of attribute names
     /// for a specific Inventory item type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInventorySchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10570,7 +10570,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMaintenanceWindow`.
     ///
     /// <p>Retrieves a maintenance window.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10640,7 +10640,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMaintenanceWindowExecution`.
     ///
     /// <p>Retrieves details about a specific a maintenance window execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMaintenanceWindowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10714,7 +10714,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the details about a specific task run as part of a maintenance window
     /// execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMaintenanceWindowExecutionTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10799,7 +10799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMaintenanceWindowExecutionTaskInvocation`.
     ///
     /// <p>Retrieves information about a specific task running on a specific target.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMaintenanceWindowExecutionTaskInvocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10903,7 +10903,7 @@ pub mod fluent_builders {
     /// placeholder value of <code>1</code>, which may be reported in the response to this command.
     /// These values don't affect the running of your task and can be ignored.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMaintenanceWindowTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10992,7 +10992,7 @@ pub mod fluent_builders {
     /// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
     /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOpsItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11062,7 +11062,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOpsMetadata`.
     ///
     /// <p>View operational metadata related to an application in Application Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11160,7 +11160,7 @@ pub mod fluent_builders {
     /// OpsData can include information about Amazon Web Services Systems Manager OpsCenter operational workitems (OpsItems) as
     /// well as information about any Amazon Web Services resource or service configured to report OpsData to Amazon Web Services Systems Manager
     /// Explorer. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOpsSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11306,7 +11306,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>To get information about more than one parameter at a time, use the <a>GetParameters</a> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetParameter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11398,7 +11398,7 @@ pub mod fluent_builders {
     /// <code>GetParameterHistory</code> retrieves whatever the original key alias was
     /// referencing.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetParameterHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11508,7 +11508,7 @@ pub mod fluent_builders {
     /// <p>To get information about a single parameter, you can use the <a>GetParameter</a>
     /// operation instead.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11607,7 +11607,7 @@ pub mod fluent_builders {
     /// reaches an internal limit while processing the results, it stops the operation and returns the
     /// matching values up to that point and a <code>NextToken</code>. You can specify the
     /// <code>NextToken</code> in a subsequent call to get the next set of results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetParametersByPath<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11774,7 +11774,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPatchBaseline`.
     ///
     /// <p>Retrieves information about a patch baseline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11858,7 +11858,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPatchBaselineForPatchGroup`.
     ///
     /// <p>Retrieves the patch baseline that should be used for the specified patch group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPatchBaselineForPatchGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11954,7 +11954,7 @@ pub mod fluent_builders {
     /// change the default setting. Or use the <a>ResetServiceSetting</a> to change the value
     /// back to the original value defined by the Amazon Web Services service team.</p>
     /// <p>Query the current service setting for the Amazon Web Services account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceSetting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12124,7 +12124,7 @@ pub mod fluent_builders {
     /// parameter and the system displays it in the list of InvalidLabels.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LabelParameterVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12225,7 +12225,7 @@ pub mod fluent_builders {
     /// <p>Returns all State Manager associations in the current Amazon Web Services account and Amazon Web Services Region. You
     /// can limit the results to a specific State Manager association document or managed node by specifying
     /// a filter. State Manager is a capability of Amazon Web Services Systems Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12338,7 +12338,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssociationVersions`.
     ///
     /// <p>Retrieves all versions of an association for a specific association ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociationVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12437,7 +12437,7 @@ pub mod fluent_builders {
     /// <code>SendCommand</code> against three managed nodes, then a command invocation is created for
     /// each requested managed node ID. <code>ListCommandInvocations</code> provide status about command
     /// execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCommandInvocations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12572,7 +12572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCommands`.
     ///
     /// <p>Lists the commands requested by users of the Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCommands<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12705,7 +12705,7 @@ pub mod fluent_builders {
     /// <p>For a specified resource ID, this API operation returns a list of compliance statuses for
     /// different resource types. Currently, you can only specify one resource ID per call. List results
     /// depend on the criteria specified in the filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComplianceItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12846,7 +12846,7 @@ pub mod fluent_builders {
     /// <p>Returns a summary count of compliant and non-compliant resources for a compliance type. For
     /// example, this call can return State Manager associations, patches, or custom compliance types
     /// according to the filter criteria that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComplianceSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12949,7 +12949,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDocumentMetadataHistory`.
     ///
     /// <p>Information about approval reviews for a version of a change template in Change Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDocumentMetadataHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13072,7 +13072,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns all Systems Manager (SSM) documents in the current Amazon Web Services account and Amazon Web Services Region. You can
     /// limit the results of this request by using a filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDocuments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13210,7 +13210,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDocumentVersions`.
     ///
     /// <p>List all versions for a document.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDocumentVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13304,7 +13304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInventoryEntries`.
     ///
     /// <p>A list of inventory items returned by the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInventoryEntries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13426,7 +13426,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of all OpsItem events in the current Amazon Web Services Region and Amazon Web Services account. You can
     /// limit the results to events associated with specific OpsItems by specifying a filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOpsItemEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13526,7 +13526,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a
     /// capability of Amazon Web Services Systems Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOpsItemRelatedItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13638,7 +13638,7 @@ pub mod fluent_builders {
     ///
     /// <p>Amazon Web Services Systems Manager calls this API operation when displaying all Application Manager OpsMetadata objects or
     /// blobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13739,7 +13739,7 @@ pub mod fluent_builders {
     /// <p>Returns a resource-level summary count. The summary includes information about compliant and
     /// non-compliant statuses and detailed compliance-item severity counts, according to the filter
     /// criteria you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceComplianceSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13846,7 +13846,7 @@ pub mod fluent_builders {
     /// configurations to list, check the value of <code>NextToken</code> in the output. If there are
     /// more sync configurations to list, you can request them by specifying the <code>NextToken</code>
     /// returned in the call to the parameter of a subsequent call. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceDataSync<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13943,7 +13943,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of the tags assigned to the specified resource.</p>
     /// <p>For information about the ID format for each supported resource type, see <a>AddTagsToResource</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14029,7 +14029,7 @@ pub mod fluent_builders {
     /// privately, you must specify the Amazon Web Services user account IDs for those people who can use the
     /// document. If you share a document publicly, you must specify <i>All</i> as the
     /// account ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDocumentPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14229,7 +14229,7 @@ pub mod fluent_builders {
     /// the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutComplianceItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14419,7 +14419,7 @@ pub mod fluent_builders {
     ///
     /// <p>Bulk update custom inventory items on one or more managed nodes. The request adds an inventory item,
     /// if it doesn't already exist, or updates an inventory item, if it does exist.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInventory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14506,7 +14506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutParameter`.
     ///
     /// <p>Add a parameter to the system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutParameter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15080,7 +15080,7 @@ pub mod fluent_builders {
     /// Amazon Resource Name (ARN) as the baseline ID value. For example, for CentOS, specify
     /// <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code> instead of
     /// <code>pb-0574b43a65ea646ed</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterDefaultPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15150,7 +15150,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterPatchBaselineForPatchGroup`.
     ///
     /// <p>Registers a patch baseline for a patch group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterPatchBaselineForPatchGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15232,7 +15232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterTargetWithMaintenanceWindow`.
     ///
     /// <p>Registers a target with a maintenance window.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTargetWithMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15476,7 +15476,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterTaskWithMaintenanceWindow`.
     ///
     /// <p>Adds a new task to a maintenance window.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTaskWithMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15907,7 +15907,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTagsFromResource`.
     ///
     /// <p>Removes tag keys from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16065,7 +16065,7 @@ pub mod fluent_builders {
     /// setting. </p>
     /// <p>Reset the service setting for the account to the default value as provisioned by the Amazon Web Services
     /// service team. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetServiceSetting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16206,7 +16206,7 @@ pub mod fluent_builders {
     /// <p>This command is primarily for use by client machines to automatically reconnect during
     /// intermittent network issues. It isn't intended for any other use.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16277,7 +16277,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sends a signal to an Automation execution to change the current behavior or status of the
     /// execution. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendAutomationSignal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16423,7 +16423,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendCommand`.
     ///
     /// <p>Runs commands on one or more managed nodes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendCommand<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16811,7 +16811,7 @@ pub mod fluent_builders {
     ///
     /// <p>Runs an association immediately and only one time. This operation can be helpful when
     /// troubleshooting associations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAssociationsOnce<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16888,7 +16888,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartAutomationExecution`.
     ///
     /// <p>Initiates execution of an Automation runbook.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAutomationExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17220,7 +17220,7 @@ pub mod fluent_builders {
     /// <p>Creates a change request for Change Manager. The Automation runbooks specified in the
     /// change request run only after all required approvals for the change request have been
     /// received.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChangeRequestExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17522,7 +17522,7 @@ pub mod fluent_builders {
     /// <p>Amazon Web Services Tools for PowerShell usage: Start-SSMSession isn't currently supported by Amazon Web Services Tools
     /// for PowerShell on Windows local machines.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17644,7 +17644,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopAutomationExecution`.
     ///
     /// <p>Stop an Automation that is currently running.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopAutomationExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17733,7 +17733,7 @@ pub mod fluent_builders {
     ///
     /// <p>Permanently ends a session and closes the data connection between the Session Manager client and
     /// SSM Agent on the managed node. A terminated session isn't be resumed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17803,7 +17803,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UnlabelParameterVersion`.
     ///
     /// <p>Remove a label or labels from a parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnlabelParameterVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17914,7 +17914,7 @@ pub mod fluent_builders {
     /// <p>When you update an association, the association immediately runs against the specified
     /// targets.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18345,7 +18345,7 @@ pub mod fluent_builders {
     /// <code>UpdateAssociationStatus</code> is primarily used by the Amazon Web Services Systems Manager Agent (SSM Agent) to
     /// report status updates about your associations and is only used for associations created with the
     /// <code>InstanceId</code> legacy parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssociationStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18438,7 +18438,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDocument`.
     ///
     /// <p>Updates one or more values for an SSM document.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18605,7 +18605,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDocumentDefaultVersion`.
     ///
     /// <p>Set the default version of a document. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDocumentDefaultVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18689,7 +18689,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates information related to approval reviews for a specific version of a change template
     /// in Change Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDocumentMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18793,7 +18793,7 @@ pub mod fluent_builders {
     /// value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start
     /// after 5 PM.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMaintenanceWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19050,7 +19050,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>If a parameter is null, then the corresponding field isn't modified.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMaintenanceWindowTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19252,7 +19252,7 @@ pub mod fluent_builders {
     /// maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the
     /// values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMaintenanceWindowTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19705,7 +19705,7 @@ pub mod fluent_builders {
     /// <p>Changes the Identity and Access Management (IAM) role that is assigned to the
     /// on-premises server, edge device, or virtual machines (VM). IAM roles are first
     /// assigned to these hybrid nodes during the activation process. For more information, see <a>CreateActivation</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateManagedInstanceRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19790,7 +19790,7 @@ pub mod fluent_builders {
     /// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
     /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOpsItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20105,7 +20105,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateOpsMetadata`.
     ///
     /// <p>Amazon Web Services Systems Manager calls this API operation when you edit OpsMetadata in Application Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20223,7 +20223,7 @@ pub mod fluent_builders {
     /// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported
     /// operating system type, see <a>PatchFilter</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20517,7 +20517,7 @@ pub mod fluent_builders {
     /// <p>This API operation only supports a resource data sync that was created with a
     /// SyncFromSource <code>SyncType</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceDataSync<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20625,7 +20625,7 @@ pub mod fluent_builders {
     /// current value. Or, use the <a>ResetServiceSetting</a> to change the value back to the
     /// original value defined by the Amazon Web Services service team.</p>
     /// <p>Update the service setting for the account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceSetting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

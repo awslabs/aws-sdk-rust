@@ -4241,7 +4241,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptReservedInstancesExchangeQuote`.
     ///
     /// <p>Accepts the Convertible Reserved Instance exchange quote described in the <a>GetReservedInstancesExchangeQuote</a> call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptReservedInstancesExchangeQuote<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4358,7 +4358,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptTransitGatewayMulticastDomainAssociations`.
     ///
     /// <p>Accepts a request to associate subnets with a transit gateway multicast domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptTransitGatewayMulticastDomainAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4477,7 +4477,7 @@ pub mod fluent_builders {
     ///
     /// <p>Accepts a transit gateway peering attachment request. The peering attachment must be
     /// in the <code>pendingAcceptance</code> state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptTransitGatewayPeeringAttachment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4572,7 +4572,7 @@ pub mod fluent_builders {
     /// <p>The VPC attachment must be in the <code>pendingAcceptance</code> state.
     /// Use <a>DescribeTransitGatewayVpcAttachments</a> to view your pending VPC attachment requests.
     /// Use <a>RejectTransitGatewayVpcAttachment</a> to reject a VPC attachment request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptTransitGatewayVpcAttachment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4663,7 +4663,7 @@ pub mod fluent_builders {
     ///
     /// <p>Accepts one or more interface VPC endpoint connection requests to your VPC endpoint
     /// service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptVpcEndpointConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4769,7 +4769,7 @@ pub mod fluent_builders {
     /// peering connection requests.</p>
     /// <p>For an inter-Region VPC peering connection request, you must accept the VPC peering
     /// connection in the Region of the accepter VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptVpcPeeringConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4871,7 +4871,7 @@ pub mod fluent_builders {
     /// <p>It can take a few minutes before traffic to the specified addresses starts routing to Amazon Web Services
     /// because of BGP propagation delays.</p>
     /// <p>To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdvertiseByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4969,7 +4969,7 @@ pub mod fluent_builders {
     /// 5 Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for EC2-VPC per Region.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>You can allocate a carrier IP address which is a public IP address from a telecommunication carrier, to a network interface which resides in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllocateAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5146,7 +5146,7 @@ pub mod fluent_builders {
     /// <p>Allocates a Dedicated Host to your account. At a minimum, specify the supported instance
     /// type or instance family, the Availability Zone in which to allocate the host, and the number of
     /// hosts to allocate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllocateHosts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5361,7 +5361,7 @@ pub mod fluent_builders {
     ///
     /// <p>Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from an IPAM pool to another resource or IPAM pool. For more information, see <a href="/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllocateIpamPoolCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5549,7 +5549,7 @@ pub mod fluent_builders {
     ///
     /// <p>Applies a security group to the association between the target network and the Client VPN endpoint. This action replaces the existing
     /// security groups with the specified security groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplySecurityGroupsToClientVpnTargetNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5673,7 +5673,7 @@ pub mod fluent_builders {
     /// either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix Delegation count. For
     /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
     /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssignIpv6Addresses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5827,7 +5827,7 @@ pub mod fluent_builders {
     /// either the IPv4 Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
     /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
     /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssignPrivateIpAddresses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5993,7 +5993,7 @@ pub mod fluent_builders {
     /// Addresses</i> section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2
     /// Pricing</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6147,7 +6147,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a target network with a Client VPN endpoint. A target network is a subnet in a VPC. You can associate multiple subnets from the same VPC with a Client VPN endpoint. You can associate only one subnet in each Availability Zone. We recommend that you associate at least two subnets to provide Availability Zone redundancy.</p>
     /// <p>If you specified a VPC when you created the Client VPN endpoint or if you have previous subnet associations, the specified subnet must be in the same VPC. To specify a subnet that's in a different VPC, you must first modify the Client VPN endpoint (<a>ModifyClientVpnEndpoint</a>) and change the VPC that's associated with it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateClientVpnTargetNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6253,7 +6253,7 @@ pub mod fluent_builders {
     /// <p>After you associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use the options. You don't need to restart or relaunch the instances. They automatically pick up the changes within a few hours, depending on how frequently the instance renews its DHCP lease. You can explicitly renew the lease using the operating system on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a>
     /// in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDhcpOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6366,7 +6366,7 @@ pub mod fluent_builders {
     /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
     /// Grant the role permission to access the certificate and encryption key</a> in the
     /// <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateEnclaveCertificateIamRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6464,7 +6464,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates an IAM instance profile with a running or stopped instance. You cannot
     /// associate more than one IAM instance profile with an instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateIamInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6553,7 +6553,7 @@ pub mod fluent_builders {
     /// Dedicated Host IDs, or tags) can be specified with an event window.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
     /// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateInstanceEventWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6665,7 +6665,7 @@ pub mod fluent_builders {
     /// table later. A route table can be associated with multiple subnets.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateRouteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6773,7 +6773,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR
     /// block with your subnet. An IPv6 CIDR block must have a prefix length of /64.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSubnetCidrBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6860,7 +6860,7 @@ pub mod fluent_builders {
     /// <p>Associates the specified subnets and transit gateway attachments with the specified transit gateway multicast domain.</p>
     /// <p>The transit gateway attachment must be in the available state before you can add a resource. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html">DescribeTransitGatewayAttachments</a>
     /// to see the state of the attachment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTransitGatewayMulticastDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6988,7 +6988,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates the specified attachment with the specified transit gateway route table. You can
     /// associate only one route table with an attachment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTransitGatewayRouteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7101,7 +7101,7 @@ pub mod fluent_builders {
     /// <p>Associates a branch network interface with a trunk network interface.</p>
     /// <p>Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a> command and set
     /// <code>--interface-type</code> to <code>trunk</code>. You must also create a network interface for each branch network interface that you want to associate with the trunk network interface.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTrunkInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7243,7 +7243,7 @@ pub mod fluent_builders {
     /// <p>For more information about associating CIDR blocks with your VPC and applicable
     /// restrictions, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC and subnet sizing</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateVpcCidrBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7439,7 +7439,7 @@ pub mod fluent_builders {
     /// you restart it.</p>
     /// <p>After you've linked an instance, you cannot change the VPC security groups that are associated with it. To change the security groups, you must first unlink the instance, and then link it again.</p>
     /// <p>Linking your instance to a VPC is sometimes referred to as <i>attaching</i> your instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachClassicLinkVpc<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7551,7 +7551,7 @@ pub mod fluent_builders {
     ///
     /// <p>Attaches an internet gateway or a virtual private gateway to a VPC, enabling connectivity between the internet and
     /// the VPC. For more information about your VPC and internet gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7648,7 +7648,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AttachNetworkInterface`.
     ///
     /// <p>Attaches a network interface to an instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachNetworkInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7793,7 +7793,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach an Amazon EBS volume to an instance</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7902,7 +7902,7 @@ pub mod fluent_builders {
     /// gateway to one VPC at a time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachVpnGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8003,7 +8003,7 @@ pub mod fluent_builders {
     /// <p>Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization rules act as
     /// firewall rules that grant access to networks. You must configure ingress authorization rules to
     /// enable clients to access resources in Amazon Web Services or on-premises networks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeClientVpnIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8154,7 +8154,7 @@ pub mod fluent_builders {
     /// You can use -1 for the type or code to mean all types or all codes.</p>
     /// <p>Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.</p>
     /// <p>For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeSecurityGroupEgress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8362,7 +8362,7 @@ pub mod fluent_builders {
     /// <p>Rule changes are propagated to instances within the security group as quickly as possible.
     /// However, a small delay might occur.</p>
     /// <p>For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8614,7 +8614,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action is not applicable for Linux/Unix instances or Windows instances that are backed by Amazon EBS.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BundleInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8714,7 +8714,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelBundleTask`.
     ///
     /// <p>Cancels a bundling operation for an instance store-backed Windows instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelBundleTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8803,7 +8803,7 @@ pub mod fluent_builders {
     /// instances that target the Capacity Reservation can no longer launch. Modify these instances to either
     /// target a different Capacity Reservation, launch On-Demand Instance capacity, or run in any open Capacity Reservation
     /// that has matching attributes and sufficient capacity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelCapacityReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8903,7 +8903,7 @@ pub mod fluent_builders {
     /// <p>The Fleet stops creating new Capacity Reservations.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelCapacityReservationFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8997,7 +8997,7 @@ pub mod fluent_builders {
     /// in the process of transferring the final disk image, the command fails and returns an exception.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing a Virtual Machine Using the Amazon
     /// EC2 CLI</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelConversionTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9099,7 +9099,7 @@ pub mod fluent_builders {
     /// <p>Cancels an active export task. The request removes all artifacts of the export, including any partially-created
     /// Amazon S3 objects. If the export task is complete or is in the process of transferring the final disk image, the
     /// command fails and returns an error.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelExportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9172,7 +9172,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelImportTask`.
     ///
     /// <p>Cancels an in-process import virtual machine or import snapshot task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelImportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9275,7 +9275,7 @@ pub mod fluent_builders {
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a>
     /// in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelReservedInstancesListing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9357,7 +9357,7 @@ pub mod fluent_builders {
     /// <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters
     /// the <code>cancelled_running</code> state and the instances continue to run until they
     /// are interrupted or you terminate them manually.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSpotFleetRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9466,7 +9466,7 @@ pub mod fluent_builders {
     /// <p>Canceling a Spot Instance request does not terminate running Spot Instances
     /// associated with the request.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSpotInstanceRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9561,7 +9561,7 @@ pub mod fluent_builders {
     /// <p>Determines whether a product code is associated with an instance. This action can only
     /// be used by the owner of the product code. It is useful when a product code owner must
     /// verify whether another user's instance is eligible for support.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmProductInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9655,7 +9655,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyFpgaImage`.
     ///
     /// <p>Copies the specified Amazon FPGA Image (AFI) to the current Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyFpgaImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9808,7 +9808,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information about the prerequisites and limits when copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10064,7 +10064,7 @@ pub mod fluent_builders {
     /// be used for any purpose.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy an Amazon EBS snapshot</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopySnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10367,7 +10367,7 @@ pub mod fluent_builders {
     /// increase your On-Demand Instance limit for the required instance type and try again. For
     /// more information about increasing your instance limits, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 Service
     /// Quotas</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCapacityReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10725,7 +10725,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create a Capacity
     /// Reservation Fleet</a> in the Amazon EC2 User Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCapacityReservationFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10981,7 +10981,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCarrierGateway`.
     ///
     /// <p>Creates a carrier gateway.   For more information about carrier gateways, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier gateways</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCarrierGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11098,7 +11098,7 @@ pub mod fluent_builders {
     /// <p>Creates a Client VPN endpoint. A Client VPN endpoint is the resource you create and configure to
     /// enable and manage client VPN sessions. It is the destination endpoint at which all client VPN sessions
     /// are terminated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClientVpnEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11432,7 +11432,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds a route to a network to a Client VPN endpoint. Each Client VPN endpoint has a route table that describes the
     /// available destination network routes. Each route in the route table specifies the path for traﬃc to speciﬁc resources or networks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClientVpnRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11630,7 +11630,7 @@ pub mod fluent_builders {
     /// return information about the existing customer gateway and do not create new
     /// customer gateways.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomerGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11787,7 +11787,7 @@ pub mod fluent_builders {
     /// specified Availability Zone in your default VPC. You can have only one default subnet
     /// per Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating a default
     /// subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDefaultSubnet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11897,7 +11897,7 @@ pub mod fluent_builders {
     /// supports EC2-Classic, see "I really want a default VPC for my existing EC2 account. Is
     /// that possible?" in the <a href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default VPCs
     /// FAQ</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDefaultVpc<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12023,7 +12023,7 @@ pub mod fluent_builders {
     /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
     /// choice. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDhcpOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12134,7 +12134,7 @@ pub mod fluent_builders {
     /// internet gateway is used to enable outbound communication over IPv6 from instances in
     /// your VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6
     /// connection with your instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEgressOnlyInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12252,7 +12252,7 @@ pub mod fluent_builders {
     /// <p>You can create a single EC2 Fleet that includes multiple launch specifications that vary by
     /// instance type, AMI, Availability Zone, or subnet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12594,7 +12594,7 @@ pub mod fluent_builders {
     /// bucket.</p>
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html">VPC Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFlowLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12908,7 +12908,7 @@ pub mod fluent_builders {
     /// <p>An AFI contains the FPGA bitstream that is ready to download to an FPGA.
     /// You can securely deploy an AFI on multiple FPGA-accelerated instances.
     /// For more information, see the <a href="https://github.com/aws/aws-fpga/">Amazon Web Services FPGA Hardware Development Kit</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFpgaImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13067,7 +13067,7 @@ pub mod fluent_builders {
     /// the instance automatically launches with those additional volumes.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating Amazon EBS-Backed Linux AMIs</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13283,7 +13283,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
     /// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstanceEventWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13482,7 +13482,7 @@ pub mod fluent_builders {
     /// <p>For information about the supported operating systems, image formats, and known limitations
     /// for the types of instances you can export, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting an instance as a VM Using VM Import/Export</a>
     /// in the <i>VM Import/Export User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstanceExportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13610,7 +13610,7 @@ pub mod fluent_builders {
     /// <p>Creates an internet gateway for use with a VPC. After creating the internet gateway,
     /// you attach it to a VPC using <a>AttachInternetGateway</a>.</p>
     /// <p>For more information about your VPC and internet gateway, see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13703,7 +13703,7 @@ pub mod fluent_builders {
     /// <p>Create an IPAM. Amazon VCP IP Address Manager (IPAM) is a VPC feature that you can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services Organization.</p>
     /// <p>For more information, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIpam<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13841,7 +13841,7 @@ pub mod fluent_builders {
     /// <p>Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM, a pool is a collection of contiguous IP addresses CIDRs. Pools enable you to organize your IP addresses according to your routing and security needs. For example, if you have separate routing and security needs for development and production applications, you can create a pool for each.</p>
     /// <p>For more information, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIpamPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14118,7 +14118,7 @@ pub mod fluent_builders {
     ///
     /// <p>Create an IPAM scope. In IPAM, a scope is the highest-level container within IPAM. An IPAM contains two default scopes. Each scope represents the IP space for a single network. The private scope is intended for all private IP address space. The public scope is intended for all public IP address space. Scopes enable you to reuse IP addresses across multiple unconnected networks without causing IP address overlap or conflict.</p>
     /// <p>For more information, see <a href="/vpc/latest/ipam/add-scope-ipam.html">Add a scope</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIpamScope<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14250,7 +14250,7 @@ pub mod fluent_builders {
     /// <p>You can have up to 5,000 key pairs per Amazon Web Services Region.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14371,7 +14371,7 @@ pub mod fluent_builders {
     /// specify a launch template instead of providing the launch parameters in the request. For
     /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching an instance from a
     /// launch template</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLaunchTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14527,7 +14527,7 @@ pub mod fluent_builders {
     /// cannot specify, change, or replace the numbering of launch template versions.</p>
     /// <p>For
     /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Managing launch template versions</a>in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLaunchTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14699,7 +14699,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLocalGatewayRoute`.
     ///
     /// <p>Creates a static route for the specified local gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocalGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14824,7 +14824,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLocalGatewayRouteTableVpcAssociation`.
     ///
     /// <p>Associates the specified VPC with the specified local gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocalGatewayRouteTableVpcAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14944,7 +14944,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a managed prefix list. You can specify one or more entries for the prefix list.
     /// Each entry consists of a CIDR block and an optional description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateManagedPrefixList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15119,7 +15119,7 @@ pub mod fluent_builders {
     /// running large workloads behind a small pool of allowlisted IPv4 addresses, preserving
     /// private IPv4 addresses, and communicating between overlapping networks.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNatGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15270,7 +15270,7 @@ pub mod fluent_builders {
     /// <p>Creates a network ACL in a VPC. Network ACLs provide an optional layer of security (in addition to security groups) for the instances in your VPC.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkAcl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15378,7 +15378,7 @@ pub mod fluent_builders {
     /// other (for example, 101, 102, 103, ...). This makes it easier to add a rule between existing ones without having to renumber the rules.</p>
     /// <p>After you add an entry, you can't modify it; you must either replace it, or create an entry and delete the old one.</p>
     /// <p>For more information about network ACLs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkAclEntry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15580,7 +15580,7 @@ pub mod fluent_builders {
     /// <p>Amazon Web Services Network Access Analyzer enables cloud networking and cloud operations teams
     /// to verify that their networks on Amazon Web Services conform to their network security and governance
     /// objectives. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/network-access-analyzer/">Amazon Web Services Network Access Analyzer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkInsightsAccessScope<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15720,7 +15720,7 @@ pub mod fluent_builders {
     /// <p>Reachability Analyzer enables you to analyze and debug network reachability between
     /// two resources in your virtual private cloud (VPC). For more information, see
     /// <a href="https://docs.aws.amazon.com/vpc/latest/reachability/">What is Reachability Analyzer</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkInsightsPath<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15888,7 +15888,7 @@ pub mod fluent_builders {
     /// <p>Creates a network interface in the specified subnet.</p>
     /// <p>For more information about network interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a>
     /// in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16213,7 +16213,7 @@ pub mod fluent_builders {
     /// <p>Grants an Amazon Web Services-authorized account permission to attach the specified network interface to
     /// an instance in their account.</p>
     /// <p>You can grant permission to a single Amazon Web Services account only, and only one account at a time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkInterfacePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16345,7 +16345,7 @@ pub mod fluent_builders {
     /// instances in another partition.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the
     /// <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlacementGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16475,7 +16475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePublicIpv4Pool`.
     ///
     /// <p>Creates a public IPv4 address pool. A public IPv4 pool is an EC2 IP address pool required for the public IPv4 CIDRs that you own and bring to Amazon Web Services to manage with IPAM. IPv6 addresses you bring to Amazon Web Services, however, use IPAM pools only. To monitor the status of pool creation, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html">DescribePublicIpv4Pools</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePublicIpv4Pool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16572,7 +16572,7 @@ pub mod fluent_builders {
     /// specific snapshot.</p>
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplaceRootVolumeTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16714,7 +16714,7 @@ pub mod fluent_builders {
     /// <a>DescribeReservedInstancesListings</a> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a> in the
     /// <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReservedInstancesListing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16833,7 +16833,7 @@ pub mod fluent_builders {
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
     /// Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRestoreImageTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17000,7 +17000,7 @@ pub mod fluent_builders {
     /// so we use that route to determine where to target the traffic.</p>
     /// <p>For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17281,7 +17281,7 @@ pub mod fluent_builders {
     /// <p>Creates a route table for the specified VPC. After you create a route table, you can add routes and associate the table with a subnet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRouteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17396,7 +17396,7 @@ pub mod fluent_builders {
     /// <a>RevokeSecurityGroupIngress</a>, and
     /// <a>RevokeSecurityGroupEgress</a>.</p>
     /// <p>For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17558,7 +17558,7 @@ pub mod fluent_builders {
     /// <p>You can tag your snapshots during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2
     /// resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon Elastic Block Store</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17724,7 +17724,7 @@ pub mod fluent_builders {
     /// in the same Region as the instance. If you create snapshots from an instance on an Outpost,
     /// the snapshots can be stored on the same Outpost as the instance, or in the Region for that
     /// Outpost.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17910,7 +17910,7 @@ pub mod fluent_builders {
     /// You can create one data feed per Amazon Web Services account. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a>
     /// in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSpotDatafeedSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18014,7 +18014,7 @@ pub mod fluent_builders {
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
     /// Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStoreImageTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18146,7 +18146,7 @@ pub mod fluent_builders {
     /// no remaining IP addresses available.</p>
     /// <p>For more information about subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and subnets</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubnet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18342,7 +18342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSubnetCidrReservation`.
     ///
     /// <p>Creates a subnet CIDR reservation. For information about subnet CIDR reservations, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubnetCidrReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18530,7 +18530,7 @@ pub mod fluent_builders {
     /// creating IAM policies that control users' access to resources based on tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html">Supported
     /// Resource-Level Permissions for Amazon EC2 API Actions</a> in the <i>Amazon
     /// Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18645,7 +18645,7 @@ pub mod fluent_builders {
     /// <p>A Traffic Mirror filter is a set of rules that defines the traffic to mirror.</p>
     /// <p>By default, no traffic is mirrored. To mirror traffic, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.htm">CreateTrafficMirrorFilterRule</a> to add Traffic Mirror rules to the filter. The rules you
     /// add define what traffic gets mirrored. You can also use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html">ModifyTrafficMirrorFilterNetworkServices</a> to mirror supported network services.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrafficMirrorFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18758,7 +18758,7 @@ pub mod fluent_builders {
     /// <p>Creates a Traffic Mirror filter rule.</p>
     /// <p>A Traffic Mirror rule defines the Traffic Mirror source traffic to mirror.</p>
     /// <p>You need the Traffic Mirror filter ID when you create the rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrafficMirrorFilterRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18982,7 +18982,7 @@ pub mod fluent_builders {
     /// <p>The Traffic Mirror source and the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in a different VPC connected via VPC peering or a transit gateway. </p>
     /// <p>By default, no traffic is mirrored. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a> to
     /// create filter rules that specify the traffic to mirror.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrafficMirrorSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19191,7 +19191,7 @@ pub mod fluent_builders {
     /// different VPCs connected via VPC peering or a transit gateway.</p>
     /// <p>A Traffic Mirror target can be a network interface, or a Network Load Balancer.</p>
     /// <p>To use the target in a Traffic Mirror session, use  <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.htm">CreateTrafficMirrorSession</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrafficMirrorTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19343,7 +19343,7 @@ pub mod fluent_builders {
     /// additional transit gateway route tables. If you disable automatic route propagation, we do not create a default transit gateway route table.
     /// You can use <a>EnableTransitGatewayRouteTablePropagation</a> to propagate routes from a resource
     /// attachment to a transit gateway route table. If you disable automatic associations, you can use <a>AssociateTransitGatewayRouteTable</a> to associate a resource attachment with a transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19458,7 +19458,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a Connect attachment from a specified transit gateway attachment. A Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection between a transit gateway and an appliance.</p>
     /// <p>A Connect attachment uses an existing VPC or Amazon Web Services Direct Connect attachment as the underlying transport mechanism.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransitGatewayConnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19588,7 +19588,7 @@ pub mod fluent_builders {
     /// transit gateway and an appliance.</p>
     /// <p>The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html#tgw-connect-peer">Connect peers</a> in the <i>Transit Gateways Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransitGatewayConnectPeer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19767,7 +19767,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a multicast domain using the specified transit gateway.</p>
     /// <p>The transit gateway  must be in the available state before you create a domain. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html">DescribeTransitGateways</a> to see the state of transit gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransitGatewayMulticastDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19896,7 +19896,7 @@ pub mod fluent_builders {
     /// Amazon Web Services account.</p>
     /// <p>After you create the peering attachment, the owner of the accepter transit gateway
     /// must accept the attachment request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransitGatewayPeeringAttachment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20041,7 +20041,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTransitGatewayPrefixListReference`.
     ///
     /// <p>Creates a reference (route) to a prefix list in a specified transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransitGatewayPrefixListReference<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20172,7 +20172,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTransitGatewayRoute`.
     ///
     /// <p>Creates a static route for the specified transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransitGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20303,7 +20303,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTransitGatewayRouteTable`.
     ///
     /// <p>Creates a route table for the specified transit gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransitGatewayRouteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20410,7 +20410,7 @@ pub mod fluent_builders {
     /// <p>If you attach a VPC with a CIDR range that overlaps the CIDR range of a VPC that is already attached,
     /// the new VPC CIDR range is not propagated to the default propagation route table.</p>
     /// <p>To send VPC traffic to an attached transit gateway, add a route to the VPC route table using <a>CreateRoute</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransitGatewayVpcAttachment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20573,7 +20573,7 @@ pub mod fluent_builders {
     /// resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create an Amazon EBS volume</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21002,7 +21002,7 @@ pub mod fluent_builders {
     /// <p>You can specify the instance tenancy value for the VPC when you create it. You can't change
     /// this value for the VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpc<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21259,7 +21259,7 @@ pub mod fluent_builders {
     /// <p>A <code>GatewayLoadBalancer</code> endpoint is a network interface in your subnet that serves an endpoint for communicating with a Gateway Load Balancer that you've configured as a VPC endpoint service.</p>
     /// <p>Use <a>DescribeVpcEndpointServices</a> to get a list of supported
     /// services.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpcEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21511,7 +21511,7 @@ pub mod fluent_builders {
     /// create an SNS topic to receive notifications. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a Topic</a> in
     /// the <i>Amazon Simple Notification Service Developer Guide</i>.</p>
     /// <p>You can create a connection notification for interface endpoints only.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpcEndpointConnectionNotification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21680,7 +21680,7 @@ pub mod fluent_builders {
     /// name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC Endpoint Service
     /// Private DNS Name Verification</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpcEndpointServiceConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21860,7 +21860,7 @@ pub mod fluent_builders {
     /// cannot be accepted or rejected.</p>
     /// <p>If you create a VPC peering connection request between VPCs with overlapping CIDR
     /// blocks, the VPC peering connection has a status of <code>failed</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpcPeeringConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22020,7 +22020,7 @@ pub mod fluent_builders {
     /// EC2 doesn't return an error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpnConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22186,7 +22186,7 @@ pub mod fluent_builders {
     /// from the virtual private gateway to the VPN customer gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpnConnectionRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22276,7 +22276,7 @@ pub mod fluent_builders {
     /// creating the VPC itself.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpnGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22413,7 +22413,7 @@ pub mod fluent_builders {
     /// Target, the route is a blackhole route. For information about how to delete a route, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCarrierGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22501,7 +22501,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified Client VPN endpoint. You must disassociate all target networks before you
     /// can delete a Client VPN endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteClientVpnEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22587,7 +22587,7 @@ pub mod fluent_builders {
     /// the <b>CreateClientVpnRoute</b> action. You cannot delete routes that were
     /// automatically added when associating a subnet. To remove routes that have been automatically added,
     /// disassociate the target subnet from the Client VPN endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteClientVpnRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22697,7 +22697,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified customer gateway. You must delete the VPN connection before you
     /// can delete the customer gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomerGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22786,7 +22786,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDhcpOptions`.
     ///
     /// <p>Deletes the specified set of DHCP options. You must disassociate the set of DHCP options before you can delete it. You can disassociate the set of DHCP options by associating either a new set of options or the default set of options with the VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDhcpOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22873,7 +22873,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEgressOnlyInternetGateway`.
     ///
     /// <p>Deletes an egress-only internet gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEgressOnlyInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22989,7 +22989,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting an EC2
     /// Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23102,7 +23102,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFlowLogs`.
     ///
     /// <p>Deletes one or more flow logs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFlowLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23195,7 +23195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFpgaImage`.
     ///
     /// <p>Deletes the specified Amazon FPGA Image (AFI).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFpgaImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23284,7 +23284,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified event window.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
     /// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstanceEventWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23387,7 +23387,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified internet gateway. You must detach the internet gateway from the
     /// VPC before you can delete it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23481,7 +23481,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>For more information, see <a href="/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIpam<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23572,7 +23572,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>For more information, see <a href="/vpc/latest/ipam/delete-pool-ipam.html">Delete a pool</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIpamPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23658,7 +23658,7 @@ pub mod fluent_builders {
     /// <p>Delete the scope for an IPAM. You cannot delete the default scopes.</p>
     /// <p>For more information, see <a href="/vpc/latest/ipam/delete-scope-ipam.html">Delete a scope</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIpamScope<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23745,7 +23745,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteKeyPair`.
     ///
     /// <p>Deletes the specified key pair, by removing the public key from Amazon EC2.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23839,7 +23839,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLaunchTemplate`.
     ///
     /// <p>Deletes a launch template. Deleting a launch template deletes all of its versions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLaunchTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23948,7 +23948,7 @@ pub mod fluent_builders {
     /// version of a launch template; you must first assign a different version as the default.
     /// If the default version is the only version for the launch template, you must delete the
     /// entire launch template using <a>DeleteLaunchTemplate</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLaunchTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24071,7 +24071,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLocalGatewayRoute`.
     ///
     /// <p>Deletes the specified route from the specified local gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLocalGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24174,7 +24174,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLocalGatewayRouteTableVpcAssociation`.
     ///
     /// <p>Deletes the specified association between a VPC and local gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLocalGatewayRouteTableVpcAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24270,7 +24270,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteManagedPrefixList`.
     ///
     /// <p>Deletes the specified managed prefix list. You must first remove all references to the prefix list in your resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteManagedPrefixList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24359,7 +24359,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified NAT gateway. Deleting a public NAT gateway disassociates its Elastic IP address,
     /// but does not release the address from your account. Deleting a NAT gateway does not delete any NAT gateway
     /// routes in your route tables.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNatGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24446,7 +24446,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkAcl`.
     ///
     /// <p>Deletes the specified network ACL. You can't delete the ACL if it's associated with any subnets. You can't delete the default network ACL.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkAcl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24533,7 +24533,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkAclEntry`.
     ///
     /// <p>Deletes the specified ingress or egress entry (rule) from the specified network ACL.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkAclEntry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24640,7 +24640,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkInsightsAccessScope`.
     ///
     /// <p>Deletes the specified Network Access Scope.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkInsightsAccessScope<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24732,7 +24732,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkInsightsAccessScopeAnalysis`.
     ///
     /// <p>Deletes the specified Network Access Scope analysis.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkInsightsAccessScopeAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24828,7 +24828,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkInsightsAnalysis`.
     ///
     /// <p>Deletes the specified network insights analysis.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkInsightsAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24918,7 +24918,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkInsightsPath`.
     ///
     /// <p>Deletes the specified path.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkInsightsPath<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25008,7 +25008,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkInterface`.
     ///
     /// <p>Deletes the specified network interface. You must detach the network interface before you can delete it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25098,7 +25098,7 @@ pub mod fluent_builders {
     /// permission if the account for which you're removing the permission has attached the
     /// network interface to an instance. However, you can force delete the permission,
     /// regardless of any attachment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkInterfacePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25202,7 +25202,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified placement group. You must terminate all instances in the
     /// placement group before you can delete the placement group. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlacementGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25286,7 +25286,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePublicIpv4Pool`.
     ///
     /// <p>Delete a public IPv4 pool. A public IPv4 pool is an EC2 IP address pool required for the public IPv4 CIDRs that you own and bring to Amazon Web Services to manage with IPAM. IPv6 addresses you bring to Amazon Web Services, however, use IPAM pools only.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePublicIpv4Pool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25370,7 +25370,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteQueuedReservedInstances`.
     ///
     /// <p>Deletes the queued purchases for the specified Reserved Instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteQueuedReservedInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25461,7 +25461,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoute`.
     ///
     /// <p>Deletes the specified route from the specified route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25593,7 +25593,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRouteTable`.
     ///
     /// <p>Deletes the specified route table. You must disassociate the route table from any subnets before you can delete it. You can't delete the main route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRouteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25684,7 +25684,7 @@ pub mod fluent_builders {
     /// referenced by another security group, the operation fails with
     /// <code>InvalidGroup.InUse</code> in EC2-Classic or
     /// <code>DependencyViolation</code> in EC2-VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25787,7 +25787,7 @@ pub mod fluent_builders {
     /// You must first de-register the AMI before you can delete the snapshot.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Delete an Amazon EBS snapshot</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25871,7 +25871,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSpotDatafeedSubscription`.
     ///
     /// <p>Deletes the data feed for Spot Instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSpotDatafeedSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25947,7 +25947,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSubnet`.
     ///
     /// <p>Deletes the specified subnet. You must terminate all running instances in the subnet before you can delete the subnet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSubnet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26031,7 +26031,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSubnetCidrReservation`.
     ///
     /// <p>Deletes a subnet CIDR reservation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSubnetCidrReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26124,7 +26124,7 @@ pub mod fluent_builders {
     /// <p>To list the current tags, use <a>DescribeTags</a>. For more information about tags, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Resources</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26249,7 +26249,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified Traffic Mirror filter.</p>
     /// <p>You cannot delete a Traffic Mirror filter that is in use by a Traffic Mirror session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrafficMirrorFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26339,7 +26339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTrafficMirrorFilterRule`.
     ///
     /// <p>Deletes the specified Traffic Mirror rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrafficMirrorFilterRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26429,7 +26429,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTrafficMirrorSession`.
     ///
     /// <p>Deletes the specified Traffic Mirror session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrafficMirrorSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26520,7 +26520,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified Traffic Mirror target.</p>
     /// <p>You cannot delete a Traffic Mirror target that is in use by a Traffic Mirror session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrafficMirrorTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26610,7 +26610,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTransitGateway`.
     ///
     /// <p>Deletes the specified transit gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26698,7 +26698,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified Connect attachment. You must first delete any Connect peers for
     /// the attachment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTransitGatewayConnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26788,7 +26788,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTransitGatewayConnectPeer`.
     ///
     /// <p>Deletes the specified Connect peer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTransitGatewayConnectPeer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26878,7 +26878,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTransitGatewayMulticastDomain`.
     ///
     /// <p>Deletes the specified transit gateway multicast domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTransitGatewayMulticastDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26972,7 +26972,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTransitGatewayPeeringAttachment`.
     ///
     /// <p>Deletes a transit gateway peering attachment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTransitGatewayPeeringAttachment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27064,7 +27064,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTransitGatewayPrefixListReference`.
     ///
     /// <p>Deletes a reference (route) to a prefix list in a specified transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTransitGatewayPrefixListReference<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27169,7 +27169,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTransitGatewayRoute`.
     ///
     /// <p>Deletes the specified route from the specified transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTransitGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27273,7 +27273,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified transit gateway route table. You must disassociate the route table from any
     /// transit gateway route tables before you can delete it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTransitGatewayRouteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27363,7 +27363,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTransitGatewayVpcAttachment`.
     ///
     /// <p>Deletes the specified VPC attachment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTransitGatewayVpcAttachment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27457,7 +27457,7 @@ pub mod fluent_builders {
     /// <p>The volume can remain in the <code>deleting</code> state for several minutes.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Delete an Amazon EBS volume</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27541,7 +27541,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVpc`.
     ///
     /// <p>Deletes the specified VPC. You must detach or delete all gateways and resources that are associated with the VPC before you can delete it. For example, you must terminate all instances running in the VPC, delete all security groups associated with the VPC (except the default one), delete all route tables associated with the VPC (except the default one), and so on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpc<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27625,7 +27625,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVpcEndpointConnectionNotifications`.
     ///
     /// <p>Deletes one or more VPC endpoint connection notifications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpcEndpointConnectionNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27745,7 +27745,7 @@ pub mod fluent_builders {
     /// <p>When you delete an interface endpoint, we delete the  endpoint network interfaces.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpcEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27839,7 +27839,7 @@ pub mod fluent_builders {
     /// delete the endpoint service configuration, you must reject any <code>Available</code> or
     /// <code>PendingAcceptance</code> interface endpoint connections that are attached to
     /// the service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpcEndpointServiceConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27936,7 +27936,7 @@ pub mod fluent_builders {
     /// <code>active</code> state. The owner of the requester VPC can delete a VPC peering
     /// connection in the <code>pending-acceptance</code> state. You cannot delete a VPC peering
     /// connection that's in the <code>failed</code> state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpcPeeringConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28036,7 +28036,7 @@ pub mod fluent_builders {
     /// <p>For certificate-based authentication, delete all Certificate Manager (ACM) private
     /// certificates used for the Amazon Web Services-side tunnel endpoints for the VPN
     /// connection before deleting the VPN connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpnConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28128,7 +28128,7 @@ pub mod fluent_builders {
     /// existing virtual private gateway and a VPN customer gateway. The static route allows
     /// traffic to be routed from the virtual private gateway to the VPN customer
     /// gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpnConnectionRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28217,7 +28217,7 @@ pub mod fluent_builders {
     /// private gateway from the VPC. Note that you don't need to delete the virtual private
     /// gateway if you plan to delete and recreate the VPN connection between your VPC and your
     /// network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpnGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28309,7 +28309,7 @@ pub mod fluent_builders {
     /// through bring your own IP addresses (BYOIP) and deletes the corresponding address pool.</p>
     /// <p>Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a> and you must not have any IP addresses allocated from its
     /// address range.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprovisionByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28395,7 +28395,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeprovisionIpamPoolCidr`.
     ///
     /// <p>Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR from a pool that has a source pool, the CIDR is recycled back into the source pool. For more information, see <a href="/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision pool CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprovisionIpamPoolCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28489,7 +28489,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeprovisionPublicIpv4PoolCidr`.
     ///
     /// <p>Deprovision a CIDR from a public IPv4 pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprovisionPublicIpv4PoolCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28590,7 +28590,7 @@ pub mod fluent_builders {
     /// created for the root volume of the instance during the AMI creation process. When you
     /// deregister an instance store-backed AMI, it doesn't affect the files that you uploaded
     /// to Amazon S3 when you created the AMI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28676,7 +28676,7 @@ pub mod fluent_builders {
     /// <p>c</p>
     /// <p>Deregisters tag keys to prevent tags that have the specified tag keys from being included
     /// in scheduled event notifications for resources in the Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterInstanceEventNotificationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28759,7 +28759,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterTransitGatewayMulticastGroupMembers`.
     ///
     /// <p>Deregisters the specified members (network interfaces) from the  transit gateway multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTransitGatewayMulticastGroupMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28874,7 +28874,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterTransitGatewayMulticastGroupSources`.
     ///
     /// <p>Deregisters the specified sources (network interfaces) from the  transit gateway multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTransitGatewayMulticastGroupSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29023,7 +29023,7 @@ pub mod fluent_builders {
     /// allocate for use with EC2-VPC.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29116,7 +29116,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified Elastic IP addresses or all of your Elastic IP addresses.</p>
     /// <p>An Elastic IP address is for use in either the EC2-Classic platform or in a VPC.
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAddresses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29341,7 +29341,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAddressesAttribute`.
     ///
     /// <p>Describes the attributes of the specified Elastic IP addresses. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using reverse DNS for email applications</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAddressesAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29482,7 +29482,7 @@ pub mod fluent_builders {
     /// <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
     /// <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> |
     /// <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAggregateIdFormat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29561,7 +29561,7 @@ pub mod fluent_builders {
     /// <p>For more information about Availability Zones, Local Zones, and Wavelength Zones, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and zones</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAvailabilityZones<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29821,7 +29821,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Completed bundle tasks are listed for only a limited time. If your bundle task is no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest name you provided to the bundle task.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBundleTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30019,7 +30019,7 @@ pub mod fluent_builders {
     /// <p>Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.</p>
     /// <p>To describe the address pools that were created when you provisioned the address
     /// ranges, use <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeByoipCidrs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30115,7 +30115,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCapacityReservationFleets`.
     ///
     /// <p>Describes one or more Capacity Reservation Fleets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCapacityReservationFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30283,7 +30283,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes one or more of your Capacity Reservations. The results describe only the Capacity Reservations in the
     /// Amazon Web Services Region that you're currently using.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCapacityReservations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30631,7 +30631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCarrierGateways`.
     ///
     /// <p>Describes one or more of your carrier gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCarrierGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30819,7 +30819,7 @@ pub mod fluent_builders {
     /// <p>Describes one or more of your linked EC2-Classic instances. This request only returns
     /// information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot
     /// use this request to return information about other instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClassicLinkInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31009,7 +31009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClientVpnAuthorizationRules`.
     ///
     /// <p>Describes the authorization rules for a specified Client VPN endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClientVpnAuthorizationRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31162,7 +31162,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes active client connections and connections that have been terminated within the last 60
     /// minutes for the specified Client VPN endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClientVpnConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31304,7 +31304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClientVpnEndpoints`.
     ///
     /// <p>Describes one or more Client VPN endpoints in the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClientVpnEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31450,7 +31450,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClientVpnRoutes`.
     ///
     /// <p>Describes the routes for the specified Client VPN endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClientVpnRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31598,7 +31598,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClientVpnTargetNetworks`.
     ///
     /// <p>Describes the target networks associated with the specified Client VPN endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClientVpnTargetNetworks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31763,7 +31763,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCoipPools`.
     ///
     /// <p>Describes the specified customer-owned address pools or all of your customer-owned address pools.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCoipPools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31923,7 +31923,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified conversion tasks or all your conversion tasks. For more information, see the
     /// <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/">VM Import/Export User Guide</a>.</p>
     /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConversionTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32016,7 +32016,7 @@ pub mod fluent_builders {
     /// <p>Describes one or more of your VPN customer gateways.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomerGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32202,7 +32202,7 @@ pub mod fluent_builders {
     /// <p>Describes one or more of your DHCP options sets.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDhcpOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32388,7 +32388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEgressOnlyInternetGateways`.
     ///
     /// <p>Describes one or more of your egress-only internet gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEgressOnlyInternetGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32546,7 +32546,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the Elastic Graphics accelerator associated with your instances. For more information
     /// about Elastic Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon Elastic Graphics</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeElasticGpus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32732,7 +32732,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExportImageTasks`.
     ///
     /// <p>Describes the specified export image tasks or all of your export image tasks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExportImageTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32862,7 +32862,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExportTasks`.
     ///
     /// <p>Describes the specified export instance tasks or all of your export instance tasks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExportTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32956,7 +32956,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFastSnapshotRestores`.
     ///
     /// <p>Describes the state of fast snapshot restores for your snapshots.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFastSnapshotRestores<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33120,7 +33120,7 @@ pub mod fluent_builders {
     /// are available for 48 hours.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor fleet events using Amazon EventBridge</a> in the
     /// <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33257,7 +33257,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the running instances for the specified EC2 Fleet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33395,7 +33395,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33591,7 +33591,7 @@ pub mod fluent_builders {
     /// <p>Describes one or more flow logs. To view the information in your flow logs (the log
     /// streams for the network interfaces), you must use the CloudWatch Logs console or the CloudWatch Logs
     /// API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFlowLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33801,7 +33801,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFpgaImageAttribute`.
     ///
     /// <p>Describes the specified attribute of the specified Amazon FPGA Image (AFI).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFpgaImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33903,7 +33903,7 @@ pub mod fluent_builders {
     /// <p>Describes the Amazon FPGA Images (AFIs) available to you. These include public AFIs,
     /// private AFIs that you own, and AFIs owned by other Amazon Web Services accounts for which you have load
     /// permissions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFpgaImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34152,7 +34152,7 @@ pub mod fluent_builders {
     /// matches that of the Dedicated Hosts with which it is to be associated. For more
     /// information about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Hosts</a>
     /// in the <i>Amazon EC2 User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHostReservationOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34316,7 +34316,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes reservations that are associated with Dedicated Hosts in your
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHostReservations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34487,7 +34487,7 @@ pub mod fluent_builders {
     /// <p>The results describe only the Dedicated Hosts in the Region you're currently using.
     /// All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that have
     /// recently been released are listed with the state <code>released</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHosts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34681,7 +34681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIamInstanceProfileAssociations`.
     ///
     /// <p>Describes your IAM instance profile associations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIamInstanceProfileAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34839,7 +34839,7 @@ pub mod fluent_builders {
     /// <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>. </p>
     /// <p>These settings apply to the principal specified in the request. They do not apply to the
     /// principal that makes the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdentityIdFormat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34967,7 +34967,7 @@ pub mod fluent_builders {
     /// created with longer IDs are visible to all IAM users, regardless of these settings and
     /// provided that they have permission to use the relevant <code>Describe</code> command for the
     /// resource type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdFormat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -35063,7 +35063,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImageAttribute`.
     ///
     /// <p>Describes the specified attribute of the specified AMI. You can specify only one attribute at a time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -35174,7 +35174,7 @@ pub mod fluent_builders {
     /// return empty results. After all instances that reference a deregistered AMI are terminated,
     /// specifying the ID of the image will eventually return an error indicating that the AMI ID
     /// cannot be found.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -35672,7 +35672,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImportImageTasks`.
     ///
     /// <p>Displays details about an import virtual machine or import snapshot tasks that are already created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImportImageTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -35802,7 +35802,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImportSnapshotTasks`.
     ///
     /// <p>Describes your import snapshot tasks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImportSnapshotTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -35939,7 +35939,7 @@ pub mod fluent_builders {
     /// <code>productCodes</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
     /// <code>ebsOptimized</code> | <code>sriovNetSupport</code>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -36057,7 +36057,7 @@ pub mod fluent_builders {
     /// you specify only instance IDs in an unaffected zone, the call works normally.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
     /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceCreditSpecifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -36210,7 +36210,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the tag keys that are registered to appear in scheduled event notifications for
     /// resources in the current Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceEventNotificationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -36294,7 +36294,7 @@ pub mod fluent_builders {
     /// successfully. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
     /// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceEventWindows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -36546,7 +36546,7 @@ pub mod fluent_builders {
     /// not specify any instance IDs at all, the call fails. If you describe instances and
     /// specify only instance IDs that are in an unaffected zone, the call works
     /// normally.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -37627,7 +37627,7 @@ pub mod fluent_builders {
     /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -37934,7 +37934,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of all instance types offered. The results can be filtered by location (Region or Availability
     /// Zone). If no location is specified, the instance types offered in the current Region are returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceTypeOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -38085,7 +38085,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the details of the instance types that are offered in a location. The results can be filtered by the
     /// attributes of the instance types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -38651,7 +38651,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInternetGateways`.
     ///
     /// <p>Describes one or more of your internet gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInternetGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -38839,7 +38839,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIpamPools`.
     ///
     /// <p>Get information about your IPAM pools.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIpamPools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -38969,7 +38969,7 @@ pub mod fluent_builders {
     /// <p>Get information about your IPAM pools.</p>
     /// <p>For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIpams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -39097,7 +39097,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIpamScopes`.
     ///
     /// <p>Get information about your IPAM scopes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIpamScopes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -39225,7 +39225,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIpv6Pools`.
     ///
     /// <p>Describes your IPv6 address pools.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIpv6Pools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -39379,7 +39379,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified key pairs or all of your key pairs.</p>
     /// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeKeyPairs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -39552,7 +39552,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLaunchTemplates`.
     ///
     /// <p>Describes one or more launch templates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLaunchTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -39744,7 +39744,7 @@ pub mod fluent_builders {
     /// versions, individual versions, or a range of versions. You can also describe all the
     /// latest versions or all the default versions of all the launch templates in your
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLaunchTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -40023,7 +40023,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes one or more local gateway route tables. By default, all local gateway route tables are described.
     /// Alternatively, you can filter the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocalGatewayRouteTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -40192,7 +40192,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations`.
     ///
     /// <p>Describes the associations between virtual interface groups and local gateway route tables.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations<C = aws_smithy_client::erase::DynConnector, M= crate::middleware::DefaultMiddleware, R= aws_smithy_client::retry::Standard> {
                             handle: std::sync::Arc<super::Handle<C, M, R>>,
                             inner: crate::input::describe_local_gateway_route_table_virtual_interface_group_associations_input::Builder
@@ -40362,7 +40362,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLocalGatewayRouteTableVpcAssociations`.
     ///
     /// <p>Describes the specified associations between VPCs and local gateway route tables.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocalGatewayRouteTableVpcAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -40537,7 +40537,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes one or more local gateways. By default, all local gateways are described.
     /// Alternatively, you can filter the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocalGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -40719,7 +40719,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLocalGatewayVirtualInterfaceGroups`.
     ///
     /// <p>Describes the specified local gateway virtual interface groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocalGatewayVirtualInterfaceGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -40886,7 +40886,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLocalGatewayVirtualInterfaces`.
     ///
     /// <p>Describes the specified local gateway virtual interfaces.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocalGatewayVirtualInterfaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -41022,7 +41022,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.</p>
     /// <p>To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeManagedPrefixLists<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -41180,7 +41180,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMovingAddresses`.
     ///
     /// <p>Describes your Elastic IP addresses that are being moved to the EC2-VPC platform, or that are being restored to the EC2-Classic platform. This request does not return information about any other Elastic IP addresses in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMovingAddresses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -41330,7 +41330,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNatGateways`.
     ///
     /// <p>Describes one or more of your NAT gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNatGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -41518,7 +41518,7 @@ pub mod fluent_builders {
     /// <p>Describes one or more of your network ACLs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNetworkAcls<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -41802,7 +41802,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNetworkInsightsAccessScopeAnalyses`.
     ///
     /// <p>Describes the specified Network Access Scope analyses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNetworkInsightsAccessScopeAnalyses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -41985,7 +41985,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNetworkInsightsAccessScopes`.
     ///
     /// <p>Describes the specified Network Access Scopes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNetworkInsightsAccessScopes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -42120,7 +42120,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNetworkInsightsAnalyses`.
     ///
     /// <p>Describes one or more of your network insights analyses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNetworkInsightsAnalyses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -42311,7 +42311,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNetworkInsightsPaths`.
     ///
     /// <p>Describes one or more of your paths.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNetworkInsightsPaths<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -42475,7 +42475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNetworkInterfaceAttribute`.
     ///
     /// <p>Describes a network interface attribute. You can specify only one attribute at a time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNetworkInterfaceAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -42575,7 +42575,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNetworkInterfacePermissions`.
     ///
     /// <p>Describes the permissions for your network interfaces. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNetworkInterfacePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -42748,7 +42748,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNetworkInterfaces`.
     ///
     /// <p>Describes one or more of your network interfaces.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNetworkInterfaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -43192,7 +43192,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified placement groups or all of your placement groups. For more
     /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the
     /// <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePlacementGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -43377,7 +43377,7 @@ pub mod fluent_builders {
     /// <p>Describes available Amazon Web Services services in a prefix list format, which includes the prefix list
     /// name and prefix list ID of the service and the IP address range for the service.</p>
     /// <p>We recommend that you use <a>DescribeManagedPrefixLists</a> instead.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePrefixLists<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -43544,7 +43544,7 @@ pub mod fluent_builders {
     /// <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code>
     /// | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> |
     /// <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePrincipalIdFormat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -43683,7 +43683,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePublicIpv4Pools`.
     ///
     /// <p>Describes the specified IPv4 address pools.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePublicIpv4Pools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -43824,7 +43824,7 @@ pub mod fluent_builders {
     /// <p>For a list of the Regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/general/latest/gr/ec2-service.html">
     /// Amazon Elastic Compute Cloud endpoints and quotas</a>.</p>
     /// <p>For information about enabling and disabling Regions for your account, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRegions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -43973,7 +43973,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes a root volume replacement task. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplaceRootVolumeTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -44120,7 +44120,7 @@ pub mod fluent_builders {
     /// <p>Describes one or more of the Reserved Instances that you purchased.</p>
     /// <p>For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
     /// Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -44397,7 +44397,7 @@ pub mod fluent_builders {
     /// <p>As a buyer, you specify the configuration of the Reserved Instance to purchase, and the Marketplace matches what you're searching for with what's available. The Marketplace first sells the lowest priced Reserved Instances to you, and continues to sell available Reserved Instance listings to you until your demand is met. You are charged based on the total price of all of the listings that you purchase.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a>
     /// in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedInstancesListings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -44542,7 +44542,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the modifications made to your Reserved Instances. If no parameter is specified, information about all your Reserved Instances modification requests is returned. If a modification ID is specified, only information about the specific modification is returned.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedInstancesModifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -44764,7 +44764,7 @@ pub mod fluent_builders {
     /// <p>If you have listed your own Reserved Instances for sale in the Reserved Instance Marketplace, they will be excluded from these results. This is to ensure that you do not purchase your own Reserved Instances.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a>
     /// in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedInstancesOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -45169,7 +45169,7 @@ pub mod fluent_builders {
     /// <p>Each subnet in your VPC must be associated with a route table. If a subnet is not explicitly associated with any route table, it is implicitly associated with the main route table. This command does not return the subnet ID for implicit associations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRouteTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -45506,7 +45506,7 @@ pub mod fluent_builders {
     /// <p>You can search for an available schedule no more than 3 months in advance. You must meet the minimum required duration of 1,200 hours per year. For example, the minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100 hours.</p>
     /// <p>After you find a schedule that meets your needs, call <a>PurchaseScheduledInstances</a>
     /// to purchase Scheduled Instances with that schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScheduledInstanceAvailability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -45715,7 +45715,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeScheduledInstances`.
     ///
     /// <p>Describes the specified Scheduled Instances or all your Scheduled Instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScheduledInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -45901,7 +45901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSecurityGroupReferences`.
     ///
     /// <p>[VPC only] Describes the VPCs on the other side of a VPC peering connection that are referencing the security groups you've specified in this request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSecurityGroupReferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -45992,7 +45992,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSecurityGroupRules`.
     ///
     /// <p>Describes one or more of your security group rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSecurityGroupRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -46162,7 +46162,7 @@ pub mod fluent_builders {
     /// the <i>Amazon Elastic Compute Cloud User Guide</i> and
     /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security groups for your VPC</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -46567,7 +46567,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified attribute of the specified snapshot. You can specify only one
     /// attribute at a time.</p>
     /// <p>For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshotAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -46710,7 +46710,7 @@ pub mod fluent_builders {
     /// results.</p>
     /// <p>To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.</p>
     /// <p>For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -47026,7 +47026,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSnapshotTierStatus`.
     ///
     /// <p>Describes the storage tier status of one or more Amazon EBS snapshots.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshotTierStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -47170,7 +47170,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the data feed for Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
     /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSpotDatafeedSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -47246,7 +47246,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSpotFleetInstances`.
     ///
     /// <p>Describes the running instances for the specified Spot Fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSpotFleetInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -47365,7 +47365,7 @@ pub mod fluent_builders {
     /// Spot Fleet events are available for 48 hours.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor fleet events using Amazon
     /// EventBridge</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSpotFleetRequestHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -47508,7 +47508,7 @@ pub mod fluent_builders {
     /// <p>Describes your Spot Fleet requests.</p>
     /// <p>Spot Fleet requests are deleted 48 hours after they are canceled and their instances
     /// are terminated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSpotFleetRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -47640,7 +47640,7 @@ pub mod fluent_builders {
     /// results.</p>
     /// <p>Spot Instance requests are deleted four hours after they are canceled and their instances are
     /// terminated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSpotInstanceRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -48166,7 +48166,7 @@ pub mod fluent_builders {
     /// <p>When you specify a start and end time, the operation returns the prices of the
     /// instance types within that time range. It also returns the last price change before the
     /// start time, which is the effective price as of the start time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSpotPriceHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -48432,7 +48432,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStaleSecurityGroups`.
     ///
     /// <p>[VPC only] Describes the stale security group rules for security groups in a specified VPC. Rules are stale when they reference a deleted security group in a peer VPC, or a security group in a peer VPC for which the VPC peering connection has been deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStaleSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -48547,7 +48547,7 @@ pub mod fluent_builders {
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
     /// Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStoreImageTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -48707,7 +48707,7 @@ pub mod fluent_builders {
     /// <p>Describes one or more of your subnets.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and subnets</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -49005,7 +49005,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified tags for your EC2 resources.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Resources</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -49168,7 +49168,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTrafficMirrorFilters`.
     ///
     /// <p>Describes one or more Traffic Mirror filters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrafficMirrorFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -49318,7 +49318,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTrafficMirrorSessions`.
     ///
     /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrafficMirrorSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -49524,7 +49524,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTrafficMirrorTargets`.
     ///
     /// <p>Information about one or more Traffic Mirror targets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrafficMirrorTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -49699,7 +49699,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes one or more attachments between resources and transit gateways. By default, all attachments are described.
     /// Alternatively, you can filter the results by attachment ID, attachment state, resource ID, or resource owner.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTransitGatewayAttachments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -49914,7 +49914,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTransitGatewayConnectPeers`.
     ///
     /// <p>Describes one or more Connect peers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTransitGatewayConnectPeers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -50081,7 +50081,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTransitGatewayConnects`.
     ///
     /// <p>Describes one or more Connect attachments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTransitGatewayConnects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -50270,7 +50270,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTransitGatewayMulticastDomains`.
     ///
     /// <p>Describes one or more transit gateway multicast domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTransitGatewayMulticastDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -50435,7 +50435,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTransitGatewayPeeringAttachments`.
     ///
     /// <p>Describes your transit gateway peering attachments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTransitGatewayPeeringAttachments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -50633,7 +50633,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes one or more transit gateway route tables. By default, all transit gateway route tables are described.
     /// Alternatively, you can filter the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTransitGatewayRouteTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -50815,7 +50815,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes one or more transit gateways. By default, all transit gateways are described. Alternatively, you can
     /// filter the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTransitGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -51042,7 +51042,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes one or more VPC attachments. By default, all VPC attachments are described.
     /// Alternatively, you can filter the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTransitGatewayVpcAttachments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -51217,7 +51217,7 @@ pub mod fluent_builders {
     /// If you are interested in using this feature, contact your account manager.</p>
     /// </note>
     /// <p>Describes one or more network interface trunk associations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrunkInterfaceAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -51371,7 +51371,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified attribute of the specified volume. You can specify only one
     /// attribute at a time.</p>
     /// <p>For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVolumeAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -51475,7 +51475,7 @@ pub mod fluent_builders {
     /// passed to a subsequent <code>DescribeVolumes</code> request to retrieve the remaining
     /// results.</p>
     /// <p>For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVolumes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -51801,7 +51801,7 @@ pub mod fluent_builders {
     /// <p>You can also use CloudWatch Events to check the status of a modification to an EBS
     /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch Events User Guide</a>. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVolumesModifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -52062,7 +52062,7 @@ pub mod fluent_builders {
     /// <p>Volume status is based on the volume status checks, and does not reflect the volume state.
     /// Therefore, volume status does not indicate volumes in the <code>error</code> state (for
     /// example, when a volume is incapable of accepting I/O.)</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVolumeStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -52334,7 +52334,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVpcAttribute`.
     ///
     /// <p>Describes the specified attribute of the specified VPC. You can specify only one attribute at a time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -52431,7 +52431,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVpcClassicLink`.
     ///
     /// <p>Describes the ClassicLink status of one or more VPCs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcClassicLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -52575,7 +52575,7 @@ pub mod fluent_builders {
     /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
     /// of an instance in a VPC resolves to its private IP address when addressed from a linked
     /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcClassicLinkDnsSupport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -52675,7 +52675,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the connection notifications for VPC endpoints and VPC endpoint
     /// services.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcEndpointConnectionNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -52867,7 +52867,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the VPC endpoint connections to your VPC endpoint services, including any
     /// endpoints that are pending your acceptance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcEndpointConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -53030,7 +53030,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVpcEndpoints`.
     ///
     /// <p>Describes one or more of your VPC endpoints.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -53226,7 +53226,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVpcEndpointServiceConfigurations`.
     ///
     /// <p>Describes the VPC endpoint service configurations in your account (your services).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcEndpointServiceConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -53413,7 +53413,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the principals (service consumers) that are permitted to discover your VPC
     /// endpoint service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcEndpointServicePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -53575,7 +53575,7 @@ pub mod fluent_builders {
     /// consumer uses <code>us-east-1a</code> and <code>us-east-1b</code>, the response includes
     /// the VPC endpoint services in the common Availability Zone,
     /// <code>us-east-1a</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcEndpointServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -53743,7 +53743,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVpcPeeringConnections`.
     ///
     /// <p>Describes one or more of your VPC peering connections.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcPeeringConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -53997,7 +53997,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVpcs`.
     ///
     /// <p>Describes one or more of your VPCs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -54275,7 +54275,7 @@ pub mod fluent_builders {
     /// <p>Describes one or more of your VPN connections.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpnConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -54513,7 +54513,7 @@ pub mod fluent_builders {
     /// <p>Describes one or more of your virtual private gateways.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpnGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -54717,7 +54717,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachClassicLinkVpc`.
     ///
     /// <p>Unlinks (detaches) a linked EC2-Classic instance from a VPC. After the instance has been unlinked, the VPC security groups are no longer associated with it. An instance is automatically unlinked from a VPC when it's stopped.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachClassicLinkVpc<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -54813,7 +54813,7 @@ pub mod fluent_builders {
     /// <p>Detaches an internet gateway from a VPC, disabling connectivity between the internet
     /// and the VPC. The VPC must not contain any running instances with Elastic IP addresses or
     /// public IPv4 addresses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -54910,7 +54910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachNetworkInterface`.
     ///
     /// <p>Detaches a network interface from an instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachNetworkInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -55051,7 +55051,7 @@ pub mod fluent_builders {
     /// product code is no longer associated with the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach an Amazon EBS volume</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -55180,7 +55180,7 @@ pub mod fluent_builders {
     /// attachments to the virtual private gateway are also described).</p>
     /// <p>You must wait for the attachment's state to switch to <code>detached</code> before you
     /// can delete the VPC or attach a different VPC to the virtual private gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachVpnGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -55285,7 +55285,7 @@ pub mod fluent_builders {
     /// existing volumes.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableEbsEncryptionByDefault<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -55359,7 +55359,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableFastSnapshotRestores`.
     ///
     /// <p>Disables fast snapshot restores for the specified snapshots in the specified Availability Zones.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableFastSnapshotRestores<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -55469,7 +55469,7 @@ pub mod fluent_builders {
     /// <p>Cancels the deprecation of the specified AMI.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableImageDeprecation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -55554,7 +55554,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disable the IPAM account. For more information, see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableIpamOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -55649,7 +55649,7 @@ pub mod fluent_builders {
     /// access to the EC2 serial console is disabled for your account. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage account access to the EC2 serial console</a> in the <i>Amazon EC2
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableSerialConsoleAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -55720,7 +55720,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables the specified resource attachment from propagating routes to the specified
     /// propagation route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableTransitGatewayRouteTablePropagation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -55829,7 +55829,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables a virtual private gateway (VGW) from propagating routes to a specified route
     /// table of a VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableVgwRoutePropagation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -55928,7 +55928,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableVpcClassicLink`.
     ///
     /// <p>Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has EC2-Classic instances linked to it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableVpcClassicLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56016,7 +56016,7 @@ pub mod fluent_builders {
     /// in the VPC to which it's linked. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>You must specify a VPC ID in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableVpcClassicLinkDnsSupport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56090,7 +56090,7 @@ pub mod fluent_builders {
     /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
     /// Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56203,7 +56203,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateClientVpnTargetNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56305,7 +56305,7 @@ pub mod fluent_builders {
     /// encrypted private key from the Amazon S3 bucket. It also revokes the IAM role's permission to use the
     /// KMS key used to encrypt the private key. This effectively revokes the role's permission
     /// to use the certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateEnclaveCertificateIamRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56402,7 +56402,7 @@ pub mod fluent_builders {
     /// <p>Disassociates an IAM instance profile from a running or stopped instance.</p>
     /// <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
     /// ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateIamInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56477,7 +56477,7 @@ pub mod fluent_builders {
     /// <p>Disassociates one or more targets from an event window.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
     /// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateInstanceEventWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56587,7 +56587,7 @@ pub mod fluent_builders {
     /// Instead, it uses the routes in the VPC's main route table. For more information
     /// about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
     /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateRouteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56674,7 +56674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateSubnetCidrBlock`.
     ///
     /// <p>Disassociates a CIDR block from a subnet. Currently, you can disassociate an IPv6 CIDR block only. You must detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate it. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSubnetCidrBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56747,7 +56747,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateTransitGatewayMulticastDomain`.
     ///
     /// <p>Disassociates the specified subnets from the transit gateway multicast domain. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTransitGatewayMulticastDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56874,7 +56874,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateTransitGatewayRouteTable`.
     ///
     /// <p>Disassociates a resource attachment from a transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTransitGatewayRouteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -56986,7 +56986,7 @@ pub mod fluent_builders {
     /// If you are interested in using this feature, contact your account manager.</p>
     /// </note>
     /// <p>Removes an association between a branch network interface with a trunk network interface.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTrunkInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -57092,7 +57092,7 @@ pub mod fluent_builders {
     /// are associated with the CIDR block before you can disassociate it. </p>
     /// <p>You cannot disassociate the CIDR block with which you originally created the VPC (the
     /// primary CIDR block).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateVpcCidrBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -57176,7 +57176,7 @@ pub mod fluent_builders {
     /// <p>After you enable encryption by default, you can no longer launch instances
     /// using instance types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
     /// instance types</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableEbsEncryptionByDefault<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -57255,7 +57255,7 @@ pub mod fluent_builders {
     /// To disable fast snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon EBS fast snapshot
     /// restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableFastSnapshotRestores<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -57366,7 +57366,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables deprecation of the specified AMI at the specified date and time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableImageDeprecation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -57474,7 +57474,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enable an Organizations member account as the IPAM admin account. You cannot select the Organizations management account as the IPAM admin account. For more information, see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableIpamOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -57568,7 +57568,7 @@ pub mod fluent_builders {
     /// <p>Enables access to the EC2 serial console of all instances for your account. By default,
     /// access to the EC2 serial console is disabled for your account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage account access to the EC2 serial console</a>
     /// in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableSerialConsoleAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -57639,7 +57639,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables the specified attachment to propagate routes to the specified
     /// propagation route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableTransitGatewayRouteTablePropagation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -57748,7 +57748,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables a virtual private gateway (VGW) to propagate routes to the specified route
     /// table of a VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableVgwRoutePropagation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -57854,7 +57854,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables I/O operations for a volume that had I/O operations disabled because the data on
     /// the volume was potentially inconsistent.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableVolumeIO<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -57944,7 +57944,7 @@ pub mod fluent_builders {
     /// routes for VPCs in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address
     /// ranges. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableVpcClassicLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -58034,7 +58034,7 @@ pub mod fluent_builders {
     /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>You must specify a VPC ID in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableVpcClassicLinkDnsSupport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -58104,7 +58104,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExportClientVpnClientCertificateRevocationList`.
     ///
     /// <p>Downloads the client certificate revocation list for the specified Client VPN endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportClientVpnClientCertificateRevocationList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -58182,7 +58182,7 @@ pub mod fluent_builders {
     /// <p>Downloads the contents of the Client VPN endpoint configuration file for the specified Client VPN endpoint. The Client VPN endpoint configuration
     /// file includes the Client VPN endpoint and certificate information clients need to establish a connection
     /// with the Client VPN endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportClientVpnClientConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -58269,7 +58269,7 @@ pub mod fluent_builders {
     /// <p>Exports an Amazon Machine Image (AMI) to a VM file. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting a VM
     /// directly from an Amazon Machine Image (AMI)</a> in the
     /// <i>VM Import/Export User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -58437,7 +58437,7 @@ pub mod fluent_builders {
     /// <p>The routes are saved to the specified bucket in a JSON file. For more information, see
     /// <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html#tgw-export-route-tables">Export Route Tables
     /// to Amazon S3</a> in <i>Transit Gateways</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportTransitGatewayRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -58635,7 +58635,7 @@ pub mod fluent_builders {
     /// It also returns the name of the Amazon S3 bucket and the Amazon S3 object key where the certificate,
     /// certificate chain, and encrypted private key bundle are stored, and the ARN of the KMS key
     /// that's used to encrypt the private key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssociatedEnclaveCertificateIamRoles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -58722,7 +58722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssociatedIpv6PoolCidrs`.
     ///
     /// <p>Gets information about the IPv6 CIDR block associations for a specified IPv6 address pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssociatedIpv6PoolCidrs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -58830,7 +58830,7 @@ pub mod fluent_builders {
     /// <p>Gets usage information about a Capacity Reservation. If the Capacity Reservation is shared, it shows usage information for the Capacity Reservation owner
     /// and each Amazon Web Services account that is currently using the shared capacity. If the Capacity Reservation is not shared, it shows only
     /// the Capacity Reservation owner's usage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCapacityReservationUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -58938,7 +58938,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCoipPoolUsage`.
     ///
     /// <p>Describes the allocations from the specified customer-owned address pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCoipPoolUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -59129,7 +59129,7 @@ pub mod fluent_builders {
     /// hypervisor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
     /// console output</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConsoleOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -59227,7 +59227,7 @@ pub mod fluent_builders {
     /// <p>Retrieve a JPG-format screenshot of a running instance to help with
     /// troubleshooting.</p>
     /// <p>The returned content is Base64-encoded.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConsoleScreenshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -59325,7 +59325,7 @@ pub mod fluent_builders {
     /// <p>Describes the default credit option for CPU usage of a burstable performance instance family.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
     /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDefaultCreditSpecification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -59419,7 +59419,7 @@ pub mod fluent_builders {
     /// <a>ResetEbsDefaultKmsKeyId</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEbsDefaultKmsKeyId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -59496,7 +59496,7 @@ pub mod fluent_builders {
     /// Region.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEbsEncryptionByDefault<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -59587,7 +59587,7 @@ pub mod fluent_builders {
     /// <p>Create a set of named queries in Athena that you can use to get started quickly</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFlowLogsIntegrationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -59702,7 +59702,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroupsForCapacityReservation`.
     ///
     /// <p>Lists the resource groups to which a Capacity Reservation has been added.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroupsForCapacityReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -59812,7 +59812,7 @@ pub mod fluent_builders {
     /// a reservation.</p>
     /// <p>This is a preview of the <a>PurchaseHostReservation</a> action and does
     /// not result in the offering being purchased.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHostReservationPurchasePreview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -59908,7 +59908,7 @@ pub mod fluent_builders {
     /// placement score</a> in the <i>Amazon EC2 User Guide</i>, and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an
     /// Auto Scaling group using attribute-based instance type selection</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceTypesFromInstanceRequirements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -60058,7 +60058,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIpamAddressHistory`.
     ///
     /// <p>Retrieve historical information about a CIDR within an IPAM scope. For more information, see <a href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the history of IP addresses</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIpamAddressHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -60213,7 +60213,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIpamPoolAllocations`.
     ///
     /// <p>Get a list of all the CIDR allocations in an IPAM pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIpamPoolAllocations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -60350,7 +60350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIpamPoolCidrs`.
     ///
     /// <p>Get the CIDRs provisioned to an IPAM pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIpamPoolCidrs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -60471,7 +60471,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIpamResourceCidrs`.
     ///
     /// <p>Get information about the resources in a scope.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIpamResourceCidrs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -60658,7 +60658,7 @@ pub mod fluent_builders {
     /// <p>This action calls on other describe actions to get instance information. Depending on your instance configuration, you may need to allow the following
     /// actions in your IAM policy: DescribeSpotInstanceRequests, DescribeInstanceCreditSpecifications, DescribeVolumes, DescribeInstanceAttribute, and DescribeElasticGpus. Or, you can allow
     /// <code>describe*</code> depending on your instance requirements.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunchTemplateData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -60744,7 +60744,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetManagedPrefixListAssociations`.
     ///
     /// <p>Gets information about the resources that are associated with the specified managed prefix list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetManagedPrefixListAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -60853,7 +60853,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetManagedPrefixListEntries`.
     ///
     /// <p>Gets information about the entries for a specified managed prefix list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetManagedPrefixListEntries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -60972,7 +60972,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkInsightsAccessScopeAnalysisFindings`.
     ///
     /// <p>Gets the findings for the specified Network Access Scope analysis.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkInsightsAccessScopeAnalysisFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -61081,7 +61081,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkInsightsAccessScopeContent`.
     ///
     /// <p>Gets the content for the specified Network Access Scope.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkInsightsAccessScopeContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -61187,7 +61187,7 @@ pub mod fluent_builders {
     /// minutes. If you try to retrieve the password before it's available, the output returns
     /// an empty string. We recommend that you wait up to 15 minutes after launching an instance
     /// before trying to retrieve the generated password.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPasswordData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -61273,7 +61273,7 @@ pub mod fluent_builders {
     /// <p>Returns a quote and exchange information for exchanging one or more specified
     /// Convertible Reserved Instances for a new Convertible Reserved Instance. If the exchange
     /// cannot be performed, the reason is returned in the response. Use <a>AcceptReservedInstancesExchangeQuote</a> to perform the exchange.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReservedInstancesExchangeQuote<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -61389,7 +61389,7 @@ pub mod fluent_builders {
     /// default, access to the EC2 serial console is disabled for your account. For more
     /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage account access to the EC2 serial console</a> in the <i>Amazon EC2
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSerialConsoleAccessStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -61466,7 +61466,7 @@ pub mod fluent_builders {
     /// <code>InstanceTypes</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot placement score</a> in
     /// the Amazon EC2 User Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSpotPlacementScores<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -61676,7 +61676,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSubnetCidrReservations`.
     ///
     /// <p>Gets information about the subnet CIDR reservations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSubnetCidrReservations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -61839,7 +61839,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTransitGatewayAttachmentPropagations`.
     ///
     /// <p>Lists the route tables to which the specified resource attachment propagates routes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTransitGatewayAttachmentPropagations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -61982,7 +61982,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTransitGatewayMulticastDomainAssociations`.
     ///
     /// <p>Gets information about the associations for the transit gateway multicast domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTransitGatewayMulticastDomainAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -62167,7 +62167,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTransitGatewayPrefixListReferences`.
     ///
     /// <p>Gets information about the prefix list references in a specified transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTransitGatewayPrefixListReferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -62362,7 +62362,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTransitGatewayRouteTableAssociations`.
     ///
     /// <p>Gets information about the associations for the specified transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTransitGatewayRouteTableAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -62525,7 +62525,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTransitGatewayRouteTablePropagations`.
     ///
     /// <p>Gets information about the route table propagations for the specified transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTransitGatewayRouteTablePropagations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -62689,7 +62689,7 @@ pub mod fluent_builders {
     ///
     /// <p>Download an Amazon Web Services-provided sample configuration file to be used with the customer
     /// gateway device specified for your Site-to-Site VPN connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVpnConnectionDeviceSampleConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -62821,7 +62821,7 @@ pub mod fluent_builders {
     /// files can be provided. The request has no additional parameters. You can also see the
     /// list of device types with sample configuration files available under <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your customer gateway
     /// device</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVpnConnectionDeviceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -62940,7 +62940,7 @@ pub mod fluent_builders {
     ///
     /// <p>Uploads a client certificate revocation list to the specified Client VPN endpoint. Uploading a client certificate revocation list overwrites the existing client certificate revocation list.</p>
     /// <p>Uploading a client certificate revocation list resets existing client connections.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportClientVpnClientCertificateRevocationList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -63036,7 +63036,7 @@ pub mod fluent_builders {
     /// <p>Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing a
     /// VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -63373,7 +63373,7 @@ pub mod fluent_builders {
     /// information about using the Amazon EC2 CLI, which is deprecated, see
     /// <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing a VM to Amazon EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
     /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -63508,7 +63508,7 @@ pub mod fluent_builders {
     /// The private key is never transferred between you and Amazon Web Services.</p>
     /// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -63624,7 +63624,7 @@ pub mod fluent_builders {
     /// <p>Imports a disk into an EBS snapshot.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-import-snapshot.html">Importing a disk as a snapshot using VM Import/Export</a> in the
     /// <i>VM Import/Export User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -63845,7 +63845,7 @@ pub mod fluent_builders {
     /// <p>This API action is not supported by the Command Line Interface (CLI). For
     /// information about using the Amazon EC2 CLI, which is deprecated, see <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#importing-your-volumes-into-amazon-ebs">Importing Disks to Amazon EBS</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
     /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -63968,7 +63968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSnapshotsInRecycleBin`.
     ///
     /// <p>Lists one or more snapshots that are currently in the Recycle Bin.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSnapshotsInRecycleBin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -64083,7 +64083,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyAddressAttribute`.
     ///
     /// <p>Modifies an attribute of the specified Elastic IP address. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using reverse DNS for email applications</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyAddressAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -64183,7 +64183,7 @@ pub mod fluent_builders {
     /// account.</p>
     /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
     /// DescribeAvailabilityZones</a> to view the value for <code>GroupName</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyAvailabilityZoneGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -64291,7 +64291,7 @@ pub mod fluent_builders {
     /// platform, Availability Zone, or instance eligibility. If you need to modify any of these
     /// attributes, we recommend that you cancel the Capacity Reservation, and then create a new one with
     /// the required attributes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCapacityReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -64486,7 +64486,7 @@ pub mod fluent_builders {
     /// creates new Capacity Reservations, or modifies or cancels existing Capacity Reservations in the Fleet
     /// to meet the new total target capacity. When you modify the end date for the Fleet, the end dates for
     /// all of the individual Capacity Reservations in the Fleet are updated accordingly.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCapacityReservationFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -64635,7 +64635,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyClientVpnEndpoint`.
     ///
     /// <p>Modifies the specified Client VPN endpoint. Modifying the DNS server resets existing client connections.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClientVpnEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -64909,7 +64909,7 @@ pub mod fluent_builders {
     /// <code>DefaultCreditSpecification</code> for updates.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
     /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDefaultCreditSpecification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -65020,7 +65020,7 @@ pub mod fluent_builders {
     /// encryption by default, your instances will fail to launch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyEbsDefaultKmsKeyId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -65165,7 +65165,7 @@ pub mod fluent_builders {
     /// that you terminate manually.</p>
     /// <p>If you are finished with your EC2 Fleet for now, but will use it again later, you can set the
     /// target capacity to 0.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -65315,7 +65315,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyFpgaImageAttribute`.
     ///
     /// <p>Modifies the specified attribute of the specified Amazon FPGA Image (AFI).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyFpgaImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -65524,7 +65524,7 @@ pub mod fluent_builders {
     /// auto-placement enabled.</p>
     /// <p>You can also use this API action to modify a Dedicated Host to support either multiple
     /// instance types in an instance family, or to support a specific instance type only.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyHosts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -65704,7 +65704,7 @@ pub mod fluent_builders {
     /// <p>Resources created with longer IDs are visible to all IAM roles and users, regardless of these
     /// settings and provided that they have permission to use the relevant <code>Describe</code>
     /// command for the resource type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyIdentityIdFormat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -65846,7 +65846,7 @@ pub mod fluent_builders {
     /// <p>Resources created with longer IDs are visible to all IAM roles and users, regardless
     /// of these settings and provided that they have permission to use the relevant
     /// <code>Describe</code> command for the resource type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyIdFormat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -65953,7 +65953,7 @@ pub mod fluent_builders {
     /// <p>Images with an Amazon Web Services Marketplace product code cannot be made public.</p>
     /// <p>To enable the SriovNetSupport enhanced networking attribute of an image, enable SriovNetSupport on an instance
     /// and create an AMI from the instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -66205,7 +66205,7 @@ pub mod fluent_builders {
     /// you use the <a>ModifyNetworkInterfaceAttribute</a> action.</p>
     /// <p>To modify some attributes, the instance must be stopped. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modify a stopped instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -66559,7 +66559,7 @@ pub mod fluent_builders {
     /// <p>Modifies the Capacity Reservation settings for a stopped instance. Use this action to configure an
     /// instance to target a specific Capacity Reservation, run in any <code>open</code> Capacity Reservation with matching
     /// attributes, or run On-Demand Instance capacity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstanceCapacityReservationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -66661,7 +66661,7 @@ pub mod fluent_builders {
     /// <code>unlimited</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
     /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstanceCreditSpecification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -66771,7 +66771,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyInstanceEventStartTime`.
     ///
     /// <p>Modifies the start time for a scheduled Amazon EC2 instance event.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstanceEventStartTime<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -66888,7 +66888,7 @@ pub mod fluent_builders {
     /// of the scheduled event.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
     /// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstanceEventWindow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -67085,7 +67085,7 @@ pub mod fluent_builders {
     /// instance, the state of the modifications changes from “pending” to “applied” in
     /// subsequent describe-instances API calls. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a>
     /// in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstanceMetadataOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -67281,7 +67281,7 @@ pub mod fluent_builders {
     /// request.</p>
     /// <p>To modify the host ID, tenancy, placement group, or partition for an instance, the
     /// instance must be in the <code>stopped</code> state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstancePlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -67447,7 +67447,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modify the configurations of an IPAM.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyIpam<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -67587,7 +67587,7 @@ pub mod fluent_builders {
     /// <p>Modify the configurations of an IPAM pool.</p>
     /// <p>For more information, see <a href="/vpc/latest/ipam/mod-pool-ipam.html">Modify a pool</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyIpamPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -67810,7 +67810,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modify a resource CIDR. You can use this action to transfer resource CIDRs between scopes and ignore resource CIDRs that you do not want to manage. If set to false, the resource will not be tracked for overlap, it cannot be auto-imported into a pool, and it will be removed from any pool it has an allocation in.</p>
     /// <p>For more information, see <a href="/vpc/latest/ipam/move-resource-ipam.html">Move resource CIDRs between scopes</a> and <a href="/vpc/latest/ipam/change-monitoring-state-ipam.html">Change the monitoring state of resource CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyIpamResourceCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -67959,7 +67959,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyIpamScope`.
     ///
     /// <p>Modify an IPAM scope.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyIpamScope<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -68058,7 +68058,7 @@ pub mod fluent_builders {
     /// <p>Modifies a launch template. You can specify which version of the launch template to
     /// set as the default version. When launching an instance, the default version applies when
     /// a launch template version is not specified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyLaunchTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -68197,7 +68197,7 @@ pub mod fluent_builders {
     /// Changing the name of the prefix list does not affect the version.</p>
     /// <p>If you specify a current version number that does not match the true current version
     /// number, the request fails.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyManagedPrefixList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -68361,7 +68361,7 @@ pub mod fluent_builders {
     /// <p>Modifies the specified network interface attribute. You can specify only one
     /// attribute at a time. You can use this action to attach and detach security groups from
     /// an existing EC2 instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyNetworkInterfaceAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -68517,7 +68517,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyPrivateDnsNameOptions`.
     ///
     /// <p>Modifies the options for instance hostnames for the specified instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyPrivateDnsNameOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -68651,7 +68651,7 @@ pub mod fluent_builders {
     /// type.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved
     /// Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReservedInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -68760,7 +68760,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifySecurityGroupRules`.
     ///
     /// <p>Modifies the rules of a security group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifySecurityGroupRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -68871,7 +68871,7 @@ pub mod fluent_builders {
     /// public. Snapshots encrypted with your default KMS key cannot be shared with other accounts.</p>
     /// <p>For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share a snapshot</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifySnapshotAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -69035,7 +69035,7 @@ pub mod fluent_builders {
     /// time the snapshot was created, and moved from the standard tier to the archive
     /// tier. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifySnapshotTier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -69156,7 +69156,7 @@ pub mod fluent_builders {
     /// terminate manually.</p>
     /// <p>If you are finished with your Spot Fleet for now, but will use it again later, you can
     /// set the target capacity to 0.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifySpotFleetRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -69333,7 +69333,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifySubnetAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -69609,7 +69609,7 @@ pub mod fluent_builders {
     /// <p> By default, Amazon DNS network services are not eligible for Traffic Mirror. Use <code>AddNetworkServices</code> to add network services to a Traffic Mirror filter. When a network service is added to the Traffic Mirror filter, all traffic related to that network service will be mirrored.
     /// When you no longer want to mirror network services, use <code>RemoveNetworkServices</code> to remove the network services from the Traffic Mirror filter.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTrafficMirrorFilterNetworkServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -69744,7 +69744,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>DestinationCidrBlock</code> and <code>SourceCidrBlock</code> must both be an IPv4
     /// range or an IPv6 range.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTrafficMirrorFilterRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -69969,7 +69969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyTrafficMirrorSession`.
     ///
     /// <p>Modifies a Traffic Mirror session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTrafficMirrorSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -70152,7 +70152,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyTransitGateway`.
     ///
     /// <p>Modifies the specified transit gateway. When you modify a transit gateway, the modified options are applied to new transit gateway attachments only. Your existing transit gateway attachments are not modified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -70262,7 +70262,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyTransitGatewayPrefixListReference`.
     ///
     /// <p>Modifies a reference (route) to a prefix list in a specified transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTransitGatewayPrefixListReference<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -70393,7 +70393,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyTransitGatewayVpcAttachment`.
     ///
     /// <p>Modifies the specified VPC attachment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTransitGatewayVpcAttachment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -70550,7 +70550,7 @@ pub mod fluent_builders {
     /// reattaching the volume or stopping and restarting the instance.</p>
     /// <p>If you reach the maximum volume modification rate per volume limit, you must wait
     /// at least six hours before applying further modifications to the affected EBS volume.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -70789,7 +70789,7 @@ pub mod fluent_builders {
     /// data consistency on your volume.</p>
     /// <p>You can change the default behavior to resume I/O operations. We recommend that you change
     /// this only for boot volumes or for volumes that are stateless or disposable.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVolumeAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -70886,7 +70886,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyVpcAttribute`.
     ///
     /// <p>Modifies the specified attribute of the specified VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpcAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -71003,7 +71003,7 @@ pub mod fluent_builders {
     /// depend on the type of VPC endpoint (interface, gateway, or Gateway Load Balancer). For more information, see
     /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
     /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpcEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -71232,7 +71232,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies a connection notification for VPC endpoint or VPC endpoint service. You
     /// can change the SNS topic for the notification, or the events for which to be notified. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpcEndpointConnectionNotification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -71366,7 +71366,7 @@ pub mod fluent_builders {
     /// domain name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC Endpoint Service
     /// Private DNS Name Verification</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpcEndpointServiceConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -71577,7 +71577,7 @@ pub mod fluent_builders {
     /// <p>If you grant permissions to all principals, the service is public. Any users who know the name of a
     /// public service can send a request to attach an endpoint. If the service does not require manual approval,
     /// attachments are automatically approved.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpcEndpointServicePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -71724,7 +71724,7 @@ pub mod fluent_builders {
     /// Region for the requester VPC to modify the requester VPC peering options and the Region for the
     /// accepter VPC to modify the accepter VPC peering options. To verify which VPCs are the accepter and
     /// the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a> command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpcPeeringConnectionOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -71853,7 +71853,7 @@ pub mod fluent_builders {
     /// The tenancy of any existing instances in the VPC is not affected.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpcTenancy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -71987,7 +71987,7 @@ pub mod fluent_builders {
     /// <p>After you perform this operation, the VPN endpoint's IP addresses on the Amazon Web Services side and the tunnel options remain intact. Your Amazon Web Services Site-to-Site VPN connection will
     /// be temporarily unavailable for a brief period while we provision the new
     /// endpoints.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpnConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -72121,7 +72121,7 @@ pub mod fluent_builders {
     /// Amazon Web Services side do not change, and the tunnel options do not change. Your
     /// VPN connection will be temporarily unavailable for a brief period while the VPN
     /// connection is updated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpnConnectionOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -72284,7 +72284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyVpnTunnelCertificate`.
     ///
     /// <p>Modifies the VPN tunnel endpoint certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpnTunnelCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -72392,7 +72392,7 @@ pub mod fluent_builders {
     /// multiple options for a tunnel in a single request, but you can only modify one tunnel at
     /// a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site VPN tunnel options for your Site-to-Site VPN
     /// connection</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyVpnTunnelOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -72516,7 +72516,7 @@ pub mod fluent_builders {
     /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitor your instances using
     /// CloudWatch</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>To disable detailed monitoring, see .</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MonitorInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -72612,7 +72612,7 @@ pub mod fluent_builders {
     /// available for use in the EC2-Classic platform, unless you move it back using the
     /// <a>RestoreAddressToClassic</a> request. You cannot move an Elastic IP address that was
     /// originally allocated for use in the EC2-VPC platform to the EC2-Classic platform. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MoveAddressToVpc<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -72696,7 +72696,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `MoveByoipCidrToIpam`.
     ///
     /// <p>Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MoveByoipCidrToIpam<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -72814,7 +72814,7 @@ pub mod fluent_builders {
     /// to <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>.
     /// To allocate an Elastic IP address from your IPv4 address pool, use <a>AllocateAddress</a>
     /// with either the specific address from the address pool or the ID of the address pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -72973,7 +72973,7 @@ pub mod fluent_builders {
     /// <p>Provision a CIDR to an IPAM pool. You can use thsi action to provision new CIDRs to a top-level pool or to transfer a CIDR from a top-level pool to a pool within it.</p>
     /// <p>For more information, see <a href="/vpc/latest/ipam/prov-cidr-ipam.html">Provision CIDRs to pools</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionIpamPoolCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -73085,7 +73085,7 @@ pub mod fluent_builders {
     /// <p>Provision a CIDR to a public IPv4 pool.</p>
     /// <p>For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionPublicIpv4PoolCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -73192,7 +73192,7 @@ pub mod fluent_builders {
     /// You must have active Dedicated Hosts in your account before you purchase a reservation.
     /// This action results in the specified reservation being purchased and charged to your
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseHostReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -73352,7 +73352,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved Instances</a> and
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a>
     /// in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseReservedInstancesOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -73483,7 +73483,7 @@ pub mod fluent_builders {
     /// to check for available schedules and obtain a purchase token. After you purchase a Scheduled Instance,
     /// you must call <a>RunScheduledInstances</a> during each scheduled time period.</p>
     /// <p>After you purchase a Scheduled Instance, you can't cancel, modify, or resell your purchase.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseScheduledInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -73593,7 +73593,7 @@ pub mod fluent_builders {
     /// hard reboot.</p>
     /// <p>For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Troubleshoot an unreachable
     /// instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -73733,7 +73733,7 @@ pub mod fluent_builders {
     /// code, the Reserved Instance will not be applied to the On-Demand Instance. For information
     /// about how to obtain the platform details and billing information of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
     /// billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -74007,7 +74007,7 @@ pub mod fluent_builders {
     /// <p>Registers a set of tag keys to include in scheduled event notifications for your resources.
     /// </p>
     /// <p>To remove tags, use .</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterInstanceEventNotificationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -74104,7 +74104,7 @@ pub mod fluent_builders {
     /// Consideration</a> in <i>Amazon VPC Transit Gateways</i>.</p>
     /// <p>After you add the members, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a> to verify that the members were added
     /// to the  transit gateway multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTransitGatewayMulticastGroupMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -74233,7 +74233,7 @@ pub mod fluent_builders {
     /// Considerations</a> in <i>Amazon VPC Transit Gateways</i>.</p>
     /// <p>After you add the source, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a> to verify that the source was added to the multicast
     /// group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTransitGatewayMulticastGroupSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -74357,7 +74357,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectTransitGatewayMulticastDomainAssociations`.
     ///
     /// <p>Rejects a request to associate cross-account subnets with a transit gateway multicast domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectTransitGatewayMulticastDomainAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -74475,7 +74475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectTransitGatewayPeeringAttachment`.
     ///
     /// <p>Rejects a transit gateway peering attachment request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectTransitGatewayPeeringAttachment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -74570,7 +74570,7 @@ pub mod fluent_builders {
     /// <p>The VPC attachment must be in the <code>pendingAcceptance</code> state.
     /// Use <a>DescribeTransitGatewayVpcAttachments</a> to view your pending VPC attachment requests.
     /// Use <a>AcceptTransitGatewayVpcAttachment</a> to accept a VPC attachment request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectTransitGatewayVpcAttachment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -74661,7 +74661,7 @@ pub mod fluent_builders {
     ///
     /// <p>Rejects one or more VPC endpoint connection requests to your VPC endpoint
     /// service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectVpcEndpointConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -74765,7 +74765,7 @@ pub mod fluent_builders {
     /// <code>pending-acceptance</code> state. Use the <a>DescribeVpcPeeringConnections</a> request
     /// to view your outstanding VPC peering connection requests. To delete an active VPC peering
     /// connection, or to delete a VPC peering connection request that you initiated, use  <a>DeleteVpcPeeringConnection</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectVpcPeeringConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -74866,7 +74866,7 @@ pub mod fluent_builders {
     /// <code>AuthFailure</code> error if the address is already allocated to another Amazon Web Services account.</p>
     /// <p>[EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able to recover it.
     /// For more information, see <a>AllocateAddress</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReleaseAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -74992,7 +74992,7 @@ pub mod fluent_builders {
     /// toward your limit and you may receive capacity errors when trying to allocate new
     /// Dedicated Hosts. Wait a few minutes and then try again.</p>
     /// <p>Released hosts still appear in a <a>DescribeHosts</a> response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReleaseHosts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -75070,7 +75070,7 @@ pub mod fluent_builders {
     ///
     /// <p>Release an allocation within an IPAM pool. You can only use this action to release manual allocations. To remove an allocation for a resource without deleting the resource, set its monitored state to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>. For more information, see <a href="/vpc/latest/ipam/release-pool-alloc-ipam.html">Release an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReleaseIpamPoolAllocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -75184,7 +75184,7 @@ pub mod fluent_builders {
     /// without having to disassociate the existing IAM instance profile first.</p>
     /// <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
     /// ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReplaceIamInstanceProfileAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -75279,7 +75279,7 @@ pub mod fluent_builders {
     /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
     /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     /// <p>This is an idempotent operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReplaceNetworkAclAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -75380,7 +75380,7 @@ pub mod fluent_builders {
     ///
     /// <p>Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReplaceNetworkAclEntry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -75584,7 +75584,7 @@ pub mod fluent_builders {
     /// gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the
     /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReplaceRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -75877,7 +75877,7 @@ pub mod fluent_builders {
     /// information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
     /// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     /// <p>You can also use this operation to change which table is the main route table in the VPC. Specify the main route table's association ID and the route table ID of the new main route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReplaceRouteTableAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -75977,7 +75977,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReplaceTransitGatewayRoute`.
     ///
     /// <p>Replaces the specified route in the specified transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReplaceTransitGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -76110,7 +76110,7 @@ pub mod fluent_builders {
     /// instance status returned by <a>DescribeInstanceStatus</a>, use <a>ReportInstanceStatus</a> to report your experience with the instance. Amazon
     /// EC2 collects this information to improve the accuracy of status checks.</p>
     /// <p>Use of this action does not change the value returned by <a>DescribeInstanceStatus</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReportInstanceStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -76374,7 +76374,7 @@ pub mod fluent_builders {
     /// supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a>
     /// in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestSpotFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -76468,7 +76468,7 @@ pub mod fluent_builders {
     /// <p>Creates a Spot Instance request.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance requests</a> in
     /// the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestSpotInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -76786,7 +76786,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetAddressAttribute`.
     ///
     /// <p>Resets the attribute of the specified IP address. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using reverse DNS for email applications</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetAddressAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -76891,7 +76891,7 @@ pub mod fluent_builders {
     /// customer managed KMS key by specifying it when you create the volume. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a>
     /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetEbsDefaultKmsKeyId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -76966,7 +76966,7 @@ pub mod fluent_builders {
     ///
     /// <p>Resets the specified attribute of the specified Amazon FPGA Image (AFI) to its default value.
     /// You can only reset the load permission attribute.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetFpgaImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -77066,7 +77066,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetImageAttribute`.
     ///
     /// <p>Resets an attribute of an AMI to its default value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -77171,7 +77171,7 @@ pub mod fluent_builders {
     /// enabled. This value must be <code>false</code> for a NAT instance to perform NAT. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
     /// <i>Amazon VPC User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -77278,7 +77278,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetNetworkInterfaceAttribute`.
     ///
     /// <p>Resets a network interface attribute. You can specify only one attribute at a time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetNetworkInterfaceAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -77380,7 +77380,7 @@ pub mod fluent_builders {
     /// <p>Resets permission settings for the specified snapshot.</p>
     /// <p>For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share a snapshot</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetSnapshotAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -77479,7 +77479,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RestoreAddressToClassic`.
     ///
     /// <p>Restores an Elastic IP address that was previously moved to the EC2-VPC platform back to the EC2-Classic platform. You cannot move an Elastic IP address that was originally allocated for use in EC2-VPC. The Elastic IP address must not be associated with an instance or network interface.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreAddressToClassic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -77563,7 +77563,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RestoreManagedPrefixListVersion`.
     ///
     /// <p>Restores the entries from a previous version of a managed prefix list to a new version of the prefix list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreManagedPrefixListVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -77671,7 +77671,7 @@ pub mod fluent_builders {
     ///
     /// <p>Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
     /// snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreSnapshotFromRecycleBin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -77760,7 +77760,7 @@ pub mod fluent_builders {
     /// <p>For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#restore-archived-snapshot">
     /// Restore an archived snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#modify-temp-restore-period">
     /// modify the restore period or restore type for a temporarily restored snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreSnapshotTier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -77878,7 +77878,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeClientVpnIngress`.
     ///
     /// <p>Removes an ingress authorization rule from a Client VPN endpoint. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeClientVpnIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -78012,7 +78012,7 @@ pub mod fluent_builders {
     ///
     /// <p>Rule changes are propagated to instances within the security group as quickly as possible. However,
     /// a small delay might occur.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeSecurityGroupEgress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -78221,7 +78221,7 @@ pub mod fluent_builders {
     /// <p>Amazon Web Services recommends that you describe the security group to verify that the rules were removed.</p>
     ///
     /// <p>Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -78491,7 +78491,7 @@ pub mod fluent_builders {
     /// pairs</a>.</p>
     /// <p>For troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What to do if
     /// an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting connecting to your instance</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RunInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -79331,7 +79331,7 @@ pub mod fluent_builders {
     /// but you can terminate it as needed. If you terminate a Scheduled Instance before the current scheduled time period ends,
     /// you can launch it again after a few minutes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled Instances</a>
     /// in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RunScheduledInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -79460,7 +79460,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchLocalGatewayRoutes`.
     ///
     /// <p>Searches for routes in the specified local gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchLocalGatewayRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -79589,7 +79589,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchTransitGatewayMulticastGroups`.
     ///
     /// <p>Searches one or more  transit gateway multicast groups and returns the group membership information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchTransitGatewayMulticastGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -79798,7 +79798,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchTransitGatewayRoutes`.
     ///
     /// <p>Searches for routes in the specified transit gateway route table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchTransitGatewayRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -80020,7 +80020,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information about configuring your operating system to generate a crash dump
     /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send a diagnostic interrupt (for advanced users)</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send a diagnostic interrupt (for advanced users)</a> (Windows instances).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendDiagnosticInterrupt<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -80123,7 +80123,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop and start your instance</a>
     /// in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -80227,7 +80227,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartNetworkInsightsAccessScopeAnalysis`.
     ///
     /// <p>Starts analyzing the specified Network Access Scope.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartNetworkInsightsAccessScopeAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -80351,7 +80351,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts analyzing the specified path. If the path is reachable, the
     /// operation returns the shortest feasible path.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartNetworkInsightsAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -80490,7 +80490,7 @@ pub mod fluent_builders {
     /// DNS name domain for the endpoint service.</p>
     /// <p>The service provider must successfully perform the verification before the consumer can use the name to access the service.</p>
     /// <p>Before the service provider runs this command, they must add a record to the DNS server. For more information, see  <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html#add-dns-txt-record">Adding a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartVpcEndpointServicePrivateDnsVerification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -80595,7 +80595,7 @@ pub mod fluent_builders {
     /// your instance appears stuck in the stopping state after a period of time, there may be
     /// an issue with the underlying host computer. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
     /// stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -80726,7 +80726,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TerminateClientVpnConnections`.
     ///
     /// <p>Terminates active Client VPN endpoint connections. This action can be used to terminate a specific client connection, or up to five connections established by a specific user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateClientVpnConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -80895,7 +80895,7 @@ pub mod fluent_builders {
     /// differences between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance lifecycle</a>
     /// in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -80990,7 +80990,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UnassignIpv6Addresses`.
     ///
     /// <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network interface.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnassignIpv6Addresses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -81097,7 +81097,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UnassignPrivateIpAddresses`.
     ///
     /// <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes from a network interface.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnassignPrivateIpAddresses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -81205,7 +81205,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables detailed monitoring for a running instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
     /// your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnmonitorInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -81299,7 +81299,7 @@ pub mod fluent_builders {
     /// can replace an existing description, or add a description to a rule that did not have one
     /// previously. You can remove a description for a security group rule by omitting the
     /// description parameter in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecurityGroupRuleDescriptionsEgress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -81445,7 +81445,7 @@ pub mod fluent_builders {
     /// existing description, or add a description to a rule that did not have one previously.
     /// You can remove a description for a security group rule by omitting the description
     /// parameter in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecurityGroupRuleDescriptionsIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -81592,7 +81592,7 @@ pub mod fluent_builders {
     /// address ranges each time.</p>
     /// <p>It can take a few minutes before traffic to the specified addresses stops routing to Amazon Web Services
     /// because of BGP propagation delays.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct WithdrawByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

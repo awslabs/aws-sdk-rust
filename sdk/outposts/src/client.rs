@@ -253,7 +253,7 @@ pub mod fluent_builders {
     /// <p>
     /// Cancels an order for an Outpost.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelOrder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -327,7 +327,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOrder`.
     ///
     /// <p>Creates an order for an Outpost.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOrder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -448,7 +448,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an Outpost.</p>
     /// <p>You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOutpost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -609,7 +609,7 @@ pub mod fluent_builders {
     /// <p>
     /// Creates a site for an Outpost.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -792,7 +792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOutpost`.
     ///
     /// <p>Deletes the Outpost.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOutpost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -866,7 +866,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSite`.
     ///
     /// <p>Deletes the site.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -936,7 +936,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCatalogItem`.
     ///
     /// <p>Gets information about a catalog item.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCatalogItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1009,7 +1009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOrder`.
     ///
     /// <p>Gets an order.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOrder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1079,7 +1079,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOutpost`.
     ///
     /// <p>Gets information about the specified Outpost.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOutpost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1153,7 +1153,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOutpostInstanceTypes`.
     ///
     /// <p>Lists the instance types for the specified Outpost.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOutpostInstanceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1249,7 +1249,7 @@ pub mod fluent_builders {
     /// <p>
     /// Gets information about the specified Outpost site.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1321,7 +1321,7 @@ pub mod fluent_builders {
     /// <p>
     /// Gets the site address.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSiteAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1408,7 +1408,7 @@ pub mod fluent_builders {
     /// option, or EC2 family. </p>
     /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and
     /// the request returns only results that match all of the specified filters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCatalogItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1573,7 +1573,7 @@ pub mod fluent_builders {
     ///
     /// <p>Create a list of the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to
     /// return a more specific list of results. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1678,7 +1678,7 @@ pub mod fluent_builders {
     ///
     /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
     /// results that match all of the specified filters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOutposts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1842,7 +1842,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSites`.
     ///
     /// <p>Lists the sites for your Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSites<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1922,7 +1922,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1992,7 +1992,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds tags to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2085,7 +2085,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2174,7 +2174,7 @@ pub mod fluent_builders {
     /// <p>
     /// Updates the site.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2289,7 +2289,7 @@ pub mod fluent_builders {
     /// can update the operating address before you place an order at the
     /// site, or after all Outposts that belong to the site have been deactivated.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSiteAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2395,7 +2395,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait for
     /// the order to complete or cancel the order.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSiteRackPhysicalProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

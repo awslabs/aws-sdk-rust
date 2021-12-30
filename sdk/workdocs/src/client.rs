@@ -399,7 +399,7 @@ pub mod fluent_builders {
     /// by <a>InitiateDocumentVersionUpload</a>. The client should make this call
     /// only when it no longer intends to upload the document version, or fails to do
     /// so.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AbortDocumentVersionUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -493,7 +493,7 @@ pub mod fluent_builders {
     ///
     /// <p>Activates the specified user. Only active users can access Amazon
     /// WorkDocs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -578,7 +578,7 @@ pub mod fluent_builders {
     /// <p>Creates a set of permissions for the specified folder or document. The resource
     /// permissions are overwritten if the principals already have different
     /// permissions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddResourcePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -694,7 +694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateComment`.
     ///
     /// <p>Adds a new comment to the specified document version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -847,7 +847,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds one or more custom properties to the specified resource (a folder, document,
     /// or version).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -965,7 +965,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFolder`.
     ///
     /// <p>Creates a folder with the specified name and parent folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1062,7 +1062,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds the specified list of labels to the given resource (a document or
     /// folder)</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLabels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1166,7 +1166,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe to
     /// Notifications</a> in the <i>Amazon WorkDocs Developer
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotificationSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1280,7 +1280,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a user in a Simple AD or Microsoft AD directory. The status of a newly
     /// created user is "ACTIVE". New users can access Amazon WorkDocs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1443,7 +1443,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deactivates the specified user, which revokes the user's access to Amazon
     /// WorkDocs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeactivateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1526,7 +1526,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteComment`.
     ///
     /// <p>Deletes the specified comment from the document version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1629,7 +1629,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCustomMetadata`.
     ///
     /// <p>Deletes custom metadata from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1753,7 +1753,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDocument`.
     ///
     /// <p>Permanently deletes the specified document and its associated metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1836,7 +1836,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFolder`.
     ///
     /// <p>Permanently deletes the specified folder and its contents.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1919,7 +1919,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFolderContents`.
     ///
     /// <p>Deletes the contents of the specified folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFolderContents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2002,7 +2002,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLabels`.
     ///
     /// <p>Deletes the specified list of labels from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLabels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2112,7 +2112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNotificationSubscription`.
     ///
     /// <p>Deletes the specified subscription from the specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNotificationSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2198,7 +2198,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
     /// <p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2283,7 +2283,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeActivities`.
     ///
     /// <p>Describes the user activities in a specified time period.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeActivities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2476,7 +2476,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeComments`.
     ///
     /// <p>List all the comments for the specified document version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2592,7 +2592,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the document versions for the specified document.</p>
     /// <p>By default, only active versions are returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDocumentVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2726,7 +2726,7 @@ pub mod fluent_builders {
     /// metadata items. If there are more results, the response includes a marker that you can
     /// use to request the next set of results. You can also request initialized
     /// documents.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFolderContents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2880,7 +2880,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the groups specified by the query. Groups are defined by the underlying
     /// Active Directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2998,7 +2998,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNotificationSubscriptions`.
     ///
     /// <p>Lists the specified notification subscriptions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNotificationSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3093,7 +3093,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeResourcePermissions`.
     ///
     /// <p>Describes the permissions of a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResourcePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3216,7 +3216,7 @@ pub mod fluent_builders {
     /// Control for User Applications</a> in the
     /// <i>Amazon
     /// WorkDocs Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRootFolders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3315,7 +3315,7 @@ pub mod fluent_builders {
     /// <p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there
     /// are more results, the response includes a marker that you can use to request the next
     /// set of results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3494,7 +3494,7 @@ pub mod fluent_builders {
     /// Control for User Applications</a> in the
     /// <i>Amazon
     /// WorkDocs Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCurrentUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3567,7 +3567,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDocument`.
     ///
     /// <p>Retrieves details of a document.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3665,7 +3665,7 @@ pub mod fluent_builders {
     /// requested document and only includes the IDs of the parent folders in the path. You can
     /// limit the maximum number of levels. You can also request the names of the parent
     /// folders.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDocumentPath<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3780,7 +3780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDocumentVersion`.
     ///
     /// <p>Retrieves version metadata for the specified document.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDocumentVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3895,7 +3895,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFolder`.
     ///
     /// <p>Retrieves the metadata of the specified folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3993,7 +3993,7 @@ pub mod fluent_builders {
     /// requested folder and only includes the IDs of the parent folders in the path. You can
     /// limit the maximum number of levels. You can also request the parent folder
     /// names.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFolderPath<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4109,7 +4109,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a collection of resources, including folders and documents. The only
     /// <code>CollectionType</code> supported is <code>SHARED_WITH_ME</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4232,7 +4232,7 @@ pub mod fluent_builders {
     /// the first step to upload a document. Next, upload the document to the URL returned from
     /// the call, and then call <a>UpdateDocumentVersion</a>.</p>
     /// <p>To cancel the document upload, call <a>AbortDocumentVersionUpload</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitiateDocumentVersionUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4384,7 +4384,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveAllResourcePermissions`.
     ///
     /// <p>Removes all the permissions from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAllResourcePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4468,7 +4468,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the permission for the specified principal from the specified
     /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveResourcePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4575,7 +4575,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified attributes of a document. The user must have access to both
     /// the document and its parent folder, if applicable.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4699,7 +4699,7 @@ pub mod fluent_builders {
     /// <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step
     /// in a document upload, after the client uploads the document to an S3-presigned URL
     /// returned by <a>InitiateDocumentVersionUpload</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDocumentVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4806,7 +4806,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified attributes of the specified folder. The user must have access
     /// to both the folder and its parent folder, if applicable.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4928,7 +4928,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified attributes of the specified user, and grants or revokes
     /// administrative privileges to the Amazon WorkDocs site.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

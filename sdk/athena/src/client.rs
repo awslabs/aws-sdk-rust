@@ -341,7 +341,7 @@ pub mod fluent_builders {
     /// queries. Use <a>BatchGetQueryExecutionInput</a> to get details about each
     /// unique query execution, and <a>ListQueryExecutionsInput</a> to get a list of
     /// query execution IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -423,7 +423,7 @@ pub mod fluent_builders {
     /// IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ
     /// from named (saved) queries. Use <a>BatchGetNamedQueryInput</a> to get details
     /// about named queries.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -501,7 +501,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates (registers) a data catalog with the specified name and properties. Catalogs
     /// created are visible to all users of the same Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -780,7 +780,7 @@ pub mod fluent_builders {
     /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
     /// Code Samples</a> in the <i>Amazon Athena User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -921,7 +921,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePreparedStatement`.
     ///
     /// <p>Creates a prepared statement for use with SQL queries in Athena.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePreparedStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1027,7 +1027,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkGroup`.
     ///
     /// <p>Creates a workgroup with the specified name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1149,7 +1149,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataCatalog`.
     ///
     /// <p>Deletes a data catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1223,7 +1223,7 @@ pub mod fluent_builders {
     /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
     /// Code Samples</a> in the <i>Amazon Athena User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1297,7 +1297,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the prepared statement with the specified name from the specified
     /// workgroup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePreparedStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1381,7 +1381,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the workgroup with the specified name. The primary workgroup cannot be
     /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1463,7 +1463,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDatabase`.
     ///
     /// <p>Returns a database object for the specified database and data catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1546,7 +1546,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataCatalog`.
     ///
     /// <p>Returns the specified data catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1617,7 +1617,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about a single query. Requires that you have access to the
     /// workgroup in which the query was saved.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1693,7 +1693,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the prepared statement with the specified name from the specified
     /// workgroup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPreparedStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1778,7 +1778,7 @@ pub mod fluent_builders {
     /// <p>Returns information about a single execution of a query if you have access to the
     /// workgroup in which the query ran. Each time a query executes, information about the
     /// query execution is saved with a unique ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1865,7 +1865,7 @@ pub mod fluent_builders {
     /// ensure that Amazon S3 permissions to the Athena query location
     /// are denied.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1962,7 +1962,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTableMetadata`.
     ///
     /// <p>Returns table metadata for the specified catalog, database, and table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTableMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2057,7 +2057,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkGroup`.
     ///
     /// <p>Returns information about the workgroup with the specified name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2127,7 +2127,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatabases`.
     ///
     /// <p>Lists the databases in the specified data catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatabases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2221,7 +2221,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataCatalogs`.
     ///
     /// <p>Lists the data catalogs in the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataCatalogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2306,7 +2306,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of engine versions that are available to choose from, including the
     /// Auto option.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEngineVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2395,7 +2395,7 @@ pub mod fluent_builders {
     /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
     /// Code Samples</a> in the <i>Amazon Athena User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNamedQueries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2493,7 +2493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPreparedStatements`.
     ///
     /// <p>Lists the prepared statements in the specfied workgroup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPreparedStatements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2593,7 +2593,7 @@ pub mod fluent_builders {
     /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
     /// Code Samples</a> in the <i>Amazon Athena User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQueryExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2691,7 +2691,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTableMetadata`.
     ///
     /// <p>Lists the metadata for the tables in the specified data catalog database.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTableMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2811,7 +2811,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the tags associated with an Athena workgroup or data catalog
     /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2907,7 +2907,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkGroups`.
     ///
     /// <p>Lists available workgroups for the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2996,7 +2996,7 @@ pub mod fluent_builders {
     /// samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
     /// Code Samples</a> in the <i>Amazon Athena User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3149,7 +3149,7 @@ pub mod fluent_builders {
     /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
     /// Code Samples</a> in the <i>Amazon Athena User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3232,7 +3232,7 @@ pub mod fluent_builders {
     /// letters and numbers representable in UTF-8, and the following characters: + - = . _ : /
     /// @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you
     /// specify more than one tag, separate them by commas.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3321,7 +3321,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from a data catalog or workgroup resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3410,7 +3410,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataCatalog`.
     ///
     /// <p>Updates the data catalog that has the specified name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3610,7 +3610,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePreparedStatement`.
     ///
     /// <p>Updates a prepared statement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePreparedStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3717,7 +3717,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the workgroup with the specified name. The workgroup's name cannot be
     /// changed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

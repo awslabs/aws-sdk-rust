@@ -248,7 +248,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCluster`.
     ///
     /// <p>Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -686,7 +686,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new parameter group. A parameter group is a collection of parameters that
     /// you apply to all of the nodes in a DAX cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -771,7 +771,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSubnetGroup`.
     ///
     /// <p>Creates a new subnet group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -874,7 +874,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DecreaseReplicationFactor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -992,7 +992,7 @@ pub mod fluent_builders {
     /// and the DAX cluster itself. When you receive a successful response from this action,
     /// DAX immediately begins deleting the cluster; you cannot cancel or revert this
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1063,7 +1063,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified parameter group. You cannot delete a parameter group if it is
     /// associated with any DAX clusters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1140,7 +1140,7 @@ pub mod fluent_builders {
     /// <p>You cannot delete a subnet group if it is associated with any DAX
     /// clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1225,7 +1225,7 @@ pub mod fluent_builders {
     /// the cluster is ready for use.</p>
     /// <p>If nodes are currently being removed from the DAX cluster, no endpoint
     /// information for the removed nodes is displayed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1335,7 +1335,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the default system parameter information for the DAX caching
     /// software.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDefaultParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1431,7 +1431,7 @@ pub mod fluent_builders {
     /// as a parameter.</p>
     /// <p>By default, only the events occurring within the last 24 hours are returned; however,
     /// you can retrieve up to 14 days' worth of events if necessary.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1591,7 +1591,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of parameter group descriptions. If a parameter group name is
     /// specified, the list will contain only the descriptions for that group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeParameterGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1700,7 +1700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeParameters`.
     ///
     /// <p>Returns the detailed parameter list for a particular parameter group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1818,7 +1818,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of subnet group descriptions. If a subnet group name is specified,
     /// the list will contain only the description of that group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSubnetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1927,7 +1927,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `IncreaseReplicationFactor`.
     ///
     /// <p>Adds one or more nodes to a DAX cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct IncreaseReplicationFactor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2029,7 +2029,7 @@ pub mod fluent_builders {
     ///
     /// <p>List all of the tags for a DAX cluster. You can call <code>ListTags</code> up to
     /// 10 times per second, per account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2122,7 +2122,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>RebootNode</code> restarts the DAX engine process and does not remove the contents of the cache.  </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2203,7 +2203,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a set of tags with a DAX resource.  You can call <code>TagResource</code> up to 5 times per second, per
     /// account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2294,7 +2294,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the association of tags from a DAX resource. You can call
     /// <code>UntagResource</code> up to 5 times per second, per account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2386,7 +2386,7 @@ pub mod fluent_builders {
     /// <p>Modifies the settings for a DAX cluster. You can use this action to change one or
     /// more cluster configuration parameters by specifying the parameters and the new
     /// values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2553,7 +2553,7 @@ pub mod fluent_builders {
     /// <p>Modifies the parameters of a parameter group. You can modify up to 20
     /// parameters in a single request by submitting a list parameter name and value
     /// pairs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2653,7 +2653,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSubnetGroup`.
     ///
     /// <p>Modifies an existing subnet group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

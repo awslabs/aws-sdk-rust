@@ -181,7 +181,7 @@ pub mod fluent_builders {
     /// <p>Creates a connection that can then be given to other AWS services like CodePipeline so
     /// that it can access third-party code repositories. The connection is in pending status until
     /// the third-party connection handshake is completed from the console.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -305,7 +305,7 @@ pub mod fluent_builders {
     /// <p>A host created through the CLI or the SDK is in `PENDING` status by
     /// default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -441,7 +441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnection`.
     ///
     /// <p>The connection to be deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -523,7 +523,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>A host cannot be deleted if it is in the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -593,7 +593,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnection`.
     ///
     /// <p>Returns the connection ARN and details such as status, owner, and provider type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -667,7 +667,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the host ARN and details such as status, provider type, endpoint, and, if
     /// applicable, the VPC configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -737,7 +737,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConnections`.
     ///
     /// <p>Lists the connections associated with your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -849,7 +849,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHosts`.
     ///
     /// <p>Lists the hosts associated with your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHosts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -933,7 +933,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Gets the set of key-value pairs (metadata) that are used to manage the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1004,7 +1004,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used
     /// to manage a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1091,7 +1091,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from an AWS resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1178,7 +1178,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateHost`.
     ///
     /// <p>Updates a specified host with the provided configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

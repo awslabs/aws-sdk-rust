@@ -125,7 +125,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReportDefinition`.
     ///
     /// <p>Deletes the specified report.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -195,7 +195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReportDefinitions`.
     ///
     /// <p>Lists the AWS Cost and Usage reports available to this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReportDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -275,7 +275,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyReportDefinition`.
     ///
     /// <p>Allows you to programatically update your report preferences.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -366,7 +366,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutReportDefinition`.
     ///
     /// <p>Creates a new report using the description that you provide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

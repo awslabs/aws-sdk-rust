@@ -299,7 +299,7 @@ pub mod fluent_builders {
     /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions
     /// to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for
     /// Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -378,7 +378,7 @@ pub mod fluent_builders {
     /// <p> Returns the number of open reactive insights, the number of open proactive insights,
     /// and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the
     /// health of operations in your Amazon Web Services account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -440,7 +440,7 @@ pub mod fluent_builders {
     /// <p> For the time range passed in, returns the number of open reactive insight that were
     /// created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all
     /// closed reactive insights. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountOverview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -534,7 +534,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAnomaly`.
     ///
     /// <p> Returns details about an anomaly that you specify using its ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnomaly<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -615,7 +615,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns the most recent feedback submitted in the current Amazon Web Services account and Region.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -685,7 +685,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInsight`.
     ///
     /// <p> Returns details about an insight that you specify using its ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -766,7 +766,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns active insights, predictive insights, and resource hours analyzed in last
     /// hour.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -861,7 +861,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns an overview of your organization's history based on the specified time range.
     /// The overview includes the total reactive and proactive insights.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationOverview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -991,7 +991,7 @@ pub mod fluent_builders {
     /// <p>Provides an overview of your system's health. If additional member accounts are part
     /// of your organization, you can filter those accounts using the <code>AccountIds</code>
     /// field.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationResourceCollectionHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1137,7 +1137,7 @@ pub mod fluent_builders {
     /// Amazon Web Services resources collection. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
     /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
     /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResourceCollectionHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1233,7 +1233,7 @@ pub mod fluent_builders {
     /// <p> Returns the integration status of services that are integrated with DevOps Guru.
     /// The one service that can be integrated with DevOps Guru
     /// is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServiceIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1297,7 +1297,7 @@ pub mod fluent_builders {
     /// see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your
     /// Amazon DevOps Guru costs</a> and
     /// <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCostEstimation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1372,7 +1372,7 @@ pub mod fluent_builders {
     /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
     /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
     /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1463,7 +1463,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns a list of the anomalies that belong to an insight that you specify using its
     /// ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnomaliesForInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1583,7 +1583,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns a list of the events emitted by the resources that are evaluated by DevOps Guru.
     /// You can use filters to specify which events are returned. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1694,7 +1694,7 @@ pub mod fluent_builders {
     /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are
     /// returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>, or
     /// <code>ANY</code>). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1796,7 +1796,7 @@ pub mod fluent_builders {
     /// channel is used to notify you when DevOps Guru generates an insight that contains information
     /// about how to improve your operations. The one
     /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotificationChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1868,7 +1868,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOrganizationInsights`.
     ///
     /// <p>Returns a list of insights associated with the account or OU Id.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2002,7 +2002,7 @@ pub mod fluent_builders {
     ///
     /// <p> Returns a list of a specified insight's recommendations. Each recommendation includes
     /// a list of related metrics and a list of related events. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2104,7 +2104,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutFeedback`.
     ///
     /// <p> Collects customer feedback about the specified insight. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2179,7 +2179,7 @@ pub mod fluent_builders {
     /// <p> Removes a notification channel from DevOps Guru. A notification channel is used to notify
     /// you when DevOps Guru generates an insight that contains information about how to improve your
     /// operations. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2256,7 +2256,7 @@ pub mod fluent_builders {
     /// <p> Use the <code>Filters</code> parameter to specify status and severity search
     /// parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or
     /// <code>PROACTIVE</code> in your search. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2389,7 +2389,7 @@ pub mod fluent_builders {
     /// <p> Use the <code>Filters</code> parameter to specify status and severity search
     /// parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or
     /// <code>PROACTIVE</code> in your search. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchOrganizationInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2536,7 +2536,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts the creation of an estimate of the monthly cost to analyze your Amazon Web Services
     /// resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCostEstimation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2626,7 +2626,7 @@ pub mod fluent_builders {
     /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
     /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. This method also creates the IAM role required for
     /// you to use DevOps Guru. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2719,7 +2719,7 @@ pub mod fluent_builders {
     /// <p> Enables or disables integration with a service that can be integrated with DevOps Guru. The
     /// one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create
     /// an OpsItem for each generated insight. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

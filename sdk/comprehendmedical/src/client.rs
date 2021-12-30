@@ -259,7 +259,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with a medical entities detection job. Use this operation
     /// to get the status of a detection job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEntitiesDetectionV2Job<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -334,7 +334,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with an InferICD10CM job. Use this operation to get the
     /// status of an inference job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeICD10CMInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -407,7 +407,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with a protected health information (PHI) detection job.
     /// Use this operation to get the status of a detection job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePHIDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -480,7 +480,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with an InferRxNorm job. Use this operation to get the
     /// status of an inference job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRxNormInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -555,7 +555,7 @@ pub mod fluent_builders {
     /// <p> Inspects the clinical text for a variety of medical entities and returns specific
     /// information about them such as entity category, location, and confidence score on that
     /// information .</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -636,7 +636,7 @@ pub mod fluent_builders {
     /// <code>DetectEntitiesV2</code> operation in all new applications.</p>
     /// <p>The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and
     /// <code>Direction</code> entities as attributes instead of types. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectEntitiesV2<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -710,7 +710,7 @@ pub mod fluent_builders {
     /// <p> Inspects the clinical text for protected health information (PHI) entities and returns
     /// the entity category, location, and confidence score for each entity. Amazon Comprehend Medical
     /// only detects entities in English language texts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectPHI<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -785,7 +785,7 @@ pub mod fluent_builders {
     /// those entities to normalized concept identifiers in the ICD-10-CM knowledge base from the
     /// Centers for Disease Control. Amazon Comprehend Medical only detects medical entities in
     /// English language texts.  </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InferICD10CM<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -859,7 +859,7 @@ pub mod fluent_builders {
     /// <p>InferRxNorm detects medications as entities listed in a patient record and links to the
     /// normalized concept identifiers in the RxNorm database from the National Library of Medicine.
     /// Amazon Comprehend Medical only detects medical entities in English language texts.  </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InferRxNorm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -931,7 +931,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEntitiesDetectionV2Jobs`.
     ///
     /// <p>Gets a list of medical entity detection jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntitiesDetectionV2Jobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1026,7 +1026,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListICD10CMInferenceJobs`.
     ///
     /// <p>Gets a list of InferICD10CM jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListICD10CMInferenceJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1122,7 +1122,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a list of protected health information (PHI) detection jobs that you have
     /// submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPHIDetectionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1217,7 +1217,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRxNormInferenceJobs`.
     ///
     /// <p>Gets a list of InferRxNorm jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRxNormInferenceJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1313,7 +1313,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts an asynchronous medical entity detection job for a collection of documents. Use the
     /// <code>DescribeEntitiesDetectionV2Job</code> operation to track the status of a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartEntitiesDetectionV2Job<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1466,7 +1466,7 @@ pub mod fluent_builders {
     /// <p>Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM
     /// ontology. Use the <code>DescribeICD10CMInferenceJob</code> operation to track the status of a
     /// job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartICD10CMInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1618,7 +1618,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts an asynchronous job to detect protected health information (PHI). Use the
     /// <code>DescribePHIDetectionJob</code> operation to track the status of a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartPHIDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1771,7 +1771,7 @@ pub mod fluent_builders {
     /// <p>Starts an asynchronous job to detect medication entities and link them to the RxNorm
     /// ontology. Use the <code>DescribeRxNormInferenceJob</code> operation to track the status of a
     /// job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRxNormInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1922,7 +1922,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopEntitiesDetectionV2Job`.
     ///
     /// <p>Stops a medical entities detection job in progress.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopEntitiesDetectionV2Job<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1992,7 +1992,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopICD10CMInferenceJob`.
     ///
     /// <p>Stops an InferICD10CM inference job in progress.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopICD10CMInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2062,7 +2062,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopPHIDetectionJob`.
     ///
     /// <p>Stops a protected health information (PHI) detection job in progress.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopPHIDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2132,7 +2132,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopRxNormInferenceJob`.
     ///
     /// <p>Stops an InferRxNorm inference job in progress.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopRxNormInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -253,7 +253,7 @@ pub mod fluent_builders {
     /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
     /// Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis Data
     /// Firehose Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -577,7 +577,7 @@ pub mod fluent_builders {
     /// continue to accept records, but it doesn't make any guarantees with respect to delivering
     /// the data. Therefore, as a best practice, first stop any applications that are sending
     /// records before you delete a delivery stream.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -680,7 +680,7 @@ pub mod fluent_builders {
     /// doesn't change, and you can't invoke <a>CreateDeliveryStream</a> again on it.
     /// However, you can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
     /// If the status is <code>DELETING_FAILED</code>, you can force deletion by invoking <a>DeleteDeliveryStream</a> again but with <a>DeleteDeliveryStreamInput$AllowForceDelete</a> set to true.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -790,7 +790,7 @@ pub mod fluent_builders {
     /// there are more delivery streams to list, you can request them by calling this operation
     /// again and setting the <code>ExclusiveStartDeliveryStreamName</code> parameter to the name
     /// of the last delivery stream returned in the last call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeliveryStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -926,7 +926,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the tags for the specified delivery stream. This operation has a limit of five
     /// transactions per second per account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1066,7 +1066,7 @@ pub mod fluent_builders {
     /// <p>Don't concatenate two or more base64 strings to form the data fields of your records.
     /// Instead, concatenate the raw data, then perform base64 encoding.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1199,7 +1199,7 @@ pub mod fluent_builders {
     /// <p>Don't concatenate two or more base64 strings to form the data fields of your records.
     /// Instead, concatenate the raw data, then perform base64 encoding.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRecordBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1324,7 +1324,7 @@ pub mod fluent_builders {
     /// <code>StartDeliveryStreamEncryption</code> 13 times and
     /// <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream in a
     /// 24-hour period.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDeliveryStreamEncryption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1440,7 +1440,7 @@ pub mod fluent_builders {
     /// <code>StartDeliveryStreamEncryption</code> 13 times and
     /// <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream in a
     /// 24-hour period.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDeliveryStreamEncryption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1523,7 +1523,7 @@ pub mod fluent_builders {
     /// Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>
     /// <p>Each delivery stream can have up to 50 tags. </p>
     /// <p>This operation has a limit of five transactions per second per account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1616,7 +1616,7 @@ pub mod fluent_builders {
     /// can't recover them after this operation successfully completes.</p>
     /// <p>If you specify a tag that doesn't exist, the operation ignores it.</p>
     /// <p>This operation has a limit of five transactions per second per account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1731,7 +1731,7 @@ pub mod fluent_builders {
     /// configuration only if the existing configuration has a version ID that matches. After the
     /// update is applied successfully, the version ID is updated, and can be retrieved using <a>DescribeDeliveryStream</a>. Use the new version ID to set
     /// <code>CurrentDeliveryStreamVersionId</code> in the next call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

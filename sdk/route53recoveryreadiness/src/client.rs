@@ -331,7 +331,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCell`.
     ///
     /// Creates a new Cell.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCell<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -441,7 +441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCrossAccountAuthorization`.
     ///
     /// Create a new cross account readiness authorization.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCrossAccountAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -517,7 +517,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateReadinessCheck`.
     ///
     /// Creates a new Readiness Check.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -626,7 +626,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecoveryGroup`.
     ///
     /// Creates a new Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -739,7 +739,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResourceSet`.
     ///
     /// Creates a new Resource Set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -865,7 +865,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCell`.
     ///
     /// Deletes an existing Cell.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCell<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -935,7 +935,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCrossAccountAuthorization`.
     ///
     /// Delete cross account readiness authorization
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCrossAccountAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1011,7 +1011,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReadinessCheck`.
     ///
     /// Deletes an existing Readiness Check.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1084,7 +1084,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRecoveryGroup`.
     ///
     /// Deletes an existing Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1157,7 +1157,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourceSet`.
     ///
     /// Deletes an existing Resource Set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1230,7 +1230,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetArchitectureRecommendations`.
     ///
     /// Returns a collection of recommendations to improve resilliance and readiness check quality for a Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetArchitectureRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1323,7 +1323,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCell`.
     ///
     /// Returns information about a Cell.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCell<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1393,7 +1393,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCellReadinessSummary`.
     ///
     /// Returns information about readiness of a Cell.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCellReadinessSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1483,7 +1483,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReadinessCheck`.
     ///
     /// Returns information about a ReadinessCheck.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1556,7 +1556,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReadinessCheckResourceStatus`.
     ///
     /// Returns detailed information about the status of an individual resource within a Readiness Check's Resource Set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReadinessCheckResourceStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1662,7 +1662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReadinessCheckStatus`.
     ///
     /// Returns information about the status of a Readiness Check.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReadinessCheckStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1755,7 +1755,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecoveryGroup`.
     ///
     /// Returns information about a Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1828,7 +1828,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecoveryGroupReadinessSummary`.
     ///
     /// Returns information about a Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecoveryGroupReadinessSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1921,7 +1921,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceSet`.
     ///
     /// Returns information about a Resource Set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1994,7 +1994,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCells`.
     ///
     /// Returns a collection of Cells.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCells<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2074,7 +2074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCrossAccountAuthorizations`.
     ///
     /// Returns a collection of cross account readiness authorizations.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCrossAccountAuthorizations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2154,7 +2154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReadinessChecks`.
     ///
     /// Returns a collection of Readiness Checks.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReadinessChecks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2234,7 +2234,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRecoveryGroups`.
     ///
     /// Returns a collection of Recovery Groups.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecoveryGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2314,7 +2314,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourceSets`.
     ///
     /// Returns a collection of Resource Sets.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2394,7 +2394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRules`.
     ///
     /// Returns a collection of rules that are applied as part of Readiness Checks.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2487,7 +2487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResources`.
     ///
     /// Returns a list of the tags assigned to the specified resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2557,7 +2557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// Adds tags to the specified resource. You can specify one or more tags to add.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2650,7 +2650,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// Removes tags from the specified resource. You can specify one or more tags to remove.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2737,7 +2737,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCell`.
     ///
     /// Updates an existing Cell.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCell<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2824,7 +2824,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReadinessCheck`.
     ///
     /// Updates an exisiting Readiness Check.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2910,7 +2910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRecoveryGroup`.
     ///
     /// Updates an existing Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3000,7 +3000,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResourceSet`.
     ///
     /// Updates an existing Resource Set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -287,7 +287,7 @@ pub mod fluent_builders {
     /// <p>Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the alarm to get
     /// notified when the value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create an
     /// alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -487,7 +487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDetectorModel`.
     ///
     /// <p>Creates a detector model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -652,7 +652,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInput`.
     ///
     /// <p>Creates an input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -766,7 +766,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an alarm model. Any alarm instances that were created based on this alarm model
     /// are also deleted. This action can't be undone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -840,7 +840,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a detector model. Any active instances of the detector model are also
     /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -913,7 +913,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInput`.
     ///
     /// <p>Deletes an input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -984,7 +984,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information about an alarm model. If you don't specify a value for the
     /// <code>alarmModelVersion</code> parameter, the latest version is returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1071,7 +1071,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes a detector model. If the <code>version</code> parameter is not specified,
     /// information about the latest version is returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1160,7 +1160,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis results.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDetectorModelAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1230,7 +1230,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInput`.
     ///
     /// <p>Describes an input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1300,7 +1300,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoggingOptions`.
     ///
     /// <p>Retrieves the current settings of the AWS IoT Events logging options.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1363,7 +1363,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis results.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDetectorModelAnalysisResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1454,7 +1454,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the alarm models that you created. The operation returns only the metadata
     /// associated with each alarm model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlarmModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1535,7 +1535,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all the versions of an alarm model. The operation returns only the metadata
     /// associated with each alarm model version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlarmModelVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1629,7 +1629,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the detector models you have created. Only the metadata associated with each
     /// detector model is returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDetectorModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1710,7 +1710,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all the versions of a detector model. Only the metadata associated with each
     /// detector model version is returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDetectorModelVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1805,7 +1805,7 @@ pub mod fluent_builders {
     /// <p>
     /// Lists one or more input routings.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInputRoutings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1910,7 +1910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInputs`.
     ///
     /// <p>Lists the inputs you have created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1990,7 +1990,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags (metadata) you have assigned to the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2064,7 +2064,7 @@ pub mod fluent_builders {
     /// minute for the change to take effect. If you change the policy attached to the role you
     /// specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it
     /// takes up to five minutes for that change to take effect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2139,7 +2139,7 @@ pub mod fluent_builders {
     /// <p>Performs an analysis of your detector model. For more information,
     /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting a detector model</a>
     /// in the <i>AWS IoT Events Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDetectorModelAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2216,7 +2216,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to
     /// manage a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2303,7 +2303,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the given tags (metadata) from the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2391,7 +2391,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an alarm model. Any alarms that were created based on the previous version are
     /// deleted and then created again as new data arrives.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2553,7 +2553,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a detector model. Detectors (instances) spawned by the previous version are
     /// deleted and then re-created as new inputs arrive.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2683,7 +2683,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInput`.
     ///
     /// <p>Updates an input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

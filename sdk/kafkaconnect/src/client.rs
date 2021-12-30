@@ -176,7 +176,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConnector`.
     ///
     /// <p>Creates a connector using the specified properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -415,7 +415,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCustomPlugin`.
     ///
     /// <p>Creates a custom plugin using the specified properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomPlugin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -521,7 +521,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkerConfiguration`.
     ///
     /// <p>Creates a worker configuration using the specified properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkerConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -617,7 +617,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnector`.
     ///
     /// <p>Deletes the specified connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -703,7 +703,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConnector`.
     ///
     /// <p>Returns summary information about the connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -776,7 +776,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomPlugin`.
     ///
     /// <p>A summary description of the custom plugin.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomPlugin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -849,7 +849,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkerConfiguration`.
     ///
     /// <p>Returns information about a worker configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkerConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -925,7 +925,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConnectors`.
     ///
     /// <p>Returns a list of all the connectors in this account and Region. The list is limited to connectors whose name starts with the specified prefix. The response also includes a description of each of the listed connectors.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1018,7 +1018,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomPlugins`.
     ///
     /// <p>Returns a list of all of the custom plugins in this account and Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomPlugins<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1098,7 +1098,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkerConfigurations`.
     ///
     /// <p>Returns a list of all of the worker configurations in this account and Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkerConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1178,7 +1178,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnector`.
     ///
     /// <p>Updates the specified connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

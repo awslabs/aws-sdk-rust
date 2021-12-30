@@ -103,7 +103,7 @@ pub mod fluent_builders {
     ///
     /// <p>GetEntitlements retrieves entitlement values for a given product. The results can be
     /// filtered based on customer identifier or product dimensions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEntitlements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

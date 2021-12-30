@@ -425,7 +425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptInboundCrossClusterSearchConnection`.
     ///
     /// <p>Allows the destination domain owner to accept an inbound cross-cluster search connection request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInboundCrossClusterSearchConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -506,7 +506,7 @@ pub mod fluent_builders {
     ///
     /// <p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags.  See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging" target="_blank">
     /// Tagging Amazon Elasticsearch Service Domains for more information.</a></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -593,7 +593,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociatePackage`.
     ///
     /// <p>Associates a package with an Amazon ES domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -673,7 +673,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelElasticsearchServiceSoftwareUpdate`.
     ///
     /// <p>Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code> state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelElasticsearchServiceSoftwareUpdate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -746,7 +746,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new Elasticsearch domain. For more information,
     /// see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateElasticsearchDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1054,7 +1054,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOutboundCrossClusterSearchConnection`.
     ///
     /// <p>Creates a new cross-cluster search connection from a source domain to a destination domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOutboundCrossClusterSearchConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1158,7 +1158,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePackage`.
     ///
     /// <p>Create a package for use with Amazon ES domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1267,7 +1267,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteElasticsearchDomain`.
     ///
     /// <p>Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteElasticsearchDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1337,7 +1337,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteElasticsearchServiceRole`.
     ///
     /// <p>Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before deleting the role. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr" target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteElasticsearchServiceRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1397,7 +1397,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInboundCrossClusterSearchConnection`.
     ///
     /// <p>Allows the destination domain owner to delete an existing inbound cross-cluster search connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInboundCrossClusterSearchConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1477,7 +1477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOutboundCrossClusterSearchConnection`.
     ///
     /// <p>Allows the source domain owner to delete an existing outbound cross-cluster search connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOutboundCrossClusterSearchConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1557,7 +1557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePackage`.
     ///
     /// <p>Delete the package.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1627,7 +1627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDomainAutoTunes`.
     ///
     /// <p>Provides scheduled Auto-Tune action details for the Elasticsearch domain, such as Auto-Tune action type, description, severity, and scheduled date.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomainAutoTunes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1717,7 +1717,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeElasticsearchDomain`.
     ///
     /// <p>Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeElasticsearchDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1787,7 +1787,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeElasticsearchDomainConfig`.
     ///
     /// <p>Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeElasticsearchDomainConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1857,7 +1857,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeElasticsearchDomains`.
     ///
     /// <p>Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeElasticsearchDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1941,7 +1941,7 @@ pub mod fluent_builders {
     /// </code>
     /// to know what Limits are supported for modifying.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeElasticsearchInstanceTypeLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2079,7 +2079,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInboundCrossClusterSearchConnections`.
     ///
     /// <p>Lists all the inbound cross-cluster search connections for a destination domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInboundCrossClusterSearchConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2198,7 +2198,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOutboundCrossClusterSearchConnections`.
     ///
     /// <p>Lists all the outbound cross-cluster search connections for a source domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOutboundCrossClusterSearchConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2308,7 +2308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePackages`.
     ///
     /// <p>Describes all packages available to Amazon ES. Includes options for filtering, limiting the number of results, and pagination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2405,7 +2405,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservedElasticsearchInstanceOfferings`.
     ///
     /// <p>Lists available reserved Elasticsearch instance offerings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedElasticsearchInstanceOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2500,7 +2500,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservedElasticsearchInstances`.
     ///
     /// <p>Returns information about reserved Elasticsearch instances for this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedElasticsearchInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2602,7 +2602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DissociatePackage`.
     ///
     /// <p>Dissociates a package from the Amazon ES domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DissociatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2689,7 +2689,7 @@ pub mod fluent_builders {
     /// </code>
     /// to get all upgrade compatible Elasticsearch versions for that specific domain.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCompatibleElasticsearchVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2761,7 +2761,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPackageVersionHistory`.
     ///
     /// <p>Returns a list of versions of the package, along with their creation time and commit message.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPackageVersionHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2851,7 +2851,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUpgradeHistory`.
     ///
     /// <p>Retrieves the complete history of the last 10 upgrades that were performed on the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUpgradeHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2951,7 +2951,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUpgradeStatus`.
     ///
     /// <p>Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUpgradeStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3021,7 +3021,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomainNames`.
     ///
     /// <p>Returns the name of all Elasticsearch domains owned by the current user's account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3094,7 +3094,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomainsForPackage`.
     ///
     /// <p>Lists all Amazon ES domains associated with the package.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainsForPackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3184,7 +3184,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListElasticsearchInstanceTypes`.
     ///
     /// <p>List all Elasticsearch instance types that are supported for given ElasticsearchVersion</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListElasticsearchInstanceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3305,7 +3305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListElasticsearchVersions`.
     ///
     /// <p>List all supported Elasticsearch versions</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListElasticsearchVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3397,7 +3397,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPackagesForDomain`.
     ///
     /// <p>Lists all packages associated with the Amazon ES domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackagesForDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3487,7 +3487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTags`.
     ///
     /// <p>Returns all tags for the given Elasticsearch domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3557,7 +3557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PurchaseReservedElasticsearchInstanceOffering`.
     ///
     /// <p>Allows you to purchase reserved Elasticsearch instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseReservedElasticsearchInstanceOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3653,7 +3653,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectInboundCrossClusterSearchConnection`.
     ///
     /// <p>Allows the destination domain owner to reject an inbound cross-cluster search connection request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInboundCrossClusterSearchConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3733,7 +3733,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
     /// <p>Removes the specified set of tags from the specified Elasticsearch domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3820,7 +3820,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartElasticsearchServiceSoftwareUpdate`.
     ///
     /// <p>Schedules a service software update for an Amazon ES domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartElasticsearchServiceSoftwareUpdate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3892,7 +3892,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateElasticsearchDomainConfig`.
     ///
     /// <p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateElasticsearchDomainConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4186,7 +4186,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePackage`.
     ///
     /// <p>Updates a package for use with Amazon ES domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4295,7 +4295,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpgradeElasticsearchDomain`.
     ///
     /// <p>Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpgradeElasticsearchDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -782,7 +782,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You must turn on the gateway VM before you can activate your gateway.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1046,7 +1046,7 @@ pub mod fluent_builders {
     ///
     /// <p>In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to
     /// add cache, and one or more disk IDs that you want to configure as cache.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1163,7 +1163,7 @@ pub mod fluent_builders {
     ///
     /// <p>You can create a maximum of 50 tags for each resource. Virtual tapes and storage volumes
     /// that are recovered to a new gateway maintain their tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1272,7 +1272,7 @@ pub mod fluent_builders {
     /// <p>In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to
     /// add upload buffer, and one or more disk IDs that you want to configure as upload
     /// buffer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddUploadBuffer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1377,7 +1377,7 @@ pub mod fluent_builders {
     /// <p>In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to
     /// add working storage, and one or more disk IDs that you want to configure as working
     /// storage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddWorkingStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1476,7 +1476,7 @@ pub mod fluent_builders {
     ///
     /// <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssignTapePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1599,7 +1599,7 @@ pub mod fluent_builders {
     /// association process is complete, the file shares on the Amazon FSx file system are
     /// available for access through the gateway. This operation only supports the FSx File Gateway
     /// type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1793,7 +1793,7 @@ pub mod fluent_builders {
     /// gateway. Detaching and attaching a volume enables you to recover your data from one gateway
     /// to a different gateway without creating a snapshot. It also makes it easier to move your
     /// volumes from an on-premises gateway to a gateway hosted on an Amazon EC2 instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1935,7 +1935,7 @@ pub mod fluent_builders {
     ///
     /// <p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving
     /// process is initiated. This operation is only supported in the tape gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelArchival<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2021,7 +2021,7 @@ pub mod fluent_builders {
     /// <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after
     /// the retrieval process is initiated. The virtual tape is returned to the VTS. This operation
     /// is only supported in the tape gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelRetrieval<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2122,7 +2122,7 @@ pub mod fluent_builders {
     /// <code>SourceVolumeARN</code> for this cached volume, which creates an exact copy of the
     /// existing volume’s latest recovery point. The <code>VolumeSizeInBytes</code> value must be
     /// equal to or larger than the size of the copied volume, in bytes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCachediSCSIVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2377,7 +2377,7 @@ pub mod fluent_builders {
     /// <p>S3 File Gateways do not support creating hard or symbolic links on a file
     /// share.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNFSFileShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2961,7 +2961,7 @@ pub mod fluent_builders {
     /// <p>File gateways don't support creating hard or symbolic links on a file
     /// share.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSMBFileShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3664,7 +3664,7 @@ pub mod fluent_builders {
     /// <p>Volume and snapshot IDs are changing to a longer length ID format. For more
     /// information, see the important note on the <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a> page.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3808,7 +3808,7 @@ pub mod fluent_builders {
     /// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a> in the <i>Amazon Elastic Compute Cloud API
     /// Reference</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshotFromVolumeRecoveryPoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3945,7 +3945,7 @@ pub mod fluent_builders {
     /// creating the volume. In response, the gateway creates the volume and returns volume
     /// information such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target
     /// ARN that initiators can use to connect to the volume target.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStorediSCSIVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4176,7 +4176,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new custom tape pool. You can use custom tape pool to enable tape retention
     /// lock on tapes that are archived in the custom pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTapePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4333,7 +4333,7 @@ pub mod fluent_builders {
     /// <p>Cache storage must be allocated to the gateway before you can create virtual tapes.
     /// Use the <a>AddCache</a> operation to add cache storage to a gateway.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTapes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4589,7 +4589,7 @@ pub mod fluent_builders {
     /// <p>Cache storage must be allocated to the gateway before you can create a virtual tape.
     /// Use the <a>AddCache</a> operation to add cache storage to a gateway.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTapeWithBarcode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4802,7 +4802,7 @@ pub mod fluent_builders {
     /// <p>Deletes the automatic tape creation policy of a gateway. If you delete this policy, new
     /// virtual tapes must be created manually. Use the Amazon Resource Name (ARN) of the gateway
     /// in your request to remove the policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAutomaticTapeCreationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4878,7 +4878,7 @@ pub mod fluent_builders {
     /// limits, the other limit remains unchanged. To specify which gateway to work with, use the
     /// Amazon Resource Name (ARN) of the gateway in your request. This operation is supported for
     /// the stored volume, cached volume and tape gateway types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBandwidthRateLimit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4973,7 +4973,7 @@ pub mod fluent_builders {
     /// <p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified
     /// iSCSI target and initiator pair. This operation is supported in volume and tape gateway
     /// types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChapCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5059,7 +5059,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a file share from an S3 File Gateway. This operation is only supported for S3
     /// File Gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFileShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5171,7 +5171,7 @@ pub mod fluent_builders {
     /// <a href="http://aws.amazon.com/storagegateway">Storage Gateway detail
     /// page</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5257,7 +5257,7 @@ pub mod fluent_builders {
     /// go to <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
     /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSnapshotSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5328,7 +5328,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified virtual tape. This operation is only supported in the tape gateway
     /// type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTape<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5429,7 +5429,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified virtual tape from the virtual tape shelf (VTS). This operation is
     /// only supported in the tape gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTapeArchive<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5519,7 +5519,7 @@ pub mod fluent_builders {
     /// <p>Delete a custom tape pool. A custom tape pool can only be deleted if there are no tapes
     /// in the pool and if there are no automatic tape creation policies that reference the custom
     /// tape pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTapePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5601,7 +5601,7 @@ pub mod fluent_builders {
     ///
     /// <p>In the request, you must provide the Amazon Resource Name (ARN) of the storage volume
     /// you want to delete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5675,7 +5675,7 @@ pub mod fluent_builders {
     /// <p>Returns information about the most recent high availability monitoring test that was
     /// performed on the host in a cluster. If a test isn't performed, the status and start
     /// time in the response would be null.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAvailabilityMonitorTest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5754,7 +5754,7 @@ pub mod fluent_builders {
     /// If no limits are set for the gateway, then this operation returns only the gateway ARN in
     /// the response body. To specify which gateway to describe, use the Amazon Resource Name (ARN)
     /// of the gateway in your request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBandwidthRateLimit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5841,7 +5841,7 @@ pub mod fluent_builders {
     /// <p> If no bandwidth rate limit schedule intervals are set for the gateway, this operation
     /// returns an empty response. To specify which gateway to describe, use the Amazon Resource
     /// Name (ARN) of the gateway in your request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBandwidthRateLimitSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5919,7 +5919,7 @@ pub mod fluent_builders {
     ///
     /// <p>The response includes disk IDs that are configured as cache, and it includes the amount
     /// of cache allocated and used.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5996,7 +5996,7 @@ pub mod fluent_builders {
     /// <p>The list of gateway volumes in the request must be from one gateway. In the response,
     /// Storage Gateway returns volume information sorted by volume Amazon Resource Name
     /// (ARN).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCachediSCSIVolumes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6077,7 +6077,7 @@ pub mod fluent_builders {
     /// <p>Returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials
     /// information for a specified iSCSI target, one for each target-initiator pair. This
     /// operation is supported in the volume and tape gateway types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChapCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6150,7 +6150,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the file system association information. This operation is only supported for FSx
     /// File Gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFileSystemAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6234,7 +6234,7 @@ pub mod fluent_builders {
     /// <p>Returns metadata about a gateway such as its name, network interfaces, configured time
     /// zone, and the state (whether the gateway is running or not). To specify which gateway to
     /// describe, use the Amazon Resource Name (ARN) of the gateway in your request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGatewayInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6307,7 +6307,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns your gateway's weekly maintenance start time including the day and time of
     /// the week. Note that values are in terms of the gateway's time zone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceStartTime<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6380,7 +6380,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a description for one or more Network File System (NFS) file shares from an S3 File
     /// Gateway. This operation is only supported for S3 File Gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNFSFileShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6460,7 +6460,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a description for one or more Server Message Block (SMB) file shares from a S3 File
     /// Gateway. This operation is only supported for S3 File Gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSMBFileShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6540,7 +6540,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a description of a Server Message Block (SMB) file share settings from a file
     /// gateway. This operation is only supported for file gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSMBSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6615,7 +6615,7 @@ pub mod fluent_builders {
     /// information includes intervals at which snapshots are automatically initiated on the
     /// volume. This operation is only supported in the cached volume and stored volume
     /// types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshotSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6689,7 +6689,7 @@ pub mod fluent_builders {
     /// <p>Returns the description of the gateway volumes specified in the request. The list of
     /// gateway volumes in the request must be from one gateway. In the response, Storage Gateway returns volume information sorted by volume ARNs. This operation is only
     /// supported in stored volume gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStorediSCSIVolumes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6772,7 +6772,7 @@ pub mod fluent_builders {
     ///
     /// <p>If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a
     /// description of all virtual tapes found in the VTS associated with your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTapeArchives<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6881,7 +6881,7 @@ pub mod fluent_builders {
     /// virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery
     /// points can be recovered to a new gateway. This operation is only supported in the tape
     /// gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTapeRecoveryPoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6980,7 +6980,7 @@ pub mod fluent_builders {
     /// <code>TapeARN</code> is not specified, returns a description of all virtual tapes
     /// associated with the specified gateway. This operation is only supported in the tape gateway
     /// type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTapes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7113,7 +7113,7 @@ pub mod fluent_builders {
     ///
     /// <p>The response includes disk IDs that are configured as upload buffer space, and it
     /// includes the amount of upload buffer space allocated and used.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUploadBuffer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7188,7 +7188,7 @@ pub mod fluent_builders {
     /// gateway. In the response, Storage Gateway returns VTL device information.</p>
     ///
     /// <p>This operation is only supported in the tape gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVTLDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7323,7 +7323,7 @@ pub mod fluent_builders {
     ///
     /// <p>The response includes disk IDs that are configured as working storage, and it includes
     /// the amount of working storage allocated and used.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkingStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7399,7 +7399,7 @@ pub mod fluent_builders {
     /// one gateway to a different gateway without creating a snapshot. It also makes it easier to
     /// move your volumes from an on-premises gateway to a gateway hosted on an Amazon EC2
     /// instance. This operation is only supported in the volume gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7499,7 +7499,7 @@ pub mod fluent_builders {
     /// <important>
     /// <p>After a gateway is disabled, it cannot be enabled.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7573,7 +7573,7 @@ pub mod fluent_builders {
     /// <p>Disassociates an Amazon FSx file system from the specified gateway. After the
     /// disassociation process finishes, the gateway can no longer access the Amazon FSx
     /// file system. This operation is only supported in the FSx File Gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7666,7 +7666,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds a file gateway to an Active Directory domain. This operation is only supported for
     /// file gateways that support the SMB file protocol.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct JoinDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7829,7 +7829,7 @@ pub mod fluent_builders {
     /// creation policies for the gateway, it returns an empty list.</p>
     ///
     /// <p>This operation is only supported for tape gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAutomaticTapeCreationPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7903,7 +7903,7 @@ pub mod fluent_builders {
     /// <p>Gets a list of the file shares for a specific S3 File Gateway, or the list of file
     /// shares that belong to the calling user account. This operation is only supported for S3
     /// File Gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFileShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8003,7 +8003,7 @@ pub mod fluent_builders {
     /// <p>Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains a
     /// summary of a file system association. This operation is only supported for FSx File
     /// Gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFileSystemAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8111,7 +8111,7 @@ pub mod fluent_builders {
     /// <p>If you have more gateways than are returned in a response (that is, the response returns
     /// only a truncated list of your gateways), the response contains a marker that you can
     /// specify in your next request to fetch the next page of gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8203,7 +8203,7 @@ pub mod fluent_builders {
     /// available to use), missing (the disk is no longer connected to the gateway), or mismatch
     /// (the disk node is occupied by a disk that has incorrect metadata or the disk content is
     /// corrupted).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLocalDisks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8276,7 +8276,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the tags that have been added to the specified resource. This operation is
     /// supported in storage gateways of all types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8378,7 +8378,7 @@ pub mod fluent_builders {
     /// tape pools returned in the response is truncated, the response includes a
     /// <code>Marker</code> element that you can use in your subsequent request to retrieve the
     /// next set of tape pools.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTapePools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8489,7 +8489,7 @@ pub mod fluent_builders {
     /// truncated, the response includes a <code>Marker</code> element that you can use in your
     /// subsequent request to retrieve the next set of tapes. This operation is only supported in
     /// the tape gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTapes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8592,7 +8592,7 @@ pub mod fluent_builders {
     /// <p>Lists iSCSI initiators that are connected to a volume. You can use this operation to
     /// determine whether a volume is being used or not. This operation is only supported in the
     /// cached volume and stored volume gateway types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVolumeInitiators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8670,7 +8670,7 @@ pub mod fluent_builders {
     /// which all data of the volume is consistent and from which you can create a snapshot or
     /// clone a new cached volume from a source volume. To create a snapshot from a volume recovery
     /// point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVolumeRecoveryPoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8751,7 +8751,7 @@ pub mod fluent_builders {
     /// truncated, the response includes a Marker field. You can use this Marker value in your
     /// subsequent request to retrieve the next set of volumes. This operation is only supported in
     /// the cached volume and stored volume gateway types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVolumes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8859,7 +8859,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification">Getting file upload notification</a> in the <i>Storage Gateway User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyWhenUploaded<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8961,7 +8961,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting notified about file operations</a> in the <i>Storage Gateway
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RefreshCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9084,7 +9084,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes one or more tags from the specified resource. This operation is supported in
     /// storage gateways of all types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9185,7 +9185,7 @@ pub mod fluent_builders {
     /// be no configured cache disks left in the gateway, so you must configure at least one new
     /// cache disk for your gateway to function properly.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9264,7 +9264,7 @@ pub mod fluent_builders {
     /// <p>Once a tape is successfully retrieved to a gateway, it cannot be retrieved again to
     /// another gateway. You must archive the tape again before you can retrieve it to another
     /// gateway. This operation is only supported in the tape gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetrieveTapeArchive<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9367,7 +9367,7 @@ pub mod fluent_builders {
     /// read-only. The virtual tape can be retrieved to only a tape gateway. There is no charge
     /// for retrieving recovery points.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetrieveTapeRecoveryPoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9454,7 +9454,7 @@ pub mod fluent_builders {
     /// the first time, you log in to the VM with the default credentials. We recommend that you
     /// set a new password. You don't need to know the default password to set a new
     /// password.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetLocalConsolePassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9541,7 +9541,7 @@ pub mod fluent_builders {
     /// <p>Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code>
     /// user is the user when the authentication method for the file share is set to
     /// <code>GuestAccess</code>. This operation only supported for S3 File Gateways</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetSMBGuestPassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9646,7 +9646,7 @@ pub mod fluent_builders {
     ///
     /// <p>If do not intend to use the gateway again, you must delete the gateway (using <a>DeleteGateway</a>) to no longer pay software charges associated with the
     /// gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ShutdownGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9725,7 +9725,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Starting this test will cause your gateway to go offline for a brief period.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAvailabilityMonitorTest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9809,7 +9809,7 @@ pub mod fluent_builders {
     ///
     /// <p>To specify which gateway to start, use the Amazon Resource Name (ARN) of the gateway in
     /// your request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9889,7 +9889,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>A gateway can have only one automatic tape creation policy.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAutomaticTapeCreationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9993,7 +9993,7 @@ pub mod fluent_builders {
     ///
     /// <p>To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in
     /// your request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBandwidthRateLimit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10102,7 +10102,7 @@ pub mod fluent_builders {
     /// do not have bandwidth rate limit schedules, which means no bandwidth rate limiting is in
     /// effect. Use this to initiate or update a gateway's bandwidth rate limit schedule. This
     /// operation is supported in the volume and tape gateway types. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBandwidthRateLimitSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10204,7 +10204,7 @@ pub mod fluent_builders {
     /// <p>When you update CHAP credentials, all existing connections on the target are closed
     /// and initiators must reconnect with the new credentials.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChapCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10348,7 +10348,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a file system association. This operation is only supported in the FSx File
     /// Gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFileSystemAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10484,7 +10484,7 @@ pub mod fluent_builders {
     /// gateway ID rather than the gateway name. However, changing the name of the gateway has
     /// no effect on the gateway's ARN.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10633,7 +10633,7 @@ pub mod fluent_builders {
     /// timeouts. For more information about increasing iSCSI Initiator timeouts for Windows and
     /// Linux, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing your Windows iSCSI settings</a> and <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing your Linux iSCSI settings</a>, respectively.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewaySoftwareNow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10706,7 +10706,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a gateway's weekly maintenance start time information, including day and
     /// time of the week. The maintenance time is the time in your gateway's time zone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMaintenanceStartTime<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10858,7 +10858,7 @@ pub mod fluent_builders {
     /// <p>Write status of your file share</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNFSFileShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11283,7 +11283,7 @@ pub mod fluent_builders {
     /// <p>File gateways don't support creating hard or symbolic links on a file
     /// share.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSMBFileShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11771,7 +11771,7 @@ pub mod fluent_builders {
     ///
     /// <p>Controls whether the shares on an S3 File Gateway are visible in a net view or browse
     /// list. The operation is only supported for S3 File Gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSMBFileShareVisibility<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11854,7 +11854,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the list of Active Directory users and groups that have special permissions for
     /// SMB file shares on the gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSMBLocalGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11948,7 +11948,7 @@ pub mod fluent_builders {
     ///
     /// <p>A higher security level can affect performance of the gateway.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSMBSecurityStrategy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12073,7 +12073,7 @@ pub mod fluent_builders {
     /// <p>In the request you must identify the gateway volume whose snapshot schedule you want to
     /// update, and the schedule information, including when you want the snapshot to begin on a
     /// day and the frequency (in hours) of snapshots.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSnapshotSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12215,7 +12215,7 @@ pub mod fluent_builders {
     /// you select a medium changer type for the tape gateway. This operation enables you to select
     /// a different type of medium changer after a tape gateway is activated. This operation is
     /// only supported in the tape gateway type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVTLDeviceType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -430,7 +430,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CountClosedWorkflowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -707,7 +707,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CountOpenWorkflowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -895,7 +895,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CountPendingActivityTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1002,7 +1002,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CountPendingDecisionTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1124,7 +1124,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateActivityType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1238,7 +1238,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1351,7 +1351,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateWorkflowType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1472,7 +1472,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeActivityType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1583,7 +1583,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1681,7 +1681,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkflowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1802,7 +1802,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkflowType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1914,7 +1914,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkflowExecutionHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2077,7 +2077,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListActivityTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2270,7 +2270,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClosedWorkflowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2589,7 +2589,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2762,7 +2762,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOpenWorkflowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2974,7 +2974,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List tags for a given domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3068,7 +3068,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkflowTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3249,7 +3249,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PollForActivityTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3400,7 +3400,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PollForDecisionTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3620,7 +3620,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RecordActivityTaskHeartbeat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3758,7 +3758,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterActivityType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4071,7 +4071,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4265,7 +4265,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterWorkflowType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4621,7 +4621,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestCancelWorkflowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4752,7 +4752,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RespondActivityTaskCanceled<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4883,7 +4883,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RespondActivityTaskCompleted<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5009,7 +5009,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RespondActivityTaskFailed<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5132,7 +5132,7 @@ pub mod fluent_builders {
     /// see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the
     /// <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RespondDecisionTaskCompleted<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5286,7 +5286,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SignalWorkflowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5463,7 +5463,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartWorkflowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5840,7 +5840,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Amazon SWF supports a maximum of 50 tags per resource.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5972,7 +5972,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateWorkflowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6188,7 +6188,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UndeprecateActivityType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6299,7 +6299,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UndeprecateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6410,7 +6410,7 @@ pub mod fluent_builders {
     /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
     /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
     /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UndeprecateWorkflowType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6493,7 +6493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove a tag from a Amazon SWF domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -336,7 +336,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new cost anomaly detection monitor with the requested type and monitor
     /// specification. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAnomalyMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -411,7 +411,7 @@ pub mod fluent_builders {
     /// <p>Adds a subscription to a cost anomaly detection monitor. You can use each subscription to
     /// define subscribers with email or SNS notifications. Email subscribers can set a dollar
     /// threshold and a time frequency for receiving notifications. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAnomalySubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -487,7 +487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCostCategoryDefinition`.
     ///
     /// <p>Creates a new Cost Category with the requested name and rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCostCategoryDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -628,7 +628,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAnomalyMonitor`.
     ///
     /// <p>Deletes a cost anomaly monitor. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnomalyMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -698,7 +698,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAnomalySubscription`.
     ///
     /// <p>Deletes a cost anomaly subscription. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnomalySubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -771,7 +771,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCostCategoryDefinition`.
     ///
     /// <p>Deletes a Cost Category. Expenses from this month going forward will no longer be categorized with this Cost Category.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCostCategoryDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -849,7 +849,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's defined in the account.</p>
     /// <p>You have the option to use <code>EffectiveOn</code> to return a Cost Category that is active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see a Cost Category that is effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCostCategoryDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -941,7 +941,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves all of the cost anomalies detected on your account during the time period that's
     /// specified by the <code>DateInterval</code> object. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnomalies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1084,7 +1084,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the cost anomaly monitor definitions for your account. You can filter using a
     /// list of cost anomaly monitor Amazon Resource Names (ARNs). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnomalyMonitors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1187,7 +1187,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the cost anomaly subscription objects for your account. You can filter using a
     /// list of cost anomaly monitor Amazon Resource Names (ARNs). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnomalySubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1304,7 +1304,7 @@ pub mod fluent_builders {
     /// data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific
     /// time range. For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts.</p>
     /// <p>For information about filter limitations, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html">Quotas and restrictions</a> in the <i>Billing and Cost Management User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCostAndUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1508,7 +1508,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCostAndUsageWithResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1704,7 +1704,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>If some Cost Category names and values are not associated with any cost, they will not be returned by this API.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCostCategories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2047,7 +2047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCostForecast`.
     ///
     /// <p>Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period that you select, based on your past costs. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCostForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2445,7 +2445,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDimensionValues`.
     ///
     /// <p>Retrieves all available filter values for a specified filter over a period of time. You can search the dimension values for an arbitrary string. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDimensionValues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3075,7 +3075,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReservationCoverage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3526,7 +3526,7 @@ pub mod fluent_builders {
     /// in an instance family. This makes it easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number of normalized units
     /// so that you can purchase any instance size that you want. For this example, your RI recommendation would be for <code>c4.large</code>
     /// because that is the smallest size instance in the c4 instance family.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReservationPurchaseRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3822,7 +3822,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the reservation utilization for your account. Management account in an organization have access to member accounts.
     /// You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to determine the possible
     /// dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReservationUtilization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4250,7 +4250,7 @@ pub mod fluent_builders {
     /// Recommendations</a>
     /// in the <i>Billing and Cost Management User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRightsizingRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4510,7 +4510,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSavingsPlansCoverage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4809,7 +4809,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSavingsPlansPurchaseRecommendation`.
     ///
     /// <p>Retrieves your request parameters, Savings Plan Recommendations Summary and Details. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSavingsPlansPurchaseRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5000,7 +5000,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSavingsPlansUtilization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5247,7 +5247,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSavingsPlansUtilizationDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5524,7 +5524,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTags`.
     ///
     /// <p>Queries for available tag keys and tag values for a specified period. You can search the tag values for an arbitrary string. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5862,7 +5862,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUsageForecast`.
     ///
     /// <p>Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period that you select, based on your past usage. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUsageForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6240,7 +6240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCostCategoryDefinitions`.
     ///
     /// <p>Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a <code>MaxResults</code> range up to 100.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCostCategoryDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6338,7 +6338,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ProvideAnomalyFeedback`.
     ///
     /// <p>Modifies the feedback property of a given cost anomaly. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvideAnomalyFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6422,7 +6422,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an existing cost anomaly monitor. The changes made are applied going forward, and
     /// doesn'tt change anomalies detected in the past. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnomalyMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6502,7 +6502,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAnomalySubscription`.
     ///
     /// <p>Updates an existing cost anomaly monitor subscription. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnomalySubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6645,7 +6645,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCostCategoryDefinition`.
     ///
     /// <p>Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current month’s expenses and future expenses. This won’t change categorization for the previous months.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCostCategoryDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

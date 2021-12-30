@@ -217,7 +217,7 @@ pub mod fluent_builders {
     ///
     /// <p>To remove one or more tags, use the <a>RemoveTagsFromCertificate</a> action. To
     /// view all of the tags that have been applied to the certificate, use the <a>ListTagsForCertificate</a> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -328,7 +328,7 @@ pub mod fluent_builders {
     /// delete a certificate that is in use, the certificate association must first be
     /// removed.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -411,7 +411,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCertificate`.
     ///
     /// <p>Returns detailed metadata about the specified ACM certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -500,7 +500,7 @@ pub mod fluent_builders {
     /// <p>For information about exporting and formatting a certificate using the ACM console or
     /// CLI, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-export-private.html">Export a
     /// Private Certificate</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -603,7 +603,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the account
     /// configuration options associated with an Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -666,7 +666,7 @@ pub mod fluent_builders {
     /// the certificate of the issuing CA and the intermediate certificates of any other subordinate
     /// CAs. All of the certificates are base64 encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to decode
     /// the certificates and inspect individual fields.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -819,7 +819,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation returns the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
     /// Resource Name (ARN)</a> of the imported certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -957,7 +957,7 @@ pub mod fluent_builders {
     /// certificates that match a specific status be listed. You can also filter by specific
     /// attributes of the certificate. Default filtering returns only <code>RSA_2048</code>
     /// certificates. For more information, see <a>Filters</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1078,7 +1078,7 @@ pub mod fluent_builders {
     /// <p>Lists the tags that have been applied to the ACM certificate. Use the certificate's
     /// Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM certificate,
     /// use the <a>AddTagsToCertificate</a> action. To delete a tag, use the <a>RemoveTagsFromCertificate</a> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1169,7 +1169,7 @@ pub mod fluent_builders {
     /// <code>EventBridge</code> events. ACM sends one event per day per certificate until the
     /// certificate expires. By default, accounts receive events starting 45 days before certificate
     /// expiration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1273,7 +1273,7 @@ pub mod fluent_builders {
     ///
     /// <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To
     /// view all of the tags that have been applied to a specific ACM certificate, use the <a>ListTagsForCertificate</a> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1381,7 +1381,7 @@ pub mod fluent_builders {
     /// first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM
     /// service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a>
     /// in the ACM User Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RenewCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1478,7 +1478,7 @@ pub mod fluent_builders {
     /// certificate validation process. first checks for a subject alternative name, and, if it
     /// finds one, ignores the common name (CN)</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1769,7 +1769,7 @@ pub mod fluent_builders {
     /// ACM certificate. If more than 72 hours have elapsed since your original request or since
     /// your last attempt to resend validation mail, you must request a new certificate. For more
     /// information about setting up your contact email addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResendValidationEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1928,7 +1928,7 @@ pub mod fluent_builders {
     /// to or out of recording your certificate in a certificate transparency log. For more
     /// information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of
     /// Certificate Transparency Logging</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCertificateOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

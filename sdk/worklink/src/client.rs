@@ -356,7 +356,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateDomain`.
     ///
     /// <p>Specifies a domain to be associated to Amazon WorkLink.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -459,7 +459,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWebsiteAuthorizationProvider`.
     ///
     /// <p>Associates a website authorization provider with a specified fleet. This is used to authorize users against associated websites in the company network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWebsiteAuthorizationProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -560,7 +560,7 @@ pub mod fluent_builders {
     ///
     /// <p>Imports the root certificate of a certificate authority (CA) used to obtain TLS
     /// certificates used by associated websites within the company network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWebsiteCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -653,7 +653,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a fleet. A fleet consists of resources and the configuration that delivers
     /// associated websites to authorized users who download and set up the Amazon WorkLink app.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -771,7 +771,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFleet`.
     ///
     /// <p>Deletes a fleet. Prevents users from accessing previously associated websites. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -841,7 +841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAuditStreamConfiguration`.
     ///
     /// <p>Describes the configuration for delivering audit streams to the customer account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAuditStreamConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -912,7 +912,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the networking configuration to access the internal websites associated with
     /// the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCompanyNetworkConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -984,7 +984,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDevice`.
     ///
     /// <p>Provides information about a user's device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1064,7 +1064,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDevicePolicyConfiguration`.
     ///
     /// <p>Describes the device policy configuration for the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevicePolicyConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1134,7 +1134,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDomain`.
     ///
     /// <p>Provides information about the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1215,7 +1215,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides basic information for the specified fleet, excluding identity provider,
     /// networking, and device configuration details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1285,7 +1285,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIdentityProviderConfiguration`.
     ///
     /// <p>Describes the identity provider configuration of the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdentityProviderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1357,7 +1357,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWebsiteCertificateAuthority`.
     ///
     /// <p>Provides information about the certificate authority.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWebsiteCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1442,7 +1442,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateDomain`.
     ///
     /// <p>Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon WorkLink. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1524,7 +1524,7 @@ pub mod fluent_builders {
     /// <p>Disassociates a website authorization provider from a specified fleet. After the
     /// disassociation, users can't load any associated websites that require this authorization
     /// provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWebsiteAuthorizationProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1612,7 +1612,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWebsiteCertificateAuthority`.
     ///
     /// <p>Removes a certificate authority (CA).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWebsiteCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1697,7 +1697,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevices`.
     ///
     /// <p>Retrieves a list of devices registered with the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1789,7 +1789,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomains`.
     ///
     /// <p>Retrieves a list of domains associated to a specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1881,7 +1881,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFleets`.
     ///
     /// <p>Retrieves a list of fleets for the current account and Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1963,7 +1963,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves a list of tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2033,7 +2033,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWebsiteAuthorizationProviders`.
     ///
     /// <p>Retrieves a list of website authorization providers associated with a specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebsiteAuthorizationProviders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2124,7 +2124,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of certificate authorities added for the current account and
     /// Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebsiteCertificateAuthorities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2216,7 +2216,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RestoreDomainAccess`.
     ///
     /// <p>Moves a domain to ACTIVE status if it was in the INACTIVE status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreDomainAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2296,7 +2296,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeDomainAccess`.
     ///
     /// <p>Moves a domain to INACTIVE status if it was in the ACTIVE status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeDomainAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2377,7 +2377,7 @@ pub mod fluent_builders {
     ///
     /// <p>Signs the user out from all of their devices. The user can sign in again if they have
     /// valid credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SignOutUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2457,7 +2457,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites one or more tags for the specified resource, such as a fleet. Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2550,7 +2550,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2637,7 +2637,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAuditStreamConfiguration`.
     ///
     /// <p>Updates the audit stream configuration for the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAuditStreamConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2720,7 +2720,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCompanyNetworkConfiguration`.
     ///
     /// <p>Updates the company network configuration for the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCompanyNetworkConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2834,7 +2834,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDevicePolicyConfiguration`.
     ///
     /// <p>Updates the device policy configuration for the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevicePolicyConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2917,7 +2917,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomainMetadata`.
     ///
     /// <p>Updates domain metadata, such as DisplayName.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3007,7 +3007,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFleetMetadata`.
     ///
     /// <p>Updates fleet metadata, such as DisplayName.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFleetMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3102,7 +3102,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIdentityProviderConfiguration`.
     ///
     /// <p>Updates the identity provider configuration for the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIdentityProviderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

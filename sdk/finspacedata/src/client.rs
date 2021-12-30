@@ -195,7 +195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChangeset`.
     ///
     /// <p>Creates a new Changeset in a FinSpace Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChangeset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -442,7 +442,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
     /// <p>Creates a new FinSpace Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -620,7 +620,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataView`.
     ///
     /// <p>Creates a Dataview for a Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataView<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -770,7 +770,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
     /// <p>Deletes a FinSpace Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -850,7 +850,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChangeset`.
     ///
     /// <p>Get information about a Changeset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChangeset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -930,7 +930,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataset`.
     ///
     /// <p>Returns information about a Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1000,7 +1000,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataView`.
     ///
     /// <p>Gets information about a Dataview.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataView<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1080,7 +1080,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProgrammaticAccessCredentials`.
     ///
     /// <p>Request programmatic credentials to use with FinSpace SDK.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProgrammaticAccessCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1164,7 +1164,7 @@ pub mod fluent_builders {
     ///
     /// <p>A temporary Amazon S3 location, where you can copy your files from a source location to stage or use
     /// as a scratch space in FinSpace notebook.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkingLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1261,7 +1261,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChangesets`.
     ///
     /// <p>Lists the FinSpace Changesets for a Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChangesets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1351,7 +1351,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
     /// <p>Lists all of the active Datasets that a user has access to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1431,7 +1431,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataViews`.
     ///
     /// <p>Lists all available Dataviews for a Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataViews<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1521,7 +1521,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChangeset`.
     ///
     /// <p>Updates a FinSpace Changeset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChangeset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1657,7 +1657,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataset`.
     ///
     /// <p>Updates a FinSpace Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

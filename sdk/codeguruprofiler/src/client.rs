@@ -262,7 +262,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddNotificationChannels`.
     ///
     /// <p>Add up to 2 anomaly notifications channels for a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddNotificationChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -354,7 +354,7 @@ pub mod fluent_builders {
     /// <p>
     /// Returns the time series of values for a requested list
     /// of frame metrics from a time period.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetFrameMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -579,7 +579,7 @@ pub mod fluent_builders {
     /// configuration updates. For example, <code>ConfigureAgent</code> can be used
     /// to tell an agent whether to profile or not and for how long to return profiling data.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfigureAgent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -792,7 +792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProfilingGroup`.
     ///
     /// <p>Creates a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProfilingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -947,7 +947,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProfilingGroup`.
     ///
     /// <p>Deletes a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfilingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1025,7 +1025,7 @@ pub mod fluent_builders {
     /// </a>
     /// object that contains information about the requested profiling group.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProfilingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1108,7 +1108,7 @@ pub mod fluent_builders {
     /// </a>
     /// objects that contain analysis results for all profiling groups in your AWS account.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingsReportAccountSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1224,7 +1224,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNotificationConfiguration`.
     ///
     /// <p>Get the current configuration for anomaly notifications for a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNotificationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1299,7 +1299,7 @@ pub mod fluent_builders {
     /// <p>
     /// Returns the JSON-formatted resource-based policy on a profiling group.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1443,7 +1443,7 @@ pub mod fluent_builders {
     ///
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1681,7 +1681,7 @@ pub mod fluent_builders {
     /// objects that contains details about anomalies detected in the profiling group for the same time period is also
     /// returned.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1934,7 +1934,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindingsReports`.
     ///
     /// <p>List the available reports for a given profiling group and time range.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindingsReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2112,7 +2112,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the start times of the available aggregated profiles of a profiling group
     /// for an aggregation period within the specified time range.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfileTimes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2332,7 +2332,7 @@ pub mod fluent_builders {
     /// </a>
     /// objects.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfilingGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2464,7 +2464,7 @@ pub mod fluent_builders {
     /// <p>
     /// Returns a list of the tags that are assigned to a specified resource.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2544,7 +2544,7 @@ pub mod fluent_builders {
     /// <code>GetProfile</code>
     /// </a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PostAgentProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2728,7 +2728,7 @@ pub mod fluent_builders {
     /// <p>
     /// The response contains the profiling group's JSON-formatted resource policy.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2867,7 +2867,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveNotificationChannel`.
     ///
     /// <p>Remove one anomaly notifications channel for a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2958,7 +2958,7 @@ pub mod fluent_builders {
     /// </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html">
     /// <code>PostAgentProfile</code>
     /// </a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemovePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3069,7 +3069,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sends feedback to CodeGuru Profiler about whether the anomaly detected by the analysis is
     /// useful or not.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubmitFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3189,7 +3189,7 @@ pub mod fluent_builders {
     /// <p>
     /// Use to assign one or more tags to a resource.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3292,7 +3292,7 @@ pub mod fluent_builders {
     /// <p>
     /// Use to remove one or more tags from a resource.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3389,7 +3389,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProfilingGroup`.
     ///
     /// <p>Updates a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProfilingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

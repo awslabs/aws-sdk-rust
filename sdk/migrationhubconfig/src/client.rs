@@ -118,7 +118,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateHomeRegionControl`.
     ///
     /// <p>This API sets up the home region for the calling account only.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHomeRegionControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -213,7 +213,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code>
     /// fields.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHomeRegionControls<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -337,7 +337,7 @@ pub mod fluent_builders {
     /// Migration Hub. You must call <code>GetHomeRegion</code> at least once before you call any
     /// other AWS Application Discovery Service and AWS Migration Hub APIs, to obtain the account's
     /// Migration Hub home region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHomeRegion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

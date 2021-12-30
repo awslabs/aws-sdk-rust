@@ -1196,7 +1196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddRoleToDBCluster`.
     ///
     /// <p>Associates an Identity and Access Management (IAM) role with a DB cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddRoleToDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1297,7 +1297,7 @@ pub mod fluent_builders {
     /// <p>To add a role to a DB instance, the status of the DB instance must be <code>available</code>.</p>
     /// </note>
     /// <p>This command doesn't apply to RDS Custom.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddRoleToDBInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1396,7 +1396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddSourceIdentifierToSubscription`.
     ///
     /// <p>Adds a source identifier to an existing RDS event notification subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddSourceIdentifierToSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1526,7 +1526,7 @@ pub mod fluent_builders {
     /// <p>Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost allocation reporting to track cost associated with Amazon RDS resources, or used in a Condition statement in an IAM policy for Amazon RDS.</p>
     /// <p>For an overview on tagging Amazon RDS resources,
     /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS Resources</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1622,7 +1622,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ApplyPendingMaintenanceAction`.
     ///
     /// <p>Applies a pending maintenance action to a resource (for example, to a DB instance).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplyPendingMaintenanceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1776,7 +1776,7 @@ pub mod fluent_builders {
     /// <p>For an overview of CIDR ranges, go to the
     /// <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeDBSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1942,7 +1942,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora MySQL DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BacktrackDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2131,7 +2131,7 @@ pub mod fluent_builders {
     /// <p>Cancels an export task in progress that is exporting a snapshot to Amazon S3.
     /// Any data that has already been written to the S3 bucket isn't removed.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelExportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2204,7 +2204,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyDBClusterParameterGroup`.
     ///
     /// <p>Copies the specified DB cluster parameter group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyDBClusterParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2478,7 +2478,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyDBClusterSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2802,7 +2802,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyDBParameterGroup`.
     ///
     /// <p>Copies the specified DB parameter group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyDBParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3005,7 +3005,7 @@ pub mod fluent_builders {
     /// <p>For more information about copying snapshots, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyDBSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3450,7 +3450,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyOptionGroup`.
     ///
     /// <p>Copies the specified option group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyOptionGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3632,7 +3632,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
     /// RDS on VMware User Guide.</a>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomAvailabilityZone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3779,7 +3779,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create">
     /// Creating a CEV</a> in the <i>Amazon RDS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomDBEngineVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4049,7 +4049,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5525,7 +5525,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBClusterEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5721,7 +5721,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBClusterParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5984,7 +5984,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBClusterSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6134,7 +6134,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDBInstance`.
     ///
     /// <p>Creates a new DB instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8538,7 +8538,7 @@ pub mod fluent_builders {
     /// <p>Your source DB instance must have backup retention enabled.
     /// </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBInstanceReadReplica<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9628,7 +9628,7 @@ pub mod fluent_builders {
     /// <i>DescribeDBParameters</i> command to verify
     /// that your DB parameter group has been created or modified.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9941,7 +9941,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDBProxy`.
     ///
     /// <p>Creates a new DB proxy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBProxy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10159,7 +10159,7 @@ pub mod fluent_builders {
     /// You can use DB proxy endpoints to specify read/write or read-only access to the DB cluster. You can also use
     /// DB proxy endpoints to access a DB proxy through a different VPC than the proxy's default VPC.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBProxyEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10324,7 +10324,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>A DB security group controls access to EC2-Classic DB instances that are not in a VPC.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10465,7 +10465,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a snapshot of a DB instance. The source DB instance must be in the <code>available</code> or
     /// <code>storage-optimization</code> state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10618,7 +10618,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDBSubnetGroup`.
     ///
     /// <p>Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDBSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10769,7 +10769,7 @@ pub mod fluent_builders {
     /// <p>RDS event notification is only available for unencrypted SNS topics. If you specify an
     /// encrypted SNS topic, event notifications aren't sent for the topic.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11018,7 +11018,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGlobalCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11189,7 +11189,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new option group. You can create up to 20 option groups.</p>
     /// <p>This command doesn't apply to RDS Custom.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOptionGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11469,7 +11469,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
     /// RDS on VMware User Guide.</a>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomAvailabilityZone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11565,7 +11565,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">
     /// Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomDBEngineVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11665,7 +11665,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11831,7 +11831,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBClusterEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11918,7 +11918,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBClusterParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12033,7 +12033,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBClusterSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12136,7 +12136,7 @@ pub mod fluent_builders {
     /// it's no longer a read replica. After the promotion completes, then call the
     /// <code>DeleteDBInstance</code> API action to delete the final instance in the DB
     /// cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12325,7 +12325,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDBInstanceAutomatedBackup`.
     ///
     /// <p>Deletes automated backups using the <code>DbiResourceId</code> value of the source DB instance or the Amazon Resource Name (ARN) of the automated backups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBInstanceAutomatedBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12420,7 +12420,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDBParameterGroup`.
     ///
     /// <p>Deletes a specified DB parameter group. The DB parameter group to be deleted can't be associated with any DB instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12520,7 +12520,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDBProxy`.
     ///
     /// <p>Deletes an existing DB proxy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBProxy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12595,7 +12595,7 @@ pub mod fluent_builders {
     /// <p>Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the DB proxy using the
     /// endpoint that you defined. The endpoint that you delete might have provided capabilities such as read/write
     /// or read-only operations, or using a different VPC than the DB proxy's default VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBProxyEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12671,7 +12671,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The specified DB security group must not be associated with any DB instances.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12784,7 +12784,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The DB snapshot must be in the <code>available</code> state to be deleted.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12862,7 +12862,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The specified database subnet group must not be associated with any DB instances.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDBSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12949,7 +12949,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEventSubscription`.
     ///
     /// <p>Deletes an RDS event notification subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13028,7 +13028,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGlobalCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13109,7 +13109,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the installation medium for a DB engine that requires an on-premises customer provided license,
     /// such as Microsoft SQL Server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstallationMedia<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13182,7 +13182,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOptionGroup`.
     ///
     /// <p>Deletes an existing option group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOptionGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13261,7 +13261,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterDBProxyTargets`.
     ///
     /// <p>Remove the association between one or more <code>DBProxyTarget</code> data structures and a <code>DBProxyTargetGroup</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterDBProxyTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13382,7 +13382,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all of the attributes for a customer account. The attributes include Amazon RDS quotas for the account, such as the number of DB instances allowed. The description for a quota includes the quota name, current usage toward that quota, and the quota's maximum value.</p>
     /// <p>This command doesn't take any parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13442,7 +13442,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCertificates`.
     ///
     /// <p>Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13593,7 +13593,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
     /// RDS on VMware User Guide.</a>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomAvailabilityZones<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13729,7 +13729,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora MySQL DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBClusterBacktracks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14001,7 +14001,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBClusterEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14178,7 +14178,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBClusterParameterGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14338,7 +14338,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBClusterParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14517,7 +14517,7 @@ pub mod fluent_builders {
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>     
     /// <p>This operation can also return information for Amazon Neptune DB instances and Amazon DocumentDB instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14732,7 +14732,7 @@ pub mod fluent_builders {
     /// can be copied or restored by all Amazon Web Services accounts.</p>
     /// <p>To add or remove access for an Amazon Web Services account to copy or restore a manual DB cluster snapshot, or to make the
     /// manual DB cluster snapshot public or private, use the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBClusterSnapshotAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14821,7 +14821,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBClusterSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15152,7 +15152,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDBEngineVersions`.
     ///
     /// <p>Returns a list of the available DB engines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBEngineVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15543,7 +15543,7 @@ pub mod fluent_builders {
     /// <code>DescribeDBInstanceAutomatedBackups</code> and
     /// <code>DescribeDBInstances</code> operations.</p>
     /// <p>All parameters are optional.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBInstanceAutomatedBackups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15771,7 +15771,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation can also return information for Amazon Neptune DB instances and Amazon DocumentDB instances.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15980,7 +15980,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of DB log files for the DB instance.</p>
     /// <p>This command doesn't apply to RDS Custom.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBLogFiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16138,7 +16138,7 @@ pub mod fluent_builders {
     /// Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code> is specified,
     /// the list will contain only the description of the specified DB parameter group.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBParameterGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16289,7 +16289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDBParameters`.
     ///
     /// <p>Returns the detailed parameter list for a particular DB parameter group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16456,7 +16456,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDBProxies`.
     ///
     /// <p>Returns information about DB proxies.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBProxies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16586,7 +16586,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDBProxyEndpoints`.
     ///
     /// <p>Returns information about DB proxy endpoints.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBProxyEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16733,7 +16733,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDBProxyTargetGroups`.
     ///
     /// <p>Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBProxyTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16878,7 +16878,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDBProxyTargets`.
     ///
     /// <p>Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBProxyTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17026,7 +17026,7 @@ pub mod fluent_builders {
     /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code> is specified,
     /// the list will contain only the descriptions of the specified DB security group.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17169,7 +17169,7 @@ pub mod fluent_builders {
     /// can be copied or restored by all Amazon Web Services accounts.</p>
     /// <p>To add or remove access for an Amazon Web Services account to copy or restore a manual DB snapshot, or to make the
     /// manual DB snapshot public or private, use the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBSnapshotAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17242,7 +17242,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDBSnapshots`.
     ///
     /// <p>Returns information about DB snapshots. This API action supports pagination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17622,7 +17622,7 @@ pub mod fluent_builders {
     /// <p>For an overview of CIDR ranges, go to the
     /// <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDBSubnetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17760,7 +17760,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
     /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEngineDefaultClusterParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17899,7 +17899,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEngineDefaultParameters`.
     ///
     /// <p>Returns the default engine and system parameter information for the specified database engine.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEngineDefaultParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18040,7 +18040,7 @@ pub mod fluent_builders {
     /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
     /// Events</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventCategories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18136,7 +18136,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>By default, the past hour of events are returned.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18416,7 +18416,7 @@ pub mod fluent_builders {
     /// <p>Lists all the subscription descriptions for a customer account. The description for a subscription includes
     /// <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.</p>
     /// <p>If you specify a <code>SubscriptionName</code>, lists the description for that subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18553,7 +18553,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about a snapshot export to Amazon S3. This API operation supports
     /// pagination. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExportTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18808,7 +18808,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGlobalClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18958,7 +18958,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the available installation media for a DB engine that requires an
     /// on-premises customer provided license, such as Microsoft SQL Server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstallationMedia<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19108,7 +19108,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOptionGroupOptions`.
     ///
     /// <p>Describes all available options.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOptionGroupOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19366,7 +19366,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOptionGroups`.
     ///
     /// <p>Describes the available option groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOptionGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19641,7 +19641,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOrderableDBInstanceOptions`.
     ///
     /// <p>Returns a list of orderable DB instance options for the specified DB engine, DB engine version, and DB instance class.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrderableDBInstanceOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19999,7 +19999,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePendingMaintenanceActions`.
     ///
     /// <p>Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePendingMaintenanceActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20165,7 +20165,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservedDBInstances`.
     ///
     /// <p>Returns information about reserved DB instances for this account, or about a specified reserved DB instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedDBInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20401,7 +20401,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservedDBInstancesOfferings`.
     ///
     /// <p>Lists available reserved DB instance offerings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedDBInstancesOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20618,7 +20618,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of the source Amazon Web Services Regions where the current Amazon Web Services Region can create a read replica,
     /// copy a DB snapshot from, or replicate automated backups from. This API action supports pagination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSourceRegions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20752,7 +20752,7 @@ pub mod fluent_builders {
     /// your DB instance. You can use this information when you call <code>ModifyDBInstance</code>.
     /// </p>
     /// <p>This command doesn't apply to RDS Custom.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeValidDBInstanceModifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20830,7 +20830,7 @@ pub mod fluent_builders {
     ///
     /// <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
     /// <p>This command doesn't apply to RDS Custom.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DownloadDBLogFilePortion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21017,7 +21017,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FailoverDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21138,7 +21138,7 @@ pub mod fluent_builders {
     /// reconfigure your Aurora global database topology.
     /// </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FailoverGlobalCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21257,7 +21257,7 @@ pub mod fluent_builders {
     ///
     /// <p>Imports the installation media for a DB engine that requires an on-premises
     /// customer provided license, such as SQL Server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportInstallationMedia<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21483,7 +21483,7 @@ pub mod fluent_builders {
     /// <p>For an overview on tagging an Amazon RDS resource,
     /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS Resources</a>
     /// in the <i>Amazon RDS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21603,7 +21603,7 @@ pub mod fluent_builders {
     /// <p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
     /// Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21711,7 +21711,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora Serverless DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCurrentDBClusterCapacity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21873,7 +21873,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.modify">Modifying CEV status</a>
     /// in the <i>Amazon RDS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCustomDBEngineVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22030,7 +22030,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22963,7 +22963,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBClusterEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23121,7 +23121,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBClusterParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23252,7 +23252,7 @@ pub mod fluent_builders {
     /// <p>To view which Amazon Web Services accounts have access to copy or restore a manual DB cluster
     /// snapshot, or whether a manual DB cluster snapshot is public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action. The accounts are
     /// returned as values for the <code>restore</code> attribute.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBClusterSnapshotAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23414,7 +23414,7 @@ pub mod fluent_builders {
     /// call <code>DescribeValidDBInstanceModifications</code>
     /// before you call <code>ModifyDBInstance</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25095,7 +25095,7 @@ pub mod fluent_builders {
     /// <i>DescribeDBParameters</i> command to verify
     /// that your DB parameter group has been created or modified.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25222,7 +25222,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyDBProxy`.
     ///
     /// <p>Changes the settings for an existing DB proxy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBProxy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25398,7 +25398,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyDBProxyEndpoint`.
     ///
     /// <p>Changes the settings for an existing DB proxy endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBProxyEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25512,7 +25512,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyDBProxyTargetGroup`.
     ///
     /// <p>Modifies the properties of a <code>DBProxyTargetGroup</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBProxyTargetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25631,7 +25631,7 @@ pub mod fluent_builders {
     /// <p>Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This command
     /// doesn't apply to RDS Custom.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25846,7 +25846,7 @@ pub mod fluent_builders {
     /// <p>To view which Amazon Web Services accounts have access to copy or restore a manual DB snapshot, or
     /// whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a> API action. The accounts are returned as
     /// values for the <code>restore</code> attribute.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBSnapshotAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26000,7 +26000,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyDBSubnetGroup`.
     ///
     /// <p>Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDBSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26120,7 +26120,7 @@ pub mod fluent_builders {
     /// <p>You can see a list of the event categories for a given source type (<code>SourceType</code>)
     /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> in the <i>Amazon RDS User Guide</i>
     /// or by using the <code>DescribeEventCategories</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26269,7 +26269,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyGlobalCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26490,7 +26490,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyOptionGroup`.
     ///
     /// <p>Modifies an existing option group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyOptionGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26627,7 +26627,7 @@ pub mod fluent_builders {
     /// </ul>
     ///
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PromoteReadReplica<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26814,7 +26814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PromoteReadReplicaDBCluster`.
     ///
     /// <p>Promotes a read replica DB cluster to a standalone DB cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PromoteReadReplicaDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26905,7 +26905,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PurchaseReservedDBInstancesOffering`.
     ///
     /// <p>Purchases a reserved DB instance offering.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseReservedDBInstancesOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27057,7 +27057,7 @@ pub mod fluent_builders {
     /// Multi-AZ deployments with two readable standby DB instances</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27155,7 +27155,7 @@ pub mod fluent_builders {
     /// </p>
     ///
     /// <p>This command doesn't apply to RDS Custom.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootDBInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27256,7 +27256,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterDBProxyTargets`.
     ///
     /// <p>Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterDBProxyTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27383,7 +27383,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveFromGlobalCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27492,7 +27492,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveRoleFromDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27589,7 +27589,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveRoleFromDBInstance`.
     ///
     /// <p>Disassociates an Amazon Web Services Identity and Access Management (IAM) role from a DB instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveRoleFromDBInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27688,7 +27688,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveSourceIdentifierFromSubscription`.
     ///
     /// <p>Removes a source identifier from an existing RDS event notification subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveSourceIdentifierFromSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27786,7 +27786,7 @@ pub mod fluent_builders {
     /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging Amazon RDS Resources</a>
     /// in the <i>Amazon RDS User Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27906,7 +27906,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetDBClusterParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28022,7 +28022,7 @@ pub mod fluent_builders {
     /// parameters are updated immediately and static parameters are set to
     /// <code>pending-reboot</code> to take effect on the next DB instance restart or
     /// <code>RebootDBInstance</code> request. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetDBParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28212,7 +28212,7 @@ pub mod fluent_builders {
     /// <p>This action only applies to Aurora DB clusters. The source DB engine must be
     /// MySQL.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreDBClusterFromS3<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29013,7 +29013,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreDBClusterFromSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29847,7 +29847,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreDBClusterToPointInTime<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30624,7 +30624,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use <code>RestoreDBClusterFromSnapshot</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreDBInstanceFromDBSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31537,7 +31537,7 @@ pub mod fluent_builders {
     /// in the <i>Amazon RDS User Guide.</i>            
     /// </p>
     /// <p>This command doesn't apply to RDS Custom.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreDBInstanceFromS3<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32621,7 +32621,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use <code>RestoreDBClusterToPointInTime</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreDBInstanceToPointInTime<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33630,7 +33630,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeDBSecurityGroupIngress`.
     ///
     /// <p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC security groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeDBSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33798,7 +33798,7 @@ pub mod fluent_builders {
     /// <p>Starts a database activity stream to monitor activity on the database.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity Streams</a>
     /// in the <i>Amazon Aurora User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartActivityStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33937,7 +33937,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34027,7 +34027,7 @@ pub mod fluent_builders {
     /// For Aurora DB clusters, use <code>StartDBCluster</code> instead.
     /// </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDBInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34108,7 +34108,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
     /// Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDBInstanceAutomatedBackupsReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34231,7 +34231,7 @@ pub mod fluent_builders {
     /// The provided IAM role must have access to the S3 bucket.
     /// </p>
     /// <p>This command doesn't apply to RDS Custom.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34498,7 +34498,7 @@ pub mod fluent_builders {
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity Streams</a>
     /// in the <i>Amazon Aurora User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopActivityStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34596,7 +34596,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action only applies to Aurora DB clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDBCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34688,7 +34688,7 @@ pub mod fluent_builders {
     /// For Aurora clusters, use <code>StopDBCluster</code> instead.
     /// </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDBInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34786,7 +34786,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
     /// Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDBInstanceAutomatedBackupsReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

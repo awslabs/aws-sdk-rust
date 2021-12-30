@@ -222,7 +222,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ConfigureLogs`.
     ///
     /// Changes the packaging group's properities to configure log subscription
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfigureLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -305,7 +305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAsset`.
     ///
     /// Creates a new MediaPackage VOD Asset resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -444,7 +444,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePackagingConfiguration`.
     ///
     /// Creates a new MediaPackage VOD PackagingConfiguration resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePackagingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -602,7 +602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePackagingGroup`.
     ///
     /// Creates a new MediaPackage VOD PackagingGroup resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePackagingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -721,7 +721,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAsset`.
     ///
     /// Deletes an existing MediaPackage VOD Asset resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -791,7 +791,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePackagingConfiguration`.
     ///
     /// Deletes a MediaPackage VOD PackagingConfiguration resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackagingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -861,7 +861,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePackagingGroup`.
     ///
     /// Deletes a MediaPackage VOD PackagingGroup resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackagingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -931,7 +931,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAsset`.
     ///
     /// Returns a description of a MediaPackage VOD Asset resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1001,7 +1001,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePackagingConfiguration`.
     ///
     /// Returns a description of a MediaPackage VOD PackagingConfiguration resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackagingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1071,7 +1071,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePackagingGroup`.
     ///
     /// Returns a description of a MediaPackage VOD PackagingGroup resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackagingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1141,7 +1141,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssets`.
     ///
     /// Returns a collection of MediaPackage VOD Asset resources.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1234,7 +1234,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPackagingConfigurations`.
     ///
     /// Returns a collection of MediaPackage VOD PackagingConfiguration resources.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackagingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1327,7 +1327,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPackagingGroups`.
     ///
     /// Returns a collection of MediaPackage VOD PackagingGroup resources.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackagingGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1407,7 +1407,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// Returns a list of the tags assigned to the specified resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1477,7 +1477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// Adds tags to the specified resource. You can specify one or more tags to add.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1570,7 +1570,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// Removes tags from the specified resource. You can specify one or more tags to remove.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1657,7 +1657,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePackagingGroup`.
     ///
     /// Updates a specific packaging group. You can't change the id attribute or any other system-generated attributes.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePackagingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -335,7 +335,7 @@ pub mod fluent_builders {
     /// depends on the percentage of users that are allocated to that experiment. If the user is enrolled in the experiment,
     /// the variation they are served depends on the allocation of the various feature variations used for the experiment. </p>
     /// <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchEvaluateFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -429,7 +429,7 @@ pub mod fluent_builders {
     /// clear recommendations about which variations perform better.</p>
     /// <p>Don't use this operation to update an existing experiment. Instead, use
     /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -648,7 +648,7 @@ pub mod fluent_builders {
     /// a project. For information about creating a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p>
     /// <p>Don't use this operation to update an existing feature. Instead, use
     /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html">UpdateFeature</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -871,7 +871,7 @@ pub mod fluent_builders {
     /// reduce risk and identify unintended consequences before you fully launch the feature.</p>
     /// <p>Don't use this operation to update an existing launch. Instead, use
     /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html">UpdateLaunch</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1073,7 +1073,7 @@ pub mod fluent_builders {
     /// <p>Creates a project, which is the logical object in Evidently that can contain features, launches, and
     /// experiments. Use projects to group similar features together.</p>
     /// <p>To update an existing project, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProject.html">UpdateProject</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1210,7 +1210,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an Evidently experiment. The feature used for the experiment is not deleted.</p>
     /// <p>To stop an experiment without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html">StopExperiment</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1290,7 +1290,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFeature`.
     ///
     /// <p>Deletes an Evidently feature.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1371,7 +1371,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an Evidently launch. The feature used for the launch is not deleted.</p>
     /// <p>To stop a launch without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopLaunch.html">StopLaunch</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1452,7 +1452,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an Evidently project. Before you can delete a project, you must delete all the
     /// features that the project contains. To delete a feature, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteFeature.html">DeleteFeature</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1536,7 +1536,7 @@ pub mod fluent_builders {
     /// depends on the percentage of users that are allocated to that experiment. If the user is enrolled in the experiment,
     /// the variation they are served depends on the allocation of the various feature variations used for the experiment. </p>
     /// <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EvaluateFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1646,7 +1646,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the details about one experiment. You must already know the
     /// experiment name. To retrieve a list of experiments in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListExperiments.html">ListExperiments</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1726,7 +1726,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetExperimentResults`.
     ///
     /// <p>Retrieves the results of a running or completed experiment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExperimentResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1984,7 +1984,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the details about one feature. You must already know the feature name. To
     /// retrieve a list of features in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListFeatures.html">ListFeatures</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2065,7 +2065,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the details about one launch. You must already know the
     /// launch name. To retrieve a list of launches in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListLaunches.html">ListLaunches</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2146,7 +2146,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the details about one launch. You must already know the
     /// project name. To retrieve a list of projects in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListProjects.html">ListProjects</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2216,7 +2216,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListExperiments`.
     ///
     /// <p>Returns configuration details about all the experiments in the specified project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExperiments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2308,7 +2308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFeatures`.
     ///
     /// <p>Returns configuration details about all the features in the specified project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFeatures<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2400,7 +2400,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLaunches`.
     ///
     /// <p>Returns configuration details about all the launches in the specified project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLaunches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2493,7 +2493,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns configuration details about all the projects in the current Region in your
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2575,7 +2575,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Displays the tags associated with an Evidently resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2646,7 +2646,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sends performance events to Evidently. These events can be used to evaluate a launch or
     /// an experiment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProjectEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2736,7 +2736,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts an existing experiment. To create an experiment,
     /// use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateExperiment.html">CreateExperiment</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2830,7 +2830,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts an existing launch. To create a launch,
     /// use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html">CreateLaunch</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2911,7 +2911,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops an experiment that is currently running. If you stop an experiment, you can't
     /// resume it or restart it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3023,7 +3023,7 @@ pub mod fluent_builders {
     /// will not be evaluated as a rule for traffic allocation, and the traffic that was allocated to the launch
     /// will instead be available to the feature's experiment, if there is one. Otherwise, all traffic
     /// will be served the default variation after the launch is stopped.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3140,7 +3140,7 @@ pub mod fluent_builders {
     /// the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3233,7 +3233,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3322,7 +3322,7 @@ pub mod fluent_builders {
     /// <p>Updates an Evidently experiment. </p>
     /// <p>Don't use this operation to update an experiment's tag. Instead, use
     /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3502,7 +3502,7 @@ pub mod fluent_builders {
     /// <p>Updates an existing feature.</p>
     /// <p>You can't use this operation to update the tags of an existing feature. Instead, use
     /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3706,7 +3706,7 @@ pub mod fluent_builders {
     /// <p>Updates a launch of a given feature. </p>
     /// <p>Don't use this operation to update the tags of an existing launch. Instead, use
     /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3876,7 +3876,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProjectDataDelivery.html">UpdateProjectDataDelivery</a>. </p>
     /// <p>Don't use this operation to update the tags of a project. Instead, use
     /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3960,7 +3960,7 @@ pub mod fluent_builders {
     /// Evidently deletes them after using them to produce metrics and other experiment results that
     /// you can view.</p>
     /// <p>You can't specify both <code>cloudWatchLogs</code> and <code>s3Destination</code> in the same operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProjectDataDelivery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

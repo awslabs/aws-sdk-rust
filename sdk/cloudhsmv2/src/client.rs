@@ -200,7 +200,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyBackupToRegion`.
     ///
     /// <p>Copy an AWS CloudHSM cluster backup to a different region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyBackupToRegion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -300,7 +300,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCluster`.
     ///
     /// <p>Creates a new AWS CloudHSM cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -458,7 +458,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new hardware security module (HSM) in the specified AWS CloudHSM
     /// cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHsm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -559,7 +559,7 @@ pub mod fluent_builders {
     /// <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days
     /// after the DeleteBackup request is made. For more information on restoring a backup, see
     /// <a>RestoreBackup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -630,7 +630,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster, you must
     /// delete all HSMs in the cluster. To see if the cluster contains any HSMs, use <a>DescribeClusters</a>. To delete an HSM, use <a>DeleteHsm</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -704,7 +704,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified HSM. To specify an HSM, you can use its identifier (ID), the IP
     /// address of the HSM's elastic network interface (ENI), or the ID of the HSM's ENI. You need to
     /// specify only one of these values. To find these values, use <a>DescribeClusters</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHsm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -815,7 +815,7 @@ pub mod fluent_builders {
     /// <code>NextToken</code> value. Use this value in a subsequent <code>DescribeBackups</code>
     /// request to get more backups. When you receive a response with no <code>NextToken</code> (or an
     /// empty or null value), that means there are no more backups to get.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBackups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -963,7 +963,7 @@ pub mod fluent_builders {
     /// a <code>NextToken</code> value. Use this value in a subsequent <code>DescribeClusters</code>
     /// request to get more clusters. When you receive a response with no <code>NextToken</code> (or
     /// an empty or null value), that means there are no more clusters to get.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1085,7 +1085,7 @@ pub mod fluent_builders {
     /// issuing certificate authority (CA) and the CA's root certificate. Before you can claim a
     /// cluster, you must sign the cluster's certificate signing request (CSR) with your issuing CA.
     /// To get the cluster's CSR, use <a>DescribeClusters</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitializeCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1190,7 +1190,7 @@ pub mod fluent_builders {
     /// <code>NextToken</code> value. Use this value in a subsequent <code>ListTags</code> request to
     /// get more tags. When you receive a response with no <code>NextToken</code> (or an empty or null
     /// value), that means there are no more tags to get.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1286,7 +1286,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyBackupAttributes`.
     ///
     /// <p>Modifies attributes for AWS CloudHSM backup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyBackupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1368,7 +1368,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyCluster`.
     ///
     /// <p>Modifies AWS CloudHSM cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1458,7 +1458,7 @@ pub mod fluent_builders {
     /// <p>Restores a specified AWS CloudHSM backup that is in the
     /// <code>PENDING_DELETION</code> state. For mor information on deleting a backup, see
     /// <a>DeleteBackup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1528,7 +1528,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites one or more tags for the specified AWS CloudHSM cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1617,7 +1617,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tag or tags from the specified AWS CloudHSM cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

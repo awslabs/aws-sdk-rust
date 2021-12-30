@@ -378,7 +378,7 @@ pub mod fluent_builders {
     /// and consistent. This applies to other unexpected failures that interrupt a task execution. In
     /// all of these cases, DataSync successfully complete the transfer when you start the next
     /// task execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelTaskExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -465,7 +465,7 @@ pub mod fluent_builders {
     /// <p>Agents are automatically updated by Amazon Web Services on a regular basis, using a mechanism that
     /// ensures minimal interruption to your tasks.</p>
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAgent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -664,7 +664,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLocationEfs`.
     ///
     /// <p>Creates an endpoint for an Amazon EFS file system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationEfs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -841,7 +841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLocationFsxWindows`.
     ///
     /// <p>Creates an endpoint for an Amazon FSx for Windows File Server file system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationFsxWindows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1006,7 +1006,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLocationHdfs`.
     ///
     /// <p>Creates an endpoint for a Hadoop Distributed File System (HDFS). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationHdfs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1309,7 +1309,7 @@ pub mod fluent_builders {
     ///
     /// <p>Defines a file system on a Network File System (NFS) server that can be read from or
     /// written to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationNfs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1490,7 +1490,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an endpoint for a self-managed object storage bucket. For more information
     /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationObjectStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1699,7 +1699,7 @@ pub mod fluent_builders {
     /// more information, see
     /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create an Amazon S3 location</a>
     /// in the <i>DataSync User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationS3<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1868,7 +1868,7 @@ pub mod fluent_builders {
     ///
     /// <p>Defines a file system on a Server Message Block (SMB) server that can be read from or
     /// written to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationSmb<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2102,7 +2102,7 @@ pub mod fluent_builders {
     /// see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer pricing</a>.
     /// </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2326,7 +2326,7 @@ pub mod fluent_builders {
     /// of the agent in your request. The operation disassociates the agent from your Amazon Web Services account.
     /// However, it doesn't delete the agent virtual machine (VM) from your on-premises
     /// environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAgent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2398,7 +2398,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLocation`.
     ///
     /// <p>Deletes the configuration of a location used by DataSync. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2468,7 +2468,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTask`.
     ///
     /// <p>Deletes a task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2540,7 +2540,7 @@ pub mod fluent_builders {
     /// <p>Returns metadata such as the name, the network interfaces, and the status (that is,
     /// whether the agent is running or not) for an agent. To specify which agent to describe, use the
     /// Amazon Resource Name (ARN) of the agent in your request. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAgent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2610,7 +2610,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLocationEfs`.
     ///
     /// <p>Returns metadata, such as the path information about an Amazon EFS location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationEfs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2681,7 +2681,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns metadata, such as the path information about an Amazon FSx for Windows File Server
     /// location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationFsxWindows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2754,7 +2754,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns metadata, such as the authentication information about the Hadoop Distributed File
     /// System (HDFS) location. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationHdfs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2824,7 +2824,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLocationNfs`.
     ///
     /// <p>Returns metadata, such as the path information, about an NFS location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationNfs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2895,7 +2895,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns metadata about a self-managed object storage server location. For more information
     /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationObjectStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2965,7 +2965,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLocationS3`.
     ///
     /// <p>Returns metadata, such as bucket name, about an Amazon S3 bucket location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationS3<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3035,7 +3035,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLocationSmb`.
     ///
     /// <p>Returns metadata, such as the path and user information about an SMB location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationSmb<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3105,7 +3105,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTask`.
     ///
     /// <p>Returns metadata about a task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3175,7 +3175,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTaskExecution`.
     ///
     /// <p>Returns detailed metadata about a task that is being executed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTaskExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3255,7 +3255,7 @@ pub mod fluent_builders {
     /// <p>If you have more agents than are returned in a response (that is, the response returns
     /// only a truncated list of your agents), the response contains a marker that you can specify in
     /// your next request to fetch the next page of agents.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAgents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3340,7 +3340,7 @@ pub mod fluent_builders {
     /// <p>If you have more locations than are returned in a response (that is, the response
     /// returns only a truncated list of your agents), the response contains a token that you can
     /// specify in your next request to fetch the next page of locations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLocations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3443,7 +3443,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns all the tags associated with a specified resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3535,7 +3535,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTaskExecutions`.
     ///
     /// <p>Returns a list of executed tasks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTaskExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3627,7 +3627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTasks`.
     ///
     /// <p>Returns a list of all the tasks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3740,7 +3740,7 @@ pub mod fluent_builders {
     ///
     /// <p>For detailed information, see the Task Execution section in the Components and
     /// Terminology topic in the <i>DataSync User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTaskExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3891,7 +3891,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies a key-value pair to an Amazon Web Services resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3978,7 +3978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from an Amazon Web Services resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4065,7 +4065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAgent`.
     ///
     /// <p>Updates the name of an agent.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAgent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4146,7 +4146,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates some parameters of a previously created location for a Hadoop Distributed File
     /// System cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLocationHdfs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4394,7 +4394,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates some of the parameters of a previously created location for Network File System (NFS) access.
     /// For information about creating an NFS location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating a location for NFS</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLocationNfs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4542,7 +4542,7 @@ pub mod fluent_builders {
     /// <p>Updates some of the parameters of a previously created location for self-managed object
     /// storage server access. For information about creating a self-managed object storage location,
     /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLocationObjectStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4709,7 +4709,7 @@ pub mod fluent_builders {
     /// <p>Updates some of the parameters of a previously created location for Server Message Block
     /// (SMB) file system access. For information about creating an SMB location, see
     /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating a location for SMB</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLocationSmb<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4905,7 +4905,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTask`.
     ///
     /// <p>Updates the metadata associated with a task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5105,7 +5105,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
     /// </code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTaskExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

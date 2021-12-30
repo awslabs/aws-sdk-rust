@@ -282,7 +282,7 @@ pub mod fluent_builders {
     /// a member of the organization in Organizations whose resources you want to protect.
     /// Firewall Manager sets the permissions that allow the account to administer your Firewall Manager policies.</p>
     /// <p>The account that you associate with Firewall Manager is called the Firewall Manager administrator account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -361,7 +361,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppsList`.
     ///
     /// <p>Permanently deletes an Firewall Manager applications list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -434,7 +434,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an Firewall Manager association with the IAM role and the Amazon Simple
     /// Notification Service (SNS) topic that is used to record Firewall Manager SNS logs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -494,7 +494,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePolicy`.
     ///
     /// <p>Permanently deletes an Firewall Manager policy. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -634,7 +634,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProtocolsList`.
     ///
     /// <p>Permanently deletes an Firewall Manager protocols list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProtocolsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -708,7 +708,7 @@ pub mod fluent_builders {
     /// <p>Disassociates the account that has been set as the Firewall Manager administrator
     /// account. To set a different account as the administrator account, you must submit an
     /// <code>AssociateAdminAccount</code> request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -769,7 +769,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the Organizations account that is associated with Firewall Manager
     /// as the Firewall Manager administrator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -829,7 +829,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppsList`.
     ///
     /// <p>Returns information about the specified Firewall Manager applications list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -932,7 +932,7 @@ pub mod fluent_builders {
     /// if a DNS Firewall rule group is missing from the rule group associations for the VPC. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceDetail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1019,7 +1019,7 @@ pub mod fluent_builders {
     /// <p>Information
     /// about the Amazon Simple Notification Service (SNS) topic that is used to
     /// record Firewall Manager SNS logs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1079,7 +1079,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPolicy`.
     ///
     /// <p>Returns information about the specified Firewall Manager policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1150,7 +1150,7 @@ pub mod fluent_builders {
     ///
     /// <p>If you created a Shield Advanced policy, returns policy-level attack summary information
     /// in the event of a potential DDoS attack. Other policy types are currently unsupported.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProtectionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1299,7 +1299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProtocolsList`.
     ///
     /// <p>Returns information about the specified Firewall Manager protocols list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProtocolsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1379,7 +1379,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetViolationDetails`.
     ///
     /// <p>Retrieves violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetViolationDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1499,7 +1499,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppsLists`.
     ///
     /// <p>Returns an array of <code>AppsListDataSummary</code> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppsLists<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1601,7 +1601,7 @@ pub mod fluent_builders {
     /// <p>Returns an array of <code>PolicyComplianceStatus</code> objects. Use
     /// <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected
     /// by the specified policy. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComplianceStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1714,7 +1714,7 @@ pub mod fluent_builders {
     /// administrator's Amazon Web Services organization.</p>
     /// <p>The <code>ListMemberAccounts</code> must be submitted by the account that is set as the
     /// Firewall Manager administrator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMemberAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1810,7 +1810,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPolicies`.
     ///
     /// <p>Returns an array of <code>PolicySummary</code> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1908,7 +1908,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProtocolsLists`.
     ///
     /// <p>Returns an array of <code>ProtocolsListDataSummary</code> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProtocolsLists<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2008,7 +2008,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves the list of tags for the specified Amazon Web Services resource.   </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2078,7 +2078,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAppsList`.
     ///
     /// <p>Creates an Firewall Manager applications list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAppsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2172,7 +2172,7 @@ pub mod fluent_builders {
     /// <p>To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager
     /// role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see
     /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required permissions for API actions</a> in the <i>Firewall Manager Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2294,7 +2294,7 @@ pub mod fluent_builders {
     /// <p>You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more
     /// information about subscribing to Shield Advanced, see
     /// <a href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2381,7 +2381,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutProtocolsList`.
     ///
     /// <p>Creates an Firewall Manager protocols list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProtocolsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2471,7 +2471,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to an Amazon Web Services resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2558,7 +2558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from an Amazon Web Services resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

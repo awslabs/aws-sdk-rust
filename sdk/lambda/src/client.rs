@@ -546,7 +546,7 @@ pub mod fluent_builders {
     /// or all Amazon Web Services accounts.  </p>
     /// <p>To revoke permission, call <a>RemoveLayerVersionPermission</a> with the statement ID that you
     /// specified when you added it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddLayerVersionPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -701,7 +701,7 @@ pub mod fluent_builders {
     ///
     /// <p>This action adds a statement to a resource-based permissions policy for the function. For more information
     /// about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda Function Policies</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -917,7 +917,7 @@ pub mod fluent_builders {
     /// <p>You can also map an alias to split invocation requests between two versions. Use the
     /// <code>RoutingConfig</code> parameter to specify a second version and the percentage of invocation requests that
     /// it receives.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1081,7 +1081,7 @@ pub mod fluent_builders {
     /// <p>Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code signing configuration</a> defines a list of
     /// allowed signing profiles and defines the code-signing validation policy (action to be taken if deployment
     /// validation checks fail). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCodeSigningConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1283,7 +1283,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventSourceMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1797,7 +1797,7 @@ pub mod fluent_builders {
     /// <p>To invoke your function directly, use <a>Invoke</a>. To invoke your function in response to events
     /// in other Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a
     /// function trigger in the other service. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Functions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2198,7 +2198,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAlias`.
     ///
     /// <p>Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2320,7 +2320,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the code signing configuration. You can delete the code signing configuration only if no function is
     /// using it. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCodeSigningConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2399,7 +2399,7 @@ pub mod fluent_builders {
     /// mapping</a>. You can get the identifier of a mapping from the output of <a>ListEventSourceMappings</a>.</p>
     /// <p>When you delete an event source mapping, it enters a <code>Deleting</code> state and might not be completely
     /// deleted for several seconds.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventSourceMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2474,7 +2474,7 @@ pub mod fluent_builders {
     /// <p>To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
     /// For Amazon Web Services services and resources that invoke your function directly, delete the trigger in the service where you
     /// originally configured it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2595,7 +2595,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFunctionCodeSigningConfig`.
     ///
     /// <p>Removes the code signing configuration from the function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFunctionCodeSigningConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2706,7 +2706,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFunctionConcurrency`.
     ///
     /// <p>Removes a concurrent execution limit from a function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFunctionConcurrency<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2818,7 +2818,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the configuration for asynchronous invocation for a function, version, or alias.</p>
     /// <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFunctionEventInvokeConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2941,7 +2941,7 @@ pub mod fluent_builders {
     /// <p>Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
     /// layer</a>. Deleted versions can no longer be viewed or added to functions. To avoid
     /// breaking functions, a copy of the version remains in Lambda until no functions refer to it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLayerVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3021,7 +3021,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProvisionedConcurrencyConfig`.
     ///
     /// <p>Deletes the provisioned concurrency configuration for a function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProvisionedConcurrencyConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3144,7 +3144,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAccountSettings`.
     ///
     /// <p>Retrieves details about your account's <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3204,7 +3204,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAlias`.
     ///
     /// <p>Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3325,7 +3325,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCodeSigningConfig`.
     ///
     /// <p>Returns information about the specified code signing configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCodeSigningConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3402,7 +3402,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns details about an event source mapping. You can get the identifier of a mapping from the output of
     /// <a>ListEventSourceMappings</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventSourceMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3474,7 +3474,7 @@ pub mod fluent_builders {
     /// <p>Returns information about the function or function version, with a link to download the deployment package
     /// that's valid for 10 minutes. If you specify a function version, only details that are specific to that version are
     /// returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3595,7 +3595,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFunctionCodeSigningConfig`.
     ///
     /// <p>Returns the code signing configuration for the specified function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunctionCodeSigningConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3707,7 +3707,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns details about the reserved concurrency configuration for a function. To set a concurrency limit for a
     /// function, use <a>PutFunctionConcurrency</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunctionConcurrency<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3820,7 +3820,7 @@ pub mod fluent_builders {
     /// <p>Returns the version-specific settings of a Lambda function or version. The output includes only options that
     /// can vary between versions of a function. To modify these settings, use <a>UpdateFunctionConfiguration</a>.</p>
     /// <p>To get all of a function's details, including function-level settings, use <a>GetFunction</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunctionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3942,7 +3942,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the configuration for asynchronous invocation for a function, version, or alias.</p>
     /// <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunctionEventInvokeConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4065,7 +4065,7 @@ pub mod fluent_builders {
     /// <p>Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
     /// layer</a>, with a link to download the layer archive
     /// that's valid for 10 minutes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLayerVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4147,7 +4147,7 @@ pub mod fluent_builders {
     /// <p>Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
     /// layer</a>, with a link to download the layer archive
     /// that's valid for 10 minutes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLayerVersionByArn<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4218,7 +4218,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the permission policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
     /// layer</a>. For more information, see <a>AddLayerVersionPermission</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLayerVersionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4298,7 +4298,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPolicy`.
     ///
     /// <p>Returns the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based IAM policy</a> for a function, version, or alias.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4419,7 +4419,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProvisionedConcurrencyConfig`.
     ///
     /// <p>Retrieves the provisioned concurrency configuration for a function's alias or version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProvisionedConcurrencyConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4566,7 +4566,7 @@ pub mod fluent_builders {
     /// connections with timeout or keep-alive settings.</p>
     ///
     /// <p>This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Invoke<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4905,7 +4905,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
     /// for a Lambda function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5051,7 +5051,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
     /// signing configurations</a>. A request returns up to 10,000 configurations per
     /// call. You can use the <code>MaxItems</code> parameter to return fewer configurations per call. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCodeSigningConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5132,7 +5132,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event source mappings for a
     /// single event source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventSourceMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5323,7 +5323,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of configurations for asynchronous invocation for a function.</p>
     /// <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctionEventInvokeConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5462,7 +5462,7 @@ pub mod fluent_builders {
     /// To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason, LastUpdateStatusReasonCode)
     /// for a function or version, use <a>GetFunction</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5575,7 +5575,7 @@ pub mod fluent_builders {
     ///
     /// <p>List the functions that use the specified code signing configuration. You can use this method prior to deleting a
     /// code signing configuration, to verify that no functions are using it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctionsByCodeSigningConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5676,7 +5676,7 @@ pub mod fluent_builders {
     /// identifier</a> to list only layers that indicate that they're compatible with that
     /// runtime. Specify a compatible architecture to include only layers that are compatible with
     /// that  <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLayers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5787,7 +5787,7 @@ pub mod fluent_builders {
     /// layer</a>. Versions that have been deleted aren't listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
     /// versions that indicate that they're compatible with that runtime. Specify a compatible architecture to include only
     /// layer versions that are compatible with that architecture.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLayerVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5905,7 +5905,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProvisionedConcurrencyConfigs`.
     ///
     /// <p>Retrieves a list of provisioned concurrency configurations for a function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProvisionedConcurrencyConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6037,7 +6037,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. You can
     /// also view tags with <a>GetFunction</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6110,7 +6110,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
     /// with the version-specific configuration of each. Lambda returns up to 50 versions per call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVersionsByFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6246,7 +6246,7 @@ pub mod fluent_builders {
     /// layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same
     /// layer name, a new version is created.</p>
     /// <p>Add layers to your function with <a>CreateFunction</a> or <a>UpdateFunctionConfiguration</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishLayerVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6421,7 +6421,7 @@ pub mod fluent_builders {
     /// function before publishing a version.</p>
     ///
     /// <p>Clients can invoke versions directly or with an alias. To create an alias, use <a>CreateAlias</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6569,7 +6569,7 @@ pub mod fluent_builders {
     ///
     /// <p>Update the code signing configuration for the function. Changes to the code signing configuration take effect the
     /// next time a user tries to deploy a code package to the function. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFunctionCodeSigningConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6704,7 +6704,7 @@ pub mod fluent_builders {
     /// <p>Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve concurrency
     /// for as many functions as you like, as long as you leave at least 100 simultaneous executions unreserved for
     /// functions that aren't configured with a per-function limit. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFunctionConcurrency<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6838,7 +6838,7 @@ pub mod fluent_builders {
     /// <p>To send an invocation record to a queue, topic, function, or event bus, specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>. You can configure separate destinations for successful invocations (on-success) and events
     /// that fail all processing attempts (on-failure). You can configure destinations in addition to or instead of a
     /// dead-letter queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFunctionEventInvokeConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7034,7 +7034,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutProvisionedConcurrencyConfig`.
     ///
     /// <p>Adds a provisioned concurrency configuration to a function's alias or version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProvisionedConcurrencyConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7170,7 +7170,7 @@ pub mod fluent_builders {
     /// <p>Removes a statement from the permissions policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
     /// layer</a>. For more information, see
     /// <a>AddLayerVersionPermission</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveLayerVersionPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7273,7 +7273,7 @@ pub mod fluent_builders {
     ///
     /// <p>Revokes function-use permission from an Amazon Web Services service or another account. You can get the ID of the statement
     /// from the output of <a>GetPolicy</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemovePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7416,7 +7416,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to a function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7509,7 +7509,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> from a function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7596,7 +7596,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAlias`.
     ///
     /// <p>Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7771,7 +7771,7 @@ pub mod fluent_builders {
     ///
     /// <p>Update the code signing configuration. Changes to the code signing configuration take effect the next time a
     /// user tries to deploy a code package to the function. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCodeSigningConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7989,7 +7989,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEventSourceMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8343,7 +8343,7 @@ pub mod fluent_builders {
     /// <p>For a function defined as a container image, Lambda resolves the image tag to an image digest. In Amazon ECR, if
     /// you update the image tag to a new image, Lambda does not automatically update the function.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFunctionCode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8578,7 +8578,7 @@ pub mod fluent_builders {
     ///
     /// <p>To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions
     /// to an account or Amazon Web Services service, use <a>AddPermission</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFunctionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8899,7 +8899,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the configuration for asynchronous invocation for a function, version, or alias.</p>
     /// <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFunctionEventInvokeConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

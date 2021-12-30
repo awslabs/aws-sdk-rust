@@ -362,7 +362,7 @@ pub mod fluent_builders {
     /// <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path.
     /// </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlarms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -439,7 +439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAnomalyDetector`.
     ///
     /// <p>Deletes the specified anomaly detection model from your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -702,7 +702,7 @@ pub mod fluent_builders {
     /// <p>Deletes all dashboards that you specify. You
     /// can specify up to 100 dashboards to delete. If there is an error during this call, no dashboards are
     /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDashboards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -782,7 +782,7 @@ pub mod fluent_builders {
     /// <p>If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
     /// the rule was created might
     /// not be available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInsightRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -859,7 +859,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMetricStream`.
     ///
     /// <p>Permanently deletes the metric stream that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMetricStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -934,7 +934,7 @@ pub mod fluent_builders {
     /// <p>To use this operation and return information about a composite alarm, you must be signed on with
     /// the <code>cloudwatch:DescribeAlarmHistory</code> permission that is scoped to <code>*</code>. You can't return information
     /// about composite alarms if your <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlarmHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1100,7 +1100,7 @@ pub mod fluent_builders {
     /// <p>To use this operation and return information about composite alarms, you must be signed on with
     /// the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>. You can't return information
     /// about composite alarms if your <code>cloudwatch:DescribeAlarms</code> permission has a narrower scope.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlarms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1355,7 +1355,7 @@ pub mod fluent_builders {
     /// <p>This operation retrieves only standard alarms that are based on
     /// the specified metric. It does not return alarms based on math expressions that
     /// use the specified metric, or composite alarms that use the specified metric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlarmsForMetric<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1510,7 +1510,7 @@ pub mod fluent_builders {
     /// For metric math anomaly detectors,
     /// you can list them by adding <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array.
     /// This will return all metric math anomaly detectors in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnomalyDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1665,7 +1665,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information about Contributor Insights, see
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor Insights to Analyze High-Cardinality Data</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInsightRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1748,7 +1748,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables the actions for the specified alarms. When an alarm's actions are disabled, the
     /// alarm actions do not execute when the alarm state changes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableAlarmActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1826,7 +1826,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables the specified Contributor Insights rules. When rules are disabled, they do not analyze log groups and do
     /// not incur costs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableInsightRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1903,7 +1903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableAlarmActions`.
     ///
     /// <p>Enables the actions for the specified alarms.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAlarmActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1980,7 +1980,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableInsightRules`.
     ///
     /// <p>Enables the specified Contributor Insights rules. When rules are enabled, they immediately begin analyzing log data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableInsightRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2060,7 +2060,7 @@ pub mod fluent_builders {
     /// <p>To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data returned
     /// within <code>DashboardBody</code> as the template for the new dashboard when you call <code>PutDashboard</code> to create
     /// the copy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2169,7 +2169,7 @@ pub mod fluent_builders {
     /// <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightRuleReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2425,7 +2425,7 @@ pub mod fluent_builders {
     /// <p>If you omit <code>Unit</code> in your request, all data that was collected with any unit is returned, along with the corresponding units that were specified
     /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
     /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2708,7 +2708,7 @@ pub mod fluent_builders {
     /// <p>For information about metrics and dimensions supported by Amazon Web Services services, see the
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon CloudWatch Metrics and Dimensions Reference</a> in the
     /// <i>Amazon CloudWatch User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2997,7 +2997,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMetricStream`.
     ///
     /// <p>Returns information about the metric stream that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3084,7 +3084,7 @@ pub mod fluent_builders {
     /// <p>Up to 100 KB uncompressed payload.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricWidgetImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3274,7 +3274,7 @@ pub mod fluent_builders {
     /// are more than 1000 dashboards, you can call <code>ListDashboards</code> again and
     /// include the value you received for <code>NextToken</code> in the first call, to receive
     /// the next 1000 results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDashboards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3378,7 +3378,7 @@ pub mod fluent_builders {
     /// reported data in the past two weeks. To retrieve those metrics, use
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3518,7 +3518,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMetricStreams`.
     ///
     /// <p>Returns a list of metric streams in this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMetricStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3599,7 +3599,7 @@ pub mod fluent_builders {
     ///
     /// <p>Displays the tags associated with a CloudWatch resource. Currently, alarms
     /// and Contributor Insights rules support tagging.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3693,7 +3693,7 @@ pub mod fluent_builders {
     /// <p>Creates an anomaly detection model for a CloudWatch metric. You can use the model
     /// to display a band of expected normal values when the metric is graphed.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch Anomaly Detection</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4025,7 +4025,7 @@ pub mod fluent_builders {
     ///
     /// <p>If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to create
     /// a composite alarm that has Systems Manager OpsItem actions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutCompositeAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4377,7 +4377,7 @@ pub mod fluent_builders {
     /// not be changed in the console. This message could also point console users to the location
     /// of the <code>DashboardBody</code> script or the CloudFormation template used to create the
     /// dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4477,7 +4477,7 @@ pub mod fluent_builders {
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor Insights to Analyze High-Cardinality Data</a>.</p>
     /// <p>If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
     /// the rule was created might not be available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInsightRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4674,7 +4674,7 @@ pub mod fluent_builders {
     /// Cross-account cross-Region CloudWatch console</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetricAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5348,7 +5348,7 @@ pub mod fluent_builders {
     /// multiplied by <code>SampleCount</code>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5468,7 +5468,7 @@ pub mod fluent_builders {
     /// <p>When you use <code>PutMetricStream</code> to create a new metric stream, the stream
     /// is created in the <code>running</code> state. If you use it to update an existing stream,
     /// the state of the stream is not changed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetricStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5703,7 +5703,7 @@ pub mod fluent_builders {
     /// configuration.</p>
     /// <p>If an alarm triggers EC2 Auto Scaling policies or application Auto Scaling policies, you must include
     /// information in the <code>StateReasonData</code> parameter to enable the policy to take the correct action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetAlarmState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5813,7 +5813,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartMetricStreams`.
     ///
     /// <p>Starts the streaming of metrics for one or more of your metric streams.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMetricStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5896,7 +5896,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopMetricStreams`.
     ///
     /// <p>Stops the streaming of metrics for one or more of your metric streams.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopMetricStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5989,7 +5989,7 @@ pub mod fluent_builders {
     /// with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces
     /// the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a CloudWatch resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6098,7 +6098,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

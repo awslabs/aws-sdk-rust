@@ -316,7 +316,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ChangeServerLifeCycleState`.
     ///
     /// <p>Allows the user to set the SourceServer.LifeCycle.state property for specific Source Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER. This command only works if the Source Server is already launchable (dataReplicationInfo.lagDuration is not null.)</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ChangeServerLifeCycleState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -407,7 +407,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateReplicationConfigurationTemplate`.
     ///
     /// <p>Creates a new ReplicationConfigurationTemplate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -679,7 +679,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
     /// <p>Deletes a single Job by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -749,7 +749,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReplicationConfigurationTemplate`.
     ///
     /// <p>Deletes a single Replication Configuration Template by ID</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -829,7 +829,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSourceServer`.
     ///
     /// <p>Deletes a single source server by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSourceServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -902,7 +902,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVcenterClient`.
     ///
     /// <p>Deletes a single vCenter client by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVcenterClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -975,7 +975,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobLogItems`.
     ///
     /// <p>Retrieves detailed Job log with paging.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobLogItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1065,7 +1065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobs`.
     ///
     /// <p>Returns a list of Jobs. Use the JobsID and fromDate and toData filters to limit which jobs are returned. The response is sorted by creationDataTime - latest date first. Jobs are normaly created by the StartTest, StartCutover, and TerminateTargetInstances APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances, which are APIs available only to *Support* and only used in response to relevant support tickets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1158,7 +1158,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReplicationConfigurationTemplates`.
     ///
     /// <p>Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationConfigurationTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1264,7 +1264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSourceServers`.
     ///
     /// <p>Retrieves all SourceServers or multiple SourceServers by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSourceServers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1360,7 +1360,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVcenterClients`.
     ///
     /// <p>Lists all vCenter clients.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVcenterClients<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1440,7 +1440,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisconnectFromService`.
     ///
     /// <p>Disconnects specific Source Servers from Application Migration Service. Data replication is stopped immediately. All AWS resources created by Application Migration Service for enabling the replication of these source servers will be terminated / deleted within 90 minutes. Launched Test or Cutover instances will NOT be terminated. If the agent on the source server has not been prevented from communciating with the Application Migration Service service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDurationwill be nullified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisconnectFromService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1513,7 +1513,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `FinalizeCutover`.
     ///
     /// <p>Finalizes the cutover immediately for specific Source Servers. All AWS resources created by Application Migration Service for enabling the replication of these source servers will be terminated / deleted within 90 minutes. Launched Test or Cutover instances will NOT be terminated. The AWS Replication Agent will receive a command to uninstall itself (within 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be to DISCONNECTED; The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDurationwill be nullified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FinalizeCutover<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1586,7 +1586,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLaunchConfiguration`.
     ///
     /// <p>Lists all LaunchConfigurations available, filtered by Source Server IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1659,7 +1659,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReplicationConfiguration`.
     ///
     /// <p>Lists all ReplicationConfigurations, filtered by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1732,7 +1732,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `InitializeService`.
     ///
     /// <p>Initialize Application Migration Service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitializeService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1792,7 +1792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List all tags for your Application Migration Service resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1862,7 +1862,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `MarkAsArchived`.
     ///
     /// <p>Archives specific Source Servers by setting the SourceServer.isArchived property to true for specified SourceServers by ID. This command only works for SourceServers with a lifecycle.state which equals DISCONNECTED or CUTOVER.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MarkAsArchived<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1935,7 +1935,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RetryDataReplication`.
     ///
     /// <p>Causes the data replication initiation sequence to begin immediately upon next Handshake for specified SourceServer IDs, regardless of when the previous initiation started. This command will not work if the SourceServer is not stalled or is in a DISCONNECTED or STOPPED state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetryDataReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2008,7 +2008,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartCutover`.
     ///
     /// <p>Launches a Cutover Instance for specific Source Servers. This command starts a LAUNCH job whose initiatedBy property is StartCutover and changes the SourceServer.lifeCycle.state property to CUTTING_OVER.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCutover<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2108,7 +2108,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartReplication`.
     ///
     /// <p>Starts replication on source server by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2181,7 +2181,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartTest`.
     ///
     /// <p>Lauches a Test Instance for specific Source Servers. This command starts a LAUNCH job whose initiatedBy property is StartTest and changes the SourceServer.lifeCycle.state property to TESTING.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2281,7 +2281,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites only the specified tags for the specified Application Migration Service resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2374,7 +2374,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TerminateTargetInstances`.
     ///
     /// <p>Starts a job that terminates specific launched EC2 Test and Cutover instances. This command will not work for any Source Server with a lifecycle.state of TESTING, CUTTING_OVER, or CUTOVER.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateTargetInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2474,7 +2474,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes the specified set of tags from the specified set of Application Migration Service resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2561,7 +2561,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLaunchConfiguration`.
     ///
     /// <p>Updates multiple LaunchConfigurations by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2710,7 +2710,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReplicationConfiguration`.
     ///
     /// <p>Allows you to update multiple ReplicationConfigurations by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3002,7 +3002,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReplicationConfigurationTemplate`.
     ///
     /// <p>Updates multiple ReplicationConfigurationTemplates by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3279,7 +3279,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSourceServerReplicationType`.
     ///
     /// <p>Updates source server Replication Type by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSourceServerReplicationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

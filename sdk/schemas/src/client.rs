@@ -312,7 +312,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDiscoverer`.
     ///
     /// <p>Creates a discoverer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -425,7 +425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRegistry`.
     ///
     /// <p>Creates a registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -531,7 +531,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSchema`.
     ///
     /// <p>Creates a schema definition.</p> <note><p>Inactive schemas will be deleted after two years.</p></note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -667,7 +667,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDiscoverer`.
     ///
     /// <p>Deletes a discoverer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -740,7 +740,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRegistry`.
     ///
     /// <p>Deletes a Registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -813,7 +813,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
     /// <p>Delete the resource-based policy attached to the specified registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -886,7 +886,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchema`.
     ///
     /// <p>Delete a schema definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -969,7 +969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchemaVersion`.
     ///
     /// <p>Delete the schema version definition</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchemaVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1065,7 +1065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCodeBinding`.
     ///
     /// <p>Describe the code binding URI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCodeBinding<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1171,7 +1171,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDiscoverer`.
     ///
     /// <p>Describes the discoverer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1244,7 +1244,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRegistry`.
     ///
     /// <p>Describes the registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1317,7 +1317,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSchema`.
     ///
     /// <p>Retrieve the schema definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1412,7 +1412,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExportSchema`.
     ///
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1518,7 +1518,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCodeBindingSource`.
     ///
     /// <p>Get the code binding source URI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCodeBindingSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1624,7 +1624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDiscoveredSchema`.
     ///
     /// <p>Get the discovered schema that was generated based on sampled events.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDiscoveredSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1711,7 +1711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourcePolicy`.
     ///
     /// <p>Retrieves the resource-based policy attached to a given registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1784,7 +1784,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDiscoverers`.
     ///
     /// <p>List the discoverers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDiscoverers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1890,7 +1890,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRegistries`.
     ///
     /// <p>List the registries.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRegistries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1993,7 +1993,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSchemas`.
     ///
     /// <p>List the schemas.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2099,7 +2099,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSchemaVersions`.
     ///
     /// <p>Provides a list of the schema versions and related information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemaVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2202,7 +2202,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Get tags for resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2272,7 +2272,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutCodeBinding`.
     ///
     /// <p>Put code binding URI</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutCodeBinding<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2378,7 +2378,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
     /// <p>The name of the policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2471,7 +2471,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchSchemas`.
     ///
     /// <p>Search the schemas</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2574,7 +2574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartDiscoverer`.
     ///
     /// <p>Starts the discoverer</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2647,7 +2647,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopDiscoverer`.
     ///
     /// <p>Stops the discoverer</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2720,7 +2720,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Add tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2813,7 +2813,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2900,7 +2900,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDiscoverer`.
     ///
     /// <p>Updates the discoverer</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2993,7 +2993,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRegistry`.
     ///
     /// <p>Updates a registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3076,7 +3076,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSchema`.
     ///
     /// <p>Updates the schema definition</p> <note><p>Inactive schemas will be deleted after two years.</p></note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

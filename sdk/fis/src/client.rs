@@ -214,7 +214,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS Fault Injection Simulator User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExperimentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -401,7 +401,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteExperimentTemplate`.
     ///
     /// <p>Deletes the specified experiment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExperimentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -471,7 +471,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAction`.
     ///
     /// <p>Gets information about the specified AWS FIS action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -541,7 +541,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetExperiment`.
     ///
     /// <p>Gets information about the specified experiment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -611,7 +611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetExperimentTemplate`.
     ///
     /// <p>Gets information about the specified experiment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExperimentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -681,7 +681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListActions`.
     ///
     /// <p>Lists the available AWS FIS actions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -761,7 +761,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListExperiments`.
     ///
     /// <p>Lists your experiments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExperiments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -841,7 +841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListExperimentTemplates`.
     ///
     /// <p>Lists your experiment templates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExperimentTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -921,7 +921,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -991,7 +991,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartExperiment`.
     ///
     /// <p>Starts running an experiment from the specified experiment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1097,7 +1097,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopExperiment`.
     ///
     /// <p>Stops the specified experiment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1167,7 +1167,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies the specified tags to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1260,7 +1260,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1347,7 +1347,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateExperimentTemplate`.
     ///
     /// <p>Updates the specified experiment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateExperimentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

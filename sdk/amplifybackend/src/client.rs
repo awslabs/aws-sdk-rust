@@ -314,7 +314,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CloneBackend`.
     ///
     /// <p>This operation clones an existing backend.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CloneBackend<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -416,7 +416,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackend`.
     ///
     /// <p>This operation creates a backend for an Amplify app. Backends are automatically created at the time of app creation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackend<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -538,7 +538,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackendAPI`.
     ///
     /// <p>Creates a new backend API resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackendAPI<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -653,7 +653,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackendAuth`.
     ///
     /// <p>Creates a new backend authentication resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackendAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -768,7 +768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackendConfig`.
     ///
     /// <p>Creates a config object for a backend.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackendConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -851,7 +851,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackendStorage`.
     ///
     /// <p>Creates a backend storage resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackendStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -966,7 +966,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateToken`.
     ///
     /// <p>Generates a one-time challenge code to authenticate a user into your Amplify Admin UI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1036,7 +1036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackend`.
     ///
     /// <p>Removes an existing environment from your Amplify project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackend<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1122,7 +1122,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackendAPI`.
     ///
     /// <p>Deletes an existing backend API resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackendAPI<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1237,7 +1237,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackendAuth`.
     ///
     /// <p>Deletes an existing backend authentication resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackendAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1336,7 +1336,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackendStorage`.
     ///
     /// <p>Removes the specified backend storage resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackendStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1448,7 +1448,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteToken`.
     ///
     /// <p>Deletes the challenge token based on the given appId and sessionId.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1528,7 +1528,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GenerateBackendAPIModels`.
     ///
     /// <p>Generates a model schema for an existing backend API resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateBackendAPIModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1627,7 +1627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackend`.
     ///
     /// <p>Provides project-level details for your Amplify UI project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackend<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1713,7 +1713,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendAPI`.
     ///
     /// <p>Gets the details for a backend API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendAPI<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1828,7 +1828,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendAPIModels`.
     ///
     /// <p>Generates a model schema for existing backend API resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendAPIModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1927,7 +1927,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendAuth`.
     ///
     /// <p>Gets a backend auth details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2026,7 +2026,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendJob`.
     ///
     /// <p>Returns information about a specific job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2122,7 +2122,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendStorage`.
     ///
     /// <p>Gets details for a backend storage resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2221,7 +2221,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetToken`.
     ///
     /// <p>Gets the challenge token based on the given appId and sessionId.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2301,7 +2301,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportBackendAuth`.
     ///
     /// <p>Imports an existing backend authentication resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportBackendAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2436,7 +2436,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportBackendStorage`.
     ///
     /// <p>Imports an existing backend storage resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportBackendStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2545,7 +2545,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBackendJobs`.
     ///
     /// <p>Lists the jobs for the backend of an Amplify app.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackendJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2681,7 +2681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListS3Buckets`.
     ///
     /// <p>The list of S3 buckets in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListS3Buckets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2751,7 +2751,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveAllBackends`.
     ///
     /// <p>Removes all backend environments from your Amplify project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAllBackends<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2831,7 +2831,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveBackendConfig`.
     ///
     /// <p>Removes the AWS resources required to access the Amplify Admin UI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveBackendConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2901,7 +2901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBackendAPI`.
     ///
     /// <p>Updates an existing backend API resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackendAPI<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3016,7 +3016,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBackendAuth`.
     ///
     /// <p>Updates an existing backend authentication resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackendAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3131,7 +3131,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBackendConfig`.
     ///
     /// <p>Updates the AWS resources required to access the Amplify Admin UI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackendConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3214,7 +3214,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBackendJob`.
     ///
     /// <p>Updates a specific job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackendJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3330,7 +3330,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBackendStorage`.
     ///
     /// <p>Updates an existing backend storage resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackendStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

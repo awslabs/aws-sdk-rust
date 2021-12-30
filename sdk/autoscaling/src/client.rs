@@ -579,7 +579,7 @@ pub mod fluent_builders {
     /// group, the instances are also registered with the target groups.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach EC2 instances to
     /// your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -684,7 +684,7 @@ pub mod fluent_builders {
     /// target groups from the Auto Scaling group.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
     /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -797,7 +797,7 @@ pub mod fluent_builders {
     /// Balancers from the Auto Scaling group.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
     /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachLoadBalancerTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -892,7 +892,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteScheduledAction`.
     ///
     /// <p>Deletes one or more scheduled actions for the specified Auto Scaling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteScheduledAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -987,7 +987,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchPutScheduledUpdateGroupAction`.
     ///
     /// <p>Creates or updates one or more scheduled scaling actions for an Auto Scaling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutScheduledUpdateGroupAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1092,7 +1092,7 @@ pub mod fluent_builders {
     /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh
     /// feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group
     /// after you make configuration changes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelInstanceRefresh<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1200,7 +1200,7 @@ pub mod fluent_builders {
     /// </ol>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle
     /// hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CompleteLifecycleAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1352,7 +1352,7 @@ pub mod fluent_builders {
     /// on a specific number of instances. However, if you configure a mixed instances policy
     /// that defines weights for the instance types, you must specify these sizes with the same
     /// units that you use for weighting instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1954,7 +1954,7 @@ pub mod fluent_builders {
     /// quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
     /// configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2443,7 +2443,7 @@ pub mod fluent_builders {
     /// previous tag definition, and you do not get an error message.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
     /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOrUpdateTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2529,7 +2529,7 @@ pub mod fluent_builders {
     /// instances.</p>
     /// <p>To terminate all instances before deleting the Auto Scaling group, call the <a>UpdateAutoScalingGroup</a> API and set the minimum size and desired capacity
     /// of the Auto Scaling group to zero.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2621,7 +2621,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified launch configuration.</p>
     /// <p>The launch configuration must not be attached to an Auto Scaling group. When this call
     /// completes, the launch configuration is no longer available for use.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2700,7 +2700,7 @@ pub mod fluent_builders {
     /// <p>If there are any outstanding lifecycle actions, they are completed first
     /// (<code>ABANDON</code> for launching instances, <code>CONTINUE</code> for terminating
     /// instances).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLifecycleHook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2789,7 +2789,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNotificationConfiguration`.
     ///
     /// <p>Deletes the specified notification.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNotificationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2880,7 +2880,7 @@ pub mod fluent_builders {
     /// associated action.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/deleting-scaling-policy.html">Deleting a scaling
     /// policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2966,7 +2966,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteScheduledAction`.
     ///
     /// <p>Deletes the specified scheduled action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteScheduledAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3055,7 +3055,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTags`.
     ///
     /// <p>Deletes the specified tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3134,7 +3134,7 @@ pub mod fluent_builders {
     /// <p>Deletes the warm pool for the specified Auto Scaling group.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for
     /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWarmPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3230,7 +3230,7 @@ pub mod fluent_builders {
     /// number of Auto Scaling groups and launch configurations that you can create in a given Region.
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling service
     /// quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3309,7 +3309,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAdjustmentTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3375,7 +3375,7 @@ pub mod fluent_builders {
     /// filters, the output includes information for all Auto Scaling groups. </p>
     /// <p>This operation also returns information about instances in Auto Scaling groups. To retrieve
     /// information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a> API. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutoScalingGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3499,7 +3499,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAutoScalingInstances`.
     ///
     /// <p>Gets information about the Auto Scaling instances in the account and Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutoScalingInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3604,7 +3604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAutoScalingNotificationTypes`.
     ///
     /// <p>Describes the notification types that are supported by Amazon EC2 Auto Scaling.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutoScalingNotificationTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3704,7 +3704,7 @@ pub mod fluent_builders {
     /// <code>Cancelled</code> - The operation is cancelled. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceRefreshes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3821,7 +3821,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLaunchConfigurations`.
     ///
     /// <p>Gets information about the launch configurations in the account and Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLaunchConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3926,7 +3926,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLifecycleHooks`.
     ///
     /// <p>Gets information about the lifecycle hooks for the specified Auto Scaling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLifecycleHooks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4034,7 +4034,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLifecycleHookTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4115,7 +4115,7 @@ pub mod fluent_builders {
     /// Health checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more
     /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
     /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4234,7 +4234,7 @@ pub mod fluent_builders {
     /// Health checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more
     /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
     /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4336,7 +4336,7 @@ pub mod fluent_builders {
     /// <p>Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.</p>
     /// <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must
     /// explicitly request this metric when calling the <a>EnableMetricsCollection</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMetricCollectionTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4397,7 +4397,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about the Amazon SNS notifications that are configured for one or more
     /// Auto Scaling groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNotificationConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4500,7 +4500,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePolicies`.
     ///
     /// <p>Gets information about the scaling policies in the account and Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4652,7 +4652,7 @@ pub mod fluent_builders {
     /// <code>StatusCode</code> value is <code>Failed</code> or <code>Cancelled</code> and
     /// the <code>StatusMessage</code> element in the response indicates the cause of the
     /// failure. For help interpreting the <code>StatusMessage</code>, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScalingActivities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4788,7 +4788,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the scaling process types for use with the <a>ResumeProcesses</a>
     /// and <a>SuspendProcesses</a> APIs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScalingProcessTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4851,7 +4851,7 @@ pub mod fluent_builders {
     /// their end time.</p>
     /// <p>To describe the scaling activities for scheduled actions that have already run, call
     /// the <a>DescribeScalingActivities</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScheduledActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5012,7 +5012,7 @@ pub mod fluent_builders {
     /// message is returned.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
     /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5118,7 +5118,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling
     /// instances terminate during scale in</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTerminationPolicyTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5180,7 +5180,7 @@ pub mod fluent_builders {
     /// <p>Gets information about a warm pool and its instances.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for
     /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWarmPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5289,7 +5289,7 @@ pub mod fluent_builders {
     /// group, the instances are deregistered from the target groups.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach EC2 instances from
     /// your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5402,7 +5402,7 @@ pub mod fluent_builders {
     /// <p>When you detach a load balancer, it enters the <code>Removing</code> state while
     /// deregistering the instances in the group. When all instances are deregistered, then you
     /// can no longer describe the load balancer using the <a>DescribeLoadBalancers</a> API call. The instances remain running.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5495,7 +5495,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachLoadBalancerTargetGroups`.
     ///
     /// <p>Detaches one or more target groups from the specified Auto Scaling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachLoadBalancerTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5590,7 +5590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableMetricsCollection`.
     ///
     /// <p>Disables group metrics for the specified Auto Scaling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableMetricsCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5890,7 +5890,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables group metrics for the specified Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring CloudWatch metrics for your Auto Scaling groups and instances</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableMetricsCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6224,7 +6224,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily removing
     /// instances from your Auto Scaling group</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnterStandby<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6333,7 +6333,7 @@ pub mod fluent_builders {
     ///
     /// <p>Executes the specified policy. This can be useful for testing the design of your
     /// scaling policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecutePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6482,7 +6482,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily removing
     /// instances from your Auto Scaling group</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExitStandby<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6583,7 +6583,7 @@ pub mod fluent_builders {
     /// having a full 14 days of historical data results in more accurate forecasts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
     /// scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPredictiveScalingForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6742,7 +6742,7 @@ pub mod fluent_builders {
     /// group, the call fails.</p>
     /// <p>You can view the lifecycle hooks for an Auto Scaling group using the <a>DescribeLifecycleHooks</a> API call. If you are no longer using a lifecycle
     /// hook, you can delete it by calling the <a>DeleteLifecycleHook</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLifecycleHook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6970,7 +6970,7 @@ pub mod fluent_builders {
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you exceed your maximum limit of SNS topics, which is 10 per Auto Scaling group, the call
     /// fails.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutNotificationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7084,7 +7084,7 @@ pub mod fluent_builders {
     /// scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>You can view the scaling policies for an Auto Scaling group using the <a>DescribePolicies</a> API call. If you are no longer using a scaling policy,
     /// you can delete it by calling the <a>DeletePolicy</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7518,7 +7518,7 @@ pub mod fluent_builders {
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>You can view the scheduled actions for an Auto Scaling group using the <a>DescribeScheduledActions</a> API call. If you are no longer using a
     /// scheduled action, you can delete it by calling the <a>DeleteScheduledAction</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutScheduledUpdateGroupAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7740,7 +7740,7 @@ pub mod fluent_builders {
     /// launch template or launch configuration that requests Spot Instances.</p>
     /// <p>You can view the instances in the warm pool using the <a>DescribeWarmPool</a> API call. If you are no longer using a warm pool, you can delete it by calling the
     /// <a>DeleteWarmPool</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutWarmPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7920,7 +7920,7 @@ pub mod fluent_builders {
     /// </ol>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle
     /// hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RecordLifecycleActionHeartbeat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8039,7 +8039,7 @@ pub mod fluent_builders {
     /// the specified Auto Scaling group.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and
     /// resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeProcesses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8233,7 +8233,7 @@ pub mod fluent_builders {
     /// policy to determine which instances to terminate. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-manual-scaling.html">Manual scaling</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetDesiredCapacity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8337,7 +8337,7 @@ pub mod fluent_builders {
     /// <p>Sets the health status of the specified instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
     /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetInstanceHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8455,7 +8455,7 @@ pub mod fluent_builders {
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group, the call
     /// fails.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetInstanceProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8574,7 +8574,7 @@ pub mod fluent_builders {
     /// have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an
     /// instance refresh operation in progress, use the <a>CancelInstanceRefresh</a>
     /// API. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartInstanceRefresh<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8732,7 +8732,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and
     /// resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>To resume processes that have been suspended, call the <a>ResumeProcesses</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SuspendProcesses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8932,7 +8932,7 @@ pub mod fluent_builders {
     /// decrement the desired capacity, your Auto Scaling group can become unbalanced between
     /// Availability Zones. Amazon EC2 Auto Scaling tries to rebalance the group, and rebalancing might
     /// terminate instances in other zones. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateInstanceInAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9063,7 +9063,7 @@ pub mod fluent_builders {
     /// group, call the <a>DescribePolicies</a> API. If the group has scaling
     /// policies, you can update them by calling the <a>PutScalingPolicy</a>
     /// API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

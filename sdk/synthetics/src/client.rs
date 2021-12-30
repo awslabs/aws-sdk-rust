@@ -199,7 +199,7 @@ pub mod fluent_builders {
     /// makes up part of the Amazon Resource Name (ARN) for the canary, and the ARN is included in
     /// outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security
     /// Considerations for Synthetics Canaries</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCanary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -586,7 +586,7 @@ pub mod fluent_builders {
     /// the information about this canary. Make
     /// note of the information returned by this operation so that you can delete these resources
     /// after you delete the canary.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCanary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -661,7 +661,7 @@ pub mod fluent_builders {
     /// <code>DescribeCanaries</code>, the user can see all of the canaries in the account. A
     /// deny policy can only be used to restrict access to all canaries. It cannot be used on
     /// specific resources. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCanaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -747,7 +747,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCanariesLastRun`.
     ///
     /// <p>Use this operation to see information from the most recent run of each canary that you have created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCanariesLastRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -835,7 +835,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of Synthetics canary runtime versions. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
     /// Canary Runtime Versions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRuntimeVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -923,7 +923,7 @@ pub mod fluent_builders {
     /// <p>Retrieves complete information about one canary. You must specify
     /// the name of the canary that you want. To get a list of canaries
     /// and their names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCanary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -993,7 +993,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCanaryRuns`.
     ///
     /// <p>Retrieves a list of runs for a specified canary.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCanaryRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1089,7 +1089,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Displays the tags associated with a canary.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1167,7 +1167,7 @@ pub mod fluent_builders {
     /// <p>Use this operation to run a canary that has already been created.  
     /// The frequency of the canary runs is determined by the value of the canary's <code>Schedule</code>. To see a canary's schedule,
     /// use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanary.html">GetCanary</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCanary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1244,7 +1244,7 @@ pub mod fluent_builders {
     /// it is not recorded in Synthetics as a completed run.</p>
     /// <p>You can use <code>StartCanary</code> to start it running again
     /// with the canary’s current schedule at any point in the future.  </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopCanary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1325,7 +1325,7 @@ pub mod fluent_builders {
     /// with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces
     /// the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a canary.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1424,7 +1424,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified canary.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1521,7 +1521,7 @@ pub mod fluent_builders {
     /// <p>You can't use this operation to update the tags of an existing canary. To
     /// change the tags of an existing canary, use
     /// <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCanary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

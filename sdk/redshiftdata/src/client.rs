@@ -179,7 +179,7 @@ pub mod fluent_builders {
     /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -322,7 +322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelStatement`.
     ///
     /// <p>Cancels a running query. To be canceled, a query must be running. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -396,7 +396,7 @@ pub mod fluent_builders {
     /// <p>Describes the details about a specific instance when a query was run by the Amazon Redshift Data API. The information
     /// includes when the query started, when it finished, the query status, the number of rows returned, and the SQL
     /// statement. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -487,7 +487,7 @@ pub mod fluent_builders {
     /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -663,7 +663,7 @@ pub mod fluent_builders {
     /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -817,7 +817,7 @@ pub mod fluent_builders {
     ///
     /// <p>Fetches the temporarily cached result of an SQL statement.
     /// A token is returned to page through the statement results. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStatementResult<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -917,7 +917,7 @@ pub mod fluent_builders {
     /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatabases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1056,7 +1056,7 @@ pub mod fluent_builders {
     /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1214,7 +1214,7 @@ pub mod fluent_builders {
     ///
     /// <p>List of SQL statements. By default, only finished statements are shown.
     /// A token is returned to page through the statement list. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStatements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1401,7 +1401,7 @@ pub mod fluent_builders {
     /// When connecting to a serverless endpoint, specify the database name. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

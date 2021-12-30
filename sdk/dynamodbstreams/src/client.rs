@@ -131,7 +131,7 @@ pub mod fluent_builders {
     /// <code>EndingSequenceNumber</code>, then the shard is still open (able to receive more stream
     /// records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
     /// are present, then that shard is closed and can no longer receive more data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -239,7 +239,7 @@ pub mod fluent_builders {
     /// <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records,
     /// whichever comes first.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecords<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -329,7 +329,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>A shard iterator expires 15 minutes after it is returned to the requester.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetShardIterator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -488,7 +488,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You can call <code>ListStreams</code> at a maximum rate of 5 times per second.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

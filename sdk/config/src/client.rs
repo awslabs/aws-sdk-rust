@@ -827,7 +827,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetAggregateResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -941,7 +941,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1023,7 +1023,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the authorization granted to the specified
     /// configuration aggregator account in a specified region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAggregationAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1119,7 +1119,7 @@ pub mod fluent_builders {
     /// receive a <code>ResourceInUseException</code>.</p>
     /// <p>You can check the state of a rule by using the
     /// <code>DescribeConfigRules</code> request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1195,7 +1195,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified configuration aggregator and the
     /// aggregated data associated with the aggregator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1280,7 +1280,7 @@ pub mod fluent_builders {
     /// <code>GetResourceConfigHistory</code> action, but you will not
     /// be able to access this information in the Config console until
     /// you create a new configuration recorder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationRecorder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1363,7 +1363,7 @@ pub mod fluent_builders {
     /// conformance pack.</p>
     /// <p>Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is complete.
     /// You cannot update a conformance pack while it is in this state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConformancePack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1438,7 +1438,7 @@ pub mod fluent_builders {
     /// <p>Deletes the delivery channel.</p>
     /// <p>Before you can delete the delivery channel, you must stop the
     /// configuration recorder by using the <a>StopConfigurationRecorder</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeliveryChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1514,7 +1514,7 @@ pub mod fluent_builders {
     /// rule. You can specify one Config rule per request. After you
     /// delete the evaluation results, you can call the <a>StartConfigRulesEvaluation</a> API to start evaluating
     /// your Amazon Web Services resources against the rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEvaluationResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1594,7 +1594,7 @@ pub mod fluent_builders {
     /// <code>ListDelegatedAdministrator</code> permissions are added.</p>
     /// <p>Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete.
     /// You cannot update a rule while it is in this state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganizationConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1676,7 +1676,7 @@ pub mod fluent_builders {
     /// <code>ListDelegatedAdministrator</code> permissions are added.</p>
     /// <p>Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete.
     /// You cannot update a conformance pack while it is in this state. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganizationConformancePack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1755,7 +1755,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes pending authorization requests for a specified
     /// aggregator account in a specified region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePendingAggregationRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1843,7 +1843,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRemediationConfiguration`.
     ///
     /// <p>Deletes the remediation configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRemediationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1933,7 +1933,7 @@ pub mod fluent_builders {
     /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource.
     /// Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRemediationExceptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2029,7 +2029,7 @@ pub mod fluent_builders {
     ///
     /// <p>Records the configuration state for a custom resource that has been deleted.  This API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve the ConfigurationItems recorded for this resource in your Config History.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2112,7 +2112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRetentionConfiguration`.
     ///
     /// <p>Deletes the retention configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRetentionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2188,7 +2188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStoredQuery`.
     ///
     /// <p>Deletes the stored query for a single Amazon Web Services account and a single Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStoredQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2274,7 +2274,7 @@ pub mod fluent_builders {
     /// failed.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeliverConfigSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2356,7 +2356,7 @@ pub mod fluent_builders {
     /// have a <code>nextToken</code>, the results are displayed on the next
     /// page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAggregateComplianceByConfigRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2481,7 +2481,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed on the next page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAggregateComplianceByConformancePacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2587,7 +2587,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of authorizations granted to various aggregator
     /// accounts and regions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAggregationAuthorizations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2705,7 +2705,7 @@ pub mod fluent_builders {
     /// the rule's scope.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComplianceByConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2849,7 +2849,7 @@ pub mod fluent_builders {
     /// the rule's scope.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComplianceByResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2992,7 +2992,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns status information for each of your Config managed rules. The status includes information such as the last time Config invoked the rule, the last time Config failed to invoke
     /// the rule, and the related error for the last failure.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigRuleEvaluationStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3115,7 +3115,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConfigRules`.
     ///
     /// <p>Returns details about your Config rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3213,7 +3213,7 @@ pub mod fluent_builders {
     /// If the configuration aggregator is not specified, this action
     /// returns the details for all the configuration aggregators associated
     /// with the account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationAggregators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3320,7 +3320,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns status information for sources within an aggregator.
     /// The status includes information about the last time Config verified authorization between the source account and an aggregator account. In case of a failure, the status contains the related error code or message. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationAggregatorSourcesStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3476,7 +3476,7 @@ pub mod fluent_builders {
     /// <p>Currently, you can specify only one configuration recorder
     /// per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationRecorders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3563,7 +3563,7 @@ pub mod fluent_builders {
     /// <p>Currently, you can specify only one configuration recorder
     /// per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationRecorderStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3652,7 +3652,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You must provide exact rule names.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConformancePackCompliance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3761,7 +3761,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConformancePacks`.
     ///
     /// <p>Returns a list of one or more conformance packs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConformancePacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3861,7 +3861,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>If there are no conformance packs then you will see an empty result.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConformancePackStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3964,7 +3964,7 @@ pub mod fluent_builders {
     /// <p>Currently, you can specify only one delivery channel per
     /// region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeliveryChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4048,7 +4048,7 @@ pub mod fluent_builders {
     /// <p>Currently, you can specify only one delivery channel per
     /// region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeliveryChannelStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4131,7 +4131,7 @@ pub mod fluent_builders {
     /// Limit and next token are not applicable if you specify organization config rule names.
     /// It is only applicable, when you request all the organization config rules.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfigRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4239,7 +4239,7 @@ pub mod fluent_builders {
     /// Limit and next token are not applicable if you specify organization config rule names.
     /// It is only applicable, when you request all the organization config rules.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfigRuleStatuses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4346,7 +4346,7 @@ pub mod fluent_builders {
     /// <p>Limit and next token are not applicable if you specify organization conformance packs names. They are only applicable,
     /// when you request all the organization conformance packs. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConformancePacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4459,7 +4459,7 @@ pub mod fluent_builders {
     /// Limit and next token are not applicable if you specify organization conformance pack names.
     /// They are only applicable, when you request all the organization conformance packs.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConformancePackStatuses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4565,7 +4565,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePendingAggregationRequests`.
     ///
     /// <p>Returns a list of all pending aggregation requests.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePendingAggregationRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4653,7 +4653,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRemediationConfigurations`.
     ///
     /// <p>Returns the details of one or more remediation configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRemediationConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4737,7 +4737,7 @@ pub mod fluent_builders {
     /// <p>When you specify the limit and the next token, you receive a paginated response. </p>
     /// <p>Limit and next token are not applicable if you request resources in batch. It is only applicable, when you request all resources.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRemediationExceptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4853,7 +4853,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when steps for the remediation execution occur, and any error messages for steps that have failed.
     /// When you specify the limit and the next token, you receive a paginated response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRemediationExecutionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4972,7 +4972,7 @@ pub mod fluent_builders {
     /// <p>Currently, Config supports only one retention
     /// configuration per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRetentionConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5086,7 +5086,7 @@ pub mod fluent_builders {
     /// have a <code>nextToken</code>, the results are displayed on the next
     /// page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAggregateComplianceDetailsByConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5260,7 +5260,7 @@ pub mod fluent_builders {
     /// have a nextToken, the results are displayed on the next
     /// page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAggregateConfigRuleComplianceSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5401,7 +5401,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>The results can return an empty result page, but if you have a nextToken, the results are displayed on the next page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAggregateConformancePackComplianceSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5537,7 +5537,7 @@ pub mod fluent_builders {
     /// <p>Returns the resource counts across accounts and regions that are present in your Config aggregator. You can request the resource counts by providing filters and GroupByKey.</p>
     /// <p>For example, if the input contains accountID 12345678910 and region us-east-1 in filters, the API returns the count of resources in account ID 12345678910 and region us-east-1.
     /// If the input contains ACCOUNT_ID as a GroupByKey, the API returns resource counts for all source accounts that are present in your aggregator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAggregateDiscoveredResourceCounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5661,7 +5661,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAggregateResourceConfig`.
     ///
     /// <p>Returns configuration item that is aggregated for your specific resource in a specific source account and region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAggregateResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5756,7 +5756,7 @@ pub mod fluent_builders {
     /// rule. The results indicate which Amazon Web Services resources were evaluated by the
     /// rule, when each resource was last evaluated, and whether each
     /// resource complies with the rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceDetailsByConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5885,7 +5885,7 @@ pub mod fluent_builders {
     /// The results indicate which Config rules were used to evaluate
     /// the resource, when each rule was last used, and whether the resource
     /// complies with each rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceDetailsByResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6010,7 +6010,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the number of Config rules that are compliant and
     /// noncompliant, up to a maximum of 25 for each.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceSummaryByConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6073,7 +6073,7 @@ pub mod fluent_builders {
     /// number that are noncompliant. You can specify one or more resource
     /// types to get these numbers for each resource type. The maximum
     /// number returned is 100.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceSummaryByResourceType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6164,7 +6164,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConformancePackComplianceDetails`.
     ///
     /// <p>Returns compliance details of a conformance pack for all Amazon Web Services resources that are monitered by conformance pack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConformancePackComplianceDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6275,7 +6275,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConformancePackComplianceSummary`.
     ///
     /// <p>Returns compliance details for the conformance pack based on the cumulative compliance results of all the rules in that conformance pack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConformancePackComplianceSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6437,7 +6437,7 @@ pub mod fluent_builders {
     /// <a>GetDiscoveredResourceCounts</a> action.
     /// </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDiscoveredResourceCounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6570,7 +6570,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOrganizationConfigRuleDetailedStatus`.
     ///
     /// <p>Returns detailed status for each member account within an organization for a given organization config rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOrganizationConfigRuleDetailedStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6681,7 +6681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOrganizationConformancePackDetailedStatus`.
     ///
     /// <p>Returns detailed status for each member account within an organization for a given organization conformance pack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOrganizationConformancePackDetailedStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6818,7 +6818,7 @@ pub mod fluent_builders {
     /// you can make another call, using the
     /// <code>nextToken</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceConfigHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6982,7 +6982,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStoredQuery`.
     ///
     /// <p>Returns the details of a specific stored query.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStoredQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7055,7 +7055,7 @@ pub mod fluent_builders {
     /// A resource identifier includes the resource type, ID, (if available) the custom resource name, source account, and source region.
     /// You can narrow the results to include only resources that have specific resource IDs, or a resource name, or source account ID, or source region.</p>
     /// <p>For example, if the input consists of accountID 12345678910 and the region is us-east-1 for resource type <code>AWS::EC2::Instance</code> then the API returns all the EC2 instance identifiers of accountID 12345678910 and region us-east-1.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAggregateDiscoveredResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7193,7 +7193,7 @@ pub mod fluent_builders {
     /// <code>nextToken</code> string. To get the next page of results,
     /// run the request again and specify the string for the
     /// <code>nextToken</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDiscoveredResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7346,7 +7346,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStoredQueries`.
     ///
     /// <p>Lists the stored queries for a single Amazon Web Services account and a single Amazon Web Services Region. The default is 100. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStoredQueries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7426,7 +7426,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for Config resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7517,7 +7517,7 @@ pub mod fluent_builders {
     ///
     /// <p>Authorizes the aggregator account and region to collect data
     /// from the source account and region. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAggregationAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7654,7 +7654,7 @@ pub mod fluent_builders {
     /// <p>For more information about developing and using Config
     /// rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Amazon Web Services resource Configurations with Config</a>
     /// in the <i>Config Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7759,7 +7759,7 @@ pub mod fluent_builders {
     /// If the caller is a registered delegated administrator, Config calls <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.</p>
     /// <p>To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register a Delegated Administrator</a> in the Config developer guide. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7905,7 +7905,7 @@ pub mod fluent_builders {
     /// specified, the default is to record all supported resource
     /// types.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationRecorder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7989,7 +7989,7 @@ pub mod fluent_builders {
     /// <p>You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
     /// If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code> parameter.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConformancePack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8174,7 +8174,7 @@ pub mod fluent_builders {
     ///
     ///
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDeliveryChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8253,7 +8253,7 @@ pub mod fluent_builders {
     /// <p>Used by an Lambda function to deliver evaluation results to
     /// Config. This action is required in every Lambda function
     /// that is invoked by an Config rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEvaluations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8379,7 +8379,7 @@ pub mod fluent_builders {
     ///
     /// <p>Add or updates the evaluations for process checks.    
     /// This API checks if the rule is a process check when the name of the Config rule is provided.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutExternalEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8486,7 +8486,7 @@ pub mod fluent_builders {
     /// <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.</p>
     /// <p>Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutOrganizationConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8631,7 +8631,7 @@ pub mod fluent_builders {
     /// You cannot update a conformance pack while it is in this state.</p>
     /// <p>You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated administrator per organization. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutOrganizationConformancePack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8830,7 +8830,7 @@ pub mod fluent_builders {
     /// <p>This API does not support adding remediation configurations for service-linked Config Rules such as Organization Config rules,
     /// the rules deployed by conformance packs, and rules deployed by Amazon Web Services Security Hub.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRemediationConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8915,7 +8915,7 @@ pub mod fluent_builders {
     /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource.
     /// Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRemediationExceptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9042,7 +9042,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>Write-only schema properites are not recorded as part of the published configuration item.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9209,7 +9209,7 @@ pub mod fluent_builders {
     /// <p>Currently, Config supports only one retention
     /// configuration per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRetentionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9290,7 +9290,7 @@ pub mod fluent_builders {
     ///
     /// <p>Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for a single Amazon Web Services account and a single Amazon Web Services Region.
     /// You can create upto 300 queries in a single Amazon Web Services account and a single Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutStoredQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9403,7 +9403,7 @@ pub mod fluent_builders {
     /// <p>If you run a non-aggregation query (i.e., not using <code>GROUP BY</code> or aggregate function; e.g., <code>SELECT * WHERE resourceType = 'AWS::IAM::Role'</code>)
     /// and do not specify the <code>MaxResults</code> or the <code>Limit</code> query parameters, the default page size is set to 25.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SelectAggregateResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9523,7 +9523,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
     /// <b>Query Components</b>
     /// </a> section in the Config Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SelectResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9660,7 +9660,7 @@ pub mod fluent_builders {
     /// every 24 hours.</p>
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartConfigRulesEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9742,7 +9742,7 @@ pub mod fluent_builders {
     /// selected to record in your Amazon Web Services account.</p>
     /// <p>You must have created at least one delivery channel to
     /// successfully start the configuration recorder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartConfigurationRecorder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9821,7 +9821,7 @@ pub mod fluent_builders {
     ///
     /// <p>Runs an on-demand remediation for the specified Config rules against the last known remediation configuration. It runs an execution against the current state of your resources. Remediation execution is asynchronous.</p>
     /// <p>You can specify up to 100 resource keys per request. An existing StartRemediationExecution call for the specified resource keys must complete before you can call the API again.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRemediationExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9911,7 +9911,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopConfigurationRecorder`.
     ///
     /// <p>Stops recording configurations of the Amazon Web Services resources you have selected to record in your Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopConfigurationRecorder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9988,7 +9988,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed.
     /// When a resource is deleted, the tags associated with that resource are deleted as well.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10075,7 +10075,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

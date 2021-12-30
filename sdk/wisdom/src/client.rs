@@ -324,7 +324,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAssistant`.
     ///
     /// <p>Creates an Amazon Connect Wisdom assistant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssistant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -467,7 +467,7 @@ pub mod fluent_builders {
     /// <p>Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the
     /// only supported association is with a knowledge base. An assistant can have only a single
     /// association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssistantAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -602,7 +602,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates Wisdom content. Before to calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a> to
     /// upload an asset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -808,7 +808,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ol>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateKnowledgeBase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -992,7 +992,7 @@ pub mod fluent_builders {
     /// <p>Creates a session. A session is a contextual container used for generating
     /// recommendations. Amazon Connect creates a new Wisdom session for each contact on which Wisdom is
     /// enabled.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1117,7 +1117,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssistant`.
     ///
     /// <p>Deletes an assistant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssistant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1187,7 +1187,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssistantAssociation`.
     ///
     /// <p>Deletes an assistant association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssistantAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1273,7 +1273,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContent`.
     ///
     /// <p>Deletes the content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1363,7 +1363,7 @@ pub mod fluent_builders {
     /// external knowledge base. However, you can delete and recreate it. See <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a> and <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> in the <i>Amazon AppIntegrations API
     /// Reference</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKnowledgeBase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1436,7 +1436,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssistant`.
     ///
     /// <p>Retrieves information about an assistant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssistant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1506,7 +1506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssistantAssociation`.
     ///
     /// <p>Retrieves information about an assistant association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssistantAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1592,7 +1592,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContent`.
     ///
     /// <p>Retrieves content, including a pre-signed URL to download the content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1675,7 +1675,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContentSummary`.
     ///
     /// <p>Retrieves summary information about the content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContentSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1758,7 +1758,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetKnowledgeBase`.
     ///
     /// <p>Retrieves information about the knowledge base.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKnowledgeBase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1834,7 +1834,7 @@ pub mod fluent_builders {
     /// recommendations in subsequent calls, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_NotifyRecommendationsReceived.html">NotifyRecommendationsReceived</a>. This API supports long-polling behavior with the
     /// <code>waitTimeSeconds</code> parameter. Short poll is the default behavior and only returns
     /// recommendations already available. To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1940,7 +1940,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSession`.
     ///
     /// <p>Retrieves information for a specified session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2020,7 +2020,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssistantAssociations`.
     ///
     /// <p>Lists information about assistant associations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssistantAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2112,7 +2112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssistants`.
     ///
     /// <p>Lists information about assistants.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssistants<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2194,7 +2194,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContents`.
     ///
     /// <p>Lists the content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2289,7 +2289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListKnowledgeBases`.
     ///
     /// <p>Lists the knowledge bases.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListKnowledgeBases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2371,7 +2371,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2443,7 +2443,7 @@ pub mod fluent_builders {
     /// <p>Removes the specified recommendations from the specified assistant's queue of newly
     /// available recommendations. You can use this API in conjunction with <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a> and a <code>waitTimeSeconds</code> input for long-polling
     /// behavior and avoiding duplicate recommendations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyRecommendationsReceived<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2542,7 +2542,7 @@ pub mod fluent_builders {
     /// <p>Performs a manual search against the specified assistant. To retrieve recommendations for
     /// an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct QueryAssistant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2644,7 +2644,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveKnowledgeBaseTemplateUri`.
     ///
     /// <p>Removes a URI template from a knowledge base.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveKnowledgeBaseTemplateUri<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2718,7 +2718,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches for content in a specified knowledge base. Can be used to get a specific content
     /// resource by its name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2826,7 +2826,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchSessions`.
     ///
     /// <p>Searches for sessions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2934,7 +2934,7 @@ pub mod fluent_builders {
     /// request to the returned URL with your file, making sure to include the required headers. Then
     /// use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContent.html">CreateContent</a> to finalize the content creation process or <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateContent.html">UpdateContent</a> to modify an existing resource. You can only upload content to a
     /// knowledge base of type CUSTOM.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContentUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3017,7 +3017,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds the specified tags to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3110,7 +3110,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3197,7 +3197,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContent`.
     ///
     /// <p>Updates information about the content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3382,7 +3382,7 @@ pub mod fluent_builders {
     /// article, it has an <code>Id</code> value, and you can set the template URI to
     /// <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateKnowledgeBaseTemplateUri<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

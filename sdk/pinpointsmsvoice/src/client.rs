@@ -159,7 +159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConfigurationSet`.
     ///
     /// Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -232,7 +232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConfigurationSetEventDestination`.
     ///
     /// Create a new event destination in a configuration set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -336,7 +336,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfigurationSet`.
     ///
     /// Deletes an existing configuration set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -409,7 +409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfigurationSetEventDestination`.
     ///
     /// Deletes an event destination in a configuration set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -497,7 +497,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConfigurationSetEventDestinations`.
     ///
     /// Obtain information about an event destination, including the types of events it reports, the Amazon Resource Name (ARN) of the destination, and the name of the event destination.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationSetEventDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -572,7 +572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConfigurationSets`.
     ///
     /// List all of the configuration sets associated with your Amazon Pinpoint account in the current region.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -652,7 +652,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendVoiceMessage`.
     ///
     /// Create a new voice message and send it to a recipient's phone number.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendVoiceMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -780,7 +780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConfigurationSetEventDestination`.
     ///
     /// Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

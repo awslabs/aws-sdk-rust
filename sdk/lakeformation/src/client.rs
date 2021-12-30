@@ -397,7 +397,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddLFTagsToResource`.
     ///
     /// <p>Attaches one or more LF-tags to an existing resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddLFTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -494,7 +494,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGrantPermissions`.
     ///
     /// <p>Batch operation to grant permissions to the principal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGrantPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -581,7 +581,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchRevokePermissions`.
     ///
     /// <p>Batch operation to revoke permissions from the principal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchRevokePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -668,7 +668,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelTransaction`.
     ///
     /// <p>Attempts to cancel the specified transaction. Returns an exception if the transaction was previously committed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -741,7 +741,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CommitTransaction`.
     ///
     /// <p>Attempts to commit the specified transaction. Returns an exception if the transaction was previously aborted. This API action is idempotent if called multiple times for the same transaction.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CommitTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -814,7 +814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataCellsFilter`.
     ///
     /// <p>Creates a data cell filter to allow one to grant access to certain columns on certain rows.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataCellsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -887,7 +887,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLFTag`.
     ///
     /// <p>Creates an LF-tag with the specified name and values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLFTag<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -984,7 +984,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataCellsFilter`.
     ///
     /// <p>Deletes a data cell filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataCellsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1090,7 +1090,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLFTag`.
     ///
     /// <p>Deletes the specified LF-tag key name. If the attribute key does not exist or the LF-tag does not exist, then the operation will not do anything. If the attribute key exists, then the operation checks if any resources are tagged with this attribute key, if yes, the API throws a 400 Exception with the message "Delete not allowed" as the LF-tag key is still attached with resources. You can consider untagging resources with this LF-tag key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLFTag<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1177,7 +1177,7 @@ pub mod fluent_builders {
     /// call <code>DeleteObjectsOnCancel</code> before writes. For more information, see
     /// <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/transactions-data-operations.html#rolling-back-writes">Rolling Back Amazon S3 Writes</a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteObjectsOnCancel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1302,7 +1302,7 @@ pub mod fluent_builders {
     /// <p>Deregisters the resource as managed by the Data Catalog.</p>
     ///
     /// <p>When you deregister a path, Lake Formation removes the path from the inline policy attached to your service-linked role.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1372,7 +1372,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeResource`.
     ///
     /// <p>Retrieves the current data access role for the given resource registered in Lake Formation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1442,7 +1442,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTransaction`.
     ///
     /// <p>Returns the details of a single transaction.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1517,7 +1517,7 @@ pub mod fluent_builders {
     /// <p>Indicates to the service that the specified transaction is still active and should not be treated as idle and aborted.</p>
     ///
     /// <p>Write transactions that remain idle for a long period are automatically aborted unless explicitly extended.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExtendTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1590,7 +1590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataLakeSettings`.
     ///
     /// <p>Retrieves the list of the data lake administrators of a Lake Formation-managed data lake. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataLakeSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1661,7 +1661,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the Lake Formation permissions for a specified table or database resource located
     /// at a path in Amazon S3. <code>GetEffectivePermissionsForPath</code> will not return databases and tables if the catalog is encrypted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEffectivePermissionsForPath<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1761,7 +1761,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLFTag`.
     ///
     /// <p>Returns an LF-tag definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLFTag<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1841,7 +1841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetQueryState`.
     ///
     /// <p>Returns the state of a query previously submitted. Clients are expected to poll <code>GetQueryState</code> to monitor the current state of the planning before retrieving the work units. A query state is only visible to the principal that made the initial call to <code>StartQueryPlanning</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1911,7 +1911,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetQueryStatistics`.
     ///
     /// <p>Retrieves statistics on the planning and execution of a query.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1981,7 +1981,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceLFTags`.
     ///
     /// <p>Returns the LF-tags applied to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceLFTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2071,7 +2071,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTableObjects`.
     ///
     /// <p>Returns the set of Amazon S3 objects that make up the specified governed table. A transaction ID or timestamp can be specified for time-travel queries.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTableObjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2245,7 +2245,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkUnitResults`.
     ///
     /// <p>Returns the work units resulting from the query. Work units can be executed in any order and in parallel. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkUnitResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2338,7 +2338,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkUnits`.
     ///
     /// <p>Retrieves the work units generated by the <code>StartQueryPlanning</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkUnits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2429,7 +2429,7 @@ pub mod fluent_builders {
     ///
     /// <p>Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3.</p>
     /// <p>For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GrantPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2558,7 +2558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataCellsFilter`.
     ///
     /// <p>Lists all the data cell filters on a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataCellsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2651,7 +2651,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLFTags`.
     ///
     /// <p>Lists LF-tags that the requester has permission to view. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLFTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2756,7 +2756,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER.</p>
     /// <p>This operation returns only those permissions that have been explicitly granted.</p>
     /// <p>For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2897,7 +2897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResources`.
     ///
     /// <p>Lists the resources registered to be managed by the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2994,7 +2994,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTableStorageOptimizers`.
     ///
     /// <p>Returns the configuration of all storage optimizers associated with a specified table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTableStorageOptimizers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3121,7 +3121,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns metadata about transactions and their status. To prevent the response from growing indefinitely, only uncommitted transactions and those available for time-travel queries are returned.</p>
     /// <p>This operation can help you identify uncommitted transactions or to get information about transactions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTransactions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3226,7 +3226,7 @@ pub mod fluent_builders {
     /// <p>Sets the list of data lake administrators who have admin privileges on all resources managed by Lake Formation. For more information on admin privileges, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting Lake Formation Permissions</a>.</p>
     ///
     /// <p>This API replaces the current list of data lake admins with the new list being passed. To add an admin, fetch the current list and add the new admin to that list and pass that list in this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDataLakeSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3324,7 +3324,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>arn:aws:iam::12345:role/my-data-access-role</code>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3418,7 +3418,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveLFTagsFromResource`.
     ///
     /// <p>Removes an LF-tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code> to specify column input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveLFTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3515,7 +3515,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokePermissions`.
     ///
     /// <p>Revokes permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3644,7 +3644,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchDatabasesByLFTags`.
     ///
     /// <p>This operation allows a search on <code>DATABASE</code> resources by <code>TagCondition</code>. This operation is used by admins who want to grant user permissions on certain <code>TagConditions</code>. Before making a grant, the admin can use <code>SearchDatabasesByTags</code> to find all resources where the given <code>TagConditions</code> are valid to verify whether the returned resources can be shared.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchDatabasesByLFTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3751,7 +3751,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchTablesByLFTags`.
     ///
     /// <p>This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s. This will be used by admins who want to grant user permissions on certain LF-tags. Before making a grant, the admin can use <code>SearchTablesByLFTags</code> to find all resources where the given <code>LFTag</code>s are valid to verify whether the returned resources can be shared.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchTablesByLFTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3860,7 +3860,7 @@ pub mod fluent_builders {
     /// <p>Submits a request to process a query statement.</p>
     ///
     /// <p>This operation generates work units that can be retrieved with the <code>GetWorkUnits</code> operation as soon as the query state is WORKUNITS_AVAILABLE or FINISHED.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartQueryPlanning<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3946,7 +3946,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartTransaction`.
     ///
     /// <p>Starts a new transaction and returns its transaction ID. Transaction IDs are opaque objects that you can use to identify a transaction.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4019,7 +4019,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLFTag`.
     ///
     /// <p>Updates the list of possible values for the specified LF-tag key. If the LF-tag does not exist, the operation throws an EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any value in the delete key values is attached to a resource, then API errors out with a 400 Exception - "Update not allowed". Untag the attribute before deleting the LF-tag key's value. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLFTag<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4133,7 +4133,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResource`.
     ///
     /// <p>Updates the data access role used for vending access to the given (registered) resource in Lake Formation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4213,7 +4213,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTableObjects`.
     ///
     /// <p>Updates the manifest of Amazon S3 objects that make up the specified governed table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTableObjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4336,7 +4336,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTableStorageOptimizer`.
     ///
     /// <p>Updates the configuration of the storage optimizers for a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTableStorageOptimizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -837,7 +837,7 @@ pub mod fluent_builders {
     /// to set up the target distribution, prerequisites that you must complete, and other
     /// restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving an alternate domain name to a different distribution</a>
     /// in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -940,7 +940,7 @@ pub mod fluent_builders {
     /// <code>OriginRequestPolicy</code>.</p>
     /// <p>For more information about cache policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling the cache key</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCachePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1016,7 +1016,7 @@ pub mod fluent_builders {
     /// use an origin access identity to require users to access your content using a CloudFront URL instead
     /// of the Amazon S3 URL. For more information about how to use origin access identities, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCloudFrontOriginAccessIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1110,7 +1110,7 @@ pub mod fluent_builders {
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
     /// Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1183,7 +1183,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDistributionWithTags`.
     ///
     /// <p>Create a new distribution with tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDistributionWithTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1259,7 +1259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFieldLevelEncryptionConfig`.
     ///
     /// <p>Create a new field-level encryption configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFieldLevelEncryptionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1335,7 +1335,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFieldLevelEncryptionProfile`.
     ///
     /// <p>Create a field-level encryption profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFieldLevelEncryptionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1421,7 +1421,7 @@ pub mod fluent_builders {
     /// <code>PublishFunction</code> to copy the function from the <code>DEVELOPMENT</code>
     /// stage to <code>LIVE</code>. When it’s live, you can attach the function to a
     /// distribution’s cache behavior, using the function’s ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1521,7 +1521,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInvalidation`.
     ///
     /// <p>Create a new invalidation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInvalidation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1614,7 +1614,7 @@ pub mod fluent_builders {
     /// a private key whose corresponding public key is in the key group. The signed URL or
     /// cookie contains information about which public key CloudFront should use to verify the
     /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateKeyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1690,7 +1690,7 @@ pub mod fluent_builders {
     /// additional metrics incur an additional cost.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional">Viewing additional CloudFront distribution metrics</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMonitoringSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1805,7 +1805,7 @@ pub mod fluent_builders {
     /// key, use <code>CachePolicy</code>.</p>
     /// <p>For more information about origin request policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling origin requests</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOriginRequestPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1881,7 +1881,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePublicKey`.
     ///
     /// <p>Uploads a public key to CloudFront that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePublicKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1957,7 +1957,7 @@ pub mod fluent_builders {
     /// <p>After you create a real-time log configuration, you can attach it to one or more cache
     /// behaviors to send real-time log data to the specified Amazon Kinesis data stream.</p>
     /// <p>For more information about real-time log configurations, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRealtimeLogConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2088,7 +2088,7 @@ pub mod fluent_builders {
     /// cache behaviors in a CloudFront distribution. When it’s attached to a cache behavior, CloudFront
     /// adds the headers in the policy to HTTP responses that it sends for requests that match
     /// the cache behavior.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResponseHeadersPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2168,7 +2168,7 @@ pub mod fluent_builders {
     /// <p>This API is deprecated.
     /// Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020.
     /// For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2246,7 +2246,7 @@ pub mod fluent_builders {
     /// <p>This API is deprecated.
     /// Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020.
     /// For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingDistributionWithTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2334,7 +2334,7 @@ pub mod fluent_builders {
     /// <p>To delete a cache policy, you must provide the policy’s identifier and version. To get these
     /// values, you can use <code>ListCachePolicies</code> or
     /// <code>GetCachePolicy</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCachePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2422,7 +2422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCloudFrontOriginAccessIdentity`.
     ///
     /// <p>Delete an origin access identity. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCloudFrontOriginAccessIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2506,7 +2506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDistribution`.
     ///
     /// <p>Delete a distribution. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2588,7 +2588,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFieldLevelEncryptionConfig`.
     ///
     /// <p>Remove a field-level encryption configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFieldLevelEncryptionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2670,7 +2670,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFieldLevelEncryptionProfile`.
     ///
     /// <p>Remove a field-level encryption profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFieldLevelEncryptionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2758,7 +2758,7 @@ pub mod fluent_builders {
     /// <p>To delete a function, you must provide the function’s name and version
     /// (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code>
     /// and <code>DescribeFunction</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2846,7 +2846,7 @@ pub mod fluent_builders {
     /// <p>To delete a key group, you must provide the key group’s identifier and version. To get
     /// these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or
     /// <code>GetKeyGroupConfig</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKeyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2932,7 +2932,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMonitoringSubscription`.
     ///
     /// <p>Disables additional CloudWatch metrics for the specified CloudFront distribution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMonitoringSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3011,7 +3011,7 @@ pub mod fluent_builders {
     /// <p>To delete an origin request policy, you must provide the policy’s identifier and version. To
     /// get the identifier, you can use <code>ListOriginRequestPolicies</code> or
     /// <code>GetOriginRequestPolicy</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOriginRequestPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3099,7 +3099,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePublicKey`.
     ///
     /// <p>Remove a public key you previously added to CloudFront.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePublicKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3187,7 +3187,7 @@ pub mod fluent_builders {
     /// <p>To delete a real-time log configuration, you can provide the configuration’s name or its
     /// Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront
     /// uses the name to identify the real-time log configuration to delete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRealtimeLogConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3273,7 +3273,7 @@ pub mod fluent_builders {
     /// <p>To delete a response headers policy, you must provide the policy’s identifier and
     /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code> or
     /// <code>GetResponseHeadersPolicy</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResponseHeadersPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3410,7 +3410,7 @@ pub mod fluent_builders {
     /// </ol>
     /// <p>For information about deleting a distribution using the CloudFront console, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a Distribution</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStreamingDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3496,7 +3496,7 @@ pub mod fluent_builders {
     /// <p>To get configuration information and metadata about a function, you must provide the
     /// function’s name and stage. To get these values, you can use
     /// <code>ListFunctions</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3592,7 +3592,7 @@ pub mod fluent_builders {
     /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
     /// not attached to a cache behavior, you can get the identifier using
     /// <code>ListCachePolicies</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCachePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3675,7 +3675,7 @@ pub mod fluent_builders {
     /// identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
     /// cache policy is not attached to a cache behavior, you can get the identifier using
     /// <code>ListCachePolicies</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCachePolicyConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3753,7 +3753,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCloudFrontOriginAccessIdentity`.
     ///
     /// <p>Get the information about an origin access identity. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCloudFrontOriginAccessIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3823,7 +3823,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCloudFrontOriginAccessIdentityConfig`.
     ///
     /// <p>Get the configuration information about an origin access identity. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCloudFrontOriginAccessIdentityConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3895,7 +3895,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDistribution`.
     ///
     /// <p>Get the information about a distribution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3965,7 +3965,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDistributionConfig`.
     ///
     /// <p>Get the configuration information about a distribution. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4035,7 +4035,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFieldLevelEncryption`.
     ///
     /// <p>Get the field-level encryption configuration information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFieldLevelEncryption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4105,7 +4105,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFieldLevelEncryptionConfig`.
     ///
     /// <p>Get the field-level encryption configuration information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFieldLevelEncryptionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4175,7 +4175,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFieldLevelEncryptionProfile`.
     ///
     /// <p>Get the field-level encryption profile information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFieldLevelEncryptionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4245,7 +4245,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFieldLevelEncryptionProfileConfig`.
     ///
     /// <p>Get the field-level encryption profile configuration information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFieldLevelEncryptionProfileConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4320,7 +4320,7 @@ pub mod fluent_builders {
     /// a function, use <code>DescribeFunction</code>.</p>
     /// <p>To get a function’s code, you must provide the function’s name and stage. To get these
     /// values, you can use <code>ListFunctions</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4403,7 +4403,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInvalidation`.
     ///
     /// <p>Get the information about an invalidation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvalidation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4493,7 +4493,7 @@ pub mod fluent_builders {
     /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group
     /// is not referenced in a cache behavior, you can get the identifier using
     /// <code>ListKeyGroups</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKeyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4570,7 +4570,7 @@ pub mod fluent_builders {
     /// identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
     /// key group is not referenced in a cache behavior, you can get the identifier using
     /// <code>ListKeyGroups</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKeyGroupConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4643,7 +4643,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about whether additional CloudWatch metrics are enabled for the specified
     /// CloudFront distribution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMonitoringSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4729,7 +4729,7 @@ pub mod fluent_builders {
     /// identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
     /// origin request policy is not attached to a cache behavior, you can get the identifier
     /// using <code>ListOriginRequestPolicies</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOriginRequestPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4813,7 +4813,7 @@ pub mod fluent_builders {
     /// <code>GetDistribution</code>. If the origin request policy is not attached to a cache
     /// behavior, you can get the identifier using
     /// <code>ListOriginRequestPolicies</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOriginRequestPolicyConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4891,7 +4891,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPublicKey`.
     ///
     /// <p>Gets a public key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPublicKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4961,7 +4961,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPublicKeyConfig`.
     ///
     /// <p>Gets a public key configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPublicKeyConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5034,7 +5034,7 @@ pub mod fluent_builders {
     /// <p>To get a real-time log configuration, you can provide the configuration’s name or its Amazon
     /// Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the
     /// name to identify the real-time log configuration to get.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRealtimeLogConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5121,7 +5121,7 @@ pub mod fluent_builders {
     /// <code>GetDistribution</code>. If the response headers policy is not attached to a cache
     /// behavior, you can get the identifier using
     /// <code>ListResponseHeadersPolicies</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResponseHeadersPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5207,7 +5207,7 @@ pub mod fluent_builders {
     /// <code>GetDistribution</code>. If the response headers policy is not attached to a
     /// cache behavior, you can get the identifier using
     /// <code>ListResponseHeadersPolicies</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResponseHeadersPolicyConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5287,7 +5287,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStreamingDistribution`.
     ///
     /// <p>Gets information about a specified RTMP distribution, including the distribution configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamingDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5357,7 +5357,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStreamingDistributionConfig`.
     ///
     /// <p>Get the configuration information about a streaming distribution. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamingDistributionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5434,7 +5434,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCachePolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5555,7 +5555,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCloudFrontOriginAccessIdentities`.
     ///
     /// <p>Lists origin access identities.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCloudFrontOriginAccessIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5669,7 +5669,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConflictingAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5780,7 +5780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDistributions`.
     ///
     /// <p>List CloudFront distributions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5874,7 +5874,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByCachePolicyId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5979,7 +5979,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByKeyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6081,7 +6081,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByOriginRequestPolicyId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6196,7 +6196,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByRealtimeLogConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6326,7 +6326,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByResponseHeadersPolicyId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6432,7 +6432,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDistributionsByWebACLId`.
     ///
     /// <p>List the distributions that are associated with a specified WAF web ACL.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionsByWebACLId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6536,7 +6536,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFieldLevelEncryptionConfigs`.
     ///
     /// <p>List all field-level encryption configurations that have been created in CloudFront for this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFieldLevelEncryptionConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6620,7 +6620,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFieldLevelEncryptionProfiles`.
     ///
     /// <p>Request a list of field-level encryption profiles that have been created in CloudFront for this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFieldLevelEncryptionProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6711,7 +6711,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6812,7 +6812,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInvalidations`.
     ///
     /// <p>Lists invalidation batches. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvalidations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6922,7 +6922,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListKeyGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7015,7 +7015,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOriginRequestPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7136,7 +7136,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPublicKeys`.
     ///
     /// <p>List all public keys that have been added to CloudFront for this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPublicKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7225,7 +7225,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRealtimeLogConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7318,7 +7318,7 @@ pub mod fluent_builders {
     /// default maximum, the response is paginated. To get the next page of items, send a
     /// subsequent request that specifies the <code>NextMarker</code> value from the current
     /// response as the <code>Marker</code> value in the subsequent request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResponseHeadersPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7441,7 +7441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStreamingDistributions`.
     ///
     /// <p>List streaming distributions. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamingDistributions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7521,7 +7521,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List tags for a CloudFront resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7599,7 +7599,7 @@ pub mod fluent_builders {
     /// <p>To publish a function, you must provide the function’s name and version (<code>ETag</code>
     /// value). To get these values, you can use <code>ListFunctions</code> and
     /// <code>DescribeFunction</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7681,7 +7681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Add tags to a CloudFront resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7770,7 +7770,7 @@ pub mod fluent_builders {
     /// <p>To test a function, you provide the function’s name and version (<code>ETag</code> value)
     /// along with the event object. To get the function’s name and version, you can use
     /// <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7882,7 +7882,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove tags from a CloudFront resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7979,7 +7979,7 @@ pub mod fluent_builders {
     /// didn’t.</p>
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCachePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8080,7 +8080,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCloudFrontOriginAccessIdentity`.
     ///
     /// <p>Update an origin access identity. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCloudFrontOriginAccessIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8262,7 +8262,7 @@ pub mod fluent_builders {
     /// When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.</p>
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8357,7 +8357,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFieldLevelEncryptionConfig`.
     ///
     /// <p>Update a field-level encryption configuration. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFieldLevelEncryptionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8455,7 +8455,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFieldLevelEncryptionProfile`.
     ///
     /// <p>Update a field-level encryption profile. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFieldLevelEncryptionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8558,7 +8558,7 @@ pub mod fluent_builders {
     /// <p>To update a function, you provide the function’s name and version (<code>ETag</code> value)
     /// along with the updated function code. To get the name and version, you can use
     /// <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8685,7 +8685,7 @@ pub mod fluent_builders {
     /// the fields that you modified and those that you didn’t.</p>
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateKeyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8797,7 +8797,7 @@ pub mod fluent_builders {
     /// that you didn’t.</p>
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOriginRequestPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8901,7 +8901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePublicKey`.
     ///
     /// <p>Update public key information. Note that the only value you can change is the comment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePublicKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9016,7 +9016,7 @@ pub mod fluent_builders {
     /// </ol>
     /// <p>You cannot update a real-time log configuration’s <code>Name</code> or
     /// <code>ARN</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRealtimeLogConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9168,7 +9168,7 @@ pub mod fluent_builders {
     /// that you didn’t.</p>
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResponseHeadersPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9268,7 +9268,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStreamingDistribution`.
     ///
     /// <p>Update a streaming distribution. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStreamingDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -138,7 +138,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being
     /// generated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -208,7 +208,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReportDefinition`.
     ///
     /// <p>Retrieves the definition of a report already configured in AWS Application Cost Profiler.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -281,7 +281,7 @@ pub mod fluent_builders {
     /// <p>The data must already exist in the S3 location. As part of the action, AWS Application Cost Profiler
     /// copies the object from your S3 bucket to an S3 bucket owned by Amazon for processing
     /// asynchronously.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportApplicationUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -355,7 +355,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of all reports and their configurations for your AWS account.</p>
     /// <p>The maximum number of reports is one.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReportDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -435,7 +435,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutReportDefinition`.
     ///
     /// <p>Creates the report definition for a report in Application Cost Profiler.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -558,7 +558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReportDefinition`.
     ///
     /// <p>Updates existing report in AWS Application Cost Profiler.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

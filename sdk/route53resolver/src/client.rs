@@ -588,7 +588,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateFirewallRuleGroup`.
     ///
     /// <p>Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the VPC. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateFirewallRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -759,7 +759,7 @@ pub mod fluent_builders {
     /// <p>To remove an IP address from an endpoint, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html">DisassociateResolverEndpointIpAddress</a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateResolverEndpointIpAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -859,7 +859,7 @@ pub mod fluent_builders {
     /// <p>To remove a VPC from a query logging configuration, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateResolverQueryLogConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -956,7 +956,7 @@ pub mod fluent_builders {
     /// for the domain name that is specified in the rule and that originate in the VPC. The queries are forwarded to the
     /// IP addresses for the DNS resolvers that are specified in the rule. For more information about rules, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateResolverRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1051,7 +1051,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFirewallDomainList`.
     ///
     /// <p>Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new list with a file, using <a>ImportFirewallDomains</a>, or with domain strings, using <a>UpdateFirewallDomains</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewallDomainList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1155,7 +1155,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFirewallRule`.
     ///
     /// <p>Creates a single DNS Firewall rule in the specified rule group, using the specified domain list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewallRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1418,7 +1418,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC. You can add rules to the new rule group
     /// by calling <a>CreateFirewallRule</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewallRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1532,7 +1532,7 @@ pub mod fluent_builders {
     /// to your network.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResolverEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1719,7 +1719,7 @@ pub mod fluent_builders {
     /// <p>You can optionally use Resource Access Manager (RAM) to share a query logging configuration with other Amazon Web Services accounts. The other accounts
     /// can then associate VPCs with the configuration. The query logs that Resolver creates for a configuration include all DNS queries that originate in all
     /// VPCs that are associated with the configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResolverQueryLogConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1895,7 +1895,7 @@ pub mod fluent_builders {
     ///
     /// <p>For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass through,
     /// one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResolverRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2074,7 +2074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFirewallDomainList`.
     ///
     /// <p>Deletes the specified domain list. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFirewallDomainList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2150,7 +2150,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFirewallRule`.
     ///
     /// <p>Deletes the specified firewall rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFirewallRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2239,7 +2239,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFirewallRuleGroup`.
     ///
     /// <p>Deletes the specified firewall rule group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFirewallRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2324,7 +2324,7 @@ pub mod fluent_builders {
     /// <b>Outbound</b>: DNS queries from a VPC are no longer routed to your network.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResolverEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2407,7 +2407,7 @@ pub mod fluent_builders {
     /// the configuration before you can delete a configuration. The accounts that you shared the configuration with can first disassociate VPCs
     /// that they associated with the configuration, but that's not necessary. If you stop sharing the configuration, those VPCs are automatically
     /// disassociated from the configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResolverQueryLogConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2485,7 +2485,7 @@ pub mod fluent_builders {
     /// <p>Deletes a Resolver rule. Before you can delete a Resolver rule, you must disassociate it from all the VPCs that you
     /// associated the Resolver rule with. For more information, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html">DisassociateResolverRule</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResolverRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2558,7 +2558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateFirewallRuleGroup`.
     ///
     /// <p>Disassociates a <a>FirewallRuleGroup</a> from a VPC, to remove DNS filtering from the VPC. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFirewallRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2640,7 +2640,7 @@ pub mod fluent_builders {
     /// <p>To add an IP address to an endpoint, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html">AssociateResolverEndpointIpAddress</a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateResolverEndpointIpAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2743,7 +2743,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateResolverQueryLogConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2835,7 +2835,7 @@ pub mod fluent_builders {
     /// <p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the
     /// domain name that you specified in the Resolver rule. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateResolverRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2919,7 +2919,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall for a
     /// single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFirewallConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2989,7 +2989,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFirewallDomainList`.
     ///
     /// <p>Retrieves the specified firewall domain list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFirewallDomainList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3065,7 +3065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFirewallRuleGroup`.
     ///
     /// <p>Retrieves the specified firewall rule group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFirewallRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3138,7 +3138,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFirewallRuleGroupAssociation`.
     ///
     /// <p>Retrieves a firewall rule group association, which enables DNS filtering for a VPC with one rule group. A VPC can have more than one firewall rule group association, and a rule group can be associated with more than one VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFirewallRuleGroupAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3217,7 +3217,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy for sharing the
     /// specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFirewallRuleGroupPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3288,7 +3288,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC from
     /// Amazon Virtual Private Cloud.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3358,7 +3358,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResolverDnssecConfig`.
     ///
     /// <p>Gets DNSSEC validation information for a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverDnssecConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3429,7 +3429,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about a specified Resolver endpoint, such as whether it's an inbound or an outbound Resolver endpoint, and the
     /// current status of the endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3503,7 +3503,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration
     /// is logging queries for and the location that logs are sent to. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverQueryLogConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3580,7 +3580,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about a specified association between a Resolver query logging configuration and an Amazon VPC. When you associate a VPC
     /// with a query logging configuration, Resolver logs DNS queries that originate in that VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverQueryLogConfigAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3663,7 +3663,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about a query logging policy. A query logging policy specifies the Resolver query logging
     /// operations and resources that you want to allow another Amazon Web Services account to be able to use.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverQueryLogConfigPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3734,7 +3734,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the ID of the
     /// outbound Resolver endpoint that the rule is associated with.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3808,7 +3808,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about an association between a specified Resolver rule and a VPC. You associate a Resolver rule and a VPC using
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverRuleAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3885,7 +3885,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule that you want to share
     /// with another account, the account that you want to share the rule with, and the Resolver operations that you want to allow the account to use. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolverRulePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3970,7 +3970,7 @@ pub mod fluent_builders {
     /// <p>It must be from 1-255 characters in length. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportFirewallDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4079,7 +4079,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the firewall configurations that you have defined. DNS Firewall uses the configurations to manage firewall behavior for your VPCs. </p>
     /// <p>A single call might return only a partial list of the configurations. For information, see <code>MaxResults</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4174,7 +4174,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the domains that are defined for a list by calling <a>ListFirewallDomains</a>. </p>
     /// <p>A single call to this list operation might return only a partial list of the domain lists. For information, see <code>MaxResults</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallDomainLists<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4269,7 +4269,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the domains that you have defined for the specified firewall domain list.  </p>
     /// <p>A single call might return only a partial list of the domains. For information, see <code>MaxResults</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4380,7 +4380,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the firewall rule group associations that you have defined. Each association enables DNS filtering for a VPC with one rule group. </p>
     /// <p>A single call might return only a partial list of the associations. For information, see <code>MaxResults</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallRuleGroupAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4532,7 +4532,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the minimal high-level information for the rule groups that you have defined.  </p>
     /// <p>A single call might return only a partial list of the rule groups. For information, see <code>MaxResults</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallRuleGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4627,7 +4627,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the rules in a rule group to filter DNS network traffic for a VPC. </p>
     /// <p>A single call might return only a partial list of the rules. For information, see <code>MaxResults</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4789,7 +4789,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the Resolver configurations that you have defined.
     /// Route 53 Resolver uses the configurations to manage DNS resolution behavior for your VPCs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolverConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4881,7 +4881,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResolverDnssecConfigs`.
     ///
     /// <p>Lists the configurations for DNSSEC validation that are associated with the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolverDnssecConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4990,7 +4990,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResolverEndpointIpAddresses`.
     ///
     /// <p>Gets the IP addresses for a specified Resolver endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolverEndpointIpAddresses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5091,7 +5091,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResolverEndpoints`.
     ///
     /// <p>Lists all the Resolver endpoints that were created using the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolverEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5202,7 +5202,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResolverQueryLogConfigAssociations`.
     ///
     /// <p>Lists information about associations between Amazon VPCs and query logging configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolverQueryLogConfigAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5497,7 +5497,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists information about the specified query logging configurations. Each configuration defines where you want Resolver to save
     /// DNS query logs and specifies the VPCs that you want to log queries for.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolverQueryLogConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5799,7 +5799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResolverRuleAssociations`.
     ///
     /// <p>Lists the associations that were created between Resolver rules and VPCs using the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolverRuleAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5910,7 +5910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResolverRules`.
     ///
     /// <p>Lists the Resolver rules that were created using the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolverRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6021,7 +6021,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags that you associated with the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6119,7 +6119,7 @@ pub mod fluent_builders {
     /// <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing the rule
     /// group. You can use the policy to share the rule group using Resource Access Manager
     /// (RAM). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFirewallRuleGroupPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6206,7 +6206,7 @@ pub mod fluent_builders {
     ///
     /// <p>Specifies an Amazon Web Services account that you want to share a query logging configuration with, the query logging configuration that you want to share,
     /// and the operations that you want the account to be able to perform on the configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResolverQueryLogConfigPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6349,7 +6349,7 @@ pub mod fluent_builders {
     ///
     /// <p>Specifies an Amazon Web Services rule that you want to share with another account, the account that you want to share the rule with,
     /// and the operations that you want the account to be able to perform on the rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResolverRulePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6494,7 +6494,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6647,7 +6647,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6801,7 +6801,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the configuration of the firewall behavior provided by DNS Firewall for a single
     /// VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6909,7 +6909,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFirewallDomains`.
     ///
     /// <p>Updates the firewall domain list from an array of domain specifications. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7073,7 +7073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFirewallRule`.
     ///
     /// <p>Updates the specified firewall rule. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7308,7 +7308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFirewallRuleGroupAssociation`.
     ///
     /// <p>Changes the association of a <a>FirewallRuleGroup</a> with a VPC. The association enables DNS filtering for the VPC. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallRuleGroupAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7435,7 +7435,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the behavior configuration of Route 53 Resolver behavior for a single VPC from
     /// Amazon Virtual Private Cloud.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResolverConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7535,7 +7535,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResolverDnssecConfig`.
     ///
     /// <p>Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC validation configuration, one is created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResolverDnssecConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7620,7 +7620,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResolverEndpoint`.
     ///
     /// <p>Updates the name of an inbound or an outbound Resolver endpoint.  </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResolverEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7704,7 +7704,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates settings for a specified Resolver rule. <code>ResolverRuleId</code> is required, and all other parameters are optional.
     /// If you don't specify a parameter, it retains its current value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResolverRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

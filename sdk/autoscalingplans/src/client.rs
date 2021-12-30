@@ -141,7 +141,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateScalingPlan`.
     ///
     /// <p>Creates a scaling plan. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateScalingPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -256,7 +256,7 @@ pub mod fluent_builders {
     /// all of the scalable resources that are covered by the plan.</p>
     /// <p>If the plan has launched resources or has scaling activities in progress, you must
     /// delete those resources separately.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteScalingPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -341,7 +341,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeScalingPlanResources`.
     ///
     /// <p>Describes the scalable resources in the specified scaling plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScalingPlanResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -448,7 +448,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeScalingPlans`.
     ///
     /// <p>Describes one or more of your scaling plans.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScalingPlans<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -591,7 +591,7 @@ pub mod fluent_builders {
     /// <p>Capacity forecasts are represented as predicted values, or data points, that are
     /// calculated using historical data points from a specified CloudWatch load metric. Data points are
     /// available for up to 56 days. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetScalingPlanResourceForecastData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -817,7 +817,7 @@ pub mod fluent_builders {
     /// <p>Updates the specified scaling plan.</p>
     /// <p>You cannot update a scaling plan if it is in the process of being created, updated, or
     /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateScalingPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

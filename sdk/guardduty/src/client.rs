@@ -523,7 +523,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptInvitation`.
     ///
     /// <p>Accepts the invitation to be monitored by a GuardDuty administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -620,7 +620,7 @@ pub mod fluent_builders {
     /// <p>Only the administrator account can archive findings. Member accounts don't have permission to
     /// archive findings from their accounts.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ArchiveFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -712,7 +712,7 @@ pub mod fluent_builders {
     /// GuardDuty service. To start using GuardDuty, you must create a detector in each Region where
     /// you enable the service. You can have only one detector per account per Region. All data
     /// sources are enabled in a new detector by default.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -844,7 +844,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFilter`.
     ///
     /// <p>Creates a filter using the specified finding criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1332,7 +1332,7 @@ pub mod fluent_builders {
     /// IPSet is a list of IP addresses that are trusted for secure communication with AWS
     /// infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are
     /// included in IPSets. Only users from the administrator account can use this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1494,7 +1494,7 @@ pub mod fluent_builders {
     /// <code>Invite
     /// Members</code>
     /// </a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1586,7 +1586,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a publishing destination to export findings to. The resource to export findings to
     /// must exist before you use this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1701,7 +1701,7 @@ pub mod fluent_builders {
     /// <p>Generates example findings of types specified by the list of finding types. If 'NULL' is
     /// specified for <code>findingTypes</code>, the API generates example findings of all supported
     /// finding types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSampleFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1790,7 +1790,7 @@ pub mod fluent_builders {
     /// <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
     /// GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can
     /// use this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateThreatIntelSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1945,7 +1945,7 @@ pub mod fluent_builders {
     ///
     /// <p>Declines invitations sent to the current member account by AWS accounts specified by their
     /// account IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeclineInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2024,7 +2024,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDetector`.
     ///
     /// <p>Deletes an Amazon GuardDuty detector that is specified by the detector ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2094,7 +2094,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFilter`.
     ///
     /// <p>Deletes the filter specified by the filter name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2175,7 +2175,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes invitations sent to the current member account by AWS accounts specified by their
     /// account IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2255,7 +2255,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP
     /// lists in the console user interface.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2336,7 +2336,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by
     /// the account IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2425,7 +2425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePublishingDestination`.
     ///
     /// <p>Deletes the publishing definition with the specified <code>destinationId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2508,7 +2508,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteThreatIntelSet`.
     ///
     /// <p>Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteThreatIntelSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2592,7 +2592,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the account selected as the delegated administrator for
     /// GuardDuty.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2665,7 +2665,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the publishing destination specified by the provided
     /// <code>destinationId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2751,7 +2751,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables an AWS account within the Organization as the GuardDuty delegated
     /// administrator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2826,7 +2826,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateFromMasterAccount`.
     ///
     /// <p>Disassociates the current GuardDuty member account from its administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2897,7 +2897,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disassociates GuardDuty member accounts (to the current GuardDuty administrator account)
     /// specified by the account IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2989,7 +2989,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables an AWS account within the organization as the GuardDuty delegated
     /// administrator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3064,7 +3064,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDetector`.
     ///
     /// <p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3134,7 +3134,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFilter`.
     ///
     /// <p>Returns the details of the filter specified by the filter name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3214,7 +3214,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindings`.
     ///
     /// <p>Describes Amazon GuardDuty findings specified by finding IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3316,7 +3316,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingsStatistics`.
     ///
     /// <p>Lists Amazon GuardDuty findings statistics for the specified detector ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingsStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3422,7 +3422,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the count of all GuardDuty membership invitations that were sent to the current
     /// member account except the currently accepted invitation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvitationsCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3482,7 +3482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIPSet`.
     ///
     /// <p>Retrieves the IPSet specified by the <code>ipSetId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3563,7 +3563,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides the details for the GuardDuty administrator account associated with the current
     /// GuardDuty member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3633,7 +3633,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMemberDetectors`.
     ///
     /// <p>Describes which data sources are enabled for the member account's detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMemberDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3721,7 +3721,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by
     /// the account IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3810,7 +3810,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetThreatIntelSet`.
     ///
     /// <p>Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetThreatIntelSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3896,7 +3896,7 @@ pub mod fluent_builders {
     /// ID. For newly enabled detectors or data sources the cost returned will include only the usage
     /// so far under 30 days, this may differ from the cost metrics in the console, which projects
     /// usage over 30 days to provide a monthly cost estimate. For more information see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are Calculated</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUsageStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4034,7 +4034,7 @@ pub mod fluent_builders {
     /// <p>Invites other AWS accounts (created as members of the current AWS account by
     /// CreateMembers) to enable GuardDuty, and allow the current AWS account to view and manage these
     /// accounts' findings on their behalf as the GuardDuty administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InviteMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4147,7 +4147,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDetectors`.
     ///
     /// <p>Lists detectorIds of all the existing Amazon GuardDuty detector resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4235,7 +4235,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFilters`.
     ///
     /// <p>Returns a paginated list of the current filters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4333,7 +4333,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindings`.
     ///
     /// <p>Lists Amazon GuardDuty findings for the specified detector ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4766,7 +4766,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all GuardDuty membership invitations that were sent to the current AWS
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4856,7 +4856,7 @@ pub mod fluent_builders {
     /// <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this
     /// operation from a member account, the IPSets returned are the IPSets from the associated administrator
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIPSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4954,7 +4954,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMembers`.
     ///
     /// <p>Lists details about all member accounts for the current GuardDuty administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5067,7 +5067,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOrganizationAdminAccounts`.
     ///
     /// <p>Lists the accounts configured as GuardDuty delegated administrators.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationAdminAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5154,7 +5154,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of publishing destinations associated with the specified
     /// <code>dectectorId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPublishingDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5252,7 +5252,7 @@ pub mod fluent_builders {
     /// <p>Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
     /// IP sets, and threat intel sets, with a limit of 50 tags per resource. When invoked, this
     /// operation returns all assigned tags for a given resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5324,7 +5324,7 @@ pub mod fluent_builders {
     /// <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you
     /// use this operation from a member account, the ThreatIntelSets associated with the administrator
     /// account are returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListThreatIntelSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5424,7 +5424,7 @@ pub mod fluent_builders {
     /// <p>Turns on GuardDuty monitoring of the specified member accounts. Use this operation to
     /// restart monitoring of accounts that you stopped monitoring with the
     /// <code>StopMonitoringMembers</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMonitoringMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5515,7 +5515,7 @@ pub mod fluent_builders {
     /// <p>Stops GuardDuty monitoring for the specified member accounts. Use the
     /// <code>StartMonitoringMembers</code> operation to restart monitoring for those
     /// accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopMonitoringMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5604,7 +5604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5697,7 +5697,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UnarchiveFindings`.
     ///
     /// <p>Unarchives GuardDuty findings specified by the <code>findingIds</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnarchiveFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5784,7 +5784,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5871,7 +5871,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDetector`.
     ///
     /// <p>Updates the Amazon GuardDuty detector specified by the detectorId.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5982,7 +5982,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFilter`.
     ///
     /// <p>Updates the filter specified by the filter name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6112,7 +6112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFindingsFeedback`.
     ///
     /// <p>Marks the specified GuardDuty findings as useful or not useful.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFindingsFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6219,7 +6219,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIPSet`.
     ///
     /// <p>Updates the IPSet specified by the IPSet ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6331,7 +6331,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMemberDetectors`.
     ///
     /// <p>Contains information on member accounts to be updated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMemberDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6431,7 +6431,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
     ///
     /// <p>Updates the delegated administrator account with the values provided.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6528,7 +6528,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates information about the publishing destination specified by the
     /// <code>destinationId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6629,7 +6629,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateThreatIntelSet`.
     ///
     /// <p>Updates the ThreatIntelSet specified by the ThreatIntelSet ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateThreatIntelSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

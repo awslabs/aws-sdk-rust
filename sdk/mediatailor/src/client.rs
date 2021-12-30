@@ -360,7 +360,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ConfigureLogsForPlaybackConfiguration`.
     ///
     /// <p>Configures Amazon CloudWatch log settings for a playback configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfigureLogsForPlaybackConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -448,7 +448,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
     /// <p>Creates a channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -584,7 +584,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePrefetchSchedule`.
     ///
     /// <p>Creates a new prefetch schedule for the specified playback configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePrefetchSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -706,7 +706,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProgram`.
     ///
     /// <p>Creates a program.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProgram<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -845,7 +845,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSourceLocation`.
     ///
     /// <p>Creates a source location on a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSourceLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -986,7 +986,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVodSource`.
     ///
     /// <p>Creates name for a specific VOD source in a source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVodSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1115,7 +1115,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
     /// <p>Deletes a channel. You must stop the channel before it can be deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1185,7 +1185,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteChannelPolicy`.
     ///
     /// <p>Deletes a channel's IAM policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1255,7 +1255,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePlaybackConfiguration`.
     ///
     /// <p>Deletes the playback configuration for the specified name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlaybackConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1325,7 +1325,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePrefetchSchedule`.
     ///
     /// <p>Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePrefetchSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1411,7 +1411,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProgram`.
     ///
     /// <p>Deletes a specific program on a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProgram<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1491,7 +1491,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSourceLocation`.
     ///
     /// <p>Deletes a source location on a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSourceLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1564,7 +1564,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVodSource`.
     ///
     /// <p>Deletes a specific VOD source in a specific source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVodSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1650,7 +1650,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeChannel`.
     ///
     /// <p>Describes the properties of a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1720,7 +1720,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProgram`.
     ///
     /// <p>Retrieves the properties of the requested program.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProgram<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1800,7 +1800,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSourceLocation`.
     ///
     /// <p>Retrieves the properties of the requested source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSourceLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1873,7 +1873,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVodSource`.
     ///
     /// <p>Provides details about a specific VOD source in a specific source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVodSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1959,7 +1959,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChannelPolicy`.
     ///
     /// <p>Retrieves information about a channel's IAM policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2029,7 +2029,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChannelSchedule`.
     ///
     /// <p>Retrieves information about your channel's schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2132,7 +2132,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPlaybackConfiguration`.
     ///
     /// <p>Returns the playback configuration for the specified name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPlaybackConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2202,7 +2202,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPrefetchSchedule`.
     ///
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call GetPrefetchSchedule on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPrefetchSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2288,7 +2288,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAlerts`.
     ///
     /// <p>Returns a list of alerts for the given resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlerts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2378,7 +2378,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChannels`.
     ///
     /// <p>Retrieves a list of channels that are associated with this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2458,7 +2458,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPlaybackConfigurations`.
     ///
     /// <p>Returns a list of the playback configurations defined in AWS Elemental MediaTailor. You can specify a maximum number of configurations to return at a time. The default maximum is 50. Results are returned in pagefuls. If MediaTailor has more configurations than the specified maximum, it provides parameters in the response that you can use to retrieve the next pageful.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlaybackConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2538,7 +2538,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPrefetchSchedules`.
     ///
     /// <p>Creates a new prefetch schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrefetchSchedules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2644,7 +2644,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSourceLocations`.
     ///
     /// <p>Retrieves a list of source locations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSourceLocations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2724,7 +2724,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of the tags assigned to the specified playback configuration resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2794,7 +2794,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVodSources`.
     ///
     /// <p>Lists all the VOD sources in a source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVodSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2887,7 +2887,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutChannelPolicy`.
     ///
     /// <p>Creates an IAM policy for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutChannelPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2967,7 +2967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutPlaybackConfiguration`.
     ///
     /// <p>Adds a new playback configuration to AWS Elemental MediaTailor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPlaybackConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3235,7 +3235,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartChannel`.
     ///
     /// <p>Starts a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3305,7 +3305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopChannel`.
     ///
     /// <p>Stops a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3375,7 +3375,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds tags to the specified playback configuration resource. You can specify one or more tags to add.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3468,7 +3468,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from the specified playback configuration resource. You can specify one or more tags to remove.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3555,7 +3555,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
     /// <p>Updates an existing channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3642,7 +3642,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSourceLocation`.
     ///
     /// <p>Updates a source location on a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSourceLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3760,7 +3760,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVodSource`.
     ///
     /// <p>Updates a specific VOD source in a specific source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVodSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

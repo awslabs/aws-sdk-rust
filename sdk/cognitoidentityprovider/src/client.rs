@@ -824,7 +824,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddCustomAttributes`.
     ///
     /// <p>Adds additional user attributes to the user pool schema.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddCustomAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -912,7 +912,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds the specified user to the specified group.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminAddUserToGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1004,7 +1004,7 @@ pub mod fluent_builders {
     /// <p>Confirms user registration as an admin without using a confirmation code. Works on any
     /// user.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminConfirmSignUp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1196,7 +1196,7 @@ pub mod fluent_builders {
     /// they sign in and change their password.</p>
     /// <p>
     /// <code>AdminCreateUser</code> requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminCreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1581,7 +1581,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a user as an administrator. Works on any user.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminDeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1663,7 +1663,7 @@ pub mod fluent_builders {
     /// <p>Deletes the user attributes in a user pool as an administrator. Works on any
     /// user.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminDeleteUserAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1791,7 +1791,7 @@ pub mod fluent_builders {
     /// <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
     /// <code>ProviderAttributeValue</code> must be the subject of the SAML
     /// assertion.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminDisableProviderForUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1875,7 +1875,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables the specified user.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminDisableUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1956,7 +1956,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables the specified user as an administrator. Works on any user.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminEnableUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2037,7 +2037,7 @@ pub mod fluent_builders {
     ///
     /// <p>Forgets the device, as an administrator.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminForgetDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2128,7 +2128,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the device, as an administrator.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminGetDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2220,7 +2220,7 @@ pub mod fluent_builders {
     /// <p>Gets the specified user by user name in a user pool as an administrator. Works on any
     /// user.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminGetUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2322,7 +2322,7 @@ pub mod fluent_builders {
     /// </note>
     ///
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminInitiateAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2814,7 +2814,7 @@ pub mod fluent_builders {
     ///
     /// <p>This action is enabled only for admin access and requires developer
     /// credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminLinkProviderForUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2974,7 +2974,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists devices, as an administrator.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3078,7 +3078,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the groups that the user belongs to.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminListGroupsForUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3181,7 +3181,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists a history of user activity and any risks detected as part of Amazon Cognito
     /// advanced security.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminListUserAuthEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3282,7 +3282,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the specified user from the specified group.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminRemoveUserFromGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3401,7 +3401,7 @@ pub mod fluent_builders {
     /// </note>
     ///
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminResetUserPassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3585,7 +3585,7 @@ pub mod fluent_builders {
     /// </note>
     ///
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminRespondToAuthChallenge<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3929,7 +3929,7 @@ pub mod fluent_builders {
     /// The preferred MFA factor will be used to authenticate a user if multiple factors are
     /// enabled. If multiple options are enabled and no preference is set, a challenge to choose
     /// an MFA option will be returned during sign in.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminSetUserMFAPreference<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4047,7 +4047,7 @@ pub mod fluent_builders {
     /// by an administrator. </p>
     /// <p>Once the user has set a new password, or the password is permanent, the user status
     /// will be set to <code>Confirmed</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminSetUserPassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4154,7 +4154,7 @@ pub mod fluent_builders {
     /// <i>This action is no longer supported.</i> You can use it to configure
     /// only SMS MFA. You can't use it to configure TOTP software token MFA. To configure either
     /// type of MFA, use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a> instead.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminSetUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4257,7 +4257,7 @@ pub mod fluent_builders {
     /// <p>Provides feedback for an authentication event as to whether it was from a valid user.
     /// This feedback is used for improving the risk evaluation decision for the user pool as
     /// part of Amazon Cognito advanced security.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminUpdateAuthEventFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4361,7 +4361,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the device status as an administrator.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminUpdateDeviceStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4491,7 +4491,7 @@ pub mod fluent_builders {
     /// </note>
     ///
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminUpdateUserAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4680,7 +4680,7 @@ pub mod fluent_builders {
     /// tokens issued to a user. The user's current access and Id tokens remain valid until
     /// their expiry. Access and Id tokens expire one hour after they are issued.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdminUserGlobalSignOut<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4769,7 +4769,7 @@ pub mod fluent_builders {
     /// MFA. However, if MFA is set to Required for the user pool, the user will be asked to
     /// setup a new software token MFA during sign in.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSoftwareToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4851,7 +4851,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ChangePassword`.
     ///
     /// <p>Changes the password for a specified user in a user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ChangePassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4948,7 +4948,7 @@ pub mod fluent_builders {
     ///
     /// <p>Confirms tracking of the device. This API call is the call that begins device
     /// tracking.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5054,7 +5054,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ConfirmForgotPassword`.
     ///
     /// <p>Allows a user to enter a confirmation code to reset a forgotten password.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmForgotPassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5294,7 +5294,7 @@ pub mod fluent_builders {
     ///
     /// <p>Confirms registration of a user and handles the existing alias from a previous
     /// user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmSignUp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5538,7 +5538,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new group in the specified user pool.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5674,7 +5674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIdentityProvider`.
     ///
     /// <p>Creates an identity provider for a user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6047,7 +6047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResourceServer`.
     ///
     /// <p>Creates a new OAuth2.0 resource server and defines custom scopes in it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6160,7 +6160,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUserImportJob`.
     ///
     /// <p>Creates the user import job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6274,7 +6274,7 @@ pub mod fluent_builders {
     /// move out of the SMS sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Cognito User Pools</a> in the <i>Amazon
     /// Cognito Developer Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6719,7 +6719,7 @@ pub mod fluent_builders {
     /// <p>Creates the user pool client.</p>
     /// <p>When you create a new user pool client, token revocation is automatically enabled. For more information
     /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserPoolClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7324,7 +7324,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUserPoolDomain`.
     ///
     /// <p>Creates a new domain for a user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserPoolDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7431,7 +7431,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a group.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7511,7 +7511,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIdentityProvider`.
     ///
     /// <p>Deletes an identity provider for a user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7594,7 +7594,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourceServer`.
     ///
     /// <p>Deletes a resource server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7674,7 +7674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
     /// <p>Allows a user to delete himself or herself.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7744,7 +7744,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserAttributes`.
     ///
     /// <p>Deletes the attributes for a user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7835,7 +7835,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserPool`.
     ///
     /// <p>Deletes the specified Amazon Cognito user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7905,7 +7905,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserPoolClient`.
     ///
     /// <p>Allows the developer to delete the user pool client.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserPoolClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7985,7 +7985,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserPoolDomain`.
     ///
     /// <p>Deletes a domain for a user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserPoolDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8065,7 +8065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIdentityProvider`.
     ///
     /// <p>Gets information about a specific identity provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8148,7 +8148,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeResourceServer`.
     ///
     /// <p>Describes a resource server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResourceServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8228,7 +8228,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRiskConfiguration`.
     ///
     /// <p>Describes the risk configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRiskConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8308,7 +8308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserImportJob`.
     ///
     /// <p>Describes the user import job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8388,7 +8388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserPool`.
     ///
     /// <p>Returns the configuration information and metadata of the specified user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8459,7 +8459,7 @@ pub mod fluent_builders {
     ///
     /// <p>Client method for returning the configuration information and metadata of the
     /// specified user pool app client.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserPoolClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8539,7 +8539,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserPoolDomain`.
     ///
     /// <p>Gets information about a domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserPoolDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8609,7 +8609,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ForgetDevice`.
     ///
     /// <p>Forgets the specified device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ForgetDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8713,7 +8713,7 @@ pub mod fluent_builders {
     /// move out of the SMS sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Cognito User Pools</a> in the <i>Amazon
     /// Cognito Developer Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ForgotPassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8930,7 +8930,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the header information for the .csv file to be used as input for the user import
     /// job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCSVHeader<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9000,7 +9000,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevice`.
     ///
     /// <p>Gets the device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9081,7 +9081,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a group.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9161,7 +9161,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIdentityProviderByIdentifier`.
     ///
     /// <p>Gets the specified identity provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityProviderByIdentifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9244,7 +9244,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSigningCertificate`.
     ///
     /// <p>This method takes a user pool ID, and returns the signing certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSigningCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9317,7 +9317,7 @@ pub mod fluent_builders {
     /// is something set. If nothing is set for the particular client, but there is an existing
     /// pool level customization (app <code>clientId</code> will be <code>ALL</code>), then that
     /// is returned. If nothing is present, then an empty shape is returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUICustomization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9397,7 +9397,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUser`.
     ///
     /// <p>Gets the user attributes and metadata for a user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9486,7 +9486,7 @@ pub mod fluent_builders {
     /// move out of the SMS sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Cognito User Pools</a> in the <i>Amazon
     /// Cognito Developer Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserAttributeVerificationCode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9658,7 +9658,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUserPoolMfaConfig`.
     ///
     /// <p>Gets the user pool multi-factor authentication (MFA) configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserPoolMfaConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9730,7 +9730,7 @@ pub mod fluent_builders {
     /// <p>Signs out users from all devices. It also invalidates all refresh tokens issued to a
     /// user. The user's current access and Id tokens remain valid until their expiry. Access
     /// and Id tokens expire one hour after they are issued.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GlobalSignOut<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9817,7 +9817,7 @@ pub mod fluent_builders {
     /// move out of the SMS sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Cognito User Pools</a> in the <i>Amazon
     /// Cognito Developer Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitiateAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10259,7 +10259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevices`.
     ///
     /// <p>Lists the devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10353,7 +10353,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the groups associated with a user pool.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10445,7 +10445,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIdentityProviders`.
     ///
     /// <p>Lists information about all identity providers for a user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentityProviders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10535,7 +10535,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourceServers`.
     ///
     /// <p>Lists the resource servers for a user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceServers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10628,7 +10628,7 @@ pub mod fluent_builders {
     /// <p>A tag is a label that you can apply to user pools to categorize and manage them in
     /// different ways, such as by purpose, owner, environment, or other criteria.</p>
     /// <p>You can use this action up to 10 times per second, per account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10698,7 +10698,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUserImportJobs`.
     ///
     /// <p>Lists the user import jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10795,7 +10795,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUserPoolClients`.
     ///
     /// <p>Lists the clients that have been created for the specified user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserPoolClients<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10889,7 +10889,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUserPools`.
     ///
     /// <p>Lists the user pools associated with an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserPools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10973,7 +10973,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUsers`.
     ///
     /// <p>Lists the users in the Amazon Cognito user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11256,7 +11256,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the users in the specified group.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsersInGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11376,7 +11376,7 @@ pub mod fluent_builders {
     /// move out of the SMS sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Cognito User Pools</a> in the <i>Amazon
     /// Cognito Developer Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResendConfirmationCode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11605,7 +11605,7 @@ pub mod fluent_builders {
     /// move out of the SMS sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Cognito User Pools</a> in the <i>Amazon
     /// Cognito Developer Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RespondToAuthChallenge<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11948,7 +11948,7 @@ pub mod fluent_builders {
     ///
     /// <p>Revokes all of the access tokens generated by the specified refresh token. After the token is revoked, you can not
     /// use the revoked token to access Cognito authenticated APIs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12045,7 +12045,7 @@ pub mod fluent_builders {
     /// configuration types.</p>
     /// <p>To enable Amazon Cognito advanced security features, update the user pool to include
     /// the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetRiskConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12198,7 +12198,7 @@ pub mod fluent_builders {
     /// there is no place to host the app's pages, and the service will throw an
     /// error.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetUICustomization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12309,7 +12309,7 @@ pub mod fluent_builders {
     /// unless device tracking is turned on and the device has been trusted. If you would like
     /// MFA to be applied selectively based on the assessed risk level of sign in attempts,
     /// disable MFA for users and turn on Adaptive Authentication for the user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetUserMFAPreference<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12425,7 +12425,7 @@ pub mod fluent_builders {
     /// move out of the SMS sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Cognito User Pools</a> in the <i>Amazon
     /// Cognito Developer Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetUserPoolMfaConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12576,7 +12576,7 @@ pub mod fluent_builders {
     /// <i>This action is no longer supported.</i> You can use it to configure
     /// only SMS MFA. You can't use it to configure TOTP software token MFA. To configure either
     /// type of MFA, use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a> instead.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12683,7 +12683,7 @@ pub mod fluent_builders {
     /// move out of the SMS sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Cognito User Pools</a> in the <i>Amazon
     /// Cognito Developer Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SignUp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12943,7 +12943,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartUserImportJob`.
     ///
     /// <p>Starts the user import.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartUserImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13023,7 +13023,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopUserImportJob`.
     ///
     /// <p>Stops the user import job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopUserImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13116,7 +13116,7 @@ pub mod fluent_builders {
     /// for user pools based on specific tags or tag values.</p>
     /// <p>You can use this action up to 5 times per second, per account. A user pool can have as
     /// many as 50 tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13210,7 +13210,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the specified tags from an Amazon Cognito user pool. You can use this action
     /// up to 5 times per second, per account</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13299,7 +13299,7 @@ pub mod fluent_builders {
     /// <p>Provides the feedback for an authentication event whether it was from a valid user or
     /// not. This feedback is used for improving the risk evaluation decision for the user pool
     /// as part of Amazon Cognito advanced security.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAuthEventFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13415,7 +13415,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeviceStatus`.
     ///
     /// <p>Updates the device status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeviceStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13512,7 +13512,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified group with the specified attributes.</p>
     /// <p>Calling this action requires developer credentials.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13628,7 +13628,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIdentityProvider`.
     ///
     /// <p>Updates identity provider information for a user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13780,7 +13780,7 @@ pub mod fluent_builders {
     /// <p>If you don't provide a value for an attribute, it will be set to the default
     /// value.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13904,7 +13904,7 @@ pub mod fluent_builders {
     /// move out of the SMS sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Cognito User Pools</a> in the <i>Amazon
     /// Cognito Developer Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14097,7 +14097,7 @@ pub mod fluent_builders {
     /// move out of the SMS sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Cognito User Pools</a> in the <i>Amazon
     /// Cognito Developer Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14484,7 +14484,7 @@ pub mod fluent_builders {
     /// </important>
     /// <p>You can also use this operation to enable token revocation for user pool clients. For more information
     /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserPoolClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15085,7 +15085,7 @@ pub mod fluent_builders {
     /// <p>After you submit your request, Amazon Cognito requires up to 1 hour to distribute your
     /// new certificate to your custom domain.</p>
     /// <p>For more information about adding a custom domain to your user pool, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using Your Own Domain for the Hosted UI</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserPoolDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15195,7 +15195,7 @@ pub mod fluent_builders {
     /// <p>Use this API to register a user's entered TOTP code and mark the user's software token
     /// MFA status as "verified" if successful. The request takes an access token or a session
     /// string, but not both.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifySoftwareToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15300,7 +15300,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `VerifyUserAttribute`.
     ///
     /// <p>Verifies the specified user attributes in the user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifyUserAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

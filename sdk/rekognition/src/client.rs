@@ -567,7 +567,7 @@ pub mod fluent_builders {
     /// <p>For an example, see Comparing Faces in Images in the Amazon Rekognition Developer Guide.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:CompareFaces</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CompareFaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -728,7 +728,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:CreateCollection</code> action. If you want to tag your collection, you also require permission to perform the <code>rekognition:TagResource</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -852,7 +852,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions to perform the <code>rekognition:CreateDataset</code> action.
     /// If you want to copy an existing dataset, you also require permission to perform the <code>rekognition:ListDatasetEntries</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -970,7 +970,7 @@ pub mod fluent_builders {
     /// <p>Creates a new Amazon Rekognition Custom Labels project. A project is a group of resources (datasets, model versions)
     /// that you use to create and manage Amazon Rekognition Custom Labels models.  </p>
     /// <p>This operation requires permissions to perform the <code>rekognition:CreateProject</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1079,7 +1079,7 @@ pub mod fluent_builders {
     /// <p>After evaluating the model, you start the model
     /// by calling <a>StartProjectVersion</a>.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProjectVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1305,7 +1305,7 @@ pub mod fluent_builders {
     /// stop processing. You can delete the stream processor by calling <a>DeleteStreamProcessor</a>.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:CreateStreamProcessor</code> action. If you want to tag your stream processor, you also require permission to perform the <code>rekognition:TagResource</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamProcessor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1463,7 +1463,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:DeleteCollection</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1545,7 +1545,7 @@ pub mod fluent_builders {
     /// <p>You can't delete a dataset while it is creating (<code>Status</code> =  <code>CREATE_IN_PROGRESS</code>)
     /// or if the dataset is updating (<code>Status</code> =  <code>UPDATE_IN_PROGRESS</code>).</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:DeleteDataset</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1622,7 +1622,7 @@ pub mod fluent_builders {
     /// to remove from the collection.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:DeleteFaces</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1719,7 +1719,7 @@ pub mod fluent_builders {
     /// response.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:DeleteProject</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1796,7 +1796,7 @@ pub mod fluent_builders {
     /// is training, wait until it finishes.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:DeleteProjectVersion</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProjectVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1870,7 +1870,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the stream processor identified by <code>Name</code>. You assign the value for <code>Name</code> when you create the stream processor with
     /// <a>CreateStreamProcessor</a>. You might not be able to use the same name for a stream processor for a few seconds after calling <code>DeleteStreamProcessor</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStreamProcessor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1945,7 +1945,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see Describing a Collection in the
     /// Amazon Rekognition Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2022,7 +2022,7 @@ pub mod fluent_builders {
     /// statistics about the images and labels in a dataset.  
     /// </p>
     /// <p>This operation requires permissions to perform the <code>rekognition:DescribeDataset</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2097,7 +2097,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about your Amazon Rekognition Custom Labels projects. </p>
     /// <p>This operation requires permissions to perform the <code>rekognition:DescribeProjects</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2208,7 +2208,7 @@ pub mod fluent_builders {
     /// you don't specify a value, descriptions for all model versions in the project are returned.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:DescribeProjectVersions</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProjectVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2330,7 +2330,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides information about a stream processor created by <a>CreateStreamProcessor</a>. You can get information about the input and output streams, the input parameters for the face recognition being performed,
     /// and the current status of the stream processor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStreamProcessor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2450,7 +2450,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see
     /// <i>Analyzing an image</i> in the Amazon Rekognition Custom Labels Developer Guide. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectCustomLabels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2635,7 +2635,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:DetectFaces</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectFaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2816,7 +2816,7 @@ pub mod fluent_builders {
     /// data.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:DetectLabels</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectLabels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2937,7 +2937,7 @@ pub mod fluent_builders {
     /// AWS
     /// CLI to call Amazon Rekognition operations, passing image bytes is not
     /// supported. The image must be either a PNG or JPEG formatted file. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectModerationLabels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3087,7 +3087,7 @@ pub mod fluent_builders {
     /// <p>This is a stateless API operation. That is, the operation does not persist any data.</p>
     ///
     /// <p>This operation requires permissions to perform the <code>rekognition:DetectProtectiveEquipment</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectProtectiveEquipment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3196,7 +3196,7 @@ pub mod fluent_builders {
     /// <p>To be detected, text must be within +/- 90 degrees orientation of the horizontal axis.</p>
     ///
     /// <p>For more information, see DetectText in the Amazon Rekognition Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectText<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3298,7 +3298,7 @@ pub mod fluent_builders {
     /// If the dataset split fails, the value of <code>Status</code> is <code>UPDATE_FAILED</code>.</p>
     ///
     /// <p>This operation requires permissions to perform the <code>rekognition:DistributeDatasetEntries</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DistributeDatasetEntries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3386,7 +3386,7 @@ pub mod fluent_builders {
     /// the Amazon Rekognition Developer Guide.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:GetCelebrityInfo</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCelebrityInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3497,7 +3497,7 @@ pub mod fluent_builders {
     /// pagination token for getting the next set of results. To get the next page of results, call <code>GetCelebrityDetection</code>
     /// and populate the <code>NextToken</code> request parameter with the token
     /// value returned from the previous call to <code>GetCelebrityRecognition</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCelebrityRecognition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3639,7 +3639,7 @@ pub mod fluent_builders {
     /// returned from the previous call to <code>GetContentModeration</code>.</p>
     ///
     /// <p>For more information, see Content moderation in the Amazon Rekognition Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContentModeration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3772,7 +3772,7 @@ pub mod fluent_builders {
     /// specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set
     /// of results. To get the next page of results, call <code>GetFaceDetection</code> and populate the <code>NextToken</code> request parameter with the token
     /// value returned from the previous call to <code>GetFaceDetection</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFaceDetection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3898,7 +3898,7 @@ pub mod fluent_builders {
     /// start of the video, persons are matched.
     /// You can also sort by persons by specifying <code>INDEX</code> for the <code>SORTBY</code> input
     /// parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFaceSearch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4029,7 +4029,7 @@ pub mod fluent_builders {
     /// specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set
     /// of results. To get the next page of results, call <code>GetlabelDetection</code> and populate the <code>NextToken</code> request parameter with the token
     /// value returned from the previous call to <code>GetLabelDetection</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLabelDetection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4177,7 +4177,7 @@ pub mod fluent_builders {
     /// specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set
     /// of results. To get the next page of results, call <code>GetPersonTracking</code> and populate the <code>NextToken</code> request parameter with the token
     /// value returned from the previous call to <code>GetPersonTracking</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPersonTracking<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4316,7 +4316,7 @@ pub mod fluent_builders {
     /// call to <code>GetSegmentDetection</code>.</p>
     ///
     /// <p>For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegmentDetection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4428,7 +4428,7 @@ pub mod fluent_builders {
     /// a pagination token for getting the next set of results. To get the next page of results, call <code>GetTextDetection</code>
     /// and populate the <code>NextToken</code> request parameter with the token value returned from the previous
     /// call to <code>GetTextDetection</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTextDetection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4621,7 +4621,7 @@ pub mod fluent_builders {
     /// passing image bytes isn't supported. The image must be formatted as a PNG or JPEG file. </p>
     /// <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct IndexFaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4834,7 +4834,7 @@ pub mod fluent_builders {
     ///
     /// <p>For an example, see Listing Collections in the Amazon Rekognition Developer Guide.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:ListCollections</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCollections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4928,7 +4928,7 @@ pub mod fluent_builders {
     /// <p>You can filter the response in variety of ways, such as choosing which labels to return and returning JSON Lines created after a specific date.
     /// </p>
     /// <p>This operation requires permissions to perform the <code>rekognition:ListDatasetEntries</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetEntries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5103,7 +5103,7 @@ pub mod fluent_builders {
     /// <p>
     /// Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe images. For more information, see Labeling images
     /// in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetLabels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5212,7 +5212,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:ListFaces</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5309,7 +5309,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStreamProcessors`.
     ///
     /// <p>Gets a list of stream processors that you have created with <a>CreateStreamProcessor</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamProcessors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5395,7 +5395,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:ListTagsForResource</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5499,7 +5499,7 @@ pub mod fluent_builders {
     /// <p>For an example, see Recognizing Celebrities in an Image in the Amazon Rekognition Developer Guide.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:RecognizeCelebrities</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RecognizeCelebrities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5597,7 +5597,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions to perform the <code>rekognition:SearchFaces</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchFaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5754,7 +5754,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions to perform the <code>rekognition:SearchFacesByImage</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchFacesByImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5921,7 +5921,7 @@ pub mod fluent_builders {
     /// (<code>JobId</code>) from the initial call to <code>StartCelebrityRecognition</code>. </p>
     ///
     /// <p>For more information, see Recognizing Celebrities in the Amazon Rekognition Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCelebrityRecognition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6051,7 +6051,7 @@ pub mod fluent_builders {
     /// (<code>JobId</code>) from the initial call to <code>StartContentModeration</code>. </p>
     ///
     /// <p>For more information, see Content moderation in the Amazon Rekognition Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContentModeration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6200,7 +6200,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see Detecting Faces in a Stored Video in the
     /// Amazon Rekognition Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFaceDetection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6349,7 +6349,7 @@ pub mod fluent_builders {
     /// topic is <code>SUCCEEDED</code>. If so, call <a>GetFaceSearch</a> and pass the job identifier
     /// (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see
     /// <a>procedure-person-search-videos</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFaceSearch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6503,7 +6503,7 @@ pub mod fluent_builders {
     /// topic is <code>SUCCEEDED</code>. If so, call  <a>GetLabelDetection</a> and pass the job identifier
     /// (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.</p>
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartLabelDetection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6650,7 +6650,7 @@ pub mod fluent_builders {
     /// <p>To get the results of the person detection operation, first check that the status value published to the Amazon SNS
     /// topic is <code>SUCCEEDED</code>. If so, call  <a>GetPersonTracking</a> and pass the job identifier
     /// (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartPersonTracking<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6778,7 +6778,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:StartProjectVersion</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartProjectVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6884,7 +6884,7 @@ pub mod fluent_builders {
     ///
     ///
     /// <p>For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSegmentDetection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7035,7 +7035,7 @@ pub mod fluent_builders {
     /// <p>Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>.
     /// To tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code> field specified in the call to
     /// <code>CreateStreamProcessor</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartStreamProcessor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7112,7 +7112,7 @@ pub mod fluent_builders {
     /// <p>To get the results of the text detection operation, first check that the status value published to the Amazon SNS
     /// topic is <code>SUCCEEDED</code>. if so, call <a>GetTextDetection</a> and pass the job identifier (<code>JobId</code>)
     /// from the initial call to <code>StartTextDetection</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTextDetection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7247,7 +7247,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops a running model. The operation might take a while to complete. To
     /// check the current status, call <a>DescribeProjectVersions</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopProjectVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7322,7 +7322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopStreamProcessor`.
     ///
     /// <p>Stops a running stream processor that was created by <a>CreateStreamProcessor</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopStreamProcessor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7396,7 +7396,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:TagResource</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7501,7 +7501,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:UntagResource</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7623,7 +7623,7 @@ pub mod fluent_builders {
     /// Currently, you can't access the terminal error information from the Amazon Rekognition Custom Labels SDK.
     /// </p>
     /// <p>This operation requires permissions to perform the <code>rekognition:UpdateDatasetEntries</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDatasetEntries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

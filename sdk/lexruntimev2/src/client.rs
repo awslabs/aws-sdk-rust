@@ -143,7 +143,7 @@ pub mod fluent_builders {
     /// <p>If the locale doesn't exist in the bot, or if the locale hasn't been
     /// enables for the alias, you receive a
     /// <code>BadRequestException</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -253,7 +253,7 @@ pub mod fluent_builders {
     /// returns a <code>BadRequestException</code>. If the locale doesn't exist
     /// or is not enabled for the alias, you receive a
     /// <code>BadRequestException</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -357,7 +357,7 @@ pub mod fluent_builders {
     /// <p>Creates a new session or modifies an existing session with an Amazon Lex V2
     /// bot. Use this operation to enable your application to set the state of
     /// the bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -585,7 +585,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion message</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RecognizeText<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

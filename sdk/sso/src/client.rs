@@ -124,7 +124,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the STS short-term credentials for a given role name that is assigned to the
     /// user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoleCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -216,7 +216,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccountRoles`.
     ///
     /// <p>Lists all roles that are assigned to the user for a given AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountRoles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -320,7 +320,7 @@ pub mod fluent_builders {
     /// <p>Lists all AWS accounts assigned to the user. These AWS accounts are assigned by the
     /// administrator of the account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers">Assign User Access</a> in the <i>AWS SSO User Guide</i>. This operation
     /// returns a paginated response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -412,7 +412,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `Logout`.
     ///
     /// <p>Removes the client- and server-side session that is associated with the user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Logout<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

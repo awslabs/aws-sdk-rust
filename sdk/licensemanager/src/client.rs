@@ -465,7 +465,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptGrant`.
     ///
     /// <p>Accepts the specified grant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptGrant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -535,7 +535,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CheckInLicense`.
     ///
     /// <p>Checks in the specified license. Check in a license when it is no longer in use.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckInLicense<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -621,7 +621,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CheckoutBorrowLicense`.
     ///
     /// <p>Checks out the specified license for offline use.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckoutBorrowLicense<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -763,7 +763,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CheckoutLicense`.
     ///
     /// <p>Checks out the specified license.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckoutLicense<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -906,7 +906,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGrant`.
     ///
     /// <p>Creates a grant for the specified license. A grant shares the use of license entitlements with specific Amazon Web Services accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGrant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1040,7 +1040,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGrantVersion`.
     ///
     /// <p>Creates a new version of the specified grant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGrantVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1183,7 +1183,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLicense`.
     ///
     /// <p>Creates a license.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLicense<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1385,7 +1385,7 @@ pub mod fluent_builders {
     /// type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy,
     /// Dedicated Instance, Dedicated Host, or all of these), license affinity  to host (how long a
     /// license must be associated with a host), and the number of licenses purchased and used.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLicenseConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1636,7 +1636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLicenseConversionTaskForResource`.
     ///
     /// <p>Creates a new license conversion task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLicenseConversionTaskForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1742,7 +1742,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLicenseManagerReportGenerator`.
     ///
     /// <p>Creates a report generator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLicenseManagerReportGenerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1913,7 +1913,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLicenseVersion`.
     ///
     /// <p>Creates a new version of the specified license.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLicenseVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2129,7 +2129,7 @@ pub mod fluent_builders {
     /// <p>A refresh token is a JWT token used to get an access token. With an access token,
     /// you can call AssumeRoleWithWebIdentity to get role credentials that you can use to
     /// call License Manager to manage the specified license.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2259,7 +2259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGrant`.
     ///
     /// <p>Deletes the specified grant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGrant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2352,7 +2352,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLicense`.
     ///
     /// <p>Deletes the specified license.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLicense<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2436,7 +2436,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified license configuration.</p>
     /// <p>You cannot delete a license configuration that is in use.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLicenseConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2514,7 +2514,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified report generator.</p>
     /// <p>This action deletes the report generator, which stops it from generating future reports.
     /// The action cannot be reversed. It has no effect on the previous reports from this generator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLicenseManagerReportGenerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2594,7 +2594,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteToken`.
     ///
     /// <p>Deletes the specified token. Must be called in the license home Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2664,7 +2664,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExtendLicenseConsumption`.
     ///
     /// <p>Extends the expiration date for license consumption.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExtendLicenseConsumption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2751,7 +2751,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens
     /// are valid for one hour.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccessToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2838,7 +2838,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGrant`.
     ///
     /// <p>Gets detailed information about the specified grant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGrant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2918,7 +2918,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLicense`.
     ///
     /// <p>Gets detailed information about the specified license.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLicense<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2998,7 +2998,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLicenseConfiguration`.
     ///
     /// <p>Gets detailed information about the specified license configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLicenseConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3074,7 +3074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLicenseConversionTask`.
     ///
     /// <p>Gets information about the specified license type conversion task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLicenseConversionTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3150,7 +3150,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLicenseManagerReportGenerator`.
     ///
     /// <p>Gets information about the specified report generator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLicenseManagerReportGenerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3228,7 +3228,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLicenseUsage`.
     ///
     /// <p>Gets detailed information about the usage of the specified license.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLicenseUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3298,7 +3298,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceSettings`.
     ///
     /// <p>Gets the License Manager settings for the current Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3361,7 +3361,7 @@ pub mod fluent_builders {
     /// <p>Resource associations need not consume licenses from a license configuration.
     /// For example, an AMI or a stopped instance might not consume a license (depending on
     /// the license rules).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociationsForLicenseConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3459,7 +3459,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDistributedGrants`.
     ///
     /// <p>Lists the grants distributed for the specified license.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributedGrants<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3627,7 +3627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFailuresForLicenseConfigurationOperations`.
     ///
     /// <p>Lists the license configuration operations that failed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFailuresForLicenseConfigurationOperations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3716,7 +3716,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLicenseConfigurations`.
     ///
     /// <p>Lists the license configurations for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLicenseConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3868,7 +3868,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLicenseConversionTasks`.
     ///
     /// <p>Lists the license type conversion tasks for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLicenseConversionTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3969,7 +3969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLicenseManagerReportGenerators`.
     ///
     /// <p>Lists the report generators for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLicenseManagerReportGenerators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4082,7 +4082,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLicenses`.
     ///
     /// <p>Lists the licenses for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLicenses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4240,7 +4240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLicenseSpecificationsForResource`.
     ///
     /// <p>Describes the license configurations for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLicenseSpecificationsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4332,7 +4332,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLicenseVersions`.
     ///
     /// <p>Lists all versions of the specified license.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLicenseVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4422,7 +4422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReceivedGrants`.
     ///
     /// <p>Lists grants that are received but not accepted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReceivedGrants<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4590,7 +4590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReceivedLicenses`.
     ///
     /// <p>Lists received licenses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReceivedLicenses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4758,7 +4758,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourceInventory`.
     ///
     /// <p>Lists resources managed using Systems Manager inventory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceInventory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4931,7 +4931,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for the specified license configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5001,7 +5001,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTokens`.
     ///
     /// <p>Lists your tokens.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTokens<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5131,7 +5131,7 @@ pub mod fluent_builders {
     /// <p>Lists all license usage records for a license configuration, displaying license
     /// consumption details by resource at a selected point in time. Use this action to audit the
     /// current license consumption for any license inventory and configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsageForLicenseConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5280,7 +5280,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectGrant`.
     ///
     /// <p>Rejects the specified grant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectGrant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5350,7 +5350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds the specified tags to the specified license configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5437,7 +5437,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified license configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5524,7 +5524,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLicenseConfiguration`.
     ///
     /// <p>Modifies the attributes of an existing license configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLicenseConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5703,7 +5703,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a report generator.</p>
     /// <p>After you make changes to a report generator, it starts generating new reports within 60 minutes of being updated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLicenseManagerReportGenerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5878,7 +5878,7 @@ pub mod fluent_builders {
     /// <p>You can update the license specifications of AMIs, instances, and hosts.
     /// You cannot update the license specifications for launch templates and CloudFormation templates,
     /// as they send license configurations to the operation that creates the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLicenseSpecificationsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5990,7 +5990,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServiceSettings`.
     ///
     /// <p>Updates License Manager settings for the current Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

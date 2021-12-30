@@ -487,7 +487,7 @@ pub mod fluent_builders {
     /// Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers.
     /// These providers are available to all accounts in the Amazon Web Services Regions that Fargate
     /// supports.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCapacityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -673,7 +673,7 @@ pub mod fluent_builders {
     /// Service-Linked Roles for Amazon ECS</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1047,7 +1047,7 @@ pub mod fluent_builders {
     /// </ul>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1783,7 +1783,7 @@ pub mod fluent_builders {
     /// uses the <code>EXTERNAL</code> deployment controller type. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
     /// Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTaskSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2150,7 +2150,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables an account setting for a specified IAM user, IAM role, or the root user for
     /// an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccountSetting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2253,7 +2253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAttributes`.
     ///
     /// <p>Deletes one or more custom attributes from an Amazon ECS resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2362,7 +2362,7 @@ pub mod fluent_builders {
     /// provider are transitioned to use the capacity from the remaining capacity providers.
     /// Only capacity providers that aren't associated with a cluster can be deleted. To remove
     /// a capacity provider from a cluster, you can either use <a>PutClusterCapacityProviders</a> or delete the cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCapacityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2440,7 +2440,7 @@ pub mod fluent_builders {
     /// We don't recommend that you rely on <code>INACTIVE</code> clusters persisting.</p>
     /// <p>You must deregister all container instances from this cluster before you may delete
     /// it. You can list the container instances in a cluster with <a>ListContainerInstances</a> and deregister them with <a>DeregisterContainerInstance</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2530,7 +2530,7 @@ pub mod fluent_builders {
     /// in either <code>ACTIVE</code> or <code>DRAINING</code> status, you receive an
     /// error.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2627,7 +2627,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a specified task set within a service. This is used when a service uses the
     /// <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTaskSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2746,7 +2746,7 @@ pub mod fluent_builders {
     /// instance from your cluster (stopped container instances or instances with
     /// disconnected agents aren't automatically deregistered when terminated).</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterContainerInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2875,7 +2875,7 @@ pub mod fluent_builders {
     /// don't recommend that you rely on <code>INACTIVE</code> task definitions persisting
     /// beyond the lifecycle of any associated tasks and services.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2952,7 +2952,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCapacityProviders`.
     ///
     /// <p>Describes one or more of your capacity providers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCapacityProviders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3106,7 +3106,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClusters`.
     ///
     /// <p>Describes one or more of your clusters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3225,7 +3225,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes one or more container instances. Returns metadata about each container
     /// instance requested.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContainerInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3343,7 +3343,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeServices`.
     ///
     /// <p>Describes the specified services running in your cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3464,7 +3464,7 @@ pub mod fluent_builders {
     /// <p>You can only describe <code>INACTIVE</code> task definitions while an active task
     /// or service references them.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3564,7 +3564,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTasks`.
     ///
     /// <p>Describes a specified task or tasks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3679,7 +3679,7 @@ pub mod fluent_builders {
     /// service uses the <code>EXTERNAL</code> deployment controller type. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
     /// Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTaskSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3804,7 +3804,7 @@ pub mod fluent_builders {
     /// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
     /// </note>
     /// <p>Returns an endpoint for the Amazon ECS agent to poll for updates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DiscoverPollEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3891,7 +3891,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExecuteCommand`.
     ///
     /// <p>Runs a command remotely on a container within a task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteCommand<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4005,7 +4005,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccountSettings`.
     ///
     /// <p>Lists the account settings for a specified principal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4186,7 +4186,7 @@ pub mod fluent_builders {
     /// can also filter the results by attribute name and value. You can do this, for example,
     /// to see which container instances in a cluster are running a Linux AMI
     /// (<code>ecs.os-type=linux</code>). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4347,7 +4347,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListClusters`.
     ///
     /// <p>Returns a list of existing clusters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4458,7 +4458,7 @@ pub mod fluent_builders {
     /// results of a <code>ListContainerInstances</code> operation with cluster query language
     /// statements inside the <code>filter</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContainerInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4618,7 +4618,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of services. You can filter the results by cluster, launch type, and
     /// scheduling strategy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4768,7 +4768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for an Amazon ECS resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4848,7 +4848,7 @@ pub mod fluent_builders {
     /// task definition revisions by setting the <code>status</code> parameter to
     /// <code>ACTIVE</code>. You can also filter the results with the
     /// <code>familyPrefix</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTaskDefinitionFamilies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5012,7 +5012,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of task definitions that are registered to your account. You can filter
     /// the results by family name with the <code>familyPrefix</code> parameter or by status
     /// with the <code>status</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTaskDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5186,7 +5186,7 @@ pub mod fluent_builders {
     /// desired status of the task.</p>
     /// <p>Recently stopped tasks might appear in the returned results. Currently, stopped tasks
     /// appear in the returned results for at least one hour.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5438,7 +5438,7 @@ pub mod fluent_builders {
     /// have Container Insights enabled unless you disable it during cluster creation. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
     /// Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountSetting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5567,7 +5567,7 @@ pub mod fluent_builders {
     /// <p>Modifies an account setting for all IAM users on an account for whom no individual
     /// account setting has been specified. Account settings are set on a per-Region
     /// basis.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountSettingDefault<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5667,7 +5667,7 @@ pub mod fluent_builders {
     /// To delete an attribute, use <a>DeleteAttributes</a>. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5771,7 +5771,7 @@ pub mod fluent_builders {
     /// We recommend that you define a default capacity provider strategy for your cluster.
     /// However, you must specify an empty array (<code>[]</code>) to bypass defining a default
     /// strategy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutClusterCapacityProviders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5926,7 +5926,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Registers an EC2 instance into the specified cluster. This instance becomes available
     /// to place containers on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterContainerInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6223,7 +6223,7 @@ pub mod fluent_builders {
     /// <a>NetworkConfiguration</a> when you create a service or run a task with
     /// the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6964,7 +6964,7 @@ pub mod fluent_builders {
     /// minutes of wait time.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RunTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7454,7 +7454,7 @@ pub mod fluent_builders {
     /// <p>Alternatively, you can use <a>RunTask</a> to place tasks for you. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7793,7 +7793,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7894,7 +7894,7 @@ pub mod fluent_builders {
     /// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
     /// </note>
     /// <p>Sent to acknowledge that an attachment changed states.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubmitAttachmentStateChanges<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7986,7 +7986,7 @@ pub mod fluent_builders {
     /// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
     /// </note>
     /// <p>Sent to acknowledge that a container changed states.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubmitContainerStateChange<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8139,7 +8139,7 @@ pub mod fluent_builders {
     /// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
     /// </note>
     /// <p>Sent to acknowledge that a task changed states.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubmitTaskStateChange<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8332,7 +8332,7 @@ pub mod fluent_builders {
     /// <code>resourceArn</code>. If existing tags on a resource aren't specified in the
     /// request parameters, they aren't changed. When a resource is deleted, the tags that are
     /// associated with that resource are deleted as well.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8485,7 +8485,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8576,7 +8576,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCapacityProvider`.
     ///
     /// <p>Modifies the parameters for a capacity provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCapacityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8664,7 +8664,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCluster`.
     ///
     /// <p>Updates the cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8764,7 +8764,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateClusterSettings`.
     ///
     /// <p>Modifies the settings to use for a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClusterSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8872,7 +8872,7 @@ pub mod fluent_builders {
     /// Linux AMI with the <code>ecs-init</code> service installed and running. For help
     /// updating the Amazon ECS container agent on other operating systems, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually updating the Amazon ECS container agent</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContainerAgent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9007,7 +9007,7 @@ pub mod fluent_builders {
     /// <p>When a container instance has been drained, you can set a container instance to
     /// <code>ACTIVE</code> status and once it has reached that status the Amazon ECS scheduler
     /// can begin scheduling tasks on the instance again.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContainerInstancesState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9227,7 +9227,7 @@ pub mod fluent_builders {
     /// running tasks for this service.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9576,7 +9576,7 @@ pub mod fluent_builders {
     /// used when a service uses the <code>EXTERNAL</code> deployment controller type. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
     /// Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServicePrimaryTaskSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9675,7 +9675,7 @@ pub mod fluent_builders {
     /// <p>Modifies a task set. This is used when a service uses the <code>EXTERNAL</code>
     /// deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
     /// Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTaskSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

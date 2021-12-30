@@ -346,7 +346,7 @@ pub mod fluent_builders {
     /// that runs on Amazon EC2 instances, a mobile application installed by your users, a serverless
     /// application using Amazon API Gateway and Lambda, or any system you run on behalf of
     /// others.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -474,7 +474,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create a
     /// Configuration and a Configuration Profile</a> in the <i>AppConfig User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -683,7 +683,7 @@ pub mod fluent_builders {
     /// configuration to the designated targets. A deployment strategy includes the overall
     /// duration required, a percentage of targets to receive the deployment during each interval,
     /// an algorithm that defines how percentage grows, and bake time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeploymentStrategy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -918,7 +918,7 @@ pub mod fluent_builders {
     /// configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a
     /// configuration deployment. If an alarm is triggered, the system rolls back the
     /// configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1055,7 +1055,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateHostedConfigurationVersion`.
     ///
     /// <p>Creates a new configuration in the AppConfig hosted configuration store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHostedConfigurationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1193,7 +1193,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an application. Deleting an application does not delete a configuration from a
     /// host.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1267,7 +1267,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a configuration profile. Deleting a configuration profile does not delete a
     /// configuration from a host.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1357,7 +1357,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a deployment strategy. Deleting a deployment strategy does not delete a
     /// configuration from a host.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeploymentStrategy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1431,7 +1431,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an environment. Deleting an environment does not delete a configuration from a
     /// host.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1518,7 +1518,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a version of a configuration from the AppConfig hosted configuration
     /// store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHostedConfigurationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1617,7 +1617,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplication`.
     ///
     /// <p>Retrieves information about an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1702,7 +1702,7 @@ pub mod fluent_builders {
     /// calls to <code>GetConfiguration</code> must pass this value by using the
     /// <code>ClientConfigurationVersion</code> parameter. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1861,7 +1861,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConfigurationProfile`.
     ///
     /// <p>Retrieves information about a configuration profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1952,7 +1952,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeployment`.
     ///
     /// <p>Retrieves information about a configuration deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2052,7 +2052,7 @@ pub mod fluent_builders {
     /// deployment strategy includes the overall duration required, a percentage of targets to
     /// receive the deployment during each interval, an algorithm that defines how percentage
     /// grows, and bake time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentStrategy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2129,7 +2129,7 @@ pub mod fluent_builders {
     /// in an <code>EU_Region</code> environment. Each configuration deployment targets an
     /// environment. You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm is
     /// triggered during a deployment, AppConfig roles back the configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2215,7 +2215,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetHostedConfigurationVersion`.
     ///
     /// <p>Retrieves information about a specific configuration version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHostedConfigurationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2314,7 +2314,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplications`.
     ///
     /// <p>Lists all applications in your Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2404,7 +2404,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConfigurationProfiles`.
     ///
     /// <p>Lists the configuration profiles for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2511,7 +2511,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeployments`.
     ///
     /// <p>Lists the deployments for an environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2619,7 +2619,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeploymentStrategies`.
     ///
     /// <p>Lists deployment strategies.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentStrategies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2701,7 +2701,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironments`.
     ///
     /// <p>Lists the environments for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2797,7 +2797,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists configurations stored in the AppConfig hosted configuration store by
     /// version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHostedConfigurationVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2908,7 +2908,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves the list of key-value tags assigned to the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2978,7 +2978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartDeployment`.
     ///
     /// <p>Starts a deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3145,7 +3145,7 @@ pub mod fluent_builders {
     /// <p>Stops a deployment. This API action works only on deployments that have a status of
     /// <code>DEPLOYING</code>. This action moves the deployment to a status of
     /// <code>ROLLED_BACK</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3245,7 +3245,7 @@ pub mod fluent_builders {
     /// to an AppConfig resource. Tags help organize and categorize your AppConfig resources. Each
     /// tag consists of a key and an optional value, both of which you define. You can specify a
     /// maximum of 50 tags for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3342,7 +3342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes a tag key and value from an AppConfig resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3429,7 +3429,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
     /// <p>Updates an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3522,7 +3522,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConfigurationProfile`.
     ///
     /// <p>Updates a configuration profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3663,7 +3663,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeploymentStrategy`.
     ///
     /// <p>Updates a deployment strategy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeploymentStrategy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3852,7 +3852,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEnvironment`.
     ///
     /// <p>Updates an environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3975,7 +3975,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ValidateConfiguration`.
     ///
     /// <p>Uses the validators in a configuration profile to validate a configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

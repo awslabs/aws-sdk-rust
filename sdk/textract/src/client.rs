@@ -199,7 +199,7 @@ pub mod fluent_builders {
     /// <code>AnalyzeDocument</code> is a synchronous operation. To analyze documents
     /// asynchronously, use <a>StartDocumentAnalysis</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document Text Analysis</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AnalyzeDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -329,7 +329,7 @@ pub mod fluent_builders {
     /// or the vendors name.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AnalyzeExpense<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -433,7 +433,7 @@ pub mod fluent_builders {
     /// <p>Analyzes identity documents for relevant information. This information is extracted
     /// and returned as <code>IdentityDocumentFields</code>, which records both the normalized
     /// field and value of the extracted text.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AnalyzeID<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -520,7 +520,7 @@ pub mod fluent_builders {
     /// <code>DetectDocumentText</code> is a synchronous operation. To analyze documents
     /// asynchronously, use <a>StartDocumentTextDetection</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document Text Detection</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectDocumentText<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -642,7 +642,7 @@ pub mod fluent_builders {
     /// parameter with the token value that's returned from the previous call to
     /// <code>GetDocumentAnalysis</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document Text Analysis</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDocumentAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -764,7 +764,7 @@ pub mod fluent_builders {
     /// parameter with the token value that's returned from the previous call to
     /// <code>GetDocumentTextDetection</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document Text Detection</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDocumentTextDetection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -878,7 +878,7 @@ pub mod fluent_builders {
     /// <code>NextToken</code> request parameter with the token value that's returned from the previous
     /// call to <code>GetExpenseAnalysis</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/invoices-receipts.html">Analyzing Invoices and Receipts</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExpenseAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -993,7 +993,7 @@ pub mod fluent_builders {
     /// the job identifier (<code>JobId</code>) from the initial call to
     /// <code>StartDocumentAnalysis</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document Text Analysis</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDocumentAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1197,7 +1197,7 @@ pub mod fluent_builders {
     /// pass the job identifier (<code>JobId</code>) from the initial call to
     /// <code>StartDocumentTextDetection</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document Text Detection</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDocumentTextDetection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1373,7 +1373,7 @@ pub mod fluent_builders {
     /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetExpenseAnalysis</a>, and pass the job identifier (<code>JobId</code>) that was
     /// returned by your call to <code>StartExpenseAnalysis</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/invoice-receipts.html">Analyzing Invoices and Receipts</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExpenseAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

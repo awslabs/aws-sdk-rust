@@ -461,7 +461,7 @@ pub mod fluent_builders {
     ///
     /// <p>Activates a partner event source that has been deactivated. Once activated, your matching
     /// event bus will start receiving events from the event source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateEventSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -531,7 +531,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelReplay`.
     ///
     /// <p>Cancels the specified replay.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelReplay<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -602,7 +602,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an API destination, which is an HTTP invocation endpoint configured as a target
     /// for events.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApiDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -740,7 +740,7 @@ pub mod fluent_builders {
     /// time for changes to take effect. If you do not specify a pattern to filter events sent to the
     /// archive, all events are sent to the archive except replayed events. Replayed events are not
     /// sent to an archive.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateArchive<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -859,7 +859,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a connection. A connection defines the authorization type and credentials to use
     /// for authorization with an API destination HTTP endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -975,7 +975,7 @@ pub mod fluent_builders {
     /// <p>Creates a new event bus within your account. This can be a custom event bus which you can
     /// use to receive events from your custom applications and services, or it can be a partner event
     /// bus which can be matched to a partner event source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventBus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1110,7 +1110,7 @@ pub mod fluent_builders {
     /// an event-generating resource within the partner system. The combination of
     /// <i>event_namespace</i> and <i>event_name</i> should help Amazon Web Services
     /// customers decide whether to create an event bus to receive these events.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePartnerEventSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1206,7 +1206,7 @@ pub mod fluent_builders {
     /// <p>When you deactivate a partner event source, the source goes into PENDING state. If it
     /// remains in PENDING state for more than two weeks, it is deleted.</p>
     /// <p>To activate a deactivated partner event source, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html">ActivateEventSource</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeactivateEventSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1277,7 +1277,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes all authorization parameters from the connection. This lets you remove the secret
     /// from the connection so you can reuse it without having to create a new connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeauthorizeConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1347,7 +1347,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApiDestination`.
     ///
     /// <p>Deletes the specified API destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApiDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1417,7 +1417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteArchive`.
     ///
     /// <p>Deletes the specified archive.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteArchive<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1487,7 +1487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnection`.
     ///
     /// <p>Deletes a connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1558,7 +1558,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified custom event bus or partner event bus. All rules associated with
     /// this event bus need to be deleted. You can't delete your account's default event bus.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventBus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1632,7 +1632,7 @@ pub mod fluent_builders {
     /// <p>When you delete an event source, the status of the corresponding partner event bus in the
     /// Amazon Web Services customer account becomes DELETED.</p>
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePartnerEventSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1725,7 +1725,7 @@ pub mod fluent_builders {
     /// rules are created by those other Amazon Web Services services to support functionality in those services. You
     /// can delete these rules using the <code>Force</code> option, but you should do so only if you
     /// are sure the other service is not still using that rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1828,7 +1828,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApiDestination`.
     ///
     /// <p>Retrieves details about an API destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApiDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1898,7 +1898,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeArchive`.
     ///
     /// <p>Retrieves details about an archive.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeArchive<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1968,7 +1968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConnection`.
     ///
     /// <p>Retrieves details about a connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2044,7 +2044,7 @@ pub mod fluent_builders {
     /// <p> To enable your account to receive events from other accounts on its default event bus,
     /// use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html">PutPermission</a>.</p>
     /// <p>For more information about partner event buses, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html">CreateEventBus</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventBus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2117,7 +2117,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation lists details about a partner event source that is shared with your
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2190,7 +2190,7 @@ pub mod fluent_builders {
     /// they have created. Amazon Web Services customers do not use this operation. Instead, Amazon Web Services customers can use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventSource.html">DescribeEventSource</a>
     /// to see details about a partner event source that is
     /// shared with them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePartnerEventSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2268,7 +2268,7 @@ pub mod fluent_builders {
     /// <code>DescribeReplay</code> to determine the progress of a replay. The value returned for
     /// <code>EventLastReplayedTime</code> indicates the time within the specified time range
     /// associated with the last event replayed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplay<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2340,7 +2340,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified rule.</p>
     /// <p>DescribeRule does not list the targets of a rule. To see the targets associated with a
     /// rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html">ListTargetsByRule</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2429,7 +2429,7 @@ pub mod fluent_builders {
     ///
     /// <p>When you disable a rule, incoming events might continue to match to the disabled rule.
     /// Allow a short period of time for changes to take effect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2517,7 +2517,7 @@ pub mod fluent_builders {
     ///
     /// <p>When you enable a rule, incoming events might not immediately start matching to a newly
     /// enabled rule. Allow a short period of time for changes to take effect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2602,7 +2602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApiDestinations`.
     ///
     /// <p>Retrieves a list of API destination in the account in the current Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApiDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2708,7 +2708,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists your archives. You can either list all the archives or you can provide a prefix to
     /// match to the archive names. Filter parameters are exclusive.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListArchives<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2823,7 +2823,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConnections`.
     ///
     /// <p>Retrieves a list of connections from the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2929,7 +2929,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all the event buses in your account, including the default event bus, custom event
     /// buses, and partner event buses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventBuses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3026,7 +3026,7 @@ pub mod fluent_builders {
     ///
     /// <p>You can use this to see all the partner event sources that have been shared with your Amazon Web Services
     /// account. For more information about partner event sources, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html">CreateEventBus</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3124,7 +3124,7 @@ pub mod fluent_builders {
     /// <p>An SaaS partner can use this operation to display the Amazon Web Services account ID that a particular
     /// partner event source name is associated with. This operation is not used by Amazon Web Services
     /// customers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPartnerEventSourceAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3224,7 +3224,7 @@ pub mod fluent_builders {
     ///
     /// <p>An SaaS partner can use this operation to list all the partner event source names that
     /// they have created. This operation is not used by Amazon Web Services customers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPartnerEventSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3323,7 +3323,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists your replays. You can either list all the replays or you can provide a prefix to
     /// match to the replay names. Filter parameters are exclusive.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReplays<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3439,7 +3439,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the rules for the specified target. You can see which of the rules in Amazon
     /// EventBridge can invoke a specific target in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRuleNamesByTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3548,7 +3548,7 @@ pub mod fluent_builders {
     ///
     /// <p>ListRules does not list the targets of a rule. To see the targets associated with a rule,
     /// use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html">ListTargetsByRule</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3654,7 +3654,7 @@ pub mod fluent_builders {
     ///
     /// <p>Displays the tags associated with an EventBridge resource. In EventBridge, rules and event
     /// buses can be tagged.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3724,7 +3724,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTargetsByRule`.
     ///
     /// <p>Lists the targets assigned to the specified rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTargetsByRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3829,7 +3829,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEvents`.
     ///
     /// <p>Sends custom events to Amazon EventBridge so that they can be matched to rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3911,7 +3911,7 @@ pub mod fluent_builders {
     ///
     /// <p>This is used by SaaS partners to write events to a customer's partner event bus. Amazon Web Services
     /// customers do not use this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPartnerEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4007,7 +4007,7 @@ pub mod fluent_builders {
     /// Guide</i>.</p>
     ///
     /// <p>The permission policy on the event bus cannot exceed 10 KB in size.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4221,7 +4221,7 @@ pub mod fluent_builders {
     /// budgeting, which alerts you when charges exceed your specified limit. For more information,
     /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your Costs with
     /// Budgets</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4554,7 +4554,7 @@ pub mod fluent_builders {
     /// <p>This action can partially fail if too many requests are made at the same time. If that
     /// happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in
     /// <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4659,7 +4659,7 @@ pub mod fluent_builders {
     /// event bus. Specify the account to revoke by the <code>StatementId</code> value that you
     /// associated with the account when you granted it permission with <code>PutPermission</code>.
     /// You can find the <code>StatementId</code> by using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html">DescribeEventBus</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemovePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4764,7 +4764,7 @@ pub mod fluent_builders {
     /// <p>This action can partially fail if too many requests are made at the same time. If that
     /// happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in
     /// <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4892,7 +4892,7 @@ pub mod fluent_builders {
     /// determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code>
     /// indicates the time within the specified time range associated with the last event
     /// replayed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReplay<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5040,7 +5040,7 @@ pub mod fluent_builders {
     /// resource. If you specify a tag key that is already associated with the resource, the new tag
     /// value that you specify replaces the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5131,7 +5131,7 @@ pub mod fluent_builders {
     /// However, EventBridge uses an exact match in event patterns and rules. Be sure to use the
     /// correct ARN characters when creating event patterns so that they match the ARN syntax in the
     /// event you want to match.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestEventPattern<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5295,7 +5295,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge
     /// (CloudWatch Events), rules and event buses can be tagged.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5382,7 +5382,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApiDestination`.
     ///
     /// <p>Updates an API destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApiDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5514,7 +5514,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateArchive`.
     ///
     /// <p>Updates the specified archive.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateArchive<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5617,7 +5617,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnection`.
     ///
     /// <p>Updates settings for a connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

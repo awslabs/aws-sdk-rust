@@ -309,7 +309,7 @@ pub mod fluent_builders {
     /// <p>To list all of the versions currently associated with a secret, use <a>ListSecretVersionIds</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelRotateSecret<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -472,7 +472,7 @@ pub mod fluent_builders {
     /// value.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSecret<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -917,7 +917,7 @@ pub mod fluent_builders {
     /// <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1038,7 +1038,7 @@ pub mod fluent_builders {
     /// use <a>RestoreSecret</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSecret<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1206,7 +1206,7 @@ pub mod fluent_builders {
     /// <p>To list all of the secrets in the Amazon Web Services account, use <a>ListSecrets</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSecret<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1294,7 +1294,7 @@ pub mod fluent_builders {
     /// <p>secretsmanager:GetRandomPassword</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRandomPassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1497,7 +1497,7 @@ pub mod fluent_builders {
     /// <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1600,7 +1600,7 @@ pub mod fluent_builders {
     /// <p>To retrieve the non-encrypted details for the secret, use <a>DescribeSecret</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSecretValue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1752,7 +1752,7 @@ pub mod fluent_builders {
     /// <p>To list the versions attached to a secret, use <a>ListSecretVersionIds</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecrets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1910,7 +1910,7 @@ pub mod fluent_builders {
     /// <p>To list the secrets in an account, use <a>ListSecrets</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecretVersionIds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2071,7 +2071,7 @@ pub mod fluent_builders {
     /// <p>To list all of the currently available secrets, use <a>ListSecrets</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2268,7 +2268,7 @@ pub mod fluent_builders {
     /// <p>To list the versions attached to a secret, use <a>ListSecretVersionIds</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSecretValue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2508,7 +2508,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveRegionsFromReplication`.
     ///
     /// <p>Remove regions from replication.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveRegionsFromReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2596,7 +2596,7 @@ pub mod fluent_builders {
     ///
     /// <p>Converts an existing secret to a multi-Region secret and begins replication the secret to a
     /// list of new regions. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReplicateSecretToRegions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2716,7 +2716,7 @@ pub mod fluent_builders {
     /// <p>To delete a secret, use <a>DeleteSecret</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreSecret<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2853,7 +2853,7 @@ pub mod fluent_builders {
     /// <a>UpdateSecretVersionStage</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RotateSecret<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2994,7 +2994,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopReplicationToReplica`.
     ///
     /// <p>Removes the secret from replication and promotes the secret to a regional secret in the replica Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopReplicationToReplica<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3119,7 +3119,7 @@ pub mod fluent_builders {
     /// <p>To view the list of tags attached to a secret, use <a>DescribeSecret</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3250,7 +3250,7 @@ pub mod fluent_builders {
     /// <p>To view the list of tags attached to a secret, use <a>DescribeSecret</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3442,7 +3442,7 @@ pub mod fluent_builders {
     /// <p>To list the versions contained in a secret, use <a>ListSecretVersionIds</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecret<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3719,7 +3719,7 @@ pub mod fluent_builders {
     /// <code>SecretVersionsToStages</code> response value. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecretVersionStage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3884,7 +3884,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidateResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -121,7 +121,7 @@ pub mod fluent_builders {
     /// calls to <code>GetConfiguration</code> must pass this value by using the
     /// <code>ClientConfigurationVersion</code> parameter. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLatestConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -194,7 +194,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartConfigurationSession`.
     ///
     /// <p>Starts a configuration session used to retrieve a deployed configuration. See the GetLatestConfiguration API for more details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartConfigurationSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -607,7 +607,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApi`.
     ///
     /// <p>Creates an Api resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -834,7 +834,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApiMapping`.
     ///
     /// <p>Creates an API mapping.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApiMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -937,7 +937,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAuthorizer`.
     ///
     /// <p>Creates an Authorizer for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAuthorizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1148,7 +1148,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
     /// <p>Creates a Deployment for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1238,7 +1238,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDomainName`.
     ///
     /// <p>Creates a domain name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomainName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1367,7 +1367,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIntegration`.
     ///
     /// <p>Creates an Integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1704,7 +1704,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIntegrationResponse`.
     ///
     /// <p>Creates an IntegrationResponses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIntegrationResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1881,7 +1881,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateModel`.
     ///
     /// <p>Creates a Model for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1991,7 +1991,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRoute`.
     ///
     /// <p>Creates a Route for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2227,7 +2227,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRouteResponse`.
     ///
     /// <p>Creates a RouteResponse for a Route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRouteResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2382,7 +2382,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStage`.
     ///
     /// <p>Creates a Stage for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2603,7 +2603,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVpcLink`.
     ///
     /// <p>Creates a VPC link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpcLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2730,7 +2730,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAccessLogSettings`.
     ///
     /// <p>Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccessLogSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2810,7 +2810,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApi`.
     ///
     /// <p>Deletes an Api resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2880,7 +2880,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApiMapping`.
     ///
     /// <p>Deletes an API mapping.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApiMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2963,7 +2963,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAuthorizer`.
     ///
     /// <p>Deletes an Authorizer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAuthorizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3046,7 +3046,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCorsConfiguration`.
     ///
     /// <p>Deletes a CORS configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCorsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3116,7 +3116,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeployment`.
     ///
     /// <p>Deletes a Deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3199,7 +3199,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDomainName`.
     ///
     /// <p>Deletes a domain name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomainName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3269,7 +3269,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIntegration`.
     ///
     /// <p>Deletes an Integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3352,7 +3352,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIntegrationResponse`.
     ///
     /// <p>Deletes an IntegrationResponses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntegrationResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3451,7 +3451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteModel`.
     ///
     /// <p>Deletes a Model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3531,7 +3531,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoute`.
     ///
     /// <p>Deletes a Route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3611,7 +3611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRouteRequestParameter`.
     ///
     /// <p>Deletes a route request parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRouteRequestParameter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3704,7 +3704,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRouteResponse`.
     ///
     /// <p>Deletes a RouteResponse.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRouteResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3797,7 +3797,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRouteSettings`.
     ///
     /// <p>Deletes the RouteSettings for a stage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRouteSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3887,7 +3887,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStage`.
     ///
     /// <p>Deletes a Stage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3967,7 +3967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVpcLink`.
     ///
     /// <p>Deletes a VPC link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpcLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4036,7 +4036,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExportApi`.
     ///
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4162,7 +4162,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApi`.
     ///
     /// <p>Gets an Api resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4232,7 +4232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApiMapping`.
     ///
     /// <p>Gets an API mapping.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApiMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4315,7 +4315,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApiMappings`.
     ///
     /// <p>Gets API mappings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApiMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4405,7 +4405,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApis`.
     ///
     /// <p>Gets a collection of Api resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4485,7 +4485,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAuthorizer`.
     ///
     /// <p>Gets an Authorizer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAuthorizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4568,7 +4568,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAuthorizers`.
     ///
     /// <p>Gets the Authorizers for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAuthorizers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4658,7 +4658,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeployment`.
     ///
     /// <p>Gets a Deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4741,7 +4741,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeployments`.
     ///
     /// <p>Gets the Deployments for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4831,7 +4831,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomainName`.
     ///
     /// <p>Gets a domain name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4901,7 +4901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomainNames`.
     ///
     /// <p>Gets the domain names for an AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4981,7 +4981,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntegration`.
     ///
     /// <p>Gets an Integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5064,7 +5064,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntegrationResponse`.
     ///
     /// <p>Gets an IntegrationResponses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntegrationResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5163,7 +5163,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntegrationResponses`.
     ///
     /// <p>Gets the IntegrationResponses for an Integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntegrationResponses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5266,7 +5266,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntegrations`.
     ///
     /// <p>Gets the Integrations for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntegrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5356,7 +5356,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetModel`.
     ///
     /// <p>Gets a Model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5436,7 +5436,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetModels`.
     ///
     /// <p>Gets the Models for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5526,7 +5526,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetModelTemplate`.
     ///
     /// <p>Gets a model template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModelTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5606,7 +5606,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRoute`.
     ///
     /// <p>Gets a Route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5686,7 +5686,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRouteResponse`.
     ///
     /// <p>Gets a RouteResponse.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRouteResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5779,7 +5779,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRouteResponses`.
     ///
     /// <p>Gets the RouteResponses for a Route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRouteResponses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5879,7 +5879,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRoutes`.
     ///
     /// <p>Gets the Routes for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5969,7 +5969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStage`.
     ///
     /// <p>Gets a Stage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6049,7 +6049,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStages`.
     ///
     /// <p>Gets the Stages for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6139,7 +6139,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTags`.
     ///
     /// <p>Gets a collection of Tag resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6209,7 +6209,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVpcLink`.
     ///
     /// <p>Gets a VPC link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVpcLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6279,7 +6279,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVpcLinks`.
     ///
     /// <p>Gets a collection of VPC links.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVpcLinks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6359,7 +6359,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportApi`.
     ///
     /// <p>Imports an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6449,7 +6449,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReimportApi`.
     ///
     /// <p>Puts an Api resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReimportApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6549,7 +6549,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetAuthorizersCache`.
     ///
     /// <p>Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetAuthorizersCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6629,7 +6629,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Creates a new Tag resource to represent a tag.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6722,7 +6722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes a Tag.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6809,7 +6809,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApi`.
     ///
     /// <p>Updates an Api resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7010,7 +7010,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApiMapping`.
     ///
     /// <p>The API mapping.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApiMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7126,7 +7126,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAuthorizer`.
     ///
     /// <p>Updates an Authorizer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAuthorizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7350,7 +7350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeployment`.
     ///
     /// <p>Updates a Deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7443,7 +7443,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomainName`.
     ///
     /// <p>Updates a domain name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7549,7 +7549,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIntegration`.
     ///
     /// <p>Updates an Integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7899,7 +7899,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIntegrationResponse`.
     ///
     /// <p>Updates an IntegrationResponses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIntegrationResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8106,7 +8106,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateModel`.
     ///
     /// <p>Updates a Model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8226,7 +8226,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRoute`.
     ///
     /// <p>Updates a Route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8472,7 +8472,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRouteResponse`.
     ///
     /// <p>Updates a RouteResponse.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRouteResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8640,7 +8640,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStage`.
     ///
     /// <p>Updates a Stage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8838,7 +8838,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVpcLink`.
     ///
     /// <p>Updates a VPC link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVpcLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

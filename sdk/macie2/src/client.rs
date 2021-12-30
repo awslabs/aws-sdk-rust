@@ -530,7 +530,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptInvitation`.
     ///
     /// <p>Accepts an Amazon Macie membership invitation that was received from a specific account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -632,7 +632,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetCustomDataIdentifiers`.
     ///
     /// <p>Retrieves information about one or more custom data identifiers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetCustomDataIdentifiers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -709,7 +709,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateClassificationJob`.
     ///
     /// <p>Creates and defines the settings for a classification job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClassificationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -931,7 +931,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCustomDataIdentifier`.
     ///
     /// <p>Creates and defines the criteria and other settings for a custom data identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomDataIdentifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1115,7 +1115,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFindingsFilter`.
     ///
     /// <p>Creates and defines the criteria and other settings for a findings filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFindingsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1264,7 +1264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInvitations`.
     ///
     /// <p>Sends an Amazon Macie membership invitation to one or more accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1361,7 +1361,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMember`.
     ///
     /// <p>Associates an account with an Amazon Macie administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1457,7 +1457,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSampleFindings`.
     ///
     /// <p>Creates sample findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSampleFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1534,7 +1534,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeclineInvitations`.
     ///
     /// <p>Declines Amazon Macie membership invitations that were received from specific accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeclineInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1611,7 +1611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCustomDataIdentifier`.
     ///
     /// <p>Soft deletes a custom data identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomDataIdentifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1681,7 +1681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFindingsFilter`.
     ///
     /// <p>Deletes a findings filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFindingsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1751,7 +1751,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInvitations`.
     ///
     /// <p>Deletes Amazon Macie membership invitations that were received from specific accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1828,7 +1828,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMember`.
     ///
     /// <p>Deletes the association between an Amazon Macie administrator account and an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1898,7 +1898,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBuckets`.
     ///
     /// <p>Retrieves (queries) statistical data and other information about one or more S3 buckets that Amazon Macie monitors and analyzes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBuckets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2017,7 +2017,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClassificationJob`.
     ///
     /// <p>Retrieves the status and settings for a classification job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClassificationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2087,7 +2087,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
     ///
     /// <p>Retrieves the Amazon Macie configuration settings for an organization in Organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2147,7 +2147,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableMacie`.
     ///
     /// <p>Disables Amazon Macie and deletes all settings and resources for a Macie account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableMacie<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2207,7 +2207,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableOrganizationAdminAccount`.
     ///
     /// <p>Disables an account as the delegated Amazon Macie administrator account for an organization in Organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2280,7 +2280,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateFromAdministratorAccount`.
     ///
     /// <p>Disassociates a member account from its Amazon Macie administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromAdministratorAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2342,7 +2342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateFromMasterAccount`.
     ///
     /// <p>(Deprecated) Disassociates a member account from its Amazon Macie administrator account. This operation has been replaced by the <link  linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2402,7 +2402,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMember`.
     ///
     /// <p>Disassociates an Amazon Macie administrator account from a member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2472,7 +2472,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableMacie`.
     ///
     /// <p>Enables Amazon Macie and specifies the configuration settings for a Macie account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableMacie<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2568,7 +2568,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableOrganizationAdminAccount`.
     ///
     /// <p>Designates an account as the delegated Amazon Macie administrator account for an organization in Organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2651,7 +2651,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAdministratorAccount`.
     ///
     /// <p>Retrieves information about the Amazon Macie administrator account for an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAdministratorAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2711,7 +2711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBucketStatistics`.
     ///
     /// <p>Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie monitors and analyzes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2781,7 +2781,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetClassificationExportConfiguration`.
     ///
     /// <p>Retrieves the configuration settings for storing data classification results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetClassificationExportConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2843,7 +2843,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCustomDataIdentifier`.
     ///
     /// <p>Retrieves the criteria and other settings for a custom data identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCustomDataIdentifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2913,7 +2913,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindings`.
     ///
     /// <p>Retrieves the details of one or more findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3003,7 +3003,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingsFilter`.
     ///
     /// <p>Retrieves the criteria and other settings for a findings filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3073,7 +3073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingsPublicationConfiguration`.
     ///
     /// <p>Retrieves the configuration settings for publishing findings to Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingsPublicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3135,7 +3135,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingStatistics`.
     ///
     /// <p>Retrieves (queries) aggregated statistical data about findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3244,7 +3244,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInvitationsCount`.
     ///
     /// <p>Retrieves the count of Amazon Macie membership invitations that were received by an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvitationsCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3304,7 +3304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMacieSession`.
     ///
     /// <p>Retrieves the current status and configuration settings for an Amazon Macie account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMacieSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3364,7 +3364,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMasterAccount`.
     ///
     /// <p>(Deprecated) Retrieves information about the Amazon Macie administrator account for an account. This operation has been replaced by the <link  linkend="GetAdministratorAccount">GetAdministratorAccount</link> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3424,7 +3424,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMember`.
     ///
     /// <p>Retrieves information about an account that's associated with an Amazon Macie administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3494,7 +3494,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUsageStatistics`.
     ///
     /// <p>Retrieves (queries) quotas and aggregated usage data for one or more accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUsageStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3617,7 +3617,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUsageTotals`.
     ///
     /// <p>Retrieves (queries) aggregated usage data for an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUsageTotals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3687,7 +3687,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListClassificationJobs`.
     ///
     /// <p>Retrieves a subset of information about one or more classification jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClassificationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3793,7 +3793,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomDataIdentifiers`.
     ///
     /// <p>Retrieves a subset of information about all the custom data identifiers for an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomDataIdentifiers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3873,7 +3873,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindings`.
     ///
     /// <p>Retrieves a subset of information about one or more findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3979,7 +3979,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindingsFilters`.
     ///
     /// <p>Retrieves a subset of information about all the findings filters for an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindingsFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4059,7 +4059,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInvitations`.
     ///
     /// <p>Retrieves information about the Amazon Macie membership invitations that were received by an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4139,7 +4139,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListManagedDataIdentifiers`.
     ///
     /// <p>Retrieves information about all the managed data identifiers that Amazon Macie currently provides.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedDataIdentifiers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4209,7 +4209,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMembers`.
     ///
     /// <p>Retrieves information about the accounts that are associated with an Amazon Macie administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4302,7 +4302,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOrganizationAdminAccounts`.
     ///
     /// <p>Retrieves information about the delegated Amazon Macie administrator account for an organization in Organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationAdminAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4382,7 +4382,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves the tags (keys and values) that are associated with a classification job, custom data identifier, findings filter, or member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4452,7 +4452,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutClassificationExportConfiguration`.
     ///
     /// <p>Creates or updates the configuration settings for storing data classification results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutClassificationExportConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4530,7 +4530,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutFindingsPublicationConfiguration`.
     ///
     /// <p>Updates the configuration settings for publishing findings to Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFindingsPublicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4618,7 +4618,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchResources`.
     ///
     /// <p>Retrieves (queries) statistical data and other information about Amazon Web Services resources that Amazon Macie monitors and analyzes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4730,7 +4730,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or updates one or more tags (keys and values) that are associated with a classification job, custom data identifier, findings filter, or member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4823,7 +4823,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestCustomDataIdentifier`.
     ///
     /// <p>Tests a custom data identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestCustomDataIdentifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4947,7 +4947,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags (keys and values) from a classification job, custom data identifier, findings filter, or member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5034,7 +5034,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateClassificationJob`.
     ///
     /// <p>Changes the status of a classification job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClassificationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5117,7 +5117,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFindingsFilter`.
     ///
     /// <p>Updates the criteria and other settings for a findings filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFindingsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5253,7 +5253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMacieSession`.
     ///
     /// <p>Suspends or re-enables Amazon Macie, or updates the configuration settings for a Macie account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMacieSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5339,7 +5339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMemberSession`.
     ///
     /// <p>Enables an Amazon Macie administrator to suspend or re-enable Macie for a member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMemberSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5419,7 +5419,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
     ///
     /// <p>Updates the Amazon Macie configuration settings for an organization in Organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -290,7 +290,7 @@ pub mod fluent_builders {
     /// <p>Retrieves a list of traces specified by ID. Each trace is a collection of segment
     /// documents that originates from a single request. Use <code>GetTraceSummaries</code> to get a
     /// list of trace IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetTraces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -377,7 +377,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
     /// <p>Creates a group resource with a name and a filter expression. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -573,7 +573,7 @@ pub mod fluent_builders {
     /// reports back to X-Ray with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> to get updated versions of
     /// each in-use rule. The updated rule contains a trace quota that the service can use instead
     /// of borrowing from the reservoir.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSamplingRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -713,7 +713,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGroup`.
     ///
     /// <p>Deletes a group resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -793,7 +793,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSamplingRule`.
     ///
     /// <p>Deletes a sampling rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSamplingRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -873,7 +873,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEncryptionConfig`.
     ///
     /// <p>Retrieves the current encryption configuration for X-Ray data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEncryptionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -933,7 +933,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroup`.
     ///
     /// <p>Retrieves group resource details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1013,7 +1013,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroups`.
     ///
     /// <p>Retrieves all active group details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1085,7 +1085,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the summary information of an insight. This includes impact to clients and
     /// root cause services, the top anomalous services, the category, the state of the insight,
     /// and the start and end time of the insight.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1157,7 +1157,7 @@ pub mod fluent_builders {
     /// <p>X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an
     /// event. You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray
     /// console.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1248,7 +1248,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only
     /// structural information. For a complete service graph, use this API with the GetServiceGraph API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightImpactGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1358,7 +1358,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInsightSummaries`.
     ///
     /// <p>Retrieves the summaries of all insights in the specified group matching the provided filter values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1503,7 +1503,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSamplingRules`.
     ///
     /// <p>Retrieves all sampling rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSamplingRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1573,7 +1573,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSamplingStatisticSummaries`.
     ///
     /// <p>Retrieves information about recent sampling results for all sampling rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSamplingStatisticSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1644,7 +1644,7 @@ pub mod fluent_builders {
     ///
     /// <p>Requests a sampling quota for rules that the service is using to sample requests.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSamplingTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1728,7 +1728,7 @@ pub mod fluent_builders {
     /// make calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">Amazon Web Services X-Ray SDK</a>.
     /// Downstream services can be other applications, Amazon Web Services resources, HTTP web APIs, or SQL
     /// databases.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1845,7 +1845,7 @@ pub mod fluent_builders {
     ///
     /// <p>Get an aggregation of service statistics defined by a specific time
     /// range.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTimeSeriesServiceStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2003,7 +2003,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTraceGraph`.
     ///
     /// <p>Retrieves a service graph for one or more specific trace IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTraceGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2106,7 +2106,7 @@ pub mod fluent_builders {
     /// <p>For a full list of indexed fields and keywords that you can use in filter expressions,
     /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter
     /// Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTraceSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2259,7 +2259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags that are applied to the specified Amazon Web Services X-Ray group or sampling rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2341,7 +2341,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEncryptionConfig`.
     ///
     /// <p>Updates the encryption configuration for X-Ray data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEncryptionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2466,7 +2466,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutTelemetryRecords`.
     ///
     /// <p>Used by the Amazon Web Services X-Ray daemon to upload telemetry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutTelemetryRecords<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2638,7 +2638,7 @@ pub mod fluent_builders {
     /// digits.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutTraceSegments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2717,7 +2717,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies tags to an existing Amazon Web Services X-Ray group or sampling rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2855,7 +2855,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes tags from an Amazon Web Services X-Ray group or sampling rule. You cannot edit or delete system
     /// tags (those with an <code>aws:</code> prefix).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2942,7 +2942,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGroup`.
     ///
     /// <p>Updates a group resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3071,7 +3071,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSamplingRule`.
     ///
     /// <p>Modifies a sampling rule's configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSamplingRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

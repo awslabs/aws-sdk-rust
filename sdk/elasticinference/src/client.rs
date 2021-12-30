@@ -141,7 +141,7 @@ pub mod fluent_builders {
     /// <p>
     /// Describes the locations in which a given accelerator type or set of types is present in a given region.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAcceleratorOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -247,7 +247,7 @@ pub mod fluent_builders {
     /// <p>
     /// Describes information over a provided set of accelerators belonging to an account.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccelerators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -387,7 +387,7 @@ pub mod fluent_builders {
     /// <p>
     /// Describes the accelerator types available in a given region, as well as their characteristics, such as memory and throughput.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAcceleratorTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -449,7 +449,7 @@ pub mod fluent_builders {
     /// <p>
     /// Returns all tags of an Elastic Inference Accelerator.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -525,7 +525,7 @@ pub mod fluent_builders {
     /// <p>
     /// Adds the specified tags to an Elastic Inference Accelerator.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -628,7 +628,7 @@ pub mod fluent_builders {
     /// <p>
     /// Removes the specified tags from an Elastic Inference Accelerator.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

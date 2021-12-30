@@ -337,7 +337,7 @@ pub mod fluent_builders {
     /// ContactId.</p>
     /// <p>A profile object can have a single unique key and any number of additional keys that can
     /// be used to identify the profile that it belongs to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddProfileKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -453,7 +453,7 @@ pub mod fluent_builders {
     /// resolution</a>: set <code>Matching</code> to true. </p>
     /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should
     /// apply. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -619,7 +619,7 @@ pub mod fluent_builders {
     /// <p>Creates a standard profile.</p>
     /// <p>A standard profile represents the following attributes for a customer profile in a
     /// domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -958,7 +958,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a specific domain and all of its customer data, such as customer profile
     /// attributes and their related objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1028,7 +1028,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIntegration`.
     ///
     /// <p>Removes an integration from a specific domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1108,7 +1108,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProfile`.
     ///
     /// <p>Deletes the standard customer profile and all data pertaining to the profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1188,7 +1188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProfileKey`.
     ///
     /// <p>Removes a searchable key from a customer profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfileKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1295,7 +1295,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProfileObject`.
     ///
     /// <p>Removes an object associated with a profile of a given ProfileObjectType.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfileObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1407,7 +1407,7 @@ pub mod fluent_builders {
     /// ProfileObjects of that type. It also disables integrations from this specific
     /// ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that
     /// were populated from this ProfileObjectType.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfileObjectType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1503,7 +1503,7 @@ pub mod fluent_builders {
     /// <code>FirstName</code> or only <code>LastName</code>), there may be a large number of
     /// matches. This increases the chances of erroneous merges.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAutoMergingPreview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1599,7 +1599,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomain`.
     ///
     /// <p>Returns information about a specific domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1671,7 +1671,7 @@ pub mod fluent_builders {
     /// <p>Returns information about an Identity Resolution Job in a specific domain. </p>
     /// <p>Identity Resolution Jobs are set up using the Amazon Connect admin console. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use
     /// Identity Resolution to consolidate similar profiles</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityResolutionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1751,7 +1751,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntegration`.
     ///
     /// <p>Returns an integration for a domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1880,7 +1880,7 @@ pub mod fluent_builders {
     /// email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and
     /// <b>johndoe@anycompany.com</b>, or different phone number
     /// formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMatches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1972,7 +1972,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProfileObjectType`.
     ///
     /// <p>Returns the object types for a specific domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProfileObjectType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2059,7 +2059,7 @@ pub mod fluent_builders {
     /// “Salesforce-Contact.” When a user sends a ProfileObject, using the PutProfileObject API,
     /// with an ObjectTypeName that matches one of the TemplateIds, it uses the mappings from the
     /// template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProfileObjectTypeTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2129,7 +2129,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccountIntegrations`.
     ///
     /// <p>Lists all of the integrations associated to a specific URI in the AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountIntegrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2219,7 +2219,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomains`.
     ///
     /// <p>Returns a list of all the domains for an AWS account that have been created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2300,7 +2300,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by
     /// <code>JobStartTime</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentityResolutionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2392,7 +2392,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIntegrations`.
     ///
     /// <p>Lists all of the integrations in your domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIntegrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2482,7 +2482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProfileObjects`.
     ///
     /// <p>Returns a list of objects associated with a profile of a given ProfileObjectType.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfileObjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2610,7 +2610,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProfileObjectTypes`.
     ///
     /// <p>Lists all of the templates available within the service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfileObjectTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2700,7 +2700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProfileObjectTypeTemplates`.
     ///
     /// <p>Lists all of the template information for object types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfileObjectTypeTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2781,7 +2781,7 @@ pub mod fluent_builders {
     ///
     /// <p>Displays the tags associated with an Amazon Connect Customer Profiles resource. In Connect
     /// Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2895,7 +2895,7 @@ pub mod fluent_builders {
     /// <p>You can use MergeProfiles together with <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>, which
     /// returns potentially matching profiles, or use it with the results of another matching
     /// system. After profiles have been merged, they cannot be separated (unmerged).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergeProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3017,7 +3017,7 @@ pub mod fluent_builders {
     /// <p>Adds an integration between the service and a third-party service, which includes
     /// Amazon AppFlow and Amazon Connect.</p>
     /// <p>An integration can belong to only one domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3157,7 +3157,7 @@ pub mod fluent_builders {
     /// ProfileObjectType definition.</p>
     /// <p>PutProfileObject needs an ObjectType, which can be created using
     /// PutProfileObjectType.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProfileObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3250,7 +3250,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutProfileObjectType`.
     ///
     /// <p>Defines a ProfileObjectType.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProfileObjectType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3489,7 +3489,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches for profiles within a specific domain name using name, phone number, email
     /// address, account number, or a custom defined index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3621,7 +3621,7 @@ pub mod fluent_builders {
     /// you specify a tag key that is already associated with the resource, the new tag value that
     /// you specify replaces the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3715,7 +3715,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes one or more tags from the specified Amazon Connect Customer Profiles resource. In Connect
     /// Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3809,7 +3809,7 @@ pub mod fluent_builders {
     /// resolution</a>: set <code>Matching</code> to true. </p>
     /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should
     /// apply. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3981,7 +3981,7 @@ pub mod fluent_builders {
     /// <p>When calling the UpdateProfile API, specifying an empty string value means that any
     /// existing value will be removed. Not specifying a string value means that any value already
     /// there will be kept.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

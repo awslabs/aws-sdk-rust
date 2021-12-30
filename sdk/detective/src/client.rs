@@ -203,7 +203,7 @@ pub mod fluent_builders {
     /// This operation can only be called by an invited member account. </p>
     /// <p>The request provides the ARN of behavior graph.</p>
     /// <p>The member account status in the graph must be <code>INVITED</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -292,7 +292,7 @@ pub mod fluent_builders {
     /// <p>An account can only be the administrator account for one behavior graph within a Region.
     /// If the same account calls <code>CreateGraph</code> with the same administrator account, it
     /// always returns the same behavior graph ARN. It does not create a new behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -400,7 +400,7 @@ pub mod fluent_builders {
     /// graph.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -523,7 +523,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>DeleteGraph</code> can only be called by the administrator account for a behavior
     /// graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -597,7 +597,7 @@ pub mod fluent_builders {
     /// <code>DeleteMembers</code> to delete their own account from the behavior graph. To
     /// disable a behavior graph, the administrator account uses the <code>DeleteGraph</code> API
     /// method.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -687,7 +687,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the member account from the specified behavior graph. This operation can only be
     /// called by a member account that has the <code>ENABLED</code> status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -762,7 +762,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the membership details for specified member accounts for a behavior
     /// graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -858,7 +858,7 @@ pub mod fluent_builders {
     /// of. This operation can only be called by an administrator account.</p>
     /// <p>Because an account can currently only be the administrator of one behavior graph within
     /// a Region, the results always contain a single behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGraphs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -949,7 +949,7 @@ pub mod fluent_builders {
     /// <p>The results do not include behavior graphs for which the member account declined the
     /// invitation. The results also do not include behavior graphs that the member account
     /// resigned from or was removed from.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1038,7 +1038,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the list of member accounts for a behavior graph. Does not return member
     /// accounts that were removed from the behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1134,7 +1134,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns the tag values that are assigned to a behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1205,7 +1205,7 @@ pub mod fluent_builders {
     ///
     /// <p>Rejects an invitation to contribute the account data to a behavior graph. This operation
     /// must be called by a member account that has the <code>INVITED</code> status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1291,7 +1291,7 @@ pub mod fluent_builders {
     /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMonitoringMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1375,7 +1375,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies tag values to a behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1472,7 +1472,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -230,7 +230,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ConfigureLogs`.
     ///
     /// Changes the Channel's properities to configure log subscription
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfigureLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -326,7 +326,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
     /// Creates a new Channel.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -431,7 +431,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateHarvestJob`.
     ///
     /// Creates a new HarvestJob record.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHarvestJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -551,7 +551,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOriginEndpoint`.
     ///
     /// Creates a new OriginEndpoint record.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOriginEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -807,7 +807,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
     /// Deletes an existing Channel.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -877,7 +877,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOriginEndpoint`.
     ///
     /// Deletes an existing OriginEndpoint.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOriginEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -947,7 +947,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeChannel`.
     ///
     /// Gets details about a Channel.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1017,7 +1017,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeHarvestJob`.
     ///
     /// Gets details about an existing HarvestJob.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHarvestJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1087,7 +1087,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOriginEndpoint`.
     ///
     /// Gets details about an existing OriginEndpoint.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOriginEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1157,7 +1157,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChannels`.
     ///
     /// Returns a collection of Channels.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1237,7 +1237,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHarvestJobs`.
     ///
     /// Returns a collection of HarvestJob records.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHarvestJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1343,7 +1343,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOriginEndpoints`.
     ///
     /// Returns a collection of OriginEndpoint records.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOriginEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1432,7 +1432,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1502,7 +1502,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RotateChannelCredentials`.
     ///
     /// Changes the Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated. Please use RotateIngestEndpointCredentials instead
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RotateChannelCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1572,7 +1572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RotateIngestEndpointCredentials`.
     ///
     /// Rotate the IngestEndpoint's username and password, as specified by the IngestEndpoint's id.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RotateIngestEndpointCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1654,7 +1654,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1746,7 +1746,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1833,7 +1833,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
     /// Updates an existing Channel.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1913,7 +1913,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateOriginEndpoint`.
     ///
     /// Updates an existing OriginEndpoint.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOriginEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

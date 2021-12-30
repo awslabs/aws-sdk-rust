@@ -787,7 +787,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a skill with the organization under the customer's AWS account. If a skill
     /// is private, the user implicitly accepts access to this skill during enablement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApproveSkill<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -857,7 +857,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateContactWithAddressBook`.
     ///
     /// <p>Associates a contact with a given address book.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateContactWithAddressBook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -940,7 +940,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateDeviceWithNetworkProfile`.
     ///
     /// <p>Associates a device with the specified network profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDeviceWithNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1025,7 +1025,7 @@ pub mod fluent_builders {
     /// <p>Associates a device with a given room. This applies all the settings from the room
     /// profile to the device, and all the skills in any skill groups added to that room. This
     /// operation requires the device to be online, or else a manual sync is required. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDeviceWithRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1106,7 +1106,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a skill group with a given room. This enables all skills in the associated
     /// skill group on all devices in the room.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSkillGroupWithRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1189,7 +1189,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateSkillWithSkillGroup`.
     ///
     /// <p>Associates a skill with a skill group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSkillWithSkillGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1272,7 +1272,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateSkillWithUsers`.
     ///
     /// <p>Makes a private skill available for enrolled users to enable on their devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSkillWithUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1342,7 +1342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAddressBook`.
     ///
     /// <p>Creates an address book with the specified details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAddressBook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1455,7 +1455,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a recurring schedule for usage reports to deliver to the specified S3
     /// location with a specified daily or weekly interval.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBusinessReportSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1632,7 +1632,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConferenceProvider`.
     ///
     /// <p>Adds a new conference provider under the user's AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConferenceProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1793,7 +1793,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContact`.
     ///
     /// <p>Creates a contact with the specified details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1967,7 +1967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGatewayGroup`.
     ///
     /// <p>Creates a gateway group with the specified details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGatewayGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2077,7 +2077,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateNetworkProfile`.
     ///
     /// <p>Creates a network profile with the specified details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2297,7 +2297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProfile`.
     ///
     /// <p>Creates a new room profile with the specified details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2519,7 +2519,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRoom`.
     ///
     /// <p>Creates a room with the specified details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2654,7 +2654,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSkillGroup`.
     ///
     /// <p>Creates a skill group with a specified name and description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSkillGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2769,7 +2769,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUser`.
     ///
     /// <p>Creates a user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2901,7 +2901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAddressBook`.
     ///
     /// <p>Deletes an address book by the address book ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAddressBook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2975,7 +2975,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the recurring report delivery schedule with the specified schedule
     /// ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBusinessReportSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3045,7 +3045,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConferenceProvider`.
     ///
     /// <p>Deletes a conference provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConferenceProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3121,7 +3121,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContact`.
     ///
     /// <p>Deletes a contact by the contact ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3191,7 +3191,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDevice`.
     ///
     /// <p>Removes a device from Alexa For Business.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3263,7 +3263,7 @@ pub mod fluent_builders {
     /// <p>When this action is called for a specified shared device, it allows authorized users to
     /// delete the device's entire previous history of voice input data and associated response
     /// data. This action can be called once every 24 hours for a specific shared device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeviceUsageData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3346,7 +3346,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGatewayGroup`.
     ///
     /// <p>Deletes a gateway group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGatewayGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3419,7 +3419,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkProfile`.
     ///
     /// <p>Deletes a network profile by the network profile ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3492,7 +3492,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProfile`.
     ///
     /// <p>Deletes a room profile by the profile ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3562,7 +3562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoom`.
     ///
     /// <p>Deletes a room by the room ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3632,7 +3632,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoomSkillParameter`.
     ///
     /// <p>Deletes room skill parameter details by room, skill, and parameter key ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoomSkillParameter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3725,7 +3725,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSkillAuthorization`.
     ///
     /// <p>Unlinks a third-party account from a skill.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSkillAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3805,7 +3805,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSkillGroup`.
     ///
     /// <p>Deletes a skill group by skill group ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSkillGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3878,7 +3878,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
     /// <p>Deletes a specified user by user ARN and enrollment ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3961,7 +3961,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateContactFromAddressBook`.
     ///
     /// <p>Disassociates a contact from a given address book.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateContactFromAddressBook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4048,7 +4048,7 @@ pub mod fluent_builders {
     /// <p>Disassociates a device from its current room. The device continues to be connected to
     /// the Wi-Fi network and is still registered to the account. The device settings and skills
     /// are removed from the room.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDeviceFromRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4118,7 +4118,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateSkillFromSkillGroup`.
     ///
     /// <p>Disassociates a skill from a skill group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSkillFromSkillGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4202,7 +4202,7 @@ pub mod fluent_builders {
     ///
     /// <p>Makes a private skill unavailable for enrolled users and prevents them from enabling it
     /// on their devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSkillFromUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4273,7 +4273,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disassociates a skill group from a specified room. This disables all skills in the
     /// skill group on all devices in the room.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSkillGroupFromRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4358,7 +4358,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ForgetSmartHomeAppliances`.
     ///
     /// <p>Forgets smart home appliances associated to a room.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ForgetSmartHomeAppliances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4428,7 +4428,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAddressBook`.
     ///
     /// <p>Gets address the book details by the address book ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAddressBook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4501,7 +4501,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConferencePreference`.
     ///
     /// <p>Retrieves the existing conference preferences.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConferencePreference<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4561,7 +4561,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConferenceProvider`.
     ///
     /// <p>Gets details about a specific conference provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConferenceProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4637,7 +4637,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContact`.
     ///
     /// <p>Gets the contact details by the contact ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4707,7 +4707,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevice`.
     ///
     /// <p>Gets the details of a device by device ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4777,7 +4777,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGateway`.
     ///
     /// <p>Retrieves the details of a gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4847,7 +4847,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGatewayGroup`.
     ///
     /// <p>Retrieves the details of a gateway group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGatewayGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4921,7 +4921,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the configured values for the user enrollment invitation email
     /// template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvitationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4981,7 +4981,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkProfile`.
     ///
     /// <p>Gets the network profile details by the network profile ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5054,7 +5054,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProfile`.
     ///
     /// <p>Gets the details of a room profile by profile ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5124,7 +5124,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRoom`.
     ///
     /// <p>Gets room details by room ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5194,7 +5194,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRoomSkillParameter`.
     ///
     /// <p>Gets room skill parameter details by room, skill, and parameter key ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoomSkillParameter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5289,7 +5289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSkillGroup`.
     ///
     /// <p>Gets skill group details by skill group ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSkillGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5362,7 +5362,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBusinessReportSchedules`.
     ///
     /// <p>Lists the details of the schedules that a user configured. A download URL of the report associated with each schedule is returned every time this action is called. A new download URL is returned each time, and is valid for 24 hours.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBusinessReportSchedules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5442,7 +5442,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConferenceProviders`.
     ///
     /// <p>Lists conference providers under a specific AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConferenceProviders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5525,7 +5525,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the device event history, including device connection status, for up to 30
     /// days.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5645,7 +5645,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details of
     /// a specific gateway group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGatewayGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5727,7 +5727,7 @@ pub mod fluent_builders {
     /// <p>Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific
     /// gateway. An optional gateway group ARN can be provided to only retrieve gateway summaries
     /// of gateways that are associated with that gateway group ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5820,7 +5820,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSkills`.
     ///
     /// <p>Lists all enabled skills in a specific skill group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSkills<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5947,7 +5947,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSkillsStoreCategories`.
     ///
     /// <p>Lists all categories in the Alexa skill store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSkillsStoreCategories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6027,7 +6027,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSkillsStoreSkillsByCategory`.
     ///
     /// <p>Lists all skills in the Alexa skill store by category.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSkillsStoreSkillsByCategory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6119,7 +6119,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSmartHomeAppliances`.
     ///
     /// <p>Lists all of the smart home appliances associated with a room.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSmartHomeAppliances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6209,7 +6209,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTags`.
     ///
     /// <p>Lists all tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6308,7 +6308,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sets the conference preferences on a specific conference provider at the account
     /// level.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConferencePreference<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6385,7 +6385,7 @@ pub mod fluent_builders {
     ///
     /// <p>Configures the email template for the user enrollment invitation with the specified
     /// attributes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInvitationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6493,7 +6493,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates room skill parameter details by room, skill, and parameter key ID. Not all
     /// skills have a room skill parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRoomSkillParameter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6588,7 +6588,7 @@ pub mod fluent_builders {
     /// <p>Links a user's account to a third-party skill provider. If this API operation is
     /// called by an assumed IAM role, the skill being linked must be a private skill. Also, the
     /// skill must be owned by the AWS account that assumed the IAM role.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSkillAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6694,7 +6694,7 @@ pub mod fluent_builders {
     ///
     /// <p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM)
     /// using Alexa Voice Service (AVS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterAVSDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6846,7 +6846,7 @@ pub mod fluent_builders {
     /// <p>Disassociates a skill from the organization under a user's AWS account. If the skill
     /// is a private skill, it moves to an AcceptStatus of PENDING. Any private or public skill
     /// that is rejected can be added later by calling the ApproveSkill API. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectSkill<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6922,7 +6922,7 @@ pub mod fluent_builders {
     /// publish your skill as a private skill to your AWS account. Skills that are hosted using a
     /// custom web service must be manually authorized. To get your skill authorized, contact AWS
     /// Support with your AWS account ID that queries the ResolveRoom API and skill ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResolveRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7002,7 +7002,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeInvitation`.
     ///
     /// <p>Revokes an invitation and invalidates the enrollment URL.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7086,7 +7086,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches address books and lists the ones that meet a set of filter and sort
     /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchAddressBooks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7213,7 +7213,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches contacts and lists the ones that meet a set of filter and sort
     /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchContacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7339,7 +7339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchDevices`.
     ///
     /// <p>Searches devices and lists the ones that meet a set of filter criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7472,7 +7472,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches network profiles and lists the ones that meet a set of filter and sort
     /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchNetworkProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7599,7 +7599,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches room profiles and lists the ones that meet a set of filter
     /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7726,7 +7726,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches rooms and lists the ones that meet a set of filter and sort
     /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchRooms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7853,7 +7853,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches skill groups and lists the ones that meet a set of filter and sort
     /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSkillGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7982,7 +7982,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches users and lists the ones that meet a set of filter and sort
     /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8111,7 +8111,7 @@ pub mod fluent_builders {
     ///
     /// <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that
     /// are identified by a search or filter. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendAnnouncement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8224,7 +8224,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sends an enrollment invitation email with a URL to a user. The URL is valid for 30
     /// days or until you call this operation again, whichever comes first. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8315,7 +8315,7 @@ pub mod fluent_builders {
     /// communications (if enabled on the room profile).</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDeviceSync<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8413,7 +8413,7 @@ pub mod fluent_builders {
     ///
     /// <p>Initiates the discovery of any smart home appliances associated with the
     /// room.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSmartHomeApplianceDiscovery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8483,7 +8483,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds metadata tags to a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8572,7 +8572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes metadata tags from a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8661,7 +8661,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAddressBook`.
     ///
     /// <p>Updates address book details by the address book ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAddressBook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8755,7 +8755,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the configuration of the report delivery schedule with the specified schedule
     /// ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBusinessReportSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8892,7 +8892,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConferenceProvider`.
     ///
     /// <p>Updates an existing conference provider's settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConferenceProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9023,7 +9023,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContact`.
     ///
     /// <p>Updates the contact details by the contact ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9171,7 +9171,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDevice`.
     ///
     /// <p>Updates the device name by device ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9252,7 +9252,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the details of a gateway. If any optional field is not provided, the existing
     /// corresponding value is left unmodified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9358,7 +9358,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the details of a gateway group. If any optional field is not provided, the
     /// existing corresponding value is left unmodified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9451,7 +9451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNetworkProfile`.
     ///
     /// <p>Updates a network profile by the network profile ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9614,7 +9614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProfile`.
     ///
     /// <p>Updates an existing room profile by room profile ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9828,7 +9828,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRoom`.
     ///
     /// <p>Updates room details by room ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoom<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9941,7 +9941,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSkillGroup`.
     ///
     /// <p>Updates skill group details by skill group ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSkillGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

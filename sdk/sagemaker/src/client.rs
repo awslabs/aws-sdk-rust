@@ -1970,7 +1970,7 @@ pub mod fluent_builders {
     /// with multiple sources. An association is a lineage tracking entity. For more information, see
     /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
     /// ML Lineage Tracking</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2131,7 +2131,7 @@ pub mod fluent_builders {
     /// you first create the Domain or User Profile by specifying them in the
     /// <code>Tags</code> parameter of <a>CreateDomain</a> or <a>CreateUserProfile</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2225,7 +2225,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a trial component with a trial. A trial component can be associated with
     /// multiple trials. To disassociate a trial component from a trial, call the <a>DisassociateTrialComponent</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTrialComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2308,7 +2308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDescribeModelPackage`.
     ///
     /// <p>This action batch describes a list of versioned model packages</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDescribeModelPackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2389,7 +2389,7 @@ pub mod fluent_builders {
     /// Generally, an action involves at least one input or output artifact. For more information, see
     /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
     /// ML Lineage Tracking</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2559,7 +2559,7 @@ pub mod fluent_builders {
     ///
     /// <p>Create a machine learning algorithm that you can use in Amazon SageMaker and list in the Amazon Web Services
     /// Marketplace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlgorithm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2819,7 +2819,7 @@ pub mod fluent_builders {
     /// <code>JupyterServer</code> and <code>KernelGateway</code>. This operation is automatically
     /// invoked by Amazon SageMaker Studio upon access to the associated Domain, and when new kernel
     /// configurations are selected by the user. A user may have multiple Apps active simultaneously.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2958,7 +2958,7 @@ pub mod fluent_builders {
     /// <p>Creates a configuration for running a SageMaker image as a KernelGateway app. The
     /// configuration specifies the Amazon Elastic File System (EFS) storage volume on the image, and a list of the
     /// kernels in the image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppImageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3068,7 +3068,7 @@ pub mod fluent_builders {
     /// the ECR registry path of an image. For more information, see
     /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
     /// ML Lineage Tracking</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3223,7 +3223,7 @@ pub mod fluent_builders {
     /// <p>Find the best-performing model after you run an Autopilot job by calling .</p>
     /// <p>For information about how to use Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate Model
     /// Development with Amazon SageMaker Autopilot</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAutoMLJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3456,7 +3456,7 @@ pub mod fluent_builders {
     /// the lifecycle of any notebook instances it is associated with.</p>
     /// <p>The repository can be hosted either in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
     /// other Git repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCodeRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3600,7 +3600,7 @@ pub mod fluent_builders {
     /// <p>To stop a model compilation job, use <a>StopCompilationJob</a>. To get
     /// information about a particular model compilation job, use <a>DescribeCompilationJob</a>. To get information about multiple model
     /// compilation jobs, use <a>ListCompilationJobs</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCompilationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3842,7 +3842,7 @@ pub mod fluent_builders {
     /// an endpoint and a model package. For more information, see
     /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
     /// ML Lineage Tracking</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContext<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3986,7 +3986,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a definition for a job that monitors data quality and drift. For information
     /// about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataQualityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4198,7 +4198,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeviceFleet`.
     ///
     /// <p>Creates a device fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeviceFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4385,7 +4385,7 @@ pub mod fluent_builders {
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
     /// SageMaker Studio Notebooks to Resources in a VPC</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4645,7 +4645,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEdgePackagingJob`.
     ///
     /// <p>Starts a SageMaker Edge Manager model packaging job. Edge Manager will use the model artifacts from the Amazon Simple Storage Service bucket that you specify. After the model has been packaged, Amazon SageMaker saves the resulting artifacts to an S3 bucket that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEdgePackagingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4883,7 +4883,7 @@ pub mod fluent_builders {
     /// </ul>
     ///
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5039,7 +5039,7 @@ pub mod fluent_builders {
     /// response should return the latest data. So retry logic is recommended to handle
     /// these possible issues. We also recommend that customers call <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize the potential impact of a DynamoDB eventually consistent read.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpointConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5297,7 +5297,7 @@ pub mod fluent_builders {
     /// view an experiment's properties, call the <a>DescribeExperiment</a> API. To get a
     /// list of all the trials associated with an experiment, call the <a>ListTrials</a>
     /// API. To create a trial call the <a>CreateTrial</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5427,7 +5427,7 @@ pub mod fluent_builders {
     /// <p>You must include at least one of <code>OnlineStoreConfig</code> and
     /// <code>OfflineStoreConfig</code> to create a <code>FeatureGroup</code>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFeatureGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5772,7 +5772,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFlowDefinition`.
     ///
     /// <p>Creates a flow definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFlowDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5935,7 +5935,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateHumanTaskUi`.
     ///
     /// <p>Defines the settings you will use for the human review workflow user interface. Reviewers will see a three-panel interface with an instruction area, the item to review, and an input area.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHumanTaskUi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6042,7 +6042,7 @@ pub mod fluent_builders {
     /// and values for hyperparameters within ranges that you specify. It then chooses the
     /// hyperparameter values that result in a model that performs the best, as measured by an
     /// objective metric that you choose.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHyperParameterTuningJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6269,7 +6269,7 @@ pub mod fluent_builders {
     /// <p>Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image
     /// version represents a container image stored in Amazon Container Registry (ECR). For more information, see
     /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6387,7 +6387,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a version of the SageMaker image specified by <code>ImageName</code>. The version
     /// represents the Amazon Container Registry (ECR) container image specified by <code>BaseImage</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImageVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6488,7 +6488,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts a recommendation job. You can create either an instance
     /// recommendation or load test job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInferenceRecommendationsJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6700,7 +6700,7 @@ pub mod fluent_builders {
     /// (API) </a> in the Amazon SageMaker Developer Guide. To learn how to create a streaming
     /// labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-create-job.html">Create a Streaming Labeling
     /// Job</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLabelingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7190,7 +7190,7 @@ pub mod fluent_builders {
     /// transform jobs. In addition, you also use the IAM role to manage permissions the
     /// inference code needs. For example, if the inference code access any other Amazon Web Services resources,
     /// you grant necessary permissions via this role.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7395,7 +7395,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateModelBiasJobDefinition`.
     ///
     /// <p>Creates the definition for a model bias job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModelBiasJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7604,7 +7604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateModelExplainabilityJobDefinition`.
     ///
     /// <p>Creates the definition for a model explainability job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModelExplainabilityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7839,7 +7839,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModelPackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8237,7 +8237,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateModelPackageGroup`.
     ///
     /// <p>Creates a model group. A model group contains a group of model versions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModelPackageGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8351,7 +8351,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a definition for a job that monitors model quality and drift. For information
     /// about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModelQualityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8562,7 +8562,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to monitor the data
     /// captured for an Amazon SageMaker Endoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMonitoringSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8713,7 +8713,7 @@ pub mod fluent_builders {
     /// can use for model training, train a model, host models by creating Amazon SageMaker endpoints, and
     /// validate hosted models. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotebookInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9087,7 +9087,7 @@ pub mod fluent_builders {
     /// started.</p>
     /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
     /// 2.1: (Optional) Customize a Notebook Instance</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotebookInstanceLifecycleConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9207,7 +9207,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePipeline`.
     ///
     /// <p>Creates a pipeline using a JSON pipeline definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9377,7 +9377,7 @@ pub mod fluent_builders {
     /// <p>The URL that you get from a call to <code>CreatePresignedDomainUrl</code> has a default timeout of 5 minutes. You can configure this value using <code>ExpiresInSeconds</code>. If you try to use the URL after the timeout limit expires, you
     /// are directed to the Amazon Web Services console sign-in page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePresignedDomainUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9502,7 +9502,7 @@ pub mod fluent_builders {
     /// you try to use the URL after the 5-minute limit expires, you are directed to the
     /// Amazon Web Services console sign-in page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePresignedNotebookInstanceUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9590,7 +9590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProcessingJob`.
     ///
     /// <p>Creates a processing job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProcessingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9870,7 +9870,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a machine learning (ML) project that can contain one or more templates that set
     /// up an ML pipeline from training to deploying an approved model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9994,7 +9994,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStudioLifecycleConfig`.
     ///
     /// <p>Creates a new Studio Lifecycle Configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStudioLifecycleConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10191,7 +10191,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p> For more information about Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrainingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10801,7 +10801,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>For more information about how batch transformation works, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch
     /// Transform</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransformJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11175,7 +11175,7 @@ pub mod fluent_builders {
     /// <p>To get a list of all your trials, call the <a>ListTrials</a> API. To view a
     /// trial's properties, call the <a>DescribeTrial</a> API. To create a trial component,
     /// call the <a>CreateTrialComponent</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrial<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11313,7 +11313,7 @@ pub mod fluent_builders {
     /// must use the logging APIs provided by the SDK.</p>
     /// <p>You can add tags to a trial component and then use the <a>Search</a> API to
     /// search for the tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrialComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11583,7 +11583,7 @@ pub mod fluent_builders {
     /// automatically created. A user profile is the primary holder of settings for an individual
     /// user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11762,7 +11762,7 @@ pub mod fluent_builders {
     /// because groups are used by Ground Truth and Amazon A2I to create work teams.
     /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html">
     /// Create a Private Workforce (OIDC IdP)</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkforce<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11918,7 +11918,7 @@ pub mod fluent_builders {
     /// Amazon Cognito user pools. You must first create the user pools before you can create a work
     /// team.</p>
     /// <p>You cannot create more than 25 work teams in an account and region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkteam<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12104,7 +12104,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAction`.
     ///
     /// <p>Deletes an action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12174,7 +12174,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAlgorithm`.
     ///
     /// <p>Removes the specified algorithm from your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlgorithm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12247,7 +12247,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApp`.
     ///
     /// <p>Used to stop and delete an app.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12350,7 +12350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppImageConfig`.
     ///
     /// <p>Deletes an AppImageConfig.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppImageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12424,7 +12424,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an artifact. Either <code>ArtifactArn</code> or <code>Source</code> must be
     /// specified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12507,7 +12507,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssociation`.
     ///
     /// <p>Deletes an association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12590,7 +12590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCodeRepository`.
     ///
     /// <p>Deletes the specified Git repository from your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCodeRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12663,7 +12663,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContext`.
     ///
     /// <p>Deletes an context.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContext<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12733,7 +12733,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataQualityJobDefinition`.
     ///
     /// <p>Deletes a data quality monitoring job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataQualityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12806,7 +12806,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeviceFleet`.
     ///
     /// <p>Deletes a fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeviceFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12883,7 +12883,7 @@ pub mod fluent_builders {
     /// Use with caution. All of the members of the domain will lose access to their EFS volume,
     /// including data, notebooks, and other artifacts.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12973,7 +12973,7 @@ pub mod fluent_builders {
     /// endpoint was created. </p>
     /// <p>Amazon SageMaker retires any custom KMS key grants associated with the endpoint, meaning you don't
     /// need to use the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> API call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13054,7 +13054,7 @@ pub mod fluent_builders {
     /// endpoint that is active or being created or updated you may lose visibility into the
     /// instance type the endpoint is using. The endpoint must be deleted in order to stop
     /// incurring charges.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpointConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13129,7 +13129,7 @@ pub mod fluent_builders {
     /// <p>Deletes an SageMaker experiment. All trials associated with the experiment must be deleted
     /// first. Use the <a>ListTrials</a> API to get a list of the trials associated with
     /// the experiment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13207,7 +13207,7 @@ pub mod fluent_builders {
     /// <p>Data written into the <code>OfflineStore</code> will not be deleted. The Amazon Web Services Glue
     /// database and tables that are automatically created for your <code>OfflineStore</code> are
     /// not deleted. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFeatureGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13282,7 +13282,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFlowDefinition`.
     ///
     /// <p>Deletes the specified flow definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFlowDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13359,7 +13359,7 @@ pub mod fluent_builders {
     /// To see a list of human task user interfaces
     /// (work task templates) in your account, use .
     /// When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHumanTaskUi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13433,7 +13433,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a SageMaker image and all versions of the image. The container images aren't
     /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13504,7 +13504,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a version of a SageMaker image. The container image the version represents isn't
     /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImageVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13587,7 +13587,7 @@ pub mod fluent_builders {
     /// was created in Amazon SageMaker when you called the <code>CreateModel</code> API. It does not
     /// delete model artifacts, inference code, or the IAM role that you specified when
     /// creating the model. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13657,7 +13657,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteModelBiasJobDefinition`.
     ///
     /// <p>Deletes an Amazon SageMaker model bias job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModelBiasJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13730,7 +13730,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteModelExplainabilityJobDefinition`.
     ///
     /// <p>Deletes an Amazon SageMaker model explainability job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModelExplainabilityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13807,7 +13807,7 @@ pub mod fluent_builders {
     /// <p>Deletes a model package.</p>
     /// <p>A model package is used to create Amazon SageMaker models or list on Amazon Web Services Marketplace. Buyers can
     /// subscribe to model packages listed on Amazon Web Services Marketplace to create models in Amazon SageMaker.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModelPackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13884,7 +13884,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteModelPackageGroup`.
     ///
     /// <p>Deletes the specified model group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModelPackageGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13960,7 +13960,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteModelPackageGroupPolicy`.
     ///
     /// <p>Deletes a model group resource policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModelPackageGroupPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14036,7 +14036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteModelQualityJobDefinition`.
     ///
     /// <p>Deletes the secified model quality monitoring job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModelQualityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14110,7 +14110,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a monitoring schedule. Also stops the schedule had not already been stopped.
     /// This does not delete the job execution history of the monitoring schedule. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMonitoringSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14192,7 +14192,7 @@ pub mod fluent_builders {
     /// the ML compute instance, and deletes the ML storage volume and the network interface
     /// associated with the notebook instance. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNotebookInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14265,7 +14265,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNotebookInstanceLifecycleConfig`.
     ///
     /// <p>Deletes a notebook instance lifecycle configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNotebookInstanceLifecycleConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14350,7 +14350,7 @@ pub mod fluent_builders {
     /// pipeline, you must stop all running instances of the pipeline using the
     /// <code>StopPipelineExecution</code> API. When you delete a pipeline, all instances of the
     /// pipeline are deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14438,7 +14438,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
     /// <p>Delete the specified project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14508,7 +14508,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStudioLifecycleConfig`.
     ///
     /// <p>Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration, there must be no running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration from UserSettings in all Domains and UserProfiles.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStudioLifecycleConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14595,7 +14595,7 @@ pub mod fluent_builders {
     /// Profile, the deleted tags are not removed from Apps that the SageMaker Studio Domain
     /// or User Profile launched before you called this API.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14686,7 +14686,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified trial. All trial components that make up the trial must be deleted
     /// first. Use the <a>DescribeTrialComponent</a> API to get the list of trial
     /// components.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrial<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14758,7 +14758,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified trial component. A trial component must be disassociated from all
     /// trials before the trial component can be deleted. To disassociate a trial component from a
     /// trial, call the <a>DisassociateTrialComponent</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrialComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14832,7 +14832,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a user profile. When a user profile is deleted, the user loses access to their EFS
     /// volume, including data, notebooks, and other artifacts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14927,7 +14927,7 @@ pub mod fluent_builders {
     /// If you try to delete a workforce that contains one or more work teams,
     /// you will recieve a <code>ResourceInUse</code> error.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkforce<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15000,7 +15000,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkteam`.
     ///
     /// <p>Deletes an existing work team. This operation can't be undone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkteam<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15073,7 +15073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterDevices`.
     ///
     /// <p>Deregisters the specified devices. After you deregister a device, you will need to re-register the devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15163,7 +15163,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAction`.
     ///
     /// <p>Describes an action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15233,7 +15233,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAlgorithm`.
     ///
     /// <p>Returns a description of the specified algorithm that is in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlgorithm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15306,7 +15306,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApp`.
     ///
     /// <p>Describes the app.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15409,7 +15409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppImageConfig`.
     ///
     /// <p>Describes an AppImageConfig.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppImageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15482,7 +15482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeArtifact`.
     ///
     /// <p>Describes an artifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15552,7 +15552,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAutoMLJob`.
     ///
     /// <p>Returns information about an Amazon SageMaker AutoML job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutoMLJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15625,7 +15625,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCodeRepository`.
     ///
     /// <p>Gets details about the specified Git repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCodeRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15700,7 +15700,7 @@ pub mod fluent_builders {
     /// <p>Returns information about a model compilation job.</p>
     /// <p>To create a model compilation job, use <a>CreateCompilationJob</a>. To get
     /// information about multiple model compilation jobs, use <a>ListCompilationJobs</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCompilationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15773,7 +15773,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeContext`.
     ///
     /// <p>Describes a context.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContext<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15843,7 +15843,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataQualityJobDefinition`.
     ///
     /// <p>Gets the details of a data quality monitoring job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataQualityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15916,7 +15916,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDevice`.
     ///
     /// <p>Describes the device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16009,7 +16009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDeviceFleet`.
     ///
     /// <p>A description of the fleet the device belongs to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeviceFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16082,7 +16082,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDomain`.
     ///
     /// <p>The description of the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16152,7 +16152,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEdgePackagingJob`.
     ///
     /// <p>A description of edge packaging jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEdgePackagingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16228,7 +16228,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEndpoint`.
     ///
     /// <p>Returns the description of an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16302,7 +16302,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the description of an endpoint configuration created using the
     /// <code>CreateEndpointConfig</code> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpointConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16375,7 +16375,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExperiment`.
     ///
     /// <p>Provides a list of an experiment's properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16450,7 +16450,7 @@ pub mod fluent_builders {
     /// <p>Use this operation to describe a <code>FeatureGroup</code>. The response includes
     /// information on the creation time, <code>FeatureGroup</code> name, the unique identifier for
     /// each <code>FeatureGroup</code>, and more.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFeatureGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16537,7 +16537,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFlowDefinition`.
     ///
     /// <p>Returns information about the specified flow definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFlowDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16610,7 +16610,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeHumanTaskUi`.
     ///
     /// <p>Returns information about the requested human task user interface (worker task template).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHumanTaskUi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16686,7 +16686,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets
     /// a description of a hyperparameter tuning job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHyperParameterTuningJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16762,7 +16762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImage`.
     ///
     /// <p>Describes a SageMaker image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16832,7 +16832,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImageVersion`.
     ///
     /// <p>Describes a version of a SageMaker image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImageVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16913,7 +16913,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides the results of the Inference Recommender job.
     /// One or more recommendation jobs are returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInferenceRecommendationsJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16987,7 +16987,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLabelingJob`.
     ///
     /// <p>Gets information about a labeling job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLabelingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17062,7 +17062,7 @@ pub mod fluent_builders {
     /// <p>Provides a list of properties for the requested lineage group.
     /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
     /// Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLineageGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17136,7 +17136,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes a model that you created using the <code>CreateModel</code>
     /// API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17206,7 +17206,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeModelBiasJobDefinition`.
     ///
     /// <p>Returns a description of a model bias job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModelBiasJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17281,7 +17281,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeModelExplainabilityJobDefinition`.
     ///
     /// <p>Returns a description of a model explainability job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModelExplainabilityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17361,7 +17361,7 @@ pub mod fluent_builders {
     /// models or list them on Amazon Web Services Marketplace.</p>
     /// <p>To create models in SageMaker, buyers can subscribe to model packages listed on Amazon Web Services
     /// Marketplace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModelPackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17438,7 +17438,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeModelPackageGroup`.
     ///
     /// <p>Gets a description for the specified model group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModelPackageGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17514,7 +17514,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeModelQualityJobDefinition`.
     ///
     /// <p>Returns a description of a model quality job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModelQualityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17589,7 +17589,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMonitoringSchedule`.
     ///
     /// <p>Describes the schedule for a monitoring job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMonitoringSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17665,7 +17665,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNotebookInstance`.
     ///
     /// <p>Returns information about a notebook instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNotebookInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17740,7 +17740,7 @@ pub mod fluent_builders {
     /// <p>Returns a description of a notebook instance lifecycle configuration.</p>
     /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
     /// 2.1: (Optional) Customize a Notebook Instance</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNotebookInstanceLifecycleConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17822,7 +17822,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePipeline`.
     ///
     /// <p>Describes the details of a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17895,7 +17895,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePipelineDefinitionForExecution`.
     ///
     /// <p>Describes the details of an execution's pipeline definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePipelineDefinitionForExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17970,7 +17970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePipelineExecution`.
     ///
     /// <p>Describes the details of a pipeline execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18043,7 +18043,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProcessingJob`.
     ///
     /// <p>Returns a description of a processing job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProcessingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18118,7 +18118,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
     /// <p>Describes the details of a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18188,7 +18188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStudioLifecycleConfig`.
     ///
     /// <p>Describes the Studio Lifecycle Configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStudioLifecycleConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18265,7 +18265,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about a work team provided by a vendor. It returns details about the
     /// subscription with a vendor in the Amazon Web Services Marketplace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSubscribedWorkteam<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18341,7 +18341,7 @@ pub mod fluent_builders {
     /// <code>TrainingStartTime</code>, <code>TrainingTimeInSeconds</code>,
     /// <code>TrainingEndTime</code>, and <code>BillableTimeInSeconds</code> may not be
     /// present in the response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrainingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18414,7 +18414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTransformJob`.
     ///
     /// <p>Returns information about a transform job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTransformJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18487,7 +18487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTrial`.
     ///
     /// <p>Provides a list of a trial's properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrial<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18557,7 +18557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTrialComponent`.
     ///
     /// <p>Provides a list of a trials component's properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrialComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18630,7 +18630,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserProfile`.
     ///
     /// <p>Describes a user profile. For more information, see <code>CreateUserProfile</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18718,7 +18718,7 @@ pub mod fluent_builders {
     /// <important>
     /// <p>This operation applies only to private workforces.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkforce<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18797,7 +18797,7 @@ pub mod fluent_builders {
     /// <p>Gets information about a specific work team. You can see information such as the
     /// create date, the last updated date, membership information, and the work team's Amazon
     /// Resource Name (ARN).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkteam<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18871,7 +18871,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables using Service Catalog in SageMaker. Service Catalog is used to create
     /// SageMaker projects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableSagemakerServicecatalogPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18938,7 +18938,7 @@ pub mod fluent_builders {
     /// call the <a>AssociateTrialComponent</a> API.</p>
     /// <p>To get a list of the trials a component is associated with, use the <a>Search</a> API. Specify <code>ExperimentTrialComponent</code> for the <code>Resource</code> parameter.
     /// The list appears in the response under <code>Results.TrialComponent.Parents</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTrialComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19022,7 +19022,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables using Service Catalog in SageMaker. Service Catalog is used to create
     /// SageMaker projects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableSagemakerServicecatalogPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19084,7 +19084,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceFleetReport`.
     ///
     /// <p>Describes a fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceFleetReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19157,7 +19157,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLineageGroupPolicy`.
     ///
     /// <p>The resource policy for the lineage group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLineageGroupPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19233,7 +19233,7 @@ pub mod fluent_builders {
     /// resource policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
     /// policies and resource-based policies</a> in the <i>Amazon Web Services Identity and
     /// Access Management User Guide.</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModelPackageGroupPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19310,7 +19310,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the status of Service Catalog in SageMaker. Service Catalog is used to create
     /// SageMaker projects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSagemakerServicecatalogPortfolioStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19375,7 +19375,7 @@ pub mod fluent_builders {
     /// suggestions of possible matches for the property name to use in <code>Search</code>
     /// queries. Provides suggestions for <code>HyperParameters</code>, <code>Tags</code>, and
     /// <code>Metrics</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSearchSuggestions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19461,7 +19461,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListActions`.
     ///
     /// <p>Lists the actions in your account and their properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19615,7 +19615,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAlgorithms`.
     ///
     /// <p>Lists the machine learning algorithms that have been created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlgorithms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19774,7 +19774,7 @@ pub mod fluent_builders {
     /// <p>Lists the AppImageConfigs in your account and their properties. The list can be
     /// filtered by creation time or modified time, and whether the AppImageConfig name contains
     /// a specified string.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppImageConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19949,7 +19949,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApps`.
     ///
     /// <p>Lists apps.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20083,7 +20083,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListArtifacts`.
     ///
     /// <p>Lists the artifacts in your account and their properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20240,7 +20240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssociations`.
     ///
     /// <p>Lists the associations in your account and their properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20433,7 +20433,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAutoMLJobs`.
     ///
     /// <p>Request a list of jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAutoMLJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20619,7 +20619,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCandidatesForAutoMLJob`.
     ///
     /// <p>List the candidates created for the job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCandidatesForAutoMLJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20768,7 +20768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCodeRepositories`.
     ///
     /// <p>Gets a list of the Git repositories in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCodeRepositories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -20955,7 +20955,7 @@ pub mod fluent_builders {
     /// <p>Lists model compilation jobs that satisfy various filters.</p>
     /// <p>To create a model compilation job, use <a>CreateCompilationJob</a>. To get
     /// information about a particular model compilation job you have created, use <a>DescribeCompilationJob</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCompilationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21153,7 +21153,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContexts`.
     ///
     /// <p>Lists the contexts in your account and their properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContexts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21307,7 +21307,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataQualityJobDefinitions`.
     ///
     /// <p>Lists the data quality job definitions in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataQualityJobDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21479,7 +21479,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeviceFleets`.
     ///
     /// <p>Returns a list of devices in the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21650,7 +21650,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevices`.
     ///
     /// <p>A list of devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21766,7 +21766,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomains`.
     ///
     /// <p>Lists the domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -21848,7 +21848,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEdgePackagingJobs`.
     ///
     /// <p>Returns a list of edge packaging jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEdgePackagingJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22045,7 +22045,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEndpointConfigs`.
     ///
     /// <p>Lists endpoint configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEndpointConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22200,7 +22200,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEndpoints`.
     ///
     /// <p>Lists endpoints.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22402,7 +22402,7 @@ pub mod fluent_builders {
     /// <p>Lists all the experiments in your account. The list can be filtered to show only
     /// experiments that were created in a specific time range. The list can be sorted by experiment
     /// name or creation time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExperiments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22538,7 +22538,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFeatureGroups`.
     ///
     /// <p>List <code>FeatureGroup</code>s based on given filter and order.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFeatureGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22721,7 +22721,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFlowDefinitions`.
     ///
     /// <p>Returns information about the flow definitions in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFlowDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22840,7 +22840,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHumanTaskUis`.
     ///
     /// <p>Returns information about the human task user interfaces in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHumanTaskUis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -22961,7 +22961,7 @@ pub mod fluent_builders {
     /// <p>Gets a list of <a>HyperParameterTuningJobSummary</a> objects that
     /// describe
     /// the hyperparameter tuning jobs launched in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHyperParameterTuningJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23186,7 +23186,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the images in your account and their properties. The list can be filtered by
     /// creation time or modified time, and whether the image name contains a specified string.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23360,7 +23360,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the versions of a specified image and their properties. The list can be filtered
     /// by creation time or modified time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImageVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23530,7 +23530,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInferenceRecommendationsJobs`.
     ///
     /// <p>Lists recommendation jobs that satisfy various filters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInferenceRecommendationsJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23721,7 +23721,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLabelingJobs`.
     ///
     /// <p>Gets a list of labeling jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLabelingJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -23916,7 +23916,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLabelingJobsForWorkteam`.
     ///
     /// <p>Gets a list of labeling jobs assigned to a specified work team.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLabelingJobsForWorkteam<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24091,7 +24091,7 @@ pub mod fluent_builders {
     /// <p>A list of lineage groups shared with your Amazon Web Services account.
     /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
     /// Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLineageGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24229,7 +24229,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListModelBiasJobDefinitions`.
     ///
     /// <p>Lists model bias jobs definitions that satisfy various filters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModelBiasJobDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24395,7 +24395,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListModelExplainabilityJobDefinitions`.
     ///
     /// <p>Lists model explainability job definitions that satisfy various filters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModelExplainabilityJobDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24566,7 +24566,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the domain, framework, task, and model name of standard
     /// machine learning models found in common model zoos.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModelMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24672,7 +24672,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListModelPackageGroups`.
     ///
     /// <p>Gets a list of the model groups in your Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModelPackageGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -24823,7 +24823,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListModelPackages`.
     ///
     /// <p>Lists the model packages that have been created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModelPackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25057,7 +25057,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListModelQualityJobDefinitions`.
     ///
     /// <p>Gets a list of model quality monitoring job definitions in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModelQualityJobDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25229,7 +25229,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListModels`.
     ///
     /// <p>Lists models created with the <code>CreateModel</code> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25384,7 +25384,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMonitoringExecutions`.
     ///
     /// <p>Returns list of all monitoring job executions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMonitoringExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25649,7 +25649,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMonitoringSchedules`.
     ///
     /// <p>Returns list of all monitoring schedules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMonitoringSchedules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -25885,7 +25885,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNotebookInstanceLifecycleConfigs`.
     ///
     /// <p>Lists notebook instance lifestyle configurations created with the <a>CreateNotebookInstanceLifecycleConfig</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotebookInstanceLifecycleConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26079,7 +26079,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of the Amazon SageMaker notebook instances in the requester's account in an Amazon Web Services
     /// Region. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotebookInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26355,7 +26355,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPipelineExecutions`.
     ///
     /// <p>Gets a list of the pipeline executions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelineExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26506,7 +26506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPipelineExecutionSteps`.
     ///
     /// <p>Gets a list of <code>PipeLineExecutionStep</code> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelineExecutionSteps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26614,7 +26614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPipelineParametersForExecution`.
     ///
     /// <p>Gets a list of parameters for a pipeline execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelineParametersForExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26711,7 +26711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPipelines`.
     ///
     /// <p>Gets a list of pipelines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -26862,7 +26862,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProcessingJobs`.
     ///
     /// <p>Lists processing jobs that satisfy various filters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProcessingJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27049,7 +27049,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Gets a list of the projects in an Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27202,7 +27202,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStudioLifecycleConfigs`.
     ///
     /// <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStudioLifecycleConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27391,7 +27391,7 @@ pub mod fluent_builders {
     /// <p>Gets a list of the work teams that you are subscribed to in the Amazon Web Services Marketplace. The
     /// list may be empty if no work team satisfies the filter specified in the
     /// <code>NameContains</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSubscribedWorkteams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27490,7 +27490,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTags`.
     ///
     /// <p>Returns the tags for the specified Amazon SageMaker resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27606,7 +27606,7 @@ pub mod fluent_builders {
     /// InProgress</code>
     /// </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrainingJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27802,7 +27802,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a list of <a>TrainingJobSummary</a> objects that describe the training
     /// jobs that a hyperparameter tuning job launched.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrainingJobsForHyperParameterTuningJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -27959,7 +27959,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTransformJobs`.
     ///
     /// <p>Lists transform jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTransformJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28165,7 +28165,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrialComponents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28350,7 +28350,7 @@ pub mod fluent_builders {
     /// the trials that associated with that trial component. The list can be filtered to show only
     /// trials that were created in a specific time range. The list can be sorted by trial name or
     /// creation time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28512,7 +28512,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUserProfiles`.
     ///
     /// <p>Lists user profiles.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28650,7 +28650,7 @@ pub mod fluent_builders {
     ///
     /// <p>Use this operation to list all private and vendor workforces in an Amazon Web Services Region. Note that you can only
     /// have one private workforce per Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkforces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28771,7 +28771,7 @@ pub mod fluent_builders {
     /// <p>Gets a list of private work teams that you have defined in a region. The list may be empty if
     /// no work team satisfies the filter specified in the <code>NameContains</code>
     /// parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkteams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28898,7 +28898,7 @@ pub mod fluent_builders {
     /// <p>Adds a resouce policy to control access to a model group. For information about
     /// resoure policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
     /// policies and resource-based policies</a> in the <i>Amazon Web Services Identity and Access Management User Guide.</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutModelPackageGroupPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -28989,7 +28989,7 @@ pub mod fluent_builders {
     /// <p>Use this action to inspect your lineage and discover relationships between entities.
     /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html">
     /// Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct QueryLineage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29176,7 +29176,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterDevices`.
     ///
     /// <p>Register devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29283,7 +29283,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RenderUiTemplate`.
     ///
     /// <p>Renders the UI template so that you can preview the worker's experience. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RenderUiTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29402,7 +29402,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RetryPipelineExecution`.
     ///
     /// <p>Retry the execution of the pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetryPipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29494,7 +29494,7 @@ pub mod fluent_builders {
     /// results by any resource property in a ascending or descending order.</p>
     /// <p>You can query against the following value types: numeric, text, Boolean, and
     /// timestamp.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Search<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29643,7 +29643,7 @@ pub mod fluent_builders {
     /// <p>Notifies the pipeline that the execution of a callback step failed, along with a
     /// message describing why. When a callback step is run, the pipeline generates a callback
     /// token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendPipelineExecutionStepFailure<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29746,7 +29746,7 @@ pub mod fluent_builders {
     /// <p>Notifies the pipeline that the execution of a callback step succeeded and provides a
     /// list of the step's output parameters. When a callback step is run, the pipeline generates
     /// a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendPipelineExecutionStepSuccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29855,7 +29855,7 @@ pub mod fluent_builders {
     /// <p>By default, when you successfully create a new schedule, the status of a monitoring
     /// schedule is <code>scheduled</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMonitoringSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -29934,7 +29934,7 @@ pub mod fluent_builders {
     /// attaches your ML storage volume. After configuring the notebook instance, Amazon SageMaker sets the
     /// notebook instance status to <code>InService</code>. A notebook instance's status must be
     /// <code>InService</code> before you can connect to your Jupyter notebook. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartNotebookInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30007,7 +30007,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartPipelineExecution`.
     ///
     /// <p>Starts a pipeline execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartPipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30144,7 +30144,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopAutoMLJob`.
     ///
     /// <p>A method for forcing the termination of a running job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopAutoMLJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30222,7 +30222,7 @@ pub mod fluent_builders {
     /// <p>When it receives a <code>StopCompilationJob</code> request, Amazon SageMaker changes the <a>CompilationJobSummary$CompilationJobStatus</a> of the job to
     /// <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the <a>CompilationJobSummary$CompilationJobStatus</a> to <code>Stopped</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopCompilationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30295,7 +30295,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopEdgePackagingJob`.
     ///
     /// <p>Request to stop an edge packaging job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopEdgePackagingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30377,7 +30377,7 @@ pub mod fluent_builders {
     /// tuning job moves to the <code>Stopped</code> state, it releases all
     /// reserved
     /// resources for the tuning job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopHyperParameterTuningJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30453,7 +30453,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopInferenceRecommendationsJob`.
     ///
     /// <p>Stops an Inference Recommender job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopInferenceRecommendationsJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30524,7 +30524,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops a running labeling job. A job that is stopped cannot be restarted. Any results
     /// obtained before the job is stopped are placed in the Amazon S3 output bucket.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopLabelingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30597,7 +30597,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopMonitoringSchedule`.
     ///
     /// <p>Stops a previously started monitoring schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopMonitoringSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30681,7 +30681,7 @@ pub mod fluent_builders {
     /// <code>StartNotebookInstance</code> launches another ML compute instance, configures
     /// it, and attaches the preserved ML storage volume so you can continue your work.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopNotebookInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30778,7 +30778,7 @@ pub mod fluent_builders {
     /// or until the timeout is hit, whichever occurs first, and then stops. If the Lambda function
     /// finishes, the pipeline execution status is <code>Stopped</code>. If the timeout is hit
     /// the pipeline execution status is <code>Failed</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopPipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30866,7 +30866,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopProcessingJob`.
     ///
     /// <p>Stops a processing job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopProcessingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -30945,7 +30945,7 @@ pub mod fluent_builders {
     /// <p>When it receives a <code>StopTrainingJob</code> request, Amazon SageMaker changes the status of
     /// the job to <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the status to
     /// <code>Stopped</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTrainingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31023,7 +31023,7 @@ pub mod fluent_builders {
     /// stops
     /// the job, the status is set to <code>Stopped</code>. When you stop a transform job before
     /// it is completed, Amazon SageMaker doesn't store the job's output in Amazon S3.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTransformJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31096,7 +31096,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAction`.
     ///
     /// <p>Updates an action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31229,7 +31229,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAppImageConfig`.
     ///
     /// <p>Updates the properties of an AppImageConfig.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppImageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31318,7 +31318,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateArtifact`.
     ///
     /// <p>Updates an artifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31441,7 +31441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCodeRepository`.
     ///
     /// <p>Updates the specified Git repository with the specified values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCodeRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31541,7 +31541,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContext`.
     ///
     /// <p>Updates a context.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContext<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31661,7 +31661,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeviceFleet`.
     ///
     /// <p>Updates a fleet of devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeviceFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31785,7 +31785,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDevices`.
     ///
     /// <p>Updates one or more devices in a fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31875,7 +31875,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomain`.
     ///
     /// <p>Updates the default settings for new user profiles in the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -31990,7 +31990,7 @@ pub mod fluent_builders {
     /// being created or updated you may lose visibility into the instance type the endpoint
     /// is using. The endpoint must be deleted in order to stop incurring charges.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32158,7 +32158,7 @@ pub mod fluent_builders {
     /// receives the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After
     /// updating the endpoint, it sets the status to <code>InService</code>. To check the status
     /// of an endpoint, use the <a>DescribeEndpoint</a> API. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpointWeightsAndCapacities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32254,7 +32254,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds, updates, or removes the description of an experiment. Updates the display name of an
     /// experiment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32350,7 +32350,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the properties of a SageMaker image. To change the image's tags, use the
     /// <a>AddTags</a> and <a>DeleteTags</a> APIs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32469,7 +32469,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateModelPackage`.
     ///
     /// <p>Updates a versioned model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateModelPackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32648,7 +32648,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMonitoringSchedule`.
     ///
     /// <p>Updates a previously created schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMonitoringSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -32746,7 +32746,7 @@ pub mod fluent_builders {
     /// <p>Updates a notebook instance. NotebookInstance updates include upgrading or
     /// downgrading the ML compute instance used for your notebook instance to accommodate
     /// changes in your workload requirements.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNotebookInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33076,7 +33076,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNotebookInstanceLifecycleConfig`.
     ///
     /// <p>Updates a notebook instance lifecycle configuration created with the <a>CreateNotebookInstanceLifecycleConfig</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNotebookInstanceLifecycleConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33198,7 +33198,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePipeline`.
     ///
     /// <p>Updates a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33320,7 +33320,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePipelineExecution`.
     ///
     /// <p>Updates a pipeline execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33432,7 +33432,7 @@ pub mod fluent_builders {
     /// or being created, or updated, you may lose resources already created by the
     /// project.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33564,7 +33564,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTrainingJob`.
     ///
     /// <p>Update a model training job to request a new Debugger profiling configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrainingJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33674,7 +33674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTrial`.
     ///
     /// <p>Updates the display name of a trial.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrial<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -33756,7 +33756,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTrialComponent`.
     ///
     /// <p>Updates one or more properties of a trial component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrialComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34011,7 +34011,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserProfile`.
     ///
     /// <p>Updates a user profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34128,7 +34128,7 @@ pub mod fluent_builders {
     /// <important>
     /// <p>This operation only applies to private workforces.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkforce<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -34235,7 +34235,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkteam`.
     ///
     /// <p>Updates an existing work team with new member definitions or description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkteam<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

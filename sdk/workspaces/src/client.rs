@@ -516,7 +516,7 @@ pub mod fluent_builders {
     /// <p>Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
     /// DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateConnectionAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -596,7 +596,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateIpGroups`.
     ///
     /// <p>Associates the specified IP access control group with the specified directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateIpGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -685,7 +685,7 @@ pub mod fluent_builders {
     /// <p>Adds one or more rules to the specified IP access control group.</p>
     /// <p>This action gives users permission to access their WorkSpaces from the CIDR address
     /// ranges specified in the rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeIpRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -785,7 +785,7 @@ pub mod fluent_builders {
     /// correct Amazon Web Services account. To determine if an image has been shared and to see the
     /// ID of the Amazon Web Services account that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a> and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a> API operations. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyWorkspaceImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -910,7 +910,7 @@ pub mod fluent_builders {
     /// <p>Creates the specified connection alias for use with cross-Region redirection. For more information, see
     /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
     /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnectionAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1021,7 +1021,7 @@ pub mod fluent_builders {
     /// associate an IP access control group with your directory, the default group is used. The
     /// default group includes a default rule that allows users to access their WorkSpaces from
     /// anywhere. You cannot modify the default IP access control group for your directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIpGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1135,7 +1135,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTags`.
     ///
     /// <p>Creates the specified tags for the specified WorkSpaces resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1247,7 +1247,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUpdatedWorkspaceImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1369,7 +1369,7 @@ pub mod fluent_builders {
     /// <p>Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see
     /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html">
     /// Create a Custom WorkSpaces Image and Bundle</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspaceBundle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1529,7 +1529,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates one or more WorkSpaces.</p>
     /// <p>This operation is asynchronous and returns before the WorkSpaces are created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1623,7 +1623,7 @@ pub mod fluent_builders {
     /// been shared with. You can delete a connection alias only after it is no longer shared with any accounts or
     /// associated with any directories.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnectionAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1694,7 +1694,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified IP access control group.</p>
     /// <p>You cannot delete an IP access control group that is associated with a directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIpGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1764,7 +1764,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTags`.
     ///
     /// <p>Deletes the specified tags from the specified WorkSpaces resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1855,7 +1855,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see
     /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html">
     /// Delete a Custom WorkSpaces Bundle or Image</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkspaceBundle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1927,7 +1927,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified image from your account. To delete an image, you must first delete
     /// any bundles that are associated with the image and unshare the image if it is shared with
     /// other accounts. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkspaceImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2013,7 +2013,7 @@ pub mod fluent_builders {
     /// Simple AD or AD Connector directory, you can always create a new one when you want to start using
     /// WorkSpaces again.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterWorkspaceDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2088,7 +2088,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list that describes the configuration of Bring Your Own License (BYOL) for
     /// the specified account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2149,7 +2149,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list that describes modifications to the configuration of Bring Your Own
     /// License (BYOL) for the specified account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountModifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2221,7 +2221,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClientProperties`.
     ///
     /// <p>Retrieves a list that describes one or more specified Amazon WorkSpaces clients.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClientProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2300,7 +2300,7 @@ pub mod fluent_builders {
     /// <p>Retrieves a list that describes the connection aliases used for cross-Region redirection. For more information, see
     /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
     /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectionAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2411,7 +2411,7 @@ pub mod fluent_builders {
     /// <p>Describes the permissions that the owner of a connection alias has granted to another Amazon Web Services account for
     /// the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
     /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectionAliasPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2505,7 +2505,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIpGroups`.
     ///
     /// <p>Describes one or more of your IP access control groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIpGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2604,7 +2604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
     /// <p>Describes the specified tags for the specified WorkSpaces resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2677,7 +2677,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list that describes the available WorkSpace bundles.</p>
     /// <p>You can filter the results using either bundle ID or owner, but not both.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceBundles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2779,7 +2779,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the available directories that are registered with
     /// Amazon WorkSpaces.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceDirectories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2881,7 +2881,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the permissions that the owner of an image has granted to other
     /// Amazon Web Services accounts for an image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2974,7 +2974,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list that describes one or more specified images, if the image identifiers
     /// are provided. Otherwise, all images in the account are described. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3088,7 +3088,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified WorkSpaces.</p>
     /// <p>You can filter the results by using the bundle identifier, directory identifier, or
     /// owner, but you can specify only one filter at a time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3231,7 +3231,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkspacesConnectionStatus`.
     ///
     /// <p>Describes the connection status of the specified WorkSpaces.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspacesConnectionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3322,7 +3322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkspaceSnapshots`.
     ///
     /// <p>Describes the snapshots for the specified WorkSpace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3400,7 +3400,7 @@ pub mod fluent_builders {
     /// <p>Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
     /// DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateConnectionAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3470,7 +3470,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateIpGroups`.
     ///
     /// <p>Disassociates the specified IP access control group from the specified directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateIpGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3561,7 +3561,7 @@ pub mod fluent_builders {
     /// Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see
     /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
     /// Bring Your Own Windows Desktop Licenses</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportWorkspaceImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3738,7 +3738,7 @@ pub mod fluent_builders {
     /// <p>The management network interface is connected to a secure Amazon WorkSpaces management
     /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
     /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAvailableManagementCidrRanges<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3848,7 +3848,7 @@ pub mod fluent_builders {
     ///
     /// <p>For available migration scenarios, details about what happens during migration, and best practices, see
     /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate a WorkSpace</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MigrateWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3932,7 +3932,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies the configuration of Bring Your Own License (BYOL) for the specified
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4036,7 +4036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyClientProperties`.
     ///
     /// <p>Modifies the properties of the specified Amazon WorkSpaces clients.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClientProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4120,7 +4120,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies the self-service WorkSpace management capabilities for your users. For more
     /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifySelfservicePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4208,7 +4208,7 @@ pub mod fluent_builders {
     /// <p>Specifies which devices and operating systems users can use to access their WorkSpaces.
     /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
     /// Control Device Access</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyWorkspaceAccessProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4294,7 +4294,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyWorkspaceCreationProperties`.
     ///
     /// <p>Modify the default properties used to create WorkSpaces.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyWorkspaceCreationProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4384,7 +4384,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
     /// Modify a WorkSpace</a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyWorkspaceProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4475,7 +4475,7 @@ pub mod fluent_builders {
     /// reboot, stop, start, rebuild, or restore. An AutoStop WorkSpace in this state is not
     /// stopped. Users cannot log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code>
     /// state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyWorkspaceState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4561,7 +4561,7 @@ pub mod fluent_builders {
     /// <p>You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or
     /// <code>UNHEALTHY</code>.</p>
     /// <p>This operation is asynchronous and returns before the WorkSpaces have rebooted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4645,7 +4645,7 @@ pub mod fluent_builders {
     /// WorkSpace</a>.</p>
     /// <p>This operation is asynchronous and returns before the WorkSpaces have been completely
     /// rebuilt.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebuildWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4726,7 +4726,7 @@ pub mod fluent_builders {
     /// registering a directory, you will need to create the workspaces_DefaultRole role before you can
     /// register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">
     /// Creating the workspaces_DefaultRole Role</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterWorkspaceDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4891,7 +4891,7 @@ pub mod fluent_builders {
     /// WorkSpace</a>.</p>
     /// <p>This operation is asynchronous and returns before the WorkSpace is completely
     /// restored.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4961,7 +4961,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeIpRules`.
     ///
     /// <p>Removes one or more rules from the specified IP access control group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeIpRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5050,7 +5050,7 @@ pub mod fluent_builders {
     /// <p>Starts the specified WorkSpaces.</p>
     /// <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a
     /// state of <code>STOPPED</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5130,7 +5130,7 @@ pub mod fluent_builders {
     /// <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a
     /// state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or
     /// <code>ERROR</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5236,7 +5236,7 @@ pub mod fluent_builders {
     /// Simple AD or AD Connector directory, you can always create a new one when you want to start using
     /// WorkSpaces again.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5335,7 +5335,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnectionAliasPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5422,7 +5422,7 @@ pub mod fluent_builders {
     ///
     /// <p>Replaces the current rules of the specified IP access control group with the specified
     /// rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRulesOfIpGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5517,7 +5517,7 @@ pub mod fluent_builders {
     /// based on. To update existing WorkSpaces that are based on a bundle that you've updated, you
     /// must either rebuild the WorkSpaces or delete and recreate them.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspaceBundle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5622,7 +5622,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>         
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspaceImagePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

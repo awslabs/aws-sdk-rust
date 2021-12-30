@@ -40,7 +40,7 @@ type DefaultMiddlewareStack = Stack<
 /// 2. Sign the request with SigV4
 /// 3. Resolve an Endpoint for the request
 /// 4. Add a user agent to the request
-#[derive(Debug, Default)]
+#[derive(Debug, Default, Clone)]
 #[non_exhaustive]
 pub struct DefaultMiddleware;
 

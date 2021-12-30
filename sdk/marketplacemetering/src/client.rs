@@ -133,7 +133,7 @@ pub mod fluent_builders {
     /// with usagedata split into buckets by tags that you define (or allow the customer to
     /// define).</p>
     /// <p>BatchMeterUsage requests must be less than 1MB in size.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchMeterUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -232,7 +232,7 @@ pub mod fluent_builders {
     /// <p>MeterUsage can optionally include multiple usage allocations, to provide customers
     /// with usage data split into buckets by tags that you define (or allow the customer to
     /// define).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MeterUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -427,7 +427,7 @@ pub mod fluent_builders {
     /// runtime.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -526,7 +526,7 @@ pub mod fluent_builders {
     /// When a buyer visits your website during the registration process, the buyer submits a
     /// registration token through their browser. The registration token is resolved through
     /// this API to obtain a CustomerIdentifier and product code.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResolveCustomer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

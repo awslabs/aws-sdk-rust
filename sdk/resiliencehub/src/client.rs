@@ -400,7 +400,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddDraftAppVersionResourceMappings`.
     ///
     /// <p>Adds the resource mapping for the draft application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddDraftAppVersionResourceMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -514,7 +514,7 @@ pub mod fluent_builders {
     /// by running another assessment, comparing results, and then iterating the process until you
     /// achieve your goals for recovery time objective (RTO) and recovery point objective
     /// (RPO).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -649,7 +649,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecommendationTemplate`.
     ///
     /// <p>Creates a new recommendation template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecommendationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -885,7 +885,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResiliencyPolicy`.
     ///
     /// <p>Creates a resiliency policy for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResiliencyPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1067,7 +1067,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an AWS Resilience Hub application. This is a destructive action that can't be
     /// undone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1168,7 +1168,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an AWS Resilience Hub application assessment. This is a destructive action that can't
     /// be undone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1262,7 +1262,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a recommendation template. This is a destructive action that can't be
     /// undone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecommendationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1350,7 +1350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResiliencyPolicy`.
     ///
     /// <p>Deletes a resiliency policy. This is a destructive action that can't be undone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResiliencyPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1440,7 +1440,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApp`.
     ///
     /// <p>Describes an AWS Resilience Hub application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1518,7 +1518,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppAssessment`.
     ///
     /// <p>Describes an assessment for an AWS Resilience Hub application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1601,7 +1601,7 @@ pub mod fluent_builders {
     /// <p>Returns the resolution status for the specified resolution identifier for an application
     /// version. If <code>resolutionId</code> is not specified, the current resolution status is
     /// returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppVersionResourcesResolutionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1704,7 +1704,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppVersionTemplate`.
     ///
     /// <p>Describes details about an AWS Resilience Hub </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppVersionTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1792,7 +1792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDraftAppVersionResourcesImportStatus`.
     ///
     /// <p>Describes the status of importing resources to an application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDraftAppVersionResourcesImportStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1874,7 +1874,7 @@ pub mod fluent_builders {
     /// <p>Describes a specified resiliency policy for an AWS Resilience Hub application. The returned
     /// policy object includes creation time, data location constraints, the Amazon Resource Name
     /// (ARN) for the policy, tags, tier, and more.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResiliencyPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1953,7 +1953,7 @@ pub mod fluent_builders {
     ///
     /// <p>Imports resources from sources such as a CloudFormation stack, resource-groups, or application
     /// registry app to a draft application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportResourcesToDraftAppVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2048,7 +2048,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAlarmRecommendations`.
     ///
     /// <p>Lists the alarm recommendations for a AWS Resilience Hub application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlarmRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2152,7 +2152,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the assessments for an AWS Resilience Hub application. You can use request parameters to
     /// refine the results for the response object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppAssessments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2322,7 +2322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppComponentCompliances`.
     ///
     /// <p>Lists the compliances for an AWS Resilience Hub component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppComponentCompliances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2425,7 +2425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppComponentRecommendations`.
     ///
     /// <p>Lists the recommendations for an AWS Resilience Hub component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppComponentRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2528,7 +2528,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApps`.
     ///
     /// <p>Lists your Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2640,7 +2640,7 @@ pub mod fluent_builders {
     /// <p>Lists how the resources in an application version are mapped/sourced from. Mappings can be
     /// physical resource identifiers, CloudFormation stacks, resource-groups, or an application registry
     /// app.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppVersionResourceMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2750,7 +2750,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppVersionResources`.
     ///
     /// <p>Lists all the resources in an application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppVersionResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2873,7 +2873,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppVersions`.
     ///
     /// <p>Lists the different versions for the Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2973,7 +2973,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRecommendationTemplates`.
     ///
     /// <p>Lists the recommendation templates for the Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecommendationTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3131,7 +3131,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResiliencyPolicies`.
     ///
     /// <p>Lists the resiliency policies for the Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResiliencyPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3224,7 +3224,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the standard operating procedure (SOP) recommendations for the Resilience Hub
     /// applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSopRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3327,7 +3327,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSuggestedResiliencyPolicies`.
     ///
     /// <p>Lists the suggested resiliency policies for the Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSuggestedResiliencyPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3409,7 +3409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for your resources in your Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3481,7 +3481,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTestRecommendations`.
     ///
     /// <p>Lists the test recommendations for the Resilience Hub application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3586,7 +3586,7 @@ pub mod fluent_builders {
     /// <p>Lists the resources that are not currently supported in AWS Resilience Hub. An unsupported
     /// resource is a resource that exists in the object that was used to create an app, but is not
     /// supported by Resilience Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUnsupportedAppVersionResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3711,7 +3711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PublishAppVersion`.
     ///
     /// <p>Publishes a new version of a specific Resilience Hub application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishAppVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3789,7 +3789,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutDraftAppVersionTemplate`.
     ///
     /// <p>Adds or updates the app template for a draft version of a Resilience Hub app.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDraftAppVersionTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3880,7 +3880,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveDraftAppVersionResourceMappings`.
     ///
     /// <p>Removes resource mappings from a draft application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveDraftAppVersionResourceMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4028,7 +4028,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResolveAppVersionResources`.
     ///
     /// <p>Resolves the resources for an application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResolveAppVersionResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4116,7 +4116,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartAppAssessment`.
     ///
     /// <p>Creates a new application assessment for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAppAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4254,7 +4254,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies one or more tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4347,7 +4347,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4434,7 +4434,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApp`.
     ///
     /// <p>Updates an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4550,7 +4550,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResiliencyPolicy`.
     ///
     /// <p>Updates a resiliency policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResiliencyPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

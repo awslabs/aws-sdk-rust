@@ -321,7 +321,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
     /// provides additional information, for example, <code>Domain Transfer from Aws Account 111122223333 has been cancelled</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptDomainTransferFromAnotherAwsAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -430,7 +430,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
     /// provides additional information, for example, <code>Domain Transfer from Aws Account 111122223333 has been cancelled</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelDomainTransferToAnotherAwsAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -503,7 +503,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation checks the availability of one domain name. Note that if the availability status of a domain is pending, you must
     /// submit another request to determine the availability of the domain name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckDomainAvailability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -634,7 +634,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CheckDomainTransferability`.
     ///
     /// <p>Checks whether a domain name can be transferred to Amazon Route 53. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckDomainTransferability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -753,7 +753,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation deletes the specified tags for a domain.</p>
     /// <p>All tag operations are eventually consistent; subsequent operations might not immediately represent all issued operations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTagsForDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -840,7 +840,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableDomainAutoRenew`.
     ///
     /// <p>This operation disables automatic renewal of domain registration for the specified domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableDomainAutoRenew<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -915,7 +915,7 @@ pub mod fluent_builders {
     /// different registrar. Successful submission returns an operation ID that you can use to track
     /// the progress and completion of the action. If the request is not completed successfully, the
     /// domain registrant will be notified by email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableDomainTransferLock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -990,7 +990,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains That You Can Register with Amazon Route 53</a>
     /// in the <i>Amazon Route 53 Developer Guide</i>. Route 53 requires that you renew before the end of the renewal period
     /// so we can complete processing before the deadline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableDomainAutoRenew<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1062,7 +1062,7 @@ pub mod fluent_builders {
     /// <p>This operation sets the transfer lock on the domain (specifically the <code>clientTransferProhibited</code> status)
     /// to prevent domain transfers. Successful submission returns an operation ID that you can use to track the progress and
     /// completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableDomainTransferLock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1134,7 +1134,7 @@ pub mod fluent_builders {
     /// <p>For operations that require confirmation that the email address for the registrant contact is valid,
     /// such as registering a new domain, this operation returns information about whether the registrant contact has responded.</p>
     /// <p>If you want us to resend the email, use the <code>ResendContactReachabilityEmail</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactReachabilityStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1205,7 +1205,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation returns detailed information about a specified domain that is associated with the current AWS account.
     /// Contact information for the domain is also returned as part of the output.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainDetail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1275,7 +1275,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomainSuggestions`.
     ///
     /// <p>The GetDomainSuggestions operation returns a list of suggested domain names.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainSuggestions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1415,7 +1415,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOperationDetail`.
     ///
     /// <p>This operation returns the current status of an operation that is not completed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOperationDetail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1487,7 +1487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomains`.
     ///
     /// <p>This operation returns all the domain names registered with Amazon Route 53 for the current AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1580,7 +1580,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about all of the operations that return an operation ID and that have ever been
     /// performed on domains that were registered by the current account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOperations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1684,7 +1684,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation returns all of the tags that are associated with the specified domain.</p>
     /// <p>All tag operations are eventually consistent; subsequent operations might not immediately represent all issued operations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1779,7 +1779,7 @@ pub mod fluent_builders {
     /// <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2068,7 +2068,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
     /// provides additional information, for example, <code>Domain Transfer from Aws Account 111122223333 has been cancelled</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectDomainTransferFromAnotherAwsAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2150,7 +2150,7 @@ pub mod fluent_builders {
     /// expiration date if you haven't renewed far enough in advance. For more information about renewing domain registration, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing Registration for a Domain</a>
     /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RenewDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2249,7 +2249,7 @@ pub mod fluent_builders {
     ///
     /// <p>For operations that require confirmation that the email address for the registrant contact is valid,
     /// such as registering a new domain, this operation resends the confirmation email to the current email address for the registrant contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResendContactReachabilityEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2319,7 +2319,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RetrieveDomainAuthCode`.
     ///
     /// <p>This operation returns the AuthCode for the domain. To transfer a domain to another registrar, you provide this value to the new registrar.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetrieveDomainAuthCode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2422,7 +2422,7 @@ pub mod fluent_builders {
     ///
     /// <p>If the transfer is successful, this method returns an operation ID that you can use to track the progress and
     /// completion of the action. If the transfer doesn't complete successfully, the domain registrant will be notified by email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TransferDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2738,7 +2738,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
     /// provides additional information, for example, <code>Domain Transfer from Aws Account 111122223333 has been cancelled</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TransferDomainToAnotherAwsAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2821,7 +2821,7 @@ pub mod fluent_builders {
     /// registrant, administrator, or technical.</p>
     /// <p>If the update is successful, this method returns an operation ID that you can use to track the progress and completion of the action.
     /// If the request is not completed successfully, the domain registrant will be notified by email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2944,7 +2944,7 @@ pub mod fluent_builders {
     /// For more information on our privacy practices, see
     /// <a href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainContactPrivacy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3065,7 +3065,7 @@ pub mod fluent_builders {
     /// If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p>
     /// <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action.
     /// If the request is not completed successfully, the domain registrant will be notified by email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainNameservers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3163,7 +3163,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation adds or updates tags for a specified domain.</p>
     /// <p>All tag operations are eventually consistent; subsequent operations might not immediately represent all issued operations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTagsForDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3252,7 +3252,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ViewBilling`.
     ///
     /// <p>Returns all the domain-related billing records for the current AWS account for a specified period</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ViewBilling<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

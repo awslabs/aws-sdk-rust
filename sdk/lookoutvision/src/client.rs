@@ -237,7 +237,7 @@ pub mod fluent_builders {
     /// <code>DatasetType</code>. </p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:CreateDataset</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -385,7 +385,7 @@ pub mod fluent_builders {
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:CreateModel</code> operation. If you want to tag your model, you also require
     /// permission to the <code>lookoutvision:TagResource</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -538,7 +538,7 @@ pub mod fluent_builders {
     /// <a>CreateDataset</a>.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:CreateProject</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -646,7 +646,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:DeleteDataset</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -760,7 +760,7 @@ pub mod fluent_builders {
     /// <code>Models</code> array. </p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:DeleteModel</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -874,7 +874,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:DeleteProject</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -970,7 +970,7 @@ pub mod fluent_builders {
     /// <p>Describe an Amazon Lookout for Vision dataset.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:DescribeDataset</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1058,7 +1058,7 @@ pub mod fluent_builders {
     /// <p>Describes a version of an Amazon Lookout for Vision model.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:DescribeModel</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1143,7 +1143,7 @@ pub mod fluent_builders {
     /// <p>Describes an Amazon Lookout for Vision project.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:DescribeProject</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1333,7 +1333,7 @@ pub mod fluent_builders {
     /// information for a single image, including the image location and the assigned label.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:ListDatasetEntries</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetEntries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1515,7 +1515,7 @@ pub mod fluent_builders {
     /// <p>Lists the versions of a model in an Amazon Lookout for Vision project.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:ListModels</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1615,7 +1615,7 @@ pub mod fluent_builders {
     /// <p>Lists the Amazon Lookout for Vision projects in your AWS account.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:ListProjects</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1705,7 +1705,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of tags attached to the specified Amazon Lookout for Vision model.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:ListTagsForResource</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1785,7 +1785,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:StartModel</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1916,7 +1916,7 @@ pub mod fluent_builders {
     /// <p>After the model hosting stops, the <code>Status</code> of the model is <code>TRAINED</code>.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:StopModel</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2032,7 +2032,7 @@ pub mod fluent_builders {
     /// For more information, see <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>. </p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:TagResource</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2122,7 +2122,7 @@ pub mod fluent_builders {
     /// <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>. </p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:UntagResource</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2216,7 +2216,7 @@ pub mod fluent_builders {
     /// check the <code>Status</code> field in the response.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>lookoutvision:UpdateDatasetEntries</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDatasetEntries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

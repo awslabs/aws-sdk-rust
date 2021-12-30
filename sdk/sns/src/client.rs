@@ -406,7 +406,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds a statement to a topic's access control policy, granting access for the specified
     /// Amazon Web Services accounts to the specified actions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -530,7 +530,7 @@ pub mod fluent_builders {
     /// is opted out.</p>
     /// <p>To resume sending messages, you can opt in the number by using the
     /// <code>OptInPhoneNumber</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckIfPhoneNumberIsOptedOut<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -604,7 +604,7 @@ pub mod fluent_builders {
     /// action creates a new subscription and returns its Amazon Resource Name (ARN). This call
     /// requires an AWS signature only when the <code>AuthenticateOnUnsubscribe</code> flag is
     /// set to "true".</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -750,7 +750,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>You can use the returned <code>PlatformApplicationArn</code> as an attribute for the
     /// <code>CreatePlatformEndpoint</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlatformApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -872,7 +872,7 @@ pub mod fluent_builders {
     /// provided: ChannelId and UserId. The token field must also contain the ChannelId. For
     /// more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint
     /// for Baidu</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlatformEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1015,7 +1015,7 @@ pub mod fluent_builders {
     /// move out of the sandbox to send messages without restrictions,
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
     /// the <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSMSSandboxPhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1106,7 +1106,7 @@ pub mod fluent_builders {
     /// topic</a> in the <i>Amazon SNS Developer Guide</i>. This action is
     /// idempotent, so if the requester already owns a topic with the specified name, that
     /// topic's ARN is returned without creating a new topic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTopic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1376,7 +1376,7 @@ pub mod fluent_builders {
     /// Notifications</a>. </p>
     /// <p>When you delete an endpoint that is also subscribed to a topic, then you must also
     /// unsubscribe the endpoint from the topic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1449,7 +1449,7 @@ pub mod fluent_builders {
     /// services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see
     /// <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
     /// Mobile Push Notifications</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlatformApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1533,7 +1533,7 @@ pub mod fluent_builders {
     /// move out of the sandbox to send messages without restrictions,
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
     /// the <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSMSSandboxPhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1606,7 +1606,7 @@ pub mod fluent_builders {
     /// messages previously sent to the topic from being delivered to subscribers. This action
     /// is idempotent, so deleting a topic that does not exist does not result in an
     /// error.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTopic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1678,7 +1678,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the endpoint attributes for a device on one of the supported push
     /// notification services, such as GCM (Firebase Cloud Messaging) and APNS. For more
     /// information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEndpointAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1750,7 +1750,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the attributes of the platform application object for the supported push
     /// notification services, such as APNS and GCM (Firebase Cloud Messaging). For more
     /// information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPlatformApplicationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1827,7 +1827,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the settings for sending SMS messages from your Amazon Web Services account.</p>
     /// <p>These settings are set with the <code>SetSMSAttributes</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSMSAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1918,7 +1918,7 @@ pub mod fluent_builders {
     /// move out of the sandbox to send messages without restrictions,
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
     /// the <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSMSSandboxAccountStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1978,7 +1978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSubscriptionAttributes`.
     ///
     /// <p>Returns all of the properties of a subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSubscriptionAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2052,7 +2052,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns all of the properties of a topic. Topic properties returned might differ based
     /// on the authorization of the user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTopicAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2131,7 +2131,7 @@ pub mod fluent_builders {
     /// will be null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
     /// Notifications</a>. </p>
     /// <p>This action is throttled at 30 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEndpointsByPlatformApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2223,7 +2223,7 @@ pub mod fluent_builders {
     /// <p>Lists the calling Amazon Web Services account's dedicated origination numbers and their metadata. For
     /// more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination numbers</a> in the <i>Amazon SNS Developer
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOriginationNumbers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2310,7 +2310,7 @@ pub mod fluent_builders {
     /// the next page, you call <code>ListPhoneNumbersOptedOut</code> again using the
     /// <code>NextToken</code> string received from the previous call. When there are no
     /// more records to return, <code>NextToken</code> will be null.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPhoneNumbersOptedOut<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2393,7 +2393,7 @@ pub mod fluent_builders {
     /// null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
     /// Notifications</a>. </p>
     /// <p>This action is throttled at 15 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlatformApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2474,7 +2474,7 @@ pub mod fluent_builders {
     /// move out of the sandbox to send messages without restrictions,
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
     /// the <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSMSSandboxPhoneNumbers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2560,7 +2560,7 @@ pub mod fluent_builders {
     /// also returned. Use the <code>NextToken</code> parameter in a new
     /// <code>ListSubscriptions</code> call to get further results.</p>
     /// <p>This action is throttled at 30 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2634,7 +2634,7 @@ pub mod fluent_builders {
     /// <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in
     /// a new <code>ListSubscriptionsByTopic</code> call to get further results.</p>
     /// <p>This action is throttled at 30 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSubscriptionsByTopic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2715,7 +2715,7 @@ pub mod fluent_builders {
     ///
     /// <p>List all tags added to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
     /// <i>Amazon Simple Notification Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2789,7 +2789,7 @@ pub mod fluent_builders {
     /// <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
     /// further results.</p>
     /// <p>This action is throttled at 30 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTopics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2861,7 +2861,7 @@ pub mod fluent_builders {
     /// <p>Use this request to opt in a phone number that is opted out, which enables you to
     /// resume sending SMS messages to the number.</p>
     /// <p>You can opt in a phone number only once every 30 days.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OptInPhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2947,7 +2947,7 @@ pub mod fluent_builders {
     /// <important>
     /// <p>You can publish messages only to topics and endpoints in the same Amazon Web Services Region.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Publish<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3345,7 +3345,7 @@ pub mod fluent_builders {
     /// subscribed to the topic. The format of the batch message depends on the notification protocol
     /// for each subscribed endpoint.</p>
     /// <p>When a <code>messageId</code> is returned, the batch message is saved and Amazon SNS immediately delivers the message to subscribers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3435,7 +3435,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemovePermission`.
     ///
     /// <p>Removes a statement from a topic's access control policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemovePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3517,7 +3517,7 @@ pub mod fluent_builders {
     /// <p>Sets the attributes for an endpoint for a device on one of the supported push
     /// notification services, such as GCM (Firebase Cloud Messaging) and APNS. For more
     /// information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetEndpointAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3658,7 +3658,7 @@ pub mod fluent_builders {
     /// information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. For information on configuring
     /// attributes for message delivery status, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for
     /// Message Delivery Status</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetPlatformApplicationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3949,7 +3949,7 @@ pub mod fluent_builders {
     /// (<code>sns.amazonaws.com</code>) permission to perform the
     /// <code>s3:ListBucket</code> action. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetSMSAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4201,7 +4201,7 @@ pub mod fluent_builders {
     ///
     /// <p>Allows a subscription owner to set an attribute of the subscription to a new
     /// value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetSubscriptionAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4398,7 +4398,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetTopicAttributes`.
     ///
     /// <p>Allows a topic owner to set an attribute of the topic to a new value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetTopicAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4615,7 +4615,7 @@ pub mod fluent_builders {
     /// <p>You call the <code>ConfirmSubscription</code> action with the token from the
     /// subscription response. Confirmation tokens are valid for three days.</p>
     /// <p>This action is throttled at 100 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Subscribe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5042,7 +5042,7 @@ pub mod fluent_builders {
     /// application requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support request</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5137,7 +5137,7 @@ pub mod fluent_builders {
     /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the
     /// <code>Unsubscribe</code> request was unintended.</p>
     /// <p>This action is throttled at 100 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Unsubscribe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5211,7 +5211,7 @@ pub mod fluent_builders {
     ///
     /// <p>Remove tags from the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
     /// <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5306,7 +5306,7 @@ pub mod fluent_builders {
     /// move out of the sandbox to send messages without restrictions,
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
     /// the <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifySMSSandboxPhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -230,7 +230,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAlertManagerDefinition`.
     ///
     /// Create an alert manager definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlertManagerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -320,7 +320,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRuleGroupsNamespace`.
     ///
     /// Create a rule group namespace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRuleGroupsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -443,7 +443,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkspace`.
     ///
     /// Creates a new AMP workspace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -546,7 +546,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAlertManagerDefinition`.
     ///
     /// Deletes an alert manager definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlertManagerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -626,7 +626,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRuleGroupsNamespace`.
     ///
     /// Delete a rule groups namespace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRuleGroupsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -716,7 +716,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkspace`.
     ///
     /// Deletes an AMP workspace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -796,7 +796,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAlertManagerDefinition`.
     ///
     /// Describes an alert manager definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlertManagerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -866,7 +866,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRuleGroupsNamespace`.
     ///
     /// Describe a rule groups namespace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRuleGroupsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -946,7 +946,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkspace`.
     ///
     /// Describes an existing AMP workspace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1016,7 +1016,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRuleGroupsNamespaces`.
     ///
     /// Lists rule groups namespaces.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRuleGroupsNamespaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1116,7 +1116,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// Lists the tags you have assigned to the resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1186,7 +1186,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkspaces`.
     ///
     /// Lists all AMP workspaces, including workspaces being created or deleted.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1276,7 +1276,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAlertManagerDefinition`.
     ///
     /// Update an alert manager definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAlertManagerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1366,7 +1366,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutRuleGroupsNamespace`.
     ///
     /// Update a rule groups namespace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRuleGroupsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1466,7 +1466,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// Creates tags for the specified resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1559,7 +1559,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// Deletes tags from the specified resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1646,7 +1646,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkspaceAlias`.
     ///
     /// Updates an AMP workspace alias.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspaceAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

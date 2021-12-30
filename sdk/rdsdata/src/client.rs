@@ -145,7 +145,7 @@ pub mod fluent_builders {
     /// <code>transactionID</code> parameter, changes that result from the call are
     /// committed automatically.</p>    
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -330,7 +330,7 @@ pub mod fluent_builders {
     /// that you run each DDL statement in a separate <code>ExecuteStatement</code> call with
     /// <code>continueAfterTimeout</code> enabled.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BeginTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -431,7 +431,7 @@ pub mod fluent_builders {
     ///
     /// <p>Ends a SQL transaction started with the <code>BeginTransaction</code> operation and
     /// commits the changes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CommitTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -528,7 +528,7 @@ pub mod fluent_builders {
     /// <p>This operation is deprecated. Use the <code>BatchExecuteStatement</code> or
     /// <code>ExecuteStatement</code> operation.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteSql<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -662,7 +662,7 @@ pub mod fluent_builders {
     /// committed automatically.</p>    
     /// </important>
     /// <p>The response size limit is 1 MB. If the call returns more than 1 MB of response data, the call is terminated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -867,7 +867,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RollbackTransaction`.
     ///
     /// <p>Performs a rollback of a transaction. Rolling back a transaction cancels its changes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RollbackTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

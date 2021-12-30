@@ -165,7 +165,7 @@ pub mod fluent_builders {
     /// speech synthesis, nor is it possible to retrieve it using either the
     /// <code>GetLexicon</code> or <code>ListLexicon</code> APIs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLexicon<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -255,7 +255,7 @@ pub mod fluent_builders {
     /// returns a list of all available US English voices. </p>
     /// <p>This operation requires permissions to perform the
     /// <code>polly:DescribeVoices</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVoices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -384,7 +384,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the content of the specified pronunciation lexicon stored
     /// in an Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLexicon<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -457,7 +457,7 @@ pub mod fluent_builders {
     /// This object contains information about the given speech synthesis task,
     /// including the status of the task, and a link to the S3 bucket containing
     /// the output of the task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSpeechSynthesisTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -527,7 +527,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLexicons`.
     ///
     /// <p>Returns a list of pronunciation lexicons stored in an Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLexicons<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -603,7 +603,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of SpeechSynthesisTask objects ordered by their
     /// creation date. This operation can filter the tasks by their status, for
     /// example, allowing users to list only tasks that are completed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSpeechSynthesisTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -704,7 +704,7 @@ pub mod fluent_builders {
     /// consistency, therefore, it might take some time before the lexicon is
     /// available to the SynthesizeSpeech operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLexicon<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -797,7 +797,7 @@ pub mod fluent_builders {
     /// will include an identifier of this task as well as the current status. The
     /// <code>SpeechSynthesisTask</code> object is available for 72 hours after
     /// starting the asynchronous synthesis task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSpeechSynthesisTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1054,7 +1054,7 @@ pub mod fluent_builders {
     /// available with all the voices (for example, Cyrillic might not be read at
     /// all by English voices) unless phoneme mapping is used. For more
     /// information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SynthesizeSpeech<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

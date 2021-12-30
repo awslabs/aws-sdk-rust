@@ -219,7 +219,7 @@ pub mod fluent_builders {
     /// <code>SerialNumber</code> value identifies the user's hardware or virtual MFA device.
     /// The <code>TokenCode</code> is the time-based one-time password (TOTP) that the MFA device
     /// produces. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssumeRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -854,7 +854,7 @@ pub mod fluent_builders {
     /// <i>IAM User Guide</i>. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssumeRoleWithSAML<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1258,7 +1258,7 @@ pub mod fluent_builders {
     /// to content in Amazon S3. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssumeRoleWithWebIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1590,7 +1590,7 @@ pub mod fluent_builders {
     /// <p>The values of condition keys in the context of the user's request.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DecodeAuthorizationMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1680,7 +1680,7 @@ pub mod fluent_builders {
     /// <p>This operation does not indicate the state of the access key. The key might be active,
     /// inactive, or deleted. Active keys might not have permissions to perform an operation.
     /// Providing a deleted access key might return an error that the key doesn't exist.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccessKeyInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1766,7 +1766,7 @@ pub mod fluent_builders {
     /// or role is denied access. To view an example response, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCallerIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1911,7 +1911,7 @@ pub mod fluent_builders {
     /// <code>department</code>=<code>engineering</code> session tag. <code>Department</code>
     /// and <code>department</code> are not saved as separate tags, and the session tag passed in
     /// the request takes precedence over the user tag.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFederationToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2280,7 +2280,7 @@ pub mod fluent_builders {
     /// credentials, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
     /// Credentials for Users in Untrusted Environments</a> in the
     /// <i>IAM User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSessionToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

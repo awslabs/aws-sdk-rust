@@ -1070,7 +1070,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Associates an approved origin to an Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateApprovedOrigin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1151,7 +1151,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Allows the specified Amazon Connect instance to access the specified Amazon Lex or Amazon Lex V2 bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1250,7 +1250,7 @@ pub mod fluent_builders {
     /// <p>This API does not create a resource that doesn't exist. It only associates it to the
     /// instance. Ensure that the resource being specified in the storage configuration, like an S3
     /// bucket, exists when being used for association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1350,7 +1350,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Allows the specified Amazon Connect instance to access the specified Lambda function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateLambdaFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1433,7 +1433,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateLexBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1514,7 +1514,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Associates a set of quick connects with a queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateQueueQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1611,7 +1611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateRoutingProfileQueues`.
     ///
     /// <p>Associates a set of queues with a routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1712,7 +1712,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Associates a security key to the instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSecurityKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1793,7 +1793,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Creates an agent status for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAgentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1931,7 +1931,7 @@ pub mod fluent_builders {
     /// <p>Creates a contact flow for the specified Amazon Connect instance.</p>
     /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
     /// Flow language</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2069,7 +2069,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContactFlowModule`.
     ///
     /// <p>Creates a contact flow module for the specified Amazon Connect instance. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactFlowModule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2205,7 +2205,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Creates hours of operation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2351,7 +2351,7 @@ pub mod fluent_builders {
     /// <p>Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days.
     /// If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances.
     /// You must wait 30 days before you can restart creating and deleting instances in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2477,7 +2477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIntegrationAssociation`.
     ///
     /// <p>Creates an AWS resource association with an Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIntegrationAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2639,7 +2639,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Creates a new queue for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2808,7 +2808,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateQuickConnect`.
     ///
     /// <p>Creates a quick connect for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQuickConnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2934,7 +2934,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRoutingProfile`.
     ///
     /// <p>Creates a new routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoutingProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3102,7 +3102,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Creates a security profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3235,7 +3235,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUseCase`.
     ///
     /// <p>Creates a use case for an integration association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUseCase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3361,7 +3361,7 @@ pub mod fluent_builders {
     /// <p>Creates a user account for the specified Amazon Connect instance.</p>
     /// <p>For information about how to create user accounts using the Amazon Connect console, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add Users</a> in
     /// the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3574,7 +3574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUserHierarchyGroup`.
     ///
     /// <p>Creates a new user hierarchy group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserHierarchyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3669,7 +3669,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContactFlow`.
     ///
     /// <p>Deletes a contact flow for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3752,7 +3752,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContactFlowModule`.
     ///
     /// <p>Deletes the specified contact flow module.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactFlowModule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3836,7 +3836,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Deletes an hours of operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3923,7 +3923,7 @@ pub mod fluent_builders {
     /// <p>Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days.
     /// If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances.
     /// You must wait 30 days before you can restart creating and deleting instances in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3994,7 +3994,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an AWS resource association from an Amazon Connect instance. The association must not have
     /// any use cases associated with it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntegrationAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4080,7 +4080,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteQuickConnect`.
     ///
     /// <p>Deletes a quick connect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteQuickConnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4164,7 +4164,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Deletes a security profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4247,7 +4247,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUseCase`.
     ///
     /// <p>Deletes a use case from an integration association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUseCase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4346,7 +4346,7 @@ pub mod fluent_builders {
     /// <p>For information about what happens to a user's data when their account is deleted, see
     /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete Users from
     /// Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4427,7 +4427,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an existing user hierarchy group. It must not be associated with any agents or have
     /// any active child groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserHierarchyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4511,7 +4511,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes an agent status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAgentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4599,7 +4599,7 @@ pub mod fluent_builders {
     /// <p>Contact information remains available in Amazon Connect for 24 months, and then it is
     /// deleted.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4681,7 +4681,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified contact flow.</p>
     /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
     /// Flow language</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContactFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4764,7 +4764,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeContactFlowModule`.
     ///
     /// <p>Describes the specified contact flow module.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContactFlowModule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4848,7 +4848,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes the hours of operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4936,7 +4936,7 @@ pub mod fluent_builders {
     /// <p>If an instance is not created successfully, the instance status reason field returns details
     /// relevant to the reason. The instance in a failed state is returned only for 24 hours after the
     /// CreateInstance API was invoked.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5007,7 +5007,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes the specified instance attribute.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5092,7 +5092,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Retrieves the current storage configurations for the specified resource type, association
     /// ID, and instance ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5192,7 +5192,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes the specified queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5272,7 +5272,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeQuickConnect`.
     ///
     /// <p>Describes the quick connect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeQuickConnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5355,7 +5355,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRoutingProfile`.
     ///
     /// <p>Describes the specified routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRoutingProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5439,7 +5439,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Gets basic information about the security profle.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5524,7 +5524,7 @@ pub mod fluent_builders {
     /// <p>Describes the specified user account. You can find the instance ID in the console (it’s the
     /// final part of the ARN). The console does not display the user IDs. Instead, list the users and
     /// note the IDs provided in the output.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5604,7 +5604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserHierarchyGroup`.
     ///
     /// <p>Describes the specified hierarchy group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserHierarchyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5687,7 +5687,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserHierarchyStructure`.
     ///
     /// <p>Describes the hierarchy structure of the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserHierarchyStructure<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5758,7 +5758,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Revokes access to integrated applications from Amazon Connect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateApprovedOrigin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5840,7 +5840,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2
     /// bot. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5935,7 +5935,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Removes the storage type configurations for the specified resource type and association
     /// ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6036,7 +6036,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Remove the Lambda function from the dropdown options available in the relevant contact flow
     /// blocks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLambdaFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6117,7 +6117,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Revokes authorization from the specified instance to access the specified Amazon Lex bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLexBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6208,7 +6208,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Disassociates a set of quick connects from a queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateQueueQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6305,7 +6305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateRoutingProfileQueues`.
     ///
     /// <p>Disassociates a set of queues from a routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6409,7 +6409,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Deletes the specified security key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSecurityKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6492,7 +6492,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContactAttributes`.
     ///
     /// <p>Retrieves the contact attributes for the specified contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6577,7 +6577,7 @@ pub mod fluent_builders {
     /// <p>Gets the real-time metric data from the specified Amazon Connect instance.</p>
     /// <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
     /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCurrentMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6927,7 +6927,7 @@ pub mod fluent_builders {
     /// Amazon Connect</code>
     /// </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFederationToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7000,7 +7000,7 @@ pub mod fluent_builders {
     ///
     /// <p>For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics
     /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7473,7 +7473,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Lists agent statuses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAgentStatuses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7583,7 +7583,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Returns a paginated list of all approved origins associated with the instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApprovedOrigins<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7677,7 +7677,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated with the
     /// instance. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7782,7 +7782,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContactFlowModules`.
     ///
     /// <p>Provides information about the contact flow modules for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactFlowModules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7894,7 +7894,7 @@ pub mod fluent_builders {
     /// Flow language</a>.</p>
     /// <p>For more information about contact flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact Flows</a> in the
     /// <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactFlows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8005,7 +8005,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>For the specified <code>referenceTypes</code>, returns a list of references associated with
     /// the contact. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactReferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8124,7 +8124,7 @@ pub mod fluent_builders {
     /// <p>Provides information about the hours of operation for the specified Amazon Connect instance.</p>
     /// <p>For more information about hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set the Hours of Operation for a
     /// Queue</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHoursOfOperations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8217,7 +8217,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Returns a paginated list of all attribute types for the given instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8312,7 +8312,7 @@ pub mod fluent_builders {
     /// <p>Return a list of instances which are in active state, creation-in-progress state, and failed
     /// state. Instances that aren't successfully created (they are in a failed state) are returned only
     /// for 24 hours after the CreateInstance API was invoked.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8397,7 +8397,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a paginated list of storage configs for the identified instance and resource
     /// type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceStorageConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8506,7 +8506,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides summary information about the AWS resource associations for the specified Amazon Connect
     /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIntegrationAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8613,7 +8613,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Returns a paginated list of all Lambda functions that display in the dropdown options in the
     /// relevant contact flow blocks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLambdaFunctions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8707,7 +8707,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Returns a paginated list of all the Amazon Lex bots currently associated with the
     /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLexBots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8801,7 +8801,7 @@ pub mod fluent_builders {
     /// <p>Provides information about the phone numbers for the specified Amazon Connect instance. </p>
     /// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your
     /// Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPhoneNumbers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8930,7 +8930,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPrompts`.
     ///
     /// <p>Provides information about the prompts for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrompts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9023,7 +9023,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Lists the quick connects associated with a queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQueueQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9131,7 +9131,7 @@ pub mod fluent_builders {
     /// in code.</p>
     /// <p>For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues: Standard and
     /// Agent</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9240,7 +9240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListQuickConnects`.
     ///
     /// <p>Provides information about the quick connects for the specified Amazon Connect instance. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9351,7 +9351,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRoutingProfileQueues`.
     ///
     /// <p>Lists the queues associated with a routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9459,7 +9459,7 @@ pub mod fluent_builders {
     /// instance.</p>
     /// <p>For more information about routing profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing Profiles</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create a Routing
     /// Profile</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoutingProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9552,7 +9552,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Returns a paginated list of all security keys associated with the instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecurityKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9645,7 +9645,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Lists the permissions granted to a security profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecurityProfilePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9753,7 +9753,7 @@ pub mod fluent_builders {
     /// instance.</p>
     /// <p>For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security Profiles</a> in the
     /// <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecurityProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9847,7 +9847,7 @@ pub mod fluent_builders {
     /// <p>Lists the tags for the specified resource.</p>
     /// <p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based
     /// Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9917,7 +9917,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUseCases`.
     ///
     /// <p>Lists the use cases for the integration association. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUseCases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10028,7 +10028,7 @@ pub mod fluent_builders {
     /// instance.</p>
     /// <p>For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set Up Agent Hierarchies</a> in the
     /// <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserHierarchyGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10120,7 +10120,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUsers`.
     ///
     /// <p>Provides summary information about the users for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10215,7 +10215,7 @@ pub mod fluent_builders {
     /// SuspendContactRecording, this API resumes recording the call.</p>
     ///
     /// <p>Only voice recordings are supported at this time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeContactRecording<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10330,7 +10330,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect Administrator
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChatContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10499,7 +10499,7 @@ pub mod fluent_builders {
     /// <p>You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set recording
     /// behavior</a> block.</p>
     /// <p>Only voice recordings are supported at this time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContactRecording<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10612,7 +10612,7 @@ pub mod fluent_builders {
     /// <p> Initiates real-time message streaming for a new chat contact.</p>
     /// <p> For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable real-time chat message
     /// streaming</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContactStreaming<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10740,7 +10740,7 @@ pub mod fluent_builders {
     /// <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more information, see
     /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartOutboundVoiceContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10974,7 +10974,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartTaskContact`.
     ///
     /// <p>Initiates a contact flow to start a new task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTaskContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11181,7 +11181,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopContact`.
     ///
     /// <p>Ends the specified contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11267,7 +11267,7 @@ pub mod fluent_builders {
     /// restart it, use SuspendContactRecording and ResumeContactRecording.</p>
     ///
     /// <p>Only voice recordings are supported at this time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopContactRecording<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11364,7 +11364,7 @@ pub mod fluent_builders {
     /// <p> Ends message streaming on a specified contact. To restart message streaming on that
     /// contact, call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
     /// API. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopContactStreaming<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11461,7 +11461,7 @@ pub mod fluent_builders {
     /// <p>The period of time that the recording is suspended is filled with silence in the final
     /// recording. </p>
     /// <p>Only voice recordings are supported at this time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SuspendContactRecording<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11560,7 +11560,7 @@ pub mod fluent_builders {
     /// contact flows, agent status, and hours of operation.</p>
     /// <p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based
     /// Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11653,7 +11653,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11741,7 +11741,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates agent status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAgentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11883,7 +11883,7 @@ pub mod fluent_builders {
     /// <p>You can add or update user-defined contact information for both ongoing and completed
     /// contacts.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12027,7 +12027,7 @@ pub mod fluent_builders {
     /// you attempt to update attributes for a contact that occurred prior to the release of the API, a
     /// 400 error is returned. This applies also to queued callbacks that were initiated prior to the
     /// release of the API but are still active in your instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12143,7 +12143,7 @@ pub mod fluent_builders {
     /// <p>Updates the specified contact flow.</p>
     /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
     /// Flow language</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12240,7 +12240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactFlowMetadata`.
     ///
     /// <p>Updates metadata about specified contact flow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12356,7 +12356,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactFlowModuleContent`.
     ///
     /// <p>Updates specified contact flow module for the specified Amazon Connect instance. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowModuleContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12449,7 +12449,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactFlowModuleMetadata`.
     ///
     /// <p>Updates metadata about specified contact flow module.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowModuleMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12567,7 +12567,7 @@ pub mod fluent_builders {
     /// <p>The name of the contact flow.</p>
     /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
     /// Flow language</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12670,7 +12670,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactSchedule`.
     ///
     /// <p>Updates the scheduled time of a task contact that is already scheduled.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12764,7 +12764,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the hours of operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12895,7 +12895,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the value for the specified attribute type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12995,7 +12995,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates an existing configuration for a resource type. This API is idempotent.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13108,7 +13108,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the hours of operation for the specified queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13203,7 +13203,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the maximum number of contacts allowed in a queue before it is considered
     /// full.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueMaxContacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13294,7 +13294,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the name and description of a queue. At least <code>Name</code> or <code>Description</code> must be provided.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13396,7 +13396,7 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the outbound caller ID name, number, and outbound whisper flow for a specified
     /// queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueOutboundCallerConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13493,7 +13493,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the status of the queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13583,7 +13583,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateQuickConnectConfig`.
     ///
     /// <p>Updates the configuration settings for the specified quick connect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQuickConnectConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13679,7 +13679,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateQuickConnectName`.
     ///
     /// <p>Updates the name and description of a quick connect. The request accepts the following data in JSON format. At least <code>Name</code> or <code>Description</code> must be provided.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQuickConnectName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13783,7 +13783,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the channels that agents can handle in the Contact Control Panel (CCP) for a routing
     /// profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingProfileConcurrency<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13883,7 +13883,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRoutingProfileDefaultOutboundQueue`.
     ///
     /// <p>Updates the default outbound queue of a routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingProfileDefaultOutboundQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13985,7 +13985,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the name and description of a routing profile. The request accepts the following data in JSON format.
     /// At least <code>Name</code> or <code>Description</code> must be provided.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingProfileName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14088,7 +14088,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRoutingProfileQueues`.
     ///
     /// <p>Updates the properties associated with a set of queues for a routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14193,7 +14193,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates a security profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14303,7 +14303,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserHierarchy`.
     ///
     /// <p>Assigns the specified hierarchy group to the specified user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserHierarchy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14396,7 +14396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserHierarchyGroupName`.
     ///
     /// <p>Updates the name of the user hierarchy group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserHierarchyGroupName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14489,7 +14489,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserHierarchyStructure`.
     ///
     /// <p>Updates the user hierarchy structure: add, remove, and rename user hierarchy levels.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserHierarchyStructure<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14583,7 +14583,7 @@ pub mod fluent_builders {
     /// password through email. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best Practices for
     /// Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserIdentityInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14676,7 +14676,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserPhoneConfig`.
     ///
     /// <p>Updates the phone configuration settings for the specified user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserPhoneConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14769,7 +14769,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserRoutingProfile`.
     ///
     /// <p>Assigns the specified routing profile to the specified user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserRoutingProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14862,7 +14862,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserSecurityProfiles`.
     ///
     /// <p>Assigns the specified security profiles to the specified user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserSecurityProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

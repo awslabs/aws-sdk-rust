@@ -398,7 +398,7 @@ pub mod fluent_builders {
     /// Use the  API
     /// operation to monitor the status of the aliases Amazon FSx is
     /// associating with the file system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateFileSystemAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -557,7 +557,7 @@ pub mod fluent_builders {
     /// <p>FSx does not export any files that have not yet been exported.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelDataRepositoryTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -647,7 +647,7 @@ pub mod fluent_builders {
     /// in the <i>Amazon FSx for Windows User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying backups</a> in the <i>Amazon FSx for Lustre User
     /// Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/using-backups.html#copy-backups">Copying backups</a> in the <i>Amazon FSx for OpenZFS User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -874,7 +874,7 @@ pub mod fluent_builders {
     /// still <code>CREATING</code>. You can check the backup creation status by calling the
     /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html">DescribeBackups</a> operation, which returns the backup state along with other
     /// information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1009,7 +1009,7 @@ pub mod fluent_builders {
     /// for automatic export only, or for both. To learn more about linking a
     /// data repository to your file system, see
     /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file system to an S3 bucket</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataRepositoryAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1239,7 +1239,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>.
     /// To learn more about linking a data repository to your file system, see
     /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file system to an S3 bucket</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataRepositoryTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1455,7 +1455,7 @@ pub mod fluent_builders {
     /// by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a> operation, which returns the file system state
     /// along with other information.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1995,7 +1995,7 @@ pub mod fluent_builders {
     /// DescribeFileSystems</a> operation, which returns the file system state along
     /// with other information.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFileSystemFromBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2379,7 +2379,7 @@ pub mod fluent_builders {
     /// is still <code>CREATING</code>. You can check the snapshot creation status by calling
     /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a> operation, which returns the snapshot state along with
     /// other information. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2493,7 +2493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStorageVirtualMachine`.
     ///
     /// <p>Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStorageVirtualMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2702,7 +2702,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage
     /// volume.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2854,7 +2854,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new Amazon FSx for NetApp ONTAP volume from an
     /// existing Amazon FSx volume backup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVolumeFromBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2993,7 +2993,7 @@ pub mod fluent_builders {
     /// <p>The data in a deleted backup is also deleted and can't be recovered by any
     /// means.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3086,7 +3086,7 @@ pub mod fluent_builders {
     /// that corresponds to the data repository association. Data repository
     /// associations are supported only for file systems with the
     /// <code>Persistent_2</code> deployment type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataRepositoryAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3212,7 +3212,7 @@ pub mod fluent_builders {
     /// <p>The data in a deleted file system is also deleted and can't be recovered by
     /// any means.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3360,7 +3360,7 @@ pub mod fluent_builders {
     /// file system backup. </p>
     /// <p>The <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears with
     /// the lifecycle status of <code>DELETING</code> until the deletion is complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3448,7 +3448,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM). Prior
     /// to deleting an SVM, you must delete all non-root volumes in the SVM, otherwise the operation will fail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStorageVirtualMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3542,7 +3542,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS
     /// volume.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3695,7 +3695,7 @@ pub mod fluent_builders {
     /// across the responses of a multi-call iteration is unspecified.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBackups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3843,7 +3843,7 @@ pub mod fluent_builders {
     /// <code>NextToken</code> value in the response. In this case, send a later
     /// request with the <code>NextToken</code> request parameter set to the value of
     /// <code>NextToken</code> from the last response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataRepositoryAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3977,7 +3977,7 @@ pub mod fluent_builders {
     /// FSx returns a <code>NextToken</code> value in the response. In this case, send a later
     /// request with the <code>NextToken</code> request parameter set to the value of
     /// <code>NextToken</code> from the last response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataRepositoryTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4103,7 +4103,7 @@ pub mod fluent_builders {
     /// <p>Returns the DNS aliases that are associated with the specified Amazon FSx for Windows File Server file system. A history of
     /// all DNS aliases that have been associated with and disassociated from the file system is available in the list of <a>AdministrativeAction</a>
     /// provided in the <a>DescribeFileSystems</a> operation response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFileSystemAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4256,7 +4256,7 @@ pub mod fluent_builders {
     /// across the responses of a multicall iteration is unspecified.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFileSystems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4391,7 +4391,7 @@ pub mod fluent_builders {
     /// the responses of a multi-call iteration is unspecified. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4515,7 +4515,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStorageVirtualMachines`.
     ///
     /// <p>Describes one or more Amazon FSx for NetApp ONTAP storage virtual machines (SVMs).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStorageVirtualMachines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4639,7 +4639,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes one or more Amazon FSx for NetApp ONTAP or Amazon FSx for
     /// OpenZFS volumes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVolumes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4769,7 +4769,7 @@ pub mod fluent_builders {
     /// Use the  API
     /// operation to monitor the status of the aliases Amazon FSx is
     /// disassociating with the file system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFileSystemAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4904,7 +4904,7 @@ pub mod fluent_builders {
     /// the responses of a multi-call iteration is unspecified.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5005,7 +5005,7 @@ pub mod fluent_builders {
     ///
     /// <p>Releases the file system lock from an Amazon FSx for OpenZFS file
     /// system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReleaseFileSystemNfsV3Locks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5096,7 +5096,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns an Amazon FSx for OpenZFS volume to the state saved by the specified
     /// snapshot. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreVolumeFromSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5240,7 +5240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tags an Amazon FSx resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5331,7 +5331,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>This action removes a tag from an Amazon FSx resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5422,7 +5422,7 @@ pub mod fluent_builders {
     /// <p>Updates the configuration of an existing data repository association
     /// on an Amazon FSx for Lustre file system. Data repository associations are
     /// supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataRepositoryAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5694,7 +5694,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5932,7 +5932,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSnapshot`.
     ///
     /// <p>Updates the name of a snapshot. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6031,7 +6031,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStorageVirtualMachine`.
     ///
     /// <p>Updates an Amazon FSx for ONTAP storage virtual machine (SVM).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStorageVirtualMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6153,7 +6153,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVolume`.
     ///
     /// <p>Updates the configuration of an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

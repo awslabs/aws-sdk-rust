@@ -285,7 +285,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptResourceShareInvitation`.
     ///
     /// <p>Accepts an invitation to a resource share from another Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptResourceShareInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -371,7 +371,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateResourceShare`.
     ///
     /// <p>Associates the specified resource share with the specified principals and resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateResourceShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -532,7 +532,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateResourceSharePermission`.
     ///
     /// <p>Associates a permission with a resource share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateResourceSharePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -661,7 +661,7 @@ pub mod fluent_builders {
     /// Amazon Web Services account that created the resource. Sharing doesn't change any permissions or
     /// quotas that apply to the resource in the account that created it.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -871,7 +871,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourceShare`.
     ///
     /// <p>Deletes the specified resource share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -954,7 +954,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateResourceShare`.
     ///
     /// <p>Disassociates the specified principals or resources from the specified resource share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateResourceShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1071,7 +1071,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateResourceSharePermission`.
     ///
     /// <p>Disassociates an RAM permission from a resource share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateResourceSharePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1170,7 +1170,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables resource sharing within your organization in Organizations.</p>
     /// <p>The caller must be the master account for the organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableSharingWithAwsOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1230,7 +1230,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPermission`.
     ///
     /// <p>Gets the contents of an RAM permission in JSON format.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1313,7 +1313,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourcePolicies`.
     ///
     /// <p>Gets the policies for the specified resources that you own and have shared.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1422,7 +1422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceShareAssociations`.
     ///
     /// <p>Gets the resources or principals for the resource shares that you own.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceShareAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1581,7 +1581,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceShareInvitations`.
     ///
     /// <p>Gets the invitations that you have received for resource shares.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceShareInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1700,7 +1700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceShares`.
     ///
     /// <p>Gets the resource shares that you own or the resource shares that are shared with you.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1871,7 +1871,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the resources in a resource share that is shared with you but that the invitation is still
     /// pending for.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPendingInvitationResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1969,7 +1969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPermissions`.
     ///
     /// <p>Lists the RAM permissions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2067,7 +2067,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the principals that you have shared resources with or that have shared resources
     /// with you.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrincipals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2224,7 +2224,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the resources that you added to a resource shares or the resources that are shared with
     /// you.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2380,7 +2380,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourceSharePermissions`.
     ///
     /// <p>Lists the RAM permissions that are associated with a resource share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceSharePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2475,7 +2475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourceTypes`.
     ///
     /// <p>Lists the shareable resource types supported by RAM.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2569,7 +2569,7 @@ pub mod fluent_builders {
     /// <p>Modifiable in RAM.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PromoteResourceShareCreatedFromPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2644,7 +2644,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectResourceShareInvitation`.
     ///
     /// <p>Rejects an invitation to a resource share from another Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectResourceShareInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2730,7 +2730,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds the specified tags to the specified resource share that you own.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2820,7 +2820,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified resource share that you own.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2910,7 +2910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResourceShare`.
     ///
     /// <p>Updates the specified resource share that you own.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

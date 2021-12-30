@@ -305,7 +305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddFlowMediaStreams`.
     ///
     /// Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a source and/or an output that uses the ST 2110 JPEG XS or CDI protocol.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddFlowMediaStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -392,7 +392,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddFlowOutputs`.
     ///
     /// Adds outputs to an existing flow. You can create up to 50 outputs per flow.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddFlowOutputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -479,7 +479,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddFlowSources`.
     ///
     /// Adds Sources to flow
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddFlowSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -566,7 +566,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddFlowVpcInterfaces`.
     ///
     /// Adds VPC interfaces to flow
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddFlowVpcInterfaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -653,7 +653,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFlow`.
     ///
     /// Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -847,7 +847,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFlow`.
     ///
     /// Deletes a flow. Before you can delete a flow, you must stop the flow.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -917,7 +917,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFlow`.
     ///
     /// Displays the details of a flow. The response includes the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -987,7 +987,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOffering`.
     ///
     /// Displays the details of an offering. The response includes the offering description, duration, outbound bandwidth, price, and Amazon Resource Name (ARN).
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1057,7 +1057,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservation`.
     ///
     /// Displays the details of a reservation. The response includes the reservation name, state, start date and time, and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound bandwidth).
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1130,7 +1130,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GrantFlowEntitlements`.
     ///
     /// Grants entitlements to an existing flow.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GrantFlowEntitlements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1217,7 +1217,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEntitlements`.
     ///
     /// Displays a list of all entitlements that have been granted to this account. This request returns 20 results per page.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntitlements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1297,7 +1297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFlows`.
     ///
     /// Displays a list of flows that are associated with this account. This request returns a paginated result.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFlows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1377,7 +1377,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOfferings`.
     ///
     /// Displays a list of all offerings that are available to this account in the current AWS Region. If you have an active reservation (which means you've purchased an offering that has already started and hasn't expired yet), your account isn't eligible for other offerings.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1457,7 +1457,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReservations`.
     ///
     /// Displays a list of all reservations that have been purchased by this account in the current AWS Region. This list includes all reservations in all states (such as active and expired).
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReservations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1537,7 +1537,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// List all tags on an AWS Elemental MediaConnect resource
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1607,7 +1607,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PurchaseOffering`.
     ///
     /// Submits a request to purchase an offering. If you already have an active reservation, you can't purchase another offering.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1700,7 +1700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveFlowMediaStream`.
     ///
     /// Removes a media stream from a flow. This action is only available if the media stream is not associated with a source or output.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveFlowMediaStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1783,7 +1783,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveFlowOutput`.
     ///
     /// Removes an output from an existing flow. This request can be made only on an output that does not have an entitlement associated with it. If the output has an entitlement, you must revoke the entitlement instead. When an entitlement is revoked from a flow, the service automatically removes the associated output.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveFlowOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1863,7 +1863,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveFlowSource`.
     ///
     /// Removes a source from an existing flow. This request can be made only if there is more than one source on the flow.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveFlowSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1943,7 +1943,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveFlowVpcInterface`.
     ///
     /// Removes a VPC Interface from an existing flow. This request can be made only on a VPC interface that does not have a Source or Output associated with it. If the VPC interface is referenced by a Source or Output, you must first delete or update the Source or Output to no longer reference the VPC interface.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveFlowVpcInterface<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2026,7 +2026,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeFlowEntitlement`.
     ///
     /// Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the subscriber and the associated output is removed.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeFlowEntitlement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2109,7 +2109,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFlow`.
     ///
     /// Starts a flow.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2179,7 +2179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopFlow`.
     ///
     /// Stops a flow.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2249,7 +2249,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are deleted as well.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2342,7 +2342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// Deletes specified tags from a resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2429,7 +2429,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFlow`.
     ///
     /// Updates flow
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2515,7 +2515,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFlowEntitlement`.
     ///
     /// You can change an entitlement's description, subscribers, and encryption. If you change the subscribers, the service will remove the outputs that are are used by the subscribers that are removed.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFlowEntitlement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2651,7 +2651,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFlowMediaStream`.
     ///
     /// Updates an existing media stream.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFlowMediaStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2790,7 +2790,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFlowOutput`.
     ///
     /// Updates an existing flow output.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFlowOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3028,7 +3028,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFlowSource`.
     ///
     /// Updates the source of a flow.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFlowSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

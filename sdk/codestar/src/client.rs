@@ -221,7 +221,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateTeamMember`.
     ///
     /// <p>Adds an IAM user to the team for an AWS CodeStar project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTeamMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -344,7 +344,7 @@ pub mod fluent_builders {
     /// <p>Creates a project, including project resources. This action creates a project based on
     /// a submitted project request. A set of source code files and a toolchain template file
     /// can be included with the project request. If these are not provided, an empty project is created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -509,7 +509,7 @@ pub mod fluent_builders {
     /// and email address assocciated with the user, in AWS CodeStar. The user profile is not
     /// project-specific. Information in the user profile is displayed wherever the user's information
     /// appears to other users in AWS CodeStar.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -622,7 +622,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a project, including project resources. Does not delete users associated with
     /// the project, but does delete the IAM roles that allowed access to the project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -725,7 +725,7 @@ pub mod fluent_builders {
     /// <p>Deletes a user profile in AWS CodeStar, including all personal preference data associated with
     /// that profile, such as display name and email address. It does not delete the history of that
     /// user, for example the history of commits made by that user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -795,7 +795,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
     /// <p>Describes a project and its resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -865,7 +865,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserProfile`.
     ///
     /// <p>Describes a user in AWS CodeStar and the user attributes across all projects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -938,7 +938,7 @@ pub mod fluent_builders {
     /// policies from that user that allowed access to the project and its resources. Disassociating a
     /// team member does not remove that user's profile from AWS CodeStar. It does not remove the user from
     /// IAM.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTeamMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1020,7 +1020,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Lists all projects in AWS CodeStar associated with your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1102,7 +1102,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResources`.
     ///
     /// <p>Lists resources associated with a project in AWS CodeStar.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1194,7 +1194,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForProject`.
     ///
     /// <p>Gets the tags for a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1284,7 +1284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTeamMembers`.
     ///
     /// <p>Lists all team members associated with a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTeamMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1376,7 +1376,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUserProfiles`.
     ///
     /// <p>Lists all the user profiles configured for your AWS account in AWS CodeStar.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1458,7 +1458,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagProject`.
     ///
     /// <p>Adds tags to a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1551,7 +1551,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagProject`.
     ///
     /// <p>Removes tags from a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1638,7 +1638,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
     /// <p>Updates a project in AWS CodeStar.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1730,7 +1730,7 @@ pub mod fluent_builders {
     /// <p>Updates a team member's attributes in an AWS CodeStar project. For example, you can change a
     /// team member's role in the project, or change whether they have remote access to project
     /// resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTeamMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1842,7 +1842,7 @@ pub mod fluent_builders {
     /// <p>Updates a user's profile in AWS CodeStar. The user profile is not project-specific.
     /// Information in the user profile is displayed wherever the user's information appears to other
     /// users in AWS CodeStar. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

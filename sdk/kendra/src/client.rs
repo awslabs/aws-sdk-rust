@@ -508,7 +508,7 @@ pub mod fluent_builders {
     /// search application. For more information on creating a search application
     /// experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
     /// a search experience with no code</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateEntitiesToExperience<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -609,7 +609,7 @@ pub mod fluent_builders {
     /// experience such as a search application. For more information on creating a
     /// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
     /// a search experience with no code</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePersonasToEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -718,7 +718,7 @@ pub mod fluent_builders {
     /// <p>The documents are deleted asynchronously. You can see the progress of
     /// the deletion by using Amazon Web Services CloudWatch. Any error messages related to the
     /// processing of the batch are sent to you CloudWatch log.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -837,7 +837,7 @@ pub mod fluent_builders {
     /// BatchDeleteDocument</a> operation. When a document is
     /// deleted from the index, Amazon Kendra returns <code>NOT_FOUND</code> as the
     /// status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDocumentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -940,7 +940,7 @@ pub mod fluent_builders {
     /// <p>The documents are indexed asynchronously. You can see the progress of
     /// the batch using Amazon Web Services CloudWatch. Any error messages related to processing
     /// the batch are sent to your Amazon Web Services CloudWatch log.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutDocument<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1128,7 +1128,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>ClearQuerySuggestions</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ClearQuerySuggestions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1207,7 +1207,7 @@ pub mod fluent_builders {
     /// Otherwise, an exception is raised.</p>
     /// <p>Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a> data sources are
     /// the only supported data sources in the Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1475,7 +1475,7 @@ pub mod fluent_builders {
     /// <p>Creates an Amazon Kendra experience such as a search application. For more information
     /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a
     /// search experience with no code</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExperience<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1614,7 +1614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFaq`.
     ///
     /// <p>Creates an new set of frequently asked question (FAQ) questions and answers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFaq<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1812,7 +1812,7 @@ pub mod fluent_builders {
     /// <p>Once the index is active you can index your documents using the
     /// <code>BatchPutDocument</code> operation or using one of the supported
     /// data sources. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2096,7 +2096,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>CreateQuerySuggestionsBlockList</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQuerySuggestionsBlockList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2269,7 +2269,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a thesaurus for an index. The thesaurus
     /// contains a list of synonyms in Solr format.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateThesaurus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2433,7 +2433,7 @@ pub mod fluent_builders {
     /// deleted, the <code>Status</code> field returned by a call to the
     /// <code>DescribeDataSource</code> operation is set to
     /// <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2517,7 +2517,7 @@ pub mod fluent_builders {
     /// <p>Deletes your Amazon Kendra experience such as a search application. For more information on
     /// creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search
     /// experience with no code</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExperience<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2597,7 +2597,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFaq`.
     ///
     /// <p>Removes an FAQ from an index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFaq<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2681,7 +2681,7 @@ pub mod fluent_builders {
     /// <code>Status</code> field returned by a call to the
     /// <code>DescribeIndex</code> operation is set to
     /// <code>DELETING</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2765,7 +2765,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>DeletePrincipalMapping</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePrincipalMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2916,7 +2916,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>DeleteQuerySuggestionsBlockList</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteQuerySuggestionsBlockList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2997,7 +2997,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an existing Amazon Kendra thesaurus.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteThesaurus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3077,7 +3077,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataSource`.
     ///
     /// <p>Gets information about a Amazon Kendra data source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3160,7 +3160,7 @@ pub mod fluent_builders {
     /// For more information on creating a search application experience,
     /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
     /// a search experience with no code</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExperience<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3242,7 +3242,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFaq`.
     ///
     /// <p>Gets information about an FAQ list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFaq<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3322,7 +3322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIndex`.
     ///
     /// <p>Describes an existing Amazon Kendra index</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3400,7 +3400,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>DescribePrincipalMapping</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePrincipalMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3510,7 +3510,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeQuerySuggestionsBlockList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3595,7 +3595,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>DescribeQuerySuggestionsConfig</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeQuerySuggestionsConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3667,7 +3667,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeThesaurus`.
     ///
     /// <p>Describes an existing Amazon Kendra thesaurus.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeThesaurus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3751,7 +3751,7 @@ pub mod fluent_builders {
     /// such as a search application. For more information on creating a search
     /// application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
     /// a search experience with no code</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateEntitiesFromExperience<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3854,7 +3854,7 @@ pub mod fluent_builders {
     /// experience such as a search application. For more information on creating a
     /// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a
     /// search experience with no code</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePersonasFromEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3956,7 +3956,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>GetQuerySuggestions</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQuerySuggestions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4062,7 +4062,7 @@ pub mod fluent_builders {
     /// <p>Retrieves search metrics data. The data provides a snapshot of how
     /// your users interact with your search application and how effective
     /// the application is.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4257,7 +4257,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataSources`.
     ///
     /// <p>Lists the data sources that you have created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4354,7 +4354,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets statistics about synchronizing Amazon Kendra with a data
     /// source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSourceSyncJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4493,7 +4493,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists specific permissions of users and groups with access to your
     /// Amazon Kendra experience.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntityPersonas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4601,7 +4601,7 @@ pub mod fluent_builders {
     /// such as a search application. For more information on creating a search
     /// application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
     /// a search experience with no code</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExperienceEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4698,7 +4698,7 @@ pub mod fluent_builders {
     /// as a search application. For more information on creating a search application
     /// experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a
     /// search experience with no code</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExperiences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4792,7 +4792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFaqs`.
     ///
     /// <p>Gets a list of FAQ lists associated with an index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFaqs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4892,7 +4892,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>ListGroupsOlderThanOrderingId</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroupsOlderThanOrderingId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5027,7 +5027,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIndices`.
     ///
     /// <p>Lists the Amazon Kendra indexes that you have created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIndices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5119,7 +5119,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>ListQuerySuggestionsBlockLists</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQuerySuggestionsBlockLists<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5222,7 +5222,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a list of tags associated with a specified resource. Indexes,
     /// FAQs, and data sources can have tags associated with them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5294,7 +5294,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListThesauri`.
     ///
     /// <p>Lists the Amazon Kendra thesauri associated with an index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListThesauri<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5408,7 +5408,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>PutPrincipalMapping</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPrincipalMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5611,7 +5611,7 @@ pub mod fluent_builders {
     /// <p>You can specify that the query return only one type of result using
     /// the <code>QueryResultTypeConfig</code> parameter.</p>
     /// <p>Each query returns the 100 most relevant results. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Query<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5910,7 +5910,7 @@ pub mod fluent_builders {
     /// <p>Starts a synchronization job for a data source. If a synchronization
     /// job is already in progress, Amazon Kendra returns a
     /// <code>ResourceInUseException</code> exception.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDataSourceSyncJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5991,7 +5991,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops a running synchronization job. You can't stop a scheduled
     /// synchronization job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDataSourceSyncJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6077,7 +6077,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>SubmitFeedback</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubmitFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6201,7 +6201,7 @@ pub mod fluent_builders {
     /// <p>Adds the specified tag to the specified index, FAQ, or data source
     /// resource. If the tag already exists, the existing value is replaced with
     /// the new value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6292,7 +6292,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from an index, FAQ, or a data source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6383,7 +6383,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataSource`.
     ///
     /// <p>Updates an existing Amazon Kendra data source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6577,7 +6577,7 @@ pub mod fluent_builders {
     /// <p>Updates your Amazon Kendra experience such as a search application. For more information on
     /// creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a
     /// search experience with no code</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateExperience<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6708,7 +6708,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIndex`.
     ///
     /// <p>Updates an existing Amazon Kendra index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6921,7 +6921,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>UpdateQuerySuggestionsBlockList</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQuerySuggestionsBlockList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7073,7 +7073,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>UpdateQuerySuggestionsConfig</code> is currently not supported in the
     /// Amazon Web Services GovCloud (US-West) region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQuerySuggestionsConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7262,7 +7262,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateThesaurus`.
     ///
     /// <p>Updates a thesaurus file associated with an index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateThesaurus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -303,7 +303,7 @@ pub mod fluent_builders {
     /// in its own directory and below. To learn more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a file system using EFS access
     /// points</a>.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccessPoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -506,7 +506,7 @@ pub mod fluent_builders {
     ///
     /// <p> This operation requires permissions for the
     /// <code>elasticfilesystem:CreateFileSystem</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -957,7 +957,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMountTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1080,7 +1080,7 @@ pub mod fluent_builders {
     /// tag to your file system, Amazon EFS returns it in the response to the <a>DescribeFileSystems</a> operation. </p>
     /// <p>This operation requires permission for the <code>elasticfilesystem:CreateTags</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1177,7 +1177,7 @@ pub mod fluent_builders {
     /// longer connect to the access points. Clients connected to the access point at the time of
     /// deletion will continue to function until they terminate their connection.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:DeleteAccessPoint</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccessPoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1264,7 +1264,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions for the
     /// <code>elasticfilesystem:DeleteFileSystem</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1340,7 +1340,7 @@ pub mod fluent_builders {
     /// The default <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted.
     /// For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using Resource-based Policies with EFS</a>.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystemPolicy</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFileSystemPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1446,7 +1446,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMountTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1529,7 +1529,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions for the <code>elasticfilesystem:DeleteTags</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1622,7 +1622,7 @@ pub mod fluent_builders {
     /// If you provide an EFS <code>FileSystemId</code>, it returns descriptions of all access points for that file system.
     /// You can provide either an <code>AccessPointId</code> or a <code>FileSystemId</code> in the request, but not both. </p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccessPoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1735,7 +1735,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the account preferences settings for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.
     /// For more information, see <a href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource IDs</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1821,7 +1821,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBackupPolicy`.
     ///
     /// <p>Returns the backup policy for the specified EFS file system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBackupPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1895,7 +1895,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the <code>FileSystemPolicy</code> for the specified EFS file system.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:DescribeFileSystemPolicy</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFileSystemPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1990,7 +1990,7 @@ pub mod fluent_builders {
     /// responses of a multi-call iteration is unspecified. </p>
     /// <p> This operation requires permissions for the
     /// <code>elasticfilesystem:DescribeFileSystems</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFileSystems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2115,7 +2115,7 @@ pub mod fluent_builders {
     /// <p>When EFS Intelligent Tiering is enabled, <code>TransitionToPrimaryStorageClass</code> has a value of <code>AFTER_1_ACCESS</code>.</p>
     /// <p>This operation requires permissions for the
     /// <code>elasticfilesystem:DescribeLifecycleConfiguration</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLifecycleConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2197,7 +2197,7 @@ pub mod fluent_builders {
     /// <code>elasticfilesystem:DescribeMountTargets</code> action, on either the file system ID
     /// that you specify in <code>FileSystemId</code>, or on the file system of the mount target that
     /// you specify in <code>MountTargetId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMountTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2345,7 +2345,7 @@ pub mod fluent_builders {
     /// network interface. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMountTargetSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2426,7 +2426,7 @@ pub mod fluent_builders {
     /// responses of a multiple-call iteration (when using pagination) is unspecified. </p>
     /// <p> This operation requires permissions for the
     /// <code>elasticfilesystem:DescribeTags</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2528,7 +2528,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all tags for a top-level EFS resource. You must provide the ID of the resource that you want to retrieve the tags for.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2637,7 +2637,7 @@ pub mod fluent_builders {
     /// interface. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyMountTargetSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2734,7 +2734,7 @@ pub mod fluent_builders {
     /// <p>Starting in October, 2021, you will receive an error if you try to set the account preference to use the short 8 character format resource ID.
     /// Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2817,7 +2817,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutBackupPolicy`.
     ///
     /// <p>Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBackupPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2914,7 +2914,7 @@ pub mod fluent_builders {
     /// <p>EFS file system policies have a 20,000 character limit.</p>
     /// </note>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFileSystemPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3059,7 +3059,7 @@ pub mod fluent_builders {
     /// <p>To apply a <code>LifecycleConfiguration</code> object to an encrypted file system, you
     /// need the same Key Management Service permissions as when you created the encrypted
     /// file system. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLifecycleConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3186,7 +3186,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a tag for an EFS resource. You can create tags for EFS file systems and access points using this API operation.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:TagResource</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3276,7 +3276,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes tags from an EFS resource. You can remove tags from EFS file systems and access points using this API operation.</p>
     /// <p>This operation requires permissions for the <code>elasticfilesystem:UntagResource</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3366,7 +3366,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the throughput mode or the amount of provisioned throughput of an existing file
     /// system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -290,7 +290,7 @@ pub mod fluent_builders {
     /// </ul>
     ///
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIdentityPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -527,7 +527,7 @@ pub mod fluent_builders {
     /// <p>Deletes identities from an identity pool. You can specify a list of 1-60 identities
     /// that you want to delete.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -606,7 +606,7 @@ pub mod fluent_builders {
     /// <p>Deletes an identity pool. Once a pool is deleted, users will not be able to
     /// authenticate with the pool.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIdentityPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -681,7 +681,7 @@ pub mod fluent_builders {
     /// <p>Returns metadata related to the given identity, including when the identity was
     /// created and any associated linked logins.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -753,7 +753,7 @@ pub mod fluent_builders {
     /// <p>Gets details about a particular identity pool, including the pool name, ID
     /// description, creation date, and current number of users.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdentityPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -830,7 +830,7 @@ pub mod fluent_builders {
     /// cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service
     /// with the appropriate role for the token.</p>
     /// <p>This is a public API. You do not need any credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCredentialsForIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -960,7 +960,7 @@ pub mod fluent_builders {
     /// <p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an
     /// implicit linked account.</p>
     /// <p>This is a public API. You do not need any credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1125,7 +1125,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the roles for an identity pool.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityPoolRoles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1202,7 +1202,7 @@ pub mod fluent_builders {
     /// Supplying multiple logins creates an implicit link.</p>
     /// <p>The OpenID token is valid for 10 minutes.</p>
     /// <p>This is a public API. You do not need any credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOpenIdToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1313,7 +1313,7 @@ pub mod fluent_builders {
     /// <code>IdentityId</code>. This API will create the identity in the specified
     /// <code>IdentityPoolId</code>.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOpenIdTokenForDeveloperIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1486,7 +1486,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPrincipalTagAttributeMap`.
     ///
     /// <p>Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between <code>PrincipalTags</code> and user attributes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPrincipalTagAttributeMap<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1573,7 +1573,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the identities in an identity pool.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1679,7 +1679,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all of the Cognito identity pools registered for your account.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentityPools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1762,7 +1762,7 @@ pub mod fluent_builders {
     /// <p>A tag is a label that you can apply to identity pools to categorize and manage them in
     /// different ways, such as by purpose, owner, environment, or other criteria.</p>
     /// <p>You can use this action up to 10 times per second, per account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1850,7 +1850,7 @@ pub mod fluent_builders {
     /// are likely to be throttled. <a>GetOpenIdTokenForDeveloperIdentity</a> is a
     /// better option for higher-volume operations for user authentication.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LookupDeveloperIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1995,7 +1995,7 @@ pub mod fluent_builders {
     /// <code>DestinationUserIdentifier</code>, together should not be larger than 20.
     /// Otherwise, an exception will be thrown.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergeDeveloperIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2126,7 +2126,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sets the roles for an identity pool. These roles are used when making calls to <a>GetCredentialsForIdentity</a> action.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIdentityPoolRoles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2255,7 +2255,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetPrincipalTagAttributeMap`.
     ///
     /// <p>You can use this operation to use default (username and clientID) attribute or custom attribute mappings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetPrincipalTagAttributeMap<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2388,7 +2388,7 @@ pub mod fluent_builders {
     /// identity pools based on specific tags or tag values.</p>
     /// <p>You can use this action up to 5 times per second, per account. An identity pool can have
     /// as many as 50 tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2485,7 +2485,7 @@ pub mod fluent_builders {
     /// Cognito identity, you remove all federated identities as well as the developer user
     /// identifier, the Cognito identity becomes inaccessible.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnlinkDeveloperIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2603,7 +2603,7 @@ pub mod fluent_builders {
     /// considered new identities next time they are seen. Removing the last linked login will make
     /// this identity inaccessible.</p>
     /// <p>This is a public API. You do not need any credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnlinkIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2716,7 +2716,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the specified tags from the specified Amazon Cognito identity pool. You can use
     /// this action up to 5 times per second, per account</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2804,7 +2804,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an identity pool.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIdentityPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

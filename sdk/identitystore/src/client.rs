@@ -123,7 +123,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeGroup`.
     ///
     /// <p>Retrieves the group metadata and attributes from <code>GroupId</code> in an identity store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -214,7 +214,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUser`.
     ///
     /// <p>Retrieves the user metadata and attributes from <code>UserId</code> in an identity store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -307,7 +307,7 @@ pub mod fluent_builders {
     /// <p>Lists the attribute name and value of the group that you specified in the search. We only support <code>DisplayName</code> as a valid filter
     /// attribute path currently, and filter is required. This API returns minimum attributes, including <code>GroupId</code> and group
     /// <code>DisplayName</code> in the response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -437,7 +437,7 @@ pub mod fluent_builders {
     /// <p>Lists the attribute name and value of the user that you specified in the search. We only support <code>UserName</code> as a valid filter attribute
     /// path currently, and filter is required. This API returns minimum attributes, including <code>UserId</code> and <code>UserName</code> in the
     /// response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

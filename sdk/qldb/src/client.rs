@@ -249,7 +249,7 @@ pub mod fluent_builders {
     /// <p>You can't restart a stream after you cancel it. Canceled QLDB stream resources are
     /// subject to a 7-day retention period, so they are automatically deleted after this limit
     /// expires.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelJournalKinesisStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -331,7 +331,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLedger`.
     ///
     /// <p>Creates a new ledger in your account in the current Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLedger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -632,7 +632,7 @@ pub mod fluent_builders {
     /// <p>Deletes a ledger and all of its contents. This action is irreversible.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the
     /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLedger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -707,7 +707,7 @@ pub mod fluent_builders {
     /// <p>This action does not return any expired journal streams. For more information, see
     /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration for terminal streams</a> in the <i>Amazon QLDB Developer
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJournalKinesisStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -797,7 +797,7 @@ pub mod fluent_builders {
     /// <code>ResourceNotFoundException</code>.</p>
     /// <p>If the ledger with the given <code>Name</code> doesn't exist, then throws
     /// <code>ResourceNotFoundException</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJournalS3Export<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -880,7 +880,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about a ledger, including its state, permissions mode, encryption at
     /// rest settings, and when it was created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLedger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -957,7 +957,7 @@ pub mod fluent_builders {
     /// throws <code>ResourcePreconditionNotMetException</code>.</p>
     /// <p>You can initiate up to two concurrent journal export requests for each ledger. Beyond
     /// this limit, journal export requests throw <code>LimitExceededException</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportJournalToS3<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1134,7 +1134,7 @@ pub mod fluent_builders {
     /// <code>ResourcePreconditionNotMetException</code>.</p>
     /// <p>If no block exists with the specified address, then throws
     /// <code>InvalidParameterException</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1241,7 +1241,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the digest of a ledger at the latest committed block in the journal. The
     /// response includes a 256-bit hash value and a block address.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDigest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1313,7 +1313,7 @@ pub mod fluent_builders {
     /// <p>Returns a revision data object for a specified document ID and block address. Also
     /// returns a proof of the specified revision for verification if <code>DigestTipAddress</code>
     /// is provided.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1437,7 +1437,7 @@ pub mod fluent_builders {
     /// <p>This action returns a maximum of <code>MaxResults</code> items. It is paginated so that
     /// you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code>
     /// multiple times.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJournalKinesisStreamsForLedger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1545,7 +1545,7 @@ pub mod fluent_builders {
     /// times.</p>
     /// <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJournalS3Exports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1638,7 +1638,7 @@ pub mod fluent_builders {
     /// multiple times.</p>
     /// <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJournalS3ExportsForLedger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1741,7 +1741,7 @@ pub mod fluent_builders {
     /// and Region.</p>
     /// <p>This action returns a maximum of 100 items and is paginated so that you can
     /// retrieve all the items by calling <code>ListLedgers</code> multiple times.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLedgers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1827,7 +1827,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns all tags for a specified Amazon QLDB resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1905,7 +1905,7 @@ pub mod fluent_builders {
     /// <p>Creates a journal stream for a given Amazon QLDB ledger. The stream captures every
     /// document revision that is committed to the ledger's journal and delivers the data to a
     /// specified Amazon Kinesis Data Streams resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StreamJournalToKinesis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2101,7 +2101,7 @@ pub mod fluent_builders {
     /// <p>Adds one or more tags to a specified Amazon QLDB resource.</p>
     /// <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a
     /// resource, your request fails and returns an error.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2208,7 +2208,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes one or more tags from a specified Amazon QLDB resource. You can specify up to 50
     /// tag keys to remove.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2301,7 +2301,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLedger`.
     ///
     /// <p>Updates properties on a ledger.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLedger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2501,7 +2501,7 @@ pub mod fluent_builders {
     /// learn more, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating to the standard permissions mode</a> in the <i>Amazon QLDB
     /// Developer Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLedgerPermissionsMode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

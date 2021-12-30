@@ -186,7 +186,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFHIRDatastore`.
     ///
     /// <p>Creates a Data Store that can ingest and export FHIR formatted data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFHIRDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -335,7 +335,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFHIRDatastore`.
     ///
     /// <p>Deletes a Data Store. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFHIRDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -407,7 +407,7 @@ pub mod fluent_builders {
     /// <p>Gets the properties associated with the FHIR Data Store, including the Data Store ID,
     /// Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and
     /// Data Store endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFHIRDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -477,7 +477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFHIRExportJob`.
     ///
     /// <p>Displays the properties of a FHIR export job, including the ID, ARN, name, and the status of the job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFHIRExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -557,7 +557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFHIRImportJob`.
     ///
     /// <p>Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFHIRImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -638,7 +638,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store
     /// status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFHIRDatastores<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -735,7 +735,7 @@ pub mod fluent_builders {
     /// <p>
     /// Lists all FHIR export jobs associated with an account and their statuses.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFHIRExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -904,7 +904,7 @@ pub mod fluent_builders {
     /// <p>
     /// Lists all FHIR import jobs associated with an account and their statuses.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFHIRImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1073,7 +1073,7 @@ pub mod fluent_builders {
     /// <p>
     /// Returns a list of all existing tags associated with a Data Store.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1147,7 +1147,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFHIRExportJob`.
     ///
     /// <p>Begins a FHIR export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFHIRExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1263,7 +1263,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFHIRImportJob`.
     ///
     /// <p>Begins a FHIR Import job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFHIRImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1394,7 +1394,7 @@ pub mod fluent_builders {
     /// <p>
     /// Adds a user specifed key and value tag to a Data Store.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1491,7 +1491,7 @@ pub mod fluent_builders {
     /// <p>
     /// Removes tags from a Data Store.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -595,7 +595,7 @@ pub mod fluent_builders {
     /// create recovery points for resources.</p>
     /// <p>If you call <code>CreateBackupPlan</code> with a plan that already exists, you receive
     /// an <code>AlreadyExistsException</code> exception.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -718,7 +718,7 @@ pub mod fluent_builders {
     /// <p>Creates a JSON document that specifies a set of resources to assign to a backup plan.
     /// For examples, see <a href="https://docs.aws.amazon.com/assigning-resources.html#assigning-resources-json">Assigning resources
     /// programmatically</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackupSelection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -829,7 +829,7 @@ pub mod fluent_builders {
     /// <p>Do not include sensitive data, such as passport numbers, in the name of a backup
     /// vault.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackupVault<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -966,7 +966,7 @@ pub mod fluent_builders {
     /// that you can use to evaluate your backup practices. By using pre-built customizable
     /// controls to define your policies, you can evaluate whether your backup practices comply
     /// with your policies and which resources are not yet in compliance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1120,7 +1120,7 @@ pub mod fluent_builders {
     /// contents of the report and where Backup will deliver it.</p>
     /// <p>If you call <code>CreateReportPlan</code> with a plan that already exists, you receive
     /// an <code>AlreadyExistsException</code> exception.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReportPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1306,7 +1306,7 @@ pub mod fluent_builders {
     /// <p>Deletes a backup plan. A backup plan can only be deleted after all associated selections
     /// of resources have been deleted. Deleting a backup plan deletes the current version of a
     /// backup plan. Previous versions, if any, will still exist.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1380,7 +1380,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the resource selection associated with a backup plan that is specified by the
     /// <code>SelectionId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackupSelection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1466,7 +1466,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the backup vault identified by its name. A vault can be deleted only if it is
     /// empty.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackupVault<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1545,7 +1545,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackupVaultAccessPolicy`.
     ///
     /// <p>Deletes the policy document that manages permissions on a backup vault.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackupVaultAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1629,7 +1629,7 @@ pub mod fluent_builders {
     /// API operations, and you will receive an <code>InvalidRequestException</code> if you attempt
     /// to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault Lock</a> in the
     /// <i>Backup Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackupVaultLockConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1704,7 +1704,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackupVaultNotifications`.
     ///
     /// <p>Deletes event notifications for the specified backup vault.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackupVaultNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1781,7 +1781,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFramework`.
     ///
     /// <p>Deletes the framework specified by a framework name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1856,7 +1856,7 @@ pub mod fluent_builders {
     /// <p>Deletes the recovery point specified by a recovery point ID.</p>
     /// <p>If the recovery point ID belongs to a continuous backup, calling this endpoint deletes
     /// the existing continuous backup and stops future continuous backup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecoveryPoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1950,7 +1950,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReportPlan`.
     ///
     /// <p>Deletes the report plan specified by a report plan name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReportPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2023,7 +2023,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBackupJob`.
     ///
     /// <p>Returns backup job details for the specified <code>BackupJobId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBackupJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2096,7 +2096,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBackupVault`.
     ///
     /// <p>Returns metadata about a backup vault specified by its name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBackupVault<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2175,7 +2175,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCopyJob`.
     ///
     /// <p>Returns metadata associated with creating a copy of a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCopyJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2245,7 +2245,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFramework`.
     ///
     /// <p>Returns the framework details for the specified <code>FrameworkName</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2321,7 +2321,7 @@ pub mod fluent_builders {
     /// Returns an error if the account is not a member of an Organizations organization.
     /// Example: <code>describe-global-settings --region us-west-2</code>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGlobalSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2383,7 +2383,7 @@ pub mod fluent_builders {
     /// <p>Returns information about a saved resource, including the last time it was backed up,
     /// its Amazon Resource Name (ARN), and the Amazon Web Services service type of the saved
     /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProtectedResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2456,7 +2456,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns metadata associated with a recovery point, including ID, status, encryption, and
     /// lifecycle.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecoveryPoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2554,7 +2554,7 @@ pub mod fluent_builders {
     /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
     /// Backup does not try to protect that service's resources in this
     /// Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRegionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2615,7 +2615,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the details associated with creating a report as specified by its
     /// <code>ReportJobId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2690,7 +2690,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReportPlan`.
     ///
     /// <p>Returns a list of all report plans for an Amazon Web Services account and Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReportPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2763,7 +2763,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRestoreJob`.
     ///
     /// <p>Returns metadata associated with a restore job that is specified by a job ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRestoreJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2839,7 +2839,7 @@ pub mod fluent_builders {
     /// releases control of that continuous backup to the source service, such as Amazon RDS. The source service will continue to create and retain continuous backups using the
     /// lifecycle that you specified in your original backup plan.</p>
     /// <p>Does not support snapshot backup recovery points.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateRecoveryPoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2927,7 +2927,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExportBackupPlanTemplate`.
     ///
     /// <p>Returns the backup plan that is specified by the plan ID as a backup template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportBackupPlanTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3001,7 +3001,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>. The
     /// details are the body of a backup plan in JSON format, in addition to plan metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3086,7 +3086,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackupPlanFromJSON`.
     ///
     /// <p>Returns a valid JSON document specifying a backup plan or an error.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackupPlanFromJSON<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3162,7 +3162,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackupPlanFromTemplate`.
     ///
     /// <p>Returns the template specified by its <code>templateId</code> as a backup plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackupPlanFromTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3239,7 +3239,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns selection metadata and a document in JSON format that specifies a list of
     /// resources that are associated with a backup plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackupSelection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3325,7 +3325,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the access policy document that is associated with the named backup
     /// vault.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackupVaultAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3404,7 +3404,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackupVaultNotifications`.
     ///
     /// <p>Returns event notifications for the specified backup vault.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackupVaultNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3483,7 +3483,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecoveryPointRestoreMetadata`.
     ///
     /// <p>Returns a set of metadata key-value pairs that were used to create the backup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecoveryPointRestoreMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3577,7 +3577,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSupportedResourceTypes`.
     ///
     /// <p>Returns the Amazon Web Services resource types supported by Backup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSupportedResourceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3638,7 +3638,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of existing backup jobs for an authenticated account for the last 30
     /// days. For a longer period of time, consider using these <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">monitoring tools</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3891,7 +3891,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of all active backup plans for an authenticated account. The list
     /// contains information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion
     /// dates, version IDs, plan names, and creator request IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupPlans<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3990,7 +3990,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns metadata of your saved backup plan templates, including the template ID, name,
     /// and the creation and deletion dates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupPlanTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4077,7 +4077,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns version metadata of your backup plans, including Amazon Resource Names (ARNs),
     /// backup plan IDs, creation and deletion dates, plan names, and version IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupPlanVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4177,7 +4177,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns an array containing metadata of the resources associated with the target backup
     /// plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupSelections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4277,7 +4277,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of recovery point storage containers along with information about
     /// them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupVaults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4363,7 +4363,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCopyJobs`.
     ///
     /// <p>Returns metadata about your copy jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCopyJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4609,7 +4609,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFrameworks`.
     ///
     /// <p>Returns a list of all frameworks for an Amazon Web Services account and Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFrameworks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4695,7 +4695,7 @@ pub mod fluent_builders {
     /// <p>Returns an array of resources successfully backed up by Backup, including
     /// the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a
     /// resource type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProtectedResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4781,7 +4781,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRecoveryPointsByBackupVault`.
     ///
     /// <p>Returns detailed information about the recovery points stored in a backup vault.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecoveryPointsByBackupVault<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4966,7 +4966,7 @@ pub mod fluent_builders {
     /// <p>For Amazon EFS and Amazon EC2, this action only lists recovery points
     /// created by Backup.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecoveryPointsByResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5070,7 +5070,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReportJobs`.
     ///
     /// <p>Returns details about your report jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5218,7 +5218,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of your report plans. For detailed information about a single report
     /// plan, use <code>DescribeReportPlan</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReportPlans<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5303,7 +5303,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of jobs that Backup initiated to restore a saved resource,
     /// including details about the recovery process.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRestoreJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5449,7 +5449,7 @@ pub mod fluent_builders {
     /// <code>ListTags</code> are currently only supported with Amazon EFS
     /// backups.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5551,7 +5551,7 @@ pub mod fluent_builders {
     /// <p>Sets a resource-based policy that is used to manage access permissions on the target
     /// backup vault. Requires a backup vault name and an access policy document in JSON
     /// format.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBackupVaultAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5648,7 +5648,7 @@ pub mod fluent_builders {
     /// <p>Backup Vault Lock has yet to receive a third-party assessment for SEC
     /// 17a-4(f) and CFTC.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBackupVaultLockConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5823,7 +5823,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutBackupVaultNotifications`.
     ///
     /// <p>Turns on notifications on a backup vault for the specified topic and events.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBackupVaultNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5988,7 +5988,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBackupJob`.
     ///
     /// <p>Starts an on-demand backup job for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBackupJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6222,7 +6222,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts a job to create a one-time copy of the specified resource.</p>
     /// <p>Does not support continuous backups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCopyJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6393,7 +6393,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartReportJob`.
     ///
     /// <p>Starts an on-demand report job for the specified report plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6483,7 +6483,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartRestoreJob`.
     ///
     /// <p>Recovers the saved resource identified by an Amazon Resource Name (ARN).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRestoreJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6781,7 +6781,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopBackupJob`.
     ///
     /// <p>Attempts to cancel a job to create a one-time backup of a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopBackupJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6855,7 +6855,7 @@ pub mod fluent_builders {
     ///
     /// <p>Assigns a set of key-value pairs to a recovery point, backup plan, or backup vault
     /// identified by an Amazon Resource Name (ARN).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6955,7 +6955,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes a set of key-value pairs from a recovery point, backup plan, or backup vault
     /// identified by an Amazon Resource Name (ARN)</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7046,7 +7046,7 @@ pub mod fluent_builders {
     /// <p>Updates an existing backup plan identified by its <code>backupPlanId</code> with the
     /// input document in JSON format. The new version is uniquely identified by a
     /// <code>VersionId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7135,7 +7135,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an existing framework identified by its <code>FrameworkName</code> with the
     /// input document in JSON format.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7261,7 +7261,7 @@ pub mod fluent_builders {
     /// <p>Updates whether the Amazon Web Services account is opted in to cross-account backup.
     /// Returns an error if the account is not an Organizations management account. Use the
     /// <code>DescribeGlobalSettings</code> API to determine the current settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGlobalSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7357,7 +7357,7 @@ pub mod fluent_builders {
     /// be changed after a backup has been transitioned to cold.</p>
     /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
     /// <p>Does not support continuous backups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecoveryPointLifecycle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7481,7 +7481,7 @@ pub mod fluent_builders {
     /// Backup does not try to protect that service's resources in this Region. Use
     /// the <code>DescribeRegionSettings</code> API to determine the resource types that are
     /// supported.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRegionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7590,7 +7590,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an existing report plan identified by its <code>ReportPlanName</code> with the
     /// input document in JSON format.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReportPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

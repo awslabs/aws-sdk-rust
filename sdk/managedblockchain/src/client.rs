@@ -257,7 +257,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a member within a Managed Blockchain network.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -370,7 +370,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new blockchain network using Amazon Managed Blockchain.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -570,7 +570,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a node on the specified blockchain network.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -742,7 +742,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a proposal for a change to the network that other members of the network can vote on, for example, a proposal to add a new member to the network. Any member can create a proposal.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProposal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -888,7 +888,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a member. Deleting a member removes the member and all associated resources from the network. <code>DeleteMember</code> can only be called for a specified <code>MemberId</code> if the principal performing the action is associated with the AWS account that owns the member. In all other cases, the <code>DeleteMember</code> action is carried out as the result of an approved proposal to remove a member. If <code>MemberId</code> is the last member in a network specified by the last AWS account, the network is deleted also.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -969,7 +969,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a node that your AWS account owns. All data on the node is lost and cannot be recovered.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1098,7 +1098,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns detailed information about a member.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1179,7 +1179,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns detailed information about a network.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1250,7 +1250,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns detailed information about a node.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1343,7 +1343,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns detailed information about a proposal.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProposal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1424,7 +1424,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of all invitations for the current AWS account.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1505,7 +1505,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of the members in a network and properties of their configurations.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1633,7 +1633,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the networks in which the current AWS account participates.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNetworks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1752,7 +1752,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the nodes within a network.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNodes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1865,7 +1865,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of proposals for the network.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProposals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1968,7 +1968,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the list of votes for a specified proposal, including the value of each vote and the unique identifier of the member that cast the vote.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProposalVotes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2085,7 +2085,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of tags for the specified resource. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2156,7 +2156,7 @@ pub mod fluent_builders {
     ///
     /// <p>Rejects an invitation to join a network. This action can be called by a principal in an AWS account that has received an invitation to create a member and join a network.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2232,7 +2232,7 @@ pub mod fluent_builders {
     /// <p>When you specify a tag key that already exists, the tag value is overwritten with the new value. Use <code>UntagResource</code> to remove tag keys.</p>
     /// <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and returns an error.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2326,7 +2326,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the specified tags from the Amazon Managed Blockchain resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2414,7 +2414,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a member configuration with new parameters.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2511,7 +2511,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a node configuration with new parameters.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2620,7 +2620,7 @@ pub mod fluent_builders {
     ///
     /// <p>Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by <code>VoterMemberId</code>, must be in the same AWS account as the principal that calls the action.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VoteOnProposal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

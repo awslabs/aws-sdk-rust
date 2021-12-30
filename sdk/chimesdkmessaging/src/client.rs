@@ -436,7 +436,7 @@ pub mod fluent_builders {
     /// <p>Only administrators or channel moderators can associate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
     /// of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -529,7 +529,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchCreateChannelMembership`.
     ///
     /// <p>Adds a specified number of users to a channel. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -659,7 +659,7 @@ pub mod fluent_builders {
     /// <p>Make no changes to the message</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ChannelFlowCallback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -772,7 +772,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -947,7 +947,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelBan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1058,7 +1058,7 @@ pub mod fluent_builders {
     /// <p>Channel flows don't process Control or System messages. For more information about the message types provided by Chime SDK Messaging, refer to
     /// <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in the <i>Amazon Chime developer guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1225,7 +1225,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1360,7 +1360,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelModerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1460,7 +1460,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1546,7 +1546,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelBan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1640,7 +1640,7 @@ pub mod fluent_builders {
     /// <p> This API works only when the channel flow is not associated with any channel. To get a list of all channels that a channel flow is associated with, use the
     /// <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all channels. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1719,7 +1719,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1817,7 +1817,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1913,7 +1913,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelModerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2014,7 +2014,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2101,7 +2101,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelBan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2191,7 +2191,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeChannelFlow`.
     ///
     /// <p>Returns the full details of a channel flow in an Amazon Chime <code>AppInstance</code>. This is a developer API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2269,7 +2269,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2366,7 +2366,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelMembershipForAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2468,7 +2468,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelModeratedByAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2568,7 +2568,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelModerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2666,7 +2666,7 @@ pub mod fluent_builders {
     /// <p>Only administrators or channel moderators can disassociate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
     /// of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2761,7 +2761,7 @@ pub mod fluent_builders {
     /// <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel.
     /// Only the <code>AppInstanceUser</code> who owns the membership can retrieve preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences for other users.
     /// Banned users can't retrieve membership preferences for the channel from which they are banned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelMembershipPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2857,7 +2857,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2983,7 +2983,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelMessageStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3073,7 +3073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMessagingSessionEndpoint`.
     ///
     /// <p>The details of the endpoint for the messaging session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMessagingSessionEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3139,7 +3139,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelBans<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3239,7 +3239,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChannelFlows`.
     ///
     /// <p>Returns a paginated lists of all the channel flows created under a single Chime. This is a developer API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelFlows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3341,7 +3341,7 @@ pub mod fluent_builders {
     ///
     /// <p>If you want to list the channels to which a specific app instance user belongs, see the
     /// <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMemberships<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3469,7 +3469,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMembershipsForAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3586,7 +3586,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3732,7 +3732,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelModerators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3855,7 +3855,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3975,7 +3975,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChannelsAssociatedWithChannelFlow`.
     ///
     /// <p>Lists all channels associated with a specified channel flow. You can associate a channel flow with multiple channels, but you can only associate a channel with one channel flow. This is a developer API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelsAssociatedWithChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4076,7 +4076,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelsModeratedByAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4183,7 +4183,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags applied to an Amazon Chime SDK messaging resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4255,7 +4255,7 @@ pub mod fluent_builders {
     /// <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel.
     /// Only the <code>AppInstanceUser</code> who owns the membership can set preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences for other users.
     /// Banned users can't set membership preferences for the channel from which they are banned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutChannelMembershipPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4368,7 +4368,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RedactChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4467,7 +4467,7 @@ pub mod fluent_builders {
     /// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
     /// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4648,7 +4648,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies the specified tags to the specified Amazon Chime SDK messaging resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4735,7 +4735,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified Amazon Chime SDK messaging resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4829,7 +4829,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4939,7 +4939,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannelFlow`.
     ///
     /// <p>Updates channel flow attributes. This is a developer API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5045,7 +5045,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5161,7 +5161,7 @@ pub mod fluent_builders {
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelReadMarker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

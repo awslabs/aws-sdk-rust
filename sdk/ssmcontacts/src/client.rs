@@ -284,7 +284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptPage`.
     ///
     /// <p>Used to acknowledge an engagement to a contact channel during an incident.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptPage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -431,7 +431,7 @@ pub mod fluent_builders {
     ///
     /// <p>Activates a contact's contact channel. Incident Manager can't engage a contact until the
     /// contact channel has been activated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -519,7 +519,7 @@ pub mod fluent_builders {
     /// <p>Contacts are either the contacts that Incident Manager engages during an incident or the
     /// escalation plans that Incident Manager uses to engage contacts in phases during an
     /// incident. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -659,7 +659,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContactChannel`.
     ///
     /// <p>A contact channel is the method that Incident Manager uses to engage your contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -850,7 +850,7 @@ pub mod fluent_builders {
     ///
     /// <p>To no longer receive Incident Manager engagements to a contact channel, you can deactivate
     /// the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeactivateContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -926,7 +926,7 @@ pub mod fluent_builders {
     /// removes them from all escalation plans and related response plans. Deleting an escalation
     /// plan removes it from all related response plans. You will have to recreate the contact and
     /// its contact channels before you can use it again.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -999,7 +999,7 @@ pub mod fluent_builders {
     /// contact. Deleting the contact channel removes it from the contact's engagement plan. If you
     /// delete the only contact channel for a contact, you won't be able to engage that contact
     /// during an incident.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1073,7 +1073,7 @@ pub mod fluent_builders {
     ///
     /// <p>Incident Manager uses engagements to engage contacts and escalation plans during an incident.
     /// Use this command to describe the engagement that occurred during an incident.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEngagement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1146,7 +1146,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePage`.
     ///
     /// <p>Lists details of the engagement to a contact channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1216,7 +1216,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContact`.
     ///
     /// <p>Retrieves information about the specified contact or escalation plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1286,7 +1286,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContactChannel`.
     ///
     /// <p>List details about a specific contact channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1360,7 +1360,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the resource policies attached to the specified contact or escalation
     /// plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1430,7 +1430,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContactChannels`.
     ///
     /// <p>Lists all contact channels for the specified contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1520,7 +1520,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContacts`.
     ///
     /// <p>Lists all contacts and escalation plans in Incident Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1622,7 +1622,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEngagements`.
     ///
     /// <p>Lists all engagements that have happened in an incident.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEngagements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1725,7 +1725,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPageReceipts`.
     ///
     /// <p>Lists all of the engagements to contact channels that have been acknowledged. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPageReceipts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1815,7 +1815,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPagesByContact`.
     ///
     /// <p>Lists the engagements to a contact's contact channels.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPagesByContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1905,7 +1905,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPagesByEngagement`.
     ///
     /// <p>Lists the engagements to contact channels that occurred by engaging a contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPagesByEngagement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2000,7 +2000,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags of an escalation plan or contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2070,7 +2070,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutContactPolicy`.
     ///
     /// <p>Adds a resource to the specified contact or escalation plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutContactPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2152,7 +2152,7 @@ pub mod fluent_builders {
     /// <p>Sends an activation code to a contact channel. The contact can use this code to activate
     /// the contact channel in the console or with the <code>ActivateChannel</code> operation.
     /// Incident Manager can't engage a contact channel until it has been activated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendActivationCode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2226,7 +2226,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts an engagement to a contact or escalation plan. The engagement engages each
     /// contact specified in the incident.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartEngagement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2386,7 +2386,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops an engagement before it finishes the final stage of the escalation plan or
     /// engagement plan. Further contacts aren't engaged.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopEngagement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2470,7 +2470,7 @@ pub mod fluent_builders {
     ///
     /// <p>Tags a contact or escalation plan. You can tag only contacts and escalation plans in the
     /// first region of your replication set. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2557,7 +2557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from the specified resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2644,7 +2644,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContact`.
     ///
     /// <p>Updates the contact or escalation plan specified. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2736,7 +2736,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactChannel`.
     ///
     /// <p>Updates a contact's contact channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

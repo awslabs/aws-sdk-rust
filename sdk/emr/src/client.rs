@@ -493,7 +493,7 @@ pub mod fluent_builders {
     /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
     /// later, excluding 5.0.x.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddInstanceFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -576,7 +576,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddInstanceGroups`.
     ///
     /// <p>Adds one or more instance groups to a running cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddInstanceGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -679,7 +679,7 @@ pub mod fluent_builders {
     /// step was running must have completed and run successfully.</p>
     /// <p>You can only add steps to a cluster that is in one of the following states: STARTING,
     /// BOOTSTRAPPING, RUNNING, or WAITING.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddJobFlowSteps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -770,7 +770,7 @@ pub mod fluent_builders {
     /// <p>Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR Studio. Tags make it easier to associate resources in
     /// various ways, such as grouping clusters to track your Amazon EMR resource allocation costs.
     /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -866,7 +866,7 @@ pub mod fluent_builders {
     /// versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed in
     /// each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not guarantee
     /// that a step will be canceled, even if the request is successfully submitted. When you use Amazon EMR versions 5.28.0 and later, you can cancel steps that are in a <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon EMR, you can only cancel steps that are in a <code>PENDING</code> state. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSteps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -974,7 +974,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a security configuration, which is stored in the service and can be specified
     /// when a cluster is created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1063,7 +1063,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStudio`.
     ///
     /// <p>Creates a new Amazon EMR Studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1313,7 +1313,7 @@ pub mod fluent_builders {
     ///
     /// <p>Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and
     /// applies a session policy to refine Studio permissions for that user or group. Use <code>CreateStudioSessionMapping</code> to assign users to a Studio when you use Amazon Web Services SSO authentication. For instructions on how to assign users to a Studio when you use IAM authentication, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign a user or group to your EMR Studio</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStudioSessionMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1440,7 +1440,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSecurityConfiguration`.
     ///
     /// <p>Deletes a security configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1510,7 +1510,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStudio`.
     ///
     /// <p>Removes an Amazon EMR Studio from the Studio metadata store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1580,7 +1580,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStudioSessionMapping`.
     ///
     /// <p>Removes a user or group from an Amazon EMR Studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStudioSessionMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1695,7 +1695,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides cluster-level details including status, hardware and software configuration,
     /// VPC settings, and so on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1785,7 +1785,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>Amazon EMR can return a maximum of 512 job flow descriptions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobFlows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1905,7 +1905,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNotebookExecution`.
     ///
     /// <p>Provides details of a notebook execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNotebookExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1978,7 +1978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReleaseLabel`.
     ///
     /// <p>Provides EMR release label details, such as releases available the region where the API request is run, and the available applications for a specific EMR release label. Can also list EMR release versions that support a specified version of Spark.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReleaseLabel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2072,7 +2072,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides the details of a security configuration by returning the configuration
     /// JSON.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2142,7 +2142,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStep`.
     ///
     /// <p>Provides more detail about the cluster step.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStep<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2223,7 +2223,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio
     /// access URL, and so on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2293,7 +2293,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAutoTerminationPolicy`.
     ///
     /// <p>Returns the auto-termination policy for an Amazon EMR cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAutoTerminationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2366,7 +2366,7 @@ pub mod fluent_builders {
     /// current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block
     /// Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlockPublicAccessConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2426,7 +2426,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetManagedScalingPolicy`.
     ///
     /// <p>Fetches the attached managed scaling policy for an Amazon EMR cluster. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetManagedScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2499,7 +2499,7 @@ pub mod fluent_builders {
     ///
     /// <p>Fetches mapping details for the specified Amazon EMR Studio and identity (user or
     /// group).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStudioSessionMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2611,7 +2611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBootstrapActions`.
     ///
     /// <p>Provides information about the bootstrap actions associated with a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBootstrapActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2695,7 +2695,7 @@ pub mod fluent_builders {
     /// date and time or by status. This call returns a maximum of 50 clusters in unsorted order per call, but
     /// returns a marker to track the paging of the cluster list across multiple ListClusters
     /// calls.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2812,7 +2812,7 @@ pub mod fluent_builders {
     /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
     /// later, excluding 5.0.x versions.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2892,7 +2892,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstanceGroups`.
     ///
     /// <p>Provides all available details about the instance groups in a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2974,7 +2974,7 @@ pub mod fluent_builders {
     /// <p>Provides information for all active EC2 instances and EC2 instances terminated in the
     /// last 30 days, up to a maximum of 2,000. EC2 instances in any of the following states are
     /// considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3132,7 +3132,7 @@ pub mod fluent_builders {
     /// criteria such as status, time range, and editor id. Returns a maximum of 50 notebook
     /// executions and a marker to track the paging of a longer notebook execution list across
     /// multiple <code>ListNotebookExecution</code> calls.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotebookExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3355,7 +3355,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReleaseLabels`.
     ///
     /// <p>Retrieves release labels of EMR services in the region where the API is called.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReleaseLabels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3451,7 +3451,7 @@ pub mod fluent_builders {
     /// dates and times, and their names. This call returns a maximum of 50 clusters per call, but
     /// returns a marker to track the paging of the cluster list across multiple
     /// ListSecurityConfigurations calls.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecurityConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3523,7 +3523,7 @@ pub mod fluent_builders {
     /// <p>Provides a list of steps for the cluster in reverse order unless you specify
     /// <code>stepIds</code> with the request or filter by <code>StepStates</code>. You can
     /// specify a maximum of 10 <code>stepIDs</code>. The CLI automatically paginates results to return a list greater than 50 steps. To return more than 50 steps using the CLI, specify a <code>Marker</code>, which is a pagination token that indicates the next set of steps to retrieve.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSteps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3642,7 +3642,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account. The list
     /// includes details such as ID, Studio Access URL, and creation time for each Studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStudios<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3713,7 +3713,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of all user or group session mappings for the Amazon EMR Studio specified by
     /// <code>StudioId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStudioSessionMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3809,7 +3809,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies the number of steps that can be executed concurrently for the cluster specified
     /// using ClusterID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3895,7 +3895,7 @@ pub mod fluent_builders {
     /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
     /// later, excluding 5.0.x versions.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstanceFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3983,7 +3983,7 @@ pub mod fluent_builders {
     /// <p>ModifyInstanceGroups modifies the number of nodes and configuration settings of an
     /// instance group. The input parameters include the new target instance count for the group
     /// and the instance group ID. The call will either succeed or fail atomically.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstanceGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4073,7 +4073,7 @@ pub mod fluent_builders {
     /// instance group in an Amazon EMR cluster. The automatic scaling policy defines how an
     /// instance group dynamically adds and terminates EC2 instances in response to the value of a
     /// CloudWatch metric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAutoScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4173,7 +4173,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAutoTerminationPolicy`.
     ///
     /// <p>Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAutoTerminationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4262,7 +4262,7 @@ pub mod fluent_builders {
     /// in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block
     /// Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBlockPublicAccessConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4369,7 +4369,7 @@ pub mod fluent_builders {
     /// scaling policy defines the limits for resources, such as EC2 instances that can be added or
     /// terminated from a cluster. The policy only applies to the core and task nodes. The master
     /// node cannot be scaled after initial configuration. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutManagedScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4456,7 +4456,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes an automatic scaling policy from a specified instance group within an EMR
     /// cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAutoScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4541,7 +4541,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveAutoTerminationPolicy`.
     ///
     /// <p>Removes an auto-termination policy from an Amazon EMR cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAutoTerminationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4611,7 +4611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveManagedScalingPolicy`.
     ///
     /// <p> Removes a managed scaling policy from a specified EMR cluster. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveManagedScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4686,7 +4686,7 @@ pub mod fluent_builders {
     /// various ways, such as grouping clusters to track your Amazon EMR resource allocation costs.
     /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
     /// <p>The following example removes the stack tag with value Prod from a cluster:</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4797,7 +4797,7 @@ pub mod fluent_builders {
     /// later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets
     /// parameters or InstanceGroups parameters, but not both.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RunJobFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5463,7 +5463,7 @@ pub mod fluent_builders {
     /// value to <code>false</code>. </p>
     /// <p> For more information, see<a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing Cluster
     /// Termination</a> in the <i>Amazon EMR Management Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetTerminationProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5559,7 +5559,7 @@ pub mod fluent_builders {
     /// Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>This action works on running clusters. When you create a cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetVisibleToAllUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5650,7 +5650,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartNotebookExecution`.
     ///
     /// <p>Starts a notebook execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartNotebookExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5844,7 +5844,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopNotebookExecution`.
     ///
     /// <p>Stops a notebook execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopNotebookExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5924,7 +5924,7 @@ pub mod fluent_builders {
     /// is asynchronous. Depending on the configuration of the cluster, it may take up to 1-5
     /// minutes for the cluster to completely terminate and release allocated resources, such as
     /// Amazon EC2 instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateJobFlows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6001,7 +6001,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStudio`.
     ///
     /// <p>Updates an Amazon EMR Studio configuration, including attributes such as name, description, and subnets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6122,7 +6122,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the session policy attached to the user or group for the specified Amazon EMR
     /// Studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStudioSessionMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

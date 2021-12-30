@@ -317,7 +317,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateMember`.
     ///
     /// <p>Associates an Amazon Web Services account with an Amazon Inspector delegated administrator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -387,7 +387,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetAccountStatus`.
     ///
     /// <p>Retrieves the Amazon Inspector status of multiple Amazon Web Services accounts within your environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetAccountStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -460,7 +460,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetFreeTrialInfo`.
     ///
     /// <p>Gets free trial status for multiple Amazon Web Services accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetFreeTrialInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -537,7 +537,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelFindingsReport`.
     ///
     /// <p>Cancels the given findings report.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelFindingsReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -607,7 +607,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFilter`.
     ///
     /// <p>Creates a filter resource using specified filter criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -740,7 +740,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFindingsReport`.
     ///
     /// <p>Creates a finding report.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFindingsReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -839,7 +839,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFilter`.
     ///
     /// <p>Deletes a filter resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -909,7 +909,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
     ///
     /// <p>Describe Amazon Inspector configuration settings for an Amazon Web Services organization</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -970,7 +970,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables Amazon Inspector scans for one or more Amazon Web Services accounts. Disabling all scan types in an account
     /// disables the Amazon Inspector service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Disable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1060,7 +1060,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableDelegatedAdminAccount`.
     ///
     /// <p>Disables the Amazon Inspector delegated administrator for your organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableDelegatedAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1136,7 +1136,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMember`.
     ///
     /// <p>Disassociates a member account from an Amazon Inspector delegated administrator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1206,7 +1206,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `Enable`.
     ///
     /// <p>Enables Amazon Inspector scans for one or more Amazon Web Services accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Enable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1306,7 +1306,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableDelegatedAdminAccount`.
     ///
     /// <p>Enables the Amazon Inspector delegated administrator for your Organizations organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableDelegatedAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1393,7 +1393,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information about the Amazon Inspector delegated administrator for your
     /// organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDelegatedAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1453,7 +1453,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingsReportStatus`.
     ///
     /// <p>Gets the status of a findings report.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingsReportStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1523,7 +1523,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMember`.
     ///
     /// <p>Gets member information for your organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1593,7 +1593,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccountPermissions`.
     ///
     /// <p>Lists the permissions an account has to configure Amazon Inspector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1689,7 +1689,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCoverage`.
     ///
     /// <p>Lists coverage details for you environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCoverage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1790,7 +1790,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCoverageStatistics`.
     ///
     /// <p>Lists Amazon Inspector coverage statistics for your environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCoverageStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1892,7 +1892,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists information about the Amazon Inspector delegated administrator of your
     /// organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDelegatedAdminAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1978,7 +1978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFilters`.
     ///
     /// <p>Lists the filters associated with your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2094,7 +2094,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindingAggregations`.
     ///
     /// <p>Lists aggregated finding data for your environment based on specific criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindingAggregations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2223,7 +2223,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindings`.
     ///
     /// <p>Lists findings for your environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2336,7 +2336,7 @@ pub mod fluent_builders {
     ///
     /// <p>List members associated with the Amazon Inspector delegated administrator for your
     /// organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2434,7 +2434,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags attached to a given resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2504,7 +2504,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUsageTotals`.
     ///
     /// <p>Lists the Amazon Inspector usage totals over the last 30 days.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsageTotals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2607,7 +2607,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2700,7 +2700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2787,7 +2787,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFilter`.
     ///
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2903,7 +2903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
     ///
     /// <p>Updates the configurations for your Amazon Inspector organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -519,7 +519,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateApplicationFleet`.
     ///
     /// <p>Associates the specified application with the specified fleet. This is only supported for Elastic fleets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateApplicationFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -602,7 +602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateFleet`.
     ///
     /// <p>Associates the specified fleet with the specified stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -682,7 +682,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchAssociateUserStack`.
     ///
     /// <p>Associates the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateUserStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -762,7 +762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDisassociateUserStack`.
     ///
     /// <p>Disassociates the specified users from the specified stacks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateUserStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -842,7 +842,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyImage`.
     ///
     /// <p>Copies the image within the same region or to a new region within the same AWS account. Note that any tags you added to the image will not be copied.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -963,7 +963,7 @@ pub mod fluent_builders {
     /// binaries and other files necessary to launch your applications. Multiple applications
     /// can be assigned to a single app block.</p>
     /// <p>This is only supported for Elastic fleets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1108,7 +1108,7 @@ pub mod fluent_builders {
     /// that contains the application binaries and other files. The applications assigned to an
     /// Elastic fleet are the applications users can launch. </p>
     /// <p>This is only supported for Elastic fleets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1317,7 +1317,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDirectoryConfig`.
     ///
     /// <p>Creates a Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDirectoryConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1430,7 +1430,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
     /// <p>Creates a fleet. A fleet consists of streaming instances that run a specified image when using Always-On or On-Demand.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2043,7 +2043,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an image builder. An image builder is a virtual machine that is used to create an image.</p>
     /// <p>The initial state of the builder is <code>PENDING</code>. When it is ready, the state is <code>RUNNING</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2491,7 +2491,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateImageBuilderStreamingURL`.
     ///
     /// <p>Creates a URL to start an image builder streaming session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImageBuilderStreamingURL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2573,7 +2573,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStack`.
     ///
     /// <p>Creates a stack to start streaming applications to users. A stack consists of an associated fleet, user access policies, and storage configurations. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2804,7 +2804,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStreamingURL`.
     ///
     /// <p>Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingURL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2937,7 +2937,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information, see the "Update an Image by Using
     /// Managed AppStream 2.0 Image Updates" section in <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUpdatedImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3090,7 +3090,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUsageReportSubscription`.
     ///
     /// <p>Creates a usage report subscription. Usage reports are generated daily.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUsageReportSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3150,7 +3150,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUser`.
     ///
     /// <p>Creates a new user in the user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3282,7 +3282,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppBlock`.
     ///
     /// <p>Deletes an app block.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3352,7 +3352,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
     /// <p>Deletes an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3422,7 +3422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDirectoryConfig`.
     ///
     /// <p>Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required to join streaming instances to an Active Directory domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDirectoryConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3495,7 +3495,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFleet`.
     ///
     /// <p>Deletes the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3566,7 +3566,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified image. You cannot delete an image when it is in use.  
     /// After you delete an image, you cannot provision new capacity using the image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3636,7 +3636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteImageBuilder`.
     ///
     /// <p>Deletes the specified image builder and releases the capacity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3706,7 +3706,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteImagePermissions`.
     ///
     /// <p>Deletes permissions for the specified private image. After you delete permissions for an image, AWS accounts to which you previously granted these permissions can no longer use the image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3789,7 +3789,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStack`.
     ///
     /// <p>Deletes the specified stack. After the stack is deleted, the application streaming environment provided by the stack is no longer available to users. Also, any reservations made for application streaming sessions for the stack are released.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3859,7 +3859,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUsageReportSubscription`.
     ///
     /// <p>Disables usage report generation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUsageReportSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3919,7 +3919,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
     /// <p>Deletes a user from the user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4010,7 +4010,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppBlocks`.
     ///
     /// <p>Retrieves a list that describes one or more app blocks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppBlocks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4109,7 +4109,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplicationFleetAssociations`.
     ///
     /// <p>Retrieves a list that describes one or more application fleet associations. Either ApplicationArn or FleetName must be specified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationFleetAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4216,7 +4216,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplications`.
     ///
     /// <p>Retrieves a list that describes one or more applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4317,7 +4317,7 @@ pub mod fluent_builders {
     /// <p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
     /// </p>
     /// <p>Although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDirectoryConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4414,7 +4414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFleets`.
     ///
     /// <p>Retrieves a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4501,7 +4501,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImageBuilders`.
     ///
     /// <p>Retrieves a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImageBuilders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4598,7 +4598,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImagePermissions`.
     ///
     /// <p>Retrieves a list that describes the permissions for shared AWS account IDs on a private image that you own. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4705,7 +4705,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImages`.
     ///
     /// <p>Retrieves a list that describes one or more specified images, if the image names or image ARNs are provided. Otherwise, all images in the account are described.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4834,7 +4834,7 @@ pub mod fluent_builders {
     /// <p>Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a UserId is provided for the stack and fleet,
     /// only streaming sessions for that user are described. If an authentication type is not provided,
     /// the default is to authenticate users using a streaming URL.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4961,7 +4961,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStacks`.
     ///
     /// <p>Retrieves a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5048,7 +5048,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUsageReportSubscriptions`.
     ///
     /// <p>Retrieves a list that describes one or more usage report subscriptions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUsageReportSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5128,7 +5128,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUsers`.
     ///
     /// <p>Retrieves a list that describes one or more specified users in the user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5229,7 +5229,7 @@ pub mod fluent_builders {
     /// <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserStackAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5350,7 +5350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableUser`.
     ///
     /// <p>Disables the specified user in the user pool. Users can't sign in to AppStream 2.0 until they are re-enabled. This action does not delete the user. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5441,7 +5441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateApplicationFleet`.
     ///
     /// <p>Disassociates the specified application from the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateApplicationFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5524,7 +5524,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateFleet`.
     ///
     /// <p>Disassociates the specified fleet from the specified stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5604,7 +5604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableUser`.
     ///
     /// <p>Enables a user in the user pool. After being enabled, users can sign in to AppStream 2.0 and open applications from the stacks to which they are assigned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5695,7 +5695,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExpireSession`.
     ///
     /// <p>Immediately stops the specified streaming session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExpireSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5765,7 +5765,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssociatedFleets`.
     ///
     /// <p>Retrieves the name of the fleet that is associated with the specified stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5845,7 +5845,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssociatedStacks`.
     ///
     /// <p>Retrieves the name of the stack with which the specified fleet is associated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedStacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5926,7 +5926,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of all tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5996,7 +5996,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFleet`.
     ///
     /// <p>Starts the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6066,7 +6066,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartImageBuilder`.
     ///
     /// <p>Starts the specified image builder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6152,7 +6152,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopFleet`.
     ///
     /// <p>Stops the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6222,7 +6222,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopImageBuilder`.
     ///
     /// <p>Stops the specified image builder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6298,7 +6298,7 @@ pub mod fluent_builders {
     /// <p>To list the current tags for your resources, use <a>ListTagsForResource</a>.
     /// To disassociate tags from your resources, use <a>UntagResource</a>.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6403,7 +6403,7 @@ pub mod fluent_builders {
     /// <p>Disassociates one or more specified tags from the specified AppStream 2.0 resource.</p>
     /// <p>To list the current tags for your resources, use <a>ListTagsForResource</a>.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6490,7 +6490,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
     /// <p>Updates the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6659,7 +6659,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDirectoryConfig`.
     ///
     /// <p>Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDirectoryConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6793,7 +6793,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't update it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7354,7 +7354,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateImagePermissions`.
     ///
     /// <p>Adds or updates permissions for the specified private image. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7450,7 +7450,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStack`.
     ///
     /// <p>Updates the specified fields for the specified stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

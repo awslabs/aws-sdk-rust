@@ -118,7 +118,7 @@ pub mod fluent_builders {
     /// <p>Creates and returns an access token for the authorized client. The access token issued
     /// will be used to fetch short-term credentials for the assigned roles in the AWS
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -280,7 +280,7 @@ pub mod fluent_builders {
     ///
     /// <p>Registers a client with AWS SSO. This allows clients to initiate device authorization.
     /// The output should be persisted for reuse through many authentication requests.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -379,7 +379,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartDeviceAuthorization`.
     ///
     /// <p>Initiates device authorization by requesting a pair of verification codes from the authorization service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDeviceAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

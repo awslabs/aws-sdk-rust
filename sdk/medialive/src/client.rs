@@ -512,7 +512,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptInputDeviceTransfer`.
     ///
     /// Accept an incoming input device transfer. The ownership of the device will transfer to your AWS account.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInputDeviceTransfer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -585,7 +585,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDelete`.
     ///
     /// Starts delete of resources.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDelete<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -713,7 +713,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchStart`.
     ///
     /// Starts existing resources
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchStart<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -807,7 +807,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchStop`.
     ///
     /// Stops running resources
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchStop<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -901,7 +901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchUpdateSchedule`.
     ///
     /// Update a channel schedule
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1003,7 +1003,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelInputDeviceTransfer`.
     ///
     /// Cancel an input device transfer that you have requested.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelInputDeviceTransfer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1076,7 +1076,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ClaimDevice`.
     ///
     /// Send a request to claim an AWS Elemental device that you have purchased from a third-party vendor. After the request succeeds, you will own the device.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ClaimDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1146,7 +1146,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
     /// Creates a new channel
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1383,7 +1383,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInput`.
     ///
     /// Create an input
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1620,7 +1620,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInputSecurityGroup`.
     ///
     /// Creates a Input Security Group
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInputSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1720,7 +1720,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMultiplex`.
     ///
     /// Create a new multiplex.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMultiplex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1855,7 +1855,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMultiplexProgram`.
     ///
     /// Create a new program in the multiplex.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMultiplexProgram<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1963,7 +1963,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePartnerInput`.
     ///
     /// Create a partner input
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePartnerInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2068,7 +2068,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTags`.
     ///
     /// Create tags for a resource
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2161,7 +2161,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
     /// Starts deletion of channel. The associated outputs are also deleted.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2231,7 +2231,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInput`.
     ///
     /// Deletes the input end point
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2301,7 +2301,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInputSecurityGroup`.
     ///
     /// Deletes an Input Security Group
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInputSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2377,7 +2377,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMultiplex`.
     ///
     /// Delete a multiplex. The multiplex must be idle.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMultiplex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2447,7 +2447,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMultiplexProgram`.
     ///
     /// Delete a program from a multiplex.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMultiplexProgram<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2527,7 +2527,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReservation`.
     ///
     /// Delete an expired reservation.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2600,7 +2600,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchedule`.
     ///
     /// Delete all schedule actions on a channel.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2670,7 +2670,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTags`.
     ///
     /// Removes tags for a resource
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2757,7 +2757,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeChannel`.
     ///
     /// Gets details about a channel
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2827,7 +2827,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInput`.
     ///
     /// Produces details about an input
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2897,7 +2897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInputDevice`.
     ///
     /// Gets the details for the input device
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInputDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2970,7 +2970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInputDeviceThumbnail`.
     ///
     /// Get the latest thumbnail data for the input device.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInputDeviceThumbnail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3056,7 +3056,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInputSecurityGroup`.
     ///
     /// Produces a summary of an Input Security Group
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInputSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3132,7 +3132,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMultiplex`.
     ///
     /// Gets details about a multiplex.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMultiplex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3202,7 +3202,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMultiplexProgram`.
     ///
     /// Get the details for a program in a multiplex.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMultiplexProgram<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3282,7 +3282,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOffering`.
     ///
     /// Get details for an offering.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3352,7 +3352,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservation`.
     ///
     /// Get details for a reservation.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3425,7 +3425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSchedule`.
     ///
     /// Get a channel schedule
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3515,7 +3515,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChannels`.
     ///
     /// Produces list of channels that have been created
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3595,7 +3595,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInputDevices`.
     ///
     /// List input devices
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInputDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3675,7 +3675,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInputDeviceTransfers`.
     ///
     /// List input devices that are currently being transferred. List input devices that you are transferring from your AWS account or input devices that another AWS account is transferring to you.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInputDeviceTransfers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3768,7 +3768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInputs`.
     ///
     /// Produces list of inputs that have been created
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3848,7 +3848,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInputSecurityGroups`.
     ///
     /// Produces a list of Input Security Groups for an account
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInputSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3928,7 +3928,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMultiplexes`.
     ///
     /// Retrieve a list of the existing multiplexes.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMultiplexes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4008,7 +4008,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMultiplexPrograms`.
     ///
     /// List the programs that currently exist for a specific multiplex.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMultiplexPrograms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4098,7 +4098,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOfferings`.
     ///
     /// List offerings available for purchase.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4299,7 +4299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReservations`.
     ///
     /// List purchased reservations.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReservations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4477,7 +4477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// Produces list of tags that have been created for a resource
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4547,7 +4547,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PurchaseOffering`.
     ///
     /// Purchase an offering and create a reservation.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4680,7 +4680,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectInputDeviceTransfer`.
     ///
     /// Reject the transfer of the specified input device to your AWS account.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInputDeviceTransfer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4753,7 +4753,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartChannel`.
     ///
     /// Starts an existing channel
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4823,7 +4823,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartMultiplex`.
     ///
     /// Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each channel.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMultiplex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4893,7 +4893,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopChannel`.
     ///
     /// Stops a running channel
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4963,7 +4963,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopMultiplex`.
     ///
     /// Stops a running multiplex. If the multiplex isn't running, this action has no effect.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopMultiplex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5033,7 +5033,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TransferInputDevice`.
     ///
     /// Start an input device transfer to another AWS account. After you make the request, the other account must accept or reject the transfer.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TransferInputDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5145,7 +5145,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
     /// Updates a channel.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5321,7 +5321,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannelClass`.
     ///
     /// Changes the class of the channel.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelClass<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5421,7 +5421,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInput`.
     ///
     /// Updates an input.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5604,7 +5604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInputDevice`.
     ///
     /// Updates the parameters for the input device.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInputDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5719,7 +5719,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInputSecurityGroup`.
     ///
     /// Update an Input Security Group's Whilelists.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInputSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5835,7 +5835,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMultiplex`.
     ///
     /// Updates a multiplex.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMultiplex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5928,7 +5928,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMultiplexProgram`.
     ///
     /// Update a program in a multiplex.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMultiplexProgram<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6024,7 +6024,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReservation`.
     ///
     /// Update reservation.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

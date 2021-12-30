@@ -346,7 +346,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplicationInstance`.
     ///
     /// <p>Creates an application instance and deploys it to a device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -525,7 +525,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateJobForDevices`.
     ///
     /// <p>Creates a job to run on one or more devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJobForDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -625,7 +625,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateNodeFromTemplateJob`.
     ///
     /// <p>Creates a camera stream node.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNodeFromTemplateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -787,7 +787,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePackage`.
     ///
     /// <p>Creates a package and storage location in an Amazon S3 access point.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -880,7 +880,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePackageImportJob`.
     ///
     /// <p>Imports a node package.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePackageImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1012,7 +1012,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDevice`.
     ///
     /// <p>Deletes a device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1082,7 +1082,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePackage`.
     ///
     /// <p>Deletes a package.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1164,7 +1164,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterPackageVersion`.
     ///
     /// <p>Deregisters a package version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterPackageVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1289,7 +1289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplicationInstance`.
     ///
     /// <p>Returns information about an application instance on a device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1365,7 +1365,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplicationInstanceDetails`.
     ///
     /// <p>Returns information about an application instance's configuration manifest.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationInstanceDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1443,7 +1443,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDevice`.
     ///
     /// <p>Returns information about a device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1513,7 +1513,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDeviceJob`.
     ///
     /// <p>Returns information about a device job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeviceJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1583,7 +1583,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNode`.
     ///
     /// <p>Returns information about a node.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1666,7 +1666,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNodeFromTemplateJob`.
     ///
     /// <p>Returns information about a job to create a camera stream node.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNodeFromTemplateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1736,7 +1736,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePackage`.
     ///
     /// <p>Returns information about a package.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1806,7 +1806,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePackageImportJob`.
     ///
     /// <p>Returns information about a package import job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackageImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1876,7 +1876,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePackageVersion`.
     ///
     /// <p>Returns information about a package version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackageVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1985,7 +1985,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplicationInstanceDependencies`.
     ///
     /// <p>Returns a list of application instance dependencies.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationInstanceDependencies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2083,7 +2083,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplicationInstanceNodeInstances`.
     ///
     /// <p>Returns a list of application node instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationInstanceNodeInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2181,7 +2181,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplicationInstances`.
     ///
     /// <p>Returns a list of application instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2284,7 +2284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevices`.
     ///
     /// <p>Returns a list of devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2364,7 +2364,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevicesJobs`.
     ///
     /// <p>Returns a list of jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevicesJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2454,7 +2454,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNodeFromTemplateJobs`.
     ///
     /// <p>Returns a list of camera stream node jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNodeFromTemplateJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2534,7 +2534,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNodes`.
     ///
     /// <p>Returns a list of nodes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNodes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2676,7 +2676,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPackageImportJobs`.
     ///
     /// <p>Returns a list of package import jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackageImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2756,7 +2756,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPackages`.
     ///
     /// <p>Returns a list of packages.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2836,7 +2836,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2908,7 +2908,7 @@ pub mod fluent_builders {
     /// <p>Creates a device and returns a configuration archive. The configuration
     /// archive is a ZIP file that contains a provisioning certificate that is valid for 5 minutes.
     /// Transfer the configuration archive to the device with the included USB storage device within 5 minutes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3024,7 +3024,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterPackageVersion`.
     ///
     /// <p>Registers a package version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterPackageVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3143,7 +3143,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveApplicationInstance`.
     ///
     /// <p>Removes an application instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveApplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3219,7 +3219,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tags a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3312,7 +3312,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3399,7 +3399,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeviceMetadata`.
     ///
     /// <p>Updates a device's metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeviceMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

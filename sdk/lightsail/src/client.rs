@@ -1246,7 +1246,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AllocateStaticIp`.
     ///
     /// <p>Allocates a static IP address.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllocateStaticIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1330,7 +1330,7 @@ pub mod fluent_builders {
     /// an origin in any AWS Region, and distribute its content globally. However, all
     /// distributions are located in the <code>us-east-1</code> Region.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachCertificateToDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1446,7 +1446,7 @@ pub mod fluent_builders {
     /// <p>The <code>attach disk</code> operation supports tag-based access control via resource tags
     /// applied to the resource identified by <code>disk name</code>. For more information, see the
     /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachDisk<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1544,7 +1544,7 @@ pub mod fluent_builders {
     /// <p>The <code>attach instances to load balancer</code> operation supports tag-based access
     /// control via resource tags applied to the resource identified by <code>load balancer
     /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachInstancesToLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1654,7 +1654,7 @@ pub mod fluent_builders {
     /// <p>The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access
     /// control via resource tags applied to the resource identified by <code>load balancer
     /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachLoadBalancerTlsCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1742,7 +1742,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AttachStaticIp`.
     ///
     /// <p>Attaches a static IP address to a specific Amazon Lightsail instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachStaticIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1831,7 +1831,7 @@ pub mod fluent_builders {
     /// <p>The <code>CloseInstancePublicPorts</code> action supports tag-based access control via
     /// resource tags applied to the resource identified by <code>instanceName</code>. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CloseInstancePublicPorts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1924,7 +1924,7 @@ pub mod fluent_builders {
     /// <code>source region</code>, <code>source resource name</code>, <code>target snapshot
     /// name</code>, and either the <code>restore date</code> or the <code>use latest restorable
     /// auto snapshot</code> parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopySnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2152,7 +2152,7 @@ pub mod fluent_builders {
     /// Use buckets to store objects such as data and its descriptive metadata. For more information
     /// about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBucket<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2308,7 +2308,7 @@ pub mod fluent_builders {
     /// first create an access key; you cannot get the secret access key later. If you lose the
     /// secret access key, you must create a new access key.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBucketAccessKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2389,7 +2389,7 @@ pub mod fluent_builders {
     /// an origin in any AWS Region, and distribute its content globally. However, all
     /// distributions are located in the <code>us-east-1</code> Region.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2523,7 +2523,7 @@ pub mod fluent_builders {
     /// <p>Wait until after your new Amazon EC2 instance is created before running the <code>create
     /// cloud formation stack</code> operation again with the same export snapshot record.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCloudFormationStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2608,7 +2608,7 @@ pub mod fluent_builders {
     /// You can add one email address and one mobile phone number contact method in each AWS Region.
     /// However, SMS text messaging is not supported in some AWS Regions, and SMS text messages
     /// cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactMethod<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2762,7 +2762,7 @@ pub mod fluent_builders {
     /// <p>A Lightsail container service is a compute resource to which you can deploy containers.
     /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container services in Amazon Lightsail</a> in the <i>Lightsail Dev
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainerService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3053,7 +3053,7 @@ pub mod fluent_builders {
     /// <p>You can deploy containers to your container service using container images from a public
     /// registry like Docker Hub, or from your local machine. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating container images for your Amazon Lightsail container services</a> in the
     /// <i>Amazon Lightsail Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainerServiceDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3185,7 +3185,7 @@ pub mod fluent_builders {
     /// more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail container services</a>
     /// in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainerServiceRegistryLogin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3250,7 +3250,7 @@ pub mod fluent_builders {
     /// same Availability Zone (e.g., <code>us-east-2a</code>).</p>
     /// <p>The <code>create disk</code> operation supports tag-based access control via request tags.
     /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDisk<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3392,7 +3392,7 @@ pub mod fluent_builders {
     /// <p>The <code>create disk from snapshot</code> operation supports tag-based access control via
     /// request tags and resource tags applied to the resource identified by <code>disk snapshot
     /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDiskFromSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3697,7 +3697,7 @@ pub mod fluent_builders {
     ///
     /// <p>The <code>create disk snapshot</code> operation supports tag-based access control via
     /// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDiskSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3839,7 +3839,7 @@ pub mod fluent_builders {
     /// <p>A distribution is a globally distributed network of caching servers that improve the
     /// performance of your website or web application hosted on a Lightsail instance. For more
     /// information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions">Content delivery networks in Amazon Lightsail</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4031,7 +4031,7 @@ pub mod fluent_builders {
     /// <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
     /// <p>The <code>create domain</code> operation supports tag-based access control via request
     /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4140,7 +4140,7 @@ pub mod fluent_builders {
     /// <p>The <code>create domain entry</code> operation supports tag-based access control via
     /// resource tags applied to the resource identified by <code>domain name</code>. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomainEntry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4227,7 +4227,7 @@ pub mod fluent_builders {
     /// <p>Creates one or more Amazon Lightsail instances.</p>
     /// <p>The <code>create instances</code> operation supports tag-based access control via request
     /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4492,7 +4492,7 @@ pub mod fluent_builders {
     /// <p>The <code>create instances from snapshot</code> operation supports tag-based access
     /// control via request tags and resource tags applied to the resource identified by
     /// <code>instance snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstancesFromSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4880,7 +4880,7 @@ pub mod fluent_builders {
     /// You can use a snapshot to create a new instance that is based on that snapshot.</p>
     /// <p>The <code>create instance snapshot</code> operation supports tag-based access control via
     /// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstanceSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4987,7 +4987,7 @@ pub mod fluent_builders {
     /// <p>Creates an SSH key pair.</p>
     /// <p>The <code>create key pair</code> operation supports tag-based access control via request
     /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5086,7 +5086,7 @@ pub mod fluent_builders {
     /// operation.</p>
     /// <p>The <code>create load balancer</code> operation supports tag-based access control via
     /// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5299,7 +5299,7 @@ pub mod fluent_builders {
     /// <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access
     /// control via resource tags applied to the resource identified by <code>load balancer
     /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancerTlsCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5456,7 +5456,7 @@ pub mod fluent_builders {
     /// <p>Creates a new database in Amazon Lightsail.</p>
     /// <p>The <code>create relational database</code> operation supports tag-based access control
     /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6005,7 +6005,7 @@ pub mod fluent_builders {
     /// <p>The <code>create relational database from snapshot</code> operation supports tag-based
     /// access control via request tags and resource tags applied to the resource identified by
     /// relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRelationalDatabaseFromSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6289,7 +6289,7 @@ pub mod fluent_builders {
     /// to make copies of a database, and to save data before deleting a database.</p>
     /// <p>The <code>create relational database snapshot</code> operation supports tag-based access
     /// control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRelationalDatabaseSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6424,7 +6424,7 @@ pub mod fluent_builders {
     /// condition is met, the alarm can notify you by email, SMS text message, and a banner displayed
     /// on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
     /// in Amazon Lightsail</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6494,7 +6494,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAutoSnapshot`.
     ///
     /// <p>Deletes an automatic snapshot of an instance or disk. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAutoSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6588,7 +6588,7 @@ pub mod fluent_builders {
     /// <p>When you delete your bucket, the bucket name is released and can be reused for a new
     /// bucket in your account or another AWS account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBucket<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6721,7 +6721,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the
     /// <i>Amazon Lightsail Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBucketAccessKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6814,7 +6814,7 @@ pub mod fluent_builders {
     /// <p>Certificates that are currently attached to a distribution cannot be deleted. Use the
     /// <code>DetachCertificateFromDistribution</code> action to detach a certificate from a
     /// distribution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6895,7 +6895,7 @@ pub mod fluent_builders {
     /// You can add one email address and one mobile phone number contact method in each AWS Region.
     /// However, SMS text messaging is not supported in some AWS Regions, and SMS text messages
     /// cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactMethod<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6981,7 +6981,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a container image that is registered to your Amazon Lightsail container
     /// service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContainerImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7083,7 +7083,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContainerService`.
     ///
     /// <p>Deletes your Amazon Lightsail container service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContainerService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7160,7 +7160,7 @@ pub mod fluent_builders {
     /// <p>The <code>delete disk</code> operation supports tag-based access control via resource tags
     /// applied to the resource identified by <code>disk name</code>. For more information, see the
     /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDisk<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7248,7 +7248,7 @@ pub mod fluent_builders {
     /// <p>The <code>delete disk snapshot</code> operation supports tag-based access control via
     /// resource tags applied to the resource identified by <code>disk snapshot name</code>. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDiskSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7323,7 +7323,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDistribution`.
     ///
     /// <p>Deletes your Amazon Lightsail content delivery network (CDN) distribution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7403,7 +7403,7 @@ pub mod fluent_builders {
     /// <p>The <code>delete domain</code> operation supports tag-based access control via resource
     /// tags applied to the resource identified by <code>domain name</code>. For more information, see
     /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7476,7 +7476,7 @@ pub mod fluent_builders {
     /// <p>The <code>delete domain entry</code> operation supports tag-based access control via
     /// resource tags applied to the resource identified by <code>domain name</code>. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomainEntry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7562,7 +7562,7 @@ pub mod fluent_builders {
     /// <p>The <code>delete instance</code> operation supports tag-based access control via resource
     /// tags applied to the resource identified by <code>instance name</code>. For more information,
     /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7649,7 +7649,7 @@ pub mod fluent_builders {
     /// <p>The <code>delete instance snapshot</code> operation supports tag-based access control via
     /// resource tags applied to the resource identified by <code>instance snapshot name</code>. For
     /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstanceSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7727,7 +7727,7 @@ pub mod fluent_builders {
     /// <p>The <code>delete key pair</code> operation supports tag-based access control via resource
     /// tags applied to the resource identified by <code>key pair name</code>. For more information,
     /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7808,7 +7808,7 @@ pub mod fluent_builders {
     /// information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP
     /// client</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKnownHostKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7886,7 +7886,7 @@ pub mod fluent_builders {
     /// <p>The <code>delete load balancer</code> operation supports tag-based access control via
     /// resource tags applied to the resource identified by <code>load balancer name</code>. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7962,7 +7962,7 @@ pub mod fluent_builders {
     /// <p>The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access
     /// control via resource tags applied to the resource identified by <code>load balancer
     /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancerTlsCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8067,7 +8067,7 @@ pub mod fluent_builders {
     /// <p>The <code>delete relational database</code> operation supports tag-based access control
     /// via resource tags applied to the resource identified by relationalDatabaseName. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8216,7 +8216,7 @@ pub mod fluent_builders {
     /// <p>The <code>delete relational database snapshot</code> operation supports tag-based access
     /// control via resource tags applied to the resource identified by relationalDatabaseName. For
     /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRelationalDatabaseSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8297,7 +8297,7 @@ pub mod fluent_builders {
     /// distribution.</p>
     /// <p>After the certificate is detached, your distribution stops accepting traffic for all of
     /// the domains that are associated with the certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachCertificateFromDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8379,7 +8379,7 @@ pub mod fluent_builders {
     /// <p>The <code>detach disk</code> operation supports tag-based access control via resource tags
     /// applied to the resource identified by <code>disk name</code>. For more information, see the
     /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachDisk<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8456,7 +8456,7 @@ pub mod fluent_builders {
     /// <p>The <code>detach instances from load balancer</code> operation supports tag-based access
     /// control via resource tags applied to the resource identified by <code>load balancer
     /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachInstancesFromLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8548,7 +8548,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachStaticIp`.
     ///
     /// <p>Detaches a static IP from the Amazon Lightsail instance to which it is attached.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachStaticIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8621,7 +8621,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableAddOn`.
     ///
     /// <p>Disables an add-on for an Amazon Lightsail resource. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableAddOn<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8707,7 +8707,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DownloadDefaultKeyPair`.
     ///
     /// <p>Downloads the default SSH key pair from the user's account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DownloadDefaultKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8768,7 +8768,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables or modifies an add-on for an Amazon Lightsail resource. For more information, see
     /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAddOn<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8868,7 +8868,7 @@ pub mod fluent_builders {
     /// <p>Use the <code>get instance snapshots</code> or <code>get disk snapshots</code>
     /// operations to get a list of snapshots that you can export to Amazon EC2.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8941,7 +8941,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetActiveNames`.
     ///
     /// <p>Returns the names of all active (not deleted) resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetActiveNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9023,7 +9023,7 @@ pub mod fluent_builders {
     /// condition is met, the alarm can notify you by email, SMS text message, and a banner displayed
     /// on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
     /// in Amazon Lightsail</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAlarms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9132,7 +9132,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the available automatic snapshots for an instance or disk. For more information,
     /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAutoSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9216,7 +9216,7 @@ pub mod fluent_builders {
     /// instances. Blueprints are marked inactive when they become outdated due to operating system
     /// updates or new application releases.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlueprints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9308,7 +9308,7 @@ pub mod fluent_builders {
     /// secret access key only when you create it from the response of the <a>CreateBucketAccessKey</a> action. If you lose the secret access key, you must
     /// create a new access key.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketAccessKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9384,7 +9384,7 @@ pub mod fluent_builders {
     ///
     /// <p>Use the <a>UpdateBucketBundle</a> action to update the bundle for a
     /// bucket.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketBundles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9460,7 +9460,7 @@ pub mod fluent_builders {
     /// <p>Metrics report the utilization of a bucket. View and collect metric data regularly to
     /// monitor the number of objects stored in a bucket (including object versions) and the storage
     /// space used by those objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9751,7 +9751,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
     /// Guide</i>..</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBuckets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9858,7 +9858,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the list of bundles that are available for purchase. A bundle describes the specs
     /// for your virtual private server (or <i>instance</i>).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBundles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9951,7 +9951,7 @@ pub mod fluent_builders {
     /// your request. The response will include only the certificate Amazon Resource Name (ARN),
     /// certificate name, domain name, and tags.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10072,7 +10072,7 @@ pub mod fluent_builders {
     /// formation stack</code> operation.</p>
     /// <p>An AWS CloudFormation stack is used to create a new Amazon EC2 instance from an exported Lightsail
     /// snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCloudFormationStackRecords<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10153,7 +10153,7 @@ pub mod fluent_builders {
     /// You can add one email address and one mobile phone number contact method in each AWS Region.
     /// However, SMS text messaging is not supported in some AWS Regions, and SMS text messages
     /// cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactMethods<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10237,7 +10237,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about Amazon Lightsail containers, such as the current version of the
     /// Lightsail Control (lightsailctl) plugin.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerAPIMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10304,7 +10304,7 @@ pub mod fluent_builders {
     /// images from a public registry like Docker Hub, those images are not returned as part of this
     /// action. Those images are not registered to your Lightsail container service.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10384,7 +10384,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
     /// endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerLog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10652,7 +10652,7 @@ pub mod fluent_builders {
     /// one. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
     /// endpoints and quotas</a> in the <i>AWS General Reference</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerServiceDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10726,7 +10726,7 @@ pub mod fluent_builders {
     ///
     /// <p>Metrics report the utilization of your resources. Monitor and collect metric data
     /// regularly to maintain the reliability, availability, and performance of your resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerServiceMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10986,7 +10986,7 @@ pub mod fluent_builders {
     ///
     /// <p>The power specifies the amount of memory, the number of vCPUs, and the base price of the
     /// container service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerServicePowers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11046,7 +11046,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContainerServices`.
     ///
     /// <p>Returns information about one or more of your Amazon Lightsail container services.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11122,7 +11122,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDisk`.
     ///
     /// <p>Returns information about a specific block storage disk.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDisk<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11192,7 +11192,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDisks`.
     ///
     /// <p>Returns information about all block storage disks in your AWS account and region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDisks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11268,7 +11268,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDiskSnapshot`.
     ///
     /// <p>Returns information about a specific block storage disk snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDiskSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11342,7 +11342,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about all block storage disk snapshots in your AWS account and
     /// region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDiskSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11421,7 +11421,7 @@ pub mod fluent_builders {
     /// (CDN) distributions.</p>
     /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of
     /// your dsitribution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionBundles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11482,7 +11482,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail
     /// content delivery network (CDN) distribution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionLatestCacheReset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11569,7 +11569,7 @@ pub mod fluent_builders {
     /// <p>Metrics report the utilization of your resources, and the error counts generated by them.
     /// Monitor and collect metric data regularly to maintain the reliability, availability, and
     /// performance of your resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11989,7 +11989,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about one or more of your Amazon Lightsail content delivery network
     /// (CDN) distributions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12084,7 +12084,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomain`.
     ///
     /// <p>Returns information about a specific domain recordset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12154,7 +12154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomains`.
     ///
     /// <p>Returns a list of all domains in the user's account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12233,7 +12233,7 @@ pub mod fluent_builders {
     /// snapshot</code> operation.</p>
     /// <p>An export snapshot record can be used to create a new Amazon EC2 instance and its related
     /// resources with the <a>CreateCloudFormationStack</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExportSnapshotRecords<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12310,7 +12310,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about a specific Amazon Lightsail instance, which is a virtual private
     /// server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12387,7 +12387,7 @@ pub mod fluent_builders {
     /// <p>The <code>get instance access details</code> operation supports tag-based access control
     /// via resource tags applied to the resource identified by <code>instance name</code>. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceAccessDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12477,7 +12477,7 @@ pub mod fluent_builders {
     /// <p>Metrics report the utilization of your resources, and the error counts generated by them.
     /// Monitor and collect metric data regularly to maintain the reliability, availability, and
     /// performance of your resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12941,7 +12941,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the firewall port states for a specific Amazon Lightsail instance, the IP addresses
     /// allowed to connect to the instance through the ports, and the protocol.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstancePortStates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13015,7 +13015,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about all Amazon Lightsail virtual private servers, or
     /// <i>instances</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13091,7 +13091,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInstanceSnapshot`.
     ///
     /// <p>Returns information about a specific instance snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13164,7 +13164,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInstanceSnapshots`.
     ///
     /// <p>Returns all instance snapshots for the user's account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13240,7 +13240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInstanceState`.
     ///
     /// <p>Returns the state of a specific instance. Works on one instance at a time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13313,7 +13313,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetKeyPair`.
     ///
     /// <p>Returns information about a specific key pair.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13386,7 +13386,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetKeyPairs`.
     ///
     /// <p>Returns information about all key pairs in the user's account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKeyPairs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13462,7 +13462,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLoadBalancer`.
     ///
     /// <p>Returns information about the specified Lightsail load balancer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13538,7 +13538,7 @@ pub mod fluent_builders {
     /// <p>Metrics report the utilization of your resources, and the error counts generated by them.
     /// Monitor and collect metric data regularly to maintain the reliability, availability, and
     /// performance of your resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoadBalancerMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14087,7 +14087,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLoadBalancers`.
     ///
     /// <p>Returns information about all load balancers in an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14167,7 +14167,7 @@ pub mod fluent_builders {
     /// <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
     /// <p>You can have a maximum of 2 certificates associated with a Lightsail load balancer. One
     /// is active and the other is inactive.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoadBalancerTlsCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14241,7 +14241,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about a specific operation. Operations include events such as when you
     /// create an instance, allocate a static IP, attach a static IP, and so on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14314,7 +14314,7 @@ pub mod fluent_builders {
     /// <p>Results are returned from oldest to newest, up to a maximum of 200. Results can be paged
     /// by making each subsequent call to <code>GetOperations</code> use the maximum (last)
     /// <code>statusChangedAt</code> value from the previous request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOperations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14390,7 +14390,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOperationsForResource`.
     ///
     /// <p>Gets operations for a specific resource (e.g., an instance or a static IP).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOperationsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14481,7 +14481,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of all valid regions for Amazon Lightsail. Use the <code>include
     /// availability zones</code> parameter to also return the Availability Zones in a
     /// region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRegions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14574,7 +14574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRelationalDatabase`.
     ///
     /// <p>Returns information about a specific database in Amazon Lightsail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14653,7 +14653,7 @@ pub mod fluent_builders {
     /// the major engine version of a database.</p>
     /// <p>You can use a blueprint ID to create a new database that runs a specific database
     /// engine.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseBlueprints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14732,7 +14732,7 @@ pub mod fluent_builders {
     /// performance specifications for a database.</p>
     /// <p>You can use a bundle ID to create a new database with explicit performance
     /// specifications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseBundles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14808,7 +14808,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRelationalDatabaseEvents`.
     ///
     /// <p>Returns a list of events for a specific database in Amazon Lightsail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14918,7 +14918,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRelationalDatabaseLogEvents`.
     ///
     /// <p>Returns a list of log events for a database in Amazon Lightsail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseLogEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15121,7 +15121,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRelationalDatabaseLogStreams`.
     ///
     /// <p>Returns a list of available log streams for a specific database in Amazon Lightsail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseLogStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15201,7 +15201,7 @@ pub mod fluent_builders {
     /// <p>The <code>GetRelationalDatabaseMasterUserPassword</code> operation supports tag-based
     /// access control via resource tags applied to the resource identified by
     /// relationalDatabaseName.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseMasterUserPassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15312,7 +15312,7 @@ pub mod fluent_builders {
     /// <p>Metrics report the utilization of your resources, and the error counts generated by them.
     /// Monitor and collect metric data regularly to maintain the reliability, availability, and
     /// performance of your resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15739,7 +15739,7 @@ pub mod fluent_builders {
     /// <p>In addition to the parameter names and values, this operation returns other information
     /// about each parameter. This information includes whether changes require a reboot, whether the
     /// parameter is modifiable, the allowed values, and the data types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15831,7 +15831,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRelationalDatabases`.
     ///
     /// <p>Returns information about all of your databases in Amazon Lightsail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15907,7 +15907,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRelationalDatabaseSnapshot`.
     ///
     /// <p>Returns information about a specific database snapshot in Amazon Lightsail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15985,7 +15985,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRelationalDatabaseSnapshots`.
     ///
     /// <p>Returns information about all of your database snapshots in Amazon Lightsail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRelationalDatabaseSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16061,7 +16061,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStaticIp`.
     ///
     /// <p>Returns information about an Amazon Lightsail static IP.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStaticIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16134,7 +16134,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStaticIps`.
     ///
     /// <p>Returns information about all static IPs in the user's account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStaticIps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16210,7 +16210,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportKeyPair`.
     ///
     /// <p>Imports a public SSH key from a specific key pair.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16296,7 +16296,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `IsVpcPeered`.
     ///
     /// <p>Returns a Boolean value indicating whether your Lightsail VPC is peered.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct IsVpcPeered<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16360,7 +16360,7 @@ pub mod fluent_builders {
     /// <p>The <code>OpenInstancePublicPorts</code> action supports tag-based access control via
     /// resource tags applied to the resource identified by <code>instanceName</code>. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OpenInstancePublicPorts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16443,7 +16443,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PeerVpc`.
     ///
     /// <p>Peers the Lightsail VPC with the user's default VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PeerVpc<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16513,7 +16513,7 @@ pub mod fluent_builders {
     /// <p>When you update an existing alarm, its state is left unchanged, but the update completely
     /// overwrites the previous configuration of the alarm. The alarm is then evaluated with the
     /// updated configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16948,7 +16948,7 @@ pub mod fluent_builders {
     /// <p>The <code>PutInstancePublicPorts</code> action supports tag-based access control via
     /// resource tags applied to the resource identified by <code>instanceName</code>. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInstancePublicPorts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17041,7 +17041,7 @@ pub mod fluent_builders {
     /// <p>The <code>reboot instance</code> operation supports tag-based access control via resource
     /// tags applied to the resource identified by <code>instance name</code>. For more information,
     /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17117,7 +17117,7 @@ pub mod fluent_builders {
     /// <p>The <code>reboot relational database</code> operation supports tag-based access control
     /// via resource tags applied to the resource identified by relationalDatabaseName. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17200,7 +17200,7 @@ pub mod fluent_builders {
     /// more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail container services</a>
     /// in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterContainerImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17338,7 +17338,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReleaseStaticIp`.
     ///
     /// <p>Deletes a specific static IP from your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReleaseStaticIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17414,7 +17414,7 @@ pub mod fluent_builders {
     /// distribution.</p>
     /// <p>After resetting the cache, the next time a content request is made, your distribution
     /// pulls, serves, and caches it from the origin.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetDistributionCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17503,7 +17503,7 @@ pub mod fluent_builders {
     /// <p>Notifications are not sent to an email contact method until after it is verified, and
     /// confirmed as valid.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendContactMethodVerification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17585,7 +17585,7 @@ pub mod fluent_builders {
     /// <p>Use this action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the
     /// specified resource. Alternately, you can use this action to disable dual-stack, and enable
     /// IPv4 only.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIpAddressType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17708,7 +17708,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lightsail buckets currently support setting access for Lightsail instances in the same
     /// AWS Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetResourceAccessForBucket<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17843,7 +17843,7 @@ pub mod fluent_builders {
     /// <p>The <code>start instance</code> operation supports tag-based access control via resource
     /// tags applied to the resource identified by <code>instance name</code>. For more information,
     /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17920,7 +17920,7 @@ pub mod fluent_builders {
     /// <p>The <code>start relational database</code> operation supports tag-based access control via
     /// resource tags applied to the resource identified by relationalDatabaseName. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18004,7 +18004,7 @@ pub mod fluent_builders {
     /// <p>The <code>stop instance</code> operation supports tag-based access control via resource
     /// tags applied to the resource identified by <code>instance name</code>. For more information,
     /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18102,7 +18102,7 @@ pub mod fluent_builders {
     /// <p>The <code>stop relational database</code> operation supports tag-based access control via
     /// resource tags applied to the resource identified by relationalDatabaseName. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18201,7 +18201,7 @@ pub mod fluent_builders {
     /// <p>The <code>tag resource</code> operation supports tag-based access control via request tags
     /// and resource tags applied to the resource identified by <code>resource name</code>. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18308,7 +18308,7 @@ pub mod fluent_builders {
     /// condition is met, the alarm can notify you by email, SMS text message, and a banner displayed
     /// on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
     /// in Amazon Lightsail</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18422,7 +18422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UnpeerVpc`.
     ///
     /// <p>Unpeers the Lightsail VPC from the user's default VPC.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnpeerVpc<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18486,7 +18486,7 @@ pub mod fluent_builders {
     /// <p>The <code>untag resource</code> operation supports tag-based access control via request
     /// tags and resource tags applied to the resource identified by <code>resource name</code>. For
     /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18589,7 +18589,7 @@ pub mod fluent_builders {
     ///
     /// <p>Use this action to update the configuration of an existing bucket, such as versioning,
     /// public accessibility, and the AWS accounts that can access the bucket.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBucket<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18756,7 +18756,7 @@ pub mod fluent_builders {
     /// strategy, instead of as a short-term, monthly cost-cutting measure. Choose a bucket bundle
     /// that will provide the bucket with ample storage space and data transfer for a long time to
     /// come.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBucketBundle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18843,7 +18843,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the configuration of your Amazon Lightsail container service, such as its power,
     /// scale, and public domain names.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContainerService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19034,7 +19034,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an existing Amazon Lightsail content delivery network (CDN) distribution.</p>
     /// <p>Use this action to update the configuration of your existing distribution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDistribution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19197,7 +19197,7 @@ pub mod fluent_builders {
     /// cycle. To determine if you can update your distribution's bundle, use the
     /// <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code> parameter in the
     /// result will indicate whether you can currently update your distribution's bundle.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDistributionBundle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19291,7 +19291,7 @@ pub mod fluent_builders {
     /// <p>The <code>update domain entry</code> operation supports tag-based access control via
     /// resource tags applied to the resource identified by <code>domain name</code>. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainEntry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19378,7 +19378,7 @@ pub mod fluent_builders {
     /// <p>The <code>update load balancer attribute</code> operation supports tag-based access
     /// control via resource tags applied to the resource identified by <code>load balancer
     /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLoadBalancerAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19487,7 +19487,7 @@ pub mod fluent_builders {
     /// <p>The <code>update relational database</code> operation supports tag-based access control
     /// via resource tags applied to the resource identified by relationalDatabaseName. For more
     /// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRelationalDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19809,7 +19809,7 @@ pub mod fluent_builders {
     /// <p>The <code>update relational database parameters</code> operation supports tag-based access
     /// control via resource tags applied to the resource identified by relationalDatabaseName. For
     /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRelationalDatabaseParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

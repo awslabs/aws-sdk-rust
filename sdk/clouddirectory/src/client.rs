@@ -563,7 +563,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddFacetToObject`.
     ///
     /// <p>Adds a new <a>Facet</a> to an object. An object can have more than one facet applied on it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddFacetToObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -682,7 +682,7 @@ pub mod fluent_builders {
     ///
     /// <p>Copies the input published schema, at the specified version, into the <a>Directory</a> with the same
     /// name and version as that of the published schema.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplySchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -782,7 +782,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -894,7 +894,7 @@ pub mod fluent_builders {
     ///
     /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached
     /// policies.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -997,7 +997,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AttachToIndex`.
     ///
     /// <p>Attaches the specified object to the specified index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachToIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1098,7 +1098,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AttachTypedLink`.
     ///
     /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachTypedLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1232,7 +1232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchRead`.
     ///
     /// <p>Performs all the read operations in a batch. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchRead<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1340,7 +1340,7 @@ pub mod fluent_builders {
     ///
     /// <p>Performs all the write operations in a batch. Either all the operations succeed or
     /// none.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchWrite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1435,7 +1435,7 @@ pub mod fluent_builders {
     /// directory. A directory cannot be created without a schema.</p>
     /// <p>You can also quickly create a directory using a managed schema, called the
     /// <code>QuickStartSchema</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed Schema</a> in the <i>Amazon Cloud Directory Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1520,7 +1520,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new <a>Facet</a> in a schema. Facet creation is allowed only
     /// in development or applied schemas.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1689,7 +1689,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIndex`.
     ///
     /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.html">Indexing and search</a> for more information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1819,7 +1819,7 @@ pub mod fluent_builders {
     /// a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a
     /// collection of <a>Facet</a> attributes. You can also use this API call to create a
     /// policy object, if the facet from which you create the object is a policy facet. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1973,7 +1973,7 @@ pub mod fluent_builders {
     /// facets. You can apply only published schemas to directories. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2045,7 +2045,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTypedLinkFacet`.
     ///
     /// <p>Creates a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTypedLinkFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2136,7 +2136,7 @@ pub mod fluent_builders {
     /// <p>Deletes a directory. Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise extreme
     /// caution
     /// when deleting directories.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2211,7 +2211,7 @@ pub mod fluent_builders {
     /// <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s
     /// that are associated with the facet will be deleted. Only development schema facets are allowed
     /// deletion.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2294,7 +2294,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an object and its associated attributes. Only objects with no children and no
     /// parents can be deleted. The maximum number of attributes that can be deleted during an object deletion is 30. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2382,7 +2382,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchema`.
     ///
     /// <p>Deletes a given schema. Schemas in a development and published state can only be deleted. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2454,7 +2454,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTypedLinkFacet`.
     ///
     /// <p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTypedLinkFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2536,7 +2536,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachFromIndex`.
     ///
     /// <p>Detaches the specified object from the specified index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachFromIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2638,7 +2638,7 @@ pub mod fluent_builders {
     ///
     /// <p>Detaches a given object from the parent object. The object that is to be detached from the
     /// parent is specified by the link name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2738,7 +2738,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachPolicy`.
     ///
     /// <p>Detaches a policy from an object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2839,7 +2839,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachTypedLink`.
     ///
     /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachTypedLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2928,7 +2928,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables the specified directory. Disabled directories cannot be read or written to.
     /// Only enabled directories can be disabled. Disabled directories may be reenabled.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3002,7 +3002,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables the specified directory. Only disabled directories can be enabled. Once
     /// enabled, the directory can then be read and written to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3075,7 +3075,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppliedSchemaVersion`.
     ///
     /// <p>Returns current applied schema version ARN, including the minor version in use.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppliedSchemaVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3145,7 +3145,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDirectory`.
     ///
     /// <p>Retrieves metadata about a directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3219,7 +3219,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of schema
     /// facets -- published, development, or applied.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3301,7 +3301,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLinkAttributes`.
     ///
     /// <p>Retrieves attributes that are associated with a typed link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLinkAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3417,7 +3417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetObjectAttributes`.
     ///
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetObjectAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3546,7 +3546,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetObjectInformation`.
     ///
     /// <p>Retrieves metadata about an object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetObjectInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3645,7 +3645,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSchemaAsJson`.
     ///
     /// <p>Retrieves a JSON representation of the schema. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON Schema Format</a> for more information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchemaAsJson<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3715,7 +3715,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTypedLinkFacetInformation`.
     ///
     /// <p>Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTypedLinkFacetInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3797,7 +3797,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppliedSchemaArns`.
     ///
     /// <p>Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided, lists the minor version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppliedSchemaArns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3900,7 +3900,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAttachedIndices`.
     ///
     /// <p>Lists indices attached to the specified object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAttachedIndices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4020,7 +4020,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development
     /// state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevelopmentSchemaArns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4100,7 +4100,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDirectories`.
     ///
     /// <p>Lists directories created within an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDirectories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4195,7 +4195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFacetAttributes`.
     ///
     /// <p>Retrieves attributes attached to the facet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFacetAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4295,7 +4295,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFacetNames`.
     ///
     /// <p>Retrieves the names of facets that exist in a schema.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFacetNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4387,7 +4387,7 @@ pub mod fluent_builders {
     /// <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
     /// information for an object. It also supports filtering by typed link facet and identity
     /// attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIncomingTypedLinks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4550,7 +4550,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIndex`.
     ///
     /// <p>Lists objects attached to the specified index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4689,7 +4689,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListManagedSchemaArns`.
     ///
     /// <p>Lists the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the minor version revisions in that family are listed instead.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedSchemaArns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4780,7 +4780,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all attributes that are associated with an object.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4921,7 +4921,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a paginated list of child objects that are associated with a given
     /// object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectChildren<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5055,7 +5055,7 @@ pub mod fluent_builders {
     /// The order of the paths and nodes returned is consistent among multiple API calls unless the
     /// objects are deleted or moved. Paths not leading to the directory root are ignored from the
     /// target object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectParentPaths<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5164,7 +5164,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists parent objects that are associated with a given object in pagination
     /// fashion.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectParents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5304,7 +5304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListObjectPolicies`.
     ///
     /// <p>Returns policies attached to an object in pagination fashion.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5431,7 +5431,7 @@ pub mod fluent_builders {
     /// <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
     /// information for an object. It also supports filtering by typed link facet and identity
     /// attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOutgoingTypedLinks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5594,7 +5594,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPolicyAttachments`.
     ///
     /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPolicyAttachments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5719,7 +5719,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPublishedSchemaArns`.
     ///
     /// <p>Lists the major version families of each published schema. If a major version ARN is provided as <code>SchemaArn</code>, the minor version revisions in that family are listed instead.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPublishedSchemaArns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5811,7 +5811,7 @@ pub mod fluent_builders {
     /// <p>Returns tags for a resource. Tagging is currently supported only for directories with a
     /// limit of 50 tags per directory. All 50 tags are returned for a given directory with this API
     /// call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5907,7 +5907,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTypedLinkFacetAttributes`.
     ///
     /// <p>Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTypedLinkFacetAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6010,7 +6010,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a paginated list of <code>TypedLink</code> facet names for a particular schema.
     /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTypedLinkFacetNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6107,7 +6107,7 @@ pub mod fluent_builders {
     /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
     /// <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more
     /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LookupPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6217,7 +6217,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PublishSchema`.
     ///
     /// <p>Publishes a development schema with a major version and a recommended minor version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6327,7 +6327,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutSchemaFromJson`.
     ///
     /// <p>Allows a schema to be updated using JSON upload. Only available for development schemas. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON Schema Format</a> for more information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSchemaFromJson<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6407,7 +6407,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveFacetFromObject`.
     ///
     /// <p>Removes the specified facet from the specified object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveFacetFromObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6506,7 +6506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>An API operation for adding tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6595,7 +6595,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>An API operation for removing tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6695,7 +6695,7 @@ pub mod fluent_builders {
     /// <p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6811,7 +6811,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLinkAttributes`.
     ///
     /// <p>Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLinkAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6914,7 +6914,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateObjectAttributes`.
     ///
     /// <p>Updates a given object's attributes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateObjectAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7020,7 +7020,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the schema name with a new name. Only development schema names can be
     /// updated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7102,7 +7102,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTypedLinkFacet`.
     ///
     /// <p>Updates a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTypedLinkFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7231,7 +7231,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpgradeAppliedSchema`.
     ///
     /// <p>Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with schema updates found in <code>MinorVersion</code>. Backwards-compatible minor version upgrades are instantaneously available for readers on all objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a given directory per call. To upgrade multiple directories from one schema, you would need to call this API on each directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpgradeAppliedSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7327,7 +7327,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpgradePublishedSchema`.
     ///
     /// <p>Upgrades a published schema under a new minor version revision using the current contents of <code>DevelopmentSchemaArn</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpgradePublishedSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

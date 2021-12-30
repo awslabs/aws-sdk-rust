@@ -594,7 +594,7 @@ pub mod fluent_builders {
     ///
     /// <p>Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the
     /// KSK status to <code>ACTIVE</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateKeySigningKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -689,7 +689,7 @@ pub mod fluent_builders {
     /// <code>CreateVPCAssociationAuthorization</code> request. Then the account that created the VPC must submit an
     /// <code>AssociateVPCWithHostedZone</code> request.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateVPCWithHostedZone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -867,7 +867,7 @@ pub mod fluent_builders {
     /// <p>For information about the limits on a <code>ChangeResourceRecordSets</code> request, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the
     /// <i>Amazon Route 53 Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ChangeResourceRecordSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -956,7 +956,7 @@ pub mod fluent_builders {
     /// <p>For information about using tags for cost allocation, see
     /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a>
     /// in the <i>Billing and Cost Management User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ChangeTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1128,7 +1128,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHealthCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1286,7 +1286,7 @@ pub mod fluent_builders {
     /// For public hosted zones, this means that the NS and SOA records are not yet available on all Route 53 DNS servers. When the
     /// NS and SOA records are available, the status of the zone changes to <code>INSYNC</code>.</p>
     /// <p>The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code> permission.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHostedZone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1449,7 +1449,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateKeySigningKey`.
     ///
     /// <p>Creates a new key-signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateKeySigningKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1777,7 +1777,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteQueryLoggingConfig.html">DeleteQueryLoggingConfig</a>.</p>
     /// </dd>
     /// </dl>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQueryLoggingConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1934,7 +1934,7 @@ pub mod fluent_builders {
     /// reusable delegation set.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReusableDelegationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2031,7 +2031,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a traffic policy, which you use to create multiple DNS resource record sets for one domain name (such as example.com) or
     /// one subdomain name (such as www.example.com).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrafficPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2126,7 +2126,7 @@ pub mod fluent_builders {
     /// In addition, <code>CreateTrafficPolicyInstance</code> associates the resource record sets with a specified domain name (such as example.com) or
     /// subdomain name (such as www.example.com). Amazon Route 53 responds to DNS queries for the domain or subdomain name by using the resource record sets
     /// that <code>CreateTrafficPolicyInstance</code> created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrafficPolicyInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2248,7 +2248,7 @@ pub mod fluent_builders {
     /// multiple DNS resource record sets for one domain name (such as example.com) or one subdomain name (such as www.example.com). You can
     /// create a maximum of 1000 versions of a traffic policy. If you reach the limit and need to create another version, you'll need to start a new
     /// traffic policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrafficPolicyVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2350,7 +2350,7 @@ pub mod fluent_builders {
     /// <p>If you want to associate multiple VPCs that you created by using one account with a hosted zone
     /// that you created by using a different account, you must submit one authorization request for each VPC.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVPCAssociationAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2436,7 +2436,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
     /// KSK status to <code>INACTIVE</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeactivateKeySigningKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2532,7 +2532,7 @@ pub mod fluent_builders {
     /// you can't use the Route 53 <code>DeleteHealthCheck</code> command to delete the health check. The health check is deleted
     /// automatically when you deregister the instance; there can be a delay of several hours before the health check is deleted
     /// from Route 53. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHealthCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2643,7 +2643,7 @@ pub mod fluent_builders {
     /// Amazon Web Services account.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHostedZone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2714,7 +2714,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be
     /// deactivated before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKeySigningKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2801,7 +2801,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information about DNS query logs, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteQueryLoggingConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2877,7 +2877,7 @@ pub mod fluent_builders {
     /// <p>To verify that the reusable delegation set is not associated with any hosted zones, submit a
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
     /// request and specify the ID of the reusable delegation set that you want to delete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReusableDelegationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2961,7 +2961,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrafficPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3044,7 +3044,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>In the Route 53 console, traffic policy instances are known as policy records.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrafficPolicyInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3130,7 +3130,7 @@ pub mod fluent_builders {
     /// <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from the hosted zone.
     /// If you want to delete an existing association, use <code>DisassociateVPCFromHostedZone</code>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVPCAssociationAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3218,7 +3218,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key-signing keys (KSKs)
     /// that are active in the hosted zone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableHostedZoneDNSSEC<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3311,7 +3311,7 @@ pub mod fluent_builders {
     /// If the hosted zone has a value for <code>OwningService</code>, you can't use <code>DisassociateVPCFromHostedZone</code>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateVPCFromHostedZone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3408,7 +3408,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableHostedZoneDNSSEC`.
     ///
     /// <p>Enables DNSSEC signing in a specific hosted zone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableHostedZoneDNSSEC<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3490,7 +3490,7 @@ pub mod fluent_builders {
     /// <a href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>. Then choose
     /// <b>Service limits</b> in the navigation pane.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountLimit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3631,7 +3631,7 @@ pub mod fluent_builders {
     /// <code>INSYNC</code> indicates that the changes have propagated to all Route 53 DNS servers. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChange<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3710,7 +3710,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP Address Ranges of Amazon Route 53 Servers</a>
     /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCheckerIpRanges<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3770,7 +3770,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDNSSEC`.
     ///
     /// <p>Returns information about DNSSEC for a specific hosted zone, including the key-signing keys (KSKs) in the hosted zone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDNSSEC<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3863,7 +3863,7 @@ pub mod fluent_builders {
     /// <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&subdivisioncode=<i>subdivision code</i>
     /// </code>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGeoLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4021,7 +4021,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetHealthCheck`.
     ///
     /// <p>Gets information about a specified health check.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHealthCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4096,7 +4096,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetHealthCheckCount`.
     ///
     /// <p>Retrieves the number of health checks that are associated with the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHealthCheckCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4156,7 +4156,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetHealthCheckLastFailureReason`.
     ///
     /// <p>Gets the reason that a specified health check failed most recently.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHealthCheckLastFailureReason<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4242,7 +4242,7 @@ pub mod fluent_builders {
     /// <important>
     /// <p>This API is intended for use during development to diagnose behavior. It doesn’t support production use-cases with high query rates that require immediate and actionable responses.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHealthCheckStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4325,7 +4325,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetHostedZone`.
     ///
     /// <p>Gets information about a specified hosted zone including the four name servers assigned to the hosted zone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHostedZone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4395,7 +4395,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetHostedZoneCount`.
     ///
     /// <p>Retrieves the number of hosted zones that are associated with the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHostedZoneCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4459,7 +4459,7 @@ pub mod fluent_builders {
     /// <p>For the default limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
     /// in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit,
     /// <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-route53">open a case</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHostedZoneLimit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4574,7 +4574,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>
     /// and
     /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging DNS Queries</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryLoggingConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4645,7 +4645,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information about a specified reusable delegation set, including the four name servers that are assigned
     /// to the delegation set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReusableDelegationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4718,7 +4718,7 @@ pub mod fluent_builders {
     /// <p>For the default limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
     /// in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit,
     /// <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-route53">open a case</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReusableDelegationSetLimit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4809,7 +4809,7 @@ pub mod fluent_builders {
     /// <p>For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrafficPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4897,7 +4897,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>In the Route 53 console, traffic policy instances are known as policy records.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrafficPolicyInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4967,7 +4967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTrafficPolicyInstanceCount`.
     ///
     /// <p>Gets the number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrafficPolicyInstanceCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5032,7 +5032,7 @@ pub mod fluent_builders {
     /// <p>Route 53 does not perform authorization for this API because it retrieves information that is already available to the public.</p>
     /// <p>For a list of supported geolocation codes, see the
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a> data type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGeoLocations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5163,7 +5163,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHealthChecks`.
     ///
     /// <p>Retrieve a list of the health checks that are associated with the current Amazon Web Services account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHealthChecks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5256,7 +5256,7 @@ pub mod fluent_builders {
     /// includes a <code>HostedZones</code> child element for each hosted zone.</p>
     /// <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of hosted zones, you can use the
     /// <code>maxitems</code> parameter to list them in groups of up to 100.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHostedZones<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5407,7 +5407,7 @@ pub mod fluent_builders {
     /// <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHostedZonesByName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5530,7 +5530,7 @@ pub mod fluent_builders {
     /// <code>efs.amazonaws.com</code>. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHostedZonesByVPC<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5650,7 +5650,7 @@ pub mod fluent_builders {
     /// Additional information, including the format of DNS query logs, appears in
     /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging DNS Queries</a>
     /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQueryLoggingConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5828,7 +5828,7 @@ pub mod fluent_builders {
     /// is <code>true</code>. To display the next page of results, get the values of <code>NextRecordName</code>, <code>NextRecordType</code>,
     /// and <code>NextRecordIdentifier</code> (if any) from the response. Then submit another <code>ListResourceRecordSets</code> request, and
     /// specify those values for <code>StartRecordName</code>, <code>StartRecordType</code>, and <code>StartRecordIdentifier</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceRecordSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6047,7 +6047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReusableDelegationSets`.
     ///
     /// <p>Retrieves a list of the reusable delegation sets that are associated with the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReusableDelegationSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6140,7 +6140,7 @@ pub mod fluent_builders {
     /// <p>For information about using tags for cost allocation, see
     /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a>
     /// in the <i>Billing and Cost Management User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6242,7 +6242,7 @@ pub mod fluent_builders {
     /// <p>For information about using tags for cost allocation, see
     /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a>
     /// in the <i>Billing and Cost Management User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6354,7 +6354,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
     ///
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrafficPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6460,7 +6460,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the
     /// <code>MaxItems</code> parameter to list them in groups of up to 100.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrafficPolicyInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6616,7 +6616,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the
     /// <code>MaxItems</code> parameter to list them in groups of up to 100.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrafficPolicyInstancesByHostedZone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6764,7 +6764,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the
     /// <code>MaxItems</code> parameter to list them in groups of up to 100.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrafficPolicyInstancesByPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6939,7 +6939,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about all of the versions for a specified traffic policy.</p>
     /// <p>Traffic policy versions are listed in numerical order by <code>VersionNumber</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrafficPolicyVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7052,7 +7052,7 @@ pub mod fluent_builders {
     /// specified hosted zone because you've submitted one or more <code>CreateVPCAssociationAuthorization</code> requests. </p>
     /// <p>The response includes a <code>VPCs</code> element with a <code>VPC</code> child element for each VPC
     /// that can be associated with the hosted zone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVPCAssociationAuthorizations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7159,7 +7159,7 @@ pub mod fluent_builders {
     /// <p>Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify
     /// the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p>
     /// <p>This call only supports querying public hosted zones.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestDNSAnswer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7328,7 +7328,7 @@ pub mod fluent_builders {
     /// <p>For more information about updating health checks, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating, Updating, and Deleting Health Checks</a>
     /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHealthCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8073,7 +8073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateHostedZoneComment`.
     ///
     /// <p>Updates the comment for a specified hosted zone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHostedZoneComment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8155,7 +8155,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTrafficPolicyComment`.
     ///
     /// <p>Updates the comment for a specified traffic policy version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrafficPolicyComment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8260,7 +8260,7 @@ pub mod fluent_builders {
     /// <p>Route 53 deletes the old group of resource record sets that are associated with the root resource record set name.</p>
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrafficPolicyInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

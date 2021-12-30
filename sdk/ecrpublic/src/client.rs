@@ -268,7 +268,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCheckLayerAvailability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -375,7 +375,7 @@ pub mod fluent_builders {
     /// you remove the last tag from an image, the image is deleted from your repository.</p>
     /// <p>You can completely delete an image (and all of its tags) by specifying the image's
     /// digest in your request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -488,7 +488,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CompleteLayerUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -605,7 +605,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a repository in a public registry. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR
     /// repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -722,7 +722,7 @@ pub mod fluent_builders {
     /// <p>Deletes a repository in a public registry. If the repository contains images, you must
     /// either delete all images in the repository or use the <code>force</code> option which
     /// deletes all images on your behalf before deleting the repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -817,7 +817,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRepositoryPolicy`.
     ///
     /// <p>Deletes the repository policy associated with the specified repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRepositoryPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -910,7 +910,7 @@ pub mod fluent_builders {
     /// command shows the uncompressed image size, so it may return a larger image size than the
     /// image sizes returned by <a>DescribeImages</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1058,7 +1058,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImageTags`.
     ///
     /// <p>Returns the image tag details for a repository in a public registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImageTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1189,7 +1189,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRegistries`.
     ///
     /// <p>Returns details for a public registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRegistries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1297,7 +1297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRepositories`.
     ///
     /// <p>Describes repositories in a public registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRepositories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1446,7 +1446,7 @@ pub mod fluent_builders {
     /// principal has access to. The authorization token is valid for 12 hours. This API requires
     /// the <code>ecr-public:GetAuthorizationToken</code> and
     /// <code>sts:GetServiceBearerToken</code> permissions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAuthorizationToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1506,7 +1506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRegistryCatalogData`.
     ///
     /// <p>Retrieves catalog metadata for a public registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRegistryCatalogData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1567,7 +1567,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieve catalog metadata for a repository in a public registry. This metadata is
     /// displayed publicly in the Amazon ECR Public Gallery.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepositoryCatalogData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1652,7 +1652,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRepositoryPolicy`.
     ///
     /// <p>Retrieves the repository policy for the specified repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepositoryPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1743,7 +1743,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitiateLayerUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1828,7 +1828,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for an Amazon ECR Public resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1907,7 +1907,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2047,7 +2047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutRegistryCatalogData`.
     ///
     /// <p>Create or updates the catalog data for a public registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRegistryCatalogData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2127,7 +2127,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutRepositoryCatalogData`.
     ///
     /// <p>Creates or updates the catalog data for a repository in a public registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRepositoryCatalogData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2229,7 +2229,7 @@ pub mod fluent_builders {
     /// <p>Applies a repository policy to the specified public repository to control access
     /// permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon ECR Repository
     /// Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetRepositoryPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2345,7 +2345,7 @@ pub mod fluent_builders {
     /// If existing tags on a resource are not specified in the request parameters, they are not
     /// changed. When a resource is deleted, the tags associated with that resource are deleted as
     /// well.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2436,7 +2436,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2531,7 +2531,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UploadLayerPart<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -798,7 +798,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptPortfolioShare`.
     ///
     /// <p>Accepts an offer to share the specified portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptPortfolioShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -956,7 +956,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateBudgetWithResource`.
     ///
     /// <p>Associates the specified budget with the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateBudgetWithResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1036,7 +1036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociatePrincipalWithPortfolio`.
     ///
     /// <p>Associates the specified principal ARN with the specified portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePrincipalWithPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1174,7 +1174,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates the specified product with the specified portfolio.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateProductWithPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1308,7 +1308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateServiceActionWithProvisioningArtifact`.
     ///
     /// <p>Associates a self-service action with a provisioning artifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateServiceActionWithProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1441,7 +1441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateTagOptionWithResource`.
     ///
     /// <p>Associate the specified TagOption with the specified portfolio or product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTagOptionWithResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1524,7 +1524,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchAssociateServiceActionWithProvisioningArtifact`.
     ///
     /// <p>Associates multiple self-service actions with provisioning artifacts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateServiceActionWithProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1639,7 +1639,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDisassociateServiceActionFromProvisioningArtifact`.
     ///
     /// <p>Disassociates a batch of self-service actions from the specified provisioning artifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateServiceActionFromProvisioningArtifact<C = aws_smithy_client::erase::DynConnector, M= crate::middleware::DefaultMiddleware, R= aws_smithy_client::retry::Standard> {
                             handle: std::sync::Arc<super::Handle<C, M, R>>,
                             inner: crate::input::batch_disassociate_service_action_from_provisioning_artifact_input::Builder
@@ -1753,7 +1753,7 @@ pub mod fluent_builders {
     /// You can copy a product to the same region or another region.</p>
     /// <p>This operation is performed asynchronously. To track the progress of the
     /// operation, use <a>DescribeCopyProductStatus</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1962,7 +1962,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a constraint.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConstraint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2285,7 +2285,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a portfolio.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2459,7 +2459,7 @@ pub mod fluent_builders {
     /// <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>
     /// <p>You can't share a shared resource, including portfolios that contain a shared product.</p>
     /// <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePortfolioShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2619,7 +2619,7 @@ pub mod fluent_builders {
     /// <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is
     /// required when using the <code>ImportFromPhysicalId</code> template source in the
     /// information data section.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2867,7 +2867,7 @@ pub mod fluent_builders {
     /// provisioned product, the product status must be AVAILBLE or TAINTED.</p>
     /// <p>To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>.
     /// To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProvisionedProductPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3129,7 +3129,7 @@ pub mod fluent_builders {
     /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
     /// IAM policy permission. This policy permission is required when using the
     /// <code>ImportFromPhysicalId</code> template source in the information data section.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3271,7 +3271,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateServiceAction`.
     ///
     /// <p>Creates a self-service action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3493,7 +3493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTagOption`.
     ///
     /// <p>Creates a TagOption.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTagOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3574,7 +3574,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified constraint.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConstraint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3688,7 +3688,7 @@ pub mod fluent_builders {
     /// <p>You cannot delete a portfolio if it was shared with you or if it has associated
     /// products, users, constraints, or shared accounts.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3802,7 +3802,7 @@ pub mod fluent_builders {
     /// node. Shares to an organization node can only be deleted by the management account of an
     /// organization or by a delegated administrator.</p>
     /// <p>Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePortfolioShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3938,7 +3938,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified product.</p>
     /// <p>You cannot delete a product if it was shared with you or is associated with a portfolio.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4049,7 +4049,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProvisionedProductPlan`.
     ///
     /// <p>Deletes the specified plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProvisionedProductPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4175,7 +4175,7 @@ pub mod fluent_builders {
     /// <p>You cannot delete a provisioning artifact associated with a product that was shared with you.
     /// You cannot delete the last provisioning artifact for a product, because a product must have at
     /// least one provisioning artifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4302,7 +4302,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteServiceAction`.
     ///
     /// <p>Deletes a self-service action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4414,7 +4414,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified TagOption.</p>
     /// <p>You cannot delete a TagOption if it is associated with a product or portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTagOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4484,7 +4484,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConstraint`.
     ///
     /// <p>Gets information about the specified constraint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConstraint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4595,7 +4595,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCopyProductStatus`.
     ///
     /// <p>Gets the status of the specified copy product operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCopyProductStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4710,7 +4710,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about the specified portfolio.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4825,7 +4825,7 @@ pub mod fluent_builders {
     /// portfolio have been shared, whether the recipient entity has imported the share, and
     /// whether TagOptions are included with the share.</p>
     /// <p>The <code>PortfolioId</code> and <code>Type</code> parameters are both required.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePortfolioShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4937,7 +4937,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the status of the specified portfolio share operation. This API can only be called
     /// by the management account in the organization or by a delegated admin.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePortfolioShareStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5010,7 +5010,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProduct`.
     ///
     /// <p>Gets information about the specified product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5131,7 +5131,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProductAsAdmin`.
     ///
     /// <p>Gets information about the specified product. This operation is run with administrator access.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProductAsAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5275,7 +5275,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProductView`.
     ///
     /// <p>Gets information about the specified product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProductView<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5386,7 +5386,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProvisionedProduct`.
     ///
     /// <p>Gets information about the specified provisioned product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5511,7 +5511,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProvisionedProductPlan`.
     ///
     /// <p>Gets information about the resource changes for the specified plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisionedProductPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5642,7 +5642,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProvisioningArtifact`.
     ///
     /// <p>Gets information about the specified provisioning artifact (also known as a version) for the specified product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5812,7 +5812,7 @@ pub mod fluent_builders {
     /// do not include conflicted TagOption keys as tags, or this causes the error
     /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
     /// Tag the provisioned product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisioningParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5997,7 +5997,7 @@ pub mod fluent_builders {
     /// will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to
     /// use <a>ListRecordHistory</a> to see the product's history from when he was the owner.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6130,7 +6130,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeServiceAction`.
     ///
     /// <p>Describes a self-service action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6241,7 +6241,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeServiceActionExecutionParameters`.
     ///
     /// <p>Finds the default parameters for a specific self-service action on a specific provisioned product and returns a map of the results to the user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServiceActionExecutionParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6370,7 +6370,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTagOption`.
     ///
     /// <p>Gets information about the specified TagOption.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTagOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6446,7 +6446,7 @@ pub mod fluent_builders {
     /// the organization.</p>
     /// <p>This API can't be invoked if there are active delegated administrators in the organization.</p>
     /// <p>Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableAWSOrganizationsAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6506,7 +6506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateBudgetFromResource`.
     ///
     /// <p>Disassociates the specified budget from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateBudgetFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6587,7 +6587,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disassociates a previously associated principal ARN from a specified
     /// portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePrincipalFromPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6714,7 +6714,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disassociates the specified product from the specified portfolio. </p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateProductFromPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6835,7 +6835,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateServiceActionFromProvisioningArtifact`.
     ///
     /// <p>Disassociates the specified self-service action association from the specified provisioning artifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateServiceActionFromProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6968,7 +6968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateTagOptionFromResource`.
     ///
     /// <p>Disassociates the specified TagOption from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTagOptionFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7056,7 +7056,7 @@ pub mod fluent_builders {
     /// organization.</p>
     /// <p>By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so that your shares can be in sync with any changes in your AWS Organizations structure.</p>
     /// <p>Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAWSOrganizationsAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7116,7 +7116,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExecuteProvisionedProductPlan`.
     ///
     /// <p>Provisions or modifies a product based on the resource changes for the specified plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteProvisionedProductPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7242,7 +7242,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExecuteProvisionedProductServiceAction`.
     ///
     /// <p>Executes a self-service action against a provisioned product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteProvisionedProductServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7412,7 +7412,7 @@ pub mod fluent_builders {
     ///
     /// <p>Get the Access Status for AWS Organization portfolio share feature. This API can only be
     /// called by the management account in the organization or by a delegated admin.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAWSOrganizationsAccessStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7472,7 +7472,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProvisionedProductOutputs`.
     ///
     /// <p>This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a list of one or more output keys, and responds with the key/value pairs of those outputs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProvisionedProductOutputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7652,7 +7652,7 @@ pub mod fluent_builders {
     ///
     /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
     /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportAsProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7824,7 +7824,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAcceptedPortfolioShares`.
     ///
     /// <p>Lists all portfolios for which sharing was accepted by this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAcceptedPortfolioShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7988,7 +7988,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBudgetsForResource`.
     ///
     /// <p>Lists all the budgets associated to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBudgetsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8119,7 +8119,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConstraintsForPortfolio`.
     ///
     /// <p>Lists the constraints for the specified portfolio and product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConstraintsForPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8262,7 +8262,7 @@ pub mod fluent_builders {
     /// <p>Lists the paths to the specified product. A path is how the user
     /// has access to a specified product, and is necessary when provisioning a product. A path
     /// also determines the constraints put on the product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLaunchPaths<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8396,7 +8396,7 @@ pub mod fluent_builders {
     /// only be called by the management account in the organization or by a delegated
     /// admin.</p>
     /// <p>If a delegated admin is de-registered, they can no longer perform this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationPortfolioAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8572,7 +8572,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the account IDs that have access to the specified portfolio.</p>
     /// <p>A delegated admin can list the accounts that have access to the shared portfolio. Note that if a delegated admin is de-registered, they can no longer perform this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPortfolioAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8716,7 +8716,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPortfolios`.
     ///
     /// <p>Lists all portfolios in the catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPortfolios<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8837,7 +8837,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPortfoliosForProduct`.
     ///
     /// <p>Lists all portfolios that the specified product is associated with.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPortfoliosForProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8968,7 +8968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPrincipalsForPortfolio`.
     ///
     /// <p>Lists all principal ARNs associated with the specified portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrincipalsForPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9099,7 +9099,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProvisionedProductPlans`.
     ///
     /// <p>Lists the plans for the specified provisioned product or all plans to which the user has access.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProvisionedProductPlans<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9246,7 +9246,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProvisioningArtifacts`.
     ///
     /// <p>Lists all provisioning artifacts (also known as versions) for the specified product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProvisioningArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9357,7 +9357,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProvisioningArtifactsForServiceAction`.
     ///
     /// <p>Lists all provisioning artifacts (also known as versions) for the specified self-service action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProvisioningArtifactsForServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9493,7 +9493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRecordHistory`.
     ///
     /// <p>Lists the specified requests or all performed requests.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecordHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9643,7 +9643,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourcesForTagOption`.
     ///
     /// <p>Lists the resources associated with the specified TagOption.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourcesForTagOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9773,7 +9773,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceActions`.
     ///
     /// <p>Lists all self-service actions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9894,7 +9894,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceActionsForProvisioningArtifact`.
     ///
     /// <p>Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning Artifact ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceActionsForProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10043,7 +10043,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStackInstancesForProvisionedProduct`.
     ///
     /// <p>Returns summary information about stack instances that are associated with the specified <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a specific AWS account name or region. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStackInstancesForProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10179,7 +10179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagOptions`.
     ///
     /// <p>Lists the specified TagOptions or all TagOptions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10280,7 +10280,7 @@ pub mod fluent_builders {
     /// tag conflict for that key. Do not include conflicted keys as tags, or this causes
     /// the error "Parameter validation failed: Missing required parameter in
     /// Tags[<i>N</i>]:<i>Value</i>".</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10562,7 +10562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectPortfolioShare`.
     ///
     /// <p>Rejects an offer to share the specified portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectPortfolioShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10721,7 +10721,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the provisioned products that are available (not terminated).</p>
     /// <p>To use additional filtering, see <a>SearchProvisionedProducts</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ScanProvisionedProducts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10855,7 +10855,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchProducts`.
     ///
     /// <p>Gets information about the products to which the caller has access.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProducts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11030,7 +11030,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchProductsAsAdmin`.
     ///
     /// <p>Gets information about the products for the specified portfolio or all products.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProductsAsAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11228,7 +11228,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchProvisionedProducts`.
     ///
     /// <p>Gets information about the provisioned products that meet the specified criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProvisionedProducts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11431,7 +11431,7 @@ pub mod fluent_builders {
     /// <p>Terminates the specified provisioned product.</p>
     /// <p>This operation does not delete any records associated with the provisioned product.</p>
     /// <p>You can check the status of this request using <a>DescribeRecord</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11612,7 +11612,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConstraint`.
     ///
     /// <p>Updates the specified constraint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConstraint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11846,7 +11846,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified portfolio.</p>
     /// <p>You cannot update a product that was shared with you.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12032,7 +12032,7 @@ pub mod fluent_builders {
     /// <p>If the portfolio is shared to both an external account and an organization node, and both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type. </p>
     ///
     /// <p>This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for that action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePortfolioShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12176,7 +12176,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProduct`.
     ///
     /// <p>Updates the specified product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12401,7 +12401,7 @@ pub mod fluent_builders {
     /// Depending on the specific updates requested, this operation can update with no
     /// interruption, with some interruption, or replace the provisioned product entirely.</p>
     /// <p>You can check the status of this request using <a>DescribeRecord</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12670,7 +12670,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProvisionedProductProperties`.
     ///
     /// <p>Requests updates to the properties of the specified provisioned product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProvisionedProductProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12859,7 +12859,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified provisioning artifact (also known as a version) for the specified product.</p>
     /// <p>You cannot update a provisioning artifact for a product that was shared with you.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13039,7 +13039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServiceAction`.
     ///
     /// <p>Updates a self-service action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13196,7 +13196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTagOption`.
     ///
     /// <p>Updates the specified TagOption.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTagOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

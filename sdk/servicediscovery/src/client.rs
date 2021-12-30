@@ -293,7 +293,7 @@ pub mod fluent_builders {
     /// <p>For the current quota on the number of namespaces that you can create using the same account,
     /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the
     /// <i>Cloud Map Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHttpNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -417,7 +417,7 @@ pub mod fluent_builders {
     /// <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can
     /// create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the
     /// <i>Cloud Map Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePrivateDnsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -570,7 +570,7 @@ pub mod fluent_builders {
     /// instances that were registered with a public DNS namespace by using either a <code>DiscoverInstances</code> request
     /// or using DNS. For the current quota on the number of namespaces that you can create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map
     /// quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePublicDnsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -743,7 +743,7 @@ pub mod fluent_builders {
     /// <p>For the current quota on the number of instances that you can register using the same namespace and using the
     /// same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map
     /// quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1003,7 +1003,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a namespace from the current account. If the namespace still contains one or more services, the request
     /// fails.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1074,7 +1074,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a specified service. If the service still contains one or more registered instances, the request
     /// fails.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1145,7 +1145,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified
     /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1227,7 +1227,7 @@ pub mod fluent_builders {
     /// <p>Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code>
     /// to discover instances for any type of namespace. For public and private DNS namespaces, you can also use DNS queries
     /// to discover instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DiscoverInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1437,7 +1437,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInstance`.
     ///
     /// <p>Gets information about a specified instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1522,7 +1522,7 @@ pub mod fluent_builders {
     /// <p>There's a brief delay between when you register an instance and when the health status for the instance is
     /// available. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstancesHealthStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1649,7 +1649,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNamespace`.
     ///
     /// <p>Gets information about a namespace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1723,7 +1723,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>To get a list of operations that match specified criteria, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1793,7 +1793,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetService`.
     ///
     /// <p>Gets the settings for a specified service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1863,7 +1863,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstances`.
     ///
     /// <p>Lists summary information about the instances that you registered by using a specified service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1963,7 +1963,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNamespaces`.
     ///
     /// <p>Lists summary information about the namespaces that were created by the current account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNamespaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2084,7 +2084,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOperations`.
     ///
     /// <p>Lists operations that match the criteria that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOperations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2205,7 +2205,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServices`.
     ///
     /// <p>Lists summary information for all the services that are associated with one or more specified namespaces.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2324,7 +2324,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2433,7 +2433,7 @@ pub mod fluent_builders {
     /// <p>For the current quota on the number of instances that you can register using the same namespace and using the
     /// same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map
     /// quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2793,7 +2793,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2882,7 +2882,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2970,7 +2970,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an HTTP
     /// namespace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHttpNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3080,7 +3080,7 @@ pub mod fluent_builders {
     /// which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change the
     /// status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceCustomHealthStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3176,7 +3176,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a private DNS
     /// namespace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePrivateDnsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3283,7 +3283,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a public DNS
     /// namespace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePublicDnsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3413,7 +3413,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>When you update settings for a service, Cloud Map also updates the corresponding settings in all the records
     /// and health checks that were created by using the specified service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

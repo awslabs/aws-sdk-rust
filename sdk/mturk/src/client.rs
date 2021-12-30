@@ -399,7 +399,7 @@ pub mod fluent_builders {
     /// A successful request for the <code>AcceptQualificationRequest</code> operation
     /// returns with no errors and an empty body.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptQualificationRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -520,7 +520,7 @@ pub mod fluent_builders {
     /// This only works on rejected assignments that were submitted within the previous 30 days
     /// and only if the assignment's related HIT has not been deleted.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApproveAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -648,7 +648,7 @@ pub mod fluent_builders {
     /// request with the <code>RejectQualificationRequest</code> operation.
     /// </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateQualificationWithWorker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -787,7 +787,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAdditionalAssignmentsForHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -913,7 +913,7 @@ pub mod fluent_builders {
     /// <p> If a HIT is created with 10 or more maximum assignments, there is an additional fee. For more information, see
     /// <a href="https://requester.mturk.com/pricing">Amazon Mechanical Turk Pricing</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1354,7 +1354,7 @@ pub mod fluent_builders {
     /// If you register a HIT type with values that match an existing HIT type, the HIT type
     /// ID of the existing type will be returned.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHITType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1579,7 +1579,7 @@ pub mod fluent_builders {
     /// For more information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical Turk Pricing</a>.
     /// </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHITWithHITType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1883,7 +1883,7 @@ pub mod fluent_builders {
     /// <code>QualificationType</code>
     /// data structure.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2129,7 +2129,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkerBlock`.
     ///
     /// <p>The <code>CreateWorkerBlock</code> operation allows you to prevent a Worker from working on your HITs. For example, you can block a Worker who is producing poor quality work. You can block up to 100,000 Workers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkerBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2244,7 +2244,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2332,7 +2332,7 @@ pub mod fluent_builders {
     /// the unique name of the Qualification type is available for reuse with
     /// CreateQualificationType.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2405,7 +2405,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkerBlock`.
     ///
     /// <p>The <code>DeleteWorkerBlock</code> operation allows you to reinstate a blocked Worker to work on your HITs. This operation reverses the effects of the CreateWorkerBlock operation. You need the Worker ID to use this operation. If the Worker ID is missing or invalid, this operation fails and returns the message “WorkerId is invalid.” If the specified Worker is not blocked, this operation returns successfully.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkerBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2492,7 +2492,7 @@ pub mod fluent_builders {
     /// You can provide a text message explaining why the Qualification was
     /// revoked. The user who had the Qualification can see this message.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateQualificationFromWorker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2589,7 +2589,7 @@ pub mod fluent_builders {
     /// <p>The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs balance in your Amazon Mechanical Turk account if you are a Prepaid Requester.
     /// Alternatively, this operation will retrieve the remaining available AWS Billing usage if you have enabled AWS Billing.
     /// Note: If you have enabled AWS Billing and still have a remaining Prepaid HITs balance, this balance can be viewed on the My Account page in the Requester console.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountBalance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2651,7 +2651,7 @@ pub mod fluent_builders {
     /// <p>
     /// The <code>GetAssignment</code> operation retrieves the details of the specified Assignment.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2741,7 +2741,7 @@ pub mod fluent_builders {
     /// Workers to upload files to use Amazon S3.
     ///
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFileUploadURL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2833,7 +2833,7 @@ pub mod fluent_builders {
     /// <p>
     /// The <code>GetHIT</code> operation retrieves the details of the specified HIT.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2916,7 +2916,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>Only the owner of a Qualification type can query the value of
     /// a Worker's Qualification of that type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQualificationScore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3001,7 +3001,7 @@ pub mod fluent_builders {
     /// <p>
     /// The <code>GetQualificationType</code>operation retrieves information about a Qualification type using its ID.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3100,7 +3100,7 @@ pub mod fluent_builders {
     /// parameters
     /// of the operation to control sorting and pagination.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssignmentsForHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3214,7 +3214,7 @@ pub mod fluent_builders {
     /// operation retrieves the amounts of bonuses you have paid to Workers
     /// for a given HIT or assignment.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBonusPayments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3335,7 +3335,7 @@ pub mod fluent_builders {
     /// HITs of any status, except for HITs that have been deleted of with
     /// the DeleteHIT operation or that have been auto-deleted.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHITs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3420,7 +3420,7 @@ pub mod fluent_builders {
     /// The operation returns HITs of any status, except for HITs that have been deleted
     /// with the <code>DeleteHIT</code> operation or that have been auto-deleted.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHITsForQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3528,7 +3528,7 @@ pub mod fluent_builders {
     /// operation to poll for pending requests, and accepts them using the
     /// AcceptQualification operation.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQualificationRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3634,7 +3634,7 @@ pub mod fluent_builders {
     /// operation returns a list of Qualification types, filtered by
     /// an optional search term.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQualificationTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3779,7 +3779,7 @@ pub mod fluent_builders {
     /// The <code>ListReviewableHITs</code> operation retrieves the HITs with Status equal to
     /// Reviewable or Status equal to Reviewing that belong to the Requester calling the operation.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReviewableHITs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3904,7 +3904,7 @@ pub mod fluent_builders {
     /// see Review Policies. The ListReviewPolicyResultsForHIT operation can return results for both
     /// Assignment-level and HIT-level review results.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReviewPolicyResultsForHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4049,7 +4049,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkerBlocks`.
     ///
     /// <p>The <code>ListWorkersBlocks</code> operation retrieves a list of Workers who are blocked from working on your HITs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkerBlocks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4132,7 +4132,7 @@ pub mod fluent_builders {
     /// The <code>ListWorkersWithQualificationType</code> operation returns all of the Workers
     /// that have been associated with a given Qualification type.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkersWithQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4259,7 +4259,7 @@ pub mod fluent_builders {
     /// only if you have previously approved or rejected work from the
     /// Worker.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyWorkers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4376,7 +4376,7 @@ pub mod fluent_builders {
     /// <p>
     /// Only the Requester who created the HIT can reject an assignment for the HIT.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4476,7 +4476,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p> You can provide a text message explaining why the request was
     /// rejected. The Worker who made the request can see this message.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectQualificationRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4585,7 +4585,7 @@ pub mod fluent_builders {
     /// if your account does not have enough funds to pay for both the bonus
     /// and the fees.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendBonus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4727,7 +4727,7 @@ pub mod fluent_builders {
     /// setting up notifications for a real HIT type and trying to trigger them using the website.
     /// When you call this operation, the service attempts to send the test notification immediately.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendTestEventNotification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4834,7 +4834,7 @@ pub mod fluent_builders {
     /// The <code>UpdateExpirationForHIT</code> operation allows you update the expiration time of a HIT.
     /// If you update it to a time in the past, the HIT will be immediately expired.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateExpirationForHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4929,7 +4929,7 @@ pub mod fluent_builders {
     /// If the status is Reviewable, this operation can update the status to Reviewing,
     /// or it can revert a Reviewing HIT back to the Reviewable status.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHITReviewStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5048,7 +5048,7 @@ pub mod fluent_builders {
     /// associates it with the new HITType properties. The HIT takes on the
     /// properties of the new HITType in place of the old ones.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHITTypeOfHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5139,7 +5139,7 @@ pub mod fluent_builders {
     /// the HIT type must already have a notification specification,
     /// or one must be provided in the same call to <code>UpdateNotificationSettings</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNotificationSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5282,7 +5282,7 @@ pub mod fluent_builders {
     /// granted manually. </p>
     /// <p> You can also update the AutoGranted and AutoGrantedValue
     /// attributes of the Qualification type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

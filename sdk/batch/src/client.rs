@@ -270,7 +270,7 @@ pub mod fluent_builders {
     /// <code>RUNNABLE</code> state are canceled. Jobs that have progressed to <code>STARTING</code> or <code>RUNNING</code>
     /// aren't canceled, but the API operation still succeeds, even if no job is canceled. These jobs must be terminated with
     /// the <a>TerminateJob</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -392,7 +392,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ol>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComputeEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -627,7 +627,7 @@ pub mod fluent_builders {
     /// its associated compute environments. For example, if a compute environment is associated with more than one job
     /// queue, the job queue with a higher priority is given preference for scheduling jobs to that compute
     /// environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJobQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -826,7 +826,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSchedulingPolicy`.
     ///
     /// <p>Creates an Batch scheduling policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchedulingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -943,7 +943,7 @@ pub mod fluent_builders {
     /// <p>Before you can delete a compute environment, you must set its state to <code>DISABLED</code> with the <a>UpdateComputeEnvironment</a> API operation and disassociate it from any job queues with the <a>UpdateJobQueue</a> API operation. Compute environments that use Fargate resources must terminate all
     /// active jobs on that compute environment before deleting the compute environment. If this isn't done, the compute
     /// environment enters an invalid state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComputeEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1019,7 +1019,7 @@ pub mod fluent_builders {
     /// The jobs are terminated at a rate of about 16 jobs each second.</p>
     /// <p>It's not necessary to disassociate compute environments from a queue before submitting a
     /// <code>DeleteJobQueue</code> request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJobQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1090,7 +1090,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified scheduling policy.</p>
     /// <p>You can't delete a scheduling policy that's used in any job queues.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchedulingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1160,7 +1160,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterJobDefinition`.
     ///
     /// <p>Deregisters an Batch job definition. Job definitions are permanently deleted after 180 days.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1236,7 +1236,7 @@ pub mod fluent_builders {
     /// <p>If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
     /// operation to determine the <code>ecsClusterArn</code> that you should launch your Amazon ECS container instances
     /// into.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComputeEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1360,7 +1360,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes a list of job definitions. You can specify a <code>status</code> (such as <code>ACTIVE</code>) to only
     /// return job definitions that match that status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1510,7 +1510,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobQueues`.
     ///
     /// <p>Describes one or more of your job queues.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1631,7 +1631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobs`.
     ///
     /// <p>Describes a list of Batch jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1708,7 +1708,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSchedulingPolicies`.
     ///
     /// <p>Describes one or more of your scheduling policies.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchedulingPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1799,7 +1799,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>You can filter the results by job status with the <code>jobStatus</code> parameter. If you don't specify a
     /// status, only <code>RUNNING</code> jobs are returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2048,7 +2048,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSchedulingPolicies`.
     ///
     /// <p>Returns a list of Batch scheduling policies.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchedulingPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2157,7 +2157,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the tags for an Batch resource. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
     /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2229,7 +2229,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterJobDefinition`.
     ///
     /// <p>Registers an Batch job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2530,7 +2530,7 @@ pub mod fluent_builders {
     /// <p>Jobs that run on Fargate resources can't be guaranteed to run for more than 14 days. This is because, after 14
     /// days, Fargate resources might become unavailable and job might be terminated.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubmitJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2854,7 +2854,7 @@ pub mod fluent_builders {
     /// resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags that
     /// are associated with that resource are deleted as well. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
     /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2955,7 +2955,7 @@ pub mod fluent_builders {
     /// <p>Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code> state are
     /// terminated, which causes them to transition to <code>FAILED</code>. Jobs that have not progressed to the
     /// <code>STARTING</code> state are cancelled.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3039,7 +3039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes specified tags from an Batch resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3128,7 +3128,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateComputeEnvironment`.
     ///
     /// <p>Updates an Batch compute environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComputeEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3300,7 +3300,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateJobQueue`.
     ///
     /// <p>Updates a job queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateJobQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3463,7 +3463,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSchedulingPolicy`.
     ///
     /// <p>Updates a scheduling policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSchedulingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

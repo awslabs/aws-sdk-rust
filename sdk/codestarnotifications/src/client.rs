@@ -188,7 +188,7 @@ pub mod fluent_builders {
     /// <p>Creates a notification rule for a resource. The rule specifies the events you want
     /// notifications about and the targets (such as SNS topics) where you want to receive
     /// them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotificationRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -392,7 +392,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNotificationRule`.
     ///
     /// <p>Deletes a notification rule for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNotificationRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -462,7 +462,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTarget`.
     ///
     /// <p>Deletes a specified target for notifications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -549,7 +549,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNotificationRule`.
     ///
     /// <p>Returns information about a specified notification rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNotificationRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -619,7 +619,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEventTypes`.
     ///
     /// <p>Returns information about the event types available for configuring notifications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -720,7 +720,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNotificationRules`.
     ///
     /// <p>Returns a list of the notification rules for an AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotificationRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -829,7 +829,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of the tags associated with a notification rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -899,7 +899,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTargets`.
     ///
     /// <p>Returns a list of the notification rule targets for an AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1010,7 +1010,7 @@ pub mod fluent_builders {
     /// <p>Creates an association between a notification rule and an SNS topic so that the
     /// associated target can receive notifications when the events described in the rule are
     /// triggered.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Subscribe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1105,7 +1105,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Associates a set of provided tags with a notification rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1200,7 +1200,7 @@ pub mod fluent_builders {
     /// <p>Removes an association between a notification rule and an Amazon SNS topic so that
     /// subscribers to that topic stop receiving notifications when the events described in the
     /// rule are triggered.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Unsubscribe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1284,7 +1284,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the association between one or more provided tags and a notification
     /// rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1378,7 +1378,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>To add or remove tags for a notification rule, you must use <a>TagResource</a> and <a>UntagResource</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNotificationRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

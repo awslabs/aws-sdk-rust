@@ -303,7 +303,7 @@ pub mod fluent_builders {
     /// <p>
     /// <a>AddTagsToStream</a> has a limit of five transactions per second per
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -436,7 +436,7 @@ pub mod fluent_builders {
     /// <p>
     /// <a>CreateStream</a> has a limit of five transactions per second per
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -550,7 +550,7 @@ pub mod fluent_builders {
     /// <p>This operation may result in lost data. For example, if the stream's retention period
     /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
     /// than 24 hours is inaccessible.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DecreaseStreamRetentionPeriod<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -651,7 +651,7 @@ pub mod fluent_builders {
     /// <p>
     /// <a>DeleteStream</a> has a limit of five transactions per second per
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -742,7 +742,7 @@ pub mod fluent_builders {
     /// all the consumers that are currently registered with a given data stream. The
     /// description of a consumer contains its name and ARN.</p>
     /// <p>This operation has a limit of five transactions per second per stream.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterStreamConsumer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -850,7 +850,7 @@ pub mod fluent_builders {
     /// <p>If you update your account limits, the old limits might be returned for a few
     /// minutes.</p>
     /// <p>This operation has a limit of one transaction per second per account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -930,7 +930,7 @@ pub mod fluent_builders {
     /// shards in chronological order, use the ID of the parent shard to track the lineage to
     /// the oldest shard.</p>
     /// <p>This operation has a limit of 10 transactions per second per account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1045,7 +1045,7 @@ pub mod fluent_builders {
     /// operation to get a list of the descriptions of all the consumers that are currently
     /// registered with a given data stream.</p>
     /// <p>This operation has a limit of 20 transactions per second per stream.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStreamConsumer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1149,7 +1149,7 @@ pub mod fluent_builders {
     /// <p>
     /// <a>DescribeStreamSummary</a> has a limit of 20 transactions per second per
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStreamSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1219,7 +1219,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableEnhancedMonitoring`.
     ///
     /// <p>Disables enhanced monitoring.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableEnhancedMonitoring<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1400,7 +1400,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableEnhancedMonitoring`.
     ///
     /// <p>Enables enhanced Kinesis data stream monitoring for shard-level metrics.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableEnhancedMonitoring<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1637,7 +1637,7 @@ pub mod fluent_builders {
     /// stamp accuracy, or that the time stamp is always increasing. For example, records in a
     /// shard or across a stream might have time stamps that are out of order.</p>
     /// <p>This operation has a limit of five transactions per second per shard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecords<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1761,7 +1761,7 @@ pub mod fluent_builders {
     /// <p>
     /// <a>GetShardIterator</a> has a limit of five transactions per second per
     /// account per open shard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetShardIterator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1967,7 +1967,7 @@ pub mod fluent_builders {
     /// accessible after the operation has been called. For example, if a stream's retention
     /// period is set to 24 hours and is increased to 168 hours, any data that is older than 24
     /// hours remains inaccessible to consumer applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct IncreaseStreamRetentionPeriod<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2059,7 +2059,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling Access to Amazon Kinesis Data Streams Resources Using
     /// IAM</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListShards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2303,7 +2303,7 @@ pub mod fluent_builders {
     /// <p>Lists the consumers registered to receive data from a stream using enhanced fan-out,
     /// and provides information about each consumer.</p>
     /// <p>This operation has a limit of 5 transactions per second per stream.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamConsumers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2481,7 +2481,7 @@ pub mod fluent_builders {
     /// <p>
     /// <a>ListStreams</a> has a limit of five transactions per second per
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2570,7 +2570,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the tags for the specified Kinesis data stream. This operation has a limit of
     /// five transactions per second per account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2711,7 +2711,7 @@ pub mod fluent_builders {
     /// or <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p>
     /// <p>
     /// <code>MergeShards</code> has a limit of five transactions per second per account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergeShards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2845,7 +2845,7 @@ pub mod fluent_builders {
     /// throws <code>ProvisionedThroughputExceededException</code>. </p>
     /// <p>By default, data records are accessible for 24 hours from the time that they are added
     /// to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3050,7 +3050,7 @@ pub mod fluent_builders {
     /// </important>
     /// <p>By default, data records are accessible for 24 hours from the time that they are added
     /// to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRecords<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3150,7 +3150,7 @@ pub mod fluent_builders {
     /// more than 5 consumers in a <code>CREATING</code> status at the same time. Registering a
     /// 6th consumer while there are 5 in a <code>CREATING</code> status results in a
     /// <code>LimitExceededException</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterStreamConsumer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3244,7 +3244,7 @@ pub mod fluent_builders {
     /// <p>
     /// <a>RemoveTagsFromStream</a> has a limit of five transactions per second per
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3370,7 +3370,7 @@ pub mod fluent_builders {
     /// <code>LimitExceededException</code>. </p>
     /// <p>
     /// <code>SplitShard</code> has a limit of five transactions per second per account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SplitShard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3493,7 +3493,7 @@ pub mod fluent_builders {
     /// before all records written to the stream are encrypted. After you enable encryption, you
     /// can verify that encryption is applied by inspecting the API response from
     /// <code>PutRecord</code> or <code>PutRecords</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartStreamEncryption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3660,7 +3660,7 @@ pub mod fluent_builders {
     /// before all records written to the stream are no longer subject to encryption. After you
     /// disabled encryption, you can verify that encryption is not applied by inspecting the API
     /// response from <code>PutRecord</code> or <code>PutRecords</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopStreamEncryption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3855,7 +3855,7 @@ pub mod fluent_builders {
     /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer
     /// Guide</i>. To request an increase in the call rate limit, the shard limit for
     /// this API, or your overall shard limit, use the <a href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&limitType=service-code-kinesis">limits form</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateShardCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3989,7 +3989,7 @@ pub mod fluent_builders {
     /// can choose between an <b>on-demand</b> capacity mode and a
     /// <b>provisioned</b> capacity mode for your data stream.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStreamMode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

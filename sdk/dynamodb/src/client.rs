@@ -474,7 +474,7 @@ pub mod fluent_builders {
     /// <p>The entire batch must consist of either read statements or write statements, you
     /// cannot mix both in one batch.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -661,7 +661,7 @@ pub mod fluent_builders {
     /// nonexistent items consume the minimum read capacity units according to the type of read.
     /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Working with Tables</a> in the <i>Amazon DynamoDB Developer
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1084,7 +1084,7 @@ pub mod fluent_builders {
     /// <p>The total request size exceeds 16 MB.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchWriteItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1369,7 +1369,7 @@ pub mod fluent_builders {
     /// <p>Provisioned read and write capacity</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1505,7 +1505,7 @@ pub mod fluent_builders {
     /// provision equal replicated write capacity units to matching secondary indexes across
     /// your global table. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGlobalTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1607,7 +1607,7 @@ pub mod fluent_builders {
     /// secondary indexes on them, you must create the tables sequentially. Only one table with
     /// secondary indexes can be in the <code>CREATING</code> state at any given time.</p>
     /// <p>You can use the <code>DescribeTable</code> action to check the table status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2272,7 +2272,7 @@ pub mod fluent_builders {
     /// <p>Deletes an existing backup of a table.</p>
     /// <p>You can call <code>DeleteBackup</code> at a maximum rate of 10 times per
     /// second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2352,7 +2352,7 @@ pub mod fluent_builders {
     /// <p>Conditional deletes are useful for deleting items only if specific conditions are met.
     /// If those conditions are met, DynamoDB performs the delete. Otherwise, the item is not
     /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2897,7 +2897,7 @@ pub mod fluent_builders {
     /// deleted after 24 hours.</p>
     ///
     /// <p>Use the <code>DescribeTable</code> action to check the status of the table. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2969,7 +2969,7 @@ pub mod fluent_builders {
     /// <p>Describes an existing backup of a table.</p>
     /// <p>You can call <code>DescribeBackup</code> at a maximum rate of 10 times per
     /// second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3050,7 +3050,7 @@ pub mod fluent_builders {
     /// You can restore your table to any point in time during the last 35 days. </p>
     /// <p>You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per
     /// second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContinuousBackups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3123,7 +3123,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about contributor insights, for a given table or global secondary
     /// index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContributorInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3203,7 +3203,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEndpoints`.
     ///
     /// <p>Returns the regional endpoint information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3263,7 +3263,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExport`.
     ///
     /// <p>Describes an existing table export.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3338,7 +3338,7 @@ pub mod fluent_builders {
     /// 2017.11.29</a> of global tables. If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
     /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a> instead.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGlobalTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3415,7 +3415,7 @@ pub mod fluent_builders {
     /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
     /// 2017.11.29</a> of global tables.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGlobalTableSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3488,7 +3488,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeKinesisStreamingDestination`.
     ///
     /// <p>Returns information about the status of Kinesis streaming.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeKinesisStreamingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3633,7 +3633,7 @@ pub mod fluent_builders {
     /// throttling errors if you call it more than once in a minute.</p>
     /// </note>
     /// <p>The <code>DescribeLimits</code> Request element has no content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3702,7 +3702,7 @@ pub mod fluent_builders {
     /// for your table might not be available at that moment. Wait for a few seconds, and
     /// then try the <code>DescribeTable</code> request again.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3776,7 +3776,7 @@ pub mod fluent_builders {
     /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
     /// 2019.11.21</a> of global tables.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTableReplicaAutoScaling<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3846,7 +3846,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTimeToLive`.
     ///
     /// <p>Gives a description of the Time to Live (TTL) status on the specified table. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTimeToLive<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3917,7 +3917,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops replication from the DynamoDB table to the Kinesis data stream. This is done
     /// without deleting either of the resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableKinesisStreamingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4002,7 +4002,7 @@ pub mod fluent_builders {
     /// chosen during the enable workflow. If this operation doesn't return results immediately,
     /// use DescribeKinesisStreamingDestination to check if streaming to the Kinesis data stream
     /// is ACTIVE.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableKinesisStreamingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4083,7 +4083,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation allows you to perform reads and singleton writes on data stored in
     /// DynamoDB, using PartiQL.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4265,7 +4265,7 @@ pub mod fluent_builders {
     /// be used to check the condition of specific attributes of the item in a similar
     /// manner to <code>ConditionCheck</code> in the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems">TransactWriteItems</a> API.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4377,7 +4377,7 @@ pub mod fluent_builders {
     /// <p>Exports table data to an S3 bucket. The table must have point in time recovery
     /// enabled, and you can export data from any time within the point in time recovery
     /// window.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportTableToPointInTime<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4603,7 +4603,7 @@ pub mod fluent_builders {
     /// application requires a strongly consistent read, set <code>ConsistentRead</code> to
     /// <code>true</code>. Although a strongly consistent read might take more time than an
     /// eventually consistent read, it always returns the last updated value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4959,7 +4959,7 @@ pub mod fluent_builders {
     /// <p>In the request, start time is inclusive, but end time is exclusive. Note that these
     /// boundaries are for the time at which the original backup was requested.</p>
     /// <p>You can call <code>ListBackups</code> a maximum of five times per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5139,7 +5139,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of ContributorInsightsSummary for a table and all its global secondary
     /// indexes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContributorInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5229,7 +5229,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListExports`.
     ///
     /// <p>Lists completed exports within the past 90 days.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5327,7 +5327,7 @@ pub mod fluent_builders {
     /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
     /// 2017.11.29</a> of global tables.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGlobalTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5437,7 +5437,7 @@ pub mod fluent_builders {
     /// <p>Returns an array of table names associated with the current account and endpoint. The
     /// output from <code>ListTables</code> is paginated, with each page returning a maximum of
     /// 100 table names.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5532,7 +5532,7 @@ pub mod fluent_builders {
     /// times per second, per account.</p>
     /// <p>For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>
     /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsOfResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5692,7 +5692,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>For more information about <code>PutItem</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working with
     /// Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6300,7 +6300,7 @@ pub mod fluent_builders {
     /// consistent result. Global secondary indexes support eventually consistent reads only, so
     /// do not specify <code>ConsistentRead</code> when querying a global secondary
     /// index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Query<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7288,7 +7288,7 @@ pub mod fluent_builders {
     /// <p>Time to Live (TTL) settings</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreTableFromBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7514,7 +7514,7 @@ pub mod fluent_builders {
     /// <p>Point in time recovery settings</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreTableToPointInTime<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7758,7 +7758,7 @@ pub mod fluent_builders {
     /// before the operation began. If you need a consistent copy of the data, as of the time
     /// that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter
     /// to <code>true</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Scan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8504,7 +8504,7 @@ pub mod fluent_builders {
     /// account. </p>
     /// <p>For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>
     /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8619,7 +8619,7 @@ pub mod fluent_builders {
     /// <p>The aggregate size of the items in the transaction cannot exceed 4 MB.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TransactGetItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8793,7 +8793,7 @@ pub mod fluent_builders {
     /// <p>There is a user error, such as an invalid data format.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TransactWriteItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9012,7 +9012,7 @@ pub mod fluent_builders {
     /// <code>UntagResource</code> up to five times per second, per account. </p>
     /// <p>For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>
     /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9114,7 +9114,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
     /// You can restore your table to any point in time during the last 35 days. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContinuousBackups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9205,7 +9205,7 @@ pub mod fluent_builders {
     /// you require the use of AWS Key Management Service (KMS) to encrypt this table’s
     /// partition key and sort key data with an AWS managed key or customer managed key, you
     /// should not enable CloudWatch Contributor Insights for DynamoDB for this table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContributorInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9324,7 +9324,7 @@ pub mod fluent_builders {
     /// capacity units. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGlobalTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9414,7 +9414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGlobalTableSettings`.
     ///
     /// <p>Updates settings for a global table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGlobalTableSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9627,7 +9627,7 @@ pub mod fluent_builders {
     /// attribute values).</p>
     /// <p>You can also return the item's attribute values in the same <code>UpdateItem</code>
     /// operation using the <code>ReturnValues</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateItem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10454,7 +10454,7 @@ pub mod fluent_builders {
     /// <code>UPDATING</code>, you cannot issue another <code>UpdateTable</code> request.
     /// When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code>
     /// operation is complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10753,7 +10753,7 @@ pub mod fluent_builders {
     /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
     /// 2019.11.21</a> of global tables.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTableReplicaAutoScaling<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10912,7 +10912,7 @@ pub mod fluent_builders {
     /// operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time To Live</a> in the
     /// Amazon DynamoDB Developer Guide. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTimeToLive<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

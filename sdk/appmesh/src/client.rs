@@ -365,7 +365,7 @@ pub mod fluent_builders {
     /// virtual service. If a route matches a request, it can distribute traffic to a target
     /// virtual service.</p>
     /// <p>For more information about gateway routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway routes</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -532,7 +532,7 @@ pub mod fluent_builders {
     /// create virtual services, virtual nodes, virtual routers, and routes to distribute traffic
     /// between the applications in your mesh.</p>
     /// <p>For more information about service meshes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html">Service meshes</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMesh<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -650,7 +650,7 @@ pub mod fluent_builders {
     /// <p> You can route several different protocols and define a retry policy for a route.
     /// Traffic can be routed to one or more virtual nodes.</p>
     /// <p>For more information about routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -810,7 +810,7 @@ pub mod fluent_builders {
     /// represents an Envoy running with an application, a virtual gateway represents Envoy
     /// deployed by itself.</p>
     /// <p>For more information about virtual gateways, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html">Virtual gateways</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVirtualGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -977,7 +977,7 @@ pub mod fluent_builders {
     /// <p>For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when
     /// setting these variables. For more information aboutApp Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a> in
     /// the AWS App Mesh User Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVirtualNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1128,7 +1128,7 @@ pub mod fluent_builders {
     /// create your virtual router, create and associate routes for your virtual router that direct
     /// incoming requests to different virtual nodes.</p>
     /// <p>For more information about virtual routers, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual routers</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVirtualRouter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1279,7 +1279,7 @@ pub mod fluent_builders {
     /// virtual node or virtual router that is specified as the provider for the virtual
     /// service.</p>
     /// <p>For more information about virtual services, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual services</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVirtualService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1424,7 +1424,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGatewayRoute`.
     ///
     /// <p>Deletes an existing gateway route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1534,7 +1534,7 @@ pub mod fluent_builders {
     /// <p>Deletes an existing service mesh.</p>
     /// <p>You must delete all resources (virtual services, routes, virtual routers, and virtual
     /// nodes) in the service mesh before you can delete the mesh itself.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMesh<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1604,7 +1604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoute`.
     ///
     /// <p>Deletes an existing route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1710,7 +1710,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway
     /// routes are associated to it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVirtualGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1807,7 +1807,7 @@ pub mod fluent_builders {
     /// <p>Deletes an existing virtual node.</p>
     /// <p>You must delete any virtual services that list a virtual node as a service provider
     /// before you can delete the virtual node itself.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVirtualNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1904,7 +1904,7 @@ pub mod fluent_builders {
     /// <p>Deletes an existing virtual router.</p>
     /// <p>You must delete any routes associated with the virtual router before you can delete the
     /// router itself.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVirtualRouter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1999,7 +1999,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVirtualService`.
     ///
     /// <p>Deletes an existing virtual service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVirtualService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2094,7 +2094,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeGatewayRoute`.
     ///
     /// <p>Describes an existing gateway route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2202,7 +2202,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMesh`.
     ///
     /// <p>Describes an existing service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMesh<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2284,7 +2284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRoute`.
     ///
     /// <p>Describes an existing route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2389,7 +2389,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVirtualGateway`.
     ///
     /// <p>Describes an existing virtual gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVirtualGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2484,7 +2484,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVirtualNode`.
     ///
     /// <p>Describes an existing virtual node.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVirtualNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2579,7 +2579,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVirtualRouter`.
     ///
     /// <p>Describes an existing virtual router.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVirtualRouter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2674,7 +2674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVirtualService`.
     ///
     /// <p>Describes an existing virtual service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVirtualService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2770,7 +2770,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of existing gateway routes that are associated to a virtual
     /// gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGatewayRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2905,7 +2905,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMeshes`.
     ///
     /// <p>Returns a list of existing service meshes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMeshes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3013,7 +3013,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRoutes`.
     ///
     /// <p>Returns a list of existing routes in a service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3148,7 +3148,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for an App Mesh resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3258,7 +3258,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVirtualGateways`.
     ///
     /// <p>Returns a list of existing virtual gateways in a service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVirtualGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3380,7 +3380,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVirtualNodes`.
     ///
     /// <p>Returns a list of existing virtual nodes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVirtualNodes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3502,7 +3502,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVirtualRouters`.
     ///
     /// <p>Returns a list of existing virtual routers in a service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVirtualRouters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3624,7 +3624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVirtualServices`.
     ///
     /// <p>Returns a list of existing virtual services in a service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVirtualServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3749,7 +3749,7 @@ pub mod fluent_builders {
     /// If existing tags on a resource aren't specified in the request parameters, they aren't
     /// changed. When a resource is deleted, the tags associated with that resource are also
     /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3840,7 +3840,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3928,7 +3928,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an existing gateway route that is associated to a specified virtual gateway in a
     /// service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4061,7 +4061,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMesh`.
     ///
     /// <p>Updates an existing service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMesh<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4153,7 +4153,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRoute`.
     ///
     /// <p>Updates an existing route for a specified service mesh and virtual router.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4280,7 +4280,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVirtualGateway`.
     ///
     /// <p>Updates an existing virtual gateway in a specified service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVirtualGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4402,7 +4402,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVirtualNode`.
     ///
     /// <p>Updates an existing virtual node in a specified service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVirtualNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4522,7 +4522,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVirtualRouter`.
     ///
     /// <p>Updates an existing virtual router in a specified service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVirtualRouter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4642,7 +4642,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVirtualService`.
     ///
     /// <p>Updates an existing virtual service in a specified service mesh.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVirtualService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -958,7 +958,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApp`.
     ///
     /// <p>Creates an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1034,7 +1034,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCampaign`.
     ///
     /// <p>Creates a new campaign for an application or updates the settings of an existing campaign for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1123,7 +1123,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEmailTemplate`.
     ///
     /// <p>Creates a message template for messages that are sent through the email channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1212,7 +1212,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateExportJob`.
     ///
     /// <p>Creates an export job for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1298,7 +1298,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateImportJob`.
     ///
     /// <p>Creates an import job for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1384,7 +1384,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInAppTemplate`.
     ///
     /// <p>Creates a new message template for messages using the in-app message channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInAppTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1473,7 +1473,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateJourney`.
     ///
     /// <p>Creates a journey for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJourney<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1562,7 +1562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePushTemplate`.
     ///
     /// <p>Creates a message template for messages that are sent through a push notification channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePushTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1651,7 +1651,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecommenderConfiguration`.
     ///
     /// <p>Creates an Amazon Pinpoint configuration for a recommender model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecommenderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1727,7 +1727,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSegment`.
     ///
     /// <p>Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSegment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1816,7 +1816,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSmsTemplate`.
     ///
     /// <p>Creates a message template for messages that are sent through the SMS channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSmsTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1902,7 +1902,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVoiceTemplate`.
     ///
     /// <p>Creates a message template for messages that are sent through the voice channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVoiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1991,7 +1991,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAdmChannel`.
     ///
     /// <p>Disables the ADM channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAdmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2064,7 +2064,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApnsChannel`.
     ///
     /// <p>Disables the APNs channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApnsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2137,7 +2137,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApnsSandboxChannel`.
     ///
     /// <p>Disables the APNs sandbox channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApnsSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2210,7 +2210,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApnsVoipChannel`.
     ///
     /// <p>Disables the APNs VoIP channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApnsVoipChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2283,7 +2283,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApnsVoipSandboxChannel`.
     ///
     /// <p>Disables the APNs VoIP sandbox channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApnsVoipSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2356,7 +2356,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApp`.
     ///
     /// <p>Deletes an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2429,7 +2429,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBaiduChannel`.
     ///
     /// <p>Disables the Baidu channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBaiduChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2502,7 +2502,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCampaign`.
     ///
     /// <p>Deletes a campaign from an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2585,7 +2585,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEmailChannel`.
     ///
     /// <p>Disables the email channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2658,7 +2658,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEmailTemplate`.
     ///
     /// <p>Deletes a message template for messages that were sent through the email channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2741,7 +2741,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
     /// <p>Deletes an endpoint from an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2824,7 +2824,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEventStream`.
     ///
     /// <p>Deletes the event stream for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2897,7 +2897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGcmChannel`.
     ///
     /// <p>Disables the GCM channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGcmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2970,7 +2970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInAppTemplate`.
     ///
     /// <p>Deletes a message template for messages sent using the in-app message channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInAppTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3053,7 +3053,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteJourney`.
     ///
     /// <p>Deletes a journey from an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJourney<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3136,7 +3136,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePushTemplate`.
     ///
     /// <p>Deletes a message template for messages that were sent through a push notification channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePushTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3219,7 +3219,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRecommenderConfiguration`.
     ///
     /// <p>Deletes an Amazon Pinpoint configuration for a recommender model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecommenderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3292,7 +3292,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSegment`.
     ///
     /// <p>Deletes a segment from an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSegment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3375,7 +3375,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSmsChannel`.
     ///
     /// <p>Disables the SMS channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSmsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3448,7 +3448,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSmsTemplate`.
     ///
     /// <p>Deletes a message template for messages that were sent through the SMS channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSmsTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3531,7 +3531,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserEndpoints`.
     ///
     /// <p>Deletes all the endpoints that are associated with a specific user ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3614,7 +3614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVoiceChannel`.
     ///
     /// <p>Disables the voice channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3687,7 +3687,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVoiceTemplate`.
     ///
     /// <p>Deletes a message template for messages that were sent through the voice channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3770,7 +3770,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAdmChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the ADM channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAdmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3843,7 +3843,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApnsChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the APNs channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApnsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3916,7 +3916,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApnsSandboxChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the APNs sandbox channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApnsSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3989,7 +3989,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApnsVoipChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the APNs VoIP channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApnsVoipChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4062,7 +4062,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApnsVoipSandboxChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the APNs VoIP sandbox channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApnsVoipSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4135,7 +4135,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApp`.
     ///
     /// <p>Retrieves information about an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4208,7 +4208,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplicationDateRangeKpi`.
     ///
     /// <p>Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplicationDateRangeKpi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4337,7 +4337,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplicationSettings`.
     ///
     /// <p>Retrieves information about the settings for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplicationSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4410,7 +4410,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApps`.
     ///
     /// <p>Retrieves information about all the applications that are associated with your Amazon Pinpoint account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4490,7 +4490,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBaiduChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the Baidu channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBaiduChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4563,7 +4563,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaign`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4646,7 +4646,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaignActivities`.
     ///
     /// <p>Retrieves information about all the activities for a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaignActivities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4749,7 +4749,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaignDateRangeKpi`.
     ///
     /// <p>Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaignDateRangeKpi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4888,7 +4888,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaigns`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for all the campaigns that are associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaigns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4981,7 +4981,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaignVersion`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for a specific version of a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaignVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5074,7 +5074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaignVersions`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for all versions of a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaignVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5177,7 +5177,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChannels`.
     ///
     /// <p>Retrieves information about the history and status of each channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5250,7 +5250,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEmailChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the email channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5323,7 +5323,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEmailTemplate`.
     ///
     /// <p>Retrieves the content and settings of a message template for messages that are sent through the email channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5406,7 +5406,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEndpoint`.
     ///
     /// <p>Retrieves information about the settings and attributes of a specific endpoint for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5489,7 +5489,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEventStream`.
     ///
     /// <p>Retrieves information about the event stream settings for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5562,7 +5562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetExportJob`.
     ///
     /// <p>Retrieves information about the status and settings of a specific export job for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5645,7 +5645,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetExportJobs`.
     ///
     /// <p>Retrieves information about the status and settings of all the export jobs for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5738,7 +5738,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGcmChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the GCM channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGcmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5811,7 +5811,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImportJob`.
     ///
     /// <p>Retrieves information about the status and settings of a specific import job for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5894,7 +5894,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImportJobs`.
     ///
     /// <p>Retrieves information about the status and settings of all the import jobs for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5987,7 +5987,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInAppMessages`.
     ///
     /// <p>Retrieves the in-app messages targeted for the provided endpoint ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInAppMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6070,7 +6070,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInAppTemplate`.
     ///
     /// <p>Retrieves the content and settings of a message template for messages sent through the in-app channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInAppTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6153,7 +6153,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJourney`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for a journey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJourney<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6236,7 +6236,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJourneyDateRangeKpi`.
     ///
     /// <p>Retrieves (queries) pre-aggregated data for a standard engagement metric that applies to a journey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJourneyDateRangeKpi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6375,7 +6375,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJourneyExecutionActivityMetrics`.
     ///
     /// <p>Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey activity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJourneyExecutionActivityMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6493,7 +6493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJourneyExecutionMetrics`.
     ///
     /// <p>Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJourneyExecutionMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6596,7 +6596,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPushTemplate`.
     ///
     /// <p>Retrieves the content and settings of a message template for messages that are sent through a push notification channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPushTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6679,7 +6679,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecommenderConfiguration`.
     ///
     /// <p>Retrieves information about an Amazon Pinpoint configuration for a recommender model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommenderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6752,7 +6752,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecommenderConfigurations`.
     ///
     /// <p>Retrieves information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommenderConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6832,7 +6832,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegment`.
     ///
     /// <p>Retrieves information about the configuration, dimension, and other settings for a specific segment that's associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6915,7 +6915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegmentExportJobs`.
     ///
     /// <p>Retrieves information about the status and settings of the export jobs for a segment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegmentExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7018,7 +7018,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegmentImportJobs`.
     ///
     /// <p>Retrieves information about the status and settings of the import jobs for a segment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegmentImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7121,7 +7121,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegments`.
     ///
     /// <p>Retrieves information about the configuration, dimension, and other settings for all the segments that are associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7214,7 +7214,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegmentVersion`.
     ///
     /// <p>Retrieves information about the configuration, dimension, and other settings for a specific version of a segment that's associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegmentVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7307,7 +7307,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegmentVersions`.
     ///
     /// <p>Retrieves information about the configuration, dimension, and other settings for all the versions of a specific segment that's associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegmentVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7410,7 +7410,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSmsChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the SMS channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSmsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7483,7 +7483,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSmsTemplate`.
     ///
     /// <p>Retrieves the content and settings of a message template for messages that are sent through the SMS channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSmsTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7566,7 +7566,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUserEndpoints`.
     ///
     /// <p>Retrieves information about all the endpoints that are associated with a specific user ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7649,7 +7649,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVoiceChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the voice channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7722,7 +7722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVoiceTemplate`.
     ///
     /// <p>Retrieves the content and settings of a message template for messages that are sent through the voice channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7805,7 +7805,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJourneys`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJourneys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7898,7 +7898,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves all the tags (keys and values) that are associated with an application, campaign, message template, or segment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7968,7 +7968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTemplates`.
     ///
     /// <p>Retrieves information about all the message templates that are associated with your Amazon Pinpoint account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8071,7 +8071,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTemplateVersions`.
     ///
     /// <p>Retrieves information about all the versions of a specific message template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8177,7 +8177,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PhoneNumberValidate`.
     ///
     /// <p>Retrieves information about a phone number.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PhoneNumberValidate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8253,7 +8253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEvents`.
     ///
     /// <p>Creates a new event to record for endpoints, or creates or updates endpoint data that existing events are associated with.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8339,7 +8339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEventStream`.
     ///
     /// <p>Creates a new event stream for an application or updates the settings of an existing event stream for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEventStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8425,7 +8425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveAttributes`.
     ///
     /// <p>Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8527,7 +8527,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendMessages`.
     ///
     /// <p>Creates and sends a direct message.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8613,7 +8613,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendOTPMessage`.
     ///
     /// <p>Send an OTP message</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendOTPMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8702,7 +8702,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendUsersMessages`.
     ///
     /// <p>Creates and sends a message to a list of users.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendUsersMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8791,7 +8791,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags (keys and values) to an application, campaign, message template, or segment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8874,7 +8874,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags (keys and values) from an application, campaign, message template, or segment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8961,7 +8961,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAdmChannel`.
     ///
     /// <p>Enables the ADM channel for an application or updates the status and settings of the ADM channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAdmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9047,7 +9047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApnsChannel`.
     ///
     /// <p>Enables the APNs channel for an application or updates the status and settings of the APNs channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApnsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9133,7 +9133,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApnsSandboxChannel`.
     ///
     /// <p>Enables the APNs sandbox channel for an application or updates the status and settings of the APNs sandbox channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApnsSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9222,7 +9222,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApnsVoipChannel`.
     ///
     /// <p>Enables the APNs VoIP channel for an application or updates the status and settings of the APNs VoIP channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApnsVoipChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9311,7 +9311,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApnsVoipSandboxChannel`.
     ///
     /// <p>Enables the APNs VoIP sandbox channel for an application or updates the status and settings of the APNs VoIP sandbox channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApnsVoipSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9400,7 +9400,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplicationSettings`.
     ///
     /// <p>Updates the settings for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplicationSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9489,7 +9489,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBaiduChannel`.
     ///
     /// <p>Enables the Baidu channel for an application or updates the status and settings of the Baidu channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBaiduChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9578,7 +9578,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCampaign`.
     ///
     /// <p>Updates the configuration and other settings for a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9677,7 +9677,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEmailChannel`.
     ///
     /// <p>Enables the email channel for an application or updates the status and settings of the email channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEmailChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9766,7 +9766,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEmailTemplate`.
     ///
     /// <p>Updates an existing message template for messages that are sent through the email channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9875,7 +9875,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEndpoint`.
     ///
     /// <p>Creates a new endpoint for an application or updates the settings and attributes of an existing endpoint for an application. You can also use this operation to define custom attributes for an endpoint. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9971,7 +9971,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEndpointsBatch`.
     ///
     /// <p>Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing endpoints for an application. You can also use this operation to define custom attributes for a batch of endpoints. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpointsBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10060,7 +10060,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGcmChannel`.
     ///
     /// <p>Enables the GCM channel for an application or updates the status and settings of the GCM channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGcmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10146,7 +10146,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInAppTemplate`.
     ///
     /// <p>Updates an existing message template for messages sent through the in-app message channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInAppTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10255,7 +10255,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateJourney`.
     ///
     /// <p>Updates the configuration and other settings for a journey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateJourney<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10354,7 +10354,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateJourneyState`.
     ///
     /// <p>Cancels (stops) an active journey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateJourneyState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10453,7 +10453,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePushTemplate`.
     ///
     /// <p>Updates an existing message template for messages that are sent through a push notification channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePushTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10562,7 +10562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRecommenderConfiguration`.
     ///
     /// <p>Updates an Amazon Pinpoint configuration for a recommender model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecommenderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10651,7 +10651,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSegment`.
     ///
     /// <p>Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSegment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10750,7 +10750,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSmsChannel`.
     ///
     /// <p>Enables the SMS channel for an application or updates the status and settings of the SMS channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSmsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10836,7 +10836,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSmsTemplate`.
     ///
     /// <p>Updates an existing message template for messages that are sent through the SMS channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSmsTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10942,7 +10942,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTemplateActiveVersion`.
     ///
     /// <p>Changes the status of a specific version of a message template to <i>active</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTemplateActiveVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11044,7 +11044,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVoiceChannel`.
     ///
     /// <p>Enables the voice channel for an application or updates the status and settings of the voice channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVoiceChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11133,7 +11133,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVoiceTemplate`.
     ///
     /// <p>Updates an existing message template for messages that are sent through the voice channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVoiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11242,7 +11242,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `VerifyOTPMessage`.
     ///
     /// <p>Verify an OTP</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifyOTPMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

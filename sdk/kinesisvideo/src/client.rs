@@ -232,7 +232,7 @@ pub mod fluent_builders {
     /// <p>Creates a signaling channel. </p>
     /// <p>
     /// <code>CreateSignalingChannel</code> is an asynchronous operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSignalingChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -362,7 +362,7 @@ pub mod fluent_builders {
     /// <p>For information about how the service works, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How it Works</a>. </p>
     /// <p>You must have permissions for the <code>KinesisVideo:CreateStream</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -545,7 +545,7 @@ pub mod fluent_builders {
     /// <p>Deletes a specified signaling channel. <code>DeleteSignalingChannel</code> is an
     /// asynchronous operation. If you don't specify the channel's current version, the most
     /// recent version is deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSignalingChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -643,7 +643,7 @@ pub mod fluent_builders {
     /// latest stream version, use the <code>DescribeStream</code> API. </p>
     /// <p>This operation requires permission for the <code>KinesisVideo:DeleteStream</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -736,7 +736,7 @@ pub mod fluent_builders {
     /// <p>Returns the most current information about the signaling channel. You must specify
     /// either the name or the Amazon Resource Name (ARN) of the channel that you want to
     /// describe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSignalingChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -817,7 +817,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the most current information about the specified stream. You must specify
     /// either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -908,7 +908,7 @@ pub mod fluent_builders {
     ///
     /// <p>In the request, specify the stream either by <code>StreamName</code> or
     /// <code>StreamARN</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1017,7 +1017,7 @@ pub mod fluent_builders {
     /// of the viewers on the channel. A <code>VIEWER</code> role results in this API generating
     /// an endpoint that a client can use to communicate only with a
     /// <code>MASTER</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSignalingChannelEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1113,7 +1113,7 @@ pub mod fluent_builders {
     /// <p>Returns an array of <code>ChannelInfo</code> objects. Each object describes a
     /// signaling channel. To retrieve only those channels that satisfy a specific condition, you can
     /// specify a <code>ChannelNameCondition</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSignalingChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1215,7 +1215,7 @@ pub mod fluent_builders {
     /// <p>Returns an array of <code>StreamInfo</code> objects. Each object describes a
     /// stream. To retrieve only streams that satisfy a specific condition, you can specify a
     /// <code>StreamNameCondition</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1319,7 +1319,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags associated with the specified signaling channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1407,7 +1407,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of tags associated with the specified stream.</p>
     /// <p>In the request, you must specify either the <code>StreamName</code> or the
     /// <code>StreamARN</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1508,7 +1508,7 @@ pub mod fluent_builders {
     /// you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
     /// Tags</a> in the <i>AWS Billing and Cost Management User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1608,7 +1608,7 @@ pub mod fluent_builders {
     /// <p>This operation requires permission for the <code>KinesisVideo:TagStream</code>
     /// action.</p>
     /// <p>Kinesis video streams support up to 50 tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1717,7 +1717,7 @@ pub mod fluent_builders {
     /// <p>Removes one or more tags from a signaling channel. In the request, specify only a tag
     /// key or keys; don't specify the value. If you specify a tag key that does not exist, it's
     /// ignored.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1810,7 +1810,7 @@ pub mod fluent_builders {
     /// ignored.</p>
     /// <p>In the request, you must provide the <code>StreamName</code> or
     /// <code>StreamARN</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1935,7 +1935,7 @@ pub mod fluent_builders {
     /// any data older than one hour is deleted immediately.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataRetention<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2067,7 +2067,7 @@ pub mod fluent_builders {
     /// it only applies to new messages sent via this channel after it's been updated. Existing
     /// messages are still expired as per the previous <code>MessageTtlSeconds</code>
     /// value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSignalingChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2179,7 +2179,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>UpdateStream</code> is an asynchronous operation, and takes time to
     /// complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

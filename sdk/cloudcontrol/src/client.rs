@@ -156,7 +156,7 @@ pub mod fluent_builders {
     /// <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     /// <p>Only resource operations requests with a status of <code>PENDING</code> or
     /// <code>IN_PROGRESS</code> can be cancelled.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelResourceRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -235,7 +235,7 @@ pub mod fluent_builders {
     /// <p>After you have initiated a resource creation request, you can monitor the progress of your
     /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
     /// <code>ProgressEvent</code> type returned by <code>CreateResource</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -407,7 +407,7 @@ pub mod fluent_builders {
     /// <p>After you have initiated a resource deletion request, you can monitor the progress of your
     /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
     /// <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -543,7 +543,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-read.html">Reading a resource's current state</a>.</p>
     /// <p>You can use this action to return information about an existing resource in your account
     /// and Amazon Web Services Region, whether or not those resources were provisioned using Cloud Control API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -662,7 +662,7 @@ pub mod fluent_builders {
     /// <p>Returns the current status of a resource operation request. For more information, see
     /// <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-track">Tracking the progress of resource operation requests</a> in the
     /// <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceRequestStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -744,7 +744,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Resource operation requests expire after seven days.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -851,7 +851,7 @@ pub mod fluent_builders {
     /// resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     /// <p>You can use this action to return information about existing resources in your account and
     /// Amazon Web Services Region, whether or not those resources were provisioned using Cloud Control API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1005,7 +1005,7 @@ pub mod fluent_builders {
     /// <p>For more information about the properties of a specific resource, refer to the related
     /// topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>Amazon Web Services
     /// CloudFormation Users Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

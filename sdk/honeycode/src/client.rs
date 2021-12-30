@@ -190,7 +190,7 @@ pub mod fluent_builders {
     /// formula, then that formula will be copied down to the new row. If there is no column level formula and
     /// no formula in the last row of the table, then that column will be left blank for the new rows.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -351,7 +351,7 @@ pub mod fluent_builders {
     /// The BatchDeleteTableRows API allows you to delete one or more rows from a table in a workbook.
     /// You need to specify the ids of the rows that you want to delete from the table.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -514,7 +514,7 @@ pub mod fluent_builders {
     /// for that row. To clear out the data in a specific cell, you need to set the value as an empty string
     /// ("").
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -686,7 +686,7 @@ pub mod fluent_builders {
     /// column will not be updated for that row. To clear out the data in a specific cell, you need to set the value
     /// as an empty string ("").
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpsertTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -850,7 +850,7 @@ pub mod fluent_builders {
     /// <p>
     /// The DescribeTableDataImportJob API allows you to retrieve the status and details of a table data import job.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTableDataImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -962,7 +962,7 @@ pub mod fluent_builders {
     /// The API allows setting local variables in the screen to filter, sort or otherwise affect what will be
     /// displayed on the screen.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetScreenData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1133,7 +1133,7 @@ pub mod fluent_builders {
     /// The API allows setting local variables, which can then be used in the automation being invoked.
     /// This allows automating the Honeycode app interactions to write, update or delete data in the workbook.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InvokeScreenAutomation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1316,7 +1316,7 @@ pub mod fluent_builders {
     /// <p>
     /// The ListTableColumns API allows you to retrieve a list of all the columns in a table in a workbook.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTableColumns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1432,7 +1432,7 @@ pub mod fluent_builders {
     /// <p>
     /// The ListTableRows API allows you to retrieve a list of all the rows in a table in a workbook.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1583,7 +1583,7 @@ pub mod fluent_builders {
     /// <p>
     /// The ListTables API allows you to retrieve a list of all the tables in a workbook.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1693,7 +1693,7 @@ pub mod fluent_builders {
     /// <p>
     /// The QueryTableRows API allows you to use a filter formula to query for specific rows in a table.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct QueryTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1836,7 +1836,7 @@ pub mod fluent_builders {
     /// the id of the job that was started. To find out the status of the import request, you need to call the
     /// DescribeTableDataImportJob API.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTableDataImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -461,7 +461,7 @@ pub mod fluent_builders {
     ///
     /// <p>Cancels in-progress environment configuration update or application version
     /// deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AbortEnvironmentUpdate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -553,7 +553,7 @@ pub mod fluent_builders {
     /// <p>Applies a scheduled managed action immediately. A managed action can be applied only if
     /// its status is <code>Scheduled</code>. Get the status and action ID of a managed action with
     /// <a>DescribeEnvironmentManagedActions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplyEnvironmentManagedAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -652,7 +652,7 @@ pub mod fluent_builders {
     /// uses the associated operations role for permissions to downstream services during subsequent
     /// calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
     /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateEnvironmentOperationsRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -742,7 +742,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CheckDNSAvailability`.
     ///
     /// <p>Checks if the specified CNAME is available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckDNSAvailability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -817,7 +817,7 @@ pub mod fluent_builders {
     /// information must be included in the source bundles in an environment manifest named
     /// <code>env.yaml</code>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose Environments</a>
     /// for details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ComposeEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -930,7 +930,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an application that has one configuration template named <code>default</code>
     /// and no application versions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1068,7 +1068,7 @@ pub mod fluent_builders {
     /// you receive an exception when you attempt to launch an environment from the application
     /// version.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplicationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1324,7 +1324,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1577,7 +1577,7 @@ pub mod fluent_builders {
     ///
     /// <p>Launches an AWS Elastic Beanstalk environment for the specified application using the specified
     /// configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1899,7 +1899,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePlatformVersion`.
     ///
     /// <p>Create a new version of your custom platform.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlatformVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2053,7 +2053,7 @@ pub mod fluent_builders {
     /// first time you create an environment in a region. If the storage location already exists,
     /// <code>CreateStorageLocation</code> still returns the bucket name but does not create a new
     /// bucket.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStorageLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2118,7 +2118,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You cannot delete an application that has a running environment.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2207,7 +2207,7 @@ pub mod fluent_builders {
     /// <p>You cannot delete an application version that is associated with a running
     /// environment.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2312,7 +2312,7 @@ pub mod fluent_builders {
     /// copy of the template. You can delete or modify the environment's copy of the template
     /// without affecting the running environment.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2403,7 +2403,7 @@ pub mod fluent_builders {
     /// fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the
     /// deployment is in process or has failed. The draft configuration remains in existence until it
     /// is deleted with this action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironmentConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2489,7 +2489,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePlatformVersion`.
     ///
     /// <p>Deletes the specified version of a custom platform.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlatformVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2561,7 +2561,7 @@ pub mod fluent_builders {
     /// <p>Returns attributes related to AWS Elastic Beanstalk that are associated with the calling AWS
     /// account.</p>
     /// <p>The result currently has one set of attributes—resource quotas.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2621,7 +2621,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplications`.
     ///
     /// <p>Returns the descriptions of existing applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2700,7 +2700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplicationVersions`.
     ///
     /// <p>Retrieve a list of application versions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2825,7 +2825,7 @@ pub mod fluent_builders {
     /// template or environment, or that a specified solution stack defines. The description includes
     /// the values the options, their default values, and an indication of the required action on a
     /// running environment if an option value is changed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2986,7 +2986,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3103,7 +3103,7 @@ pub mod fluent_builders {
     /// <p>Returns information about the overall health of the specified environment. The
     /// <b>DescribeEnvironmentHealth</b> operation is only available with
     /// AWS Elastic Beanstalk Enhanced Health.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEnvironmentHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3214,7 +3214,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEnvironmentManagedActionHistory`.
     ///
     /// <p>Lists an environment's completed and failed managed actions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEnvironmentManagedActionHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3322,7 +3322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEnvironmentManagedActions`.
     ///
     /// <p>Lists an environment's upcoming and in-progress managed actions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEnvironmentManagedActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3421,7 +3421,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEnvironmentResources`.
     ///
     /// <p>Returns AWS resources for this environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEnvironmentResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3519,7 +3519,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEnvironments`.
     ///
     /// <p>Returns descriptions for existing environments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3716,7 +3716,7 @@ pub mod fluent_builders {
     /// <p>This action returns the most recent 1,000 events from the specified
     /// <code>NextToken</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3944,7 +3944,7 @@ pub mod fluent_builders {
     /// <p>Retrieves detailed information about the health of instances in your AWS Elastic
     /// Beanstalk. This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
     /// reporting</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstancesHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4064,7 +4064,7 @@ pub mod fluent_builders {
     /// platform versions.</p>
     /// <p>For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS Elastic Beanstalk
     /// Platforms Glossary</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePlatformVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4137,7 +4137,7 @@ pub mod fluent_builders {
     /// the caller's permissions for permissions to downstream services during subsequent calls acting
     /// on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
     /// <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateEnvironmentOperationsRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4213,7 +4213,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of the available solution stack names, with the public version first and
     /// then in reverse chronological order.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAvailableSolutionStacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4276,7 +4276,7 @@ pub mod fluent_builders {
     /// summary information about each platform branch.</p>
     /// <p>For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS Elastic Beanstalk
     /// Platforms Glossary</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlatformBranches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4521,7 +4521,7 @@ pub mod fluent_builders {
     /// version.</p>
     /// <p>For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS Elastic Beanstalk
     /// Platforms Glossary</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlatformVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4631,7 +4631,7 @@ pub mod fluent_builders {
     /// <p>Elastic Beanstalk supports tagging of all of its resources. For details about resource tagging, see
     /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging Application
     /// Resources</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4704,7 +4704,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
     /// load balancer, etc.) for a specified environment and forces a restart.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebuildEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4817,7 +4817,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestEnvironmentInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4937,7 +4937,7 @@ pub mod fluent_builders {
     ///
     /// <p>Causes the environment to restart the application container server running on each
     /// Amazon EC2 instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestartAppServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5044,7 +5044,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetrieveEnvironmentInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5161,7 +5161,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SwapEnvironmentCNAMEs`.
     ///
     /// <p>Swaps the CNAMEs of two environments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SwapEnvironmentCNAMEs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5312,7 +5312,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TerminateEnvironment`.
     ///
     /// <p>Terminates the specified environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5474,7 +5474,7 @@ pub mod fluent_builders {
     /// <p>If a property (for example, <code>description</code>) is not provided, the value
     /// remains unchanged. To clear these properties, specify an empty string.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5565,7 +5565,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplicationResourceLifecycle`.
     ///
     /// <p>Modifies lifecycle settings for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplicationResourceLifecycle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5660,7 +5660,7 @@ pub mod fluent_builders {
     /// <p>If a property (for example, <code>description</code>) is not provided, the value
     /// remains unchanged. To clear properties, specify an empty string.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplicationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5777,7 +5777,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5933,7 +5933,7 @@ pub mod fluent_builders {
     /// draft configuration is created and <a>DescribeConfigurationSettings</a> for this
     /// environment returns two setting descriptions with different <code>DeploymentStatus</code>
     /// values. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6213,7 +6213,7 @@ pub mod fluent_builders {
     /// </dd>
     /// </dl>
     /// <p>For details about creating a custom user policy, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies">Creating a Custom User Policy</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6332,7 +6332,7 @@ pub mod fluent_builders {
     /// environment, and determines whether those values are valid.</p>
     /// <p>This action returns a list of messages indicating any errors or warnings associated
     /// with the selection of option values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidateConfigurationSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

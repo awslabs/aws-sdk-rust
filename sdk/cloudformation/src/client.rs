@@ -570,7 +570,7 @@ pub mod fluent_builders {
     /// <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify configuration properties for the extension. For
     /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -821,7 +821,7 @@ pub mod fluent_builders {
     /// CloudFormation registry for the account and region.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the
     /// <i>CloudFormation User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDescribeTypeConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -905,7 +905,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelUpdateStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1005,7 +1005,7 @@ pub mod fluent_builders {
     /// outside of CloudFormation. Because CloudFormation doesn't know the database
     /// was deleted, it assumes that the database instance still exists and attempts to roll back
     /// to it, causing the update rollback to fail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ContinueUpdateRollback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1226,7 +1226,7 @@ pub mod fluent_builders {
     /// changes until you execute the change set.</p>
     /// <p>To create a change set for the entire stack hierachy, set
     /// <code>IncludeNestedStacks</code> to <code>True</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1812,7 +1812,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a stack as specified in the template. After the call completes successfully, the
     /// stack creation starts. You can check the status of the stack via the <a>DescribeStacks</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2466,7 +2466,7 @@ pub mod fluent_builders {
     /// stack instance refers to a stack in a specific account and Region. You must specify at
     /// least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>, and you
     /// must specify at least one value for <code>Regions</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStackInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2751,7 +2751,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStackSet`.
     ///
     /// <p>Creates a stack set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStackSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3344,7 +3344,7 @@ pub mod fluent_builders {
     /// includes stack update operations where the stack template includes the extension, even if
     /// no updates are being made to the extension. In addition, deactivated extensions are not
     /// automatically updated if a new version of the extension is released.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeactivateType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3458,7 +3458,7 @@ pub mod fluent_builders {
     /// the nested change set, then <code>DeleteChangeSet</code> will delete all change sets that
     /// belong to the stacks hierarchy and will also delete all change sets for nested stacks with
     /// the status of <code>REVIEW_IN_PROGRESS</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3545,7 +3545,7 @@ pub mod fluent_builders {
     /// <p>Deletes a specified stack. Once the call completes successfully, stack deletion starts.
     /// Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion
     /// has been completed successfully.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3697,7 +3697,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStackInstances`.
     ///
     /// <p>Deletes stack instances for the specified accounts, in the specified Regions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStackInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3926,7 +3926,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a stack set. Before you can delete a stack set, all of its member stack
     /// instances must be deleted. For more information about how to do this, see <a>DeleteStackInstances</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStackSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4050,7 +4050,7 @@ pub mod fluent_builders {
     /// version of that extension. If you do deregister the default version of an extension, the
     /// textensionype itself is deregistered as well and marked as deprecated. </p>
     /// <p>To view the deprecation status of an extension or extension version, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4168,7 +4168,7 @@ pub mod fluent_builders {
     /// <p>Retrieves your account's CloudFormation limits, such as the maximum number of
     /// stacks that you can create in your account. For more information about account limits, see
     /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation Limits</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4240,7 +4240,7 @@ pub mod fluent_builders {
     /// <p>Returns the inputs for the change set and a list of changes that CloudFormation
     /// will make if you execute the change set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating Stacks Using Change Sets</a> in the CloudFormation User
     /// Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4357,7 +4357,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePublisher<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4445,7 +4445,7 @@ pub mod fluent_builders {
     /// <code>DescribeStackDriftDetectionStatus</code>. Once the drift detection operation has
     /// completed, use <a>DescribeStackResourceDrifts</a> to return drift information
     /// about the stack and its resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStackDriftDetectionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4533,7 +4533,7 @@ pub mod fluent_builders {
     /// <p>You can list events for stacks that have failed to create or have been deleted by
     /// specifying the unique stack identifier (stack ID).</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStackEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4636,7 +4636,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the stack instance that's associated with the specified stack set, Amazon Web Services account, and Region.</p>
     /// <p>For a list of stack instances that are associated with a specific stack set, use <a>ListStackInstances</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStackInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4781,7 +4781,7 @@ pub mod fluent_builders {
     /// <p>Returns a description of the specified resource in the specified stack.</p>
     /// <p>For deleted stacks, DescribeStackResource returns resource information for up to 90 days
     /// after the stack has been deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStackResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4897,7 +4897,7 @@ pub mod fluent_builders {
     /// <p>Use <a>DetectStackResourceDrift</a> to detect drift on individual resources,
     /// or <a>DetectStackDrift</a> to detect drift on all supported resources for a
     /// given stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStackResourceDrifts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5075,7 +5075,7 @@ pub mod fluent_builders {
     /// <p>A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
     /// and <code>PhysicalResourceId</code> in the same request.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStackResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5219,7 +5219,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>If the stack does not exist, an <code>ValidationError</code> is returned.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5321,7 +5321,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStackSet`.
     ///
     /// <p>Returns the description of the specified stack set. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStackSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5434,7 +5434,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStackSetOperation`.
     ///
     /// <p>Returns the description of the specified stack set operation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStackSetOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5560,7 +5560,7 @@ pub mod fluent_builders {
     /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
     /// about that specific extension version. Otherwise, it returns information about the default
     /// extension version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5717,7 +5717,7 @@ pub mod fluent_builders {
     /// <p>Once the registration request has completed, use <code>
     /// <a>DescribeType</a>
     /// </code> to return detailed information about an extension.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTypeRegistration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5818,7 +5818,7 @@ pub mod fluent_builders {
     /// <p>When detecting drift on a stack, CloudFormation does not detect drift on any nested stacks
     /// belonging to that stack. Perform <code>DetectStackDrift</code> directly on the nested stack
     /// itself.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectStackDrift<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5916,7 +5916,7 @@ pub mod fluent_builders {
     /// that support drift detection.</p>
     /// <p>Resources that do not currently support drift detection cannot be checked. For a list of
     /// resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectStackResourceDrift<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6042,7 +6042,7 @@ pub mod fluent_builders {
     /// <p>To stop a drift detection stack set operation, use <code>
     /// <a>StopStackSetOperation</a>
     /// </code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectStackSetDrift<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6190,7 +6190,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the estimated monthly cost of a template. The return value is an Amazon Web Services Simple Monthly Calculator URL with a query string that describes the
     /// resources required to run the template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EstimateTemplateCost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6318,7 +6318,7 @@ pub mod fluent_builders {
     /// current policy.</p>
     /// <p>To create a change set for the entire stack hierachy, <code>IncludeNestedStacks</code>
     /// must have been set to <code>True</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6441,7 +6441,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null
     /// value is returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStackPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6519,7 +6519,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>If the template does not exist, a <code>ValidationError</code> is returned.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6659,7 +6659,7 @@ pub mod fluent_builders {
     /// <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template information for
     /// up to 90 days after the stack has been deleted. If the template does not exist, a
     /// <code>ValidationError</code> is returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTemplateSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6846,7 +6846,7 @@ pub mod fluent_builders {
     /// StackSets, the import operation can import any stack in the same AWS Organizations as the
     /// management account. The import operation can import up to 10 stacks using inline stack IDs
     /// or up to 10,000 stacks using an Amazon S3 object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportStacksToStackSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7035,7 +7035,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the ID and status of each active change set for a stack. For example, CloudFormation lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or
     /// <code>CREATE_PENDING</code> state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChangeSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7125,7 +7125,7 @@ pub mod fluent_builders {
     /// </a> function.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
     /// CloudFormation Export Stack Output Values</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7202,7 +7202,7 @@ pub mod fluent_builders {
     /// <p>For more information about importing an exported output value, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
     /// <code>Fn::ImportValue</code>
     /// </a> function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7287,7 +7287,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns summary information about stack instances that are associated with the specified
     /// stack set. You can filter for stack instances that are associated with a specific Amazon Web Services account name or Region, or that have a specific status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStackInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7481,7 +7481,7 @@ pub mod fluent_builders {
     /// <p>Returns descriptions of all resources of the specified stack.</p>
     /// <p>For deleted stacks, ListStackResources returns resource information for up to 90 days
     /// after the stack has been deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStackResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7589,7 +7589,7 @@ pub mod fluent_builders {
     /// days after the stack is deleted. If no StackStatusFilter is specified, summary information
     /// for all stacks is returned (including existing stacks and stacks that have been
     /// deleted).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7680,7 +7680,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStackSetOperationResults`.
     ///
     /// <p>Returns summary information about the results of a stack set operation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStackSetOperationResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7841,7 +7841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStackSetOperations`.
     ///
     /// <p>Returns summary information about operations performed on a stack set. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStackSetOperations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8011,7 +8011,7 @@ pub mod fluent_builders {
     /// in the management account.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStackSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8160,7 +8160,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTypeRegistrations`.
     ///
     /// <p>Returns a list of registration tokens for the specified extension(s).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTypeRegistrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8314,7 +8314,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTypes`.
     ///
     /// <p>Returns summary information about extension that have been registered with CloudFormation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8598,7 +8598,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTypeVersions`.
     ///
     /// <p>Returns summary information about the versions of an extension.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTypeVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8796,7 +8796,7 @@ pub mod fluent_builders {
     /// <i>CloudFormation CLI User Guide</i>.</p>
     /// <p>To publish an extension, you must be registered as a publisher with CloudFormation. For
     /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8937,7 +8937,7 @@ pub mod fluent_builders {
     ///
     /// <p>Reports progress of a resource handler to CloudFormation.</p>
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. Do not use this API in your code.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RecordHandlerProgress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9094,7 +9094,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation
     /// extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterPublisher<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9216,7 +9216,7 @@ pub mod fluent_builders {
     /// <p>Once you have registered a private extension in your account and region, use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify configuration properties for the extension. For
     /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation
     /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9536,7 +9536,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RollbackStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9631,7 +9631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetStackPolicy`.
     ///
     /// <p>Sets a stack policy for a specified stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetStackPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9751,7 +9751,7 @@ pub mod fluent_builders {
     /// template values</a> in the <i>CloudFormation User
     /// Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetTypeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9897,7 +9897,7 @@ pub mod fluent_builders {
     ///
     /// <p>Specify the default version of an extension. The default version of an extension will be
     /// used in CloudFormation operations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetTypeDefaultVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10019,7 +10019,7 @@ pub mod fluent_builders {
     /// the required number of signals or the timeout period is exceeded. The SignalResource API is
     /// useful in cases where you want to send signals from anywhere other than an Amazon EC2
     /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SignalResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10137,7 +10137,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopStackSetOperation`.
     ///
     /// <p>Stops an in-progress operation on a stack set and its associated stack instances. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopStackSetOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10283,7 +10283,7 @@ pub mod fluent_builders {
     /// <p>An extension must have a test status of <code>PASSED</code> before it can be published.
     /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public use</a>
     /// in the <i>CloudFormation CLI User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10456,7 +10456,7 @@ pub mod fluent_builders {
     /// <p>For more information about creating an update template, updating a stack, and monitoring
     /// the progress of the update, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating a
     /// Stack</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11115,7 +11115,7 @@ pub mod fluent_builders {
     /// parameter value specified in the stack set. Once a stack instance has been updated with the
     /// new parameter, you can then override the parameter value using
     /// <code>UpdateStackInstances</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStackInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11417,7 +11417,7 @@ pub mod fluent_builders {
     /// partially, below or above a specified failure tolerance), the stack set is updated with
     /// your changes. Subsequent <a>CreateStackInstances</a> calls on the specified
     /// stack set use the updated stack set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStackSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12189,7 +12189,7 @@ pub mod fluent_builders {
     /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
     /// stacks</a>, termination protection is set on the root stack and cannot be changed
     /// directly on the nested stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTerminationProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12276,7 +12276,7 @@ pub mod fluent_builders {
     /// <p>Validates a specified template. CloudFormation first checks if the template is
     /// valid JSON. If it isn't, CloudFormation checks if the template is valid YAML. If
     /// both these checks fail, CloudFormation returns a template validation error.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidateTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

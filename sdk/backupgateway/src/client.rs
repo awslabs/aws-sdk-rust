@@ -216,7 +216,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a backup gateway with your server. After you complete the association process,
     /// you can back up and restore your VMs through the gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateGatewayToServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -299,7 +299,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a backup gateway. After you create a gateway, you can associate it with a server
     /// using the <code>AssociateGatewayToServer</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -415,7 +415,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGateway`.
     ///
     /// <p>Deletes a backup gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -485,7 +485,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteHypervisor`.
     ///
     /// <p>Deletes a hypervisor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHypervisor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -559,7 +559,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disassociates a backup gateway from the specified server. After the disassociation process
     /// finishes, the gateway can no longer access the virtual machines on the server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateGatewayFromServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -629,7 +629,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportHypervisorConfiguration`.
     ///
     /// <p>Connect to a hypervisor by importing its configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportHypervisorConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -758,7 +758,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGateways`.
     ///
     /// <p>Lists backup gateways owned by an Amazon Web Services account in an Amazon Web Services Region. The returned list is ordered by gateway Amazon Resource Name (ARN).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -844,7 +844,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHypervisors`.
     ///
     /// <p>Lists your hypervisors.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHypervisors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -931,7 +931,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the tags applied to the resource identified by its Amazon Resource Name
     /// (ARN).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1001,7 +1001,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVirtualMachines`.
     ///
     /// <p>Lists your virtual machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVirtualMachines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1087,7 +1087,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutMaintenanceStartTime`.
     ///
     /// <p>Set the maintenance start time for a gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMaintenanceStartTime<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1201,7 +1201,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tag the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1289,7 +1289,7 @@ pub mod fluent_builders {
     ///
     /// <p>Tests your hypervisor configuration to validate that backup gateway can connect with the
     /// hypervisor and its resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestHypervisorConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1391,7 +1391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1479,7 +1479,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a gateway's name. Specify which gateway to update using the Amazon Resource Name
     /// (ARN) of the gateway in your request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1564,7 +1564,7 @@ pub mod fluent_builders {
     /// <p>Updates a hypervisor metadata, including its host, username, and password. Specify which
     /// hypervisor to update using the Amazon Resource Name (ARN) of the hypervisor in your
     /// request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHypervisor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

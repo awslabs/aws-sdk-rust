@@ -187,7 +187,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds device(s) to your account (i.e., claim one or more devices) if and only if you
     /// received a claim code with the device(s).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ClaimDevicesByClaimCode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -258,7 +258,7 @@ pub mod fluent_builders {
     ///
     /// <p>Given a device ID, returns a DescribeDeviceResponse object describing the
     /// details of the device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -332,7 +332,7 @@ pub mod fluent_builders {
     /// and finalizing the claim. For a device of type button, a device event can
     /// be published by simply clicking the device.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FinalizeDeviceClaim<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -433,7 +433,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceMethods`.
     ///
     /// <p>Given a device ID, returns the invokable methods associated with the device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceMethods<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -507,7 +507,7 @@ pub mod fluent_builders {
     /// and finalizing the claim. For a device of type button, a device event can
     /// be published by simply clicking the device.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitiateDeviceClaim<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -578,7 +578,7 @@ pub mod fluent_builders {
     ///
     /// <p>Given a device ID, issues a request to invoke a named device method (with possible
     /// parameters). See the "Example POST" code snippet below.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InvokeDeviceMethod<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -678,7 +678,7 @@ pub mod fluent_builders {
     ///
     /// <p>Using a device ID, returns a DeviceEventsResponse object containing an
     /// array of events for the device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -804,7 +804,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevices`.
     ///
     /// <p>Lists the 1-Click compatible devices associated with your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -896,7 +896,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags associated with the specified resource ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -967,7 +967,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds or updates the tags associated with the resource ARN. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
     /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1068,7 +1068,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UnclaimDevice`.
     ///
     /// <p>Disassociates a device from your AWS account using its device ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnclaimDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1139,7 +1139,7 @@ pub mod fluent_builders {
     ///
     /// <p>Using tag keys, deletes the tags (key/value pairs) associated with the specified
     /// resource ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1227,7 +1227,7 @@ pub mod fluent_builders {
     ///
     /// <p>Using a Boolean value (true or false), this operation
     /// enables or disables the device given a device ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeviceState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

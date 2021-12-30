@@ -617,7 +617,7 @@ pub mod fluent_builders {
     /// <p>For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using Cost Allocation Tags in Amazon ElastiCache</a>
     /// in the <i>ElastiCache User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -723,7 +723,7 @@ pub mod fluent_builders {
     /// <p>You cannot authorize ingress from an Amazon EC2 security group in one region to an
     /// ElastiCache cluster in another region.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeCacheSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -837,7 +837,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchApplyUpdateAction`.
     ///
     /// <p>Apply the service update. For more information on service updates and applying them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying Service Updates</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchApplyUpdateAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -944,7 +944,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchStopUpdateAction`.
     ///
     /// <p>Stop the service update. For more information on service updates and stopping them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping Service Updates</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchStopUpdateAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1051,7 +1051,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CompleteMigration`.
     ///
     /// <p>Complete the migration of data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CompleteMigration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1227,7 +1227,7 @@ pub mod fluent_builders {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopySnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1372,7 +1372,7 @@ pub mod fluent_builders {
     /// cluster run the same protocol-compliant cache engine software, either Memcached
     /// or Redis.</p>
     /// <p>This operation is not supported for Redis (cluster mode enabled) clusters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCacheCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2549,7 +2549,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters and Parameter Groups</a> in the ElastiCache User Guide.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCacheParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2697,7 +2697,7 @@ pub mod fluent_builders {
     /// Virtual Private Cloud (Amazon VPC). If you are creating a cluster inside of a VPC, use a cache
     /// subnet group instead. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCacheSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2807,7 +2807,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new cache subnet group.</p>
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCacheSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2954,7 +2954,7 @@ pub mod fluent_builders {
     /// <p>The <b>PrimaryReplicationGroupId</b> represents the name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3096,7 +3096,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is valid for Redis only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4535,7 +4535,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is valid for Redis only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4661,7 +4661,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUser`.
     ///
     /// <p>For Redis engine version 6.0 onwards: Creates a Redis user. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4809,7 +4809,7 @@ pub mod fluent_builders {
     ///
     /// <p>For Redis engine version 6.0 onwards: Creates a Redis user group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4926,7 +4926,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DecreaseNodeGroupsInGlobalReplicationGroup`.
     ///
     /// <p>Decreases the number of node groups in a Global datastore</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DecreaseNodeGroupsInGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5076,7 +5076,7 @@ pub mod fluent_builders {
     /// <p>Dynamically decreases the number of replicas in a Redis (cluster mode disabled) replication group or the number of
     /// replica nodes in one or more node groups (shards) of a Redis (cluster mode enabled) replication group. This operation
     /// is performed with no cluster down time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DecreaseReplicaCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5280,7 +5280,7 @@ pub mod fluent_builders {
     /// <p>A cluster that is not in the <code>available</code> state</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCacheCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5373,7 +5373,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified cache parameter
     /// group. You cannot delete a cache parameter group if it is associated with any cache
     /// clusters. You cannot delete the default cache parameter groups in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCacheParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5458,7 +5458,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You cannot delete a cache security group if it is associated with any clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCacheSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5543,7 +5543,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You cannot delete a default cache subnet group or one that is associated with any clusters.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCacheSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5637,7 +5637,7 @@ pub mod fluent_builders {
     ///
     /// <p>When you receive a successful response from this operation, Amazon ElastiCache immediately begins deleting the selected resources;
     /// you cannot cancel or revert this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5734,7 +5734,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is valid for Redis only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5847,7 +5847,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is valid for Redis only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5920,7 +5920,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
     /// <p>For Redis engine version 6.0 onwards: Deletes a user. The user will be removed from all user groups and in turn removed from all replication groups. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5990,7 +5990,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserGroup`.
     ///
     /// <p>For Redis engine version 6.0 onwards: Deletes a user group. The user group must first be disassociated from the replication group before it can be deleted. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6078,7 +6078,7 @@ pub mod fluent_builders {
     /// ready for use.</p>
     /// <p>If cache nodes are currently being removed from the cluster, no endpoint information
     /// for the removed nodes is displayed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCacheClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6223,7 +6223,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of the available cache
     /// engines and their versions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCacheEngineVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6424,7 +6424,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of cache parameter group
     /// descriptions. If a cache parameter group name is specified, the list contains only
     /// the descriptions for that group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCacheParameterGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6535,7 +6535,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the detailed parameter list for a
     /// particular cache parameter group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCacheParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6664,7 +6664,7 @@ pub mod fluent_builders {
     /// descriptions. If a cache security group name is specified, the list contains only
     /// the description of that group. This applicable only when you have ElastiCache in Classic setup
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCacheSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6777,7 +6777,7 @@ pub mod fluent_builders {
     /// descriptions. If a subnet group name is specified, the list  contains only the
     /// description of that group. This is applicable only when you have ElastiCache in VPC setup. All ElastiCache clusters now launch in VPC by default.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCacheSubnetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6890,7 +6890,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the default engine and
     /// system parameter information for the specified cache engine.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEngineDefaultParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7029,7 +7029,7 @@ pub mod fluent_builders {
     /// the name as a parameter.</p>
     /// <p>By default, only the events occurring within the last hour are returned;
     /// however, you can retrieve up to 14 days' worth of events if necessary.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7199,7 +7199,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeGlobalReplicationGroups`.
     ///
     /// <p>Returns information about a particular global replication group. If no identifier is specified, returns information about all Global datastores. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGlobalReplicationGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7310,7 +7310,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is valid for Redis only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7420,7 +7420,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about reserved cache
     /// nodes for this account, or about a specified reserved cache node.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedCacheNodes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8135,7 +8135,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists available reserved cache
     /// node offerings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedCacheNodesOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8844,7 +8844,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeServiceUpdates`.
     ///
     /// <p>Returns details of the service updates</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServiceUpdates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8967,7 +8967,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is valid for Redis only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9133,7 +9133,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUpdateActions`.
     ///
     /// <p>Returns details of the update actions </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUpdateActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9339,7 +9339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserGroups`.
     ///
     /// <p>Returns a list of user groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9432,7 +9432,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUsers`.
     ///
     /// <p>Returns a list of users.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9549,7 +9549,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateGlobalReplicationGroup`.
     ///
     /// <p>Remove a secondary cluster from the Global datastore using the Global datastore name. The secondary cluster will no longer receive updates from the primary cluster, but will remain as a standalone cluster in that Amazon region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9656,7 +9656,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `FailoverGlobalReplicationGroup`.
     ///
     /// <p>Used to failover the primary region to a selected secondary region. The selected secondary region will become primary, and all other clusters will become secondary.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FailoverGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9761,7 +9761,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `IncreaseNodeGroupsInGlobalReplicationGroup`.
     ///
     /// <p>Increase the number of node groups in the Global datastore</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct IncreaseNodeGroupsInGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9881,7 +9881,7 @@ pub mod fluent_builders {
     /// <p>Dynamically increases the number of replicas in a Redis (cluster mode disabled) replication group or the number of
     /// replica nodes in one or more node groups (shards) of a Redis (cluster mode enabled) replication group. This operation
     /// is performed with no cluster down time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct IncreaseReplicaCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10010,7 +10010,7 @@ pub mod fluent_builders {
     /// <p>When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code> operations to
     /// scale your cluster or replication group, the value of the <code>CacheNodeType</code> parameter
     /// must be one of the node types returned by this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAllowedNodeTypeModifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10128,7 +10128,7 @@ pub mod fluent_builders {
     ///
     /// <p>If the cluster is not in the <i>available</i> state, <code>ListTagsForResource</code>
     /// returns an error.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10209,7 +10209,7 @@ pub mod fluent_builders {
     /// <p>Modifies the settings for a cluster. You
     /// can use this operation to change one or more cluster configuration parameters by
     /// specifying the parameters and the new values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCacheCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11056,7 +11056,7 @@ pub mod fluent_builders {
     /// <p>Modifies the parameters of a cache
     /// parameter group. You can modify up to 20 parameters in a single request by submitting a
     /// list parameter name and value pairs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCacheParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11149,7 +11149,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyCacheSubnetGroup`.
     ///
     /// <p>Modifies an existing cache subnet group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCacheSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11264,7 +11264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyGlobalReplicationGroup`.
     ///
     /// <p>Modifies the settings for a Global datastore.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11440,7 +11440,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is valid for Redis only.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12070,7 +12070,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies a replication group's shards (node groups) by allowing you to
     /// add shards, remove shards, or rebalance the keyspaces among existing shards.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReplicationGroupShardConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12263,7 +12263,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyUser`.
     ///
     /// <p>Changes user password(s) and/or access string.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12386,7 +12386,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyUserGroup`.
     ///
     /// <p>Changes the list of users that belong to the user group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyUserGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12496,7 +12496,7 @@ pub mod fluent_builders {
     /// cache node offering. Reserved nodes are not eligible for cancellation and are non-refundable. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html">Managing Costs with Reserved Nodes</a> for Redis or
     /// <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/reserved-nodes.html">Managing Costs with Reserved Nodes</a> for Memcached.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseReservedCacheNodesOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12636,7 +12636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RebalanceSlotsInGlobalReplicationGroup`.
     ///
     /// <p>Redistribute slots to ensure uniform distribution across existing shards in the cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebalanceSlotsInGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12736,7 +12736,7 @@ pub mod fluent_builders {
     ///
     /// <p>If you make changes to parameters that require a Redis (cluster mode enabled) cluster reboot for the changes to be applied,
     /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a> for an alternate process.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootCacheCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12829,7 +12829,7 @@ pub mod fluent_builders {
     /// list from the named resource. A  tag is a key-value pair where the key and value are case-sensitive.            
     /// You can use tags to categorize and track all your ElastiCache resources, with the exception of global replication group. When you add or remove tags on replication groups, those actions will be replicated to all nodes in the replication group.
     /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12928,7 +12928,7 @@ pub mod fluent_builders {
     /// parameter group to the engine or system default value. You can reset specific parameters
     /// by submitting a list of parameter names. To reset the entire cache parameter group,
     /// specify the <code>ResetAllParameters</code> and <code>CacheParameterGroupName</code> parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetCacheParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13051,7 +13051,7 @@ pub mod fluent_builders {
     /// <p>Revokes ingress from a cache security group.
     /// Use this operation to disallow access from an Amazon EC2 security group
     /// that had been previously authorized.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeCacheSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13163,7 +13163,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartMigration`.
     ///
     /// <p>Start the migration of data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMigration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13319,7 +13319,7 @@ pub mod fluent_builders {
     /// </ul>
     ///
     /// <p>Also see, <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing Multi-AZ </a> in the <i>ElastiCache User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestFailover<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

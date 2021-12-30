@@ -256,7 +256,7 @@ pub mod fluent_builders {
     /// contains the metadata describing where the data is and what the data actually looks like.
     /// In other words, it contains the location of the data source, the data schema, and other
     /// information. A dataset also contains any tags associated with the ingested data. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -387,7 +387,7 @@ pub mod fluent_builders {
     /// provide an S3 bucket location for the input data, assign it a delimiter between separate
     /// entries in the data, set an offset delay if desired, and set the frequency of inferencing.
     /// You must also provide an S3 bucket location for the output data. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInferenceScheduler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -617,7 +617,7 @@ pub mod fluent_builders {
     /// <p>Your model is trained using a portion of the data from your dataset and uses that data
     /// to learn patterns of normal behavior and abnormal patterns that lead to equipment failure.
     /// Another portion of the data is used to evaluate the model's accuracy. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -895,7 +895,7 @@ pub mod fluent_builders {
     /// isn't, the dataset, its metadata, and any associated data stored in S3 will be deleted.
     /// This does not affect any models that used this dataset for training and evaluation, but
     /// does prevent it from being used in the future. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -966,7 +966,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an inference scheduler that has been set up. Already processed output results
     /// are not affected. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInferenceScheduler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1043,7 +1043,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an ML model currently available for Amazon Lookout for Equipment. This will prevent it from
     /// being used with an inference scheduler, even one that is already set up. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1114,7 +1114,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides information on a specific data ingestion job such as creation time, dataset
     /// ARN, status, and so on. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataIngestionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1184,7 +1184,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
     /// <p>Provides a JSON description of the data that is in each time series dataset, including names, column names, and data types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1255,7 +1255,7 @@ pub mod fluent_builders {
     ///
     /// <p> Specifies information about the inference scheduler being used, including name, model,
     /// status, and associated metadata </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInferenceScheduler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1332,7 +1332,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides a JSON containing the overall information about a specific ML model, including model name and ARN,
     /// dataset, training and evaluation information, status, and so on. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1403,7 +1403,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides a list of all data ingestion jobs, including dataset name and ARN, S3 location
     /// of the input data, status, and so on. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataIngestionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1509,7 +1509,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all datasets currently available in your account, filtering on the dataset name.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1608,7 +1608,7 @@ pub mod fluent_builders {
     ///
     /// <p> Lists all inference executions that have been performed by the specified inference
     /// scheduler. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInferenceExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1750,7 +1750,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of all inference schedulers currently available for your account.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInferenceSchedulers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1861,7 +1861,7 @@ pub mod fluent_builders {
     ///
     /// <p>Generates a list of all models in the account, including model name and ARN, dataset,
     /// and status. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1982,7 +1982,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all the tags for a specified resource, including key and value. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2054,7 +2054,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartDataIngestionJob`.
     ///
     /// <p>Starts a data ingestion job. Amazon Lookout for Equipment returns the job status. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDataIngestionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2166,7 +2166,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartInferenceScheduler`.
     ///
     /// <p>Starts an inference scheduler. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartInferenceScheduler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2242,7 +2242,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopInferenceScheduler`.
     ///
     /// <p>Stops an inference scheduler. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopInferenceScheduler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2322,7 +2322,7 @@ pub mod fluent_builders {
     /// resources as well as helping you to search and filter by tag. Multiple tags can be added to
     /// a resource, either when you create it, or later. Up to 50 tags can be associated with each
     /// resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2413,7 +2413,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a specific tag from a given resource. The tag is specified by its key. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2502,7 +2502,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInferenceScheduler`.
     ///
     /// <p>Updates an inference scheduler. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInferenceScheduler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

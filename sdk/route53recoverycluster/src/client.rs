@@ -129,7 +129,7 @@ pub mod fluent_builders {
     /// <p>For more information about working with routing controls, see
     /// <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a>
     /// in the Route 53 Application Recovery Controller Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoutingControlState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -206,7 +206,7 @@ pub mod fluent_builders {
     /// <p>For more information about working with routing controls, see
     /// <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a>
     /// in the Route 53 Application Recovery Controller Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingControlState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -299,7 +299,7 @@ pub mod fluent_builders {
     /// <p>For more information about working with routing controls, see
     /// <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a>
     /// in the Route 53 Application Recovery Controller Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingControlStates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

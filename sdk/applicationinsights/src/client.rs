@@ -292,7 +292,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
     /// <p>Adds an application that is created from a resource group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -455,7 +455,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateComponent`.
     ///
     /// <p>Creates a custom component by grouping similar standalone instances to monitor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -558,7 +558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLogPattern`.
     ///
     /// <p>Adds an log pattern to a <code>LogPatternSet</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLogPattern<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -678,7 +678,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
     /// <p>Removes the specified application from monitoring. Does not delete the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -752,7 +752,7 @@ pub mod fluent_builders {
     ///
     /// <p>Ungroups a custom component. When you ungroup custom components, all applicable
     /// monitors that are set up for the component are removed and the instances revert to their standalone status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -838,7 +838,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLogPattern`.
     ///
     /// <p>Removes the specified log pattern from a <code>LogPatternSet</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLogPattern<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -934,7 +934,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplication`.
     ///
     /// <p>Describes the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1007,7 +1007,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeComponent`.
     ///
     /// <p>Describes a component and lists the resources that are grouped together in a component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1093,7 +1093,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeComponentConfiguration`.
     ///
     /// <p>Describes the monitoring configuration of the component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComponentConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1179,7 +1179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeComponentConfigurationRecommendation`.
     ///
     /// <p>Describes the recommended monitoring configuration of the component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComponentConfigurationRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1281,7 +1281,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLogPattern`.
     ///
     /// <p>Describe a specific log pattern from a <code>LogPatternSet</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLogPattern<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1377,7 +1377,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeObservation`.
     ///
     /// <p>Describes an anomaly or error with the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeObservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1450,7 +1450,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProblem`.
     ///
     /// <p>Describes an application problem.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProblem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1520,7 +1520,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProblemObservations`.
     ///
     /// <p>Describes the anomalies or errors associated with the problem.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProblemObservations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1590,7 +1590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplications`.
     ///
     /// <p>Lists the IDs of the applications that you are monitoring. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1672,7 +1672,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListComponents`.
     ///
     /// <p>Lists the auto-grouped, standalone, and custom components of the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1780,7 +1780,7 @@ pub mod fluent_builders {
     /// <p>ERROR: alarm not created due to permission errors or exceeding quotas. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1930,7 +1930,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLogPatterns`.
     ///
     /// <p>Lists the log patterns in the specific log <code>LogPatternSet</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLogPatterns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2038,7 +2038,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLogPatternSets`.
     ///
     /// <p>Lists the log pattern sets in the specific application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLogPatternSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2133,7 +2133,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProblems`.
     ///
     /// <p>Lists the problems with your application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProblems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2276,7 +2276,7 @@ pub mod fluent_builders {
     /// optional associated <i>tag value</i>. A tag key is a general label that
     /// acts as a category for more specific tag values. A tag value acts as a descriptor within
     /// a tag key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2355,7 +2355,7 @@ pub mod fluent_builders {
     /// associated <i>tag value</i>, both of which you define. A tag key is a
     /// general label that acts as a category for more specific tag values. A tag value acts as
     /// a descriptor within a tag key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2448,7 +2448,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove one or more tags (keys and values) from a specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2543,7 +2543,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
     /// <p>Updates the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2684,7 +2684,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the custom component name and/or the list of resources that make up the
     /// component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2802,7 +2802,7 @@ pub mod fluent_builders {
     /// <p>Updates the monitoring configurations for the component. The configuration input parameter
     /// is an escaped JSON of the configuration and should match the schema of what is returned
     /// by <code>DescribeComponentConfigurationRecommendation</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComponentConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2942,7 +2942,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLogPattern`.
     ///
     /// <p>Adds a log pattern to a <code>LogPatternSet</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLogPattern<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

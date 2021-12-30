@@ -299,7 +299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetChannel`.
     ///
     /// <p>Performs <a>GetChannel</a> on multiple ARNs simultaneously.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -376,7 +376,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetStreamKey`.
     ///
     /// <p>Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetStreamKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -453,7 +453,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
     /// <p>Creates a new channel and an associated stream key to start streaming.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -648,7 +648,7 @@ pub mod fluent_builders {
     /// region as the recording configuration. If you create a recording configuration in a different
     /// region as your S3 bucket, delete that recording configuration and create a new one with an S3
     /// bucket from the correct region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecordingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -762,7 +762,7 @@ pub mod fluent_builders {
     /// <p>Note that <a>CreateChannel</a> creates a stream key. If you subsequently use
     /// CreateStreamKey on the same channel, it will fail because a stream key already exists and
     /// there is a limit of 1 stream key per channel. To reset the stream key on a channel, use <a>DeleteStreamKey</a> and then CreateStreamKey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -860,7 +860,7 @@ pub mod fluent_builders {
     /// EventBridge "Stream End" event (to verify that the stream's state was changed from Live to
     /// Offline), then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html"> Using EventBridge with Amazon IVS</a>.)
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -932,7 +932,7 @@ pub mod fluent_builders {
     /// <p>Deletes a specified authorization key pair. This invalidates future viewer tokens
     /// generated using the key pair’s <code>privateKey</code>. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private
     /// Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlaybackKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1007,7 +1007,7 @@ pub mod fluent_builders {
     /// recording configuration, first use <a>UpdateChannel</a> to set the
     /// <code>recordingConfigurationArn</code> field to an empty string, then use
     /// DeleteRecordingConfiguration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecordingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1078,7 +1078,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the stream key for the specified ARN, so it can no longer be used to
     /// stream.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStreamKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1148,7 +1148,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChannel`.
     ///
     /// <p>Gets the channel configuration for the specified channel ARN. See also <a>BatchGetChannel</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1222,7 +1222,7 @@ pub mod fluent_builders {
     /// generate viewer authorization tokens, to grant viewers access to private channels. For more
     /// information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a> in the <i>Amazon IVS User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPlaybackKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1292,7 +1292,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecordingConfiguration`.
     ///
     /// <p>Gets the recording configuration for the specified ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecordingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1362,7 +1362,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStream`.
     ///
     /// <p>Gets information about the active (live) stream on a specified channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1432,7 +1432,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStreamKey`.
     ///
     /// <p>Gets stream-key information for a specified ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1502,7 +1502,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStreamSession`.
     ///
     /// <p>Gets metadata on a specified stream.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1590,7 +1590,7 @@ pub mod fluent_builders {
     /// authorization tokens, to grant viewers access to private channels. For more information, see
     /// <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up
     /// Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportPlaybackKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1699,7 +1699,7 @@ pub mod fluent_builders {
     /// region where the API request is processed. This list can be filtered to match a specified name
     /// or recording-configuration ARN. Filters are mutually exclusive and cannot be used together. If
     /// you try to use both filters, you will get an error (409 ConflictException).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1813,7 +1813,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets summary information about playback key pairs. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private
     /// Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlaybackKeyPairs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1896,7 +1896,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets summary information about all recording configurations in your account, in the
     /// Amazon Web Services region where the API request is processed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecordingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1978,7 +1978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStreamKeys`.
     ///
     /// <p>Gets summary information about stream keys for the specified channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2071,7 +2071,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets summary information about live streams in your account, in the Amazon Web Services
     /// region where the API request is processed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2167,7 +2167,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a summary of current and previous streams for a specified channel in your account, in
     /// the AWS region where the API request is processed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2259,7 +2259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Gets information about Amazon Web Services tags for the specified ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2333,7 +2333,7 @@ pub mod fluent_builders {
     /// for your needs, we recommend batching your data into a single PutMetadata call.) At most 155
     /// requests per second per account are allowed. Also see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding Metadata within a Video Stream</a> in
     /// the <i>Amazon IVS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2422,7 +2422,7 @@ pub mod fluent_builders {
     /// session, so to stop the stream permanently, you may want to first revoke the
     /// <code>streamKey</code> attached to the channel.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2492,7 +2492,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or updates tags for the Amazon Web Services resource with the specified ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2585,7 +2585,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from the resource with the specified ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2673,7 +2673,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a channel's configuration. This does not affect an ongoing stream of this channel.
     /// You must stop and restart the stream for the changes to take effect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

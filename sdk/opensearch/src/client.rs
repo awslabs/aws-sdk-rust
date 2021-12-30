@@ -386,7 +386,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptInboundConnection`.
     ///
     /// <p>Allows the remote domain owner to accept an inbound cross-cluster connection request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInboundConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -463,7 +463,7 @@ pub mod fluent_builders {
     /// <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging" target="_blank">
     /// Tagging Amazon OpenSearch Service domains</a> for more information.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -554,7 +554,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociatePackage`.
     ///
     /// <p>Associates a package with an Amazon OpenSearch Service domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -640,7 +640,7 @@ pub mod fluent_builders {
     /// <p>Cancels a scheduled service software update for an Amazon OpenSearch Service domain. You can only perform this operation before
     /// the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code> state.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelServiceSoftwareUpdate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -713,7 +713,7 @@ pub mod fluent_builders {
     /// see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html" target="_blank">Creating and managing Amazon OpenSearch Service domains
     /// </a> in the <i>Amazon OpenSearch Service Developer Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1052,7 +1052,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOutboundConnection`.
     ///
     /// <p>Creates a new cross-cluster connection from a local OpenSearch domain to a remote OpenSearch domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOutboundConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1177,7 +1177,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePackage`.
     ///
     /// <p>Create a package for use with Amazon OpenSearch Service domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1290,7 +1290,7 @@ pub mod fluent_builders {
     /// <p>Permanently deletes the specified domain and all of its data. Once a domain is deleted, it cannot
     /// be recovered.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1360,7 +1360,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInboundConnection`.
     ///
     /// <p>Allows the remote domain owner to delete an existing inbound cross-cluster connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInboundConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1433,7 +1433,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOutboundConnection`.
     ///
     /// <p>Allows the local domain owner to delete an existing outbound cross-cluster connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOutboundConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1506,7 +1506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePackage`.
     ///
     /// <p>Deletes the package.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1580,7 +1580,7 @@ pub mod fluent_builders {
     /// <p>Returns domain configuration information about the specified domain, including the domain ID,
     /// domain endpoint, and domain ARN.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1652,7 +1652,7 @@ pub mod fluent_builders {
     /// <p>Provides scheduled Auto-Tune action details for the domain, such as Auto-Tune action type,
     /// description, severity, and scheduled date.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomainAutoTunes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1744,7 +1744,7 @@ pub mod fluent_builders {
     /// <p>Provides cluster configuration information about the specified domain, such as the state, creation
     /// date, update version, and update date for cluster options.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomainConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1816,7 +1816,7 @@ pub mod fluent_builders {
     /// <p>Returns domain configuration information about the specified domains, including the domain ID,
     /// domain endpoint, and domain ARN.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1893,7 +1893,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInboundConnections`.
     ///
     /// <p>Lists all the inbound cross-cluster connections for a remote domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInboundConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2027,7 +2027,7 @@ pub mod fluent_builders {
     /// </code>
     /// to see which limits you can modify.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceTypeLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2164,7 +2164,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOutboundConnections`.
     ///
     /// <p>Lists all the outbound cross-cluster connections for a local domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOutboundConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2291,7 +2291,7 @@ pub mod fluent_builders {
     /// <p>Describes all packages available to Amazon OpenSearch Service domains. Includes options for filtering, limiting the number of results,
     /// and pagination.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2394,7 +2394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservedInstanceOfferings`.
     ///
     /// <p>Lists available reserved OpenSearch instance offerings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedInstanceOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2496,7 +2496,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservedInstances`.
     ///
     /// <p>Returns information about reserved OpenSearch instances for this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2595,7 +2595,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DissociatePackage`.
     ///
     /// <p>Dissociates a package from the Amazon OpenSearch Service domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DissociatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2686,7 +2686,7 @@ pub mod fluent_builders {
     /// </code>
     /// to get all upgrade-compatible versions of OpenSearch/Elasticsearch for that specific domain.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCompatibleVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2762,7 +2762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPackageVersionHistory`.
     ///
     /// <p>Returns a list of package versions, along with their creation time and commit message.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPackageVersionHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2856,7 +2856,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUpgradeHistory`.
     ///
     /// <p>Retrieves the complete history of the last 10 upgrades performed on the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUpgradeHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2963,7 +2963,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the latest status of the last upgrade or upgrade eligibility check performed on the domain.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUpgradeStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3039,7 +3039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomainNames`.
     ///
     /// <p>Returns the names of all domains owned by the current user's account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3112,7 +3112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomainsForPackage`.
     ///
     /// <p>Lists all Amazon OpenSearch Service domains associated with the package.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainsForPackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3205,7 +3205,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInstanceTypeDetails`.
     ///
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceTypeDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3324,7 +3324,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPackagesForDomain`.
     ///
     /// <p>Lists all packages associated with the Amazon OpenSearch Service domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackagesForDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3418,7 +3418,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTags`.
     ///
     /// <p>Returns all tags for the given domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3492,7 +3492,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVersions`.
     ///
     /// <p>List all supported versions of OpenSearch and Elasticsearch.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3584,7 +3584,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PurchaseReservedInstanceOffering`.
     ///
     /// <p>Allows you to purchase reserved OpenSearch instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseReservedInstanceOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3683,7 +3683,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectInboundConnection`.
     ///
     /// <p>Allows the remote domain owner to reject an inbound cross-cluster connection request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInboundConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3756,7 +3756,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
     /// <p>Removes the specified set of tags from the given domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3847,7 +3847,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartServiceSoftwareUpdate`.
     ///
     /// <p>Schedules a service software update for an Amazon OpenSearch Service domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartServiceSoftwareUpdate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3919,7 +3919,7 @@ pub mod fluent_builders {
     /// <p>Modifies the cluster configuration of the specified domain, such as setting the instance type
     /// and the number of instances.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4220,7 +4220,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePackage`.
     ///
     /// <p>Updates a package for use with Amazon OpenSearch Service domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4336,7 +4336,7 @@ pub mod fluent_builders {
     ///
     /// <p>Allows you to either upgrade your domain or perform an upgrade eligibility check to a compatible version of OpenSearch or Elasticsearch.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpgradeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -365,7 +365,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an application. An application consists of one or more server groups. Each
     /// server group contain one or more servers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -503,7 +503,7 @@ pub mod fluent_builders {
     /// <p>Creates a replication job. The replication job schedules periodic replication runs
     /// to replicate your server to AWS. Each replication run creates an Amazon Machine Image
     /// (AMI).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -711,7 +711,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified application. Optionally deletes the launched stack associated with
     /// the application and all AWS SMS replication jobs for servers in the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -805,7 +805,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppLaunchConfiguration`.
     ///
     /// <p>Deletes the launch configuration for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -875,7 +875,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppReplicationConfiguration`.
     ///
     /// <p>Deletes the replication configuration for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -945,7 +945,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppValidationConfiguration`.
     ///
     /// <p>Deletes the validation configuration for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppValidationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1018,7 +1018,7 @@ pub mod fluent_builders {
     /// <p>After you delete a replication job, there are no further replication runs. AWS
     /// deletes the contents of the Amazon S3 bucket used to store AWS SMS artifacts. The AMIs created
     /// by the replication runs are not deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1091,7 +1091,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteServerCatalog`.
     ///
     /// <p>Deletes all servers from your server catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServerCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1153,7 +1153,7 @@ pub mod fluent_builders {
     /// <p>Disassociates the specified connector from AWS SMS.</p>
     /// <p>After you disassociate a connector, it is no longer available to support
     /// replication jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1224,7 +1224,7 @@ pub mod fluent_builders {
     ///
     /// <p>Generates a target change set for a currently launched stack and writes it to an Amazon S3
     /// object in the customer’s Amazon S3 bucket.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1308,7 +1308,7 @@ pub mod fluent_builders {
     ///
     /// <p>Generates an AWS CloudFormation template based on the current launch configuration and writes it to
     /// an Amazon S3 object in the customer’s Amazon S3 bucket.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1391,7 +1391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApp`.
     ///
     /// <p>Retrieve information about the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1461,7 +1461,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppLaunchConfiguration`.
     ///
     /// <p>Retrieves the application launch configuration associated with the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1532,7 +1532,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the application replication configuration associated with the specified
     /// application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1602,7 +1602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppValidationConfiguration`.
     ///
     /// <p>Retrieves information about a configuration for validating an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppValidationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1672,7 +1672,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppValidationOutput`.
     ///
     /// <p>Retrieves output from validating an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppValidationOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1742,7 +1742,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnectors`.
     ///
     /// <p>Describes the connectors registered with the AWS SMS.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1826,7 +1826,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReplicationJobs`.
     ///
     /// <p>Describes the specified replication job or all of your replication jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReplicationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1923,7 +1923,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReplicationRuns`.
     ///
     /// <p>Describes the replication runs for the specified replication job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReplicationRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2021,7 +2021,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the servers in your server catalog.</p>
     /// <p>Before you can describe your servers, you must import them using <a>ImportServerCatalog</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2122,7 +2122,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportAppCatalog`.
     ///
     /// <p>Allows application import from AWS Migration Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportAppCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2199,7 +2199,7 @@ pub mod fluent_builders {
     /// monitoring all servers to import.</p>
     /// <p>This call returns immediately, but might take additional time to retrieve all the
     /// servers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportServerCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2259,7 +2259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `LaunchApp`.
     ///
     /// <p>Launches the specified application as a stack in AWS CloudFormation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LaunchApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2329,7 +2329,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApps`.
     ///
     /// <p>Retrieves summaries for all applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2430,7 +2430,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `NotifyAppValidationOutput`.
     ///
     /// <p>Provides information to AWS SMS about whether application validation is successful.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyAppValidationOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2516,7 +2516,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAppLaunchConfiguration`.
     ///
     /// <p>Creates or updates the launch configuration for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAppLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2628,7 +2628,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAppReplicationConfiguration`.
     ///
     /// <p>Creates or updates the replication configuration for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAppReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2722,7 +2722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAppValidationConfiguration`.
     ///
     /// <p>Creates or updates a validation configuration for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAppValidationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2835,7 +2835,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts replicating the specified application by creating replication jobs for each server in the
     /// application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAppReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2905,7 +2905,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartOnDemandAppReplication`.
     ///
     /// <p>Starts an on-demand replication run for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartOnDemandAppReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2989,7 +2989,7 @@ pub mod fluent_builders {
     /// already scheduled.</p>
     /// <p>There is a limit on the number of on-demand replications runs that you can request
     /// in a 24-hour period.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartOnDemandReplicationRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3073,7 +3073,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops replicating the specified application by deleting the replication job for each server in
     /// the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopAppReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3143,7 +3143,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TerminateApp`.
     ///
     /// <p>Terminates the stack for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3213,7 +3213,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApp`.
     ///
     /// <p>Updates the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3347,7 +3347,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReplicationJob`.
     ///
     /// <p>Updates the specified settings for the specified replication job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReplicationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

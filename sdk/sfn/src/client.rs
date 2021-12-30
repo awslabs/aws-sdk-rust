@@ -274,7 +274,7 @@ pub mod fluent_builders {
     /// idempotent request of the previous. In this case, <code>tags</code> will not be updated,
     /// even if they are different.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateActivity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -437,7 +437,7 @@ pub mod fluent_builders {
     /// treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
     /// <code>tags</code> will not be updated, even if they are different.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStateMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -657,7 +657,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteActivity`.
     ///
     /// <p>Deletes an activity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteActivity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -733,7 +733,7 @@ pub mod fluent_builders {
     /// less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code>
     /// API is called.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStateMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -809,7 +809,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeActivity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -883,7 +883,7 @@ pub mod fluent_builders {
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -959,7 +959,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStateMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1036,7 +1036,7 @@ pub mod fluent_builders {
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStateMachineForExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1121,7 +1121,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
     /// Latency When Polling for Activity Tasks</a> in the Step Functions Developer Guide.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetActivityTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1210,7 +1210,7 @@ pub mod fluent_builders {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
     /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExecutionHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1336,7 +1336,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListActivities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1429,7 +1429,7 @@ pub mod fluent_builders {
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1548,7 +1548,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStateMachines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1635,7 +1635,7 @@ pub mod fluent_builders {
     ///
     /// <p>List tags for a given resource.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1706,7 +1706,7 @@ pub mod fluent_builders {
     ///
     /// <p>Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
     /// pattern to report that the task identified by the <code>taskToken</code> failed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendTaskFailure<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1814,7 +1814,7 @@ pub mod fluent_builders {
     /// its maximum allowed duration, regardless of the number of <a>SendTaskHeartbeat</a> requests received. Use <code>HeartbeatSeconds</code> to configure the timeout interval
     /// for heartbeats.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendTaskHeartbeat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1890,7 +1890,7 @@ pub mod fluent_builders {
     /// <p>Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
     /// pattern to report that the task identified by the <code>taskToken</code> completed
     /// successfully.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendTaskSuccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1982,7 +1982,7 @@ pub mod fluent_builders {
     /// it will return a 400 <code>ExecutionAlreadyExists</code> error. Names can be reused after 90
     /// days. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2151,7 +2151,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartSyncExecution`.
     ///
     /// <p>Starts a Synchronous Express state machine execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSyncExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2273,7 +2273,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops an execution.</p>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2371,7 +2371,7 @@ pub mod fluent_builders {
     /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
     /// Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2460,7 +2460,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove a tag from a Step Functions resource</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2557,7 +2557,7 @@ pub mod fluent_builders {
     /// calling <code>UpdateStateMachine</code> may use the previous state machine
     /// <code>definition</code> and <code>roleArn</code>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStateMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

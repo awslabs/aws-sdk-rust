@@ -1305,7 +1305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchCreatePartition`.
     ///
     /// <p>Creates one or more partitions in a batch operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreatePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1421,7 +1421,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteConnection`.
     ///
     /// <p>Deletes a list of connection definitions from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1510,7 +1510,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeletePartition`.
     ///
     /// <p>Deletes one or more partitions in a batch operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeletePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1636,7 +1636,7 @@ pub mod fluent_builders {
     /// <code>BatchDeletePartition</code>, to delete any resources that belong to the
     /// table.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1753,7 +1753,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteTableVersion`.
     ///
     /// <p>Deletes a specified batch of versions of a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteTableVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1869,7 +1869,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetBlueprints`.
     ///
     /// <p>Retrieves information about a list of blueprints.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetBlueprints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1966,7 +1966,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetCrawlers`.
     ///
     /// <p>Returns a list of resource metadata for a given list of crawler names. After calling the <code>ListCrawlers</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetCrawlers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2048,7 +2048,7 @@ pub mod fluent_builders {
     /// calling the <code>ListDevEndpoints</code> operation, you can call this operation to access the
     /// data to which you have been granted permissions. This operation supports all IAM permissions,
     /// including permission conditions that uses tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDevEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2128,7 +2128,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of resource metadata for a given list of job names. After calling the <code>ListJobs</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2207,7 +2207,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetPartition`.
     ///
     /// <p>Retrieves partitions in a batch request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetPartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2319,7 +2319,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetTriggers`.
     ///
     /// <p>Returns a list of resource metadata for a given list of trigger names. After calling the <code>ListTriggers</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetTriggers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2396,7 +2396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetWorkflows`.
     ///
     /// <p>Returns a list of resource metadata for a given list of workflow names. After calling the <code>ListWorkflows</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetWorkflows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2483,7 +2483,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchStopJobRun`.
     ///
     /// <p>Stops one or more job runs for a specified job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchStopJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2572,7 +2572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchUpdatePartition`.
     ///
     /// <p>Updates one or more partitions in a batch operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdatePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2690,7 +2690,7 @@ pub mod fluent_builders {
     /// <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a
     /// machine learning task run at any time by calling <code>CancelMLTaskRun</code> with a task
     /// run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelMLTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2770,7 +2770,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CheckSchemaVersionValidity`.
     ///
     /// <p>Validates the supplied schema. This call has no side effects, it simply validates using the supplied schema using <code>DataFormat</code> as the format. Since it does not take a schema set name, no compatibility checks are performed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckSchemaVersionValidity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2856,7 +2856,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBlueprint`.
     ///
     /// <p>Registers a blueprint with Glue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBlueprint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2974,7 +2974,7 @@ pub mod fluent_builders {
     /// <p>Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>, an
     /// <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>,
     /// depending on which field of the request is present.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3106,7 +3106,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConnection`.
     ///
     /// <p>Creates a connection definition in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3218,7 +3218,7 @@ pub mod fluent_builders {
     /// <p>Creates a new crawler with specified targets, role, configuration, and optional schedule.
     /// At least one crawl target must be specified, in the <code>s3Targets</code> field, the
     /// <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3487,7 +3487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDatabase`.
     ///
     /// <p>Creates a new database in a Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3572,7 +3572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDevEndpoint`.
     ///
     /// <p>Creates a new development endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDevEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3926,7 +3926,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateJob`.
     ///
     /// <p>Creates a new job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4347,7 +4347,7 @@ pub mod fluent_builders {
     /// transform. These parameters include <code>Role</code>, and optionally,
     /// <code>AllocatedCapacity</code>, <code>Timeout</code>, and <code>MaxRetries</code>. For more
     /// information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMLTransform<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4705,7 +4705,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePartition`.
     ///
     /// <p>Creates a new partition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4815,7 +4815,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePartitionIndex`.
     ///
     /// <p>Creates a specified partition index in an existing table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePartitionIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4921,7 +4921,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRegistry`.
     ///
     /// <p>Creates a new registry which may be used to hold a collection of schemas.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5029,7 +5029,7 @@ pub mod fluent_builders {
     /// <p>Creates a new schema set and registers the schema definition. Returns an error if the schema set already exists without actually registering the version.</p>
     /// <p>When the schema set is created, a version checkpoint will be set to the first version. Compatibility mode "DISABLED" restricts any additional schema versions from being added after the first schema version. For all other compatibility modes, validation of compatibility settings will be applied only from the second version onwards when the <code>RegisterSchemaVersion</code> API is used.</p>
     /// <p>When this API is called without a <code>RegistryId</code>, this will create an entry for a "default-registry" in the registry database tables, if it is not already present.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5254,7 +5254,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateScript`.
     ///
     /// <p>Transforms a directed acyclic graph (DAG) into code.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateScript<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5358,7 +5358,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSecurityConfiguration`.
     ///
     /// <p>Creates a new security configuration. A security configuration is a set of security properties that can be used by Glue. You can use a security configuration to encrypt data at rest. For information about using security configurations in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting Data Written by Crawlers, Jobs, and Development Endpoints</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5444,7 +5444,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTable`.
     ///
     /// <p>Creates a new table definition in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5576,7 +5576,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTrigger`.
     ///
     /// <p>Creates a new trigger.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5784,7 +5784,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUserDefinedFunction`.
     ///
     /// <p>Creates a new function definition in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserDefinedFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5884,7 +5884,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkflow`.
     ///
     /// <p>Creates a new workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6020,7 +6020,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBlueprint`.
     ///
     /// <p>Deletes an existing blueprint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBlueprint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6090,7 +6090,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteClassifier`.
     ///
     /// <p>Removes a classifier from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6162,7 +6162,7 @@ pub mod fluent_builders {
     /// <p>Delete the partition column statistics of a column.</p>
     ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>DeletePartition</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteColumnStatisticsForPartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6288,7 +6288,7 @@ pub mod fluent_builders {
     /// <p>Retrieves table statistics of columns.</p>
     ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>DeleteTable</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteColumnStatisticsForTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6393,7 +6393,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnection`.
     ///
     /// <p>Deletes a connection from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6479,7 +6479,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes a specified crawler from the Glue Data Catalog, unless the crawler state is
     /// <code>RUNNING</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6561,7 +6561,7 @@ pub mod fluent_builders {
     /// <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any resources that
     /// belong to the database.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6645,7 +6645,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDevEndpoint`.
     ///
     /// <p>Deletes a specified development endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDevEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6719,7 +6719,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a specified job definition. If the job definition
     /// is not found, no exception is thrown.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6794,7 +6794,7 @@ pub mod fluent_builders {
     /// by Glue. If you no longer need a transform, you can delete it by calling
     /// <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted
     /// transform will no longer succeed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMLTransform<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6864,7 +6864,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePartition`.
     ///
     /// <p>Deletes a specified partition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6978,7 +6978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePartitionIndex`.
     ///
     /// <p>Deletes a specified partition index from an existing table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePartitionIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7081,7 +7081,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRegistry`.
     ///
     /// <p>Delete the entire registry including schema and all of its versions. To get the status of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous call. Deleting a registry will deactivate all online operations for the registry such as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>, and <code>RegisterSchemaVersion</code> APIs. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7154,7 +7154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
     /// <p>Deletes a specified policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7237,7 +7237,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchema`.
     ///
     /// <p>Deletes the entire schema set, including the schema set and all of its versions. To get the status of the delete operation, you can call <code>GetSchema</code> API after the asynchronous call. Deleting a registry will deactivate all online operations for the schema, such as the <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code> APIs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7310,7 +7310,7 @@ pub mod fluent_builders {
     /// <p>When the range of version numbers contain check pointed version, the API will return a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint first using the <code>DeleteSchemaCheckpoint</code> API before using this API.</p>
     /// <p>You cannot use the <code>DeleteSchemaVersions</code> API to delete the first schema version in the schema set. The first schema version can only be deleted by the <code>DeleteSchema</code> API. This operation will also delete the attached <code>SchemaVersionMetadata</code> under the schema versions. Hard deletes will be enforced on the database.</p>
     /// <p>If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchemaVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7406,7 +7406,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSecurityConfiguration`.
     ///
     /// <p>Deletes a specified security configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7486,7 +7486,7 @@ pub mod fluent_builders {
     /// <code>BatchDeletePartition</code>, to delete any resources that belong to the
     /// table.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7598,7 +7598,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTableVersion`.
     ///
     /// <p>Deletes a specified version of a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTableVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7708,7 +7708,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a specified trigger. If the trigger is not found, no
     /// exception is thrown.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7778,7 +7778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserDefinedFunction`.
     ///
     /// <p>Deletes an existing function definition from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserDefinedFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7876,7 +7876,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkflow`.
     ///
     /// <p>Deletes a workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7946,7 +7946,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBlueprint`.
     ///
     /// <p>Retrieves the details of a blueprint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlueprint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8036,7 +8036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBlueprintRun`.
     ///
     /// <p>Retrieves the details of a blueprint run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlueprintRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8119,7 +8119,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBlueprintRuns`.
     ///
     /// <p>Retrieves the details of blueprint runs for a specified blueprint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlueprintRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8212,7 +8212,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCatalogImportStatus`.
     ///
     /// <p>Retrieves the status of a migration operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCatalogImportStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8282,7 +8282,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetClassifier`.
     ///
     /// <p>Retrieve a classifier by name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8352,7 +8352,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetClassifiers`.
     ///
     /// <p>Lists all classifier objects in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetClassifiers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8434,7 +8434,7 @@ pub mod fluent_builders {
     /// <p>Retrieves partition statistics of columns.</p>
     ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>GetPartition</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetColumnStatisticsForPartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8565,7 +8565,7 @@ pub mod fluent_builders {
     /// <p>Retrieves table statistics of columns.</p>
     ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>GetTable</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetColumnStatisticsForTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8677,7 +8677,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnection`.
     ///
     /// <p>Retrieves a connection definition from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8777,7 +8777,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnections`.
     ///
     /// <p>Retrieves a list of connection definitions from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8900,7 +8900,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCrawler`.
     ///
     /// <p>Retrieves metadata for a specified crawler.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8970,7 +8970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCrawlerMetrics`.
     ///
     /// <p>Retrieves metrics about specified crawlers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCrawlerMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9068,7 +9068,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves metadata for all crawlers defined in the customer
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCrawlers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9148,7 +9148,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDatabase`.
     ///
     /// <p>Retrieves the definition of a specified database.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9232,7 +9232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDatabases`.
     ///
     /// <p>Retrieves all databases defined in a given Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDatabases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9355,7 +9355,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataCatalogEncryptionSettings`.
     ///
     /// <p>Retrieves the security configuration for a specified catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataCatalogEncryptionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9427,7 +9427,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataflowGraph`.
     ///
     /// <p>Transforms a Python script into a directed acyclic graph (DAG). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataflowGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9505,7 +9505,7 @@ pub mod fluent_builders {
     /// a private IP address, and the public IP address field is not populated. When you create a
     /// non-VPC development endpoint, Glue returns only a public IP address.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9583,7 +9583,7 @@ pub mod fluent_builders {
     /// and the public IP address field is not populated. When you create a non-VPC development
     /// endpoint, Glue returns only a public IP address.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9663,7 +9663,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJob`.
     ///
     /// <p>Retrieves an existing job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9733,7 +9733,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobBookmark`.
     ///
     /// <p>Returns information on a job bookmark entry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobBookmark<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9813,7 +9813,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobRun`.
     ///
     /// <p>Retrieves the metadata for a given job run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9903,7 +9903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobRuns`.
     ///
     /// <p>Retrieves metadata for all runs of a given job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9993,7 +9993,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobs`.
     ///
     /// <p>Retrieves all current job definitions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10073,7 +10073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMapping`.
     ///
     /// <p>Creates mappings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10177,7 +10177,7 @@ pub mod fluent_builders {
     /// learning workflows. You can check the stats of any task run by calling
     /// <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its parent transform's
     /// <code>TransformID</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10263,7 +10263,7 @@ pub mod fluent_builders {
     /// optional parameters as documented in this section.</p>
     ///
     /// <p>This operation returns a list of historic runs and must be paginated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTaskRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10383,7 +10383,7 @@ pub mod fluent_builders {
     /// the details of the transformation to be performed by learning from examples provided by
     /// humans. These transformations are then saved by Glue. You can retrieve their metadata by
     /// calling <code>GetMLTransform</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTransform<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10459,7 +10459,7 @@ pub mod fluent_builders {
     /// details of the transformation to be performed by learning from examples provided by humans.
     /// These transformations are then saved by Glue, and you can retrieve their metadata by
     /// calling <code>GetMLTransforms</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTransforms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10565,7 +10565,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPartition`.
     ///
     /// <p>Retrieves information about a specified partition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10677,7 +10677,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPartitionIndexes`.
     ///
     /// <p>Retrieves the partition indexes associated with a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPartitionIndexes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10780,7 +10780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPartitions`.
     ///
     /// <p>Retrieves information about the partitions in a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPartitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11163,7 +11163,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPlan`.
     ///
     /// <p>Gets code to perform a specified mapping.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11337,7 +11337,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRegistry`.
     ///
     /// <p>Describes the specified registry in detail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11415,7 +11415,7 @@ pub mod fluent_builders {
     /// <p>If you enabled metadata encryption in Data Catalog settings, and you do not have
     /// permission on the KMS key, the operation can't return the Data Catalog resource
     /// policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11495,7 +11495,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourcePolicy`.
     ///
     /// <p>Retrieves a specified resource policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11571,7 +11571,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSchema`.
     ///
     /// <p>Describes the specified schema in detail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11657,7 +11657,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSchemaByDefinition`.
     ///
     /// <p>Retrieves a schema by the <code>SchemaDefinition</code>. The schema definition is sent to the Schema Registry, canonicalized, and hashed. If the hash is matched within the scope of the <code>SchemaName</code> or ARN (or the default registry, if none is supplied), that schema’s metadata is returned. Otherwise, a 404 or NotFound error is returned. Schema versions in <code>Deleted</code> statuses will not be included in the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchemaByDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11756,7 +11756,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSchemaVersion`.
     ///
     /// <p>Get the specified schema by its unique ID assigned when a version of the schema is created or registered. Schema versions in Deleted status will not be included in the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchemaVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11872,7 +11872,7 @@ pub mod fluent_builders {
     ///
     /// <p>Fetches the schema version difference in the specified difference type between two stored schema versions in the Schema Registry.</p>
     /// <p>This API allows you to compare two schema versions between two schema definitions under the same schema.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchemaVersionsDiff<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12003,7 +12003,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSecurityConfiguration`.
     ///
     /// <p>Retrieves a specified security configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12073,7 +12073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSecurityConfigurations`.
     ///
     /// <p>Retrieves a list of all security configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSecurityConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12154,7 +12154,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the <code>Table</code> definition in a Data Catalog for
     /// a specified table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12280,7 +12280,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the definitions of some or all of the tables in a given
     /// <code>Database</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12425,7 +12425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTableVersion`.
     ///
     /// <p>Retrieves a specified version of a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTableVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12535,7 +12535,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of strings that identify available versions of
     /// a specified table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTableVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12654,7 +12654,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTags`.
     ///
     /// <p>Retrieves a list of tags associated with a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12724,7 +12724,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTrigger`.
     ///
     /// <p>Retrieves the definition of a trigger.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12794,7 +12794,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTriggers`.
     ///
     /// <p>Gets all the triggers associated with a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTriggers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12889,7 +12889,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUserDefinedFunction`.
     ///
     /// <p>Retrieves a specified function definition from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserDefinedFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12987,7 +12987,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUserDefinedFunctions`.
     ///
     /// <p>Retrieves multiple function definitions from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserDefinedFunctions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13106,7 +13106,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkflow`.
     ///
     /// <p>Retrieves resource metadata for a workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13186,7 +13186,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkflowRun`.
     ///
     /// <p>Retrieves the metadata for a given workflow run. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkflowRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13276,7 +13276,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkflowRunProperties`.
     ///
     /// <p>Retrieves the workflow run properties which were set during the run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkflowRunProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13356,7 +13356,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkflowRuns`.
     ///
     /// <p>Retrieves metadata for all runs of a given workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkflowRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13456,7 +13456,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportCatalogToGlue`.
     ///
     /// <p>Imports an existing Amazon Athena Data Catalog to Glue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportCatalogToGlue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13526,7 +13526,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBlueprints`.
     ///
     /// <p>Lists all the blueprint names in an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBlueprints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13635,7 +13635,7 @@ pub mod fluent_builders {
     /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
     /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
     /// filtering, only resources with the tag are retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCrawlers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13744,7 +13744,7 @@ pub mod fluent_builders {
     /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
     /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
     /// filtering, only resources with the tag are retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13851,7 +13851,7 @@ pub mod fluent_builders {
     /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
     /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
     /// filtering, only resources with the tag are retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13958,7 +13958,7 @@ pub mod fluent_builders {
     /// a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag
     /// filtering, only resources with the tags are retrieved.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMLTransforms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14087,7 +14087,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRegistries`.
     ///
     /// <p>Returns a list of registries that you have created, with minimal registry information. Registries in the <code>Deleting</code> status will not be included in the results. Empty results will be returned if there are no registries available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRegistries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14168,7 +14168,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of schemas with minimal details. Schemas in Deleting status will not be included in the results. Empty results will be returned if there are no schemas available.</p>
     /// <p>When the <code>RegistryId</code> is not provided, all the schemas across registries will be part of the API response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14261,7 +14261,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSchemaVersions`.
     ///
     /// <p>Returns a list of schema versions that you have created, with minimal information. Schema versions in Deleted status will not be included in the results. Empty results will be returned if there are no schema versions available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemaVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14371,7 +14371,7 @@ pub mod fluent_builders {
     /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
     /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
     /// filtering, only resources with the tag are retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTriggers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14489,7 +14489,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkflows`.
     ///
     /// <p>Lists names of workflows created in the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkflows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14570,7 +14570,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sets the security configuration for a specified catalog. After the configuration has been
     /// set, the specified encryption is applied to every catalog write thereafter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDataCatalogEncryptionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14658,7 +14658,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
     /// <p>Sets the Data Catalog resource policy for access control.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14812,7 +14812,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutSchemaVersionMetadata`.
     ///
     /// <p>Puts the metadata key value pair for a specified schema version ID. A maximum of 10 key value pairs will be allowed per schema version. They can be added over one or more calls.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSchemaVersionMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14924,7 +14924,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutWorkflowRunProperties`.
     ///
     /// <p>Puts the specified workflow run properties for the given workflow run. If a property already exists for the specified run, then it overrides the value otherwise adds the property to existing properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutWorkflowRunProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15027,7 +15027,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `QuerySchemaVersionMetadata`.
     ///
     /// <p>Queries for the schema version metadata information. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct QuerySchemaVersionMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15165,7 +15165,7 @@ pub mod fluent_builders {
     /// <p>Adds a new version to the existing schema. Returns an error if new version of schema does not meet the compatibility requirements of the schema set. This API will not create a new schema set and will return a 404 error if the schema set is not already present in the Schema Registry.</p>
     /// <p>If this is the first schema definition to be registered in the Schema Registry, this API will store the schema version and return immediately. Otherwise, this call has the potential to run longer than other operations due to compatibility modes. You can call the <code>GetSchemaVersion</code> API with the <code>SchemaVersionId</code> to check compatibility modes.</p>
     /// <p>If the same schema definition is already stored in Schema Registry as a version, the schema ID of the existing schema is returned to the caller.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterSchemaVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15264,7 +15264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveSchemaVersionMetadata`.
     ///
     /// <p>Removes a key value pair from the schema version metadata for the specified schema version ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveSchemaVersionMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15376,7 +15376,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetJobBookmark`.
     ///
     /// <p>Resets a bookmark entry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetJobBookmark<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15456,7 +15456,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResumeWorkflowRun`.
     ///
     /// <p>Restarts selected nodes of a previous partially completed workflow run and resumes the workflow run. The selected nodes and all nodes that are downstream from the selected nodes are run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeWorkflowRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15554,7 +15554,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches a set of tables based on properties in the table metadata as well as on the parent database. You can search against text or filter conditions. </p>
     /// <p>You can only get tables that you have access to based on the security policies defined in Lake Formation. You need at least a read-only access to the table for it to be returned. If you do not have access to all the columns in the table, these columns will not be searched against when returning the list of tables back to you. If you have access to the columns but not the data in the columns, those columns and the associated metadata for those columns will be included in the search. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15729,7 +15729,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBlueprintRun`.
     ///
     /// <p>Starts a new run of the specified blueprint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBlueprintRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15824,7 +15824,7 @@ pub mod fluent_builders {
     /// <p>Starts a crawl using the specified crawler, regardless
     /// of what is scheduled. If the crawler is already running, returns a
     /// <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15896,7 +15896,7 @@ pub mod fluent_builders {
     /// <p>Changes the schedule state of the specified crawler to
     /// <code>SCHEDULED</code>, unless the crawler is already running or the
     /// schedule state is already <code>SCHEDULED</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCrawlerSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15974,7 +15974,7 @@ pub mod fluent_builders {
     /// Service (Amazon S3) path to export the labels to. The operation returns a
     /// <code>TaskRunId</code>. You can check on the status of your task run by calling the
     /// <code>GetMLTaskRun</code> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExportLabelsTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16081,7 +16081,7 @@ pub mod fluent_builders {
     ///
     /// <p>You can check on the status of your task run by calling the <code>GetMLTaskRun</code>
     /// operation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImportLabelsTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16176,7 +16176,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartJobRun`.
     ///
     /// <p>Starts a job run using a job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16454,7 +16454,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a unique identifier for the run. You can call <code>GetMLTaskRun</code> to get more
     /// information about the stats of the <code>EvaluationTaskRun</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMLEvaluationTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16537,7 +16537,7 @@ pub mod fluent_builders {
     /// <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes,
     /// all future runs of the machine learning transform will use the new and improved labels and
     /// perform a higher-quality transformation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMLLabelingSetGenerationTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16626,7 +16626,7 @@ pub mod fluent_builders {
     /// <p>Starts an existing trigger. See <a href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
     /// Jobs</a> for information about how different types of trigger are
     /// started.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16696,7 +16696,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartWorkflowRun`.
     ///
     /// <p>Starts a new run of the specified workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartWorkflowRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16766,7 +16766,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopCrawler`.
     ///
     /// <p>If the specified crawler is running, stops the crawl.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16838,7 +16838,7 @@ pub mod fluent_builders {
     /// <p>Sets the schedule state of the specified crawler to
     /// <code>NOT_SCHEDULED</code>, but does not stop the crawler if it is
     /// already running.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopCrawlerSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16908,7 +16908,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopTrigger`.
     ///
     /// <p>Stops a specified trigger.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16978,7 +16978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopWorkflowRun`.
     ///
     /// <p>Stops the execution of the specified workflow run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopWorkflowRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17060,7 +17060,7 @@ pub mod fluent_builders {
     /// <p>Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services resource.
     /// In Glue, you can tag only certain resources. For information about what
     /// resources you can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17155,7 +17155,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17242,7 +17242,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBlueprint`.
     ///
     /// <p>Updates a registered blueprint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBlueprint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17337,7 +17337,7 @@ pub mod fluent_builders {
     /// <p>Modifies an existing classifier (a <code>GrokClassifier</code>,
     /// an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on
     /// which field is present).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17463,7 +17463,7 @@ pub mod fluent_builders {
     /// <p>Creates or updates partition statistics of columns.</p>
     ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>UpdatePartition</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateColumnStatisticsForPartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17596,7 +17596,7 @@ pub mod fluent_builders {
     /// <p>Creates or updates table statistics of columns.</p>
     ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>UpdateTable</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateColumnStatisticsForTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17708,7 +17708,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnection`.
     ///
     /// <p>Updates a connection definition in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17807,7 +17807,7 @@ pub mod fluent_builders {
     /// <p>Updates a crawler. If a crawler is
     /// running, you must stop it using <code>StopCrawler</code> before updating
     /// it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18051,7 +18051,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCrawlerSchedule`.
     ///
     /// <p>Updates the schedule of a crawler using a <code>cron</code> expression. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCrawlerSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18135,7 +18135,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDatabase`.
     ///
     /// <p>Updates an existing database definition in a Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18234,7 +18234,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDevEndpoint`.
     ///
     /// <p>Updates a specified development endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18447,7 +18447,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateJob`.
     ///
     /// <p>Updates an existing job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18534,7 +18534,7 @@ pub mod fluent_builders {
     /// <p>After calling this operation, you can call the <code>StartMLEvaluationTaskRun</code>
     /// operation to assess how well your new parameters achieved your goals (such as improving the
     /// quality of your machine learning transform, or making it more cost-effective).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMLTransform<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18746,7 +18746,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePartition`.
     ///
     /// <p>Updates a partition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18877,7 +18877,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRegistry`.
     ///
     /// <p>Updates an existing registry which is used to hold a collection of schemas. The updated properties relate to the registry, and do not modify any of the schemas within the registry. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18963,7 +18963,7 @@ pub mod fluent_builders {
     /// <p>For updating the compatibility setting, the call will not validate compatibility for the entire set of schema versions with the new compatibility setting. If the value for <code>Compatibility</code> is provided, the <code>VersionNumber</code> (a checkpoint) is also required. The API will validate the checkpoint version number for consistency.</p>
     /// <p>If the value for the <code>VersionNumber</code> (checkpoint) is provided, <code>Compatibility</code> is optional and this can be used to set/reset a checkpoint for the schema.</p>
     /// <p>This update will happen only if the schema is in the AVAILABLE state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19088,7 +19088,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTable`.
     ///
     /// <p>Updates a metadata table in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19217,7 +19217,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTrigger`.
     ///
     /// <p>Updates a trigger definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19300,7 +19300,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserDefinedFunction`.
     ///
     /// <p>Updates an existing function definition in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserDefinedFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19415,7 +19415,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkflow`.
     ///
     /// <p>Updates an existing workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -252,7 +252,7 @@ pub mod fluent_builders {
     /// A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.
     /// The AssociateNode API call can be integrated into Auto Scaling configurations, AWS Cloudformation templates, or the user data of a server's instance.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -426,7 +426,7 @@ pub mod fluent_builders {
     /// A <code>ResourceNotFoundException</code> is thrown when the server is not found.
     /// A <code>ValidationException</code> is thrown when parameters of the request are not valid.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -594,7 +594,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>To specify your own domain for a server, and provide your own self-signed or CA-signed certificate and private key, specify values for <code>CustomDomain</code>,
     /// <code>CustomCertificate</code>, and <code>CustomPrivateKey</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1266,7 +1266,7 @@ pub mod fluent_builders {
     /// A <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
     /// A <code>ValidationException</code> is thrown when parameters of the request are not valid.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1355,7 +1355,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1430,7 +1430,7 @@ pub mod fluent_builders {
     /// <p>
     /// This operation is synchronous.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1500,7 +1500,7 @@ pub mod fluent_builders {
     /// A <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
     /// A <code>ValidationException</code> is raised when parameters of the request are not valid.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBackups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1613,7 +1613,7 @@ pub mod fluent_builders {
     /// A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
     /// A <code>ValidationException</code> is raised when parameters of the request are not valid.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1731,7 +1731,7 @@ pub mod fluent_builders {
     /// A <code>ResourceNotFoundException</code> is thrown when no recent association or disassociation request with the specified token is found,
     /// or when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNodeAssociationStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1832,7 +1832,7 @@ pub mod fluent_builders {
     /// A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
     /// A <code>ValidationException</code> is raised when parameters of the request are not valid.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1933,7 +1933,7 @@ pub mod fluent_builders {
     /// A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
     /// A <code>ValidationException</code> is raised when parameters of the request are not valid.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2071,7 +2071,7 @@ pub mod fluent_builders {
     /// An <code>InvalidStateException</code> is thrown when the server is in any of the following states: CREATING, TERMINATED,
     /// FAILED or DELETING.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportServerEngineAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2224,7 +2224,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of tags that are applied to the specified AWS OpsWorks for Chef Automate or
     /// AWS OpsWorks for Puppet Enterprise servers or backups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2348,7 +2348,7 @@ pub mod fluent_builders {
     /// An <code>InvalidStateException</code> is thrown when the server is not in a valid state. A <code>ResourceNotFoundException</code> is thrown
     /// when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2472,7 +2472,7 @@ pub mod fluent_builders {
     /// Maintenance can only be started on servers in <code>HEALTHY</code> and <code>UNHEALTHY</code> states. Otherwise, an <code>InvalidStateException</code> is thrown.
     /// A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMaintenance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2585,7 +2585,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server, or to server backups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2712,7 +2712,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes specified tags from an AWS OpsWorks-CM server or backup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2806,7 +2806,7 @@ pub mod fluent_builders {
     /// <p>
     /// This operation is synchronous.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2971,7 +2971,7 @@ pub mod fluent_builders {
     /// This operation can only be called for servers in <code>HEALTHY</code> or <code>UNHEALTHY</code> states. Otherwise, an <code>InvalidStateException</code> is raised.
     /// A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServerEngineAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

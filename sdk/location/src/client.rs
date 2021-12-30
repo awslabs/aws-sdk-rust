@@ -463,7 +463,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Currently not supported — Cross-account configurations, such as creating associations between a tracker resource in one account and a geofence collection in another account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTrackerConsumer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -559,7 +559,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteDevicePositionHistory`.
     ///
     /// <p>Deletes the position history of one or more devices from a tracker resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteDevicePositionHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -663,7 +663,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation deletes the resource permanently.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteGeofence<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -773,7 +773,7 @@ pub mod fluent_builders {
     /// <p>The last geofence that a device was observed within is tracked for 30 days after
     /// the most recent device position update.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchEvaluateGeofences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -870,7 +870,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetDevicePosition`.
     ///
     /// <p>Lists the latest device positions for requested devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDevicePosition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -972,7 +972,7 @@ pub mod fluent_builders {
     ///
     /// <p>A batch request for storing geofence geometries into a given geofence collection, or
     /// updates the geometry of an existing geofence if a geofence ID is included in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutGeofence<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1072,7 +1072,7 @@ pub mod fluent_builders {
     /// When <code>PositionFiltering</code> is set to <code>DistanceBased</code> filtering, location data is stored and evaluated against linked geofence
     /// collections only if the device has moved more than 30 m (98.4 ft).</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateDevicePosition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1188,7 +1188,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CalculateRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1583,7 +1583,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGeofenceCollection`.
     ///
     /// <p>Creates a geofence collection, which manages and stores geofences.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGeofenceCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1843,7 +1843,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a map resource in your AWS account, which provides map tiles of different
     /// styles sourced from global location data providers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMap<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2050,7 +2050,7 @@ pub mod fluent_builders {
     /// <p>Creates a place index resource in your AWS account. Use a place index resource to
     /// geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code> operation,
     /// and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlaceIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2323,7 +2323,7 @@ pub mod fluent_builders {
     /// <p>You can send requests to a route calculator resource to estimate travel time,
     /// distance, and get directions. A route calculator sources traffic and road network data
     /// from your chosen data provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRouteCalculator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2581,7 +2581,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a tracker resource in your AWS account, which lets you retrieve current and
     /// historical location of devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTracker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2882,7 +2882,7 @@ pub mod fluent_builders {
     /// <p>This operation deletes the resource permanently. If the geofence collection is the
     /// target of a tracker resource, the devices will no longer be monitored.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGeofenceCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2959,7 +2959,7 @@ pub mod fluent_builders {
     /// <p>This operation deletes the resource permanently. If the map is being used in an application,
     /// the map may not render.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMap<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3032,7 +3032,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation deletes the resource permanently.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlaceIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3105,7 +3105,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation deletes the resource permanently.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRouteCalculator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3183,7 +3183,7 @@ pub mod fluent_builders {
     /// encounter an error. Make sure that the target resource isn't a dependency for your
     /// applications.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTracker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3253,7 +3253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeGeofenceCollection`.
     ///
     /// <p>Retrieves the geofence collection details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGeofenceCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3326,7 +3326,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMap`.
     ///
     /// <p>Retrieves the map resource details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMap<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3396,7 +3396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePlaceIndex`.
     ///
     /// <p>Retrieves the place index resource details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePlaceIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3466,7 +3466,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRouteCalculator`.
     ///
     /// <p>Retrieves the route calculator resource details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRouteCalculator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3539,7 +3539,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTracker`.
     ///
     /// <p>Retrieves the tracker resource details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTracker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3613,7 +3613,7 @@ pub mod fluent_builders {
     /// <p>Once you unlink a tracker resource from a geofence collection, the tracker
     /// positions will no longer be automatically evaluated against geofences.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTrackerConsumer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3712,7 +3712,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Device positions are deleted after 30 days.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevicePosition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3796,7 +3796,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Device positions are deleted after 30 days.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevicePositionHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3954,7 +3954,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGeofence`.
     ///
     /// <p>Retrieves the geofence details from a geofence collection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGeofence<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4037,7 +4037,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMapGlyphs`.
     ///
     /// <p>Retrieves glyphs used to display labels on a map.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMapGlyphs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4214,7 +4214,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the sprite sheet corresponding to a map resource. The sprite sheet is a PNG
     /// image paired with a JSON document describing the offsets of individual icons that will
     /// be displayed on a rendered map.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMapSprites<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4343,7 +4343,7 @@ pub mod fluent_builders {
     /// <p>The style descriptor contains speciﬁcations on how features render on a map. For
     /// example, what data to display, what order to display the data in, and the style for the
     /// data. Style descriptors follow the Mapbox Style Specification.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMapStyleDescriptor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4418,7 +4418,7 @@ pub mod fluent_builders {
     /// <p>The origin (0, 0) is the top left of the map. Increasing the zoom level by 1 doubles
     /// both the X and Y dimensions, so a tile containing data for the entire world at (0/0/0)
     /// will be split into 4 tiles at zoom 1 (1/0/0, 1/0/1, 1/1/0, 1/1/1).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMapTile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4518,7 +4518,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevicePositions`.
     ///
     /// <p>A batch request to retrieve all device positions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevicePositions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4618,7 +4618,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGeofenceCollections`.
     ///
     /// <p>Lists geofence collections in your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGeofenceCollections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4708,7 +4708,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGeofences`.
     ///
     /// <p>Lists geofences stored in a given geofence collection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGeofences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4797,7 +4797,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMaps`.
     ///
     /// <p>Lists map resources in your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMaps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4887,7 +4887,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPlaceIndexes`.
     ///
     /// <p>Lists place index resources in your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlaceIndexes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4977,7 +4977,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRouteCalculators`.
     ///
     /// <p>Lists route calculator resources in your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRouteCalculators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5067,7 +5067,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags that are applied to the specified Amazon Location resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5149,7 +5149,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTrackerConsumers`.
     ///
     /// <p>Lists geofence collections currently associated to the given tracker resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrackerConsumers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5249,7 +5249,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTrackers`.
     ///
     /// <p>Lists tracker resources in your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrackers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5340,7 +5340,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stores a geofence geometry in a given geofence collection, or updates the geometry of
     /// an existing geofence if a geofence ID is included in the request. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutGeofence<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5443,7 +5443,7 @@ pub mod fluent_builders {
     ///
     /// <p>Reverse geocodes a given coordinate and returns a legible address. Allows you to search
     /// for Places or points of interest near a given position.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchPlaceIndexForPosition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5580,7 +5580,7 @@ pub mod fluent_builders {
     /// parameters simultaneously returns an error.</p>
     /// </note>
     /// <p>Search results are returned in order of highest to lowest relevance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchPlaceIndexForText<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5818,7 +5818,7 @@ pub mod fluent_builders {
     /// the previous value for that tag. </p>
     ///
     /// <p>You can associate up to 50 tags with a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5973,7 +5973,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified Amazon Location resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6072,7 +6072,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGeofenceCollection`.
     ///
     /// <p>Updates the specified properties of a given geofence collection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGeofenceCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6214,7 +6214,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMap`.
     ///
     /// <p>Updates the specified properties of a given map resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMap<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6309,7 +6309,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePlaceIndex`.
     ///
     /// <p>Updates the specified properties of a given place index resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePlaceIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6420,7 +6420,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRouteCalculator`.
     ///
     /// <p>Updates the specified properties for a given route calculator resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRouteCalculator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6520,7 +6520,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTracker`.
     ///
     /// <p>Updates the specified properties of a given tracker resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTracker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

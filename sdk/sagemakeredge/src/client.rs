@@ -109,7 +109,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceRegistration`.
     ///
     /// <p>Use to check if a device is registered with SageMaker Edge Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceRegistration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -192,7 +192,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendHeartbeat`.
     ///
     /// <p>Use to get the current status of devices registered on SageMaker Edge Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendHeartbeat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

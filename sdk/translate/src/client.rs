@@ -198,7 +198,7 @@ pub mod fluent_builders {
     /// Amazon S3. Parallel data files contain examples that show how you want segments of text to be
     /// translated. By adding parallel data, you can influence the style, tone, and word choice in
     /// your translation output.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateParallelData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -318,7 +318,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteParallelData`.
     ///
     /// <p>Deletes a parallel data resource in Amazon Translate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteParallelData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -388,7 +388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTerminology`.
     ///
     /// <p>A synchronous action that deletes a custom terminology.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTerminology<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -459,7 +459,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the properties associated with an asynchronous batch translation job including name,
     /// ID, status, source and target languages, input/output S3 buckets, and so on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTextTranslationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -531,7 +531,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetParallelData`.
     ///
     /// <p>Provides information about a parallel data resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetParallelData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -601,7 +601,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTerminology`.
     ///
     /// <p>Retrieves a custom terminology.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTerminology<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -704,7 +704,7 @@ pub mod fluent_builders {
     /// <p>If you import a terminology that overwrites an existing one, the new terminology take up
     /// to 10 minutes to fully propagate and be available for use in a translation due to cache
     /// policies with the DataPlane service that performs the translations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportTerminology<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -827,7 +827,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListParallelData`.
     ///
     /// <p>Provides a list of your parallel data resources in Amazon Translate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListParallelData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -907,7 +907,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTerminologies`.
     ///
     /// <p>Provides a list of custom terminologies associated with your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTerminologies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -989,7 +989,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTextTranslationJobs`.
     ///
     /// <p>Gets a list of the batch translation jobs that you have submitted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTextTranslationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1091,7 +1091,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Amazon Translate does not support batch translation of multiple source languages at once.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTextTranslationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1333,7 +1333,7 @@ pub mod fluent_builders {
     /// <code>STOPPED</code> state.</p>
     /// <p>Asynchronous batch translation jobs are started with the <a>StartTextTranslationJob</a> operation. You can use the <a>DescribeTextTranslationJob</a> or <a>ListTextTranslationJobs</a>
     /// operations to get a batch translation job's <code>JobId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTextTranslationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1404,7 +1404,7 @@ pub mod fluent_builders {
     ///
     /// <p>Translates input text from the source language to the target language. For a list of
     /// available languages and language codes, see <a>what-is-languages</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TranslateText<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1551,7 +1551,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a previously created parallel data resource by importing a new input file from
     /// Amazon S3.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateParallelData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

@@ -505,7 +505,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>After you accept a handshake, it continues to appear in the results of relevant APIs
     /// for only 30 days. After that, it's deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptHandshake<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -604,7 +604,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -739,7 +739,7 @@ pub mod fluent_builders {
     /// can no longer respond to that handshake.</p>
     /// <p>After you cancel a handshake, it continues to appear in the results of relevant APIs
     /// for only 30 days. After that, it's deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelHandshake<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -892,7 +892,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
     /// Access to Your Billing Information and Tools</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1236,7 +1236,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
     /// Access to Your Billing Information and Tools</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGovCloudAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1451,7 +1451,7 @@ pub mod fluent_builders {
     /// supporting only the consolidated billing features by setting the <code>FeatureSet</code>
     /// parameter to <code>CONSOLIDATED_BILLING"</code>, no policy types are enabled by default,
     /// and you can't use organization policies</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1578,7 +1578,7 @@ pub mod fluent_builders {
     /// <p>If the request includes tags, then the requester must have the
     /// <code>organizations:TagResource</code> permission.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOrganizationalUnit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1729,7 +1729,7 @@ pub mod fluent_builders {
     /// <p>If the request includes tags, then the requester must have the
     /// <code>organizations:TagResource</code> permission.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1920,7 +1920,7 @@ pub mod fluent_builders {
     /// process with a new handshake request.</p>
     /// <p>After you decline a handshake, it continues to appear in the results of relevant APIs
     /// for only 30 days. After that, it's deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeclineHandshake<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1997,7 +1997,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the organization. You can delete an organization only by using credentials
     /// from the management account. The organization must be empty of member accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2059,7 +2059,7 @@ pub mod fluent_builders {
     /// <p>Deletes an organizational unit (OU) from a root or another OU. You must first remove
     /// all accounts and child OUs from the OU that you want to delete.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganizationalUnit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2145,7 +2145,7 @@ pub mod fluent_builders {
     /// operation, you must first detach the policy from all organizational units (OUs), roots,
     /// and accounts.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2236,7 +2236,7 @@ pub mod fluent_builders {
     /// AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
     /// </p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterDelegatedAdministrator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2333,7 +2333,7 @@ pub mod fluent_builders {
     /// <p>Retrieves AWS Organizations-related information about the specified account.</p>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2411,7 +2411,7 @@ pub mod fluent_builders {
     /// <p>Retrieves the current status of an asynchronous request to create an account.</p>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCreateAccountStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2504,7 +2504,7 @@ pub mod fluent_builders {
     /// Works</a> in the <i>AWS Organizations User Guide</i>.</p>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEffectivePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2633,7 +2633,7 @@ pub mod fluent_builders {
     /// <code>CANCELED</code> for only 30 days after they change to that state. They're then
     /// deleted and no longer accessible.</p>
     /// <p>This operation can be called from any account in the organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHandshake<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2718,7 +2718,7 @@ pub mod fluent_builders {
     /// it separately at the root level with <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the status of policy types for a specified
     /// root.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2780,7 +2780,7 @@ pub mod fluent_builders {
     /// <p>Retrieves information about an organizational unit (OU).</p>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationalUnit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2867,7 +2867,7 @@ pub mod fluent_builders {
     /// <p>Retrieves information about a policy.</p>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2959,7 +2959,7 @@ pub mod fluent_builders {
     /// the <code>FullAWSAccess</code> policy (or any other attached SCP), you're using the
     /// authorization strategy of a "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny list</a>".</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3144,7 +3144,7 @@ pub mod fluent_builders {
     /// AWS Services</a> in the <i>AWS Organizations User Guide.</i>
     /// </p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableAWSServiceAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3233,7 +3233,7 @@ pub mod fluent_builders {
     /// root, and then use this operation.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
     /// <p> To view the status of available policy types in the organization, use <a>DescribeOrganization</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisablePolicyType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3393,7 +3393,7 @@ pub mod fluent_builders {
     /// policies that prevent accounts from leaving the organization. Ensure that your account
     /// administrators are aware of this.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAllFeatures<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3471,7 +3471,7 @@ pub mod fluent_builders {
     /// <p>This operation can be called only from the organization's management account and only
     /// if the organization has <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all
     /// features</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAWSServiceAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3560,7 +3560,7 @@ pub mod fluent_builders {
     /// <p>You can enable a policy type in a root only if that policy type is available in the
     /// organization. To view the status of available policy types in the organization, use
     /// <a>DescribeOrganization</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnablePolicyType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3720,7 +3720,7 @@ pub mod fluent_builders {
     /// <p>If the request includes tags, then the requester must have the
     /// <code>organizations:TagResource</code> permission.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InviteAccountToOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3960,7 +3960,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LeaveOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4031,7 +4031,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4147,7 +4147,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountsForParent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4269,7 +4269,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAWSServiceAccessForOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4385,7 +4385,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChildren<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4553,7 +4553,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCreateAccountStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4677,7 +4677,7 @@ pub mod fluent_builders {
     /// organization.</p>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDelegatedAdministrators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4801,7 +4801,7 @@ pub mod fluent_builders {
     /// administrator.</p>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDelegatedServicesForAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4926,7 +4926,7 @@ pub mod fluent_builders {
     /// when there are no more results to display.</p>
     /// </note>
     /// <p>This operation can be called from any account in the organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHandshakesForAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5069,7 +5069,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHandshakesForOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5206,7 +5206,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationalUnitsForParent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5363,7 +5363,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>In the current release, a child can have only a single parent.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListParents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5517,7 +5517,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5687,7 +5687,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPoliciesForTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5912,7 +5912,7 @@ pub mod fluent_builders {
     /// enabled and disabled in a root. To see the availability of a policy type in an
     /// organization, use <a>DescribeOrganization</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6031,7 +6031,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6178,7 +6178,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation can be called only from the organization's
     /// management account or by a member account that is a delegated administrator for an AWS service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTargetsForPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6296,7 +6296,7 @@ pub mod fluent_builders {
     /// <p>Moves an account from its current source parent root or organizational unit (OU) to
     /// the specified destination parent root or OU.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MoveAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6468,7 +6468,7 @@ pub mod fluent_builders {
     /// AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
     /// </p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterDelegatedAdministrator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6592,7 +6592,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAccountFromOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6684,7 +6684,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6849,7 +6849,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6987,7 +6987,7 @@ pub mod fluent_builders {
     /// OUs and accounts remain in place, and any attached policies of the OU remain
     /// attached.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOrganizationalUnit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7089,7 +7089,7 @@ pub mod fluent_builders {
     /// supply any parameter, that value remains unchanged. You can't change a policy's
     /// type.</p>
     /// <p>This operation can be called only from the organization's management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

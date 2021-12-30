@@ -407,7 +407,7 @@ pub mod fluent_builders {
     /// to 1. Subsequent versions increment by 1. For more information, see <a>versioning-intro</a>. </p>
     /// <p> This operation requires permission for the
     /// <code>lex:CreateBotVersion</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBotVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -512,7 +512,7 @@ pub mod fluent_builders {
     /// 1. Subsequent versions increment by 1. For more information, see <a>versioning-intro</a>. </p>
     /// <p>This operation requires permissions to perform the
     /// <code>lex:CreateIntentVersion</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIntentVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -619,7 +619,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions for the
     /// <code>lex:CreateSlotTypeVersion</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSlotTypeVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -727,7 +727,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions for the
     /// <code>lex:DeleteBot</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -805,7 +805,7 @@ pub mod fluent_builders {
     /// reference to the alias by deleting the channel association. If you get the
     /// same exception again, delete the referring association until the
     /// <code>DeleteBotAlias</code> operation is successful.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBotAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -890,7 +890,7 @@ pub mod fluent_builders {
     /// platform.</p>
     /// <p>This operation requires permission for the
     /// <code>lex:DeleteBotChannelAssociation</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBotChannelAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -985,7 +985,7 @@ pub mod fluent_builders {
     /// bot, use the <a>DeleteBot</a> operation. </p>
     /// <p>This operation requires permissions for the
     /// <code>lex:DeleteBotVersion</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBotVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1088,7 +1088,7 @@ pub mod fluent_builders {
     ///
     /// <p> This operation requires permission for the
     /// <code>lex:DeleteIntent</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1161,7 +1161,7 @@ pub mod fluent_builders {
     /// a intent, use the <a>DeleteIntent</a> operation. </p>
     /// <p>This operation requires permissions for the
     /// <code>lex:DeleteIntentVersion</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntentVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1263,7 +1263,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation requires permission for the
     /// <code>lex:DeleteSlotType</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSlotType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1336,7 +1336,7 @@ pub mod fluent_builders {
     /// of a slot type, use the <a>DeleteSlotType</a> operation. </p>
     /// <p>This operation requires permissions for the
     /// <code>lex:DeleteSlotTypeVersion</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSlotTypeVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1433,7 +1433,7 @@ pub mod fluent_builders {
     /// operation are deleted after 15 days.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:DeleteUtterances</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUtterances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1520,7 +1520,7 @@ pub mod fluent_builders {
     /// the bot name and the bot version or alias. </p>
     /// <p> This operation requires permissions for the
     /// <code>lex:GetBot</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1606,7 +1606,7 @@ pub mod fluent_builders {
     /// about aliases, see <a>versioning-aliases</a>.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:GetBotAlias</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBotAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1688,7 +1688,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of aliases for a specified Amazon Lex bot.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:GetBotAliases</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBotAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1806,7 +1806,7 @@ pub mod fluent_builders {
     /// a messaging platform.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:GetBotChannelAssociation</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBotChannelAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1904,7 +1904,7 @@ pub mod fluent_builders {
     /// <p>The <code>GetBotChannelAssociations</code> operation requires
     /// permissions for the <code>lex:GetBotChannelAssociations</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBotChannelAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2049,7 +2049,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>This operation requires permission for the <code>lex:GetBots</code>
     /// action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2164,7 +2164,7 @@ pub mod fluent_builders {
     /// one version, the <code>$LATEST</code> version.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:GetBotVersions</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBotVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2266,7 +2266,7 @@ pub mod fluent_builders {
     /// <p>Returns information about a built-in intent.</p>
     /// <p>This operation requires permission for the
     /// <code>lex:GetBuiltinIntent</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBuiltinIntent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2343,7 +2343,7 @@ pub mod fluent_builders {
     /// criteria.</p>
     /// <p>This operation requires permission for the
     /// <code>lex:GetBuiltinIntents</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBuiltinIntents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2468,7 +2468,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permission for the
     /// <code>lex:GetBuiltInSlotTypes</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBuiltinSlotTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2584,7 +2584,7 @@ pub mod fluent_builders {
     ///
     /// <p>Exports the contents of a Amazon Lex resource in a specified format.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2691,7 +2691,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about an import job started with the
     /// <code>StartImport</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2764,7 +2764,7 @@ pub mod fluent_builders {
     /// name, you must specify the intent version. </p>
     /// <p> This operation requires permissions to perform the
     /// <code>lex:GetIntent</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2858,7 +2858,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p> The operation requires permission for the
     /// <code>lex:GetIntents</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2973,7 +2973,7 @@ pub mod fluent_builders {
     /// least one version, the <code>$LATEST</code> version.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:GetIntentVersions</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntentVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3075,7 +3075,7 @@ pub mod fluent_builders {
     /// <p>Provides details about an ongoing or complete migration from an
     /// Amazon Lex V1 bot to an Amazon Lex V2 bot. Use this operation to view the migration
     /// alerts and warnings related to the migration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMigration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3147,7 +3147,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMigrations`.
     ///
     /// <p>Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMigrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3300,7 +3300,7 @@ pub mod fluent_builders {
     /// version.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:GetSlotType</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSlotType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3394,7 +3394,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p> The operation requires permission for the
     /// <code>lex:GetSlotTypes</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSlotTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3509,7 +3509,7 @@ pub mod fluent_builders {
     /// least one version, the <code>$LATEST</code> version.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:GetSlotTypeVersions</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSlotTypeVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3632,7 +3632,7 @@ pub mod fluent_builders {
     /// are not available.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:GetUtterancesView</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUtterancesView<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3741,7 +3741,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a list of tags associated with the specified resource. Only bots,
     /// bot aliases, and bot channels can have tags associated with them.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3830,7 +3830,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions for the <code>lex:PutBot</code>
     /// action. For more information, see <a>security-iam</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4473,7 +4473,7 @@ pub mod fluent_builders {
     /// see <a>versioning-aliases</a>.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:PutBotAlias</code> action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBotAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4701,7 +4701,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a>how-it-works</a>.</p>
     /// <p>This operation requires permissions for the
     /// <code>lex:PutIntent</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutIntent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5199,7 +5199,7 @@ pub mod fluent_builders {
     ///
     /// <p>This operation requires permissions for the
     /// <code>lex:PutSlotType</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSlotType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5478,7 +5478,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartImport`.
     ///
     /// <p>Starts a job to import a resource to Amazon Lex.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5648,7 +5648,7 @@ pub mod fluent_builders {
     /// you want to take advantage of the new features of Amazon Lex V2.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex
     /// developer guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMigration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5817,7 +5817,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds the specified tags to the specified resource. If a tag key
     /// already exists, the existing value is replaced with the new value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5908,7 +5908,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a bot, bot alias or bot channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

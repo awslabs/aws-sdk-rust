@@ -354,7 +354,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchAssociateScramSecret`.
     ///
     /// <p>Associates one or more Scram Secrets with an Amazon MSK cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateScramSecret<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -441,7 +441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDisassociateScramSecret`.
     ///
     /// <p>Disassociates one or more Scram Secrets from an Amazon MSK cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateScramSecret<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -528,7 +528,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCluster`.
     ///
     /// <p>Creates a new MSK cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -741,7 +741,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateClusterV2`.
     ///
     /// <p>Creates a new MSK cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClusterV2<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -860,7 +860,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConfiguration`.
     ///
     /// <p>Creates a new MSK configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -972,7 +972,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCluster`.
     ///
     /// <p>Deletes the MSK cluster specified by the Amazon Resource Name (ARN) in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1055,7 +1055,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfiguration`.
     ///
     /// <p>Deletes an MSK Configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1125,7 +1125,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCluster`.
     ///
     /// <p>Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1195,7 +1195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClusterOperation`.
     ///
     /// <p>Returns a description of the cluster operation specified by the ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusterOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1268,7 +1268,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClusterV2`.
     ///
     /// <p>Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusterV2<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1338,7 +1338,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConfiguration`.
     ///
     /// <p>Returns a description of this MSK configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1408,7 +1408,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConfigurationRevision`.
     ///
     /// <p>Returns a description of this revision of the configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1488,7 +1488,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBootstrapBrokers`.
     ///
     /// <p>A list of brokers that a client application can use to bootstrap.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBootstrapBrokers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1558,7 +1558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCompatibleKafkaVersions`.
     ///
     /// <p>Gets the Apache Kafka versions to which you can update the MSK cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCompatibleKafkaVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1628,7 +1628,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListClusterOperations`.
     ///
     /// <p>Returns a list of all the operations that have been performed on the specified MSK cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClusterOperations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1720,7 +1720,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListClusters`.
     ///
     /// <p>Returns a list of all the MSK clusters in the current Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1815,7 +1815,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListClustersV2`.
     ///
     /// <p>Returns a list of all the MSK clusters in the current Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClustersV2<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1923,7 +1923,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConfigurationRevisions`.
     ///
     /// <p>Returns a list of all the MSK configurations in this Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2015,7 +2015,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConfigurations`.
     ///
     /// <p>Returns a list of all the MSK configurations in this Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2097,7 +2097,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListKafkaVersions`.
     ///
     /// <p>Returns a list of Apache Kafka versions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListKafkaVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2177,7 +2177,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNodes`.
     ///
     /// <p>Returns a list of the broker nodes in the cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNodes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2269,7 +2269,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListScramSecrets`.
     ///
     /// <p>Returns a list of the Scram Secrets associated with an Amazon MSK cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListScramSecrets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2359,7 +2359,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of the tags associated with the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2429,7 +2429,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RebootBroker`.
     ///
     /// Reboots brokers.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootBroker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2516,7 +2516,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds tags to the specified MSK resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2609,7 +2609,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the tags associated with the keys that are provided in the query.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2734,7 +2734,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBrokerCount`.
     ///
     /// <p>Updates the number of broker nodes in the cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBrokerCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2830,7 +2830,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBrokerStorage`.
     ///
     /// <p>Updates the EBS storage associated with MSK brokers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBrokerStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2933,7 +2933,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBrokerType`.
     ///
     /// <p>Updates EC2 instance type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBrokerType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3029,7 +3029,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateClusterConfiguration`.
     ///
     /// <p>Updates the cluster with the configuration that is specified in the request body.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClusterConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3125,7 +3125,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateClusterKafkaVersion`.
     ///
     /// <p>Updates the Apache Kafka version for the cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClusterKafkaVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3234,7 +3234,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConfiguration`.
     ///
     /// <p>Updates an MSK configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3329,7 +3329,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnectivity`.
     ///
     /// <p>Updates the cluster's connectivity configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnectivity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3425,7 +3425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMonitoring`.
     ///
     /// <p>Updates the monitoring settings for the cluster. You can use this operation to specify which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can also specify settings for open monitoring with Prometheus.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMonitoring<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3547,7 +3547,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSecurity`.
     ///
     /// <p>Updates the security settings for the cluster. You can use this operation to specify encryption and authentication on existing clusters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecurity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

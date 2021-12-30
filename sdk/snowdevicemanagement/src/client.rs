@@ -193,7 +193,7 @@ pub mod fluent_builders {
     /// <p>A task might still run if it's processed from the queue before the
     /// <code>CancelTask</code> operation changes the task's state.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -265,7 +265,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTask`.
     ///
     /// <p>Instructs one or more devices to start a task, such as unlocking or rebooting.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -398,7 +398,7 @@ pub mod fluent_builders {
     ///
     /// <p>Checks device-specific information, such as the device type, software version, IP
     /// addresses, and lock status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -473,7 +473,7 @@ pub mod fluent_builders {
     /// <p>Checks the current state of the Amazon EC2 instances. The output is similar to
     /// <code>describeDevice</code>, but the results are sourced from the device cache in the
     /// Amazon Web Services Cloud and include a subset of the available fields. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeviceEc2Instances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -563,7 +563,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExecution`.
     ///
     /// <p>Checks the status of a remote task running on one or more target devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -646,7 +646,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTask`.
     ///
     /// <p>Checks the metadata for a given task on a device. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -716,7 +716,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeviceResources`.
     ///
     /// <p>Returns a list of the Amazon Web Services resources available for a device. Currently, Amazon EC2 instances are the only supported resource type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -820,7 +820,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of all devices on your Amazon Web Services account that have Amazon Web Services Snow Device Management
     /// enabled in the Amazon Web Services Region where the command is run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -910,7 +910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListExecutions`.
     ///
     /// <p>Returns the status of tasks for one or more target devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1013,7 +1013,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags for a managed device or task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1083,7 +1083,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTasks`.
     ///
     /// <p>Returns a list of tasks that can be filtered by state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1173,7 +1173,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or replaces tags on a device or task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1268,7 +1268,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from a device or task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

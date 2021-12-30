@@ -522,7 +522,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteWorlds`.
     ///
     /// <p>Deletes one or more worlds in a batch operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteWorlds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -599,7 +599,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDescribeSimulationJob`.
     ///
     /// <p>Describes one or more simulation jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDescribeSimulationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -676,7 +676,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelDeploymentJob`.
     ///
     /// <p>Cancels the specified deployment job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelDeploymentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -746,7 +746,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelSimulationJob`.
     ///
     /// <p>Cancels the specified simulation job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSimulationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -817,7 +817,7 @@ pub mod fluent_builders {
     ///
     /// <p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also
     /// cancelling all of the active simulation jobs created as part of the batch. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSimulationJobBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -887,7 +887,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelWorldExportJob`.
     ///
     /// <p>Cancels the specified export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelWorldExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -957,7 +957,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelWorldGenerationJob`.
     ///
     /// <p>Cancels the specified world generator job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelWorldGenerationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1034,7 +1034,7 @@ pub mod fluent_builders {
     /// <p>After 90 days, deployment jobs expire and will be deleted. They will no longer be
     /// accessible. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeploymentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1177,7 +1177,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
     /// <p>Creates a fleet, a logical group of robots running the same robot application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1270,7 +1270,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRobot`.
     ///
     /// <p>Creates a robot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRobot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1389,7 +1389,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRobotApplication`.
     ///
     /// <p>Creates a robot application. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRobotApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1529,7 +1529,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRobotApplicationVersion`.
     ///
     /// <p>Creates a version of a robot application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRobotApplicationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1643,7 +1643,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSimulationApplication`.
     ///
     /// <p>Creates a simulation application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSimulationApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1812,7 +1812,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSimulationApplicationVersion`.
     ///
     /// <p>Creates a simulation application with a specific revision id.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSimulationApplicationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1934,7 +1934,7 @@ pub mod fluent_builders {
     /// <p>After 90 days, simulation jobs expire and will be deleted. They will no longer be
     /// accessible. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSimulationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2214,7 +2214,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorldExportJob`.
     ///
     /// <p>Creates a world export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorldExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2356,7 +2356,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorldGenerationJob`.
     ///
     /// <p>Creates worlds using the specified template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorldGenerationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2506,7 +2506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorldTemplate`.
     ///
     /// <p>Creates a world template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorldTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2642,7 +2642,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFleet`.
     ///
     /// <p>Deletes a fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2712,7 +2712,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRobot`.
     ///
     /// <p>Deletes a robot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRobot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2782,7 +2782,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRobotApplication`.
     ///
     /// <p>Deletes a robot application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRobotApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2865,7 +2865,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSimulationApplication`.
     ///
     /// <p>Deletes a simulation application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSimulationApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2948,7 +2948,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorldTemplate`.
     ///
     /// <p>Deletes a world template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorldTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3018,7 +3018,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterRobot`.
     ///
     /// <p>Deregisters a robot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterRobot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3098,7 +3098,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDeploymentJob`.
     ///
     /// <p>Describes a deployment job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeploymentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3168,7 +3168,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFleet`.
     ///
     /// <p>Describes a fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3238,7 +3238,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRobot`.
     ///
     /// <p>Describes a robot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRobot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3308,7 +3308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRobotApplication`.
     ///
     /// <p>Describes a robot application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRobotApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3391,7 +3391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSimulationApplication`.
     ///
     /// <p>Describes a simulation application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSimulationApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3474,7 +3474,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSimulationJob`.
     ///
     /// <p>Describes a simulation job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSimulationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3544,7 +3544,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSimulationJobBatch`.
     ///
     /// <p>Describes a simulation job batch.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSimulationJobBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3614,7 +3614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorld`.
     ///
     /// <p>Describes a world.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorld<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3684,7 +3684,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorldExportJob`.
     ///
     /// <p>Describes a world export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorldExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3754,7 +3754,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorldGenerationJob`.
     ///
     /// <p>Describes a world generation job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorldGenerationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3824,7 +3824,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorldTemplate`.
     ///
     /// <p>Describes a world template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorldTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3894,7 +3894,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorldTemplateBody`.
     ///
     /// <p>Gets the world template body.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorldTemplateBody<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3978,7 +3978,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to
     /// retrieve specific deployment jobs. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4104,7 +4104,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of fleets. You can optionally provide filters to retrieve specific
     /// fleets. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4234,7 +4234,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of robot application. You can optionally provide filters to retrieve
     /// specific robot applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRobotApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4369,7 +4369,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of robots. You can optionally provide filters to retrieve specific
     /// robots.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRobots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4495,7 +4495,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of simulation applications. You can optionally provide filters to
     /// retrieve specific simulation applications. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSimulationApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4630,7 +4630,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list simulation job batches. You can optionally provide filters to retrieve
     /// specific simulation batch jobs. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSimulationJobBatches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4744,7 +4744,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of simulation jobs. You can optionally provide filters to retrieve
     /// specific simulation jobs. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSimulationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4871,7 +4871,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags on a AWS RoboMaker resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4941,7 +4941,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorldExportJobs`.
     ///
     /// <p>Lists world export jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorldExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5060,7 +5060,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorldGenerationJobs`.
     ///
     /// <p>Lists world generator jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorldGenerationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5179,7 +5179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorlds`.
     ///
     /// <p>Lists worlds.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorlds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5296,7 +5296,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorldTemplates`.
     ///
     /// <p>Lists world templates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorldTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5396,7 +5396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterRobot`.
     ///
     /// <p>Registers a robot with a fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterRobot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5476,7 +5476,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RestartSimulationJob`.
     ///
     /// <p>Restarts a running simulation job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestartSimulationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5547,7 +5547,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts a new simulation job batch. The batch is defined using one or more
     /// <code>SimulationJobRequest</code> objects. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSimulationJobBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5681,7 +5681,7 @@ pub mod fluent_builders {
     ///
     /// <p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were
     /// added after a deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SyncDeploymentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5770,7 +5770,7 @@ pub mod fluent_builders {
     /// required, but tag values can be empty strings. </p>
     /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management
     /// User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5867,7 +5867,7 @@ pub mod fluent_builders {
     /// use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html">
     /// <code>TagResource</code>
     /// </a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5958,7 +5958,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRobotApplication`.
     ///
     /// <p>Updates a robot application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRobotApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6084,7 +6084,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSimulationApplication`.
     ///
     /// <p>Updates a simulation application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSimulationApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6239,7 +6239,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorldTemplate`.
     ///
     /// <p>Updates a world template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorldTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

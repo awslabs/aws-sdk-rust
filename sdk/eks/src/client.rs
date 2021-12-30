@@ -346,7 +346,7 @@ pub mod fluent_builders {
     /// <p>You can use this API to enable encryption on existing clusters which do not have
     /// encryption already enabled. This allows you to implement a defense-in-depth security
     /// strategy without migrating applications to new Amazon EKS clusters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateEncryptionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -453,7 +453,7 @@ pub mod fluent_builders {
     /// roles to the identities using Kubernetes <code>rolebindings</code> and
     /// <code>clusterrolebindings</code>. For more information see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using RBAC
     /// Authorization</a> in the Kubernetes documentation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateIdentityProviderConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -584,7 +584,7 @@ pub mod fluent_builders {
     /// add-ons rely on the Server-side Apply Kubernetes feature, which is only available in
     /// Kubernetes 1.18 and later. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in
     /// the <i>Amazon EKS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAddon<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -788,7 +788,7 @@ pub mod fluent_builders {
     /// you must configure your Kubernetes tooling to communicate with the API server and launch
     /// nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster
     /// Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1037,7 +1037,7 @@ pub mod fluent_builders {
     /// wait for that Fargate profile to finish deleting before you can create any other profiles
     /// in that cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFargateProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1236,7 +1236,7 @@ pub mod fluent_builders {
     /// are managed by Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS
     /// optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
     /// Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNodegroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1654,7 +1654,7 @@ pub mod fluent_builders {
     /// <p>Delete an Amazon EKS add-on.</p>
     /// <p>When you remove the add-on, it will also be deleted from the cluster. You can always
     /// manually start an add-on on the cluster using the Kubernetes API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAddon<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1755,7 +1755,7 @@ pub mod fluent_builders {
     /// Cluster</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// <p>If you have managed node groups or Fargate profiles attached to the cluster, you must
     /// delete them first. For more information, see <a>DeleteNodegroup</a> and <a>DeleteFargateProfile</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1832,7 +1832,7 @@ pub mod fluent_builders {
     /// <p>Only one Fargate profile in a cluster can be in the <code>DELETING</code> status at a
     /// time. You must wait for a Fargate profile to finish deleting before you can delete any
     /// other profiles in that cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFargateProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1915,7 +1915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNodegroup`.
     ///
     /// <p>Deletes an Amazon EKS node group for a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNodegroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1998,7 +1998,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterCluster`.
     ///
     /// <p>Deregisters a connected cluster to remove it from the Amazon EKS control plane.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2068,7 +2068,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAddon`.
     ///
     /// <p>Describes an Amazon EKS add-on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAddon<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2152,7 +2152,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAddonVersions`.
     ///
     /// <p>Describes the Kubernetes versions that the add-on can be used with.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAddonVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2281,7 +2281,7 @@ pub mod fluent_builders {
     /// <p>The API server endpoint and certificate authority data aren't available until the
     /// cluster reaches the <code>ACTIVE</code> state.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2351,7 +2351,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFargateProfile`.
     ///
     /// <p>Returns descriptive information about an Fargate profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFargateProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2434,7 +2434,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIdentityProviderConfig`.
     ///
     /// <p>Returns descriptive information about an identity provider configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdentityProviderConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2520,7 +2520,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNodegroup`.
     ///
     /// <p>Returns descriptive information about an Amazon EKS node group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNodegroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2607,7 +2607,7 @@ pub mod fluent_builders {
     /// <p>When the status of the update is <code>Succeeded</code>, the update is complete. If an
     /// update fails, the status is <code>Failed</code>, and an error detail explains the reason
     /// for the failure.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUpdate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2717,7 +2717,7 @@ pub mod fluent_builders {
     /// an identity provider from your cluster, users included in the provider can no longer
     /// access the cluster. However, you can still access the cluster with Amazon Web Services IAM
     /// users.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateIdentityProviderConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2820,7 +2820,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAddons`.
     ///
     /// <p>Lists the available add-ons.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAddons<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2940,7 +2940,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListClusters`.
     ///
     /// <p>Lists the Amazon EKS clusters in your Amazon Web Services account in the specified Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3066,7 +3066,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the Fargate profiles associated with the specified cluster in your Amazon Web Services
     /// account in the specified Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFargateProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3178,7 +3178,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIdentityProviderConfigs`.
     ///
     /// <p>A list of identity provider configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentityProviderConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3293,7 +3293,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the Amazon EKS managed node groups associated with the specified cluster in your
     /// Amazon Web Services account in the specified Region. Self-managed node groups are not listed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNodegroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3403,7 +3403,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for an Amazon EKS resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3476,7 +3476,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the updates associated with an Amazon EKS cluster or managed node group in your Amazon Web Services
     /// account, in the specified Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUpdates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3618,7 +3618,7 @@ pub mod fluent_builders {
     ///
     /// <p>After the Manifest is updated and applied, then the connected cluster is visible to the Amazon EKS control plane. If the Manifest is not applied within three days,
     /// then the connected cluster will no longer be visible and must be deregistered. See <a>DeregisterCluster</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3749,7 +3749,7 @@ pub mod fluent_builders {
     /// resources do not propagate to any other resources associated with the cluster. For
     /// example, if you tag a cluster with this operation, that tag does not automatically
     /// propagate to the subnets and nodes associated with the cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3844,7 +3844,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3933,7 +3933,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAddon`.
     ///
     /// <p>Updates an Amazon EKS add-on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAddon<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4120,7 +4120,7 @@ pub mod fluent_builders {
     /// an update, the cluster status moves to <code>UPDATING</code> (this status transition is
     /// eventually consistent). When the update is complete (either <code>Failed</code> or
     /// <code>Successful</code>), the cluster status moves to <code>Active</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClusterConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4256,7 +4256,7 @@ pub mod fluent_builders {
     /// <p>If your cluster has managed node groups attached to it, all of your node groups’
     /// Kubernetes versions must match the cluster’s Kubernetes version in order to update the
     /// cluster to a new Kubernetes version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClusterVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4355,7 +4355,7 @@ pub mod fluent_builders {
     /// to track the status of your node group update with the <a>DescribeUpdate</a>
     /// API operation. Currently you can update the Kubernetes labels for a node group or the
     /// scaling configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNodegroupConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4526,7 +4526,7 @@ pub mod fluent_builders {
     /// the pods in that node are drained first. Amazon EKS attempts to drain the nodes gracefully
     /// and will fail if it is unable to do so. You can <code>force</code> the update if Amazon EKS
     /// is unable to drain the nodes as a result of a pod disruption budget issue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNodegroupVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

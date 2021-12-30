@@ -277,7 +277,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchPutPropertyValues`.
     ///
     /// <p>Sets values for multiple time series properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutPropertyValues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -371,7 +371,7 @@ pub mod fluent_builders {
     /// TwinMaker is in public preview and is subject to change.
     /// </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponentType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -569,7 +569,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEntity`.
     ///
     /// <p>Creates an entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -730,7 +730,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateScene`.
     ///
     /// <p>Creates a scene.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateScene<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -873,7 +873,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkspace`.
     ///
     /// <p>Creates a workplace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -996,7 +996,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteComponentType`.
     ///
     /// <p>Deletes a component type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComponentType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1079,7 +1079,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEntity`.
     ///
     /// <p>Deletes an entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1169,7 +1169,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteScene`.
     ///
     /// <p>Deletes a scene.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteScene<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1249,7 +1249,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkspace`.
     ///
     /// <p>Deletes a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1319,7 +1319,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetComponentType`.
     ///
     /// <p>Retrieves information about a component type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponentType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1402,7 +1402,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEntity`.
     ///
     /// <p>Retrieves information about an entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1483,7 +1483,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the property values for a component, component type, entity, or workspace.</p>
     /// <p>You must specify a value for either <code>componentName</code>, <code>componentTypeId</code>, <code>entityId</code>, or <code>workspaceId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPropertyValue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1608,7 +1608,7 @@ pub mod fluent_builders {
     /// <p>Retrieves information about the history of a time series property value for a component, component type, entity, or workspace.</p>
     /// <p>You must specify a value for <code>workspaceId</code>. For entity-specific queries, specify values for <code>componentName</code> and
     /// <code>entityId</code>. For cross-entity quries, specify a value for <code>componentTypeId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPropertyValueHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1820,7 +1820,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetScene`.
     ///
     /// <p>Retrieves information about a scene.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetScene<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1900,7 +1900,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkspace`.
     ///
     /// <p>Retrieves information about a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1970,7 +1970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListComponentTypes`.
     ///
     /// <p>Lists all component types in a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponentTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2077,7 +2077,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEntities`.
     ///
     /// <p>Lists all entities in a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2184,7 +2184,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListScenes`.
     ///
     /// <p>Lists all scenes in a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListScenes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2274,7 +2274,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags associated with a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2364,7 +2364,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkspaces`.
     ///
     /// <p>Retrieves information about workspaces in the current account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2444,7 +2444,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2537,7 +2537,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2624,7 +2624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateComponentType`.
     ///
     /// <p>Updates information in a component type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComponentType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2799,7 +2799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEntity`.
     ///
     /// <p>Updates an entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2943,7 +2943,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateScene`.
     ///
     /// <p>Updates a scene.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateScene<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3063,7 +3063,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkspace`.
     ///
     /// <p>Updates a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

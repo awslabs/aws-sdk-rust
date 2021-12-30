@@ -403,7 +403,7 @@ pub mod fluent_builders {
     /// <p>It can take up to 5 minutes for this operation to take effect.</p>
     /// <p>If you attempt to associate a CMK with a log group but the CMK does not exist or the
     /// CMK is disabled, you receive an <code>InvalidParameterException</code> error. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateKmsKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -489,7 +489,7 @@ pub mod fluent_builders {
     ///
     /// <p>Cancels the specified export task.</p>
     /// <p>The task must be in the <code>PENDING</code> or <code>RUNNING</code> state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelExportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -572,7 +572,7 @@ pub mod fluent_builders {
     /// the Amazon S3 key prefix for all exported objects.</p>
     /// <p>Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to S3 buckets
     /// encrypted with SSE-KMS is not supported. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -749,7 +749,7 @@ pub mod fluent_builders {
     /// your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric
     /// Keys</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLogGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -883,7 +883,7 @@ pub mod fluent_builders {
     /// <p>The ':' (colon) and '*' (asterisk) characters are not allowed.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLogStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -971,7 +971,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified destination, and eventually disables all the
     /// subscription filters that publish to it. This operation does not delete the
     /// physical resource encapsulated by the destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1045,7 +1045,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified log group and permanently deletes all the archived
     /// log events associated with the log group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLogGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1119,7 +1119,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified log stream and permanently deletes all the archived log events associated
     /// with the log stream.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLogStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1205,7 +1205,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMetricFilter`.
     ///
     /// <p>Deletes the specified metric filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMetricFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1292,7 +1292,7 @@ pub mod fluent_builders {
     /// <p>Each <code>DeleteQueryDefinition</code> operation can delete one query definition.</p>
     /// <p>You must have the <code>logs:DeleteQueryDefinition</code> permission to be able to perform
     /// this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteQueryDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1368,7 +1368,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a resource policy from this account. This revokes
     /// the access of the identities in that policy to put log events to this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1439,7 +1439,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified retention policy.</p>
     /// <p>Log events do not expire if they belong to log groups without a retention policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRetentionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1512,7 +1512,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSubscriptionFilter`.
     ///
     /// <p>Deletes the specified subscription filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSubscriptionFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1595,7 +1595,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDestinations`.
     ///
     /// <p>Lists all your destinations. The results are ASCII-sorted by destination name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1692,7 +1692,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the specified export tasks. You can list all your export tasks or filter
     /// the results based on task ID or task status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExportTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1803,7 +1803,7 @@ pub mod fluent_builders {
     /// </code> condition key to control access.
     /// For more information about using tags to control access, see
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLogGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1899,7 +1899,7 @@ pub mod fluent_builders {
     /// You can list all the log streams or filter the results by prefix.
     /// You can also control how the results are ordered.</p>
     /// <p>This operation has a limit of five transactions per second, after which transactions are throttled.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLogStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2053,7 +2053,7 @@ pub mod fluent_builders {
     /// <p>Lists the specified metric filters. You can list all of the metric filters or filter
     /// the results by log name, prefix, metric name, or metric namespace. The results are
     /// ASCII-sorted by filter name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMetricFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2190,7 +2190,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of CloudWatch Logs Insights queries that are scheduled, executing, or have
     /// been executed recently in this account. You can request all queries or limit it to queries of
     /// a specific log group or queries with a certain status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeQueries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2297,7 +2297,7 @@ pub mod fluent_builders {
     /// <p>This operation returns a paginated list of your saved CloudWatch Logs Insights query definitions.</p>
     /// <p>You can use the <code>queryDefinitionNamePrefix</code> parameter to limit the results to only the
     /// query definitions that have names that start with a certain string.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeQueryDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2393,7 +2393,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeResourcePolicies`.
     ///
     /// <p>Lists the resource policies in this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResourcePolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2474,7 +2474,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the subscription filters for the specified log group. You can list all the subscription filters or filter the results by prefix.
     /// The results are ASCII-sorted by filter name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSubscriptionFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2583,7 +2583,7 @@ pub mod fluent_builders {
     /// <p>After the KMS CMK is disassociated from the log group, CloudWatch Logs stops encrypting newly ingested data for the log group.
     /// All previously ingested data remains encrypted, and CloudWatch Logs requires permissions for the CMK whenever the encrypted data is requested.</p>
     /// <p>Note that it can take up to 5 minutes for this operation to take effect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateKmsKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2664,7 +2664,7 @@ pub mod fluent_builders {
     /// while there are more log events available through the token.</p>
     /// <p>The returned log events are sorted by event timestamp, the timestamp when the event was ingested
     /// by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FilterLogEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2865,7 +2865,7 @@ pub mod fluent_builders {
     /// <p>By default, this operation returns as many log events as can fit in a response size of 1MB (up to 10,000 log events).
     /// You can get additional log events by specifying one of the tokens in a subsequent call.
     /// This operation can return empty results while there are more log events available through the token.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLogEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3026,7 +3026,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported Logs and Discovered Fields</a>.</p>
     /// <p>The response results are sorted by the frequency percentage, starting
     /// with the highest percentage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLogGroupFields<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3120,7 +3120,7 @@ pub mod fluent_builders {
     /// even if the original query that produced the <code>logRecordPointer</code> retrieved only a
     /// subset of fields. Fields are returned as field name/field value pairs.</p>
     /// <p>The full unparsed log event is returned within <code>@message</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLogRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3209,7 +3209,7 @@ pub mod fluent_builders {
     /// <p>If the value of the <code>Status</code> field in the output is <code>Running</code>, this operation
     /// returns only partial results. If you see a value of <code>Scheduled</code> or <code>Running</code> for the status,
     /// you can retry the operation later to see the final results. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3279,7 +3279,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsLogGroup`.
     ///
     /// <p>Lists the tags for the specified log group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsLogGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3361,7 +3361,7 @@ pub mod fluent_builders {
     /// this destination. To enable this, the destination owner must call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a> after <code>PutDestination</code>.</p>
     /// <p>To perform a <code>PutDestination</code> operation, you must also have the
     /// <code>iam:PassRole</code> permission.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3461,7 +3461,7 @@ pub mod fluent_builders {
     /// <p>If multiple Amazon Web Services accounts are sending logs to this destination, each sender account must be
     /// listed separately in the policy. The policy does not support specifying <code>*</code>
     /// as the Principal or the use of the <code>aws:PrincipalOrgId</code> global key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDestinationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3586,7 +3586,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most likely cause is an invalid Amazon Web Services access key ID or secret key. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLogEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3732,7 +3732,7 @@ pub mod fluent_builders {
     /// Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
     /// </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetricFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3856,7 +3856,7 @@ pub mod fluent_builders {
     /// to contain no log groups.</p>
     /// <p>You must have the <code>logs:PutQueryDefinition</code> permission to be able to perform
     /// this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutQueryDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3988,7 +3988,7 @@ pub mod fluent_builders {
     /// <p>Creates or updates a resource policy allowing other Amazon Web Services services to put log events to
     /// this account, such as Amazon Route 53. An account can have up to 10 resource policies per Amazon Web Services
     /// Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4149,7 +4149,7 @@ pub mod fluent_builders {
     /// <p>Sets the retention of the specified log group. A retention policy allows you to
     /// configure the number of days for which to retain log events in the specified log
     /// group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRetentionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4268,7 +4268,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>To perform a <code>PutSubscriptionFilter</code> operation, you must also have the
     /// <code>iam:PassRole</code> permission.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSubscriptionFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4461,7 +4461,7 @@ pub mod fluent_builders {
     ///
     /// <p>Queries time out after 15 minutes of execution. If your queries are timing out, reduce the
     /// time range being searched or partition your query into a number of queries.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4612,7 +4612,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops a CloudWatch Logs Insights query that is in progress. If the query has already ended, the operation
     /// returns an error indicating that the specified query is not running.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4693,7 +4693,7 @@ pub mod fluent_builders {
     /// </code> or <code>aws:TagKeys</code> condition keys.
     /// For more information about using tags to control access, see
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagLogGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4790,7 +4790,7 @@ pub mod fluent_builders {
     ///
     /// <p>Tests the filter pattern of a metric filter against a sample of log event messages. You
     /// can use this operation to validate the correctness of a metric filter pattern.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestMetricFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4890,7 +4890,7 @@ pub mod fluent_builders {
     /// log groups using the <code>aws:Resource/<i>key-name</i>
     /// </code> or <code>aws:TagKeys</code> condition keys.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagLogGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

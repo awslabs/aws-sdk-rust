@@ -351,7 +351,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a device with a concrete thing that is in the user's registry.</p>
     /// <p>A thing can be associated with only one device at a time. If you associate a thing with a new device id, its previous association will be removed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateEntityToThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -451,7 +451,7 @@ pub mod fluent_builders {
     /// <p>Creates a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only
     /// entities.) The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the
     /// latest version of the user's namespace unless another namespace version is specified in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -544,7 +544,7 @@ pub mod fluent_builders {
     /// <p>For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value. This is an IAM role
     /// that has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it executes.</p>
     /// <p>If the definition document doesn't specify a version of the user's namespace, the latest version will be used by default.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSystemInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -711,7 +711,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a system. The system is validated against the entities in the
     /// latest version of the user's namespace unless another namespace version is specified in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -797,7 +797,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a workflow. Any new system or deployment that contains this workflow will fail to update or deploy.
     /// Existing deployments that contain the workflow will continue to run (since they use a snapshot of the workflow taken at the time of deployment).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -875,7 +875,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNamespace`.
     ///
     /// <p>Deletes the specified namespace. This action deletes all of the entities in the namespace. Delete the systems and flows that use entities in the namespace before performing this action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -937,7 +937,7 @@ pub mod fluent_builders {
     /// <p>Deletes a system instance.
     /// Only system instances that have never been deployed, or that have been undeployed can be deleted.</p>
     /// <p>Users can create a new system instance that has the same ID as a deleted system instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSystemInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1008,7 +1008,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a system. New deployments can't contain the system after its deletion.
     /// Existing deployments that contain the system will continue to work because they use a snapshot of the system that is taken when it is deployed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1097,7 +1097,7 @@ pub mod fluent_builders {
     /// <p>Since this action creates a Greengrass deployment on the caller's behalf, the calling identity must have write permissions
     /// to the specified Greengrass group. Otherwise, the call will fail with an authorization error.</p>
     /// <p>For information about the artifacts that get added to your Greengrass core device when you use this API, see <a href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-greengrass.html">AWS IoT Things Graph and AWS IoT Greengrass</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeploySystemInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1175,7 +1175,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeprecateFlowTemplate`.
     ///
     /// <p>Deprecates the specified workflow. This action marks the workflow for deletion. Deprecated flows can't be deployed, but existing deployments will continue to run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1253,7 +1253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeprecateSystemTemplate`.
     ///
     /// <p>Deprecates the specified system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1331,7 +1331,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNamespace`.
     ///
     /// <p>Gets the latest version of the user's namespace and the public version that it is tracking.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1405,7 +1405,7 @@ pub mod fluent_builders {
     ///
     /// <p>Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only
     /// one entity of a particular type can be associated with a thing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DissociateEntityFromThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1519,7 +1519,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>This action doesn't return definitions for systems, flows, and deployments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1614,7 +1614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFlowTemplate`.
     ///
     /// <p>Gets the latest version of the <code>DefinitionDocument</code> and <code>FlowTemplateSummary</code> for the specified workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1703,7 +1703,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets revisions of the specified workflow. Only the last 100 revisions are stored. If the workflow has been deprecated,
     /// this action will return revisions that occurred before the deprecation. This action won't work for workflows that have been deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFlowTemplateRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1801,7 +1801,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNamespaceDeletionStatus`.
     ///
     /// <p>Gets the status of a namespace deletion task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNamespaceDeletionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1861,7 +1861,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSystemInstance`.
     ///
     /// <p>Gets a system instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSystemInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1939,7 +1939,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSystemTemplate`.
     ///
     /// <p>Gets a system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2028,7 +2028,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets revisions made to the specified system template. Only the previous 100 revisions are stored. If the system has been deprecated, this action will return
     /// the revisions that occurred before its deprecation. This action won't work with systems that have been deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSystemTemplateRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2126,7 +2126,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUploadStatus`.
     ///
     /// <p>Gets the status of the specified upload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUploadStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2196,7 +2196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFlowExecutionMessages`.
     ///
     /// <p>Returns a list of objects that contain information about events in a flow execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFlowExecutionMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2289,7 +2289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags on an AWS IoT Things Graph resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2379,7 +2379,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchEntities`.
     ///
     /// <p>Searches for entities of the specified type. You can search for entities in your namespace and the public namespace that you're tracking.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2511,7 +2511,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchFlowExecutions`.
     ///
     /// <p>Searches for AWS IoT Things Graph workflow execution instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchFlowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2643,7 +2643,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchFlowTemplates`.
     ///
     /// <p>Searches for summary information about workflows.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchFlowTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2740,7 +2740,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchSystemInstances`.
     ///
     /// <p>Searches for system instances in the user's account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSystemInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2841,7 +2841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchSystemTemplates`.
     ///
     /// <p>Searches for summary information about systems in the user's account. You can filter by the ID of a workflow to return only systems that use the specified workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSystemTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2941,7 +2941,7 @@ pub mod fluent_builders {
     /// <p>For example, if two different devices, camera1 and camera2, implement the camera device model, the user can associate thing1 to camera1 and thing2 to camera2.
     /// <code>SearchThings(camera2)</code> will return only thing2, but <code>SearchThings(camera)</code> will return both thing1 and thing2.</p>
     /// <p>This action searches for exact matches and doesn't perform partial text matching.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchThings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3049,7 +3049,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Creates a tag for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3136,7 +3136,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UndeploySystemInstance`.
     ///
     /// <p>Removes a system instance from its target (Cloud or Greengrass).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UndeploySystemInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3206,7 +3206,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3296,7 +3296,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified workflow. All deployed systems and system instances that use the workflow will see the changes in the flow when it is redeployed. If you don't want this
     /// behavior, copy the workflow (creating a new workflow with a different ID), and update the copy. The workflow can contain only entities in the specified namespace. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3401,7 +3401,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSystemTemplate`.
     ///
     /// <p>Updates the specified system. You don't need to run this action after updating a workflow. Any deployment that uses the system will see the changes in the system when it is redeployed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3514,7 +3514,7 @@ pub mod fluent_builders {
     /// <p>Valid entities are <code>Device</code>, <code>DeviceModel</code>, <code>Service</code>, <code>Capability</code>, <code>State</code>, <code>Action</code>, <code>Event</code>, <code>Property</code>,
     /// <code>Mapping</code>, <code>Enum</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UploadEntityDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

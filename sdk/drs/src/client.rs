@@ -324,7 +324,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateReplicationConfigurationTemplate`.
     ///
     /// <p>Creates a new ReplicationConfigurationTemplate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -613,7 +613,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
     /// <p>Deletes a single Job by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -683,7 +683,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRecoveryInstance`.
     ///
     /// <p>Deletes a single Recovery Instance by ID. This deletes the Recovery Instance resource from Elastic Disaster Recovery. The Recovery Instance must be disconnected first in order to delete it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecoveryInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -756,7 +756,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReplicationConfigurationTemplate`.
     ///
     /// <p>Deletes a single Replication Configuration Template by ID</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -836,7 +836,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSourceServer`.
     ///
     /// <p>Deletes a single Source Server by ID. The Source Server must be disconnected first.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSourceServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -909,7 +909,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobLogItems`.
     ///
     /// <p>Retrieves a detailed Job log with pagination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobLogItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -999,7 +999,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobs`.
     ///
     /// <p>Returns a list of Jobs. Use the JobsID and fromDate and toDate filters to limit which jobs are returned. The response is sorted by creationDataTime - latest date first. Jobs are created by the StartRecovery, TerminateRecoveryInstances and StartFailbackLaunch APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances, which are APIs available only to *Support* and only used in response to relevant support tickets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1092,7 +1092,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRecoveryInstances`.
     ///
     /// <p>Lists all Recovery Instances or multiple Recovery Instances by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecoveryInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1188,7 +1188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRecoverySnapshots`.
     ///
     /// <p>Lists all Recovery Snapshots for a single Source Server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecoverySnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1310,7 +1310,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReplicationConfigurationTemplates`.
     ///
     /// <p>Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationConfigurationTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1416,7 +1416,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSourceServers`.
     ///
     /// <p>Lists all Source Servers or multiple Source Servers filtered by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSourceServers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1512,7 +1512,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisconnectRecoveryInstance`.
     ///
     /// <p>Disconnect a Recovery Instance from Elastic Disaster Recovery. Data replication is stopped immediately. All AWS resources created by Elastic Disaster Recovery for enabling the replication of the Recovery Instance will be terminated / deleted within 90 minutes. If the agent on the Recovery Instance has not been prevented from communicating with the Elastic Disaster Recovery service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the Recovery Instance will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisconnectRecoveryInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1585,7 +1585,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisconnectSourceServer`.
     ///
     /// <p>Disconnects a specific Source Server from Elastic Disaster Recovery. Data replication is stopped immediately. All AWS resources created by Elastic Disaster Recovery for enabling the replication of the Source Server will be terminated / deleted within 90 minutes. You cannot disconnect a Source Server if it has a Recovery Instance. If the agent on the Source Server has not been prevented from communicating with the Elastic Disaster Recovery service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisconnectSourceServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1658,7 +1658,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFailbackReplicationConfiguration`.
     ///
     /// <p>Lists all Failback ReplicationConfigurations, filtered by Recovery Instance ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFailbackReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1733,7 +1733,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLaunchConfiguration`.
     ///
     /// <p>Gets a LaunchConfiguration, filtered by Source Server IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1806,7 +1806,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReplicationConfiguration`.
     ///
     /// <p>Gets a ReplicationConfiguration, filtered by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1879,7 +1879,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `InitializeService`.
     ///
     /// <p>Initialize Elastic Disaster Recovery.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitializeService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1939,7 +1939,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List all tags for your Elastic Disaster Recovery resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2009,7 +2009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RetryDataReplication`.
     ///
     /// <p>Causes the data replication initiation sequence to begin immediately upon next Handshake for the specified Source Server ID, regardless of when the previous initiation started. This command will work only if the Source Server is stalled or is in a DISCONNECTED or STOPPED state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetryDataReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2082,7 +2082,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFailbackLaunch`.
     ///
     /// <p>Initiates a Job for launching the machine that is being failed back to from the specified Recovery Instance. This will run conversion on the failback client and will reboot your machine, thus completing the failback process.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFailbackLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2182,7 +2182,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartRecovery`.
     ///
     /// <p>Launches Recovery Instances for the specified Source Servers. For each Source Server you may choose a point in time snapshot to launch from, or use an on demand snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRecovery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2297,7 +2297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopFailback`.
     ///
     /// <p>Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery Instance back to FAILBACK_NOT_STARTED.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopFailback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2370,7 +2370,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites only the specified tags for the specified Elastic Disaster Recovery resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2463,7 +2463,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TerminateRecoveryInstances`.
     ///
     /// <p>Initiates a Job for terminating the EC2 resources associated with the specified Recovery Instances, and then will delete the Recovery Instances from the Elastic Disaster Recovery service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateRecoveryInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2540,7 +2540,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes the specified set of tags from the specified set of Elastic Disaster Recovery resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2627,7 +2627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFailbackReplicationConfiguration`.
     ///
     /// <p>Allows you to update the failback replication configuration of a Recovery Instance by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFailbackReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2732,7 +2732,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLaunchConfiguration`.
     ///
     /// <p>Updates a LaunchConfiguration by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2881,7 +2881,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReplicationConfiguration`.
     ///
     /// <p>Allows you to update a ReplicationConfiguration by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3190,7 +3190,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReplicationConfigurationTemplate`.
     ///
     /// <p>Updates a ReplicationConfigurationTemplate by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

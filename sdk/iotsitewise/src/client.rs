@@ -578,7 +578,7 @@ pub mod fluent_builders {
     /// <p>Associates a child asset with the given parent asset through a hierarchy defined in the
     /// parent asset's model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating assets</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -685,7 +685,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateTimeSeriesToAssetProperty`.
     ///
     /// <p>Associates a time series (data stream) with an asset property.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTimeSeriesToAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -787,7 +787,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchAssociateProjectAssets`.
     ///
     /// <p>Associates a group (batch) of assets with an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateProjectAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -884,7 +884,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDisassociateProjectAssets`.
     ///
     /// <p>Disassociates a group (batch) of assets from an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateProjectAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1005,7 +1005,7 @@ pub mod fluent_builders {
     /// <p>IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually.
     /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue authorization</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutAssetPropertyValue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1085,7 +1085,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
     /// IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1222,7 +1222,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an asset from an existing asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1346,7 +1346,7 @@ pub mod fluent_builders {
     /// that have standardized definitions. Each asset created from a model inherits the asset model's
     /// property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssetModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1554,7 +1554,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDashboard`.
     ///
     /// <p>Creates a dashboard in an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1704,7 +1704,7 @@ pub mod fluent_builders {
     /// <p>Creates a gateway, which is a virtual or edge device that delivers industrial data streams
     /// from local servers to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1820,7 +1820,7 @@ pub mod fluent_builders {
     /// portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal
     /// administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2077,7 +2077,7 @@ pub mod fluent_builders {
     /// <p>Make sure that the project name and description don't contain confidential
     /// information.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2209,7 +2209,7 @@ pub mod fluent_builders {
     /// <p>Deletes an access policy that grants the specified identity access to the specified
     /// IoT SiteWise Monitor resource. You can use this operation to revoke access to an IoT SiteWise Monitor
     /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2297,7 +2297,7 @@ pub mod fluent_builders {
     /// <p>You can't delete an asset that's associated to another asset. For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2381,7 +2381,7 @@ pub mod fluent_builders {
     /// a parent asset model exists that contains a property formula expression that depends on the
     /// asset model that you want to delete. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssetModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2464,7 +2464,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDashboard`.
     ///
     /// <p>Deletes a dashboard from IoT SiteWise Monitor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2545,7 +2545,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain
     /// in your gateway's file system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2615,7 +2615,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePortal`.
     ///
     /// <p>Deletes a portal from IoT SiteWise Monitor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2695,7 +2695,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
     /// <p>Deletes a project from IoT SiteWise Monitor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2796,7 +2796,7 @@ pub mod fluent_builders {
     /// </ul>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTimeSeries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2897,7 +2897,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or
     /// project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2970,7 +2970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAsset`.
     ///
     /// <p>Retrieves information about an asset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3040,7 +3040,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAssetModel`.
     ///
     /// <p>Retrieves information about an asset model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssetModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3120,7 +3120,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>This operation doesn't return the value of the asset property. To get the value of an
     /// asset property, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3200,7 +3200,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDashboard`.
     ///
     /// <p>Retrieves information about a dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3272,7 +3272,7 @@ pub mod fluent_builders {
     /// <p>Retrieves information about the default encryption configuration for the Amazon Web Services account in
     /// the default or specified Region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDefaultEncryptionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3334,7 +3334,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeGateway`.
     ///
     /// <p>Retrieves information about a gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3408,7 +3408,7 @@ pub mod fluent_builders {
     /// can contain multiple data source configurations. If you define OPC-UA sources for a gateway in
     /// the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To
     /// list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGatewayCapabilityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3501,7 +3501,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoggingOptions`.
     ///
     /// <p>Retrieves the current IoT SiteWise logging options.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3561,7 +3561,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePortal`.
     ///
     /// <p>Retrieves information about a portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3631,7 +3631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
     /// <p>Retrieves information about a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3701,7 +3701,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStorageConfiguration`.
     ///
     /// <p>Retrieves information about the storage configuration for IoT SiteWise.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStorageConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3780,7 +3780,7 @@ pub mod fluent_builders {
     /// </ul>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTimeSeries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3871,7 +3871,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disassociates a child asset from the given parent asset through a hierarchy defined in the
     /// parent asset's model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3980,7 +3980,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateTimeSeriesFromAssetProperty`.
     ///
     /// <p>Disassociates a time series (data stream) from an asset property.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTimeSeriesFromAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4093,7 +4093,7 @@ pub mod fluent_builders {
     /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssetPropertyAggregates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4312,7 +4312,7 @@ pub mod fluent_builders {
     /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssetPropertyValue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4422,7 +4422,7 @@ pub mod fluent_builders {
     /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssetPropertyValueHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4617,7 +4617,7 @@ pub mod fluent_builders {
     /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInterpolatedAssetPropertyValues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4925,7 +4925,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
     /// group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccessPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5075,7 +5075,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssetModels`.
     ///
     /// <p>Retrieves a paginated list of summaries of all asset models.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssetModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5159,7 +5159,7 @@ pub mod fluent_builders {
     /// <p>Retrieves a paginated list of asset relationships for an asset. You can use this operation
     /// to identify an asset's root asset and all associated assets between that asset and its
     /// root.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssetRelationships<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5292,7 +5292,7 @@ pub mod fluent_builders {
     /// <p>You can't use this operation to list all assets. To retrieve summaries for all of your
     /// assets, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a> to get all of your asset model IDs. Then, use ListAssets to get all
     /// assets for each asset model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5441,7 +5441,7 @@ pub mod fluent_builders {
     /// <p>List an asset's parent asset.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5592,7 +5592,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDashboards`.
     ///
     /// <p>Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDashboards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5684,7 +5684,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGateways`.
     ///
     /// <p>Retrieves a paginated list of gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5766,7 +5766,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPortals`.
     ///
     /// <p>Retrieves a paginated list of IoT SiteWise Monitor portals.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPortals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5848,7 +5848,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjectAssets`.
     ///
     /// <p>Retrieves a paginated list of assets associated with an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjectAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5940,7 +5940,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Retrieves a paginated list of projects for an IoT SiteWise Monitor portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6032,7 +6032,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves the list of tags for an IoT SiteWise resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6102,7 +6102,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTimeSeries`.
     ///
     /// <p>Retrieves a paginated list of time series (data streams).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTimeSeries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6243,7 +6243,7 @@ pub mod fluent_builders {
     /// <p>Sets the default encryption configuration for the Amazon Web Services account. For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in
     /// the <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDefaultEncryptionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6328,7 +6328,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLoggingOptions`.
     ///
     /// <p>Sets logging options for IoT SiteWise.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6401,7 +6401,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutStorageConfiguration`.
     ///
     /// <p>Configures storage settings for IoT SiteWise.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutStorageConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6577,7 +6577,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation
     /// updates the tag's value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6674,7 +6674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from an IoT SiteWise resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6762,7 +6762,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor
     /// portal or project resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6885,7 +6885,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an asset's name. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the
     /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6987,7 +6987,7 @@ pub mod fluent_builders {
     /// asset associated with that hierarchy. You can't change the type or data type of an existing
     /// property.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssetModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7178,7 +7178,7 @@ pub mod fluent_builders {
     /// your existing property's alias or notification state, you must include the existing values
     /// in the UpdateAssetProperty request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7311,7 +7311,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDashboard`.
     ///
     /// <p>Updates an IoT SiteWise Monitor dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7432,7 +7432,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGateway`.
     ///
     /// <p>Updates a gateway's name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7516,7 +7516,7 @@ pub mod fluent_builders {
     /// can contain multiple data source configurations. If you define OPC-UA sources for a gateway in
     /// the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To
     /// list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayCapabilityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7627,7 +7627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePortal`.
     ///
     /// <p>Updates an IoT SiteWise Monitor portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7816,7 +7816,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
     /// <p>Updates an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

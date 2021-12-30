@@ -742,7 +742,7 @@ pub mod fluent_builders {
     /// an email by specifying the name of the configuration set when you call the Amazon SES API v2. When
     /// you apply a configuration set to an email, all of the rules in that configuration set
     /// are applied to the email. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -917,7 +917,7 @@ pub mod fluent_builders {
     /// receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term
     /// storage.</p>
     /// <p>A single configuration set can include more than one event destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1022,7 +1022,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a contact, which is an end-user who is receiving the email, and adds them to a
     /// contact list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1150,7 +1150,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContactList`.
     ///
     /// <p>Creates a contact list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1272,7 +1272,7 @@ pub mod fluent_builders {
     /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1431,7 +1431,7 @@ pub mod fluent_builders {
     /// IP addresses that are associated with your Amazon Web Services account. You can associate a pool with
     /// a configuration set. When you send an email that uses that configuration set, the
     /// message is sent from one of the addresses in the associated pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDedicatedIpPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1526,7 +1526,7 @@ pub mod fluent_builders {
     /// providers. After about 24 hours, the test is complete, and you can use the
     /// <code>GetDeliverabilityTestReport</code> operation to view the results of the
     /// test.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeliverabilityTestReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1668,7 +1668,7 @@ pub mod fluent_builders {
     /// configuration for your domain. For some DNS providers, it can take 72 hours or more to
     /// complete the domain verification process.</p>
     /// <p>Additionally, you can associate an existing configuration set with the email identity that you're verifying.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1810,7 +1810,7 @@ pub mod fluent_builders {
     /// Guide</a>.</p>
     ///
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEmailIdentityPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1916,7 +1916,7 @@ pub mod fluent_builders {
     /// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2004,7 +2004,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateImportJob`.
     ///
     /// <p>Creates an import job for a data destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2095,7 +2095,7 @@ pub mod fluent_builders {
     /// emails you send. You apply a configuration set to an email by including a reference to
     /// the configuration set in the headers of the email. When you apply a configuration set to
     /// an email, all of the rules in that configuration set are applied to the email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2174,7 +2174,7 @@ pub mod fluent_builders {
     /// information about these events to. For example, you can send event data to Amazon SNS to
     /// receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to
     /// stream data to Amazon S3 for long-term storage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2264,7 +2264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContact`.
     ///
     /// <p>Removes a contact from a contact list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2350,7 +2350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContactList`.
     ///
     /// <p>Deletes a contact list and all of the contacts on that list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2426,7 +2426,7 @@ pub mod fluent_builders {
     /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2501,7 +2501,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDedicatedIpPool`.
     ///
     /// <p>Delete a dedicated IP pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDedicatedIpPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2572,7 +2572,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an email identity. An identity can be either an email address or a domain
     /// name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2657,7 +2657,7 @@ pub mod fluent_builders {
     /// Guide</a>.</p>
     ///
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailIdentityPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2748,7 +2748,7 @@ pub mod fluent_builders {
     /// <p>Deletes an email template.</p>
     ///
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2821,7 +2821,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSuppressedDestination`.
     ///
     /// <p>Removes an email address from the suppression list for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSuppressedDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2895,7 +2895,7 @@ pub mod fluent_builders {
     ///
     /// <p>Obtain information about the email-sending status and capabilities of your Amazon SES
     /// account in the current Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2955,7 +2955,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBlacklistReports`.
     ///
     /// <p>Retrieve a list of the blacklists that your dedicated IP addresses appear on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlacklistReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3043,7 +3043,7 @@ pub mod fluent_builders {
     /// emails you send. You apply a configuration set to an email by including a reference to
     /// the configuration set in the headers of the email. When you apply a configuration set to
     /// an email, all of the rules in that configuration set are applied to the email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3123,7 +3123,7 @@ pub mod fluent_builders {
     /// information about these events to. For example, you can send event data to Amazon SNS to
     /// receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to
     /// stream data to Amazon S3 for long-term storage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationSetEventDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3198,7 +3198,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContact`.
     ///
     /// <p>Returns a contact from a contact list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3285,7 +3285,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns contact list metadata. It does not return any information about the contacts
     /// present in the list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3362,7 +3362,7 @@ pub mod fluent_builders {
     /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3439,7 +3439,7 @@ pub mod fluent_builders {
     /// <p>Get information about a dedicated IP address, including the name of the dedicated IP
     /// pool that it's associated with, as well information about the automatic warm-up process
     /// for the address.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDedicatedIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3512,7 +3512,7 @@ pub mod fluent_builders {
     ///
     /// <p>List the dedicated IP addresses that are associated with your Amazon Web Services
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDedicatedIps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3617,7 +3617,7 @@ pub mod fluent_builders {
     /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
     /// to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more
     /// information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeliverabilityDashboardOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3677,7 +3677,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeliverabilityTestReport`.
     ///
     /// <p>Retrieve the results of a predictive inbox placement test.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeliverabilityTestReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3749,7 +3749,7 @@ pub mod fluent_builders {
     /// <p>Retrieve all the deliverability data for a specific campaign. This data is available
     /// for a campaign only if the campaign sent email by using a domain that the
     /// Deliverability dashboard is enabled for.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainDeliverabilityCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3822,7 +3822,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieve inbox placement and engagement rates for the domains that you use to send
     /// email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainStatisticsReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3926,7 +3926,7 @@ pub mod fluent_builders {
     /// <p>Provides information about a specific identity, including the identity's verification
     /// status, sending authorization policies, its DKIM authentication status, and its custom
     /// Mail-From settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4010,7 +4010,7 @@ pub mod fluent_builders {
     /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailIdentityPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4086,7 +4086,7 @@ pub mod fluent_builders {
     /// part) for the template you specify.</p>
     ///
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4159,7 +4159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImportJob`.
     ///
     /// <p>Provides information about an import job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4230,7 +4230,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information about a specific email address that's on the suppression list
     /// for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSuppressedDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4309,7 +4309,7 @@ pub mod fluent_builders {
     /// emails you send. You apply a configuration set to an email by including a reference to
     /// the configuration set in the headers of the email. When you apply a configuration set to
     /// an email, all of the rules in that configuration set are applied to the email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4397,7 +4397,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContactLists`.
     ///
     /// <p>Lists all of the contact lists available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactLists<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4491,7 +4491,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContacts`.
     ///
     /// <p>Lists the contacts present in a specific contact list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4615,7 +4615,7 @@ pub mod fluent_builders {
     /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomVerificationEmailTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4712,7 +4712,7 @@ pub mod fluent_builders {
     ///
     /// <p>List all of the dedicated IP pools that exist in your Amazon Web Services account in the current
     /// Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDedicatedIpPools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4802,7 +4802,7 @@ pub mod fluent_builders {
     /// <p>Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For
     /// predictive inbox placement tests that are complete, you can use the <code>GetDeliverabilityTestReport</code>
     /// operation to view the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeliverabilityTestReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4896,7 +4896,7 @@ pub mod fluent_builders {
     /// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send
     /// email during a specified time range. This data is available for a domain only if you
     /// enabled the Deliverability dashboard for the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainDeliverabilityCampaigns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5036,7 +5036,7 @@ pub mod fluent_builders {
     /// account. An identity can be either an email address or a domain. This operation returns
     /// identities that are verified as well as those that aren't. This operation returns
     /// identities that are associated with Amazon SES and Amazon Pinpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEmailIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5129,7 +5129,7 @@ pub mod fluent_builders {
     /// Region.</p>
     ///
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEmailTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5217,7 +5217,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImportJobs`.
     ///
     /// <p>Lists all of the import jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5328,7 +5328,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of email addresses that are on the suppression list for your
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSuppressedDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5474,7 +5474,7 @@ pub mod fluent_builders {
     /// optional associated <i>tag value</i>. A tag key is a general label that
     /// acts as a category for more specific tag values. A tag value acts as a descriptor within
     /// a tag key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5546,7 +5546,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountDedicatedIpWarmupAttributes`.
     ///
     /// <p>Enable or disable the automatic warm-up feature for dedicated IP addresses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountDedicatedIpWarmupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5624,7 +5624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountDetails`.
     ///
     /// <p>Update your Amazon SES account details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5782,7 +5782,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountSendingAttributes`.
     ///
     /// <p>Enable or disable the ability of your account to send email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountSendingAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5862,7 +5862,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountSuppressionAttributes`.
     ///
     /// <p>Change the settings for the account-level suppression list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountSuppressionAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5972,7 +5972,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools
     /// to create groups of dedicated IP addresses for sending specific types of email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetDeliveryOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6080,7 +6080,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enable or disable collection of reputation metrics for emails that you send using a
     /// particular configuration set in a specific Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetReputationOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6170,7 +6170,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enable or disable email sending for messages that use a particular configuration set
     /// in a specific Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetSendingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6255,7 +6255,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutConfigurationSetSuppressionOptions`.
     ///
     /// <p>Specify the account suppression list preferences for a configuration set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetSuppressionOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6382,7 +6382,7 @@ pub mod fluent_builders {
     ///
     /// <p>Specify a custom domain to use for open and click tracking elements in email that you
     /// send.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetTrackingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6479,7 +6479,7 @@ pub mod fluent_builders {
     /// using the <code>CreateDedicatedIpPool</code> operation.</p>
     ///
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDedicatedIpInPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6566,7 +6566,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutDedicatedIpWarmupAttributes`.
     ///
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDedicatedIpWarmupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6654,7 +6654,7 @@ pub mod fluent_builders {
     /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
     /// to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more
     /// information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDeliverabilityDashboardOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6750,7 +6750,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEmailIdentityConfigurationSetAttributes`.
     ///
     /// <p>Used to associate a configuration set with an email identity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityConfigurationSetAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6838,7 +6838,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEmailIdentityDkimAttributes`.
     ///
     /// <p>Used to enable or disable DKIM authentication for an email identity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityDkimAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6949,7 +6949,7 @@ pub mod fluent_builders {
     /// <p>Change from using BYODKIM to using Easy DKIM.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityDkimSigningAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7097,7 +7097,7 @@ pub mod fluent_builders {
     /// set up another mechanism for receiving bounce or complaint notifications (for example,
     /// by setting up an event destination), you receive an email notification when these events
     /// occur (even if this setting is disabled).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityFeedbackAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7197,7 +7197,7 @@ pub mod fluent_builders {
     ///
     /// <p>Used to enable or disable the custom Mail-From domain configuration for an email
     /// identity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityMailFromAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7343,7 +7343,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutSuppressedDestination`.
     ///
     /// <p>Adds an email address to the suppression list for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSuppressedDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7433,7 +7433,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendBulkEmail`.
     ///
     /// <p>Composes an email message to multiple destinations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendBulkEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7696,7 +7696,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendCustomVerificationEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7820,7 +7820,7 @@ pub mod fluent_builders {
     /// replaces the tags with values that you specify.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8106,7 +8106,7 @@ pub mod fluent_builders {
     /// associated <i>tag value</i>, both of which you define. A tag key is a
     /// general label that acts as a category for more specific tag values. A tag value acts as
     /// a descriptor within a tag key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8204,7 +8204,7 @@ pub mod fluent_builders {
     /// set of replacement data.</p>
     ///
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestRenderEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8294,7 +8294,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove one or more tags (keys and values) from a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8401,7 +8401,7 @@ pub mod fluent_builders {
     /// information about these events to. For example, you can send event data to Amazon SNS to
     /// receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to
     /// stream data to Amazon S3 for long-term storage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8509,7 +8509,7 @@ pub mod fluent_builders {
     /// <p>Updates a contact's preferences for a list. It is not necessary to specify all
     /// existing topic preferences in the TopicPreferences object, just the ones that need
     /// updating.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8637,7 +8637,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactList`.
     ///
     /// <p>Updates contact list metadata. This operation does a complete replacement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8742,7 +8742,7 @@ pub mod fluent_builders {
     /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
     /// Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8910,7 +8910,7 @@ pub mod fluent_builders {
     /// Guide</a>.</p>
     ///
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEmailIdentityPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9016,7 +9016,7 @@ pub mod fluent_builders {
     /// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
     /// Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

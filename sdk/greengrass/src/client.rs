@@ -821,7 +821,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateRoleToGroup`.
     ///
     /// Associates a role with a group. Your Greengrass core will use the role to access AWS cloud services. The role's permissions should allow Greengrass core Lambda functions to perform actions against the cloud.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateRoleToGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -901,7 +901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateServiceRoleToAccount`.
     ///
     /// Associates a role with your account. AWS IoT Greengrass will use the role to access your Lambda functions and AWS IoT resources. This is necessary for deployments to succeed. The role must have at least minimum permissions in the policy ''AWSGreengrassResourceAccessRolePolicy''.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateServiceRoleToAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -971,7 +971,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConnectorDefinition`.
     ///
     /// Creates a connector definition. You may provide the initial version of the connector definition now or use ''CreateConnectorDefinitionVersion'' at a later time.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnectorDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1093,7 +1093,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConnectorDefinitionVersion`.
     ///
     /// Creates a version of a connector definition which has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnectorDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1199,7 +1199,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCoreDefinition`.
     ///
     /// Creates a core definition. You may provide the initial version of the core definition now or use ''CreateCoreDefinitionVersion'' at a later time. Greengrass groups must each contain exactly one Greengrass core.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCoreDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1318,7 +1318,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCoreDefinitionVersion`.
     ///
     /// Creates a version of a core definition that has already been defined. Greengrass groups must each contain exactly one Greengrass core.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCoreDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1421,7 +1421,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
     /// Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to the ''X-Amzn-Client-Token'' token and the request parameters.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1543,7 +1543,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeviceDefinition`.
     ///
     /// Creates a device definition. You may provide the initial version of the device definition now or use ''CreateDeviceDefinitionVersion'' at a later time.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeviceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1662,7 +1662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeviceDefinitionVersion`.
     ///
     /// Creates a version of a device definition that has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeviceDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1765,7 +1765,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFunctionDefinition`.
     ///
     /// Creates a Lambda function definition which contains a list of Lambda functions and their configurations to be used in a group. You can create an initial version of the definition by providing a list of Lambda functions and their configurations now, or use ''CreateFunctionDefinitionVersion'' later.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFunctionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1887,7 +1887,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFunctionDefinitionVersion`.
     ///
     /// Creates a version of a Lambda function definition that has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFunctionDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2003,7 +2003,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
     /// Creates a group. You may provide the initial version of the group or use ''CreateGroupVersion'' at a later time. Tip: You can use the ''gg_group_setup'' package (https://github.com/awslabs/aws-greengrass-group-setup) as a library or command-line application to create and deploy Greengrass groups.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2122,7 +2122,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroupCertificateAuthority`.
     ///
     /// Creates a CA for the group. If a CA already exists, it will rotate the existing CA.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroupCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2205,7 +2205,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroupVersion`.
     ///
     /// Creates a version of a group which has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroupVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2404,7 +2404,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLoggerDefinition`.
     ///
     /// Creates a logger definition. You may provide the initial version of the logger definition now or use ''CreateLoggerDefinitionVersion'' at a later time.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoggerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2523,7 +2523,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLoggerDefinitionVersion`.
     ///
     /// Creates a version of a logger definition that has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoggerDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2626,7 +2626,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResourceDefinition`.
     ///
     /// Creates a resource definition which contains a list of resources to be used in a group. You can create an initial version of the definition by providing a list of resources now, or use ''CreateResourceDefinitionVersion'' later.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2748,7 +2748,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResourceDefinitionVersion`.
     ///
     /// Creates a version of a resource definition that has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2851,7 +2851,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSoftwareUpdateJob`.
     ///
     /// Creates a software update for a core or group of cores (specified as an IoT thing group.) Use this to update the OTA Agent as well as the Greengrass core software. It makes use of the IoT Jobs feature which provides additional commands to manage a Greengrass core software update job.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSoftwareUpdateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3015,7 +3015,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSubscriptionDefinition`.
     ///
     /// Creates a subscription definition. You may provide the initial version of the subscription definition now or use ''CreateSubscriptionDefinitionVersion'' at a later time.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubscriptionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3137,7 +3137,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSubscriptionDefinitionVersion`.
     ///
     /// Creates a version of a subscription definition which has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubscriptionDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3245,7 +3245,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnectorDefinition`.
     ///
     /// Deletes a connector definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnectorDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3321,7 +3321,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCoreDefinition`.
     ///
     /// Deletes a core definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCoreDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3394,7 +3394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeviceDefinition`.
     ///
     /// Deletes a device definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeviceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3467,7 +3467,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFunctionDefinition`.
     ///
     /// Deletes a Lambda function definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFunctionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3540,7 +3540,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGroup`.
     ///
     /// Deletes a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3610,7 +3610,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLoggerDefinition`.
     ///
     /// Deletes a logger definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoggerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3683,7 +3683,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourceDefinition`.
     ///
     /// Deletes a resource definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3756,7 +3756,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSubscriptionDefinition`.
     ///
     /// Deletes a subscription definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSubscriptionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3832,7 +3832,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateRoleFromGroup`.
     ///
     /// Disassociates the role from a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateRoleFromGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3902,7 +3902,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateServiceRoleFromAccount`.
     ///
     /// Disassociates the service role from your account. Without a service role, deployments will not work.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateServiceRoleFromAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3964,7 +3964,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssociatedRole`.
     ///
     /// Retrieves the role associated with a particular group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssociatedRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4034,7 +4034,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBulkDeploymentStatus`.
     ///
     /// Returns the status of a bulk deployment.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBulkDeploymentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4107,7 +4107,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnectivityInfo`.
     ///
     /// Retrieves the connectivity information for a core.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnectivityInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4177,7 +4177,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnectorDefinition`.
     ///
     /// Retrieves information about a connector definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnectorDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4253,7 +4253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnectorDefinitionVersion`.
     ///
     /// Retrieves information about a connector definition version, including the connectors that the version contains. Connectors are prebuilt modules that interact with local infrastructure, device protocols, AWS, and other cloud services.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnectorDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4355,7 +4355,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCoreDefinition`.
     ///
     /// Retrieves information about a core definition version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCoreDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4428,7 +4428,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCoreDefinitionVersion`.
     ///
     /// Retrieves information about a core definition version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCoreDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4517,7 +4517,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentStatus`.
     ///
     /// Returns the status of a deployment.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4600,7 +4600,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceDefinition`.
     ///
     /// Retrieves information about a device definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4673,7 +4673,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceDefinitionVersion`.
     ///
     /// Retrieves information about a device definition version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4772,7 +4772,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFunctionDefinition`.
     ///
     /// Retrieves information about a Lambda function definition, including its creation time and latest version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunctionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4845,7 +4845,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFunctionDefinitionVersion`.
     ///
     /// Retrieves information about a Lambda function definition version, including which Lambda functions are included in the version and their configurations.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunctionDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4944,7 +4944,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroup`.
     ///
     /// Retrieves information about a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5014,7 +5014,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroupCertificateAuthority`.
     ///
     /// Retreives the CA associated with a group. Returns the public key of the CA.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroupCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5100,7 +5100,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroupCertificateConfiguration`.
     ///
     /// Retrieves the current configuration for the CA used by the group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroupCertificateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5170,7 +5170,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroupVersion`.
     ///
     /// Retrieves information about a group version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroupVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5253,7 +5253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLoggerDefinition`.
     ///
     /// Retrieves information about a logger definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoggerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5326,7 +5326,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLoggerDefinitionVersion`.
     ///
     /// Retrieves information about a logger definition version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoggerDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5425,7 +5425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceDefinition`.
     ///
     /// Retrieves information about a resource definition, including its creation time and latest version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5498,7 +5498,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceDefinitionVersion`.
     ///
     /// Retrieves information about a resource definition version, including which resources are included in the version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5587,7 +5587,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceRoleForAccount`.
     ///
     /// Retrieves the service role that is attached to your account.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceRoleForAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5647,7 +5647,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSubscriptionDefinition`.
     ///
     /// Retrieves information about a subscription definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSubscriptionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5723,7 +5723,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSubscriptionDefinitionVersion`.
     ///
     /// Retrieves information about a subscription definition version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSubscriptionDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5827,7 +5827,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetThingRuntimeConfiguration`.
     ///
     /// Get the runtime configuration of a thing.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetThingRuntimeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5897,7 +5897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBulkDeploymentDetailedReports`.
     ///
     /// Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current deployment status.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBulkDeploymentDetailedReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5990,7 +5990,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBulkDeployments`.
     ///
     /// Returns a list of bulk deployments.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBulkDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6070,7 +6070,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConnectorDefinitions`.
     ///
     /// Retrieves a list of connector definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnectorDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6150,7 +6150,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConnectorDefinitionVersions`.
     ///
     /// Lists the versions of a connector definition, which are containers for connectors. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnectorDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6246,7 +6246,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCoreDefinitions`.
     ///
     /// Retrieves a list of core definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCoreDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6326,7 +6326,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCoreDefinitionVersions`.
     ///
     /// Lists the versions of a core definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCoreDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6419,7 +6419,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeployments`.
     ///
     /// Returns a history of deployments for the group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6509,7 +6509,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeviceDefinitions`.
     ///
     /// Retrieves a list of device definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6589,7 +6589,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeviceDefinitionVersions`.
     ///
     /// Lists the versions of a device definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6682,7 +6682,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFunctionDefinitions`.
     ///
     /// Retrieves a list of Lambda function definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctionDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6762,7 +6762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFunctionDefinitionVersions`.
     ///
     /// Lists the versions of a Lambda function definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctionDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6855,7 +6855,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroupCertificateAuthorities`.
     ///
     /// Retrieves the current CAs for a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroupCertificateAuthorities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6925,7 +6925,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroups`.
     ///
     /// Retrieves a list of groups.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7005,7 +7005,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroupVersions`.
     ///
     /// Lists the versions of a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroupVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7095,7 +7095,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLoggerDefinitions`.
     ///
     /// Retrieves a list of logger definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLoggerDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7175,7 +7175,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLoggerDefinitionVersions`.
     ///
     /// Lists the versions of a logger definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLoggerDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7268,7 +7268,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourceDefinitions`.
     ///
     /// Retrieves a list of resource definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7348,7 +7348,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourceDefinitionVersions`.
     ///
     /// Lists the versions of a resource definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7441,7 +7441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSubscriptionDefinitions`.
     ///
     /// Retrieves a list of subscription definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSubscriptionDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7521,7 +7521,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSubscriptionDefinitionVersions`.
     ///
     /// Lists the versions of a subscription definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSubscriptionDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7619,7 +7619,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// Retrieves a list of resource tags for a resource arn.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7689,7 +7689,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetDeployments`.
     ///
     /// Resets a group's deployments.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7782,7 +7782,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBulkDeployment`.
     ///
     /// Deploys multiple groups in one operation. This action starts the bulk deployment of a specified set of group versions. Each group version deployment will be triggered with an adaptive rate that has a fixed upper limit. We recommend that you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment'' request. These requests are idempotent with respect to the token and the request parameters.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBulkDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7904,7 +7904,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopBulkDeployment`.
     ///
     /// Stops the execution of a bulk deployment. This action returns a status of ''Stopping'' until the deployment is stopped. You cannot start a new bulk deployment while a previous deployment is in the ''Stopping'' state. This action doesn't rollback completed deployments or cancel pending deployments.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopBulkDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7977,7 +7977,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// Adds tags to a Greengrass resource. Valid resources are 'Group', 'ConnectorDefinition', 'CoreDefinition', 'DeviceDefinition', 'FunctionDefinition', 'LoggerDefinition', 'SubscriptionDefinition', 'ResourceDefinition', and 'BulkDeployment'.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8070,7 +8070,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// Remove resource tags from a Greengrass Resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8157,7 +8157,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnectivityInfo`.
     ///
     /// Updates the connectivity information for the core. Any devices that belong to the group which has this core will receive this information in order to find the location of the core and connect to it.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnectivityInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8244,7 +8244,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnectorDefinition`.
     ///
     /// Updates a connector definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnectorDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8330,7 +8330,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCoreDefinition`.
     ///
     /// Updates a core definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCoreDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8413,7 +8413,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeviceDefinition`.
     ///
     /// Updates a device definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeviceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8496,7 +8496,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFunctionDefinition`.
     ///
     /// Updates a Lambda function definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFunctionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8579,7 +8579,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGroup`.
     ///
     /// Updates a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8659,7 +8659,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGroupCertificateConfiguration`.
     ///
     /// Updates the Certificate expiry time for a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGroupCertificateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8749,7 +8749,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLoggerDefinition`.
     ///
     /// Updates a logger definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLoggerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8832,7 +8832,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResourceDefinition`.
     ///
     /// Updates a resource definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8915,7 +8915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSubscriptionDefinition`.
     ///
     /// Updates a subscription definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSubscriptionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9001,7 +9001,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateThingRuntimeConfiguration`.
     ///
     /// Updates the runtime configuration of a thing.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateThingRuntimeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

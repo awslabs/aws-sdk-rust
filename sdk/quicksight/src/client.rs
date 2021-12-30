@@ -950,7 +950,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelIngestion`.
     ///
     /// <p>Cancels an ongoing ingestion of data into SPICE.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelIngestion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1066,7 +1066,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html">UpdateThemePermissions</a>
     /// </code>
     /// API operation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccountCustomization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1196,7 +1196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAnalysis`.
     ///
     /// <p>Creates an analysis in Amazon QuickSight.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1389,7 +1389,7 @@ pub mod fluent_builders {
     /// from analyses. You can share Amazon QuickSight dashboards. With the right permissions, you can
     /// create scheduled email reports from them. If you have the correct permissions, you can
     /// create a dashboard from a template that exists in a different Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1673,7 +1673,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataSet`.
     ///
     /// <p>Creates a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1971,7 +1971,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataSource`.
     ///
     /// <p>Creates a data source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2180,7 +2180,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFolder`.
     ///
     /// <p>Creates an empty shared folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2339,7 +2339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFolderMembership`.
     ///
     /// <p>Adds an asset, such as a dashboard, analysis, or dataset into a folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFolderMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2449,7 +2449,7 @@ pub mod fluent_builders {
     /// <code>arn:aws:quicksight:us-east-1:<i><relevant-aws-account-id></i>:group/default/<i><group-name></i>
     /// </code>.</p>
     /// <p>The response is a group object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2554,7 +2554,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroupMembership`.
     ///
     /// <p>Adds an Amazon QuickSight user to an Amazon QuickSight group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroupMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2662,7 +2662,7 @@ pub mod fluent_builders {
     /// (ARN). This policy assignment is attached to the specified groups or users of Amazon QuickSight.
     /// Assignment names are unique per Amazon Web Services account. To avoid overwriting rules in other namespaces,
     /// use assignment names that are unique.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIAMPolicyAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2844,7 +2844,7 @@ pub mod fluent_builders {
     /// <p>Any ingestions operating on tagged datasets inherit the same tags automatically for use in
     /// access control. For an example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I create an IAM policy to control access to Amazon EC2 resources using
     /// tags?</a> in the Amazon Web Services Knowledge Center. Tags are visible on the tagged dataset, but not on the ingestion resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIngestion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2957,7 +2957,7 @@ pub mod fluent_builders {
     /// Amazon QuickSight. The namespace must be unique within the Amazon Web Services account. By default, there is a
     /// limit of 100 namespaces per Amazon Web Services account. To increase your limit, create a ticket with
     /// Amazon Web Services Support. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3079,7 +3079,7 @@ pub mod fluent_builders {
     /// analysis. You can use templates to create dashboards by replacing dataset placeholders
     /// with datasets that follow the same schema that was used to create the source analysis
     /// and template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3258,7 +3258,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTemplateAlias`.
     ///
     /// <p>Creates a template alias for a template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTemplateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3368,7 +3368,7 @@ pub mod fluent_builders {
     /// <p>A <i>theme</i> is set of configuration options for color and layout.
     /// Themes apply to analyses and dashboards. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using
     /// Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTheme<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3552,7 +3552,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateThemeAlias`.
     ///
     /// <p>Creates a theme alias for a theme.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateThemeAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3660,7 +3660,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for the specified
     /// Amazon Web Services account and Amazon QuickSight namespace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccountCustomization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3756,7 +3756,7 @@ pub mod fluent_builders {
     /// <p>An analysis that's scheduled for deletion isn't accessible in the Amazon QuickSight console.
     /// To access it in the console, restore it. Deleting an analysis doesn't delete the
     /// dashboards that you publish from it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3870,7 +3870,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDashboard`.
     ///
     /// <p>Deletes a dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3967,7 +3967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataSet`.
     ///
     /// <p>Deletes a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4051,7 +4051,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the data source permanently. This operation breaks
     /// all the datasets that reference the deleted data source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4137,7 +4137,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFolder`.
     ///
     /// <p>Deletes an empty folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4220,7 +4220,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFolderMembership`.
     ///
     /// <p>Removes an asset, such as a dashboard, analysis, or dataset, from a folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFolderMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4328,7 +4328,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGroup`.
     ///
     /// <p>Removes a user group from Amazon QuickSight. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4423,7 +4423,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGroupMembership`.
     ///
     /// <p>Removes a user from a group so that the user is no longer a member of the group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroupMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4528,7 +4528,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIAMPolicyAssignment`.
     ///
     /// <p>Deletes an existing IAM policy assignment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIAMPolicyAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4626,7 +4626,7 @@ pub mod fluent_builders {
     /// <p>Deletes a namespace and the users and groups that are associated with the namespace.
     /// This is an asynchronous process. Assets including dashboards, analyses, datasets and data sources are not
     /// deleted. To delete these assets, you use the API operations for the relevant asset. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4709,7 +4709,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTemplate`.
     ///
     /// <p>Deletes a template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4807,7 +4807,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the item that the specified template alias points to. If you provide a specific
     /// alias, you delete the version of the template that the alias points to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTemplateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4906,7 +4906,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTheme`.
     ///
     /// <p>Deletes a theme.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTheme<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5007,7 +5007,7 @@ pub mod fluent_builders {
     /// <p>Deletes the version of the theme that the specified theme alias points to.
     /// If you provide a specific alias, you delete the version of the theme
     /// that the alias points to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteThemeAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5102,7 +5102,7 @@ pub mod fluent_builders {
     /// <p>Deletes the Amazon QuickSight user that is associated with the identity of the
     /// Identity and Access Management (IAM) user or role that's making the call. The IAM user
     /// isn't deleted as a result of this call. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5197,7 +5197,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserByPrincipalId`.
     ///
     /// <p>Deletes a user identified by its principal ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserByPrincipalId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5348,7 +5348,7 @@ pub mod fluent_builders {
     /// each Amazon Web Services Region where you want to apply the same customizations. </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountCustomization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5454,7 +5454,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the settings that were used when your Amazon QuickSight subscription was first
     /// created in this Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5527,7 +5527,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAnalysis`.
     ///
     /// <p>Provides a summary of the metadata for an analysis.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5614,7 +5614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAnalysisPermissions`.
     ///
     /// <p>Provides the read and write permissions for an analysis.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnalysisPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5701,7 +5701,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDashboard`.
     ///
     /// <p>Provides a summary for a dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5808,7 +5808,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDashboardPermissions`.
     ///
     /// <p>Describes read and write permissions for a dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDashboardPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5893,7 +5893,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataSet`.
     ///
     /// <p>Describes a dataset. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5977,7 +5977,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the permissions on a dataset.</p>
     /// <p>The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSetPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6060,7 +6060,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataSource`.
     ///
     /// <p>Describes a data source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6146,7 +6146,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataSourcePermissions`.
     ///
     /// <p>Describes the resource permissions for a data source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSourcePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6232,7 +6232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFolder`.
     ///
     /// <p>Describes a folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6315,7 +6315,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFolderPermissions`.
     ///
     /// <p>Describes permissions for a folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFolderPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6398,7 +6398,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFolderResolvedPermissions`.
     ///
     /// <p>Describes the folder resolved permissions. Permissions consists of both folder direct permissions and the inherited permissions from the ancestor folders.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFolderResolvedPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6481,7 +6481,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeGroup`.
     ///
     /// <p>Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6576,7 +6576,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIAMPolicyAssignment`.
     ///
     /// <p>Describes an existing IAM policy assignment, as specified by the assignment name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIAMPolicyAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6672,7 +6672,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIngestion`.
     ///
     /// <p>Describes a SPICE ingestion.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIngestion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6765,7 +6765,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIpRestriction`.
     ///
     /// <p>Provides a summary and status of IP rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIpRestriction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6838,7 +6838,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNamespace`.
     ///
     /// <p>Describes the current namespace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6921,7 +6921,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTemplate`.
     ///
     /// <p>Describes a template's metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7032,7 +7032,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTemplateAlias`.
     ///
     /// <p>Describes the template alias for a template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTemplateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7133,7 +7133,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTemplatePermissions`.
     ///
     /// <p>Describes read and write permissions on a template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTemplatePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7216,7 +7216,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTheme`.
     ///
     /// <p>Describes a theme.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTheme<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7327,7 +7327,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeThemeAlias`.
     ///
     /// <p>Describes the alias for a theme.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeThemeAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7422,7 +7422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeThemePermissions`.
     ///
     /// <p>Describes the read and write permissions for a theme.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeThemePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7505,7 +7505,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUser`.
     ///
     /// <p>Returns information about a user, given the user name. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7619,7 +7619,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User
     /// Guide</i>.</p>
     /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateEmbedUrlForAnonymousUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7785,7 +7785,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User
     /// Guide</i>.</p>
     /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateEmbedUrlForRegisteredUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7918,7 +7918,7 @@ pub mod fluent_builders {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User
     /// Guide</i>.</p>
     /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDashboardEmbedUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8178,7 +8178,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSessionEmbedUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8381,7 +8381,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAnalyses`.
     ///
     /// <p>Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnalyses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8474,7 +8474,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDashboards`.
     ///
     /// <p>Lists dashboards in an Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDashboards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8569,7 +8569,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDashboardVersions`.
     ///
     /// <p>Lists all the versions of the dashboards in the Amazon QuickSight subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDashboardVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8675,7 +8675,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all of the datasets belonging to the current Amazon Web Services account in an Amazon Web Services Region.</p>
     /// <p>The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8768,7 +8768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataSources`.
     ///
     /// <p>Lists data sources in current Amazon Web Services Region that belong to this Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8861,7 +8861,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFolderMembers`.
     ///
     /// <p>List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>) in a folder. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFolderMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8964,7 +8964,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFolders`.
     ///
     /// <p>Lists all folders in an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFolders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9057,7 +9057,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroupMemberships`.
     ///
     /// <p>Lists member users in a group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroupMemberships<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9172,7 +9172,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroups`.
     ///
     /// <p>Lists all user groups in Amazon QuickSight. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9277,7 +9277,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIAMPolicyAssignments`.
     ///
     /// <p>Lists IAM policy assignments in the current Amazon QuickSight account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIAMPolicyAssignments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9395,7 +9395,7 @@ pub mod fluent_builders {
     /// <p>Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM
     /// policies assigned to the specified user and group or groups that the user belongs
     /// to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIAMPolicyAssignmentsForUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9508,7 +9508,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIngestions`.
     ///
     /// <p>Lists the history of SPICE ingestions for a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIngestions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9611,7 +9611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNamespaces`.
     ///
     /// <p>Lists the namespaces for the specified Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNamespaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9704,7 +9704,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags assigned to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9774,7 +9774,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTemplateAliases`.
     ///
     /// <p>Lists all the aliases of a template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTemplateAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9877,7 +9877,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTemplates`.
     ///
     /// <p>Lists all the templates in the current Amazon QuickSight account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9970,7 +9970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTemplateVersions`.
     ///
     /// <p>Lists all the versions of the templates in the current Amazon QuickSight account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10073,7 +10073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListThemeAliases`.
     ///
     /// <p>Lists all the aliases of a theme.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListThemeAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10176,7 +10176,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListThemes`.
     ///
     /// <p>Lists all the themes in the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListThemes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10307,7 +10307,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListThemeVersions`.
     ///
     /// <p>Lists all the versions of the themes in the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListThemeVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10410,7 +10410,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUserGroups`.
     ///
     /// <p>Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10525,7 +10525,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUsers`.
     ///
     /// <p>Returns a list of all of the Amazon QuickSight users belonging to this account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10630,7 +10630,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterUser`.
     ///
     /// <p>Creates an Amazon QuickSight user, whose identity is associated with the Identity and Access Management (IAM) identity or role specified in the request. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11017,7 +11017,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RestoreAnalysis`.
     ///
     /// <p>Restores an analysis.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11103,7 +11103,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchAnalyses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11218,7 +11218,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchDashboards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11336,7 +11336,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchFolders`.
     ///
     /// <p>Searches the subfolders in a folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchFolders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11468,7 +11468,7 @@ pub mod fluent_builders {
     /// <p>Amazon QuickSight doesn't currently support the tag editor for Resource Groups.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11555,7 +11555,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag or tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11647,7 +11647,7 @@ pub mod fluent_builders {
     /// Amazon QuickSight namespace instead. Customizations that apply to a namespace override
     /// customizations that apply to an Amazon Web Services account. To find out which customizations apply, use
     /// the <code>DescribeAccountCustomization</code> API operation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccountCustomization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11748,7 +11748,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAccountSettings`.
     ///
     /// <p>Updates the Amazon QuickSight settings in your Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11857,7 +11857,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAnalysis`.
     ///
     /// <p>Updates an analysis in Amazon QuickSight</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11998,7 +11998,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAnalysisPermissions`.
     ///
     /// <p>Updates the read and write permissions for an analysis.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnalysisPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12130,7 +12130,7 @@ pub mod fluent_builders {
     /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html">UpdateDashboardPublishedVersion</a>
     /// </code> API operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12370,7 +12370,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDashboardPermissions`.
     ///
     /// <p>Updates read and write permissions on a dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDashboardPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12523,7 +12523,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDashboardPublishedVersion`.
     ///
     /// <p>Updates the published version of a dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDashboardPublishedVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12618,7 +12618,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataSet`.
     ///
     /// <p>Updates a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12885,7 +12885,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the permissions on a dataset.</p>
     /// <p>The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSetPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13004,7 +13004,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataSource`.
     ///
     /// <p>Updates a data source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13164,7 +13164,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataSourcePermissions`.
     ///
     /// <p>Updates the permissions to a data source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSourcePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13284,7 +13284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFolder`.
     ///
     /// <p>Updates the name of a folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13377,7 +13377,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFolderPermissions`.
     ///
     /// <p>Updates permissions of a folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFolderPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13494,7 +13494,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGroup`.
     ///
     /// <p>Changes a group description. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13602,7 +13602,7 @@ pub mod fluent_builders {
     /// parameter or parameters that are specified in the request.
     /// This overwrites all of the users included in <code>Identities</code>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIAMPolicyAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13778,7 +13778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIpRestriction`.
     ///
     /// <p>Updates the content and status of IP rules. To use this operation, you need to provide the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIpRestriction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13884,7 +13884,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTemplate`.
     ///
     /// <p>Updates a template from an existing Amazon QuickSight analysis or another template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14027,7 +14027,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTemplateAlias`.
     ///
     /// <p>Updates the template alias of a template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTemplateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14136,7 +14136,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTemplatePermissions`.
     ///
     /// <p>Updates the resource permissions for a template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTemplatePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14253,7 +14253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTheme`.
     ///
     /// <p>Updates a theme.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTheme<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14391,7 +14391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateThemeAlias`.
     ///
     /// <p>Updates an alias of a theme.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateThemeAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14587,7 +14587,7 @@ pub mod fluent_builders {
     /// <p>To specify no permissions, omit the permissions list.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateThemePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14704,7 +14704,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUser`.
     ///
     /// <p>Updates an Amazon QuickSight user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

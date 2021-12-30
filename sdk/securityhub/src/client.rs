@@ -518,7 +518,7 @@ pub mod fluent_builders {
     /// Organizations.</p>
     /// <p>When the member account accepts the invitation, permission is granted to the administrator
     /// account to view findings generated in the member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptAdministratorInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -611,7 +611,7 @@ pub mod fluent_builders {
     /// Organizations.</p>
     /// <p>When the member account accepts the invitation, permission is granted to the administrator
     /// account to view findings generated in the member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -697,7 +697,7 @@ pub mod fluent_builders {
     /// <code>StandardsSubscriptionArns</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a> section of the <i>Security Hub User
     /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisableStandards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -781,7 +781,7 @@ pub mod fluent_builders {
     /// operation.</p>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a>
     /// section of the <i>Security Hub User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchEnableStandards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -919,7 +919,7 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// <p>Instead, finding providers use <code>FindingProviderFields</code> to provide values for these attributes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchImportFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1056,7 +1056,7 @@ pub mod fluent_builders {
     /// example, you might not want member accounts to be able to suppress findings or change the
     /// finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring access to BatchUpdateFindings</a> in the
     /// <i>Security Hub User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1368,7 +1368,7 @@ pub mod fluent_builders {
     /// <p>Creates a custom action target in Security Hub.</p>
     /// <p>You can use custom actions on findings and insights in Security Hub to trigger target actions
     /// in Amazon CloudWatch Events.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateActionTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1460,7 +1460,7 @@ pub mod fluent_builders {
     /// <p>Used to enable finding aggregation. Must be called from the aggregation Region.</p>
     /// <p>For more details about cross-Region replication, see <a href="securityhub/latest/userguide/finding-aggregation.html">Configuring finding aggregation</a> in the <i>Security Hub User Guide</i>.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFindingAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1595,7 +1595,7 @@ pub mod fluent_builders {
     /// to a security issue that requires attention or remediation.</p>
     /// <p>To group the related findings in the insight, use the
     /// <code>GroupByAttribute</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1734,7 +1734,7 @@ pub mod fluent_builders {
     /// <p>A permissions policy is added that permits the administrator account to view the findings
     /// generated in the member account.</p>
     /// <p>To remove the association between the administrator and member accounts, use the <code>DisassociateFromMasterAccount</code> or <code>DisassociateMembers</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1815,7 +1815,7 @@ pub mod fluent_builders {
     /// <p>Declines invitations to become a member account.</p>
     /// <p>This operation is only used by accounts that are not part of an organization.
     /// Organization accounts do not receive invitations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeclineInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1896,7 +1896,7 @@ pub mod fluent_builders {
     /// <p>Deletes a custom action target from Security Hub.</p>
     /// <p>Deleting a custom action target does not affect any findings or insights that were
     /// already sent to Amazon CloudWatch Events using the custom action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteActionTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1971,7 +1971,7 @@ pub mod fluent_builders {
     /// <p>Deletes a finding aggregator. When you delete the finding aggregator, you stop finding aggregation.</p>
     /// <p>When you stop finding aggregation, findings that were already aggregated to the aggregation Region are still visible from the aggregation Region. New findings and finding updates are not aggregated.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFindingAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2044,7 +2044,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInsight`.
     ///
     /// <p>Deletes the insight specified by the <code>InsightArn</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2116,7 +2116,7 @@ pub mod fluent_builders {
     /// <p>Deletes invitations received by the Amazon Web Services account to become a member account.</p>
     /// <p>This operation is only used by accounts that are not part of an organization.
     /// Organization accounts do not receive invitations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2195,7 +2195,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified member accounts from Security Hub.</p>
     /// <p>Can be used to delete member accounts that belong to an organization as well as member
     /// accounts that were invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2272,7 +2272,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeActionTargets`.
     ///
     /// <p>Returns a list of the custom action targets in Security Hub in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeActionTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2378,7 +2378,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns details about the Hub resource in your account, including the
     /// <code>HubArn</code> and the time when you enabled Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHub<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2449,7 +2449,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the Organizations configuration for Security Hub. Can only be
     /// called from a Security Hub administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2513,7 +2513,7 @@ pub mod fluent_builders {
     /// the results only include that integration.</p>
     /// <p>If you do not provide an integration ARN, then the results include all of the available
     /// product integrations. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProducts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2612,7 +2612,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of the available standards in Security Hub.</p>
     /// <p>For each standard, the results include the standard ARN, the name, and a description. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStandards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2702,7 +2702,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of security standards controls.</p>
     /// <p>For each control, the results include information about whether it is currently enabled,
     /// the severity, and a link to remediation information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStandardsControls<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2809,7 +2809,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables the integration of the specified product with Security Hub. After the integration is
     /// disabled, findings from that product are no longer sent to Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableImportFindingsForProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2886,7 +2886,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables a Security Hub administrator account. Can only be called by the organization
     /// management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2967,7 +2967,7 @@ pub mod fluent_builders {
     /// are disabled, and your administrator and member account associations are removed.</p>
     /// <p>If you want to save your existing findings, you must export them before you disable
     /// Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableSecurityHub<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3031,7 +3031,7 @@ pub mod fluent_builders {
     /// <p>This operation is only used by accounts that are not part of an organization. For
     /// organization accounts, only the administrator account can
     /// disassociate a member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromAdministratorAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3099,7 +3099,7 @@ pub mod fluent_builders {
     /// <p>This operation is only used by accounts that are not part of an organization. For
     /// organization accounts, only the administrator account can
     /// disassociate a member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3161,7 +3161,7 @@ pub mod fluent_builders {
     /// <p>Disassociates the specified member accounts from the associated administrator account.</p>
     /// <p>Can be used to disassociate both accounts that are managed using Organizations and accounts that
     /// were invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3241,7 +3241,7 @@ pub mod fluent_builders {
     /// findings to Security Hub.</p>
     /// <p>When you enable a product integration, a permissions policy that grants permission for
     /// the product to send findings to Security Hub is applied.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableImportFindingsForProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3312,7 +3312,7 @@ pub mod fluent_builders {
     ///
     /// <p>Designates the Security Hub administrator account for an organization. Can only be called by
     /// the organization management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3406,7 +3406,7 @@ pub mod fluent_builders {
     /// <p>After you enable Security Hub, to enable a standard, use the <code>BatchEnableStandards</code> operation. To disable a standard, use the
     /// <code>BatchDisableStandards</code> operation.</p>
     /// <p>To learn more, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup information</a> in the <i>Security Hub User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableSecurityHub<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3507,7 +3507,7 @@ pub mod fluent_builders {
     /// <p>Provides the details for the Security Hub administrator account for the current member account.</p>
     /// <p>Can be used by both member accounts that are managed using Organizations and accounts that were
     /// invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAdministratorAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3567,7 +3567,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnabledStandards`.
     ///
     /// <p>Returns a list of the standards that are currently enabled.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnabledStandards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3675,7 +3675,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingAggregator`.
     ///
     /// <p>Returns the current finding aggregation configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3749,7 +3749,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of findings that match the specified criteria.</p>
     /// <p>If finding aggregation is enabled, then when you call <code>GetFindings</code> from the aggregation Region, the results include all of the matching findings from both the aggregation Region and the linked Regions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3877,7 +3877,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInsightResults`.
     ///
     /// <p>Lists the results of the Security Hub insight specified by the insight ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3947,7 +3947,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInsights`.
     ///
     /// <p>Lists and describes insights for the specified insight ARNs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4057,7 +4057,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the count of all Security Hub membership invitations that were sent to the
     /// current member account, not including the currently accepted invitation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvitationsCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4121,7 +4121,7 @@ pub mod fluent_builders {
     /// <p>Provides the details for the Security Hub administrator account for the current member account.</p>
     /// <p>Can be used by both member accounts that are managed using Organizations and accounts that were
     /// invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4185,7 +4185,7 @@ pub mod fluent_builders {
     /// organization or an administrator account that enabled Security Hub manually.</p>
     /// <p>The results include both member accounts that are managed using Organizations and accounts that
     /// were invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4268,7 +4268,7 @@ pub mod fluent_builders {
     /// <p>Before you can use this action to invite a member, you must first use the <code>CreateMembers</code> action to create the member account in Security Hub.</p>
     /// <p>When the account owner enables Security Hub and accepts the invitation to become a member
     /// account, the administrator account can view the findings generated from the member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InviteMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4346,7 +4346,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all findings-generating solutions (products) that you are subscribed to receive
     /// findings from in Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnabledProductsForImport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4434,7 +4434,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindingAggregators`.
     ///
     /// <p>If finding aggregation is enabled, then <code>ListFindingAggregators</code> returns the ARN of the finding aggregator. You can run this operation from any Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindingAggregators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4516,7 +4516,7 @@ pub mod fluent_builders {
     /// <p>Lists all Security Hub membership invitations that were sent to the current Amazon Web Services account.</p>
     /// <p>This operation is only used by accounts that are managed by invitation.
     /// Accounts that are managed using the integration with Organizations do not receive invitations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4607,7 +4607,7 @@ pub mod fluent_builders {
     /// account.</p>
     /// <p>The results include both member accounts that belong to an organization and member
     /// accounts that were invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4716,7 +4716,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the Security Hub administrator accounts. Can only be called by the organization
     /// management account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationAdminAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4802,7 +4802,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags associated with a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4872,7 +4872,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4965,7 +4965,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5052,7 +5052,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateActionTarget`.
     ///
     /// <p>Updates the name and description of a custom action target in Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateActionTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5147,7 +5147,7 @@ pub mod fluent_builders {
     /// <p>Updates the finding aggregation configuration. Used to update the Region linking mode and the list of included or excluded Regions. You cannot use <code>UpdateFindingAggregator</code> to change the aggregation Region.</p>
     /// <p>You must run <code>UpdateFindingAggregator</code> from the current aggregation Region.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFindingAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5295,7 +5295,7 @@ pub mod fluent_builders {
     /// <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated
     /// findings that the filter attributes specify. Any member account that can view the finding
     /// also sees the update to the finding.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5391,7 +5391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInsight`.
     ///
     /// <p>Updates the Security Hub insight identified by the specified insight ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5498,7 +5498,7 @@ pub mod fluent_builders {
     ///
     /// <p>Used to update the configuration related to Organizations. Can only be called from a
     /// Security Hub administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5574,7 +5574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSecurityHubConfiguration`.
     ///
     /// <p>Updates configuration options for Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecurityHubConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5653,7 +5653,7 @@ pub mod fluent_builders {
     ///
     /// <p>Used to control whether an individual security standard control is enabled or
     /// disabled.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStandardsControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

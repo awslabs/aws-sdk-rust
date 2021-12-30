@@ -299,7 +299,7 @@ pub mod fluent_builders {
     ///
     /// <p>A replication set replicates and encrypts your data to the provided Regions with the
     /// provided KMS key. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -398,7 +398,7 @@ pub mod fluent_builders {
     /// <p>Creates a response plan that automates the initial response to incidents. A response
     /// plan engages contacts, starts chat channel collaboration, and initiates runbooks at the
     /// beginning of an incident.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResponsePlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -576,7 +576,7 @@ pub mod fluent_builders {
     /// Timeline events are automatically created by Incident Manager, marking key moment during an
     /// incident. You can create custom timeline events to mark important events that are
     /// automatically detected by Incident Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTimelineEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -700,7 +700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIncidentRecord`.
     ///
     /// <p>Delete an incident record from Incident Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIncidentRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -771,7 +771,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes all Regions in your replication set. Deleting the replication set deletes all
     /// Incident Manager data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -842,7 +842,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the resource policy that Resource Access Manager uses to share your Incident Manager
     /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -923,7 +923,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified response plan. Deleting a response plan stops all linked CloudWatch alarms and EventBridge events from creating an incident with this
     /// response plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResponsePlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -993,7 +993,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTimelineEvent`.
     ///
     /// <p>Deletes a timeline event from an incident.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTimelineEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1080,7 +1080,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIncidentRecord`.
     ///
     /// <p>Returns the details for the specified incident record.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIncidentRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1150,7 +1150,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReplicationSet`.
     ///
     /// <p>Retrieve your Incident Manager replication set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReplicationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1220,7 +1220,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourcePolicies`.
     ///
     /// <p>Retrieves the resource policies attached to the specified response plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1310,7 +1310,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResponsePlan`.
     ///
     /// <p>Retrieves the details of the specified response plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResponsePlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1380,7 +1380,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTimelineEvent`.
     ///
     /// <p>Retrieves a timeline event based on its ID and incident record.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTimelineEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1468,7 +1468,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all incident records in your account. Use this command to retrieve the Amazon
     /// Resource Name (ARN) of the incident record you want to update. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIncidentRecords<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1641,7 +1641,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRelatedItems`.
     ///
     /// <p>List all related items for an incident record.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRelatedItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1736,7 +1736,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReplicationSets`.
     ///
     /// <p>Lists details about the replication set configured in your account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReplicationSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1816,7 +1816,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResponsePlans`.
     ///
     /// <p>Lists all response plans in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResponsePlans<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1896,7 +1896,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags that are attached to the specified response plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1966,7 +1966,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTimelineEvents`.
     ///
     /// <p>Lists timeline events for the specified incident record.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTimelineEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2162,7 +2162,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
     /// <p>Adds a resource policy to the specified response plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2245,7 +2245,7 @@ pub mod fluent_builders {
     ///
     /// <p>Used to start an incident from CloudWatch alarms, EventBridge events, or
     /// manually. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartIncident<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2448,7 +2448,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds a tag to a response plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2541,7 +2541,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2629,7 +2629,7 @@ pub mod fluent_builders {
     ///
     /// <p>Update deletion protection to either allow or deny deletion of the final Region in a
     /// replication set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeletionProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2723,7 +2723,7 @@ pub mod fluent_builders {
     /// <p>Update the details of an incident record. You can use this operation to update an
     /// incident record from the defined chat channel. For more information about using actions
     /// in chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting through chat</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIncidentRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2948,7 +2948,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRelatedItems`.
     ///
     /// <p>Add or remove related items from the related items tab of an incident record.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRelatedItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3048,7 +3048,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReplicationSet`.
     ///
     /// <p>Add or delete Regions from your replication set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReplicationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3147,7 +3147,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResponsePlan`.
     ///
     /// <p>Updates the specified response plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResponsePlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3425,7 +3425,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a timeline event. You can update events of type <code>Custom
     /// Event</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTimelineEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

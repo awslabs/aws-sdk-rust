@@ -324,7 +324,7 @@ pub mod fluent_builders {
     /// the ability to transfer files to the server. An administrator can use
     /// <code>CreateAccess</code> to limit the access to the correct set of users who need this
     /// ability.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -614,7 +614,7 @@ pub mod fluent_builders {
     /// in Amazon Web Services. When you make updates to your file transfer protocol-enabled server or when you work
     /// with users, use the service-generated <code>ServerId</code> property that is assigned to the
     /// newly created server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1096,7 +1096,7 @@ pub mod fluent_builders {
     /// user's public key, and assign the user's Amazon Web Services Identity and Access Management (IAM)
     /// role. You can also optionally add a session policy, and assign metadata with tags that can
     /// be used to group and search for users.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1424,7 +1424,7 @@ pub mod fluent_builders {
     /// Allows you to create a workflow with specified steps and step details the workflow invokes after file transfer completes.
     /// After creating a workflow, you can associate the workflow created with any transfer servers by specifying the <code>workflow-details</code> field in <code>CreateServer</code> and <code>UpdateServer</code> operations.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1616,7 +1616,7 @@ pub mod fluent_builders {
     ///
     /// <p>Allows you to delete the access specified in the <code>ServerID</code> and
     /// <code>ExternalID</code> parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1722,7 +1722,7 @@ pub mod fluent_builders {
     /// <p>Deletes the file transfer protocol-enabled server that you specify.</p>
     ///
     /// <p>No response returns from this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1792,7 +1792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSshPublicKey`.
     ///
     /// <p>Deletes a user's Secure Shell (SSH) public key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSshPublicKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1893,7 +1893,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>When you delete a user from a server, the user's information is lost.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1975,7 +1975,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkflow`.
     ///
     /// <p>Deletes the specified workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2050,7 +2050,7 @@ pub mod fluent_builders {
     ///
     /// <p>The response from this call returns the properties of the access that is associated with
     /// the <code>ServerId</code> value that was specified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2154,7 +2154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExecution`.
     ///
     /// <p>You can use <code>DescribeExecution</code> to check the details of the execution of the specified workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2237,7 +2237,7 @@ pub mod fluent_builders {
     /// server. The response contains a description of the security policy's properties. For more
     /// information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security
     /// policies</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSecurityPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2315,7 +2315,7 @@ pub mod fluent_builders {
     /// <p>The response contains a description of a server's properties. When you set
     /// <code>EndpointType</code> to VPC, the response will contain the
     /// <code>EndpointDetails</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2389,7 +2389,7 @@ pub mod fluent_builders {
     ///
     /// <p>The response from this call returns the properties of the user associated with the
     /// <code>ServerId</code> value that was specified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2471,7 +2471,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkflow`.
     ///
     /// <p>Describes the specified workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2546,7 +2546,7 @@ pub mod fluent_builders {
     ///
     /// <p>The response returns the <code>UserName</code> value, the <code>ServerId</code> value, and
     /// the name of the <code>SshPublicKeyId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportSshPublicKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2639,7 +2639,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccesses`.
     ///
     /// <p>Lists the details for all the accesses you have on your server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccesses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2735,7 +2735,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListExecutions`.
     ///
     /// <p>Lists all executions for the specified workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2868,7 +2868,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the security policies that are attached to your file transfer protocol-enabled
     /// servers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecurityPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2957,7 +2957,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the file transfer protocol-enabled servers that are associated with your Amazon Web Services
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3046,7 +3046,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify. The
     /// resource can be a user, server, or role.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3145,7 +3145,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the users for a file transfer protocol-enabled server that you specify by passing
     /// the <code>ServerId</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3243,7 +3243,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkflows`.
     ///
     /// <p>Lists all of your workflows.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkflows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3333,7 +3333,7 @@ pub mod fluent_builders {
     /// The <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are passed to the target resource during execution of a custom step of a workflow.
     /// You must include those with their callback as well as providing a status.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendWorkflowStepState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3444,7 +3444,7 @@ pub mod fluent_builders {
     /// can indicate an error condition.</p>
     ///
     /// <p>No response is returned from this call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3528,7 +3528,7 @@ pub mod fluent_builders {
     /// can indicate an error condition.</p>
     ///
     /// <p>No response is returned from this call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3601,7 +3601,7 @@ pub mod fluent_builders {
     /// Resources are users, servers, roles, and other entities.</p>
     ///
     /// <p>There is no response returned from this call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3730,7 +3730,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3879,7 +3879,7 @@ pub mod fluent_builders {
     /// (ARN). Resources are users, servers, roles, and other entities.</p>
     ///
     /// <p>No response is returned from this call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3971,7 +3971,7 @@ pub mod fluent_builders {
     ///
     /// <p>Allows you to update parameters for the access specified in the <code>ServerID</code> and
     /// <code>ExternalID</code> parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4264,7 +4264,7 @@ pub mod fluent_builders {
     ///
     /// <p>The <code>UpdateServer</code> call returns the <code>ServerId</code> of the server you
     /// updated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4691,7 +4691,7 @@ pub mod fluent_builders {
     ///
     /// <p>The response returns the <code>ServerId</code> and the <code>UserName</code> for the
     /// updated user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

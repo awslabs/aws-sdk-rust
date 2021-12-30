@@ -467,7 +467,7 @@ pub mod fluent_builders {
     ///
     /// <p>CancelImageCreation cancels the creation of Image. This operation can only be used on
     /// images in a non-terminal state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelImageCreation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -554,7 +554,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new component that can be used to build, validate, test, and assess your
     /// image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -788,7 +788,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContainerRecipe`.
     ///
     /// <p>Creates a new container recipe. Container recipes define how images are configured, tested, and assessed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainerRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1095,7 +1095,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new distribution configuration. Distribution configurations define and configure
     /// the outputs of your pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDistributionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1227,7 +1227,7 @@ pub mod fluent_builders {
     /// <p> Creates a new image. This request will create a new image along with all of the
     /// configured output resources defined in the distribution configuration. You must specify
     /// exactly one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1420,7 +1420,7 @@ pub mod fluent_builders {
     ///
     /// <p> Creates a new image pipeline. Image pipelines enable you to automate the creation and
     /// distribution of images.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImagePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1656,7 +1656,7 @@ pub mod fluent_builders {
     ///
     /// <p> Creates a new image recipe. Image recipes define how images are configured, tested, and
     /// assessed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImageRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1893,7 +1893,7 @@ pub mod fluent_builders {
     ///
     /// <p> Creates a new infrastructure configuration. An infrastructure configuration defines the
     /// environment in which your image will be built and tested.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInfrastructureConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2160,7 +2160,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteComponent`.
     ///
     /// <p> Deletes a component build version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2236,7 +2236,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContainerRecipe`.
     ///
     /// <p>Deletes a container recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContainerRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2309,7 +2309,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDistributionConfiguration`.
     ///
     /// <p> Deletes a distribution configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDistributionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2405,7 +2405,7 @@ pub mod fluent_builders {
     /// an image</a> in the <i>Amazon ECR User Guide</i>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2481,7 +2481,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteImagePipeline`.
     ///
     /// <p> Deletes an image pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImagePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2554,7 +2554,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteImageRecipe`.
     ///
     /// <p> Deletes an image recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImageRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2627,7 +2627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInfrastructureConfiguration`.
     ///
     /// <p> Deletes an infrastructure configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInfrastructureConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2705,7 +2705,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetComponent`.
     ///
     /// <p> Gets a component object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2783,7 +2783,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetComponentPolicy`.
     ///
     /// <p> Gets a component policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponentPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2856,7 +2856,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContainerRecipe`.
     ///
     /// <p>Retrieves a container recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2929,7 +2929,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContainerRecipePolicy`.
     ///
     /// <p>Retrieves the policy for a container recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerRecipePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3002,7 +3002,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDistributionConfiguration`.
     ///
     /// <p> Gets a distribution configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3080,7 +3080,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImage`.
     ///
     /// <p> Gets an image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3156,7 +3156,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImagePipeline`.
     ///
     /// <p> Gets an image pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImagePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3229,7 +3229,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImagePolicy`.
     ///
     /// <p> Gets an image policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImagePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3299,7 +3299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImageRecipe`.
     ///
     /// <p> Gets an image recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImageRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3372,7 +3372,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImageRecipePolicy`.
     ///
     /// <p> Gets an image recipe policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImageRecipePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3445,7 +3445,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInfrastructureConfiguration`.
     ///
     /// <p> Gets an infrastructure configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInfrastructureConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3525,7 +3525,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportComponent`.
     ///
     /// <p>Imports a component and transforms its data into a component document.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3766,7 +3766,7 @@ pub mod fluent_builders {
     /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
     /// wildcards.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponentBuildVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3870,7 +3870,7 @@ pub mod fluent_builders {
     /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
     /// wildcards.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4059,7 +4059,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContainerRecipes`.
     ///
     /// <p>Returns a list of container recipes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContainerRecipes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4210,7 +4210,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDistributionConfigurations`.
     ///
     /// <p>Returns a list of distribution configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4309,7 +4309,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImageBuildVersions`.
     ///
     /// <p> Returns a list of image build versions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImageBuildVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4475,7 +4475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImagePackages`.
     ///
     /// <p>List the Packages that are associated with an Image Build Version, as determined by Amazon Web Services Systems Manager Inventory at build time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImagePackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4571,7 +4571,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImagePipelineImages`.
     ///
     /// <p> Returns a list of images created by the specified pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImagePipelineImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4707,7 +4707,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImagePipelines`.
     ///
     /// <p>Returns a list of image pipelines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImagePipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4870,7 +4870,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImageRecipes`.
     ///
     /// <p> Returns a list of image recipes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImageRecipes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5019,7 +5019,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImages`.
     ///
     /// <p> Returns the list of images that you have access to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5208,7 +5208,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInfrastructureConfigurations`.
     ///
     /// <p> Returns a list of infrastructure configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInfrastructureConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5307,7 +5307,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p> Returns the list of tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5379,7 +5379,7 @@ pub mod fluent_builders {
     /// <p> Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API
     /// <code>PutComponentPolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to
     /// all principals with whom the resource is shared.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutComponentPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5462,7 +5462,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutContainerRecipePolicy`.
     ///
     /// <p>Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html) to share resources. If you call the Image Builder API <code>PutContainerImagePolicy</code>, you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html) in order for the resource to be visible to all principals with whom the resource is shared.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutContainerRecipePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5547,7 +5547,7 @@ pub mod fluent_builders {
     /// <p>Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API
     /// <code>PutImagePolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to
     /// all principals with whom the resource is shared.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutImagePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5629,7 +5629,7 @@ pub mod fluent_builders {
     /// <p> Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API
     /// <code>PutImageRecipePolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to
     /// all principals with whom the resource is shared.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutImageRecipePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5712,7 +5712,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartImagePipelineExecution`.
     ///
     /// <p> Manually triggers a pipeline to create an image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImagePipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5795,7 +5795,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p> Adds a tag to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5888,7 +5888,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p> Removes a tag from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5976,7 +5976,7 @@ pub mod fluent_builders {
     ///
     /// <p> Updates a new distribution configuration. Distribution configurations define and
     /// configure the outputs of your pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDistributionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6095,7 +6095,7 @@ pub mod fluent_builders {
     /// You must specify all of the required properties in the update request, not just
     /// the properties that have changed.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateImagePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6311,7 +6311,7 @@ pub mod fluent_builders {
     ///
     /// <p> Updates a new infrastructure configuration. An infrastructure configuration defines the
     /// environment in which your image will be built and tested.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInfrastructureConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

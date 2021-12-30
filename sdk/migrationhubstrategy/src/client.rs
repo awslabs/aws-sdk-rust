@@ -247,7 +247,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplicationComponentDetails`.
     ///
     /// <p> Retrieves details about an application component. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplicationComponentDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -324,7 +324,7 @@ pub mod fluent_builders {
     ///
     /// <p> Retrieves a list of all the recommended strategies and tools for an application component
     /// running on a server. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplicationComponentStrategies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -400,7 +400,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssessment`.
     ///
     /// <p> Retrieves the status of an on-going assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -470,7 +470,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImportFileTask`.
     ///
     /// <p> Retrieves the details about a specific import task. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImportFileTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -542,7 +542,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPortfolioPreferences`.
     ///
     /// <p> Retrieves your migration and modernization preferences. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPortfolioPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -603,7 +603,7 @@ pub mod fluent_builders {
     ///
     /// <p> Retrieves overall summary including the number of servers to rehost and the overall
     /// number of anti-patterns. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPortfolioSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -663,7 +663,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecommendationReportDetails`.
     ///
     /// <p> Retrieves detailed information about the specified recommendation report. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommendationReportDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -735,7 +735,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServerDetails`.
     ///
     /// <p> Retrieves detailed information about a specified server. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServerDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -829,7 +829,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServerStrategies`.
     ///
     /// <p> Retrieves recommended strategies and tools for the specified server. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServerStrategies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -899,7 +899,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplicationComponents`.
     ///
     /// <p> Retrieves a list of all the application components (processes). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationComponents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1044,7 +1044,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCollectors`.
     ///
     /// <p> Retrieves a list of all the installed collectors. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCollectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1128,7 +1128,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImportFileTask`.
     ///
     /// <p> Retrieves a list of all the imports performed. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImportFileTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1212,7 +1212,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServers`.
     ///
     /// <p> Returns a list of all the servers. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1354,7 +1354,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutPortfolioPreferences`.
     ///
     /// <p> Saves the specified migration and modernization preferences. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPortfolioPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1462,7 +1462,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartAssessment`.
     ///
     /// <p> Starts the assessment of an on-premises environment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1566,7 +1566,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartImportFileTask`.
     ///
     /// <p> Starts a file import. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImportFileTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1710,7 +1710,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartRecommendationReportGeneration`.
     ///
     /// <p> Starts generating a recommendation report. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRecommendationReportGeneration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1802,7 +1802,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopAssessment`.
     ///
     /// <p> Stops the assessment of an on-premises environment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1875,7 +1875,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplicationComponentConfig`.
     ///
     /// <p> Updates the configuration of an application component. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplicationComponentConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2009,7 +2009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServerConfig`.
     ///
     /// <p> Updates the configuration of the specified server. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServerConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

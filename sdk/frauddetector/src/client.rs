@@ -571,7 +571,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchCreateVariable`.
     ///
     /// <p>Creates a batch of variables.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateVariable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -665,7 +665,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetVariable`.
     ///
     /// <p>Gets a batch of variables.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetVariable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -742,7 +742,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelBatchImportJob`.
     ///
     /// <p> Cancels an in-progress batch import job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelBatchImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -814,7 +814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelBatchPredictionJob`.
     ///
     /// <p>Cancels the specified batch prediction job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelBatchPredictionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -884,7 +884,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBatchImportJob`.
     ///
     /// <p>Creates a batch import job. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBatchImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1016,7 +1016,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBatchPredictionJob`.
     ///
     /// <p>Creates a batch prediction job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBatchPredictionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1172,7 +1172,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDetectorVersion`.
     ///
     /// <p>Creates a detector version. The detector version starts in a <code>DRAFT</code> status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDetectorVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1341,7 +1341,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateModel`.
     ///
     /// <p>Creates a model using the specified model type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1465,7 +1465,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a version of the model using the specified model type and model id.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModelVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1626,7 +1626,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRule`.
     ///
     /// <p>Creates a rule for use with the specified detector. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1770,7 +1770,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVariable`.
     ///
     /// <p>Creates a variable.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVariable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1922,7 +1922,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBatchImportJob`.
     ///
     /// <p>Deletes data that was batch imported to Amazon Fraud Detector. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBatchImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1992,7 +1992,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBatchPredictionJob`.
     ///
     /// <p>Deletes a batch prediction job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBatchPredictionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2063,7 +2063,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the detector. Before deleting a detector, you must first delete all detector versions and rule versions associated with the detector.</p>
     /// <p>When you delete a detector, Amazon Fraud Detector permanently deletes the detector and the data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2134,7 +2134,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code> status.</p>
     /// <p>When you delete a detector version, Amazon Fraud Detector permanently deletes the detector and the data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDetectorVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2219,7 +2219,7 @@ pub mod fluent_builders {
     /// <p>Deletes an entity type.</p>
     /// <p>You cannot delete an entity type that is included in an event type.</p>
     /// <p>When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type and the data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEntityType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2290,7 +2290,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified event.</p>
     /// <p>When you delete an event, Amazon Fraud Detector permanently deletes that event and the event data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2383,7 +2383,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEventsByEventType`.
     ///
     /// <p>Deletes all events of a particular event type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventsByEventType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2458,7 +2458,7 @@ pub mod fluent_builders {
     /// <p>Deletes an event type.</p>
     /// <p>You cannot delete an event type that is used in a detector or a model.</p>
     /// <p>When you delete an event type, Amazon Fraud Detector permanently deletes that event type and the data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2529,7 +2529,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes a SageMaker model from Amazon Fraud Detector.</p>
     /// <p>You can remove an Amazon SageMaker model if it is not associated with a detector version. Removing a SageMaker model disconnects it from Amazon Fraud Detector, but the model remains available in SageMaker.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExternalModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2606,7 +2606,7 @@ pub mod fluent_builders {
     /// <p>You cannot delete a label assigned to an event ID. You must first delete the relevant event ID.</p>
     ///
     /// <p>When you delete a label, Amazon Fraud Detector permanently deletes that label and the data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLabel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2678,7 +2678,7 @@ pub mod fluent_builders {
     /// <p>Deletes a model.</p>
     /// <p>You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a detector version.</p>
     /// <p> When you delete a model, Amazon Fraud Detector permanently deletes that model and the data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2763,7 +2763,7 @@ pub mod fluent_builders {
     /// <p>Deletes a model version.</p>
     /// <p>You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a detector version.</p>
     /// <p> When you delete a model version, Amazon Fraud Detector permanently deletes that model version and the data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModelVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2861,7 +2861,7 @@ pub mod fluent_builders {
     /// <p>Deletes an outcome.</p>
     /// <p>You cannot delete an outcome that is used in a rule version.</p>
     /// <p>When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome and the data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOutcome<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2932,7 +2932,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p>
     /// <p>When you delete a rule, Amazon Fraud Detector permanently deletes that rule and the data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3005,7 +3005,7 @@ pub mod fluent_builders {
     /// <p>You can't delete variables that are included in an event type in Amazon Fraud Detector.</p>
     /// <p>Amazon Fraud Detector automatically deletes model output variables and SageMaker model output variables when you delete the model. You can't delete these variables manually.</p>
     /// <p>When you delete a variable, Amazon Fraud Detector permanently deletes that variable and the data is no longer stored in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVariable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3075,7 +3075,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDetector`.
     ///
     /// <p>Gets all versions for a specified detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3165,7 +3165,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeModelVersions`.
     ///
     /// <p>Gets all of the model versions for the specified model type or for the specified model type and model ID. You can also get details for a single, specified model version. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModelVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3284,7 +3284,7 @@ pub mod fluent_builders {
     /// this action retrieves a maximum of 50 records per page. If you provide a <code>maxResults</code>, the value must be between 1 and 50.
     /// To get the next page results, provide the pagination token from the <code>GetBatchImportJobsResponse</code> as part of your request.
     /// A null pagination token fetches the records from the beginning.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBatchImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3374,7 +3374,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBatchPredictionJobs`.
     ///
     /// <p>Gets all batch prediction jobs or a specific job if you specify a job ID. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 50 records per page. If you provide a maxResults, the value must be between 1 and 50. To get the next page results, provide the pagination token from the GetBatchPredictionJobsResponse as part of your request. A null pagination token fetches the records from the beginning.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBatchPredictionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3464,7 +3464,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeleteEventsByEventTypeStatus`.
     ///
     /// <p>Retrieves the status of a <code>DeleteEventsByEventType</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeleteEventsByEventTypeStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3542,7 +3542,7 @@ pub mod fluent_builders {
     /// To get the next page results, provide the pagination token from the
     /// <code>GetDetectorsResponse</code> as part of your request. A null pagination token
     /// fetches the records from the beginning. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3632,7 +3632,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDetectorVersion`.
     ///
     /// <p>Gets a particular detector version. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDetectorVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3720,7 +3720,7 @@ pub mod fluent_builders {
     /// To get the next page results, provide the pagination token from the
     /// <code>GetEntityTypesResponse</code> as part of your request. A null pagination token
     /// fetches the records from the beginning. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEntityTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3810,7 +3810,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEvent`.
     ///
     /// <p>Retrieves details of events stored with Amazon Fraud Detector. This action does not retrieve prediction results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3893,7 +3893,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEventPrediction`.
     ///
     /// <p>Evaluates an event against a detector version. If a version ID is not provided, the detector’s (<code>ACTIVE</code>) version is used.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventPrediction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4116,7 +4116,7 @@ pub mod fluent_builders {
     /// To get the next page results, provide the pagination token from the
     /// <code>GetEventTypesResponse</code> as part of your request. A null pagination token
     /// fetches the records from the beginning. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4211,7 +4211,7 @@ pub mod fluent_builders {
     /// <code>maxResults</code>, the value must be between 5 and 10. To get the next page
     /// results, provide the pagination token from the <code>GetExternalModelsResult</code> as part
     /// of your request. A null pagination token fetches the records from the beginning. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExternalModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4304,7 +4304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetKMSEncryptionKey`.
     ///
     /// <p>Gets the encryption key if a KMS key has been specified to be used to encrypt content in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKMSEncryptionKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4369,7 +4369,7 @@ pub mod fluent_builders {
     /// To get the next page results, provide the pagination token from the
     /// <code>GetGetLabelsResponse</code> as part of your request. A null pagination token
     /// fetches the records from the beginning. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLabels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4465,7 +4465,7 @@ pub mod fluent_builders {
     /// To get the next page results, provide the pagination token from the
     /// response as part of your request. A null pagination token
     /// fetches the records from the beginning.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4568,7 +4568,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetModelVersion`.
     ///
     /// <p>Gets the details of the specified model version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModelVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4669,7 +4669,7 @@ pub mod fluent_builders {
     /// between 50 and 100. To get the next page results, provide the pagination token from the
     /// <code>GetOutcomesResult</code> as part of your request. A null pagination token
     /// fetches the records from the beginning. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOutcomes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4760,7 +4760,7 @@ pub mod fluent_builders {
     ///
     /// <p>Get all rules for a detector (paginated) if <code>ruleId</code> and <code>ruleVersion</code> are not specified. Gets all rules for the detector and the <code>ruleId</code> if present (paginated). Gets a specific rule if both the <code>ruleId</code> and the <code>ruleVersion</code> are specified.</p>
     /// <p>This is a paginated API. Providing null maxResults results in retrieving maximum of 100 records per page. If you provide maxResults the value must be between 50 and 100. To get the next page result, a provide a pagination token from GetRulesResult as part of your request. Null pagination token fetches the records from the beginning.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4875,7 +4875,7 @@ pub mod fluent_builders {
     /// 50 and 100. To get the next page result, a provide a pagination token from
     /// <code>GetVariablesResult</code> as part of your request. Null pagination token
     /// fetches the records from the beginning. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVariables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4967,7 +4967,7 @@ pub mod fluent_builders {
     /// <p>Lists all tags associated with the resource. This is a paginated API. To get the next page results, provide the pagination token from the
     /// response as part of your request. A null pagination token
     /// fetches the records from the beginning. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5057,7 +5057,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutDetector`.
     ///
     /// <p>Creates or updates a detector. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5167,7 +5167,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEntityType`.
     ///
     /// <p>Creates or updates an entity type. An entity represents who is performing the event. As part of a fraud prediction, you pass the entity ID to indicate the specific entity who performed the event. An entity type classifies the entity. Example classifications include customer, merchant, or account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEntityType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5264,7 +5264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEventType`.
     ///
     /// <p>Creates or updates an event type. An event is a business activity that is evaluated for fraud risk. With Amazon Fraud Detector, you generate fraud predictions for events. An event type defines the structure for an event sent to Amazon Fraud Detector. This includes the variables sent as part of the event, the entity performing the event (such as a customer), and the labels that classify the event. Example event types include online payment transactions, account registrations, and authentications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEventType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5425,7 +5425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutExternalModel`.
     ///
     /// <p>Creates or updates an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables.  </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutExternalModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5592,7 +5592,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutKMSEncryptionKey`.
     ///
     /// <p>Specifies the KMS key to be used to encrypt content in Amazon Fraud Detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutKMSEncryptionKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5665,7 +5665,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLabel`.
     ///
     /// <p>Creates or updates label. A label classifies an event as fraudulent or legitimate. Labels are associated with event types and used to train supervised machine learning models in Amazon Fraud Detector. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLabel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5762,7 +5762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutOutcome`.
     ///
     /// <p>Creates or updates an outcome. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutOutcome<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5859,7 +5859,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendEvent`.
     ///
     /// <p>Stores events in Amazon Fraud Detector without generating fraud predictions for those events. For example, you can use <code>SendEvent</code> to upload a historical dataset, which you can then later use to train a model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6021,7 +6021,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Assigns tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6108,7 +6108,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6195,7 +6195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDetectorVersion`.
     ///
     /// <p> Updates a detector version. The detector version attributes that you can update include models, external model endpoints, rules, rule execution mode, and description. You can only update a <code>DRAFT</code> detector version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDetectorVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6359,7 +6359,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the detector version's description. You can update the metadata for any detector version (<code>DRAFT, ACTIVE,</code> or
     /// <code>INACTIVE</code>). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDetectorVersionMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6453,7 +6453,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the detector version’s status. You can perform the following promotions or
     /// demotions using <code>UpdateDetectorVersionStatus</code>: <code>DRAFT</code> to <code>ACTIVE</code>, <code>ACTIVE</code> to <code>INACTIVE</code>, and <code>INACTIVE</code> to <code>ACTIVE</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDetectorVersionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6549,7 +6549,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEventLabel`.
     ///
     /// <p>Updates the specified event with a new label.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEventLabel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6658,7 +6658,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateModel`.
     ///
     /// <p>Updates model description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6751,7 +6751,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateModelVersion`.
     ///
     /// <p>Updates a model version. Updating a model version retrains an existing model version using updated training data and produces a new minor version of the model. You can update the training data set location and data access role attributes using this action. This action creates and trains a new minor version of the model, for example version 1.01, 1.02, 1.03.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateModelVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6905,7 +6905,7 @@ pub mod fluent_builders {
     /// <p>Change <code>ACTIVE</code> to <code>INACTIVE</code>.</p>
     /// </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateModelVersionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7014,7 +7014,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRuleMetadata`.
     ///
     /// <p>Updates a rule's metadata. The description attribute can be updated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRuleMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7094,7 +7094,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRuleVersion`.
     ///
     /// <p>Updates a rule version resulting in a new rule version. Updates a rule version resulting in a new rule version (version 1, 2, 3 ...). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRuleVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7228,7 +7228,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVariable`.
     ///
     /// <p>Updates a variable.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVariable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

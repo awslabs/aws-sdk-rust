@@ -556,7 +556,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptSharedDirectory`.
     ///
     /// <p>Accepts a directory sharing request that was sent from the directory owner account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptSharedDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -638,7 +638,7 @@ pub mod fluent_builders {
     /// <p>Before you call <i>AddIpRoutes</i>, ensure that all of the required
     /// permissions have been explicitly granted through a policy. For details about what
     /// permissions are required to run the <i>AddIpRoutes</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddIpRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -880,7 +880,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddRegion`.
     ///
     /// <p>Adds two domain controllers in the specified Region for the specified directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddRegion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -977,7 +977,7 @@ pub mod fluent_builders {
     /// <p>Adds or overwrites one or more tags for the specified directory. Each directory can
     /// have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be
     /// unique to each resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1068,7 +1068,7 @@ pub mod fluent_builders {
     /// canceled. A schema extension can be canceled during any of the following states;
     /// <code>Initializing</code>, <code>CreatingSnapshot</code>, and
     /// <code>UpdatingSchema</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSchemaExtension<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1155,7 +1155,7 @@ pub mod fluent_builders {
     /// have been explicitly granted through a policy. For details about what permissions are required
     /// to run the <code>ConnectDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory Service API Permissions: Actions, Resources, and Conditions
     /// Reference</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConnectDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1307,7 +1307,7 @@ pub mod fluent_builders {
     /// <important>
     /// <p>After an alias has been created, it cannot be deleted or reused, so this operation should only be used when absolutely necessary.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1391,7 +1391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateComputer`.
     ///
     /// <p>Creates an Active Directory computer object in the specified directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComputer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1523,7 +1523,7 @@ pub mod fluent_builders {
     /// <p>Creates a conditional forwarder associated with your Amazon Web Services directory. Conditional
     /// forwarders are required in order to set up a trust relationship with another domain. The
     /// conditional forwarder points to the trusted domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConditionalForwarder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1632,7 +1632,7 @@ pub mod fluent_builders {
     /// have been explicitly granted through a policy. For details about what permissions are required
     /// to run the <code>CreateDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory Service API Permissions: Actions, Resources, and Conditions
     /// Reference</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1831,7 +1831,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a subscription to forward real-time Directory Service domain controller security
     /// logs to the specified Amazon CloudWatch log group in your Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLogSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1921,7 +1921,7 @@ pub mod fluent_builders {
     /// <p>Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required
     /// permissions have been explicitly granted through a policy. For details about what permissions
     /// are required to run the <i>CreateMicrosoftAD</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMicrosoftAD<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2081,7 +2081,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>You cannot take snapshots of AD Connector directories.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2167,7 +2167,7 @@ pub mod fluent_builders {
     /// <p>This action initiates the creation of the Amazon Web Services side of a trust relationship between an
     /// Managed Microsoft AD directory and an external domain. You can create either a forest trust or an
     /// external trust.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrust<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2329,7 +2329,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a conditional forwarder that has been set up for your Amazon Web Services
     /// directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConditionalForwarder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2418,7 +2418,7 @@ pub mod fluent_builders {
     /// have been explicitly granted through a policy. For details about what permissions are required
     /// to run the <code>DeleteDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory Service API Permissions: Actions, Resources, and Conditions
     /// Reference</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2488,7 +2488,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLogSubscription`.
     ///
     /// <p>Deletes the specified log subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLogSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2558,7 +2558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSnapshot`.
     ///
     /// <p>Deletes a directory snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2629,7 +2629,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an existing trust relationship between your Managed Microsoft AD directory and an external
     /// domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrust<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2716,7 +2716,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterCertificate`.
     ///
     /// <p>Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2799,7 +2799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterEventTopic`.
     ///
     /// <p>Removes the specified directory as a publisher to the specified Amazon SNS topic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterEventTopic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2883,7 +2883,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCertificate`.
     ///
     /// <p>Displays information about the certificate registered for secure LDAP or client certificate authentication.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2967,7 +2967,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information about the type of client authentication for the specified directory, if the type is specified. If no type is specified, information about all client authentication types that are supported for the specified directory is retrieved. Currently, only <code>SmartCard</code> is supported.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClientAuthenticationSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3074,7 +3074,7 @@ pub mod fluent_builders {
     /// <p>Obtains information about the conditional forwarders for this account.</p>
     /// <p>If no input parameters are provided for RemoteDomainNames, this request describes all
     /// conditional forwarders for the specified directory ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConditionalForwarders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3177,7 +3177,7 @@ pub mod fluent_builders {
     /// items.</p>
     /// <p>You can also specify a maximum number of return results with the <code>Limit</code>
     /// parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDirectories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3280,7 +3280,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDomainControllers`.
     ///
     /// <p>Provides information about any domain controllers in your directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomainControllers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3398,7 +3398,7 @@ pub mod fluent_builders {
     /// directory.</p>
     /// <p>If no input parameters are provided, such as DirectoryId or TopicName, this request
     /// describes all of the associations in the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventTopics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3493,7 +3493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLDAPSSettings`.
     ///
     /// <p>Describes the status of LDAP security for the specified directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLDAPSSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3596,7 +3596,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides information about the Regions that are configured for multi-Region
     /// replication.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRegions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3686,7 +3686,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSharedDirectories`.
     ///
     /// <p>Returns the shared directories in your account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSharedDirectories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3804,7 +3804,7 @@ pub mod fluent_builders {
     /// retrieve the next set of items.</p>
     /// <p>You can also specify a maximum number of return results with the <i>Limit</i>
     /// parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3919,7 +3919,7 @@ pub mod fluent_builders {
     /// <p>Obtains information about the trust relationships for this account.</p>
     /// <p>If no input parameters are provided, such as DirectoryId or TrustIds, this request
     /// describes all the trust relationships belonging to the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrusts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4036,7 +4036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableClientAuthentication`.
     ///
     /// <p>Disables alternative client authentication methods for the specified directory. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableClientAuthentication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4119,7 +4119,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableLDAPS`.
     ///
     /// <p>Deactivates LDAP secure calls for the specified directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableLDAPS<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4202,7 +4202,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disables multi-factor authentication (MFA) with the Remote Authentication Dial In
     /// User Service (RADIUS) server for an AD Connector or Microsoft AD directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableRadius<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4272,7 +4272,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableSso`.
     ///
     /// <p>Disables single-sign on for a directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableSso<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4380,7 +4380,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableClientAuthentication`.
     ///
     /// <p>Enables alternative client authentication methods for the specified directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableClientAuthentication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4469,7 +4469,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableLDAPS`.
     ///
     /// <p>Activates the switch for the specific directory to always use LDAP secure calls.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableLDAPS<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4552,7 +4552,7 @@ pub mod fluent_builders {
     ///
     /// <p>Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User
     /// Service (RADIUS) server for an AD Connector or Microsoft AD directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableRadius<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4639,7 +4639,7 @@ pub mod fluent_builders {
     /// <p>Enables single sign-on for a directory. Single sign-on allows users in your directory to
     /// access certain Amazon Web Services services from a computer joined to the directory without having to enter
     /// their credentials separately.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableSso<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4747,7 +4747,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDirectoryLimits`.
     ///
     /// <p>Obtains directory limit information for the current Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDirectoryLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4807,7 +4807,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSnapshotLimits`.
     ///
     /// <p>Obtains the manual snapshot limits for a directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSnapshotLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4877,7 +4877,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCertificates`.
     ///
     /// <p>For the specified directory, lists all the certificates registered for a secure LDAP or client certificate authentication.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4973,7 +4973,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIpRoutes`.
     ///
     /// <p>Lists the address blocks that you have added to a directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIpRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5067,7 +5067,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLogSubscriptions`.
     ///
     /// <p>Lists the active log subscriptions for the Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLogSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5163,7 +5163,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSchemaExtensions`.
     ///
     /// <p>Lists all schema extensions applied to a Microsoft AD Directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemaExtensions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5257,7 +5257,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags on a directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5347,7 +5347,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterCertificate`.
     ///
     /// <p>Registers a certificate for a secure LDAP or client certificate authentication.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5463,7 +5463,7 @@ pub mod fluent_builders {
     /// the status of your directory changes. You get notified if your directory goes from an Active
     /// status to an Impaired or Inoperable status. You also receive a notification when the directory
     /// returns to an Active status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterEventTopic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5545,7 +5545,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectSharedDirectory`.
     ///
     /// <p>Rejects a directory sharing request that was sent from the directory owner account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectSharedDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5620,7 +5620,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveIpRoutes`.
     ///
     /// <p>Removes IP address blocks from a directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveIpRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5711,7 +5711,7 @@ pub mod fluent_builders {
     /// <p>Stops all replication and removes the domain controllers from the specified Region. You
     /// cannot remove the primary Region with this operation. Instead, use the
     /// <code>DeleteDirectory</code> API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveRegion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5781,7 +5781,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTagsFromResource`.
     ///
     /// <p>Removes tags from a directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5885,7 +5885,7 @@ pub mod fluent_builders {
     /// Guide</i>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetUserPassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5982,7 +5982,7 @@ pub mod fluent_builders {
     /// progress of the restore operation by calling the <a>DescribeDirectories</a> operation with
     /// the directory identifier. When the <b>DirectoryDescription.Stage</b> value changes to
     /// <code>Active</code>, the restore operation is complete.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreFromSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6064,7 +6064,7 @@ pub mod fluent_builders {
     /// or outside of the organization (<code>HANDSHAKE</code>).</p>
     /// <p>The <code>ShareNotes</code> parameter is only used when <code>HANDSHAKE</code> is called,
     /// which sends a directory sharing request to the directory consumer. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ShareDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6180,7 +6180,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartSchemaExtension`.
     ///
     /// <p>Applies a schema extension to a Microsoft AD directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSchemaExtension<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6295,7 +6295,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UnshareDirectory`.
     ///
     /// <p>Stops the directory sharing between the directory owner and consumer accounts. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnshareDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6383,7 +6383,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a conditional forwarder that has been set up for your Amazon Web Services
     /// directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConditionalForwarder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6493,7 +6493,7 @@ pub mod fluent_builders {
     /// be added or removed. It may take up to 45 minutes for any new domain controllers to become
     /// fully active once the requested number of domain controllers is updated. During this time, you
     /// cannot make another update request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNumberOfDomainControllers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6576,7 +6576,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the Remote Authentication Dial In User Service (RADIUS) server information
     /// for an AD Connector or Microsoft AD directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRadius<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6664,7 +6664,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the trust that has been set up between your Managed Microsoft AD directory and an
     /// self-managed Active Directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrust<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6750,7 +6750,7 @@ pub mod fluent_builders {
     /// relationships.</p>
     /// <p>This action verifies a trust relationship between your Managed Microsoft AD directory and an
     /// external domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifyTrust<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

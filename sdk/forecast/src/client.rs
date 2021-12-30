@@ -478,7 +478,7 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>When upgrading or retraining a predictor, only specify values for the
     /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAutoPredictor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -835,7 +835,7 @@ pub mod fluent_builders {
     /// <p>The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import
     /// training data. Use the <a>DescribeDataset</a> operation to get the status.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1066,7 +1066,7 @@ pub mod fluent_builders {
     /// <p>The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you can
     /// use the dataset group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1266,7 +1266,7 @@ pub mod fluent_builders {
     ///
     /// <p>To get a list of all your dataset import jobs, filtered by specified criteria, use the
     /// <a>ListDatasetImportJobs</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1675,7 +1675,7 @@ pub mod fluent_builders {
     /// points.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExplainability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1932,7 +1932,7 @@ pub mod fluent_builders {
     /// <p>The <code>Status</code> of the export job must be <code>ACTIVE</code> before you
     /// can access the export in your Amazon S3 bucket. To get the status, use the <a>DescribeExplainabilityExport</a> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExplainabilityExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2133,7 +2133,7 @@ pub mod fluent_builders {
     /// or export the forecast. Use the <a>DescribeForecast</a> operation to get the
     /// status.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2322,7 +2322,7 @@ pub mod fluent_builders {
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
     /// you can access the forecast in your Amazon S3 bucket. To get the status, use the <a>DescribeForecastExportJob</a> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateForecastExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2556,7 +2556,7 @@ pub mod fluent_builders {
     /// predictor must be <code>ACTIVE</code>, signifying that training has completed. To get the
     /// status, use the <a>DescribePredictor</a> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePredictor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3066,7 +3066,7 @@ pub mod fluent_builders {
     /// <p>The <code>Status</code> of the export job must be <code>ACTIVE</code> before
     /// you can access the export in your Amazon S3 bucket. To get the status, use the <a>DescribePredictorBacktestExportJob</a> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePredictorBacktestExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3259,7 +3259,7 @@ pub mod fluent_builders {
     /// In order to update the dataset group, use the
     /// operation, omitting the deleted dataset's ARN.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3332,7 +3332,7 @@ pub mod fluent_builders {
     /// You can only delete dataset groups that have a status of <code>ACTIVE</code>,
     /// <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
     /// <p>This operation deletes only the dataset group, not the datasets in the group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3407,7 +3407,7 @@ pub mod fluent_builders {
     /// <p>Deletes a dataset import job created using the <a>CreateDatasetImportJob</a>
     /// operation. You can delete only dataset import jobs that have a status of <code>ACTIVE</code>
     /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeDatasetImportJob</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3482,7 +3482,7 @@ pub mod fluent_builders {
     /// <p>Deletes an Explainability resource.</p>
     /// <p>You can delete only predictor that have a status of <code>ACTIVE</code> or
     /// <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeExplainability</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExplainability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3555,7 +3555,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteExplainabilityExport`.
     ///
     /// <p>Deletes an Explainability export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExplainabilityExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3635,7 +3635,7 @@ pub mod fluent_builders {
     /// To get the status, use the <a>DescribeForecast</a> operation.</p>
     /// <p>You can't delete a forecast while it is being exported. After a forecast is deleted, you
     /// can no longer query the forecast.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3707,7 +3707,7 @@ pub mod fluent_builders {
     /// <p>Deletes a forecast export job created using the <a>CreateForecastExportJob</a>
     /// operation. You can delete only export jobs that have a status of <code>ACTIVE</code> or
     /// <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeForecastExportJob</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteForecastExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3785,7 +3785,7 @@ pub mod fluent_builders {
     /// <p>Deletes a predictor created using the <a>CreatePredictor</a> operation. You can
     /// delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
     /// To get the status, use the <a>DescribePredictor</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePredictor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3858,7 +3858,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePredictorBacktestExportJob`.
     ///
     /// <p>Deletes a predictor backtest export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePredictorBacktestExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3967,7 +3967,7 @@ pub mod fluent_builders {
     /// <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will not
     /// delete datasets or exported files stored in Amazon S3. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceTree<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4039,7 +4039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAutoPredictor`.
     ///
     /// <p>Describes a predictor created using the CreateAutoPredictor operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutoPredictor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4132,7 +4132,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4226,7 +4226,7 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4333,7 +4333,7 @@ pub mod fluent_builders {
     /// <code>Message</code> - If an error occurred, information about the error.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4406,7 +4406,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExplainability`.
     ///
     /// <p>Describes an Explainability resource created using the <a>CreateExplainability</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExplainability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4479,7 +4479,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExplainabilityExport`.
     ///
     /// <p>Describes an Explainability export created using the <a>CreateExplainabilityExport</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExplainabilityExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4583,7 +4583,7 @@ pub mod fluent_builders {
     /// <code>Message</code> - If an error occurred, information about the error.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4677,7 +4677,7 @@ pub mod fluent_builders {
     /// <code>Message</code> - If an error occurred, information about the error.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeForecastExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4792,7 +4792,7 @@ pub mod fluent_builders {
     /// <code>Message</code> - If an error occurred, information about the error.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePredictor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4889,7 +4889,7 @@ pub mod fluent_builders {
     /// <code>Message</code> (if an error occurred)</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePredictorBacktestExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4986,7 +4986,7 @@ pub mod fluent_builders {
     /// <code>ACTIVE</code>, signifying that training has completed. To get the status, use the
     /// <a>DescribePredictor</a> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccuracyMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5062,7 +5062,7 @@ pub mod fluent_builders {
     /// operation. For each dataset group, this operation returns a summary of its properties,
     /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by
     /// using the dataset group ARN with the <a>DescribeDatasetGroup</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5149,7 +5149,7 @@ pub mod fluent_builders {
     /// summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the
     /// complete set of properties by using the ARN with the <a>DescribeDatasetImportJob</a> operation. You can filter the list by providing an array of <a>Filter</a>
     /// objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5310,7 +5310,7 @@ pub mod fluent_builders {
     /// <p>Returns a list of datasets created using the <a>CreateDataset</a> operation.
     /// For each dataset, a summary of its properties, including its Amazon Resource Name (ARN), is
     /// returned. To retrieve the complete set of properties, use the ARN with the <a>DescribeDataset</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5398,7 +5398,7 @@ pub mod fluent_builders {
     /// objects.</p>
     /// <p>To retrieve the complete set of properties for a particular Explainability resource,
     /// use the ARN with the <a>DescribeExplainability</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExplainabilities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5546,7 +5546,7 @@ pub mod fluent_builders {
     /// for each Explainability export. You can filter the list using an array of <a>Filter</a> objects.</p>
     /// <p>To retrieve the complete set of properties for a particular Explainability export, use
     /// the ARN with the <a>DescribeExplainability</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExplainabilityExports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5694,7 +5694,7 @@ pub mod fluent_builders {
     /// returns a summary of its properties, including its Amazon Resource Name (ARN). To retrieve the
     /// complete set of properties, use the ARN with the <a>DescribeForecastExportJob</a>
     /// operation. You can filter the list using an array of <a>Filter</a> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListForecastExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5859,7 +5859,7 @@ pub mod fluent_builders {
     /// Resource Name (ARN). To retrieve the complete set of properties, specify the ARN with the
     /// <a>DescribeForecast</a> operation. You can filter the list using an array of
     /// <a>Filter</a> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListForecasts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6019,7 +6019,7 @@ pub mod fluent_builders {
     /// for each backtest export job. You can filter the list using an array of <a>Filter</a> objects.</p>
     /// <p>To retrieve the complete set of properties for a particular backtest export job, use the
     /// ARN with the <a>DescribePredictorBacktestExportJob</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPredictorBacktestExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6172,7 +6172,7 @@ pub mod fluent_builders {
     /// its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the
     /// ARN with the <a>DescribePredictor</a> operation. You can filter the list using an
     /// array of <a>Filter</a> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPredictors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6329,7 +6329,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for an Amazon Forecast resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6421,7 +6421,7 @@ pub mod fluent_builders {
     /// <p>Predictor Backtest Export Job</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6497,7 +6497,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are also deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6632,7 +6632,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes the specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6724,7 +6724,7 @@ pub mod fluent_builders {
     /// use the dataset group to create a predictor. Use the <a>DescribeDatasetGroup</a>
     /// operation to get the status.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

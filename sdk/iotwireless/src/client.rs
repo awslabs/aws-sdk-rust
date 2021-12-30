@@ -772,7 +772,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateAwsAccountWithPartnerAccount`.
     ///
     /// <p>Associates a partner account with your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAwsAccountWithPartnerAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -877,7 +877,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateMulticastGroupWithFuotaTask`.
     ///
     /// <p>Associate a multicast group with a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateMulticastGroupWithFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -962,7 +962,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWirelessDeviceWithFuotaTask`.
     ///
     /// <p>Associate a wireless device with a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWirelessDeviceWithFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1047,7 +1047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWirelessDeviceWithMulticastGroup`.
     ///
     /// <p>Associates a wireless device with a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWirelessDeviceWithMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1132,7 +1132,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWirelessDeviceWithThing`.
     ///
     /// <p>Associates a wireless device with a thing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWirelessDeviceWithThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1212,7 +1212,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWirelessGatewayWithCertificate`.
     ///
     /// <p>Associates a wireless gateway with a certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWirelessGatewayWithCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1297,7 +1297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWirelessGatewayWithThing`.
     ///
     /// <p>Associates a wireless gateway with a thing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWirelessGatewayWithThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1377,7 +1377,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelMulticastGroupSession`.
     ///
     /// <p>Cancels an existing multicast group session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelMulticastGroupSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1447,7 +1447,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDestination`.
     ///
     /// <p>Creates a new destination that maps a device message to an AWS IoT rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1590,7 +1590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeviceProfile`.
     ///
     /// <p>Creates a new device profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeviceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1703,7 +1703,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFuotaTask`.
     ///
     /// <p>Creates a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1852,7 +1852,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMulticastGroup`.
     ///
     /// <p>Creates a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1979,7 +1979,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateServiceProfile`.
     ///
     /// <p>Creates a new service profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServiceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2092,7 +2092,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWirelessDevice`.
     ///
     /// <p>Provisions a wireless device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2241,7 +2241,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWirelessGateway`.
     ///
     /// <p>Provisions a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWirelessGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2364,7 +2364,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWirelessGatewayTask`.
     ///
     /// <p>Creates a task for a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWirelessGatewayTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2452,7 +2452,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWirelessGatewayTaskDefinition`.
     ///
     /// <p>Creates a gateway task definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWirelessGatewayTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2577,7 +2577,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDestination`.
     ///
     /// <p>Deletes a destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2647,7 +2647,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeviceProfile`.
     ///
     /// <p>Deletes a device profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeviceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2717,7 +2717,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFuotaTask`.
     ///
     /// <p>Deletes a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2787,7 +2787,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMulticastGroup`.
     ///
     /// <p>Deletes a multicast group if it is not in use by a fuota task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2857,7 +2857,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteServiceProfile`.
     ///
     /// <p>Deletes a service profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2927,7 +2927,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWirelessDevice`.
     ///
     /// <p>Deletes a wireless device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2997,7 +2997,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWirelessGateway`.
     ///
     /// <p>Deletes a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWirelessGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3067,7 +3067,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWirelessGatewayTask`.
     ///
     /// <p>Deletes a wireless gateway task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWirelessGatewayTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3137,7 +3137,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWirelessGatewayTaskDefinition`.
     ///
     /// <p>Deletes a wireless gateway task definition. Deleting this task definition does not affect tasks that are currently in progress.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWirelessGatewayTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3209,7 +3209,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateAwsAccountFromPartnerAccount`.
     ///
     /// <p>Disassociates your AWS account from a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, disassociates your AWS account from all partner accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateAwsAccountFromPartnerAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3297,7 +3297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMulticastGroupFromFuotaTask`.
     ///
     /// <p>Disassociates a multicast group from a fuota task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMulticastGroupFromFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3382,7 +3382,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromFuotaTask`.
     ///
     /// <p>Disassociates a wireless device from a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWirelessDeviceFromFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3467,7 +3467,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromMulticastGroup`.
     ///
     /// <p>Disassociates a wireless device from a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWirelessDeviceFromMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3552,7 +3552,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromThing`.
     ///
     /// <p>Disassociates a wireless device from its currently associated thing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWirelessDeviceFromThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3624,7 +3624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWirelessGatewayFromCertificate`.
     ///
     /// <p>Disassociates a wireless gateway from its currently associated certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWirelessGatewayFromCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3696,7 +3696,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWirelessGatewayFromThing`.
     ///
     /// <p>Disassociates a wireless gateway from its currently associated thing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWirelessGatewayFromThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3768,7 +3768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDestination`.
     ///
     /// <p>Gets information about a destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3838,7 +3838,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceProfile`.
     ///
     /// <p>Gets information about a device profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3908,7 +3908,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFuotaTask`.
     ///
     /// <p>Gets information about a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3979,7 +3979,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be
     /// for wireless device log options or wireless gateway log options.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLogLevelsByResourceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4039,7 +4039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMulticastGroup`.
     ///
     /// <p>Gets information about a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4109,7 +4109,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMulticastGroupSession`.
     ///
     /// <p>Gets information about a multicast group session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMulticastGroupSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4179,7 +4179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkAnalyzerConfiguration`.
     ///
     /// <p>Get NetworkAnalyzer configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkAnalyzerConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4252,7 +4252,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPartnerAccount`.
     ///
     /// <p>Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, returns all partner accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPartnerAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4338,7 +4338,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceEventConfiguration`.
     ///
     /// <p>Get the event configuration for a particular resource identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceEventConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4438,7 +4438,7 @@ pub mod fluent_builders {
     ///
     /// <p>Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for
     /// a wireless device or a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceLogLevel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4526,7 +4526,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceEndpoint`.
     ///
     /// <p>Gets the account-specific endpoint for Configuration and Update Server (CUPS) protocol or LoRaWAN Network Server (LNS) connections.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4599,7 +4599,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceProfile`.
     ///
     /// <p>Gets information about a service profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4669,7 +4669,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessDevice`.
     ///
     /// <p>Gets information about a wireless device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4752,7 +4752,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessDeviceStatistics`.
     ///
     /// <p>Gets operating information about a wireless device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessDeviceStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4825,7 +4825,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGateway`.
     ///
     /// <p>Gets information about a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4908,7 +4908,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGatewayCertificate`.
     ///
     /// <p>Gets the ID of the certificate that is currently associated with a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGatewayCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4978,7 +4978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGatewayFirmwareInformation`.
     ///
     /// <p>Gets the firmware version and other information about a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGatewayFirmwareInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5050,7 +5050,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGatewayStatistics`.
     ///
     /// <p>Gets operating information about a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGatewayStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5123,7 +5123,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGatewayTask`.
     ///
     /// <p>Gets information about a wireless gateway task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGatewayTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5193,7 +5193,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGatewayTaskDefinition`.
     ///
     /// <p>Gets information about a wireless gateway task definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGatewayTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5263,7 +5263,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDestinations`.
     ///
     /// <p>Lists the destinations registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5343,7 +5343,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeviceProfiles`.
     ///
     /// <p>Lists the device profiles registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5423,7 +5423,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFuotaTasks`.
     ///
     /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFuotaTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5503,7 +5503,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMulticastGroups`.
     ///
     /// <p>Lists the multicast groups registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMulticastGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5583,7 +5583,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMulticastGroupsByFuotaTask`.
     ///
     /// <p>List all multicast groups associated with a fuota task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMulticastGroupsByFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5673,7 +5673,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPartnerAccounts`.
     ///
     /// <p>Lists the partner accounts associated with your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPartnerAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5753,7 +5753,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceProfiles`.
     ///
     /// <p>Lists the service profiles registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5833,7 +5833,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags (metadata) you have assigned to the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5903,7 +5903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWirelessDevices`.
     ///
     /// <p>Lists the wireless devices registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWirelessDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6061,7 +6061,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWirelessGateways`.
     ///
     /// <p>Lists the wireless gateways registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWirelessGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6141,7 +6141,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWirelessGatewayTaskDefinitions`.
     ///
     /// <p>List the wireless gateway tasks definitions registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWirelessGatewayTaskDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6240,7 +6240,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway
     /// or a wireless device. A limit of 200 log level override can be set per account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourceLogLevel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6338,7 +6338,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetAllResourceLogLevels`.
     ///
     /// <p>Removes the log-level overrides for all resources; both wireless devices and wireless gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetAllResourceLogLevels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6399,7 +6399,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for
     /// a wireless device or a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetResourceLogLevel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6487,7 +6487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendDataToMulticastGroup`.
     ///
     /// <p>Sends the specified data to a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendDataToMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6583,7 +6583,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendDataToWirelessDevice`.
     ///
     /// <p>Sends a decrypted application data frame to a device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendDataToWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6686,7 +6686,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
     ///
     /// <p>Starts a bulk association of all qualifying wireless devices with a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBulkAssociateWirelessDeviceWithMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6777,7 +6777,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBulkDisassociateWirelessDeviceFromMulticastGroup`.
     ///
     /// <p>Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroup<C = aws_smithy_client::erase::DynConnector, M= crate::middleware::DefaultMiddleware, R= aws_smithy_client::retry::Standard> {
                             handle: std::sync::Arc<super::Handle<C, M, R>>,
                             inner: crate::input::start_bulk_disassociate_wireless_device_from_multicast_group_input::Builder
@@ -6863,7 +6863,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFuotaTask`.
     ///
     /// <p>Starts a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6946,7 +6946,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartMulticastGroupSession`.
     ///
     /// <p>Starts a multicast group session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMulticastGroupSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7029,7 +7029,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds a tag to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7116,7 +7116,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestWirelessDevice`.
     ///
     /// <p>Simulates a provisioned device by sending an uplink data payload of <code>Hello</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7186,7 +7186,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7273,7 +7273,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDestination`.
     ///
     /// <p>Updates properties of a destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7386,7 +7386,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFuotaTask`.
     ///
     /// <p>Updates properties of a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7516,7 +7516,7 @@ pub mod fluent_builders {
     ///
     /// <p>Set default log level, or log levels by resource types. This can be for wireless device log options or
     /// wireless gateways log options and is used to control the log messages that'll be displayed in CloudWatch.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLogLevelsByResourceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7629,7 +7629,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMulticastGroup`.
     ///
     /// <p>Updates properties of a multicast group session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7732,7 +7732,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNetworkAnalyzerConfiguration`.
     ///
     /// <p>Update NetworkAnalyzer configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNetworkAnalyzerConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7891,7 +7891,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePartnerAccount`.
     ///
     /// <p>Updates properties of a partner account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePartnerAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7990,7 +7990,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResourceEventConfiguration`.
     ///
     /// <p>Update the event configuration for a particular resource identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceEventConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8118,7 +8118,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWirelessDevice`.
     ///
     /// <p>Updates properties of a wireless device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8234,7 +8234,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWirelessGateway`.
     ///
     /// <p>Updates properties of a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWirelessGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

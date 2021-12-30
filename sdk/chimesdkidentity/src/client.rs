@@ -282,7 +282,7 @@ pub mod fluent_builders {
     /// Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports
     /// idempotency behavior as described in the AWS API Standard.</p>
     /// <p>identity</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -408,7 +408,7 @@ pub mod fluent_builders {
     ///
     /// <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code>
     /// role.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -495,7 +495,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a
     /// unique <code>appInstanceUserId</code> and <code>Name</code> for that user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -631,7 +631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppInstance`.
     ///
     /// <p>Deletes an <code>AppInstance</code> and all associated data asynchronously.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -705,7 +705,7 @@ pub mod fluent_builders {
     ///
     /// <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action
     /// does not delete the user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -791,7 +791,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppInstanceUser`.
     ///
     /// <p>Deletes an <code>AppInstanceUser</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -864,7 +864,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterAppInstanceUserEndpoint`.
     ///
     /// <p>Deregisters an <code>AppInstanceUserEndpoint</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterAppInstanceUserEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -947,7 +947,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstance`.
     ///
     /// <p>Returns the full details of an <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1020,7 +1020,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstanceAdmin`.
     ///
     /// <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1106,7 +1106,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstanceUser`.
     ///
     /// <p>Returns the full details of an <code>AppInstanceUser</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1179,7 +1179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstanceUserEndpoint`.
     ///
     /// <p>Returns the full details of an <code>AppInstanceUserEndpoint</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstanceUserEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1262,7 +1262,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppInstanceRetentionSettings`.
     ///
     /// <p>Gets the retention settings for an <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppInstanceRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1335,7 +1335,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppInstanceAdmins`.
     ///
     /// <p>Returns a list of the administrators in the <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstanceAdmins<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1431,7 +1431,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS
     /// account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1513,7 +1513,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppInstanceUserEndpoints`.
     ///
     /// <p>Lists all the <code>AppInstanceUserEndpoints</code> created under a single <code>AppInstanceUser</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstanceUserEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1607,7 +1607,7 @@ pub mod fluent_builders {
     ///
     /// <p>List all <code>AppInstanceUsers</code> created under a single
     /// <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstanceUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1700,7 +1700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags applied to an Amazon Chime SDK identity resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1771,7 +1771,7 @@ pub mod fluent_builders {
     ///
     /// <p>Sets the amount of time in days that a given <code>AppInstance</code> retains
     /// data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAppInstanceRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1860,7 +1860,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterAppInstanceUserEndpoint`.
     ///
     /// <p>Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The endpoint receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterAppInstanceUserEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2037,7 +2037,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies the specified tags to the specified Amazon Chime SDK identity resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2124,7 +2124,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified Amazon Chime SDK identity resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2211,7 +2211,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAppInstance`.
     ///
     /// <p>Updates <code>AppInstance</code> metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2305,7 +2305,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the details of an <code>AppInstanceUser</code>. You can update names and
     /// metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2398,7 +2398,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAppInstanceUserEndpoint`.
     ///
     /// <p>Updates the details of an <code>AppInstanceUserEndpoint</code>. You can update the name and <code>AllowMessage</code> values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppInstanceUserEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

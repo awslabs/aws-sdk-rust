@@ -633,7 +633,7 @@ pub mod fluent_builders {
     /// Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
     /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -720,7 +720,7 @@ pub mod fluent_builders {
     /// <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelEnvironmentDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -807,7 +807,7 @@ pub mod fluent_builders {
     /// state is <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelServiceInstanceDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -904,7 +904,7 @@ pub mod fluent_builders {
     /// state is <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelServicePipelineDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -990,7 +990,7 @@ pub mod fluent_builders {
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the
     /// <i>Proton Administrator Guide.</i>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1218,7 +1218,7 @@ pub mod fluent_builders {
     /// <p>An environment account connection is a secure bi-directional connection between a <i>management account</i> and an
     /// <i>environment account</i> that maintains authorization and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
     /// guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1366,7 +1366,7 @@ pub mod fluent_builders {
     /// <code>CUSTOMER_MANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register and publish an environment template</a> in the <i>Proton Administrator Guide</i>.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1501,7 +1501,7 @@ pub mod fluent_builders {
     /// <p>Create a new major or minor version of an environment template. A major version of an environment template is a version that
     /// <i>isn't</i> backwards compatible. A minor version of an environment template is a version that's backwards compatible within its
     /// major version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironmentTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1645,7 +1645,7 @@ pub mod fluent_builders {
     /// <p>Create and register a link to a repository that can be used with pull request provisioning or template sync configurations. For more
     /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template bundles</a> and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template sync configurations</a> in the <i>Proton
     /// Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1757,7 +1757,7 @@ pub mod fluent_builders {
     /// pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a> in the
     /// <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
     /// in the <i>Proton User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1964,7 +1964,7 @@ pub mod fluent_builders {
     /// they provide a link to their source code repository. Proton then deploys and manages the infrastructure defined by the selected service
     /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
     /// Templates</a> in the <i>Proton Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2104,7 +2104,7 @@ pub mod fluent_builders {
     ///
     /// <p>Create a new major or minor version of a service template. A major version of a service template is a version that <i>isn't</i>
     /// backward compatible. A minor version of a service template is a version that's backward compatible within its major version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServiceTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2271,7 +2271,7 @@ pub mod fluent_builders {
     /// detects a template bundle change, a new minor or major version of its template is created, if the version doesn’t already exist. For more
     /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template sync configurations</a> in
     /// the <i>Proton Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTemplateSyncConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2405,7 +2405,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEnvironment`.
     ///
     /// <p>Delete an environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2480,7 +2480,7 @@ pub mod fluent_builders {
     /// You're responsible for cleaning up provisioned resources that remain without an environment connection.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
     /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2552,7 +2552,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEnvironmentTemplate`.
     ///
     /// <p>If no other major or minor versions of an environment template exist, delete the environment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2627,7 +2627,7 @@ pub mod fluent_builders {
     /// <p>Delete a minor version of an environment template if it <i>isn't</i> the <code>Recommended</code> version. Delete a
     /// <code>Recommended</code> minor version of the environment template if no other minor versions of the environment template exist. A minor version
     /// of an environment template is a version that's backward compatible.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironmentTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2726,7 +2726,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRepository`.
     ///
     /// <p>De-register and unlink your repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2809,7 +2809,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteService`.
     ///
     /// <p>Delete a service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2879,7 +2879,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteServiceTemplate`.
     ///
     /// <p>If no other major or minor versions of the service template exist, delete the service template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2954,7 +2954,7 @@ pub mod fluent_builders {
     /// <p>Delete a minor version of a service template if it's not the <code>Recommended</code> version. Delete a <code>Recommended</code> minor version
     /// of the service template if no other minor versions of the service template exist. A minor version of a service template is a version that's
     /// backwards compatible.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3053,7 +3053,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTemplateSyncConfig`.
     ///
     /// <p>Delete a template sync configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTemplateSyncConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3139,7 +3139,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAccountSettings`.
     ///
     /// <p>Get detail data for the Proton pipeline service role.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3199,7 +3199,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironment`.
     ///
     /// <p>Get detail data for an environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3271,7 +3271,7 @@ pub mod fluent_builders {
     /// <p>In an environment account, view the detail data for an environment account connection.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
     /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3341,7 +3341,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironmentTemplate`.
     ///
     /// <p>Get detail data for an environment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3411,7 +3411,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironmentTemplateVersion`.
     ///
     /// <p>View detail data for a major or minor version of an environment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironmentTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3510,7 +3510,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRepository`.
     ///
     /// <p>Get detail data for a repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3593,7 +3593,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRepositorySyncStatus`.
     ///
     /// <p>Get the repository sync status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepositorySyncStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3699,7 +3699,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetService`.
     ///
     /// <p>Get detail data for a service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3770,7 +3770,7 @@ pub mod fluent_builders {
     ///
     /// <p>Get detail data for a service instance. A service instance is an instantiation of service template, which is running in a specific
     /// environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3850,7 +3850,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceTemplate`.
     ///
     /// <p>Get detail data for a service template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3920,7 +3920,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceTemplateVersion`.
     ///
     /// <p>View detail data for a major or minor version of a service template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4019,7 +4019,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTemplateSyncConfig`.
     ///
     /// <p>Get detail data for a template sync configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTemplateSyncConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4105,7 +4105,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTemplateSyncStatus`.
     ///
     /// <p>Get the status of a template sync.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTemplateSyncStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4206,7 +4206,7 @@ pub mod fluent_builders {
     /// <p>View a list of environment account connections.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
     /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentAccountConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4338,7 +4338,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentOutputs`.
     ///
     /// <p>List the infrastructure as code outputs for your environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentOutputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4423,7 +4423,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentProvisionedResources`.
     ///
     /// <p>List the provisioned resources for your environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentProvisionedResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4510,7 +4510,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironments`.
     ///
     /// <p>List environments with detail data summaries.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4612,7 +4612,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentTemplates`.
     ///
     /// <p>List environment templates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4694,7 +4694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentTemplateVersions`.
     ///
     /// <p>List major or minor versions of an environment template with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4806,7 +4806,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRepositories`.
     ///
     /// <p>List repositories with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRepositories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4888,7 +4888,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRepositorySyncDefinitions`.
     ///
     /// <p>List repository sync definitions with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRepositorySyncDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4996,7 +4996,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceInstanceOutputs`.
     ///
     /// <p>View a list service instance infrastructure as code outputs with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceInstanceOutputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5089,7 +5089,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceInstanceProvisionedResources`.
     ///
     /// <p>List provisioned resources for a service instance with details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceInstanceProvisionedResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5186,7 +5186,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceInstances`.
     ///
     /// <p>List service instances with summaries of detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5278,7 +5278,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServicePipelineOutputs`.
     ///
     /// <p>View a list service pipeline infrastructure as code outputs with detail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServicePipelineOutputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5358,7 +5358,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServicePipelineProvisionedResources`.
     ///
     /// <p>List provisioned resources for a service and pipeline with details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServicePipelineProvisionedResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5442,7 +5442,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServices`.
     ///
     /// <p>List services with summaries of detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5524,7 +5524,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceTemplates`.
     ///
     /// <p>List service templates with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5606,7 +5606,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceTemplateVersions`.
     ///
     /// <p>List major or minor versions of a service template with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5718,7 +5718,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List tags for a resource. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5816,7 +5816,7 @@ pub mod fluent_builders {
     /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
     /// Previews.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyResourceDeploymentStatusChange<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5949,7 +5949,7 @@ pub mod fluent_builders {
     /// <p>You <i>can’t</i> reject an environment account connection that is connected to an environment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
     /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6021,7 +6021,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tag a resource. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6108,7 +6108,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove a tag from a resource. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6195,7 +6195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAccountSettings`.
     ///
     /// <p>Update the Proton service pipeline role or repository settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6358,7 +6358,7 @@ pub mod fluent_builders {
     /// (optional).</p>
     /// </dd>
     /// </dl>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6623,7 +6623,7 @@ pub mod fluent_builders {
     /// <p>In an environment account, update an environment account connection to use a new IAM role.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
     /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6705,7 +6705,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEnvironmentTemplate`.
     ///
     /// <p>Update an environment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6795,7 +6795,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEnvironmentTemplateVersion`.
     ///
     /// <p>Update a major or minor version of an environment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironmentTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6922,7 +6922,7 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Use the <code>description</code> parameter to modify the description.</p>
     /// <p>Edit the <code>spec</code> parameter to add or delete instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7054,7 +7054,7 @@ pub mod fluent_builders {
     /// (optional).</p>
     /// </dd>
     /// </dl>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7291,7 +7291,7 @@ pub mod fluent_builders {
     /// (optional).</p>
     /// </dd>
     /// </dl>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServicePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7482,7 +7482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServiceTemplate`.
     ///
     /// <p>Update a service template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7572,7 +7572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServiceTemplateVersion`.
     ///
     /// <p>Update a major or minor version of a service template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7716,7 +7716,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTemplateSyncConfig`.
     ///
     /// <p>Update template sync configuration parameters, except for the <code>templateName</code> and <code>templateType</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTemplateSyncConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

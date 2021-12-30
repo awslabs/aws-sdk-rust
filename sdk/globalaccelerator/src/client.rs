@@ -482,7 +482,7 @@ pub mod fluent_builders {
     /// destinations to receive traffic, or to specify individual port mappings that can receive
     /// traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
     /// AllowCustomRoutingTraffic</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddCustomRoutingEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -583,7 +583,7 @@ pub mod fluent_builders {
     /// WithdrawByoipCidr</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
     /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdvertiseByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -660,7 +660,7 @@ pub mod fluent_builders {
     /// outside of the range that you configured for the endpoint group.</p>
     /// <p>After you make changes, you can verify that the updates are complete by checking the status of your
     /// accelerator: the status changes from IN_PROGRESS to DEPLOYED.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllowCustomRoutingTraffic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -817,7 +817,7 @@ pub mod fluent_builders {
     /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the
     /// US West (Oregon) Region to create or update accelerators.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -994,7 +994,7 @@ pub mod fluent_builders {
     /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the
     /// US West (Oregon) Region to create or update accelerators.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomRoutingAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1164,7 +1164,7 @@ pub mod fluent_builders {
     /// <p>Create an endpoint group for the specified listener for a custom routing accelerator.
     /// An endpoint group is a collection of endpoints in one AWS
     /// Region. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomRoutingEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1289,7 +1289,7 @@ pub mod fluent_builders {
     ///
     /// <p>Create a listener to process inbound connections from clients to a custom routing accelerator.
     /// Connections arrive to assigned static IP addresses on the port range that you specify. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomRoutingListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1399,7 +1399,7 @@ pub mod fluent_builders {
     ///
     /// <p>Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one AWS
     /// Region. A resource must be valid and active when you add it as an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1637,7 +1637,7 @@ pub mod fluent_builders {
     ///
     /// <p>Create a listener to process inbound connections from clients to an accelerator. Connections arrive to assigned static
     /// IP addresses on a port, port range, or list of port ranges that you specify. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1800,7 +1800,7 @@ pub mod fluent_builders {
     /// see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication and Access Control</a> in
     /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1886,7 +1886,7 @@ pub mod fluent_builders {
     /// see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication and Access Control</a> in
     /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomRoutingAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1959,7 +1959,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCustomRoutingEndpointGroup`.
     ///
     /// <p>Delete an endpoint group from a listener for a custom routing accelerator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomRoutingEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2032,7 +2032,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCustomRoutingListener`.
     ///
     /// <p>Delete a listener for a custom routing accelerator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomRoutingListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2102,7 +2102,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEndpointGroup`.
     ///
     /// <p>Delete an endpoint group from a listener.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2175,7 +2175,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteListener`.
     ///
     /// <p>Delete a listener from an accelerator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2250,7 +2250,7 @@ pub mod fluent_builders {
     /// or ports outside of the range that you configured for the endpoint group.</p>
     /// <p>After you make changes, you can verify that the updates are complete by checking the status of your
     /// accelerator: the status changes from IN_PROGRESS to DEPLOYED.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DenyCustomRoutingTraffic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2406,7 +2406,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
     /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprovisionByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2478,7 +2478,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAccelerator`.
     ///
     /// <p>Describe an accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2552,7 +2552,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describe the attributes of an accelerator.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAcceleratorAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2625,7 +2625,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomRoutingAccelerator`.
     ///
     /// <p>Describe a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomRoutingAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2698,7 +2698,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomRoutingAcceleratorAttributes`.
     ///
     /// <p>Describe the attributes of a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomRoutingAcceleratorAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2773,7 +2773,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomRoutingEndpointGroup`.
     ///
     /// <p>Describe an endpoint group for a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomRoutingEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2848,7 +2848,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomRoutingListener`.
     ///
     /// <p>The description of a listener for a custom routing accelerator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomRoutingListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2918,7 +2918,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEndpointGroup`.
     ///
     /// <p>Describe an endpoint group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2991,7 +2991,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeListener`.
     ///
     /// <p>Describe a listener. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3061,7 +3061,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccelerators`.
     ///
     /// <p>List the accelerators for an AWS account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccelerators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3142,7 +3142,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>, including
     /// the current state and a history of state changes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListByoipCidrs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3224,7 +3224,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomRoutingAccelerators`.
     ///
     /// <p>List the custom routing accelerators for an AWS account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingAccelerators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3304,7 +3304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomRoutingEndpointGroups`.
     ///
     /// <p>List the endpoint groups that are associated with a listener for a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingEndpointGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3394,7 +3394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomRoutingListeners`.
     ///
     /// <p>List the listeners for a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingListeners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3495,7 +3495,7 @@ pub mod fluent_builders {
     /// in your subnet, the port mappings don't change, because the mappings are created when you add the subnet to Global Accelerator.</p>
     /// <p>The mappings also include a flag for each destination denoting which destination IP addresses and
     /// ports are allowed or denied traffic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingPortMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3604,7 +3604,7 @@ pub mod fluent_builders {
     /// response is the mappings for one destination IP address. This is useful when your subnet endpoint has mappings that
     /// span multiple custom routing accelerators in your account, or for scenarios where you only want to
     /// list the port mappings for a specific destination instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingPortMappingsByDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3711,7 +3711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEndpointGroups`.
     ///
     /// <p>List the endpoint groups that are associated with a listener. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEndpointGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3801,7 +3801,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListListeners`.
     ///
     /// <p>List the listeners for an accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListListeners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3896,7 +3896,7 @@ pub mod fluent_builders {
     /// <p>List all tags for an accelerator. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
     /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3971,7 +3971,7 @@ pub mod fluent_builders {
     /// AdvertiseByoipCidr</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
     /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4065,7 +4065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveCustomRoutingEndpoints`.
     ///
     /// <p>Remove endpoints from a custom routing accelerator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveCustomRoutingEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4159,7 +4159,7 @@ pub mod fluent_builders {
     /// <p>Add tags to an accelerator resource. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
     /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4249,7 +4249,7 @@ pub mod fluent_builders {
     /// The operation succeeds even if you attempt to remove tags from an accelerator that was already removed.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
     /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4341,7 +4341,7 @@ pub mod fluent_builders {
     /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the
     /// US West (Oregon) Region to create or update accelerators.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4451,7 +4451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAcceleratorAttributes`.
     ///
     /// <p>Update the attributes for an accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAcceleratorAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4578,7 +4578,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCustomRoutingAccelerator`.
     ///
     /// <p>Update a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCustomRoutingAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4688,7 +4688,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCustomRoutingAcceleratorAttributes`.
     ///
     /// <p>Update the attributes for a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCustomRoutingAcceleratorAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4817,7 +4817,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCustomRoutingListener`.
     ///
     /// <p>Update a listener for a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCustomRoutingListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4910,7 +4910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEndpointGroup`.
     ///
     /// <p>Update an endpoint group. A resource must be valid and active when you add it as an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5120,7 +5120,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateListener`.
     ///
     /// <p>Update a listener. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5258,7 +5258,7 @@ pub mod fluent_builders {
     /// propagation delays.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
     /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct WithdrawByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

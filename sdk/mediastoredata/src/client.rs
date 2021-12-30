@@ -130,7 +130,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteObject`.
     ///
     /// <p>Deletes an object at the specified path.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -202,7 +202,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeObject`.
     ///
     /// <p>Gets the headers for an object at the specified path.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -274,7 +274,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetObject`.
     ///
     /// <p>Downloads the object at the specified path. If the object’s upload availability is set to <code>streaming</code>, AWS Elemental MediaStore downloads the object even if it’s still uploading the object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -391,7 +391,7 @@ pub mod fluent_builders {
     ///
     /// <p>Provides a list of metadata entries about folders and objects in the specified
     /// folder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

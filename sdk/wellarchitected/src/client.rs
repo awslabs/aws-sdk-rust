@@ -382,7 +382,7 @@ pub mod fluent_builders {
     /// you acknowledge that custom lenses created by other users and shared with you are
     /// Third Party Content as defined in the Amazon Web Services Customer Agreement.    </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateLenses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -484,7 +484,7 @@ pub mod fluent_builders {
     /// from your own Amazon Web Services account or terminate
     /// your Amazon Web Services account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLensShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -601,7 +601,7 @@ pub mod fluent_builders {
     /// <p>After a lens has been imported, create a new lens version to publish it.  The owner of a lens can share the lens with other
     /// Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Only the owner of a lens can delete it.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLensVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -724,7 +724,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMilestone`.
     ///
     /// <p>Create a milestone for an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMilestone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -844,7 +844,7 @@ pub mod fluent_builders {
     /// in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining a Workload</a> in the
     /// <i>Well-Architected Tool User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1426,7 +1426,7 @@ pub mod fluent_builders {
     /// deleted.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing a Workload</a> in the
     /// <i>Well-Architected Tool User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkloadShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1564,7 +1564,7 @@ pub mod fluent_builders {
     /// from your own Amazon Web Services account or terminate
     /// your Amazon Web Services account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLens<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1693,7 +1693,7 @@ pub mod fluent_builders {
     /// from your own Amazon Web Services account or terminate
     /// your Amazon Web Services account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLensShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1806,7 +1806,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkload`.
     ///
     /// <p>Delete an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1907,7 +1907,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkloadShare`.
     ///
     /// <p>Delete a workload share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkloadShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2023,7 +2023,7 @@ pub mod fluent_builders {
     /// <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be
     /// removed from a workload.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLenses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2126,7 +2126,7 @@ pub mod fluent_builders {
     /// with applicable law, providing adequate privacy notices, and obtaining necessary
     /// consents for processing such data.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportLens<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2208,7 +2208,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAnswer`.
     ///
     /// <p>Get the answer to a specific question in a workload review.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnswer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2312,7 +2312,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLens`.
     ///
     /// <p>Get an existing lens.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLens<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2394,7 +2394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLensReview`.
     ///
     /// <p>Get lens review.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLensReview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2488,7 +2488,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLensReviewReport`.
     ///
     /// <p>Get lens review report.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLensReviewReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2582,7 +2582,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLensVersionDifference`.
     ///
     /// <p>Get lens version differences.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLensVersionDifference<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2680,7 +2680,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMilestone`.
     ///
     /// <p>Get a milestone for an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMilestone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2762,7 +2762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkload`.
     ///
     /// <p>Get an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2850,7 +2850,7 @@ pub mod fluent_builders {
     /// with applicable law, providing adequate privacy notices, and obtaining necessary
     /// consents for processing such data.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportLens<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2986,7 +2986,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAnswers`.
     ///
     /// <p>List of answers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnswers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3112,7 +3112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLenses`.
     ///
     /// <p>List the available lenses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLenses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3225,7 +3225,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLensReviewImprovements`.
     ///
     /// <p>List lens review improvements.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLensReviewImprovements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3351,7 +3351,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLensReviews`.
     ///
     /// <p>List lens reviews.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLensReviews<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3453,7 +3453,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLensShares`.
     ///
     /// <p>List the lens shares associated with the lens.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLensShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3558,7 +3558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMilestones`.
     ///
     /// <p>List all milestones for an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMilestones<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3648,7 +3648,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNotifications`.
     ///
     /// <p>List lens notifications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3738,7 +3738,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListShareInvitations`.
     ///
     /// <p>List  the workload invitations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListShareInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3859,7 +3859,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3929,7 +3929,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkloads`.
     ///
     /// <p>List workloads. Paginated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkloads<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4024,7 +4024,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkloadShares`.
     ///
     /// <p>List the workload shares associated with the workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkloadShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4127,7 +4127,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4224,7 +4224,7 @@ pub mod fluent_builders {
     /// <p>
     /// <code>DELETE /tags/WorkloadArn?tagKeys=key1&tagKeys=key2</code>
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4313,7 +4313,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAnswer`.
     ///
     /// <p>Update the answer to a specific question in a workload review.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnswer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4482,7 +4482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLensReview`.
     ///
     /// <p>Update lens review.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLensReview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4597,7 +4597,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateShareInvitation`.
     ///
     /// <p>Update a workload invitation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateShareInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4686,7 +4686,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkload`.
     ///
     /// <p>Update an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5239,7 +5239,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkloadShare`.
     ///
     /// <p>Update a workload share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkloadShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5332,7 +5332,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpgradeLensReview`.
     ///
     /// <p>Upgrade lens review.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpgradeLensReview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

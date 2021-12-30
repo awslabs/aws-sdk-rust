@@ -140,7 +140,7 @@ pub mod fluent_builders {
     /// changes to <code>APPLYING</code>, the final stage of completing your change request. You
     /// can describe a change during the 60-day request history retention period for API
     /// calls.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -227,7 +227,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeChangeSet`.
     ///
     /// <p>Provides information about a given change set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -316,7 +316,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEntity`.
     ///
     /// <p>Returns the metadata and content of the entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -406,7 +406,7 @@ pub mod fluent_builders {
     ///
     /// <p>You can describe a change during the 60-day request history retention period for API
     /// calls.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChangeSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -533,7 +533,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEntities`.
     ///
     /// <p>Provides the list of entities of a given type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -680,7 +680,7 @@ pub mod fluent_builders {
     ///
     /// <p>For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
     /// Working with change sets</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

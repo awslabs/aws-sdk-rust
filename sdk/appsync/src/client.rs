@@ -382,7 +382,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApiCache`.
     ///
     /// <p>Creates a cache for the GraphQL API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApiCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -680,7 +680,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a unique key that you can distribute to clients who are executing your
     /// API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApiKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -774,7 +774,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataSource`.
     ///
     /// <p>Creates a <code>DataSource</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -988,7 +988,7 @@ pub mod fluent_builders {
     /// <p>Creates a <code>Function</code> object.</p>
     /// <p>A function is a reusable entity. Multiple functions can be used to compose the resolver
     /// logic.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1159,7 +1159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGraphqlApi`.
     ///
     /// <p>Creates a <code>GraphqlApi</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGraphqlApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1363,7 +1363,7 @@ pub mod fluent_builders {
     /// <p>Creates a <code>Resolver</code> object.</p>
     /// <p>A resolver converts incoming requests into a format that a data source can understand
     /// and converts the data source's responses into GraphQL.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResolver<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1587,7 +1587,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateType`.
     ///
     /// <p>Creates a <code>Type</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1684,7 +1684,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApiCache`.
     ///
     /// <p>Deletes an <code>ApiCache</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApiCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1754,7 +1754,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApiKey`.
     ///
     /// <p>Deletes an API key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApiKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1834,7 +1834,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataSource`.
     ///
     /// <p>Deletes a <code>DataSource</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1914,7 +1914,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFunction`.
     ///
     /// <p>Deletes a <code>Function</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1994,7 +1994,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGraphqlApi`.
     ///
     /// <p>Deletes a <code>GraphqlApi</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGraphqlApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2064,7 +2064,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResolver`.
     ///
     /// <p>Deletes a <code>Resolver</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResolver<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2154,7 +2154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteType`.
     ///
     /// <p>Deletes a <code>Type</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2234,7 +2234,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `FlushApiCache`.
     ///
     /// <p>Flushes an <code>ApiCache</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FlushApiCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2304,7 +2304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApiCache`.
     ///
     /// <p>Retrieves an <code>ApiCache</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApiCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2374,7 +2374,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataSource`.
     ///
     /// <p>Retrieves a <code>DataSource</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2454,7 +2454,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFunction`.
     ///
     /// <p>Get a <code>Function</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2534,7 +2534,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGraphqlApi`.
     ///
     /// <p>Retrieves a <code>GraphqlApi</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGraphqlApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2604,7 +2604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntrospectionSchema`.
     ///
     /// <p>Retrieves the introspection schema for a GraphQL API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntrospectionSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2694,7 +2694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResolver`.
     ///
     /// <p>Retrieves a <code>Resolver</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResolver<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2784,7 +2784,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSchemaCreationStatus`.
     ///
     /// <p>Retrieves the current status of a schema creation operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchemaCreationStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2854,7 +2854,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetType`.
     ///
     /// <p>Retrieves a <code>Type</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2953,7 +2953,7 @@ pub mod fluent_builders {
     /// <code>DeleteApiKey</code> to manually delete a key before it's automatically
     /// deleted.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApiKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3045,7 +3045,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataSources`.
     ///
     /// <p>Lists the data sources for a given API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3137,7 +3137,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFunctions`.
     ///
     /// <p>List multiple functions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3229,7 +3229,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGraphqlApis`.
     ///
     /// <p>Lists your GraphQL APIs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGraphqlApis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3311,7 +3311,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResolvers`.
     ///
     /// <p>Lists the resolvers for a given API and type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolvers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3413,7 +3413,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResolversByFunction`.
     ///
     /// <p>List the resolvers that are associated with a specific function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResolversByFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3515,7 +3515,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3585,7 +3585,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTypes`.
     ///
     /// <p>Lists the types for a given API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3692,7 +3692,7 @@ pub mod fluent_builders {
     /// <p>Adds a new schema to your GraphQL API.</p>
     /// <p>This operation is asynchronous. Use  to
     /// determine when it has completed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSchemaCreation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3775,7 +3775,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tags a resource with user-supplied tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3868,7 +3868,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Untags a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3955,7 +3955,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApiCache`.
     ///
     /// <p>Updates the cache for the GraphQL API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApiCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4230,7 +4230,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApiKey`.
     ///
     /// <p>Updates an API key. The key can be updated while it is not deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApiKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4332,7 +4332,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataSource`.
     ///
     /// <p>Updates a <code>DataSource</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4542,7 +4542,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFunction`.
     ///
     /// <p>Updates a <code>Function</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4723,7 +4723,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGraphqlApi`.
     ///
     /// <p>Updates a <code>GraphqlApi</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGraphqlApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4912,7 +4912,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResolver`.
     ///
     /// <p>Updates a <code>Resolver</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResolver<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5136,7 +5136,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateType`.
     ///
     /// <p>Updates a <code>Type</code> object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

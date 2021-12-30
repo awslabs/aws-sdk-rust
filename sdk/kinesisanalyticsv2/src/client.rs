@@ -340,7 +340,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddApplicationCloudWatchLoggingOption`.
     ///
     /// <p>Adds an Amazon CloudWatch log stream to monitor application configuration errors.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationCloudWatchLoggingOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -482,7 +482,7 @@ pub mod fluent_builders {
     /// results in a new version of the application. You can use the <a>DescribeApplication</a> operation  
     /// to find the current application version.
     /// </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -584,7 +584,7 @@ pub mod fluent_builders {
     /// <p>Adds an <a>InputProcessingConfiguration</a> to a SQL-based Kinesis Data Analytics application. An input processor pre-processes records
     /// on the input stream before the
     /// application's SQL code executes. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationInputProcessingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -720,7 +720,7 @@ pub mod fluent_builders {
     /// <p> Any configuration update, including adding a streaming source using this
     /// operation, results in a new version of the application. You can use the <a>DescribeApplication</a> operation to find the current application
     /// version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -833,7 +833,7 @@ pub mod fluent_builders {
     /// bucket name and object key name), name of the in-application table to create, and the
     /// necessary mapping information that describes how data in an Amazon S3 object maps to columns
     /// in the resulting in-application table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationReferenceDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -960,7 +960,7 @@ pub mod fluent_builders {
     /// Internet directly. To enable Internet access to the application, add an Internet gateway to your VPC.</p>
     /// </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationVpcConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1094,7 +1094,7 @@ pub mod fluent_builders {
     /// <p>Creates a Kinesis Data Analytics application. For information about creating a
     /// Kinesis Data Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating an
     /// Application</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1304,7 +1304,7 @@ pub mod fluent_builders {
     /// to be valid.
     /// If you first try to use the URL after the 3-minute limit expires, the service returns an HTTP 403 Forbidden error.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplicationPresignedUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1402,7 +1402,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplicationSnapshot`.
     ///
     /// <p>Creates a snapshot of the application's state data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplicationSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1488,7 +1488,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
     /// <p>Deletes the specified application. Kinesis Data Analytics halts application execution and deletes the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1574,7 +1574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplicationCloudWatchLoggingOption`.
     ///
     /// <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics application. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationCloudWatchLoggingOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1707,7 +1707,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplicationInputProcessingConfiguration`.
     ///
     /// <p>Deletes an <a>InputProcessingConfiguration</a> from an input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationInputProcessingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1808,7 +1808,7 @@ pub mod fluent_builders {
     /// <p>Deletes the output destination configuration from your SQL-based Kinesis Data Analytics application's configuration.
     /// Kinesis Data Analytics will no longer write data from
     /// the corresponding in-application stream to the external output destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1922,7 +1922,7 @@ pub mod fluent_builders {
     /// <p>Deletes a reference data source configuration from the specified SQL-based Kinesis Data Analytics application's configuration.</p>
     /// <p>If the application is running, Kinesis Data Analytics immediately removes the in-application table
     /// that you created using the <a>AddApplicationReferenceDataSource</a> operation.  </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationReferenceDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2032,7 +2032,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplicationSnapshot`.
     ///
     /// <p>Deletes a snapshot of application state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2138,7 +2138,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplicationVpcConfiguration`.
     ///
     /// <p>Removes a VPC configuration from a Kinesis Data Analytics application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationVpcConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2266,7 +2266,7 @@ pub mod fluent_builders {
     /// <p>Returns information about a specific Kinesis Data Analytics application.</p>
     /// <p>If you want to retrieve a list of all applications in your account,
     /// use the <a>ListApplications</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2349,7 +2349,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplicationSnapshot`.
     ///
     /// <p>Returns information about a snapshot of application state data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2440,7 +2440,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2529,7 +2529,7 @@ pub mod fluent_builders {
     /// <p> You can use the inferred schema when configuring a streaming source for your application.
     /// When you create an application using the Kinesis Data Analytics console, the console uses this
     /// operation to infer a schema and show it in the console user interface. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DiscoverInputSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2667,7 +2667,7 @@ pub mod fluent_builders {
     /// status. </p>
     /// <p>If you want detailed information about a specific application, use
     /// <a>DescribeApplication</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2753,7 +2753,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplicationSnapshots`.
     ///
     /// <p>Lists information about the current application snapshots.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2856,7 +2856,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2952,7 +2952,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the list of key-value tags assigned to the application. For more information, see
     /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3028,7 +3028,7 @@ pub mod fluent_builders {
     /// <p>When you rollback an application, it loads state data from the last successful snapshot.
     /// If the application has no snapshots, Kinesis Data Analytics rejects the rollback request.</p>
     /// <p>This action is not supported for Kinesis Data Analytics for SQL applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RollbackApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3117,7 +3117,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts the specified Kinesis Data Analytics application. After creating an application, you must exclusively call this operation to
     /// start your application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3209,7 +3209,7 @@ pub mod fluent_builders {
     /// </p>
     /// <p>Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code> is set
     /// to <code>true</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3316,7 +3316,7 @@ pub mod fluent_builders {
     /// <p>Adds one or more key-value tags to a Kinesis Data Analytics application. Note that the maximum number of application
     /// tags includes system tags. The maximum number of user-defined application tags is 50.
     /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3404,7 +3404,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes one or more tags from a Kinesis Data Analytics application. For more information, see
     /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3499,7 +3499,7 @@ pub mod fluent_builders {
     /// need to update an application's <code>RuntimeEnvironment</code>, you must delete the application
     /// and create it again.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3701,7 +3701,7 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplicationMaintenanceConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,

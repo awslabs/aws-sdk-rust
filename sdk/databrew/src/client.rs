@@ -447,7 +447,7 @@ pub mod fluent_builders {
     /// other versions. If you try to delete <code>LATEST_WORKING</code> while other versions
     /// exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as
     /// partial failure in the response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteRecipeVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -538,7 +538,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
     /// <p>Creates a new DataBrew dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -683,7 +683,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProfileJob`.
     ///
     /// <p>Creates a new job to analyze a dataset and create its data profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProfileJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -968,7 +968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProject`.
     ///
     /// <p>Creates a new DataBrew project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1107,7 +1107,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecipe`.
     ///
     /// <p>Creates a new DataBrew recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1231,7 +1231,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecipeJob`.
     ///
     /// <p>Creates a new job to transform input data, using steps defined in an existing Glue DataBrew recipe</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecipeJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1524,7 +1524,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new ruleset that can be used in a profile job to validate
     /// the data quality of a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRuleset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1661,7 +1661,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific
     /// date and time, or at regular intervals.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1792,7 +1792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
     /// <p>Deletes a dataset from DataBrew.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1862,7 +1862,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
     /// <p>Deletes the specified DataBrew job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1932,7 +1932,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
     /// <p>Deletes an existing DataBrew project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2002,7 +2002,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRecipeVersion`.
     ///
     /// <p>Deletes a single version of a DataBrew recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecipeVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2089,7 +2089,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRuleset`.
     ///
     /// <p>Deletes a ruleset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRuleset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2159,7 +2159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchedule`.
     ///
     /// <p>Deletes the specified DataBrew schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2229,7 +2229,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
     /// <p>Returns the definition of a specific DataBrew dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2299,7 +2299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJob`.
     ///
     /// <p>Returns the definition of a specific DataBrew job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2369,7 +2369,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobRun`.
     ///
     /// <p>Represents one run of a DataBrew job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2449,7 +2449,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
     /// <p>Returns the definition of a specific DataBrew project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2520,7 +2520,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the definition of a specific DataBrew recipe corresponding to a particular
     /// version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2605,7 +2605,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRuleset`.
     ///
     /// <p>Retrieves detailed information about the ruleset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRuleset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2675,7 +2675,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSchedule`.
     ///
     /// <p>Returns the definition of a specific DataBrew schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2745,7 +2745,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
     /// <p>Lists all of the DataBrew datasets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2825,7 +2825,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobRuns`.
     ///
     /// <p>Lists all of the previous runs of a particular DataBrew job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2915,7 +2915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p>Lists all of the DataBrew jobs that are defined.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3023,7 +3023,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Lists all of the DataBrew projects that are defined.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3103,7 +3103,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRecipes`.
     ///
     /// <p>Lists all of the DataBrew recipes that are defined.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecipes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3207,7 +3207,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the versions of a particular DataBrew recipe, except for
     /// <code>LATEST_WORKING</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecipeVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3298,7 +3298,7 @@ pub mod fluent_builders {
     ///
     /// <p>List all rulesets available in the current account or rulesets associated
     /// with a specific resource (dataset).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRulesets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3394,7 +3394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSchedules`.
     ///
     /// <p>Lists the DataBrew schedules that are defined.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchedules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3484,7 +3484,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all the tags for a DataBrew resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3556,7 +3556,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PublishRecipe`.
     ///
     /// <p>Publishes a new version of a DataBrew recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3637,7 +3637,7 @@ pub mod fluent_builders {
     ///
     /// <p>Performs a recipe step within an interactive DataBrew session that's currently
     /// open.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendProjectSessionAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3772,7 +3772,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartJobRun`.
     ///
     /// <p>Runs a DataBrew job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3843,7 +3843,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an interactive session, enabling you to manipulate data in a DataBrew
     /// project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartProjectSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3925,7 +3925,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopJobRun`.
     ///
     /// <p>Stops a particular run of a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4006,7 +4006,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or
     /// schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4103,7 +4103,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes metadata tags from a DataBrew resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4192,7 +4192,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataset`.
     ///
     /// <p>Modifies the definition of an existing DataBrew dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4312,7 +4312,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProfileJob`.
     ///
     /// <p>Modifies the definition of an existing profile job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProfileJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4564,7 +4564,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
     /// <p>Modifies the definition of an existing DataBrew project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4657,7 +4657,7 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew
     /// recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4756,7 +4756,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRecipeJob`.
     ///
     /// <p>Modifies the definition of an existing DataBrew recipe job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecipeJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4988,7 +4988,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRuleset`.
     ///
     /// <p>Updates specified ruleset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRuleset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5087,7 +5087,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSchedule`.
     ///
     /// <p>Modifies the definition of an existing DataBrew schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
